@@ -6,20 +6,25 @@ body {
     color: #353B44;
 }
 
-p {
-    line-height: 1.8;
-    font-size: 18px;
+h1 {
+    padding: 30px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    padding-top: 10px;
-    padding-bottom: 2px;
+h2, h3 {
+    padding: 15px;
     border-bottom: 1px solid #B6B6B6;
 }
 
 i {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+a:hover,
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
 }
 
 /*************************/
@@ -31,35 +36,43 @@ section {
 }
 
 #sections {
-
+    padding-bottom: 30px;
 }
 
 #about-me {
     color: #EEE;
     background-color: #384047;
+
+    padding: 30px;
 }
 
-.big-button {
-    font-size: 20px;
-    font-family: 'Exo 2', sans-serif;
+#contact-me {
+    padding-bottom: 30px;
+}
 
+.dark-button {
+    margin: 10px;
     padding: 10px 15px;
 
     color: #EEE;
-    background-color: #1c242a;
-
-    outline: none;    
+    background-color: #3F4E53;
 }
 
 .blue-button {
-    
     margin: 10px;
     padding: 10px 15px;
 
     color: #EEE;
     background-color: #53D1DB;
+}
 
-    outline: none;    
+.dark-button:hover,
+.dark-button:active,
+.dark-button:focus,
+.blue-button:hover,
+.blue-button:active,
+.blue-button:focus {
+    color: #FFF;
 }
 
 .fa-6 {
@@ -76,7 +89,8 @@ section {
 }
 
 .nav-tabs > li {
-    min-width: 20%;
+    float: right;
+    min-width: 25%;
 }
 
 .nav-tabs > li > a {
@@ -92,7 +106,6 @@ section {
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus,
 .nav-tabs > li > a:active {
-    outline: none;
     color: #555;
 }
 
@@ -209,29 +222,12 @@ section {
     transition:all 0.3s ease;
 }
 
-#navigation-menu a {
-
-    font-size: 24px;
-    font-family: 'Exo 2', sans-serif;
-
-    margin-top: 40px;
-    margin-left: 5px;
-    margin-right: 5px;
-
-    padding: 15px 20px;
-
-    color: #EEE;
-    background-color: #1c242a;
-
-    outline: none;
-}
-
 /********************************/
 /*             Footer           */
 /********************************/
 
 footer {
-    height: 162px;
+    height: 100%;
     background: #384047;
     border-top: 5px solid #53D1DB;
 
