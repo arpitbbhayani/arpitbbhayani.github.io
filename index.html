@@ -3,7 +3,7 @@ layout: default
 ---
 <section id="sections" class="container-fluid">
 	<ul class="nav nav-tabs">
-		<li class="active">
+		<li>
 			<a href="#one" data-toggle="tab">
 				On Finance
 				<i class="fa fa-line-chart"></i>
@@ -21,7 +21,7 @@ layout: default
 				<i class="fa fa-terminal"></i>
 			</a>
 		</li>
-		<li>
+		<li class="active">
 			<a href="#four" data-toggle="tab">
 				Projects
 				<i class="fa fa-desktop"></i>
@@ -29,7 +29,7 @@ layout: default
 		</li>
 	</ul>
 	<div class="tab-content">
-		<div class="tab-pane active" id="one">
+		<div class="tab-pane" id="one">
 			<div class="col-lg-3 col-md-5 info-container full-center-container">
 				<i class="fa fa-line-chart fa-6 full-center centered"></i>
 			</div>
@@ -65,7 +65,7 @@ layout: default
 				</div>
 			</div>
 		</div>
-		<div class="tab-pane" id="four">
+		<div class="tab-pane active" id="four">
 			<div class="col-lg-3 col-md-5 info-container full-center-container">
 				<i class="fa fa-desktop fa-6 full-center centered"></i>
 			</div>
@@ -104,11 +104,11 @@ layout: default
 			</div>
 			<div class="col-lg-9 col-md-7 info-container full-center-container">
 				<div class="full-center centered">
-					<form method="POST" action="{{MISSING}}" class="structured-form">
+					<form method="POST" action = "https://formbeaver.herokuapp.com/arpit.b.bhayani@gmail.com"  class="structured-form">
 						<input type="text" placeholder="your name">
 						<input type="email" placeholder="your email">
 						<textarea placeholder="your message" rows="4"></textarea>
-						<input type="submit" class="blue-button" value="MESSAGE THIS TO ARPIT">
+						<input type="submit" class="blue-button" value="Say Hi!">
 					</form>
 				</div>
 			</div>
