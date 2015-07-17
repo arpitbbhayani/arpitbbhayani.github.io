@@ -17,10 +17,6 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid #B6B6B6;
 }
 
-section {
-    min-height: 350px;
-}
-
 i {
     padding-left: 10px;
     padding-right: 10px;
@@ -29,6 +25,19 @@ i {
 /*************************/
 /*        Content        */
 /*************************/
+
+section {
+    min-height: 350px;
+}
+
+#sections {
+
+}
+
+#about-me {
+    color: #EEE;
+    background-color: #384047;
+}
 
 .big-button {
     font-size: 20px;
@@ -42,6 +51,17 @@ i {
     outline: none;    
 }
 
+.blue-button {
+    
+    margin: 10px;
+    padding: 10px 15px;
+
+    color: #EEE;
+    background-color: #53D1DB;
+
+    outline: none;    
+}
+
 .fa-6 {
     color: #53D1DB;
     font-size: 200px;
@@ -51,32 +71,49 @@ i {
     padding-top: 20px;
 }
 
-.info-container {
-    height: 250px;
-
-    display: table;
-    vertical-align: middle;
+.nav-tabs {
+    background-color: #384047;
 }
 
-.content {
-    display: table-cell;
-    vertical-align: middle;
+.nav-tabs > li {
+    min-width: 20%;
 }
 
 .nav-tabs > li > a {
-    
+    color: #EEE;
+
+    -webkit-transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+    transition:all 0.3s ease;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a:active {
+    outline: none;
+    color: #555;
 }
 
 .centered {
     text-align: center;
 }
 
-#main {
-    margin: 10px auto 0px;
-    padding: 10px 0px;
-    clear: both;
+.info-container {
+    height: 250px;
+    min-height: 250px;
 }
 
+.info-container, .full-center-container {
+    display: table;
+    vertical-align: middle;
+}
+
+.full-center {
+    display: table-cell;
+    vertical-align: middle;
+}
 
 /*************************/
 /*           Logo        */
@@ -92,7 +129,6 @@ i {
     font-family: 'Exo 2', sans-serif;
     font-size: 64px;
     padding: 10px 0;
-    margin-top: 100px;
 
     cursor: pointer;
 }
@@ -110,7 +146,7 @@ i {
 
 .logo .name1 {
     padding: 10px 0;
-    color: #5FCF80;
+    color: #53D1DB;
 }
 
 .logo .name2 {
@@ -118,8 +154,8 @@ i {
 
     color: #EEE;
     background-color: #1c242a;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .small-logo {
@@ -138,7 +174,7 @@ i {
 .small-logo .name1 {
     font-weight: bold;
     padding: 6px 0;
-    color: #5FCF80;
+    color: #53D1DB;
 }
 
 .small-logo .name2 {
@@ -155,8 +191,22 @@ i {
 /*    Navigation Menu    */
 /*************************/
 
-.header-links {
-    margin-top: 30px;
+#navigation-menu.robin {
+
+    height: 560px;
+    background: #384047;
+    border-top: 5px solid #53D1DB;
+    margin: 0;
+
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+
+    -webkit-transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -ms-transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+    transition:all 0.3s ease;
 }
 
 #navigation-menu a {
@@ -176,22 +226,6 @@ i {
     outline: none;
 }
 
-#navigation-menu.robin .navbar-brand {
-    color: rgba(17, 17, 17, 1);
-}
-#navigation-menu.robin {
-
-    height: 500px;
-    background: #384047;
-    border-top: 5px solid #5FCF80;
-
-    -webkit-transition:all 0.3s ease;
-    -moz-transition:all 0.3s ease;
-    -ms-transition:all 0.3s ease;
-    -o-transition:all 0.3s ease;
-    transition:all 0.3s ease;
-}
-
 /********************************/
 /*             Footer           */
 /********************************/
@@ -199,9 +233,7 @@ i {
 footer {
     height: 162px;
     background: #384047;
-    border-top: 5px solid #5FCF80;
-
-    margin-top: 30px;
+    border-top: 5px solid #53D1DB;
 
     -webkit-transition:all 0.3s ease;
     -moz-transition:all 0.3s ease;
