@@ -1,0 +1,74 @@
+.input-info {
+  font-size: 13px;
+  font-family: 'Roboto', arial;
+
+  margin-bottom: 20px;
+
+  color: #919191;
+}
+
+.structured-form input[type="text"],
+.structured-form input[type="email"] {
+  font-family: 'Roboto', arial;
+  font-size: 16px;
+
+  color: #313131;
+
+  width: 100%;
+
+  box-shadow: none !important;
+  resize: none;
+
+  padding: 5px;
+
+  margin-bottom: 5px;
+  
+  border: 1px solid #717171;
+  border-radius: 5px;
+}
+
+.structured-form textarea {
+  font-family: 'Roboto', arial;
+  font-size: 16px;
+
+  color: #313131;
+
+  width: 100%;
+
+  box-shadow: none !important;
+  resize: none;
+
+  padding: 5px;
+
+  margin-bottom: 5px;
+  
+  border: 1px solid #717171;
+  border-radius: 5px;
+}
+
+.structured-form label {
+  font-family: 'Ubuntu', arial;
+  font-size: 16px;
+  font-weight: 400;
+  vertical-align: baseline;
+}
+
+
+.structured-form input[type="button"] {
+  font-family: 'Ubuntu', arial;
+  font-size: 16px;
+
+  color: #313131;
+
+  width: 80%;
+
+  box-shadow: none !important;
+  resize: none;
+
+  padding: 5px;
+
+  margin-bottom: 5px;
+  
+  border: 1px solid #717171;
+  border-radius: 5px;
+}

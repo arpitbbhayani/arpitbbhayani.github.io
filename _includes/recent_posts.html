@@ -1,0 +1,16 @@
+{% for p in site.posts limit:5 %}
+      <div class="side-article-header">
+            <div class="side-article-title">
+                  <a href="{{p.url | prepend: site.baseurl}}">{{p.title}}</a>
+            </div>
+            <div class="side-article-meta">
+                  <span class="side-article-author">
+                        {{p.author}}
+                  </span>
+                  <span class="seperator">|</span>
+                  <span class="side-article-category">
+                        {{p.category}}
+                  </span>
+            </div>
+      </div>
+{% endfor %}

@@ -1,0 +1,17 @@
+name: Arpit Bhayani | Programmer | Coder | Problem Solver
+markdown: redcarpet
+highlighter: pygments
+
+url: http://arpitbbhayani.github.io/
+baseurl: ""
+title: "Arpit Bhayani"
+tagline: "Programmer | Coder | Problem Solver"
+
+permalink: /:title
+
+share_image: "/img/logo/codeville_icon.png"
+keywords: "Arpit Bhayani"
+description: "Blog"
+
+paginate: 5
+paginate_path: "/articles/page:num/"

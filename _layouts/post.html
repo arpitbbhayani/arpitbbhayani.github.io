@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<article>
+    <div class="navigation">
+      <a href="{{p.url | prepend: site.baseurl}}">
+          <i class="fa fa-long-arrow-left fa-1x"></i>
+          Previous
+      </a>
+      &nbsp;&nbsp;
+      <a href="{{p.url | prepend: site.baseurl}}">Next
+          <i class="fa fa-long-arrow-right fa-1x"></i>
+      </a>
+    </div>
+    <div class="article-header">
+          <div class="article-title">
+            <a href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
+          </div>
+          <div class="article-meta">
+                <span class="article-author">
+                      {{page.author}}
+                </span>
+                <span class="seperator">|</span>
+                <span class="article-date">
+                      {{page.date | date: '%B %d, %Y' }}
+                </span>
+                <span class="seperator">|</span>
+                <span class="article-category">
+                      {{page.category}}
+                </span>
+          </div>
+    </div>
+    <div class="article-content">
+          <span class="content">
+                {{content}}
+          </span>
+    </div>
+</article>
