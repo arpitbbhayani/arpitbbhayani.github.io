@@ -17,9 +17,14 @@ h2, h3 {
     border-bottom: 1px solid #B6B6B6;
 }
 
-i {
+i.fa-2x {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+i.fa-1x {
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 a:hover,
@@ -37,13 +42,17 @@ section {
     min-height: 350px;
 }
 
+#sections {
+    
+}
+
 #social a {
     color: #AAA;
 
     -webkit-transition:all 0.3s ease;
     -moz-transition:all 0.3s ease;
-      -o-transition:all 0.3s ease;
-         transition:all 0.3s ease;
+    -o-transition:all 0.3s ease;
+    transition:all 0.3s ease;
 }
 
 #social a:hover,
@@ -52,19 +61,11 @@ section {
     color: #EEE;
 }
 
-#sections {
-    padding-bottom: 30px;
-}
-
 #about-me {
     color: #EEE;
     background-color: #384047;
 
     padding: 30px;
-}
-
-#contact-me {
-    padding-bottom: 30px;
 }
 
 .dark-button {
@@ -127,6 +128,7 @@ section {
     color: #555;
 }
 
+
 .centered {
     text-align: center;
 }
@@ -145,6 +147,7 @@ section {
     display: table-cell;
     vertical-align: middle;
 }
+
 
 /*************************/
 /*           Logo        */
@@ -229,6 +232,31 @@ section {
 
 
 /*************************/
+/*        Buttons        */
+/*************************/
+.action-button {
+    background-color: #5FCF80;
+    -webkit-border-top-right-radius: 5px;
+       -moz-border-radius-topright: 5px;
+            border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+       -moz-border-radius-topleft: 5px;
+            border-top-left-radius: 5px;
+}
+
+.action-button:hover,
+.action-button:focus,
+.action-button:active {
+    background-color: #4bc970;
+    -webkit-border-top-right-radius: 5px;
+       -moz-border-radius-topright: 5px;
+            border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+       -moz-border-radius-topleft: 5px;
+            border-top-left-radius: 5px;
+}
+
+/*************************/
 /*    Navigation Menu    */
 /*************************/
 
@@ -272,6 +300,7 @@ section {
     text-align: left;
     text-indent: 20px;
 }
+
 
 /********************************/
 /*             Footer           */

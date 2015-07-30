@@ -2,9 +2,13 @@
 <html>
   {% include head.html %}
   <body>
+  {% if page.type == 'index' %}
   	{% include navbar.html %}
+  {% else %}
+  	{% include tinynavbar.html %}
+  {% endif %}
     <div class="container-fluid">
-				{{content}}
+		{{content}}
     </div>
     {% include footer.html %}
   </body>
