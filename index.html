@@ -2,13 +2,13 @@
 layout: default
 ---
 <section id="sections" class="container-fluid">
-	<ul class="nav nav-tabs">
-		<li>
+	<ul class="nav nav-tabs nav-tabs-left">
+		<!-- <li>
 			<a href="#one" data-toggle="tab">
 				On Finance
 				<i class="fa fa-line-chart"></i>
 			</a>
-		</li>
+		</li> -->
 		<li>
 			<a href="#two" data-toggle="tab">
 				On Science
@@ -17,7 +17,7 @@ layout: default
 		</li>
 		<li>
 			<a href="#three" data-toggle="tab">
-				Problem Solving
+				Programming
 				<i class="fa fa-terminal"></i>
 			</a>
 		</li>
@@ -29,7 +29,7 @@ layout: default
 		</li>
 	</ul>
 	<div class="tab-content">
-		<div class="tab-pane" id="one">
+		<!-- <div class="tab-pane" id="one">
 			<div class="col-lg-3 col-md-5 info-container full-center-container">
 				<i class="fa fa-line-chart fa-6 full-center centered"></i>
 			</div>
@@ -40,16 +40,16 @@ layout: default
 					<a href="/onfinance" class="blue-button">Have a look!</a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="tab-pane" id="two">
 			<div class="col-lg-3 col-md-5 info-container full-center-container">
 				<i class="fa fa-flask fa-6 full-center centered"></i>
 			</div>
 			<div class="col-lg-9 col-md-7 info-container full-center-container">
 				<div class="full-center centered">
-					Physics is my hobby and I pursue it in my spare time. OnScience is a blog containing interesting physics facts that I came across.
+					Physics is my hobby and I pursue it in my spare time. OnScience is a blog containing interesting science facts and trivia.
 					<br/><br/>
-					<a href="/onfinance" class="blue-button">Have a look!</a>
+					<a href="/onscience" class="blue-button">Have a look!</a>
 				</div>
 			</div>
 		</div>
@@ -59,9 +59,9 @@ layout: default
 			</div>
 			<div class="col-lg-9 col-md-7 info-container full-center-container">
 				<div class="full-center centered">
-					Problem solving is one field that excites most of the coders; I too am excited about this. I have solved various problems <a href="http://www.spoj.com">SPOJ</a> and <a href="http://www.hackerrank.com">HackerRank</a>. You can find the questions and solutions here.
+					Problem solving is one field that excites most of the coders; I too am excited about this. I have solved various problems <a href="http://www.spoj.com">SPOJ</a>, <a href="http://www.hackerrank.com">HackerRank</a> and <a href="http://www.leetcode.com">Leetcode</a>. You can find the questions and solutions here.
 					<br/><br/>
-					<a href="/onfinance" class="blue-button">Have a look!</a>
+					<a href="{% post_url 2015-07-30-competitive-programming %}" class="blue-button">Have a look!</a>
 				</div>
 			</div>
 		</div>
@@ -71,9 +71,9 @@ layout: default
 			</div>
 			<div class="col-lg-9 col-md-7 info-container full-center-container">
 				<div class="full-center centered">
-					Being a computer freak I did a lot of projects that spanned across different technologies. You can find them here with their source for reference.
+					I am passionate about the field of computer from my childhood days. Following my passion in this field, I have done several projects. Click the button below to have a look at its source code as well.
 					<br/><br/>
-					<a href="/onfinance" class="blue-button">Have a look!</a>
+					<a href="{% post_url 2015-07-30-projects %}" class="blue-button">Have a look!</a>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@ layout: default
 
 
 <section id="contact-me" class="container-fluid centered">
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs nav-tabs-right">
 		<li class="active">
 			<a href="#ten" data-toggle="tab">
 				Contact Me
