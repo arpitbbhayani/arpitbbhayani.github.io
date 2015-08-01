@@ -1,5 +1,23 @@
 ---
-layout: default
+layout: section-info
 title: Competitve Programming
 ---
-## Hi
+
+<div id="competitive-programming">
+	<ul class="nav nav-pills">
+	  	<li class="active">
+	  		<a href="#spoj" data-toggle="tab">SPOJ</a>
+	  	</li>
+		<li>
+			<a href="#leetcode" data-toggle="tab">LEETCODE</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+	    <div class="tab-pane active" id="spoj">
+	    	{% include question-set.html s='spoj' %}
+	    </div>
+	    <div class="tab-pane" id="leetcode">
+	    	{% include question-set.html s='leetcode' %}
+	    </div>
+	</div>	
+</div>

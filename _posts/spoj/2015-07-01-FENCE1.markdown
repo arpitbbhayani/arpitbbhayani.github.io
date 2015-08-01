@@ -1,0 +1,29 @@
+---
+layout: post
+title: FENCE1
+author: Arpit Bhayani
+categories: spoj
+comments: true
+---
+
+SPOJ Question Code: [FENCE1](http://www.spoj.com/problems/FENCE1/)
+
+{% highlight cpp %}
+#include <stdio.h>
+#define PI 3.141592653589793238462643383279
+int main ( int argc , char * argv[] ) {
+
+	int l;
+	scanf("%d" , &l);
+
+	while ( l != 0 ) {
+
+		printf("%.2llf\n" , ( PI * (long double)(l/PI) * (long double)(l/PI) ) / 2 );
+
+		scanf("%d" , &l);
+	}
+
+	return 0;
+}
+
+{% endhighlight %}

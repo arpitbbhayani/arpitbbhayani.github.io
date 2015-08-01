@@ -1,0 +1,23 @@
+---
+layout: post
+title: JULKA
+author: Arpit Bhayani
+categories: spoj
+comments: true
+---
+
+SPOJ Question Code: [JULKA](http://www.spoj.com/problems/JULKA/)
+
+{% highlight cpp %}
+
+t = 10
+while t :
+ t -= 1
+ x = int( raw_input( ) )
+ y = int( raw_input( ) )
+ z = ( x + y ) / 2
+ print z
+ z = x - z
+ print z 
+
+{% endhighlight %}

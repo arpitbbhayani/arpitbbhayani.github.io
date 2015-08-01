@@ -1,0 +1,27 @@
+---
+layout: post
+title: MINCOUNT
+author: Arpit Bhayani
+categories: spoj
+comments: true
+---
+
+SPOJ Question Code: [MINCOUNT](http://www.spoj.com/problems/MINCOUNT/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+int main( int argc , char * argv[] ) {
+	int t;
+
+	long long int h;
+	scanf("%d" , &t);
+
+	while ( t-- ) {
+		scanf("%lld" , &h);
+		printf("%lld\n" , (h * (h+1) / 6));
+	}
+	return 0;
+}
+
+{% endhighlight %}

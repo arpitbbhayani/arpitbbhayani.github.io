@@ -58,7 +58,7 @@ section {
 #social a:hover,
 #social a:focus,
 #social a:active {
-    color: #EEE;
+    color: #333;
 }
 
 #about-me {
@@ -128,6 +128,12 @@ section {
     color: #555;
 }
 
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:active {
+    background-color: #29B981;
+}
 
 .centered {
     text-align: center;
@@ -205,6 +211,7 @@ section {
     margin-top: 20px;
 
     cursor: pointer;
+    width: 350px;
 }
 
 .small-logo .tag-line {
@@ -212,7 +219,6 @@ section {
 }
 
 .small-logo .name1 {
-    font-weight: bold;
     padding: 6px 0;
     color: #53D1DB;
 }
@@ -262,12 +268,15 @@ section {
 
 #navigation-menu {
     background: #384047;
+        
     border-top: 5px solid #53D1DB;
     margin: 0;
 
     width: 100%;
     display: table;
     vertical-align: middle;
+
+    z-index: 10000;
 
     -webkit-transition:all 0.3s ease;
     -moz-transition:all 0.3s ease;
@@ -277,6 +286,7 @@ section {
 
 #navigation-menu.tiny {
     height:76px;
+    background: #FFF;
 
     position:fixed;
     top:0;

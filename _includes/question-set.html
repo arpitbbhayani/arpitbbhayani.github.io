@@ -1,0 +1,8 @@
+<br/>
+<table class="table">
+{% tablerow question in site.categories[include.s] cols: 4 %}
+<td>
+<a href="{{question.url | prepend: site.baseurl}}" title="Click to view solution for {{question.title}}">{{ question.title }}</a>
+</td>
+{% endtablerow %}
+</table>
