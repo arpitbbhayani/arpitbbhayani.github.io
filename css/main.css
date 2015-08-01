@@ -46,7 +46,8 @@ section {
     
 }
 
-#social a {
+#social a .fa-1x,
+#social a .fa-2x {
     color: #AAA;
 
     -webkit-transition:all 0.3s ease;
@@ -55,10 +56,16 @@ section {
     transition:all 0.3s ease;
 }
 
-#social a:hover,
-#social a:focus,
-#social a:active {
+#social a:hover .fa-1x,
+#social a:focus .fa-1x,
+#social a:active .fa-1x {
     color: #333;
+}
+
+#social a:hover .fa-2x,
+#social a:focus .fa-2x,
+#social a:active .fa-2x {
+    color: #FFF;
 }
 
 #about-me {
@@ -317,6 +324,7 @@ section {
 /********************************/
 
 footer {
+    margin-top: 30px;
     height: 100%;
     background: #384047;
     border-top: 5px solid #53D1DB;

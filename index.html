@@ -10,22 +10,22 @@ type: index
 				<i class="fa fa-line-chart"></i>
 			</a>
 		</li> -->
-		<li>
-			<a href="#two" data-toggle="tab">
-				On Science
-				<i class="fa fa-flask"></i>
-			</a>
-		</li>
-		<li>
+		<li class="active">
 			<a href="#three" data-toggle="tab">
 				Programming
 				<i class="fa fa-terminal"></i>
 			</a>
 		</li>
-		<li class="active">
+		<li>
 			<a href="#four" data-toggle="tab">
 				Projects
 				<i class="fa fa-desktop"></i>
+			</a>
+		</li>
+		<li>
+			<a href="#two" data-toggle="tab">
+				On Science
+				<i class="fa fa-flask"></i>
 			</a>
 		</li>
 	</ul>
@@ -42,39 +42,39 @@ type: index
 				</div>
 			</div>
 		</div> -->
+		<div class="tab-pane active" id="three">
+			<div class="col-lg-3 col-md-5 info-container full-center-container">
+				<i class="fa fa-terminal fa-6 full-center centered"></i>
+			</div>
+			<div class="col-lg-9 col-md-7 info-container full-center-container">
+				<div class="full-center centered">
+					Problem solving is one field that excites me. You can find out all the questions along with their solutions that I have solved on <a href="http://www.spoj.com">SPOJ</a> and <a href="http://www.leetcode.com">Leetcode</a>.
+					<br/><br/>
+					<a href="{% post_url 2015-07-30-competitive-programming %}" class="blue-button">Check out!</a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="four">
+			<div class="col-lg-3 col-md-5 info-container full-center-container">
+				<i class="fa fa-desktop fa-6 full-center centered"></i>
+			</div>
+			<div class="col-lg-9 col-md-7 info-container full-center-container">
+				<div class="full-center centered">
+					There are several projects that I have worked on since I was introduced to this field. The topics vary from Data Mining to Gesture Recognition. You can find all of them along with their source codes here.
+					<br/><br/>
+					<a href="{% post_url 2015-07-30-projects %}" class="blue-button">Have a look!</a>
+				</div>
+			</div>
+		</div>
 		<div class="tab-pane" id="two">
 			<div class="col-lg-3 col-md-5 info-container full-center-container">
 				<i class="fa fa-flask fa-6 full-center centered"></i>
 			</div>
 			<div class="col-lg-9 col-md-7 info-container full-center-container">
 				<div class="full-center centered">
-					Physics is my hobby and I pursue it in my spare time. OnScience is a blog of mine that contains answers to some interesting questions, science facts and trivia.
+					<a href="/onscience">OnScience</a> is my collection of scientific facts and answers to some random questions that pop up in stupid head of mine.
 					<br/><br/>
-					<a href="/onscience" class="blue-button">Dive deep in science!</a>
-				</div>
-			</div>
-		</div>
-		<div class="tab-pane" id="three">
-			<div class="col-lg-3 col-md-5 info-container full-center-container">
-				<i class="fa fa-terminal fa-6 full-center centered"></i>
-			</div>
-			<div class="col-lg-9 col-md-7 info-container full-center-container">
-				<div class="full-center centered">
-					Problem solving is one field that excites most of the coders; I too am excited about this. I have solved various problems <a href="http://www.spoj.com">SPOJ</a>, <a href="http://www.hackerrank.com">HackerRank</a> and <a href="http://www.leetcode.com">Leetcode</a>. You can find the questions and solutions here.
-					<br/><br/>
-					<a href="{% post_url 2015-07-30-competitive-programming %}" class="blue-button">Check out!</a>
-				</div>
-			</div>
-		</div>
-		<div class="tab-pane active" id="four">
-			<div class="col-lg-3 col-md-5 info-container full-center-container">
-				<i class="fa fa-desktop fa-6 full-center centered"></i>
-			</div>
-			<div class="col-lg-9 col-md-7 info-container full-center-container">
-				<div class="full-center centered">
-					I am passionate about the field of computer from my childhood days. Following my passion in this field, I have completed several projects. All the projects mentioned are open source and data can be reused and replicated.
-					<br/><br/>
-					<a href="{% post_url 2015-07-30-projects %}" class="blue-button">Have a look</a>
+					<a href="/onscience" class="blue-button">Dive deep!</a>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@ type: index
 </section>
 
 
-<section id="contact-me" class="container-fluid centered">
+<section id="contact-me" class="container-fluid">
 	<ul class="nav nav-tabs nav-tabs-right">
 		<li class="active">
 			<a href="#ten" data-toggle="tab">
