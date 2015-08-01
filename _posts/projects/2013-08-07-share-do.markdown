@@ -1,0 +1,10 @@
+---
+type: post
+layout: post
+category: project
+author: Arpit Bhayani
+title: Share.Do - Linking social media on an event-action framework
+comments: true
+---
+
+Devised an action-event framework to enable an end user to share on various social websites by triggering an event on one. Targeted for Facebook, Twitter and Instagram; but can be easily extended to various others social media.
