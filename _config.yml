@@ -11,7 +11,7 @@ permalink: /:title
 
 share_image: "/img/logo/codeville_icon.png"
 keywords: "Arpit Bhayani"
-description: "Blog"
+description: "Competitive programming, projects and science."
 
 paginate: 5
 paginate_path: "/articles/page:num/"

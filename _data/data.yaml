@@ -1,6 +1,0 @@
-navbar:
-  mains:
-    - name: 'On Finance'
-      id: 'onfinance'
-    - name: 'Projects'
-      id: 'projects'
