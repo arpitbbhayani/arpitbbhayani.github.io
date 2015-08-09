@@ -1,10 +1,10 @@
 ---
 layout: section-info
-title: Projects
+title: Blog
 ---
 
-<div id="projects">
-{% for p in site.categories.project %}
+<div id="blog">
+{% for p in site.categories.blog %}
 <article>
     <div class="article-header">
           <div class="article-title">

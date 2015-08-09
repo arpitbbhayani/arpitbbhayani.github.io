@@ -9,11 +9,13 @@ body {
 }
 
 h1 {
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 h2, h3 {
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #B6B6B6;
 }
 

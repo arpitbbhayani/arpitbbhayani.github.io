@@ -1,6 +1,8 @@
 name: Arpit Bhayani | Programmer | Coder | Problem Solver
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
+gems:
+  - jemoji
 
 url: http://arpitbbhayani.github.io/
 baseurl: ""
