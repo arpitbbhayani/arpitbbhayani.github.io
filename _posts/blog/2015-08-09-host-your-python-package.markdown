@@ -69,7 +69,6 @@ source_dir/                 # the source directory
 |-- my_python_package       # your package
 |   |-- __init__.py
 |   `-- FILES ....          # your package files
-|-- MANIFEST
 |-- README.md
 |-- setup.cfg
 `-- setup.py
