@@ -5,3 +5,82 @@
 .white {
     color: #FFF !important;
 }
+
+/*************************/
+/*           Logo        */
+/*************************/
+
+.tag-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #737C7F;
+}
+
+.logo {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 64px;
+    padding: 10px 0;
+
+    cursor: pointer;
+}
+
+.logo .tag-line {
+    font-size: 32px;
+}
+
+.logo .icon {
+    position: relative;
+    color: #EEE;
+    top: -15px;
+    font-weight: normal;
+}
+
+.logo .name1 {
+    padding: 10px 0;
+    color: #53D1DB;
+}
+
+.logo .name2 {
+    padding: 20px 20px;
+
+    color: #EEE;
+    background-color: #1c242a;
+    -webkit-border-top-right-radius: 15px;
+       -moz-border-radius-topright: 15px;
+            border-top-right-radius: 15px;
+    -webkit-border-top-left-radius: 15px;
+       -moz-border-radius-topleft: 15px;
+            border-top-left-radius: 15px;
+}
+
+.small-logo {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+
+    cursor: pointer;
+    width: 350px;
+}
+
+.small-logo .tag-line {
+    font-size: 16px;
+}
+
+.small-logo .name1 {
+    padding: 6px 0;
+    color: #EEE;
+}
+
+.small-logo .name2 {
+    padding: 6px 6px;
+    color: #161B2D;
+    background-color: #EEE;
+    -webkit-border-top-right-radius: 5px;
+       -moz-border-radius-topright: 5px;
+            border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+       -moz-border-radius-topleft: 5px;
+            border-top-left-radius: 5px;
+}
