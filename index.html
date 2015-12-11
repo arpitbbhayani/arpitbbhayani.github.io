@@ -2,17 +2,84 @@
 layout: default
 ---
 
-<div class="home">
-  <h1 class="page-heading">Posts</h1>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+{% for post in site.posts limit:1 %}
+<article>
+    <div class="ui stackable grid">
+        <div class="eight wide column">
+            <div class="ui segment basic">
+                <div class="ui fluid image">
+                    <div class="ui green ribbon label">
+                        <i class="date icon"></i>{{post.date | date: '%B %d, %Y'}}
+                    </div>
+                    <img src="{{post.img}}">
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column fluid">
+            <div class="ui basic segment">
+                <div class="">
+                {% for category in post.categories %}
+                    <div class="ui blue label">{{category}}</div>
+                {% endfor %}
+                </div>
+                <br/>
+                <div class="article-header">
+                    <a class="ui large header" href="{{post.url}}">{{post.title}}</a>
+                </div>
+                <div class="ui divider"></div>
+                <div class="article-meta">
+                    <span class="date"></span>
+                </div>
+                <div class="article-info">
+                    <div class="description">{{post.excerpt}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endfor %}
+<div class="ui segment">
+    {% for post in site.posts offset:1 limit:5 %}
+    <article>
+        <div class="ui stackable grid">
+            <div class="four wide column">
+                <div class="ui segment basic">
+                    <div class="ui fluid image">
+                        <div class="ui green ribbon label">
+                            <i class="date icon"></i>{{post.date | date: '%B %d, %Y'}}
+                        </div>
+                        <img src="{{post.img}}">
+                    </div>
+                </div>
+            </div>
+            <div class="twelve wide column fluid">
+                <div class="ui basic segment">
+                    <div class="">
+                    {% for category in post.categories %}
+                        <div class="ui blue label">{{category}}</div>
+                    {% endfor %}
+                    </div>
+                    <br/>
+                    <div class="article-header">
+                        <a class="ui large header">{{post.title}}</a>
+                    </div>
+                    <div class="ui divider"></div>
+                    <div class="article-meta">
+                        <span class="date"></span>
+                    </div>
+                    <div class="article-info">
+                        <div class="description">{{post.excerpt}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
     {% endfor %}
-  </ul>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
+
+<div class="ui section hidden divider"></div>
+<div class="ui large header center aligned">
+    <a class="ui very huge button blue">
+        Click here to see all posts
+    </a>
 </div>

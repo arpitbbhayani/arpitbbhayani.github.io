@@ -1,0 +1,25 @@
+<script>
+var index = 0;
+var wordlist = ['a programmer', 'a thinker', 'a physics enthusiast', 'a music lover', 'a maniac', 'a web designer'],
+randomWordInt;
+function changeWord() {
+    randomWordInt = setInterval(randomWord, 3000);
+}
+function randomWord() {
+    index  = index + 1;
+    index = index % wordlist.length;
+    var i = index;
+    var shouldBe = wordlist[i];
+    $('.shouldbe').fadeOut('fast', function(){
+        $('.shouldbe').text(shouldBe);
+    });
+    $('.shouldbe').fadeIn('fast');
+}
+changeWord();
+</script>
+
+<div style="margin-top: 70px; height: 100px;">
+    <div class="ui large header center aligned" style="line-height: 80px; background-color: #00B5AD; color: #FFF;">
+        I am <span class="shouldbe">programmer</span>
+    </div>
+</div>
