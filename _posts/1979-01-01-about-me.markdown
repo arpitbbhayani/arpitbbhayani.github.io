@@ -1,9 +1,8 @@
 ---
-title: This is me
+title: About me
 img:    /static/images/myAvatar.png
 layout: default
 type: dummy
-comments: true
 ---
 
 
@@ -26,6 +25,5 @@ comments: true
 <div class="ui center aligned basic segment">
     <a href="https://github.com/arpitbbhayani"><i class="very huge github icon"></i></a>
     <a href="https://facebook.com/itsmearpit"><i class="very huge facebook icon"></i></a>
-    <a href="https://twitter.com/arpit_bhayani"><i class="very huge twitter icon"></i></a>
     <a href="mailto:arpit.b.bhayani@gmail.com"><i class="very huge mail icon"></i></a>
 </div>

@@ -2,3 +2,5 @@ science
 solar-system
 space
 alpha-centauri
+programming
+python
