@@ -1,6 +1,6 @@
 ---
-title: What happens when we put all of our eight planets in a big tank of water?
-img:    http://twanight.org/newTWAN/photos/3002877.jpg
+title: All planets in a tub of water
+img:    http://cx.aos.ask.com/question/aq/700px-394px/the-fastest-moving-planet-in-a-solar-system-is_49935cd4-3418-4951-9ec0-ad6d00075caf.jpg
 layout: post
 comments: true
 tags:

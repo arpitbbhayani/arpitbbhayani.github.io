@@ -1,10 +1,15 @@
 ---
 title: This is me
-img:    http://twanight.org/newTWAN/photos/3002877.jpg
-layout: post
+img:    /static/images/myAvatar.png
+layout: default
 type: dummy
 comments: true
 ---
+
+<div class="ui center aligned basic segment">
+    <img src='/static/images/myAvatar.png'>
+</div>
+
 
 {% include personal.html %}
 
