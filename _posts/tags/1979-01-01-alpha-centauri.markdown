@@ -1,6 +1,6 @@
 ---
 layout:			default
-title:			Posts with tag - alpha-centauri
+title:			All alpha-centauri articles
 category:		tag
 passed-tag:		alpha-centauri
 type:           dummy

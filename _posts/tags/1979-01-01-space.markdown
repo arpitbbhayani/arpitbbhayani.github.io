@@ -1,6 +1,6 @@
 ---
 layout:			default
-title:			Posts with tag - space
+title:			All space articles
 category:		tag
 passed-tag:		space
 type:           dummy

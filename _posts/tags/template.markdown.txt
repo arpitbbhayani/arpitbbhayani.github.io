@@ -1,6 +1,6 @@
 ---
 layout:			default
-title:			Posts with tag - ;TAG;
+title:			All ;TAG; articles
 category:		tag
 passed-tag:		;TAG;
 type:           dummy

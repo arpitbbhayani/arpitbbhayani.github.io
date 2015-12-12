@@ -1,6 +1,6 @@
 ---
 layout:			default
-title:			Posts with tag - solar-system
+title:			All solar-system articles
 category:		tag
 passed-tag:		solar-system
 type:           dummy

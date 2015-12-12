@@ -1,6 +1,6 @@
 ---
 layout:			default
-title:			Posts with tag - science
+title:			All science articles
 category:		tag
 passed-tag:		science
 type:           dummy
