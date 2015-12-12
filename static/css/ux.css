@@ -24,79 +24,30 @@ article:hover {
 }
 
 
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("/static/images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
 /*** Parallax ***/
 /*
  * Text effects
  */
 
- @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Just+Me+Again+Down+Here);
+/* @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Just+Me+Again+Down+Here);
  .shouldbe {border-bottom:2px solid white;font-family: 'Just Me Again Down Here', cursive; padding:0 10px; font-size:24px;}
-
+*/
 /*** ***/
-
-/* ============================================================
-  PRIMARY STRUCTURE
-============================================================ */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-/* ============================================================
-  SECTIONS
-============================================================ */
-section.module:last-child {
-  margin-bottom: 0;
-}
-section.module h2 {
-  margin-bottom: 40px;
-  font-family: "Roboto Slab", serif;
-  font-size: 30px;
-}
-section.module p {
-  margin-bottom: 40px;
-  font-size: 16px;
-  font-weight: 300;
-}
-section.module p:last-child {
-  margin-bottom: 0;
-}
-section.module.content {
-  padding: 40px 0;
-}
-section.module.parallax {
-  height: 600px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-section.module.parallax h1 {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 48px;
-  line-height: 600px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-@media all and (min-width: 600px) {
-  section.module h2 {
-    font-size: 42px;
-  }
-  section.module p {
-    font-size: 20px;
-  }
-  section.module.parallax h1 {
-    font-size: 96px;
-  }
-}
-@media all and (min-width: 960px) {
-  section.module.parallax h1 {
-    font-size: 160px;
-  }
-}
-
 
 /*************************/
 /*           Logo        */

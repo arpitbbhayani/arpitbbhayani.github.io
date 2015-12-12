@@ -4,8 +4,8 @@ img:    http://twanight.org/newTWAN/photos/3002877.jpg
 layout: post
 comments: true
 tags:
- - Science
- - Alpha Centauri
+ - science
+ - alpha-centauri
 ---
 
 You see the same sun rise and set every day. One day you get so bored of it that you decide that it's all over and I am gonna go to some other star and see it rise and set. Can you do that?

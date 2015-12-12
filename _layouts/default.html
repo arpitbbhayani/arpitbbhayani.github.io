@@ -4,11 +4,14 @@
     <body>
         {% include header.html %}
         {% if page.url == '/' %}
-            {% include personal.html %}
+
         {% endif %}
 
         {{content}}
 
+        <a href="#" class="back-to-top">
+            TOP
+        </a>
         {% include footer.html %}
     </body>
 </html>

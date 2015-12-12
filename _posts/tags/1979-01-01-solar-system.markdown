@@ -1,12 +1,12 @@
 ---
 layout:			default
-title:			"All scripts with tag"
+title:			Posts with tag - solar-system
 category:		tag
-passed-tag:		Space
+passed-tag:		solar-system
+type:           dummy
 ---
-This is a plain except
+Tag: {{page.passed-tag}}
 
-<div class="ui basic segment" style="margin-top: 100px;">
 {% for post in site.tags[page.passed-tag] %}
 <article>
     <div class="ui stackable grid">
@@ -24,7 +24,7 @@ This is a plain except
             <div class="ui basic segment">
                 <div class="">
                 {% for tag in post.tags %}
-                    <div class="ui blue label">{{tag}}</div>
+                    <a href='/tag/{{tag}}' class="ui blue label">{{tag}}</a>
                 {% endfor %}
                 </div>
                 <br/>
@@ -43,4 +43,3 @@ This is a plain except
     </div>
 </article>
 {% endfor %}
-</div>

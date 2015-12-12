@@ -1,0 +1,8 @@
+---
+layout:			default
+title:			"All scripts with tag"
+type:           dummy
+---
+This is a plain excerpt and of no use
+
+{% for tag in site.tags %}{{tag[0]}}<br/>{% endfor %}
