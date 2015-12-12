@@ -9,6 +9,8 @@ type: dummy
 <div class="ui basic segment">
 {% for post in site.posts %}
 {% if post.type != 'dummy' %}
+{% if post.tags contains 'competitive-programming' %}
+{% else %}
     <article>
         <div class="ui stackable grid">
             <div class="one wide column"></div>
@@ -28,6 +30,7 @@ type: dummy
             </div>
         </div>
     </article>
+{% endif %}
 {% endif %}
 {% endfor %}
 </div>
