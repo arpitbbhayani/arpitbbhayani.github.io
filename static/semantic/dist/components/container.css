@@ -42,54 +42,54 @@
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .ui.container {
-    width: 723px;
+    width: 719px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   .ui.grid.container {
-    width: calc( 723px  +  2rem ) !important;
+    width: calc( 719px  +  2rem ) !important;
   }
   .ui.relaxed.grid.container {
-    width: calc( 723px  +  3rem ) !important;
+    width: calc( 719px  +  3rem ) !important;
   }
   .ui.very.relaxed.grid.container {
-    width: calc( 723px  +  5rem ) !important;
+    width: calc( 719px  +  5rem ) !important;
   }
 }
 
 /* Small Monitor */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .ui.container {
-    width: 933px;
+    width: 927px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   .ui.grid.container {
-    width: calc( 933px  +  2rem ) !important;
+    width: calc( 927px  +  2rem ) !important;
   }
   .ui.relaxed.grid.container {
-    width: calc( 933px  +  3rem ) !important;
+    width: calc( 927px  +  3rem ) !important;
   }
   .ui.very.relaxed.grid.container {
-    width: calc( 933px  +  5rem ) !important;
+    width: calc( 927px  +  5rem ) !important;
   }
 }
 
 /* Large Monitor */
 @media only screen and (min-width: 1200px) {
   .ui.container {
-    width: 1127px;
+    width: 1119px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   .ui.grid.container {
-    width: calc( 1127px  +  2rem ) !important;
+    width: calc( 1119px  +  2rem ) !important;
   }
   .ui.relaxed.grid.container {
-    width: calc( 1127px  +  3rem ) !important;
+    width: calc( 1119px  +  3rem ) !important;
   }
   .ui.very.relaxed.grid.container {
-    width: calc( 1127px  +  5rem ) !important;
+    width: calc( 1119px  +  5rem ) !important;
   }
 }
 
@@ -101,12 +101,12 @@
 
 /* Text Container */
 .ui.text.container {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   max-width: 700px !important;
   line-height: 1.5;
 }
 .ui.text.container {
-  font-size: 1.14285714rem;
+  font-size: 1.125rem;
 }
 
 /* Fluid */

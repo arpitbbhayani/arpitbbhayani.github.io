@@ -31,8 +31,8 @@
   margin: 1em 0em;
   background: '';
   box-shadow: none;
-  line-height: 1.14285714em;
-  border-radius: 0.28571429rem;
+  line-height: 1.125em;
+  border-radius: 0.25rem;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
 
@@ -79,7 +79,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0em 0em;
-  padding: 1.14285714em 2em;
+  padding: 1.125em 2em;
   background: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
   box-shadow: none;
@@ -100,8 +100,8 @@
   right: 0%;
   border: medium none;
   background-color: #FFFFFF;
-  width: 1.14285714em;
-  height: 1.14285714em;
+  width: 1.125em;
+  height: 1.125em;
   border-style: solid;
   border-color: rgba(34, 36, 38, 0.15);
   border-width: 0px 1px 1px 0px;
@@ -114,12 +114,12 @@
 /* First Step */
 .ui.steps .step:first-child {
   padding-left: 2em;
-  border-radius: 0.28571429rem 0em 0em 0.28571429rem;
+  border-radius: 0.25rem 0em 0em 0.25rem;
 }
 
 /* Last Step */
 .ui.steps .step:last-child {
-  border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+  border-radius: 0em 0.25rem 0.25rem 0em;
 }
 .ui.steps .step:last-child {
   border-right: none;
@@ -128,7 +128,7 @@
 
 /* Only Step */
 .ui.steps .step:only-child {
-  border-radius: 0.28571429rem;
+  border-radius: 0.25rem;
 }
 
 
@@ -139,8 +139,8 @@
 
 /* Title */
 .ui.steps .step .title {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 1.14285714em;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1.125em;
   font-weight: bold;
 }
 .ui.steps .step > .title {
@@ -150,7 +150,7 @@
 /* Description */
 .ui.steps .step .description {
   font-weight: normal;
-  font-size: 0.92857143em;
+  font-size: 0.9375em;
   color: rgba(0, 0, 0, 0.87);
 }
 .ui.steps .step > .description {
@@ -251,20 +251,20 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   border-radius: 0em;
-  padding: 1.14285714em 2em;
+  padding: 1.125em 2em;
   border-right: none;
   border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
 .ui.vertical.steps .step:first-child {
-  padding: 1.14285714em 2em;
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  padding: 1.125em 2em;
+  border-radius: 0.25rem 0.25rem 0em 0em;
 }
 .ui.vertical.steps .step:last-child {
   border-bottom: none;
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  border-radius: 0em 0em 0.25rem 0.25rem;
 }
 .ui.vertical.steps .step:only-child {
-  border-radius: 0.28571429rem;
+  border-radius: 0.25rem;
 }
 
 /* Arrow */
@@ -316,14 +316,14 @@
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0em;
-    padding: 1.14285714em 2em;
+    padding: 1.125em 2em;
   }
   .ui.steps .step:first-child {
-    padding: 1.14285714em 2em;
-    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+    padding: 1.125em 2em;
+    border-radius: 0.25rem 0.25rem 0em 0em;
   }
   .ui.steps .step:last-child {
-    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+    border-radius: 0em 0em 0.25rem 0.25rem;
   }
   
 /* Arrow */
@@ -462,14 +462,14 @@
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0em;
-    padding: 1.14285714em 2em;
+    padding: 1.125em 2em;
   }
   .ui[class*="tablet stackable"].steps .step:first-child {
-    padding: 1.14285714em 2em;
-    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+    padding: 1.125em 2em;
+    border-radius: 0.25rem 0.25rem 0em 0em;
   }
   .ui[class*="tablet stackable"].steps .step:last-child {
-    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+    border-radius: 0em 0em 0.25rem 0.25rem;
   }
   
 /* Arrow */
@@ -513,25 +513,25 @@
   width: calc(100% +  2px ) !important;
   margin: 0em -1px -1px;
   max-width: calc(100% +  2px );
-  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  border-radius: 0.25rem 0.25rem 0em 0em;
 }
 .ui.attached.steps .step:first-child {
-  border-radius: 0.28571429rem 0em 0em 0em;
+  border-radius: 0.25rem 0em 0em 0em;
 }
 .ui.attached.steps .step:last-child {
-  border-radius: 0em 0.28571429rem 0em 0em;
+  border-radius: 0em 0.25rem 0em 0em;
 }
 
 /* Bottom */
 .ui.bottom.attached.steps {
   margin: -1px -1px 0em;
-  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  border-radius: 0em 0em 0.25rem 0.25rem;
 }
 .ui.bottom.attached.steps .step:first-child {
-  border-radius: 0em 0em 0em 0.28571429rem;
+  border-radius: 0em 0em 0em 0.25rem;
 }
 .ui.bottom.attached.steps .step:last-child {
-  border-radius: 0em 0em 0.28571429rem 0em;
+  border-radius: 0em 0em 0.25rem 0em;
 }
 
 /*-------------------
@@ -591,7 +591,7 @@
 
 .ui.small.step,
 .ui.small.steps .step {
-  font-size: 0.92857143rem;
+  font-size: 0.9375rem;
 }
 .ui.step,
 .ui.steps .step {
@@ -599,7 +599,7 @@
 }
 .ui.large.step,
 .ui.large.steps .step {
-  font-size: 1.14285714rem;
+  font-size: 1.125rem;
 }
 
 

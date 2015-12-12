@@ -33,12 +33,12 @@
   font-weight: normal;
   font-style: normal;
   color: rgba(0, 0, 0, 0.87);
-  border-radius: 0.28571429rem;
+  border-radius: 0.25rem;
   box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.08);
 }
 .ui.popup > .header {
   padding: 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1.125em;
   line-height: 1.2;
   font-weight: bold;
@@ -345,22 +345,22 @@
 ---------------*/
 
 .ui.mini.popup {
-  font-size: 0.71428571rem;
+  font-size: 0.6875rem;
 }
 .ui.tiny.popup {
-  font-size: 0.85714286rem;
+  font-size: 0.875rem;
 }
 .ui.small.popup {
-  font-size: 0.92857143rem;
+  font-size: 0.9375rem;
 }
 .ui.popup {
   font-size: 1rem;
 }
 .ui.large.popup {
-  font-size: 1.14285714rem;
+  font-size: 1.125rem;
 }
 .ui.huge.popup {
-  font-size: 1.42857143rem;
+  font-size: 1.4375rem;
 }
 
 

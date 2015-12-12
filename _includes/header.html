@@ -1,4 +1,4 @@
-<div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0;">
+<div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
     <a href='/' class="item">
         <div class="small-logo">
             <span class="name1">
@@ -11,17 +11,12 @@
         </div>
     </a>
     <div class="right menu item">
-        <a class="white item" href="{% post_url 1979-01-01-all-posts %}">
-            Archives
-        </a>
-        <a class="white item" href="/works">
-            Works
-        </a>
         <a class="white item" href="/competitive-programming">
-            Competitive Programming
+            Programming
         </a>
-        <a class="white item" href="/competitive-programming">
-            Who am I?
+        <a class="white item" href="{% post_url 1979-01-01-about-me %}">
+            <i class="user icon"></i>
+            About me
         </a>
     </div>
 </div>

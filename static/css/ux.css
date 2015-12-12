@@ -1,3 +1,10 @@
+body {
+    background-color: #161b2d;
+}
+footer {
+    background: #161b2d;
+}
+
 .redBack {
     background-color: #DB2828 !important;
 }
@@ -6,6 +13,18 @@
     color: #FFF !important;
 }
 
+.article-title {
+    font-size: 42px;
+    line-height: 50px;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+.article-content {
+    font-size: 18px;
+    line-height: 20px;
+}
 
 a.back-to-top {
 	display: none;
@@ -23,13 +42,37 @@ a.back-to-top {
 }
 
 /*** Parallax ***/
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 400px;
+  margin-top: -25px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #162B2D;
+}
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 /*
  * Text effects
  */
 
-/* @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Just+Me+Again+Down+Here);
- .shouldbe {border-bottom:2px solid white;font-family: 'Just Me Again Down Here', cursive; padding:0 10px; font-size:24px;}
-*/
 /*** ***/
 
 /*************************/

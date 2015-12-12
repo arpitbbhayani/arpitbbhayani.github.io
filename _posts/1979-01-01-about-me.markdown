@@ -1,0 +1,9 @@
+---
+title: This is me
+img:    http://twanight.org/newTWAN/photos/3002877.jpg
+layout: post
+type: dummy
+comments: true
+---
+
+{% include personal.html %}

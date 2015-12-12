@@ -390,17 +390,17 @@ i.inverted.circular.black.icon {
 i.mini.icon,
 i.mini.icons {
   line-height: 1;
-  font-size: 0.71428571rem;
+  font-size: 0.6875rem;
 }
 i.tiny.icon,
 i.tiny.icons {
   line-height: 1;
-  font-size: 0.85714286rem;
+  font-size: 0.875rem;
 }
 i.small.icon,
 i.small.icons {
   line-height: 1;
-  font-size: 0.92857143em;
+  font-size: 0.9375em;
 }
 i.icon,
 i.icons {
