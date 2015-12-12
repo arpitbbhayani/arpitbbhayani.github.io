@@ -18,8 +18,8 @@ layout: default
         <div class="eight wide column fluid">
             <div class="ui basic segment">
                 <div class="">
-                {% for category in post.categories %}
-                    <div class="ui blue label">{{category}}</div>
+                {% for tag in post.tags %}
+                    <div class="ui blue label">{{tag}}</div>
                 {% endfor %}
                 </div>
                 <br/>
@@ -38,7 +38,7 @@ layout: default
     </div>
 </article>
 {% endfor %}
-<div class="ui segment">
+<div class="ui basic segment">
     {% for post in site.posts offset:1 limit:5 %}
     <article>
         <div class="ui stackable grid">
@@ -55,13 +55,13 @@ layout: default
             <div class="twelve wide column fluid">
                 <div class="ui basic segment">
                     <div class="">
-                    {% for category in post.categories %}
-                        <div class="ui blue label">{{category}}</div>
+                    {% for tag in post.tags %}
+                        <div class="ui blue label">{{tag}}</div>
                     {% endfor %}
                     </div>
                     <br/>
                     <div class="article-header">
-                        <a class="ui large header">{{post.title}}</a>
+                        <a href="{{post.url}}" class="ui large header">{{post.title}}</a>
                     </div>
                     <div class="ui divider"></div>
                     <div class="article-meta">

@@ -17,6 +17,8 @@ url: "https://arpitbbhayani.github.io" # the base hostname & protocol for your s
 twitter_username: arpit_bhayani
 github_username:  arpitbbhayani
 
+permalink: /:categories/:title
+
 # Build settings
 markdown: kramdown
 

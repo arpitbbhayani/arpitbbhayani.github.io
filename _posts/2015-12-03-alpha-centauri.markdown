@@ -2,9 +2,10 @@
 title: Can I go to Alpha Centauri in my lifetime?
 img:    http://twanight.org/newTWAN/photos/3002877.jpg
 layout: post
-type: post
-category: post
 comments: true
+tags:
+ - Science
+ - Alpha Centauri
 ---
 
 You see the same sun rise and set every day. One day you get so bored of it that you decide that it's all over and I am gonna go to some other star and see it rise and set. Can you do that?

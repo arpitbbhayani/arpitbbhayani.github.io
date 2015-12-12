@@ -2,9 +2,11 @@
 title: What happens when we put all of our eight planets in a big tank of water?
 img:    http://twanight.org/newTWAN/photos/3002877.jpg
 layout: post
-type: post
-category: post
 comments: true
+tags:
+ - Science
+ - Planets
+ - Space
 ---
 
 Suppose we have a very big tank, big enough to contain all eight planets of our solar system) full of water. What happens when we drop all eight planets into this tank?
