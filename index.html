@@ -16,7 +16,7 @@ layout: default
             </div>
         </div>
         <div class="eight wide column fluid">
-            <div class="ui basic segment">
+            <div class="ui basic segment middle aligned">
                 <div class="">
                 {% for tag in post.tags %}
                     <a href='/tag/{{tag}}' class="ui blue label">{{tag}}</a>
@@ -24,14 +24,11 @@ layout: default
                 </div>
                 <br/>
                 <div class="article-header">
-                    <a class="ui large header" href="{{post.url}}">{{post.title}}</a>
+                    <a class="ui very huge header" href="{{post.url}}">{{post.title}}</a>
                 </div>
                 <div class="ui divider"></div>
-                <div class="article-meta">
-                    <span class="date"></span>
-                </div>
                 <div class="article-info">
-                    <div class="description">{{post.excerpt}}</div>
+                    <div class="">{{post.excerpt}}</div>
                 </div>
             </div>
         </div>
@@ -65,9 +62,6 @@ layout: default
                             <a href="{{post.url}}" class="ui large header">{{post.title}}</a>
                         </div>
                         <div class="ui divider"></div>
-                        <div class="article-meta">
-                            <span class="date"></span>
-                        </div>
                         <div class="article-info">
                             <div class="description">{{post.excerpt}}</div>
                         </div>

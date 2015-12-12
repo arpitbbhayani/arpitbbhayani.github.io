@@ -1,26 +1,9 @@
-article:hover {
-    background-color: #F8F8F8;
-}
-
 .redBack {
     background-color: #DB2828 !important;
 }
 
 .white {
     color: #FFF !important;
-}
-
-.lead img {
-    margin: 0 0;
-   position: relative;
-   width: 60%; /* for IE 6 */
-}
-
-.lead .lead-content {
-   position: absolute;
-   top: 200px;
-   left: 0;
-   width: 100%;
 }
 
 

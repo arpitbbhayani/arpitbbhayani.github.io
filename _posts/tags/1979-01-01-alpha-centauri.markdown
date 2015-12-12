@@ -5,7 +5,6 @@ category:		tag
 passed-tag:		alpha-centauri
 type:           dummy
 ---
-Tag: {{page.passed-tag}}
 
 {% for post in site.tags[page.passed-tag] %}
 <article>
