@@ -1,0 +1,38 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for GCD2
+type: dummy
+---
+
+Following is the solution for Spoj Question: [GCD2](http://www.spoj.com/problems/GCD2/)
+
+{% highlight cpp %}
+####
+#	For python3
+####
+
+def gcd( a , b ):
+	if b == 0:
+		return a
+	else:
+		return gcd ( b , a % b )
+
+t = int(input())
+
+while t != 0:
+
+	s = input()
+
+	a , b = ( int(x) for x in s.split() )
+
+	c = gcd(a,b)
+	print(c)
+
+	t = t - 1
+
+{% endhighlight %}

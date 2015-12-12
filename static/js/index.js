@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $('.menu .item').tab();
+
     var amountScrolled = 30;
 
     $(window).scroll(function() {

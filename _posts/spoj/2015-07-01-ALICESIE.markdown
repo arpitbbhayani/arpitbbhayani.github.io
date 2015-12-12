@@ -1,0 +1,33 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for ALICESIE
+type: dummy
+---
+
+Following is the solution for Spoj Question: [ALICESIE](http://www.spoj.com/problems/ALICESIE/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+int main( int argc , char * argv[] ) {
+
+	int t;
+	scanf("%d" , &t);
+
+	while ( t-- ) {
+
+		int n;
+		scanf("%d" , &n);
+		printf("%d\n" , (n+1)/2);
+
+	}
+
+	return 0;
+}
+
+{% endhighlight %}

@@ -12,15 +12,15 @@ li {
 code, samp, kbd {
 	font-family: "Courier New", Courier, monospace, sans-serif;
 	text-align: left;
-	color: #555;
+	color: #333;
 }
 
 pre code {
-	line-height: 1.6em;
-	font-size: 14px;
+	line-height: 1.4em;
+	font-size: 15px;
 }
 pre {
-    background-color: #F0F0F0;
+    background-color: #EEE;
 	padding: 0.5em 0.5em 0.5em 0.5em;
 	border-left: 11px solid #ccc;
 	margin: 1.7em 0 1.7em 0.3em;
@@ -54,6 +54,8 @@ pre {
     position: absolute;
     top: 200px;
     width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
 .article-content {

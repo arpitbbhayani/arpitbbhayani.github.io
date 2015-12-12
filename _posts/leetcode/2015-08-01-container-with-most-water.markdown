@@ -1,0 +1,41 @@
+---
+categories: leetcode
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Leetcode solution for container-with-most-water
+type: dummy
+---
+
+Following is the solution for Leetcode Question: [container-with-most-water](https://leetcode.com/problems/container-with-most-water/)
+
+{% highlight cpp %}
+class Solution {
+public:
+    int maxArea(vector<int> &height) {
+        
+        int result = INT_MIN;
+        
+        int low = 0 , high = height.size()-1;
+        
+        while ( low < high ) {
+            
+            int area = (high-low) * min(height[high] , height[low]);
+            
+            if( height[low] < height[high] ) {
+                low++;
+            }
+            else {
+                high--;
+            }
+            
+            result = max(result,area);
+            
+        }
+        
+        return result;
+    }
+};
+{% endhighlight %}

@@ -1,0 +1,34 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for TEST
+type: dummy
+---
+
+Following is the solution for Spoj Question: [TEST](http://www.spoj.com/problems/TEST/)
+
+{% highlight cpp %}
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+int main( int argc, char * argv[] ) {
+	int x;
+	while(1) {
+		scanf("%d", &x);
+		if( x == 42 ) {
+			break;
+		}
+		else {
+			printf("%d\n", x);
+		}
+	}
+	return 0;
+}
+
+{% endhighlight %}

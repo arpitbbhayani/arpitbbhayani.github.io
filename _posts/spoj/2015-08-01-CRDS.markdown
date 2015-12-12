@@ -1,0 +1,31 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for CRDS
+type: dummy
+---
+
+Following is the solution for Spoj Question: [CRDS](http://www.spoj.com/problems/CRDS/)
+
+{% highlight cpp %}
+#include <stdio.h>
+#define MOD 1000007
+int main ( void ) {
+
+	int t;
+	scanf("%d" , &t);
+	while ( t-- ) {
+		long long int n;
+		scanf("%lld" , &n);
+		long long int ans = ((n*(3*n+1))/2);
+		ans %= MOD;
+		printf("%lld\n" , ans);
+	}
+	return 0;
+}
+
+{% endhighlight %}

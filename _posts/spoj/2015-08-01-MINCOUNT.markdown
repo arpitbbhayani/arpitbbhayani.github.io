@@ -1,0 +1,30 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for MINCOUNT
+type: dummy
+---
+
+Following is the solution for Spoj Question: [MINCOUNT](http://www.spoj.com/problems/MINCOUNT/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+int main( int argc , char * argv[] ) {
+	int t;
+
+	long long int h;
+	scanf("%d" , &t);
+
+	while ( t-- ) {
+		scanf("%lld" , &h);
+		printf("%lld\n" , (h * (h+1) / 6));
+	}
+	return 0;
+}
+
+{% endhighlight %}

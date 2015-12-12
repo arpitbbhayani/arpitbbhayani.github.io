@@ -1,0 +1,33 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for ANARC08H
+type: dummy
+---
+
+Following is the solution for Spoj Question: [ANARC08H](http://www.spoj.com/problems/ANARC08H/)
+
+{% highlight cpp %}
+#include <stdio.h>
+ 
+int jo(int n, int k) {
+	int ans = 0, i;
+	for(i = 2; i <= n; i++) ans = (ans + k) % i;
+	return ans+1;
+}
+ 
+int main() {
+	int n , k;
+	scanf("%d%d" , &n , &k);
+	while ( n != 0 && k != 0 ) {
+		printf("%d %d %d\n", n , k , jo(n, k));
+		scanf("%d%d" , &n , &k);
+	}
+	return 0;
+}
+
+{% endhighlight %}

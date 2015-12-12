@@ -1,0 +1,30 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for WILLITST
+type: dummy
+---
+
+Following is the solution for Spoj Question: [WILLITST](http://www.spoj.com/problems/WILLITST/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+int main( int argc , char * argv[] ) {
+
+	unsigned long long int n;
+	scanf("%lld" , &n);
+
+	if ( (n & (n-1)) == 0)
+		printf("TAK\n");
+	else
+		printf("NIE\n");
+
+	return 0;
+}
+
+{% endhighlight %}

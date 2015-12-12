@@ -1,0 +1,25 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for IWGBS
+type: dummy
+---
+
+Following is the solution for Spoj Question: [IWGBS](http://www.spoj.com/problems/IWGBS/)
+
+{% highlight cpp %}
+N = int (input());
+A = [0,1];
+B = [0,1];
+i = 2;
+while i <= N:
+    a = A[i-1]+B[i-1];
+    A.append(a);
+    B.append(A[i-1]);
+    i = i+1;
+print(A[N]+B[N]);
+{% endhighlight %}

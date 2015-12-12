@@ -4,3 +4,4 @@ space
 alpha-centauri
 programming
 python
+competitive-programming

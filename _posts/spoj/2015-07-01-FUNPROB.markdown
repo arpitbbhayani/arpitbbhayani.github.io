@@ -1,0 +1,36 @@
+---
+categories: spoj
+comments: true
+img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for FUNPROB
+type: dummy
+---
+
+Following is the solution for Spoj Question: [FUNPROB](http://www.spoj.com/problems/FUNPROB/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+int main( int argc , char * argv[] ) {
+
+	int n,m;
+
+	scanf("%d%d",&n,&m);
+
+	while( n != 0 || m != 0 ) {
+
+		if(n>m)
+			printf("0.000000\n");
+		else
+			printf("%0.6lf\n",(double)(m-n+1)/(double)(m+1));
+	
+		scanf("%d%d",&n,&m);
+	}
+
+	return 0;
+}
+
+{% endhighlight %}
