@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     {% include head.html %}
+    {% include google_analytics.html %}
     <body>
         {% include header.html %}
         <br/>
@@ -9,9 +10,7 @@
             {{content}}
         </div>
 
-        <a href="#" class="back-to-top">
-            TOP
-        </a>
+        <a href="#" class="back-to-top"></a>
         {% include footer.html %}
     </body>
 </html>
