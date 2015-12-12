@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for insert-interval
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [insert-interval](https://leetcode.com/problems/insert-interval/)

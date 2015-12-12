@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for search-a-2d-matrix
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [search-a-2d-matrix](https://leetcode.com/problems/search-a-2d-matrix/)

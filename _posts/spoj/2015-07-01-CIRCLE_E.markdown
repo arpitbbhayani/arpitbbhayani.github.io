@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for CIRCLE_E
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [CIRCLE_E](http://www.spoj.com/problems/CIRCLE_E/)

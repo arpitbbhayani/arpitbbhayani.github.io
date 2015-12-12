@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for BEENUMS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [BEENUMS](http://www.spoj.com/problems/BEENUMS/)

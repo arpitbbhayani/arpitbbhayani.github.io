@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for SAMER08F
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [SAMER08F](http://www.spoj.com/problems/SAMER08F/)

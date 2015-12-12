@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for AMR12G
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [AMR12G](http://www.spoj.com/problems/AMR12G/)

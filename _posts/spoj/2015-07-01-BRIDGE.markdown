@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for BRIDGE
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [BRIDGE](http://www.spoj.com/problems/BRIDGE/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for combination-sum
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [combination-sum](https://leetcode.com/problems/combination-sum/)

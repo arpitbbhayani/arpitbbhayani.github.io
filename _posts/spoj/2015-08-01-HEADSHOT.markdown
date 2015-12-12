@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for HEADSHOT
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [HEADSHOT](http://www.spoj.com/problems/HEADSHOT/)

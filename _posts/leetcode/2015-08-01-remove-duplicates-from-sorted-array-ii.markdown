@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for remove-duplicates-from-sorted-array-ii
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [remove-duplicates-from-sorted-array-ii](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)

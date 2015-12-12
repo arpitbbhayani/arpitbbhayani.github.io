@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for SILVER
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [SILVER](http://www.spoj.com/problems/SILVER/)

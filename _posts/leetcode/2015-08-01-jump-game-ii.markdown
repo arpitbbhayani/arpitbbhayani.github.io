@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for jump-game-ii
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [jump-game-ii](https://leetcode.com/problems/jump-game-ii/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for NOVICE62
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [NOVICE62](http://www.spoj.com/problems/NOVICE62/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for longest-common-prefix
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [longest-common-prefix](https://leetcode.com/problems/longest-common-prefix/)

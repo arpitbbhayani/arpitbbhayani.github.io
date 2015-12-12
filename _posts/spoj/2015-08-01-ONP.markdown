@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ONP
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ONP](http://www.spoj.com/problems/ONP/)

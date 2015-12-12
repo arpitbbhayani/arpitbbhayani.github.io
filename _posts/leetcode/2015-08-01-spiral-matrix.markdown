@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for spiral-matrix
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [spiral-matrix](https://leetcode.com/problems/spiral-matrix/)

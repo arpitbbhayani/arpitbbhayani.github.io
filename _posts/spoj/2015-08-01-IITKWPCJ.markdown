@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for IITKWPCJ
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [IITKWPCJ](http://www.spoj.com/problems/IITKWPCJ/)

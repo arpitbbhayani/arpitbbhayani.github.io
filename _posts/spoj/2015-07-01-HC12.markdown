@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for HC12
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [HC12](http://www.spoj.com/problems/HC12/)

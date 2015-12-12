@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for AMSCO1
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [AMSCO1](http://www.spoj.com/problems/AMSCO1/)

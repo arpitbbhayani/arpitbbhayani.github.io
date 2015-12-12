@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for add-binary
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [add-binary](https://leetcode.com/problems/add-binary/)

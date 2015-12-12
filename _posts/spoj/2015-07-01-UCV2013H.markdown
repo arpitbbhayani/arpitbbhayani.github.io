@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for UCV2013H
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [UCV2013H](http://www.spoj.com/problems/UCV2013H/)

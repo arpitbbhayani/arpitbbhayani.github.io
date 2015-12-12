@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for GIRLSNBS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [GIRLSNBS](http://www.spoj.com/problems/GIRLSNBS/)

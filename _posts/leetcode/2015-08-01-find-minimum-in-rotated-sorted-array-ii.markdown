@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for find-minimum-in-rotated-sorted-array-ii
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [find-minimum-in-rotated-sorted-array-ii](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)

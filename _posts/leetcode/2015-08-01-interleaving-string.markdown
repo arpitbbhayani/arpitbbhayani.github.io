@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for interleaving-string
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [interleaving-string](https://leetcode.com/problems/interleaving-string/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for GNY07H
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [GNY07H](http://www.spoj.com/problems/GNY07H/)

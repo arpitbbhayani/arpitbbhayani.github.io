@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for search-for-a-range
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [search-for-a-range](https://leetcode.com/problems/search-for-a-range/)

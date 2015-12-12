@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for SHAHBG
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [SHAHBG](http://www.spoj.com/problems/SHAHBG/)

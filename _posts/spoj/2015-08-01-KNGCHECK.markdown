@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for KNGCHECK
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [KNGCHECK](http://www.spoj.com/problems/KNGCHECK/)

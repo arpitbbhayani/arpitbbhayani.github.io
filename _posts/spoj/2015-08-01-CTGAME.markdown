@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for CTGAME
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [CTGAME](http://www.spoj.com/problems/CTGAME/)

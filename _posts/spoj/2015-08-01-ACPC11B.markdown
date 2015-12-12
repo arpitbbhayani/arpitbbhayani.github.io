@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ACPC11B
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ACPC11B](http://www.spoj.com/problems/ACPC11B/)

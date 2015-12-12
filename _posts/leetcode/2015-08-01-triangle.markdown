@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for triangle
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [triangle](https://leetcode.com/problems/triangle/)

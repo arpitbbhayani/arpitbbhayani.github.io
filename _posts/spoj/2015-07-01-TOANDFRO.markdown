@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for TOANDFRO
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [TOANDFRO](http://www.spoj.com/problems/TOANDFRO/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ENIGMATH
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ENIGMATH](http://www.spoj.com/problems/ENIGMATH/)

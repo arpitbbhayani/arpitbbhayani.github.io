@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for zigzag-conversion
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/)

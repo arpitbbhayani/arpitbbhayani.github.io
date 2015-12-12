@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for maximum-subarray
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [maximum-subarray](https://leetcode.com/problems/maximum-subarray/)

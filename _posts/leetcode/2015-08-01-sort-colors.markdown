@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for sort-colors
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [sort-colors](https://leetcode.com/problems/sort-colors/)

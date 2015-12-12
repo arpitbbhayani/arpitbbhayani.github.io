@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for longest-consecutive-sequence
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [longest-consecutive-sequence](https://leetcode.com/problems/longest-consecutive-sequence/)

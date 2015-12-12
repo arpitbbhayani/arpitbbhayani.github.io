@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ACS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ACS](http://www.spoj.com/problems/ACS/)

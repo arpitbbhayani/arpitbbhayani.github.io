@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ADV04L
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ADV04L](http://www.spoj.com/problems/ADV04L/)

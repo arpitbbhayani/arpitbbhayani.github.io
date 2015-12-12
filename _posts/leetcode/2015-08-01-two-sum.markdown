@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for two-sum
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [two-sum](https://leetcode.com/problems/two-sum/)

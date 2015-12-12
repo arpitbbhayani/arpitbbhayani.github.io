@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for container-with-most-water
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [container-with-most-water](https://leetcode.com/problems/container-with-most-water/)

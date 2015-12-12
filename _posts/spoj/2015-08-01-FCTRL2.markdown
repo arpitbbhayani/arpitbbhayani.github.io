@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for FCTRL2
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [FCTRL2](http://www.spoj.com/problems/FCTRL2/)

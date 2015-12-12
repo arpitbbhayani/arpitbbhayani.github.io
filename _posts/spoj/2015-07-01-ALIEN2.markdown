@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ALIEN2
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ALIEN2](http://www.spoj.com/problems/ALIEN2/)

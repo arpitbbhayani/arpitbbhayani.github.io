@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for GCD2
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [GCD2](http://www.spoj.com/problems/GCD2/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for INVCNT
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [INVCNT](http://www.spoj.com/problems/INVCNT/)

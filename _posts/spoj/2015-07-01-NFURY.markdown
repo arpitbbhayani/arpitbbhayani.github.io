@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for NFURY
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [NFURY](http://www.spoj.com/problems/NFURY/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for PRO
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [PRO](http://www.spoj.com/problems/PRO/)

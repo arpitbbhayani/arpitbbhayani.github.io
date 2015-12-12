@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for search-in-rotated-sorted-array-ii
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [search-in-rotated-sorted-array-ii](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)

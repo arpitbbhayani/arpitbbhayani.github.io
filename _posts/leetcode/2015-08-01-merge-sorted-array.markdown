@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for merge-sorted-array
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [merge-sorted-array](https://leetcode.com/problems/merge-sorted-array/)

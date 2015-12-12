@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for edit-distance
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [edit-distance](https://leetcode.com/problems/edit-distance/)

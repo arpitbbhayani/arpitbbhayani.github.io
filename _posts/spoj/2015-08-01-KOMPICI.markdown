@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for KOMPICI
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [KOMPICI](http://www.spoj.com/problems/KOMPICI/)

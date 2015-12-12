@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for LCPC12E
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [LCPC12E](http://www.spoj.com/problems/LCPC12E/)

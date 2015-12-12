@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for AIBOHP
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [AIBOHP](http://www.spoj.com/problems/AIBOHP/)

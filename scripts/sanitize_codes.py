@@ -1,7 +1,7 @@
 import os
 import yaml
 
-SOURCE_DIR = '/Users/arpitbhayani/arpitbbhayani.github.io/_posts/leetcode'
+SOURCE_DIR = '/Users/arpitbhayani/arpitbbhayani.github.io/_posts/spoj'
 
 files = os.listdir(SOURCE_DIR)
 for f in files:
@@ -17,10 +17,11 @@ for f in files:
 
     d['img'] = 'http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png'
     d['comments'] = True
-    d['categories'] = 'leetcode'
+    d['categories'] = 'spoj'
     d['layout'] = 'post'
-    d['type'] = 'dummy'
     d['tags'] = ['competitive-programming']
+
+    d.pop('type')
 
     yaml_str = yaml.dump(d, default_flow_style=False)
     tokens[1] = '\n' + yaml_str

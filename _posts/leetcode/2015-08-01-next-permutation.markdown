@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for next-permutation
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [next-permutation](https://leetcode.com/problems/next-permutation/)

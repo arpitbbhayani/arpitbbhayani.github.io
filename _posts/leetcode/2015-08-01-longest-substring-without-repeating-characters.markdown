@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for longest-substring-without-repeating-characters
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [longest-substring-without-repeating-characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)

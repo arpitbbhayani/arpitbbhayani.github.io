@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for NSTEPS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [NSTEPS](http://www.spoj.com/problems/NSTEPS/)

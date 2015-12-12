@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for unique-paths-ii
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [unique-paths-ii](https://leetcode.com/problems/unique-paths-ii/)

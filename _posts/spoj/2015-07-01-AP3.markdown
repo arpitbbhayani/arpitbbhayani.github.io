@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for AP3
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [AP3](http://www.spoj.com/problems/AP3/)

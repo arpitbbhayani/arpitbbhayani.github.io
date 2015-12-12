@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for SUBSUMS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [SUBSUMS](http://www.spoj.com/problems/SUBSUMS/)

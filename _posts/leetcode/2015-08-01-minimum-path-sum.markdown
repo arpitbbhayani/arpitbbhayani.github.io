@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for minimum-path-sum
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [minimum-path-sum](https://leetcode.com/problems/minimum-path-sum/)

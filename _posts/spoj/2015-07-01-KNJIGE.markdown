@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for KNJIGE
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [KNJIGE](http://www.spoj.com/problems/KNJIGE/)

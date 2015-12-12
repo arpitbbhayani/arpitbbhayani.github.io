@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for word-search
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [word-search](https://leetcode.com/problems/word-search/)

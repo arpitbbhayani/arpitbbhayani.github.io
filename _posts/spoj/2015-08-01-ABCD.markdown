@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ABCD
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ABCD](http://www.spoj.com/problems/ABCD/)

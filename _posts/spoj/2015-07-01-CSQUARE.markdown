@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for CSQUARE
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [CSQUARE](http://www.spoj.com/problems/CSQUARE/)

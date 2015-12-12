@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for GOODB
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [GOODB](http://www.spoj.com/problems/GOODB/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for subsets-ii
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [subsets-ii](https://leetcode.com/problems/subsets-ii/)

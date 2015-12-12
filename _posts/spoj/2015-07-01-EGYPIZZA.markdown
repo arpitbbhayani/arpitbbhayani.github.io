@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for EGYPIZZA
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [EGYPIZZA](http://www.spoj.com/problems/EGYPIZZA/)

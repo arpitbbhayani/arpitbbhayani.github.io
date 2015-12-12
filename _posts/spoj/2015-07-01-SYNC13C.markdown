@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for SYNC13C
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [SYNC13C](http://www.spoj.com/problems/SYNC13C/)

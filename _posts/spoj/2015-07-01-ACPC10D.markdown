@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ACPC10D
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ACPC10D](http://www.spoj.com/problems/ACPC10D/)

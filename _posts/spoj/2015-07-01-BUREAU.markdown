@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for BUREAU
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [BUREAU](http://www.spoj.com/problems/BUREAU/)

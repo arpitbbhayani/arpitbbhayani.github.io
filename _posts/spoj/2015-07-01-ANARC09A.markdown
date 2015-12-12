@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ANARC09A
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ANARC09A](http://www.spoj.com/problems/ANARC09A/)

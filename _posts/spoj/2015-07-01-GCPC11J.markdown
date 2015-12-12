@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for GCPC11J
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [GCPC11J](http://www.spoj.com/problems/GCPC11J/)

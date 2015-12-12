@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for maximum-product-subarray
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [maximum-product-subarray](https://leetcode.com/problems/maximum-product-subarray/)

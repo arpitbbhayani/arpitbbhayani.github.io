@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for HAP01
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [HAP01](http://www.spoj.com/problems/HAP01/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for NITK06
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [NITK06](http://www.spoj.com/problems/NITK06/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for WPC4F
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [WPC4F](http://www.spoj.com/problems/WPC4F/)

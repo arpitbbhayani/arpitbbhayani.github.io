@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for BOGGLE
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [BOGGLE](http://www.spoj.com/problems/BOGGLE/)

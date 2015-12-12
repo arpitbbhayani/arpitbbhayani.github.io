@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for PT07Z
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [PT07Z](http://www.spoj.com/problems/PT07Z/)

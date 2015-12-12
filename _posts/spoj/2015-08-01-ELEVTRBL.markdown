@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ELEVTRBL
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ELEVTRBL](http://www.spoj.com/problems/ELEVTRBL/)

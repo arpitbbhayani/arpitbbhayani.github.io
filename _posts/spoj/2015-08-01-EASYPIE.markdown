@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for EASYPIE
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [EASYPIE](http://www.spoj.com/problems/EASYPIE/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for set-matrix-zeroes
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [set-matrix-zeroes](https://leetcode.com/problems/set-matrix-zeroes/)

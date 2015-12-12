@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for largest-rectangle-in-histogram
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [largest-rectangle-in-histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)

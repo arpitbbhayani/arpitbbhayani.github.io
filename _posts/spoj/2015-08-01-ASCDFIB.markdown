@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ASCDFIB
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ASCDFIB](http://www.spoj.com/problems/ASCDFIB/)

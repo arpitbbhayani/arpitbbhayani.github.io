@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for construct-binary-tree-from-preorder-and-inorder-traversal
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [construct-binary-tree-from-preorder-and-inorder-traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)

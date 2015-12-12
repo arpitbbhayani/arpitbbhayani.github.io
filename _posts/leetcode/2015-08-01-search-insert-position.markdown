@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for search-insert-position
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [search-insert-position](https://leetcode.com/problems/search-insert-position/)

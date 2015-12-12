@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for pascals-triangle
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [pascals-triangle](https://leetcode.com/problems/pascals-triangle/)

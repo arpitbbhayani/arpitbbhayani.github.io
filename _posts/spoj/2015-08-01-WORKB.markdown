@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for WORKB
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [WORKB](http://www.spoj.com/problems/WORKB/)

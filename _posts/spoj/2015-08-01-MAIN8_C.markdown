@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for MAIN8_C
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [MAIN8_C](http://www.spoj.com/problems/MAIN8_C/)

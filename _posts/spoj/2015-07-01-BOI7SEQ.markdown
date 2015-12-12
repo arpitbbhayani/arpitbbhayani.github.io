@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for BOI7SEQ
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [BOI7SEQ](http://www.spoj.com/problems/BOI7SEQ/)

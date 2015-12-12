@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for CHOCOLA
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [CHOCOLA](http://www.spoj.com/problems/CHOCOLA/)

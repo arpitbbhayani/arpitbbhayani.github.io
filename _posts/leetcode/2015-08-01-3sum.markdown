@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for 3sum
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [3sum](https://leetcode.com/problems/3sum/)

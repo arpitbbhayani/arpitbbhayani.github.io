@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for first-missing-positive
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [first-missing-positive](https://leetcode.com/problems/first-missing-positive/)

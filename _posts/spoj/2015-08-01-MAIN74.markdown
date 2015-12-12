@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for MAIN74
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [MAIN74](http://www.spoj.com/problems/MAIN74/)

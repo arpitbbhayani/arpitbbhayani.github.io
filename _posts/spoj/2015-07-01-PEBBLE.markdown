@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for PEBBLE
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [PEBBLE](http://www.spoj.com/problems/PEBBLE/)

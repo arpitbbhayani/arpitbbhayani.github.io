@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ADDREV
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ADDREV](http://www.spoj.com/problems/ADDREV/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for PRATA
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [PRATA](http://www.spoj.com/problems/PRATA/)

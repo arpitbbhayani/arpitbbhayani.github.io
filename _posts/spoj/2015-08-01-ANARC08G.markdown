@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ANARC08G
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ANARC08G](http://www.spoj.com/problems/ANARC08G/)

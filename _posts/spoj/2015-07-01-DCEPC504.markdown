@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for DCEPC504
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [DCEPC504](http://www.spoj.com/problems/DCEPC504/)

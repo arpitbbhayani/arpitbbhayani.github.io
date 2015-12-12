@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for ROHAAN
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [ROHAAN](http://www.spoj.com/problems/ROHAAN/)

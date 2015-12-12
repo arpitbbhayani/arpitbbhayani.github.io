@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for AFS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [AFS](http://www.spoj.com/problems/AFS/)

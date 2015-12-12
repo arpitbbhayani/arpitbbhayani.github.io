@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for maximal-rectangle
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [maximal-rectangle](https://leetcode.com/problems/maximal-rectangle/)

@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Leetcode solution for plus-one
-type: dummy
 ---
 
 Following is the solution for Leetcode Question: [plus-one](https://leetcode.com/problems/plus-one/)

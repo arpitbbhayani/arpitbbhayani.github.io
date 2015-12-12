@@ -6,7 +6,6 @@ layout: post
 tags:
 - competitive-programming
 title: Spoj solution for EIGHTS
-type: dummy
 ---
 
 Following is the solution for Spoj Question: [EIGHTS](http://www.spoj.com/problems/EIGHTS/)
