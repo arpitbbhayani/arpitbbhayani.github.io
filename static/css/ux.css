@@ -5,6 +5,14 @@ footer {
     background: #161b2d;
 }
 
+a.white {
+    border-bottom: 3px solid #161b2d;
+}
+
+a.white:hover {
+    border-bottom: 3px solid #FFF;
+}
+
 li {
     line-height: 1.4285em;
 }
