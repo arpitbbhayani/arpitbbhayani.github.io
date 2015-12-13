@@ -10,8 +10,8 @@ title: Arpit's Blog
 email: arpit.b.bhayani@gmail.com
 description: I am a developer, designer, thinker, analyzer, physics enthusiast and data-scientist. This is the place where I put my random throughts and my imaginations into words.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://arpitbbhayani.github.io" # the base hostname & protocol for your site
-img: https://arpitbbhayani.github.io/static/images/myAvatar.png
+url: "http://arpitbbhayani.github.io" # the base hostname & protocol for your site
+img: http://arpitbbhayani.github.io/static/images/myAvatar.png
 
 permalink: /:categories/:title.html
 
