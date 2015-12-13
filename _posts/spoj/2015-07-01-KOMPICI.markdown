@@ -1,7 +1,7 @@
 ---
 categories: spoj
 comments: true
-img: http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-6.png
+img: http://listogre.com/wp-content/uploads/2014/11/binary-code-typography-hd-wallpaper-1920x1080-2619-672x372.png
 layout: post
 tags:
 - competitive-programming

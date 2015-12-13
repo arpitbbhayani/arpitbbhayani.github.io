@@ -1,6 +1,6 @@
 ---
 layout:			default
-title:			"All scripts with tag"
+title:			"All posts with tag"
 type:           dummy
 ---
 This is a plain excerpt and of no use

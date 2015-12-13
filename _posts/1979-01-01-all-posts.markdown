@@ -1,6 +1,5 @@
 ---
 title:  All posts
-img:    http://twanight.org/newTWAN/photos/3002877.jpg
 layout: default
 comments: true
 type: dummy
