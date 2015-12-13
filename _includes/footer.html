@@ -1,12 +1,19 @@
 <footer class="ui column centered grid">
     <div class="row">
         <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
-            <a class="white item" href="{% post_url 1979-01-01-all-posts %}">Archives</a>
+            <a class="white item" href="{% post_url 1979-01-01-all-posts %}">
+                <i class="database icon"></i>
+                Archives
+            </a>
+            <a class="white item" href="/feed.xml">
+                <i class="rss icon"></i>
+                RSS Feed
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="column center aligned white">
-            Designed and written with <i class="heart red icon"></i> by <a class="white" href="{{site.url}}">Arpit</a>
+            Designed and written with <i class="heart red icon"></i> by <a class="white" href="{% post_url 1979-01-01-about-me %}">Arpit</a>
         </div>
     </div>
 </footer>
