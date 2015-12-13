@@ -28,5 +28,5 @@ type: dummy
     <a class="social_icon" href="mailto:arpit.b.bhayani@gmail.com"><i class="very huge mail icon"></i></a>
     <a class="social_icon" href="https://github.com/arpitbbhayani"><i class="very huge github square icon"></i></a>
     <a class="social_icon" href="https://facebook.com/itsmearpit"><i class="very huge facebook square icon"></i></a>
-    <a class="social_icon" href="https://facebook.com/itsmearpit"><i class="very huge linkedin square icon"></i></a>
+    <a class="social_icon" href="https://www.linkedin.com/profile/view?id=42931734"><i class="very huge linkedin square icon"></i></a>
 </div>
