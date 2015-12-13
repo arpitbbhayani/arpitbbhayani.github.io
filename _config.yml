@@ -6,16 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Arpit Bhayani
+title: Arpit's Blog
 email: arpit.b.bhayani@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: A place where I put my random thoughts into words, my views on various things happening around the globe.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://arpitbbhayani.github.io" # the base hostname & protocol for your site
-twitter_username: arpit_bhayani
-github_username:  arpitbbhayani
+img: /static/images/myAvatar.png
 
 permalink: /:categories/:title.html
 
