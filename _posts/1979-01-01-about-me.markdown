@@ -5,8 +5,9 @@ layout: default
 type: dummy
 ---
 
-
-{% include personal.html %}
+<div style="margin-top: -20px;">
+    {% include personal.html %}
+</div>
 
 <div class="ui centered two column grid">
     <div class="column">
@@ -22,8 +23,10 @@ type: dummy
     </div>
 </div>
 
+<div class="ui section divider hidden"></div>
 <div class="ui center aligned basic segment">
-    <a href="https://github.com/arpitbbhayani"><i class="very huge github icon"></i></a>
-    <a href="https://facebook.com/itsmearpit"><i class="very huge facebook icon"></i></a>
-    <a href="mailto:arpit.b.bhayani@gmail.com"><i class="very huge mail icon"></i></a>
+    <a class="social_icon" href="mailto:arpit.b.bhayani@gmail.com"><i class="very huge mail icon"></i></a>
+    <a class="social_icon" href="https://github.com/arpitbbhayani"><i class="very huge github square icon"></i></a>
+    <a class="social_icon" href="https://facebook.com/itsmearpit"><i class="very huge facebook square icon"></i></a>
+    <a class="social_icon" href="https://facebook.com/itsmearpit"><i class="very huge linkedin square icon"></i></a>
 </div>

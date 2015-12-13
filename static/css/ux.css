@@ -56,6 +56,15 @@ pre {
     color: #FFF !important;
 }
 
+.social_icon {
+    color: #8AAAB0 !important;
+}
+
+.social_icon:hover {
+    color: #386E77 !important;
+}
+
+
 .article-title {
     font-size: 42px;
     line-height: 50px;
