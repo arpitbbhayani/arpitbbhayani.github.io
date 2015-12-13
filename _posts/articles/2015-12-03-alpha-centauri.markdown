@@ -8,7 +8,7 @@ tags:
  - alpha-centauri
 ---
 
-You see the same sun rise and set every day. One day you get so bored of it that you decide that it's all over and I am gonna go to some other star and see it rise and set. Can you do that?
+Which is the nearest star to us after sun - **Alpha Centauri**. Can you go to it in your lifetime? ... Lets find out.
 
 Yes you can do that but not in this lifetime. The nearest neighbor to our over own Sun is **Alpha Centauri**. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10<sup>15</sup> m.
 
