@@ -8,7 +8,7 @@
 # Site settings
 title: Arpit's Blog
 email: arpit.b.bhayani@gmail.com
-description: A place where I put my random thoughts into words, my views on various things happening around the globe.
+description: I am a developer, designer, thinker, analyzer, physics enthusiast and data-scientist. This is the place where I put my random throughts and my imaginations into words.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://arpitbbhayani.github.io" # the base hostname & protocol for your site
 img: https://arpitbbhayani.github.io/static/images/myAvatar.png
