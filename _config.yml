@@ -11,7 +11,7 @@ email: arpit.b.bhayani@gmail.com
 description: A place where I put my random thoughts into words, my views on various things happening around the globe.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://arpitbbhayani.github.io" # the base hostname & protocol for your site
-img: /static/images/myAvatar.png
+img: https://arpitbbhayani.github.io/static/images/myAvatar.png
 
 permalink: /:categories/:title.html
 
