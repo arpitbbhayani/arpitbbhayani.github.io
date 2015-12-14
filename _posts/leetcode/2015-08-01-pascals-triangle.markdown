@@ -1,7 +1,7 @@
 ---
 categories: leetcode
 comments: true
-img: http://hdwallpapershub.net/wallpapers/l/1280x800/57/typography_code_javascript_black_background_programmer_syntax_1280x800_56614.jpg
+img: https://gun.io/static/uploads/web%20dev.jpg
 layout: post
 tags:
 - competitive-programming
