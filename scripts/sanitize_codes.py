@@ -1,31 +1,34 @@
 import os
 import yaml
 
-SOURCE_DIR = '/Users/arpitbhayani/arpitbbhayani.github.io/_posts/leetcode'
+sites = ['leetcode', 'spoj']
 
-files = os.listdir(SOURCE_DIR)
-for f in files:
-    path = os.path.join(SOURCE_DIR, f)
-    # Read
-    with open(path) as inf:
-        content = inf.read()
+for site in sites:
+    SOURCE_DIR = '/Users/arpitbhayani/arpitbbhayani.github.io/_posts/%s' % site
 
-    # Modify
-    tokens = content.split('---')
+    files = os.listdir(SOURCE_DIR)
+    for f in files:
+        path = os.path.join(SOURCE_DIR, f)
+        # Read
+        with open(path) as inf:
+            content = inf.read()
 
-    d = yaml.load(tokens[1])
+        # Modify
+        tokens = content.split('---')
 
-    d['img'] = 'https://gun.io/static/uploads/web%20dev.jpg'
-    d['comments'] = True
-    d['categories'] = 'leetcode'
-    d['layout'] = 'post'
-    d['tags'] = ['competitive-programming']
+        d = yaml.load(tokens[1])
 
-    yaml_str = yaml.dump(d, default_flow_style=False)
-    tokens[1] = '\n' + yaml_str
+        d['img'] = 'https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg'
+        d['comments'] = True
+        d['categories'] = site
+        d['layout'] = 'post'
+        d['tags'] = ['competitive-programming']
 
-    content = '---'.join(tokens)
+        yaml_str = yaml.dump(d, default_flow_style=False)
+        tokens[1] = '\n' + yaml_str
 
-    # Write
-    with open(path, 'wb') as outf:
-        outf.write(content)
+        content = '---'.join(tokens)
+
+        # Write
+        with open(path, 'wb') as outf:
+            outf.write(content)

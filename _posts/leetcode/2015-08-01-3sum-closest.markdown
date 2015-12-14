@@ -1,7 +1,7 @@
 ---
 categories: leetcode
 comments: true
-img: https://gun.io/static/uploads/web%20dev.jpg
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
 layout: post
 tags:
 - competitive-programming
@@ -27,24 +27,24 @@ public:
 
     int threeSumClosest(vector<int> &num, int target) {
         sort(num.begin(), num.end());
-        
+
         int diff = INT_MAX;
         int ans = INT_MAX;
-        
+
         for( int k = 0 ; k < num.size() ; k++ ) {
-            
+
             int i = k+1, j = num.size()-1;
-            
+
             while ( i < j ) {
-                
+
                 int localsum = num[i] + num[j] + num[k];
                 int localdiff = abs(target - localsum);
-                
+
                 if( localdiff < diff ) {
                     diff = localdiff;
                     ans = localsum;
                 }
-                
+
                 if( localsum < target ) {
                     i++;
                 }
@@ -54,7 +54,7 @@ public:
                 else {
                     break;
                 }
-                
+
             }
         }
         return ans;
