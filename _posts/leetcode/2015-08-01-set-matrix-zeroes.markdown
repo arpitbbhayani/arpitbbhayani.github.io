@@ -1,7 +1,7 @@
 ---
 categories: leetcode
 comments: true
-img: http://listogre.com/wp-content/uploads/2014/11/binary-code-typography-hd-wallpaper-1920x1080-2619-672x372.png
+img: http://hdwallpapershub.net/wallpapers/l/1280x800/57/typography_code_javascript_black_background_programmer_syntax_1280x800_56614.jpg
 layout: post
 tags:
 - competitive-programming
