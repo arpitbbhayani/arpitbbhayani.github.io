@@ -5,7 +5,6 @@ layout: post
 comments: true
 tags:
  - techie
- - programming
  - python
 ---
 
