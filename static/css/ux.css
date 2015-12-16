@@ -17,21 +17,14 @@ li {
     line-height: 1.4285em;
 }
 
-code, samp, kbd {
-	font-family: "Courier New", Courier, monospace, sans-serif;
-	text-align: left;
-	color: #333;
-}
-
 pre code {
 	line-height: 1.4em;
 	font-size: 15px;
 }
 pre {
-    background-color: #EEE;
-	padding: 0.5em 0.5em 0.5em 0.5em;
-	border-left: 11px solid #ccc;
-	margin: 1.7em 0 1.7em 0.3em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+	border-left: 11px solid #000;
+	margin: 1.7em 0 1.7em 0em;
 	overflow: auto;
 	width: 93%;
 }

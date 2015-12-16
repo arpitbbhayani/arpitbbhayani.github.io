@@ -1,9 +1,14 @@
 ---
+title: Setting up Graphite and Grafana on Ubuntu 14.04 server
+img: http://grafana.org/assets/img/docs/nice_dashboard.png
 layout: post
+comments: true
+tags:
+ - devops
+ - tools-setup
 ---
 
-
-# Setting up Graphite and Grafana on Ubuntu 14.04 on Nginx
+Monitor your production systems and application analytics using Graphite and Grafana. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.
 
 ## What is what
 
@@ -18,6 +23,7 @@ Grafana is a tool for visualising time-series data for various application analy
 
 ### What is Nginx?
 NGINX is a very fast Webserver, its faster than most web servers available in the market. The biggest advantage of Nginx is its concurrency (because of asynchronous nature). It can also act as
+
 1. HTTP Cache
 2. Reverse Proxy
 3. Load Balancer
@@ -33,23 +39,27 @@ sudo apt-get install nginx
 # Installing Graphite
 
 ## Graphite Ubuntu Package Installation
+
 Update your `apt`
+
 ```
 sudo apt-get update
 ```
+
 Install graphite packages
+
 ```
 sudo apt-get install graphite-web graphite-carbon
 ```
 
 **NOTE**: During the installation, you will be asked if during uninstallation of Graphite you also like to remove its files. Please select **NO** because anyways you can delete them manually. The files are kept in `/var/lib/graphite/whisper`.
 
-*This ends the Graphite installation process, all remains is its configuration*
 
 ## Install and Configure PostgreSQL Database
 Graphite internally uses carbon and whisper database library for storing data. But the web application is a Django application which needs some data store for its own purpose. The default data store configured is SQLite3 database files. But this is not a full fledged database system hence we will use PostgreSQL.
 
 Script to install database and libs used by Graphite to communicate with PostgreSQL
+
 ```
 sudo apt-get install postgresql libpq-dev python-psycopg2
 ```
@@ -57,22 +67,27 @@ sudo apt-get install postgresql libpq-dev python-psycopg2
 Once our PostgreSQL is installed we will create a user and a database
 
 Login to PostgreSQL console
+
 ```
 $ sudo -u postgres psql
 ```
 
 Create a user `graphite` which will be used by Django to operate on our database.
+
 ```
 $ CREATE USER graphite WITH PASSWORD 'mypassword';
 ```
+
 Please make sure you select a secure password for your user.
 
 Create a database `graphite` and give our new user `graphite` ownership of it.
+
 ```
 $ CREATE DATABASE graphite WITH OWNER graphite;
 ```
 
 Please verify is database is created or not by connection to it
+
 ```
 $ \c graphite
 ```
@@ -80,6 +95,7 @@ $ \c graphite
 If you can successfully connect to the database `graphite` then you are good to go to next step.
 
 Exit from the PostgreSQL console
+
 ```
 $ \q
 ```
@@ -87,14 +103,17 @@ $ \q
 *This ends the PostgreSQL database configuration for Graphite*
 
 ## Configure Graphite Web Application
+
 Now, as we have our PostgreSQL database and user ready to go we can now move to configuring the web application.
 
 Open the Graphite web app configuration file:
+
 ```
 sudo vim /etc/graphite/local_settings.py
 ```
 
 Uncomment the `SECRET_KEY` and give a nice random value to it
+
 ```
 SECRET_KEY = 'MY NICE RANDOM SALT'
 ```
@@ -180,7 +199,7 @@ pattern that matches regular expression `^carbon\.` should retain the data with 
 * length of time to store those values: 90 days
 
 For detail information on retention policy visit [here](http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-schemas-conf)
- 
+
 Now we need to add our own entry. Let's take an example `test` i.e. we need to monitor data points and our data point entries will start with string `test`.
 
 **NOTE**: This entry should be added before the default entry mentioned at the bottom of the file
@@ -228,4 +247,3 @@ sudo ln -s /etc/nginx/sites-enabled/graphite /etc/nginx/sites-available/graphite
 ```
 
 Now we are ready for configuring Nginx server for Graphite
-
