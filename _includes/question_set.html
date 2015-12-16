@@ -1,7 +1,8 @@
-<table class="ui table">
-{% tablerow question in site.categories[include.s] cols: 4 %}
+{% assign c = include.cols %}
+<table class="ui very basic table">
+{% tablerow question in site.categories[include.s] cols: c %}
 <td>
-<a href="{{question.url | prepend: site.baseurl}}" title="Click to view solution for {{question.title}}">{{ question.title }}</a>
+<a href="{{question.url | prepend: site.baseurl}}" title="Click to view solution for {{question.title}}"><i class="caret right icon"></i>{{ question.title }}</a>
 </td>
 {% endtablerow %}
 </table>

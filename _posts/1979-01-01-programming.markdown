@@ -7,16 +7,18 @@ type: dummy
 
 <div class="ui grid">
     <div class="one wide column"></div>
-    <div class="fourteen wide column">
-        <div class="ui secondary pointing menu basic">
-          <a class="active blue item" data-tab="spoj">Spoj</a>
-          <a class="item purple" data-tab="leetcode">Leetcode</a>
+    <div class="sixteen wide column">
+        <div class="ui secondary pointing menu">
+          <a class="active teal item" data-tab="spoj">Spoj</a>
+          <a class="item teal" data-tab="leetcode">Leetcode</a>
         </div>
-        <div class="ui bottom attached active tab basic segment" data-tab="spoj">
-            {% include question_set.html s='spoj' %}
-        </div>
-        <div class="ui bottom attached tab basic segment" data-tab="leetcode">
-            {% include question_set.html s='leetcode' %}
+        <div class="ui active tab basic segment">
+            <div class="ui bottom attached active tab" data-tab="spoj">
+                {% include question_set.html s='spoj' cols=3 %}
+            </div>
+            <div class="ui tab basic segment" data-tab="leetcode">
+                {% include question_set.html s='leetcode' cols=2 %}
+            </div>
         </div>
     </div>
 </div>
