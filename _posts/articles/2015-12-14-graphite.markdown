@@ -1,6 +1,6 @@
 ---
 title: Deploy Graphite and Nginx on an Ubuntu 14.04 server
-img: /static/images/graphite2.png
+img: {{site.url}}/static/images/graphite2.png
 layout: post
 comments: true
 tags:
