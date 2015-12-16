@@ -5,3 +5,5 @@ alpha-centauri
 programming
 python
 competitive-programming
+devops
+tools-setup
