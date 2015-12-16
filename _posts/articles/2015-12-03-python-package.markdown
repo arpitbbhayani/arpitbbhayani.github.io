@@ -4,6 +4,7 @@ img:    http://www.lyfaces.com/wallpaper/zen/zen-of-python-wallpaper-at-python-w
 layout: post
 comments: true
 tags:
+ - techie
  - programming
  - python
 ---

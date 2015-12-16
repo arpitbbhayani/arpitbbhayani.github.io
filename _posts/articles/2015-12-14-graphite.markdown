@@ -4,8 +4,9 @@ img:    http://arpitbbhayani.github.io/static/images/graphite2.png
 layout: post
 comments: true
 tags:
+ - techie
  - devops
- - tools-setup
+ - programming
 ---
 
 Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.

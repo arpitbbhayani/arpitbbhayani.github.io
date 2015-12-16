@@ -1,8 +1,8 @@
 ---
 layout:			default
-title:			All tools-setup articles
+title:			All techie articles
 category:		tag
-passed-tag:		tools-setup
+passed-tag:		techie
 type:           dummy
 ---
 

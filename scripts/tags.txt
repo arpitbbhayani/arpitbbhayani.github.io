@@ -6,4 +6,4 @@ programming
 python
 competitive-programming
 devops
-tools-setup
+techie
