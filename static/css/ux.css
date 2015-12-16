@@ -13,14 +13,17 @@ a.white:hover {
     border-bottom: 3px solid #FFF;
 }
 
-li {
-    line-height: 1.4285em;
+em {
+    color: #AA3232;
+    background-color: #EEE;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
-code, samp, kbd {
-	font-family: "Courier New", Courier, monospace, sans-serif;
-	text-align: left;
-	color: #333;
+li {
+    line-height: 1.5285em;
 }
 
 pre code {
@@ -28,12 +31,10 @@ pre code {
 	font-size: 15px;
 }
 pre {
-    background-color: #EEE;
-	padding: 0.5em 0.5em 0.5em 0.5em;
-	border-left: 11px solid #ccc;
-	margin: 1.7em 0 1.7em 0.3em;
+    padding: 1em 1em 1em 1em;
+	border-left: 11px solid rgba(0, 0, 0, 0.17);
+	margin: 1.7em 0 1.7em 0em;
 	overflow: auto;
-	width: 93%;
 }
 /* target IE7 and IE6 */
 *:first-child+html pre {

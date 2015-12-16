@@ -65,17 +65,16 @@ You should replace `YOUR_USERNAME_HERE` and `YOUR_PASSWORD_HERE` with your usern
 * `source_dir` is a root directory that contains your python package
 * `my_python_package` is your main python package that you want to publish
 
-<pre>
+
+{% highlight cpp %}
 source_dir/                 # the source directory
 |-- my_python_package       # your package
 |   |-- __init__.py
 |   `-- FILES ....          # your package files
 |-- README.md
 |-- setup.cfg
-`-- setup.py
-</pre>
-
-<emphasis>I will tell you what to put in each of the following files in sometime</emphasis>
+|-- setup.py
+{% endhighlight %}
 
 Setup your directory structure as shown above, with appropriate changes, and host it on [github.com](http://github.com).
 
@@ -84,19 +83,19 @@ Setup your directory structure as shown above, with appropriate changes, and hos
 This step involves releasing your package on github. This will create a download link of your complete source. In order to release your github project, you need to carry on following steps:
 
 1. Go to your project homepage on [github](http://github.com)
-2. On top, you will see `Release` link. Click on it.
-3. Click on `Draft a new relase`
+2. On top, you will see *Release link*. Click on it.
+3. Click on *Draft a new relase*
 4. Fill in all the details
-   * `Tag version` should be the version number of your package release
-   * `Release Title` can be anythin you want.
-5. Click `Publish release` at the bottom of the page
-6. Now under `Releases` you can view all of your releases.
+   * *Tag version* should be the version number of your package release
+   * *Release Title* can be anything you want.
+5. Click *Publish release* at the bottom of the page
+6. Now under *Releases* you can view all of your releases.
 7. Copy the download link (tar.gz) and save it somewhere.
 
 
 ## 5: Editing files
 
-Open the `setup.py` file and add following skeleton to it
+Open the *setup.py* file and add following skeleton to it
 
 {% highlight python %}
 from distutils.core import setup
@@ -115,7 +114,7 @@ setup(
 )
 {% endhighlight %}
 
-Open the `setup.cfg` file and add following skeleton to it
+Open the *setup.cfg* file and add following skeleton to it
 
 {% highlight python %}
 [metadata]
@@ -129,29 +128,29 @@ Now push everything to github.
 
 Execute following commands
 
-<pre>
+{% highlight bash %}
 python setup.py register -r pypitest
-</pre>
+{% endhighlight %}
 
-This command will try to register your package on PyPI test server. This make sures that everything you have setup is correct.
+This command will try to register your package on PyPI test server. This makesures that everything you have setup is correct.
 
-<pre>
+{% highlight bash %}
 python setup.py sdist upload -r pypitest
-</pre>
+{% endhighlight %}
 
 This command will upload your package on test repository and now you should see your package on [PyPI Test](https://testpypi.python.org/pypi)
 
 Now you are ready to publish your package on PyPI Live Server. Execute following commands
 
-<pre>
+{% highlight bash %}
 python setup.py register -r pypi
-</pre>
+{% endhighlight %}
 
-<pre>
+{% highlight bash %}
 python setup.py sdist upload -r pypi
-</pre>
+{% endhighlight %}
 
-<p style="font-weight:bold;">Congratulations! You just published your python package on PyPI</p>
+**Congratulations! You just published your python package on PyPI**
 
 ## References
 1. [Official Documentation](http://wiki.python.org/moin/CheeseShopTutorial#Submitting_Packages_to_the_Package_Index)
