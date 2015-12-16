@@ -14,6 +14,7 @@ a.white:hover {
 }
 
 em {
+    font-style: normal;
     color: #AA3232;
     background-color: #EEE;
     padding-left: 5px;
