@@ -5,6 +5,10 @@ footer {
     background: #161b2d;
 }
 
+.ui.image {
+    margin-bottom: 20px;
+}
+
 a.white {
     border-bottom: 3px solid #161b2d;
 }
