@@ -1,6 +1,6 @@
 ---
 title: Host your python package using github on PyPI
-img:    http://devfloat.net/wp-content/uploads/2014/01/python.jpg
+img:    http://i.imgur.com/vFzlsp5.png
 layout: post
 comments: true
 tags:
