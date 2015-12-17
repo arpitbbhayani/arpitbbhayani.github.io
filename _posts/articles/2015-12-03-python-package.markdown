@@ -1,6 +1,6 @@
 ---
 title: Host your python package using github on PyPI
-img:    http://www.lyfaces.com/wallpaper/zen/zen-of-python-wallpaper-at-python-wallpaper-hd-.jpg
+img:    http://devfloat.net/wp-content/uploads/2014/01/python.jpg
 layout: post
 comments: true
 tags:
