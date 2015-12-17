@@ -206,4 +206,10 @@ Once that is done, you can add panels to it. To add graphs in panels click on **
     <img src='/static/images/grafana4.png' alt='Grafana'/>
 </div>
 
-And now you can put all kinds of rules for your analytics.
+
+## More Information
+Please follow the below links in order to know more about Grafana and its amazing customizations.
+
+* [Grafana Documentation](http://docs.grafana.org/)
+* [Adding Graphite to Grafana Official](http://docs.grafana.org/datasources/graphite/)
+* [Adding HuBot to Grafana](http://docs.grafana.org/tutorials/hubot_howto/)
