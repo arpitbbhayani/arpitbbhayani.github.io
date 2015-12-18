@@ -38,7 +38,59 @@ So in general we can say that
 "When a person with access to n+1 th dimension moves along n+1 th dimension, the n dimensional person cannot perceive him"
 
 
-Now your brain wheels might be rushing and must be thinking a lot of crazy things that can be done with this.
+Now your brain might be rushing and must be thinking a lot of crazy things that can be done with this. Lets start one by one ...
+
+# Magic Trick
+-----------------------------------------------------------
+
+We all know about a  magic trick where a person disappears from a box and shows up at another place. Some of you might also know how it is done. But this can surely be a reality if one has an access to 4th dimension. How? lets dig into it
+
+Suppose a magician X is inside the box at place P1. If person X has an access to 4th dimension then he can simply move along the 4th dimension and reach place P2 without even getting notice.
+
+This can be explained in avery simple 2D example. Look at the picture below and think for a second ... you will get everything.
+
+FIGURE 2
+
+So next time you see this trick ... there might be a tiny possibility that the magician has an access to 4th dimension. So beware!
 
 
-2. You can easily see through things
+# A big leap for health-care
+------------------------------------------------------------
+
+A person with access to 4D can see through your body because you are in 3 dimensional and your 4th dimension is exposed and free to access. Let me first show you how ...
+
+In our first example of 2D world, where A was a square and B was a circle, imagine there is a 2D - tumour inside the square that needs to be removed. He asks B for some help, B says he needs to cut him open to remove the tumour. Can this be done in any other simpler way?
+YES!
+This can be done in a very simple way. Since you have an access to 3rd dimension and tumour is exposed from its 3rd dimension, you can access tumour directly pick it up and throw it away, without any need of cutting open A.
+
+FIGURE 3
+
+Simply apply this model in 3D-4D world. If someone has an access to 4th dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
+A] Bloodless Surgery
+B] Tumour detection and removal
+C] Detect blood clotting in early stage
+D] Blood less transplantation of various organs, etc.
+
+
+# World's greatest thief
+-----------------------------------------------------------------
+
+What if the man with such amazing capabilities became a thief. This is will be very menial for him but we can at least give this a thought ...
+
+Since he can access anything directly without cutting open anything, so he can steal anything from any safe in this whole world without even getting noticed. This means no gold is safe in any safe, no treasure can be kept safe from his hands, not even art like Picasso's paintings are safe, this list has no end. sketch picture below can give you a clearer idea.
+
+FIGURE 4
+
+
+# The Perfect Murderer
+-----------------------------------------------------------------
+
+
+
+
+
+# WTF is this?
+----------------------------------------------------------
+Lets imagine a 4D creature that intersects our 3D world in three distinct places at the same time. So anytime this creature move the intersection of his to our world will always move with him. We will always see these three things together always, devoid of the fact that this is in fact the intersection of a 4D creature on our world.
+
+FIGURE 3
