@@ -16,8 +16,6 @@ img: http://arpitbbhayani.github.io/static/images/myAvatar.png
 permalink: /:categories/:title.html
 highlighter: pygments
 
-twitter_username: arpit_bhayani
-
 # Build settings
 markdown: kramdown
 exclude: [static/semantic/src/, static/semantic/tasks, static/node_modules]
