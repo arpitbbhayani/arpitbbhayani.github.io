@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Spoj solution for AMR11E</title>
+  <meta name="description" content="Following is the solution for Spoj Question: AMR11E">
+
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="canonical" href="http://arpitbbhayani.github.io/spoj/AMR11E.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit's Blog" href="http://arpitbbhayani.github.io/feed.xml">
+
+  <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
+  <meta property="og:title" content="Spoj solution for AMR11E | Arpit's Blog"/>
+  <meta property="og:url" content="http://arpitbbhayani.github.io/spoj/AMR11E.html"/>
+  <meta property="og:site_name" content="Arpit's Blog"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Following is the solution for Spoj Question: AMR11E" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbbhayani.github.io/spoj/AMR11E.html">
+  <meta name="twitter:title" content="Spoj solution for AMR11E | Arpit's Blog">
+  <meta name="twitter:description" content="Following is the solution for Spoj Question: AMR11E">
+  <meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg">
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
+    <a href='/' class="item">
+        <div class="small-logo">
+            <span class="name1">
+                Arpit
+                <span class="name2">Bhayani</span>
+            </span>
+            <div class="tag-line">
+                
+            </div>
+        </div>
+    </a>
+    <div class="right menu item">
+        <div class="ui dropdown white item">
+            Categories
+            <i class="dropdown white icon"></i>
+            <div class="menu">
+                <a href='/tag/science' class="white item">Science</a>
+                <a href='/tag/techie' class="white item">Techie</a>
+            </div>
+        </div>
+        <a class="white item" href="/programming.html" style="line-height: 15px;">
+            <i class="code icon"></i>
+            Competitive Programming
+        </a>
+        <a class="white item" href="/about-me.html" style="line-height: 15px;">
+            <i class="user icon"></i>
+            About me
+        </a>
+    </div>
+</div>
+
+        <br/>
+
+        <div style="background: #FFF; padding-bottom: 50px;">
+            <section class="module parallax parallax-1" style='background-image: url("https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg");'>
+    <div class="article-title">
+        <div class="ui stackable grid">
+            <div class="one wide column"></div>
+            <div class="fourteen wide column">
+                <div class="white">Spoj solution for AMR11E</div>
+                <div class="article-tags">
+                    
+                    <a href='/tag/competitive-programming' class="ui large label blue">competitive-programming</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui hidden section divider"></div>
+            <div class="article-content">
+                <p>Following is the solution for Spoj Question: <a href="http://www.spoj.com/problems/AMR11E/">AMR11E</a></p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cm">/*</span>
+<span class="cm"> * AMR11E.cpp</span>
+<span class="cm"> *</span>
+<span class="cm"> *  Created on: Jun 9, 2014</span>
+<span class="cm"> *      Author: Arpit Bhayani</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include &lt;string&gt;</span>
+<span class="cp">#include &lt;cstdarg&gt;</span>
+<span class="cp">#include &lt;utility&gt;</span>
+
+<span class="cp">#include &lt;queue&gt;</span>
+<span class="cp">#include &lt;stack&gt;</span>
+<span class="cp">#include &lt;set&gt;</span>
+<span class="cp">#include &lt;list&gt;</span>
+<span class="cp">#include &lt;vector&gt;</span>
+<span class="cp">#include &lt;queue&gt;</span>
+<span class="cp">#include &lt;bitset&gt;</span>
+<span class="cp">#include &lt;map&gt;</span>
+
+<span class="cp">#include &lt;functional&gt;</span>
+<span class="cp">#include &lt;sstream&gt;</span>
+<span class="cp">#include &lt;algorithm&gt;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+
+<span class="cp">#include &lt;cstddef&gt;</span>
+<span class="cp">#include &lt;cstring&gt;</span>
+<span class="cp">#include &lt;cctype&gt;</span>
+<span class="cp">#include &lt;cmath&gt;</span>
+<span class="cp">#include &lt;cstdio&gt;</span>
+
+<span class="cp">#include &lt;stdexcept&gt;</span>
+<span class="cp">#include &lt;fstream&gt;</span>
+<span class="cp">#include &lt;numeric&gt;</span>
+<span class="cp">#include &lt;iomanip&gt;</span>
+<span class="cp">#include &lt;cstdlib&gt;</span>
+<span class="cp">#include &lt;cassert&gt;</span>
+<span class="cp">#include &lt;ctime&gt;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">VI</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">VI</span><span class="o">&gt;</span> <span class="n">VVI</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">VD</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">VD</span><span class="o">&gt;</span> <span class="n">VVD</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">VS</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">VS</span><span class="o">&gt;</span> <span class="n">VVS</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">signed</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">s64</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">u64</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">PII</span><span class="p">;</span>
+
+<span class="cp">#define all(a) a.begin(),a.end()</span>
+<span class="cp">#define out(x) cout&lt;&lt;#x&lt;&lt;&quot; = &quot;&lt;&lt;(x)&lt;&lt;endl;</span>
+<span class="cp">#define out2(x,y) out(x) out(y)</span>
+<span class="cp">#define out3(x,y,z) out(x) out(y) out(z)</span>
+<span class="cp">#define fillchar(a,i) memset(a,i,sizeof(a));</span>
+<span class="cp">#define fori(i,max) for(int i=0;i&lt;(int)(max) ;(i)++)</span>
+<span class="cp">#define for2i(i,min,max) for(int i=min;i&lt;(int)(max) ;(i)++)</span>
+<span class="cp">#define forv(i,a) fori(i,(int)(a.size()))</span>
+<span class="cp">#define forv2(i,j,a) forv(i,a) forv(j,(a)[i])</span>
+<span class="cp">#define forIter(i, c) for(typeof((c).begin()) i = (c).begin(); i != (c).end(); i++)</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAX</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">LMT</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">LEN</span> <span class="o">=</span> <span class="mi">5000000</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">primes</span><span class="p">[</span><span class="mi">1000000</span><span class="p">],</span> <span class="n">number</span><span class="p">[</span><span class="mi">1000000</span><span class="p">];</span>
+
+<span class="n">VI</span> <span class="n">lucky</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">sieve</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">MAX</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="c1">// for all elements in array</span>
+			<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// it is not multiple of any other prime</span>
+			<span class="n">primes</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// mark it as prime</span>
+
+			<span class="c1">// mark all multiples of prime selected above as non primes</span>
+			<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+			<span class="kt">int</span> <span class="n">mul</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">c</span><span class="p">;</span>
+			<span class="k">for</span> <span class="p">(;</span> <span class="n">mul</span> <span class="o">&lt;</span> <span class="n">MAX</span><span class="p">;)</span> <span class="p">{</span>
+				<span class="n">primes</span><span class="p">[</span><span class="n">mul</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+
+				<span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">mul</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+					<span class="c1">//cout&lt;&lt;primes[mul]&lt;&lt;&quot;\t&quot;&lt;&lt;mul&lt;&lt;&quot;\n&quot;;</span>
+					<span class="c1">//getchar();</span>
+					<span class="n">lucky</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">mul</span><span class="p">);</span>
+				<span class="p">}</span>
+				<span class="n">c</span><span class="o">++</span><span class="p">;</span>
+				<span class="n">mul</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">c</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">sort</span><span class="p">(</span><span class="n">lucky</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">lucky</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">sieve</span><span class="p">();</span>
+	<span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">;</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">lucky</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/spoj/AMR11E.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Spoj solution for AMR11E&amp;url=http://arpitbbhayani.github.io/spoj/AMR11E.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'arpitbhayani';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <a href="#" class="back-to-top"></a>
+        <footer class="ui column centered grid">
+    <div class="row">
+        <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
+            <a class="white item" href="/all-posts.html">
+                <i class="database icon"></i>
+                Archives
+            </a>
+            <a class="white item" href="/feed.xml">
+                <i class="rss icon"></i>
+                RSS Feed
+            </a>
+            <a class="white item" href="/disclaimer.html">
+                <i class="announcement icon"></i>
+                Disclaimer
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column center aligned white">
+            Designed and written with <i class="heart red icon"></i> by <a class="white" href="/about-me.html">Arpit</a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    <head>
+    <link rel="stylesheet" href="/static/css/ux.css">
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/semantic/dist/semantic.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+
+</html>
