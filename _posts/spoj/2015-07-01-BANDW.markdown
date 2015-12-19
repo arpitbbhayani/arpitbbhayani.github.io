@@ -1,0 +1,49 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for BANDW
+---
+
+Following is the solution for Spoj Question: [BANDW](http://www.spoj.com/problems/BANDW/)
+
+{% highlight cpp %}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ( int argc , char * argv[] ) {
+
+	char a[512] , b[512];
+
+	scanf("%s %s" , a, b);
+
+	while ( a[0] != '*' && b[0] != '*' ) {
+
+		int chance = 0;
+
+		int i = 0, flag = 0;
+
+		while ( a[i] != '\0' ) {
+			while ( a[i] != '\0' && a[i] == b[i] ) {
+				i++;
+			}
+			while ( a[i] != '\0' && a[i] != b[i] ) {
+				flag = 1;
+				i++;
+			}
+			if ( flag == 1 )
+				chance ++;
+			flag = 0;
+		}
+
+		printf("%d\n" , chance);
+
+		scanf("%s %s" , a, b);
+	}
+	return 0;
+}
+
+{% endhighlight %}

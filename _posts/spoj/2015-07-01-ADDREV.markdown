@@ -1,0 +1,42 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for ADDREV
+---
+
+Following is the solution for Spoj Question: [ADDREV](http://www.spoj.com/problems/ADDREV/)
+
+{% highlight cpp %}
+#include <iostream>
+#include <cstdio>
+ 
+using namespace std;
+
+int rev(int n) {
+	int r=0;
+	while( n ) {
+		r=r*10+(n%10);
+		n/=10;
+	}
+	return r;
+}
+
+int main() {
+
+	int t,n1,n2;
+	scanf("%d",&t);
+
+	while(t--) {
+
+		scanf("%d%d",&n1,&n2);
+		printf("%d\n",rev(rev(n1)+rev(n2)));
+	}
+
+	return 0;
+}
+
+{% endhighlight %}

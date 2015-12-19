@@ -1,0 +1,62 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for ARMY
+---
+
+Following is the solution for Spoj Question: [ARMY](http://www.spoj.com/problems/ARMY/)
+
+{% highlight cpp %}
+/*
+ * ARMY.cpp
+ *
+ *  Created on: Jun 1, 2014
+ *      Author: Arpit Bhayani
+ */
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
+#define DEBUG 0
+
+int main(int argc, char * argv[]) {
+
+	int t;
+	scanf("%d", &t);
+	while (t--) {
+		int n, m, x;
+		int ma = INT_MIN, mb = INT_MIN;
+		scanf("%d%d", &n, &m);
+
+		for (int i = 0; i < n; i++) {
+			scanf("%d", &x);
+			if (x > ma)
+				ma = x;
+		}
+
+		for (int i = 0; i < m; i++) {
+			scanf("%d", &x);
+			if (x > mb)
+				mb = x;
+		}
+
+		if ( ma >= mb ) {
+			printf("Godzilla\n");
+		}
+		else {
+			printf("MechaGodzilla\n");
+		}
+
+	}
+	return 0;
+}
+
+{% endhighlight %}

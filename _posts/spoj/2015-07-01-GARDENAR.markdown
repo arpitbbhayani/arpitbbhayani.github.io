@@ -1,0 +1,42 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for GARDENAR
+---
+
+Following is the solution for Spoj Question: [GARDENAR](http://www.spoj.com/problems/GARDENAR/)
+
+{% highlight cpp %}
+/*
+	http://www.gogeometry.com/problem/p103_equilateral_triangle_heron_area_elearning.htm
+*/
+#include <stdio.h>
+#include <math.h>
+
+#define ROOT_3 1.7320508075688772935274463
+
+int main ( int argc , char * argv[] ) {
+
+	int t;
+	scanf("%d" , &t);
+
+	while ( t-- ) {
+		double d,e,f,s;
+
+		scanf("%lf%lf%lf" , &d,&e,&f);
+
+		double area = (ROOT_3 * (d*d + e*e + f*f))/8;
+		s = (d + e + f)/2;
+		area += ( 1.5 * sqrt(s*(s-d)*(s-e)*(s-f))  );
+
+		printf("%0.2lf\n" , area);
+	}
+
+	return 0;
+}
+
+{% endhighlight %}

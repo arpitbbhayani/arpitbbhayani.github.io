@@ -1,0 +1,41 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for MCUR98
+---
+
+Following is the solution for Spoj Question: [MCUR98](http://www.spoj.com/problems/MCUR98/)
+
+{% highlight cpp %}
+#include <stdio.h>
+#define SIZE 1000010
+
+int visited[SIZE] = {0};
+
+int main( int argc , char * argv[] ) {
+
+	int i;
+	char str[16];
+	for ( i = 1 ; i < 1000000 ; i++ ) {
+
+		if ( visited[i] == 0 )
+			printf("%d\n" , i );
+
+		int n = i;
+		int sum = 0;
+		while ( n != 0 ) {
+			sum += (n%10);
+			n /= 10;
+		}
+
+		if ( i+sum < SIZE )
+			visited[i+sum] = 1;
+	}
+	return 0;
+}
+
+{% endhighlight %}

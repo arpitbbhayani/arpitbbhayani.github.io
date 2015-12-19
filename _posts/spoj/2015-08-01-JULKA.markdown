@@ -1,0 +1,25 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for JULKA
+---
+
+Following is the solution for Spoj Question: [JULKA](http://www.spoj.com/problems/JULKA/)
+
+{% highlight cpp %}
+
+t = 10
+while t :
+ t -= 1
+ x = int( raw_input( ) )
+ y = int( raw_input( ) )
+ z = ( x + y ) / 2
+ print z
+ z = x - z
+ print z 
+
+{% endhighlight %}

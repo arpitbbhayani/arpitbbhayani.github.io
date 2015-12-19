@@ -1,0 +1,27 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for FAST2
+---
+
+Following is the solution for Spoj Question: [FAST2](http://www.spoj.com/problems/FAST2/)
+
+{% highlight cpp %}
+# AC, ALGO : High School Maths., Big Integer.
+
+# Helpful Link : http://en.wikipedia.org/wiki/Geometric_progression
+
+# For any clarifications, contact me at : osinha6792@gmail.com
+
+t = int( raw_input( ) )
+while t :
+    n = int( raw_input( ) )
+    a = ( 2 ** ( n + 1 ) - 1 ) % 1298074214633706835075030044377087
+    print a
+    t = t - 1
+
+{% endhighlight %}
