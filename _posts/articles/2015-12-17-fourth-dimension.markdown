@@ -8,7 +8,7 @@ tags:
  - fourth-dimension
 ---
 
-Dimensions can be simply explained as the number of axis you can move along. We all live in a 3D world of X, Y and Z axis. But everybody knows that there is a tiny possibility of 4th dimension or higher. Lets talk about that ....
+Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world of X, Y and Z axis, but though all the scifi hype we do know that there exists a tiny possibility of higher dimensions that we currently cannot perceive. Lets talk about that ....
 
 
 The rule of n+1 th dimension
@@ -85,12 +85,17 @@ FIGURE 4
 # The Perfect Murderer
 -----------------------------------------------------------------
 
+Imagine a person who can just pull out your heart out of your body without cutting you open. SCARY right! plus it seems quite SciFi. But this can be a reality of the person has an access to 4th dimension and you don't.
 
+FIGURE 5
 
+This guy can now become the perfect murderer because he dont need any weapons to kill someone, neither he requires any drug, rope, etc. nor he will leave his fingerprints anywhere. The worst part, this person might just be walking beside you, he extends his hand and BAMMM pull out your brain!! And you are dead in minutes.
+
+This may be scary as it sounds but can be really true if someone can access 4th dimension.
 
 
 # WTF is this?
 ----------------------------------------------------------
 Lets imagine a 4D creature that intersects our 3D world in three distinct places at the same time. So anytime this creature move the intersection of his to our world will always move with him. We will always see these three things together always, devoid of the fact that this is in fact the intersection of a 4D creature on our world.
 
-FIGURE 3
+FIGURE 6
