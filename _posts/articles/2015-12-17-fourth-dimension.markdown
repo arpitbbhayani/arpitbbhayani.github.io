@@ -17,7 +17,10 @@ Imagine a plane $$ P $$ which is a 2D world and let there be 2 people $$ A $$ an
 
 Suppose there is a person $$ C $$, which is a Cube and has an access to $$ 3^{rd} $$ dimension. We can deduce the following statements from this
 
-FIGURE 1
+<div class="ui image">
+    <img src="/static/images/fourth-dimension/1.jpg" alt="{{site.title}}" />
+</div>
+
 
 * $$ A $$ and $$ B $$ will see $$ C $$ as another fellow line as long as $$ C $$ intersects their world at $$ Z = 0 $$.
 * $$ A $$ and $$ B $$ will stop seeing $$ C $$ when it moves along $$ Z-axis $$ i.e. when $$ Z \neq 0 $$
@@ -47,7 +50,10 @@ Suppose a magician $$ X $$ is at place $$ P1 $$. If he has an access to $$ 4^{th
 
 To explain it better lets go back to our $$ 2D $$ example. Suppose Cube C rise up so that its $$ Z \neq 0 $$. Suddenly he will be invisible to $$ A $$ and $$ B $$. $$ C $$ now moves $$ 20 $$ units to left and goes down to intersect at $$ Z \eq 0 $$. As soon as this happens $$ C $$ becomes visible to $$ A $$ and $$ B $$ all of a sudden.
 
-FIGURE 2
+<div class="ui image">
+    <img src="/static/images/fourth-dimension/2.jpg" alt="{{site.title}}" />
+</div>
+
 
 From the perspective of $$ A $$ and $$ B $$, $$ C $$ just disappeared from a place and showed up at another. So for them this was like the magic trick.
 
@@ -63,7 +69,9 @@ In our example of $$ 2D $$ world, imagine there is a $$ 2D $$ - tumor inside the
 
 The answer is **YES**. This can be done in a very very simple way but this requires access to higher dimensions. Suppose you enter this $$ 2D $$ world but you still have an access to $$ 3^{rd} $$ dimension, and the tumor is exposed from its 3rd dimension, you can access tumor directly pick it up and throw it away, without any need of cutting open $$ A $$.
 
-FIGURE 3
+<div class="ui image">
+    <img src="/static/images/fourth-dimension/3.jpg" alt="{{site.title}}" />
+</div>
 
 If we just extend this example to our world, we can say that if someone has an access to $$ 4^{th} $$ dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
 * Bloodless Surgery
@@ -78,7 +86,9 @@ What if a person with such amazing capabilities became a thief. This is will be 
 
 From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so now since he is a thief, he can steal anything from any safe in this whole world without even getting noticed. This means no treasure can be kept safe from his hands, not even art like Picasso's paintings are safe, nothing can be kept safe from him.
 
-FIGURE 4
+<div class="ui image">
+    <img src="/static/images/fourth-dimension/4.jpg" alt="{{site.title}}" />
+</div>
 
 He can just swoop in take the things and go off and no one will ever take a notice of this.
 
@@ -86,7 +96,9 @@ He can just swoop in take the things and go off and no one will ever take a noti
 -----------------------------------------------------------------
 Imagine if suddenly your heart comes out of your body! SCARY right! also it seems quite Sci-Fi. But this can be a reality if a person has an access to $$ 4^{th} $$ dimension and you don't.
 
-FIGURE 5
+<div class="ui image">
+    <img src="/static/images/fourth-dimension/5.jpg" alt="{{site.title}}" />
+</div>
 
 This guy can now become the perfect murderer because he don't need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the $$ 4^{th} $$ dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.
 
@@ -99,6 +111,7 @@ The examples I mentioned above are really vague, but this can be taken to altoge
 * Can $$ 4D $$ person see what you had in your breakfast?
 * Can we say that $$ 4D $$ person cannot be killed by a bullet?
 * Can we create a lightning fast transport along $$ 4^{th} $$ dimension?
+* Does this mean that $$ 4^{th} $$ dimension plus Flash's speed = Teleportation?
 
 If you really want to dive deep into this then just dive deep into your imaginations and jot your ideas.
 
