@@ -14,6 +14,7 @@ Dimensions in simple terms are the number of axes you can move along. We all liv
 
 # The rule of $$ n+1^{th} $$ dimension
 --------------------------------------------------
+
 Imagine a plane $$ P $$ which is a 2D world and let there be 2 people $$ A $$ and $$ B $$. $$ A $$ is a circle and $$ B $$ is a square. Since this is a 2D world, $$ A $$ and $$ B $$ can see everything on plane $$ P $$ but only as a **line**. They have no control over $$ Z-axis $$ which can give them a perception of what they actually are i.e. square or circle.
 
 Suppose there is a person $$ C $$, which is a Cube and has an access to $$ 3^{rd} $$ dimension. We can deduce the following statements from this
