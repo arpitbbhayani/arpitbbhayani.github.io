@@ -14,7 +14,7 @@ Dimensions in simple terms are the number of axes you can move along. We all liv
 The rule of n+1 th dimension
 --------------------------------------------------
 
-Imagine a plane P which will be our 2D world and let there be 2 people A and B. A is a circle and B is a square. Since this is a 2D world, A and B can see everything on plane P but only as a line. They have no control over Z axis which can give them a perception of what they actually are i.e. square or circle.
+Imagine a plane P which is a 2D world and let there be 2 people A and B. A is a circle and B is a square. Since this is a 2D world, A and B can see everything on plane P but only as a line. They have no control over Z axis which can give them a perception of what they actually are i.e. square or circle.
 
 Suppose there is a person C, which is a Cube and has an access to third dimension. We can deduce the following statements from this
 
@@ -23,7 +23,7 @@ FIGURE 1
 * A and B will see C as another line as long as C intersects their world at Z = 0.
 * A and B will stop seeing C when C moves along Z axis i.e. when Z not = 0
 
-This can be easily explained mathematically with concept of intersection and projections. But in naive terms, it can be explained with a statement "A and B cannot see up or down hence they cannot know what is happening there". So for A and B, C is only a line and nothing else.
+This can be easily explained mathematically with concept of intersection and projections. But in naive terms, it can be explained with a statement "A and B cannot see up or down (along Z axis) hence they cannot know what is happening there". So for A and B, C is only a line and nothing else.
 
 So now we deduce a rule from this
 
@@ -40,62 +40,66 @@ So in general we can say that
 
 Now your brain might be rushing and must be thinking a lot of crazy things that can be done with this. Lets start one by one ...
 
-# Magic Trick
+
+# Where did he go!!
 -----------------------------------------------------------
 
-We all know about a  magic trick where a person disappears from a box and shows up at another place. Some of you might also know how it is done. But this can surely be a reality if one has an access to 4th dimension. How? lets dig into it
+You might have seen a magic trick where a person disappears from a place and shows up at another. You might also know how it is done, but this can surely be a real and not a trick if one has an access to 4th dimension. How? lets dig into it
 
-Suppose a magician X is inside the box at place P1. If person X has an access to 4th dimension then he can simply move along the 4th dimension and reach place P2 without even getting notice.
+Suppose a magician X is at place P1. If he has an access to 4th dimension then he can simply move along the 4th dimension and reach place P2 without even getting notice. This is just an extension of rule mentioned above.
 
-This can be explained in avery simple 2D example. Look at the picture below and think for a second ... you will get everything.
+This can be explained in avery simple 2D example. From the 2D world example mentioned above, suppose Cube C rise up so that its Z is not 0. Suddenly he will be invisible to A and B. C now moves 20 blocks to left and goes down to intersect at Z = 0. So C will be visible to A and B all of a sudden.
 
 FIGURE 2
 
-So next time you see this trick ... there might be a tiny possibility that the magician has an access to 4th dimension. So beware!
+From the perspective of A and B, C just disappeared from a place and showed up at another. So for A and B this was like the magic trick.
+
+If we extend this explanation to our 3D world we can easily find how a person with an access to 4th Dimension can disappear at place and shows up at another. So next time you see this trick ... there might be a tiny possibility that the magician has an access to 4th dimension. So beware!
 
 
-# A big leap for health-care
+# The saviour!
 ------------------------------------------------------------
 
-A person with access to 4D can see through your body because you are in 3 dimensional and your 4th dimension is exposed and free to access. Let me first show you how ...
+Since you live in 3 dimension and your 4th dimension is exposed and free to access, a person with access to 4D can see through you. Let me first show you how ...
 
-In our first example of 2D world, where A was a square and B was a circle, imagine there is a 2D - tumour inside the square that needs to be removed. He asks B for some help, B says he needs to cut him open to remove the tumour. Can this be done in any other simpler way?
-YES!
-This can be done in a very simple way. Since you have an access to 3rd dimension and tumour is exposed from its 3rd dimension, you can access tumour directly pick it up and throw it away, without any need of cutting open A.
+In our example of 2D world, where A was a square and B was a circle, imagine there is a 2D - tumour inside the square A that needs to be removed. He asks B for some help, B told him that he needs to cut A open to remove the tumour. Can this be done in any other simpler way?
+The answer is YES. This can be done in a very very simple way but this requires access to higher dimension. Since you have an access to 3rd dimension and tumour is exposed from its 3rd dimension, you can access tumour directly pick it up and throw it away, without any need of cutting open A.
 
 FIGURE 3
 
-Simply apply this model in 3D-4D world. If someone has an access to 4th dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
+Simply apply this model in our 3D world. If someone has an access to 4th dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
 A] Bloodless Surgery
 B] Tumour detection and removal
 C] Detect blood clotting in early stage
 D] Blood less transplantation of various organs, etc.
 
 
-# World's greatest thief
+# The Phantom Thief
 -----------------------------------------------------------------
 
-What if the man with such amazing capabilities became a thief. This is will be very menial for him but we can at least give this a thought ...
+What if a person with such amazing capabilities of accessing higher dimension became a thief. This is will be very menial but we can at least spare a thought on this...
 
-Since he can access anything directly without cutting open anything, so he can steal anything from any safe in this whole world without even getting noticed. This means no gold is safe in any safe, no treasure can be kept safe from his hands, not even art like Picasso's paintings are safe, this list has no end. sketch picture below can give you a clearer idea.
+From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so he can steal anything from any safe in this whole world without even getting noticed. This means no gold is safe in any safe, no treasure can be kept safe from his hands, not even art like Picasso's paintings are safe, nothing will be safe from him.
 
 FIGURE 4
+
+He can just swoop in take the things and go off and no one will ever take a notice of this.
 
 
 # The Perfect Murderer
 -----------------------------------------------------------------
 
-Imagine a person who can just pull out your heart out of your body without cutting you open. SCARY right! plus it seems quite SciFi. But this can be a reality of the person has an access to 4th dimension and you don't.
+Imagine a person who can just pull out your heart out of your body without cutting you open. SCARY right! also it seems quite SciFi. But this can be a reality of the person has an access to 4th dimension and you don't.
 
 FIGURE 5
 
-This guy can now become the perfect murderer because he dont need any weapons to kill someone, neither he requires any drug, rope, etc. nor he will leave his fingerprints anywhere. The worst part, this person might just be walking beside you, he extends his hand and BAMMM pull out your brain!! And you are dead in minutes.
-
-This may be scary as it sounds but can be really true if someone can access 4th dimension.
+This guy can now become the perfect murderer because he don't need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the 4th dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.
 
 
-# WTF is this?
-----------------------------------------------------------
-Lets imagine a 4D creature that intersects our 3D world in three distinct places at the same time. So anytime this creature move the intersection of his to our world will always move with him. We will always see these three things together always, devoid of the fact that this is in fact the intersection of a 4D creature on our world.
+# Some pointers to think about
+-------------------------------------------------------------------
 
-FIGURE 6
+1] What happens if the 4D creature intersects our 3D world at more than one place.
+2] Can this lead to teleportation? Just like Nightcrawler in X-men.
+
+Please drop your views in comment box below, I would like to hear from you guys. Also put answers to above points in comment section below.
