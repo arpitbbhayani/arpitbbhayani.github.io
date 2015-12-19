@@ -8,12 +8,11 @@ tags:
  - fourth-dimension
 ---
 
-Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world of X, Y and Z axis, but though all the scifi hype we do know that there exists a tiny possibility of higher dimensions that we currently cannot perceive. Lets talk about that ....
+Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world of X, Y and Z axis, but though all the Sci-Fi hype we do know that there exists a tiny possibility of higher dimensions that we currently cannot perceive. Lets talk about that ....
 
 
 The rule of n+1 th dimension
 --------------------------------------------------
-
 Imagine a plane P which is a 2D world and let there be 2 people A and B. A is a circle and B is a square. Since this is a 2D world, A and B can see everything on plane P but only as a line. They have no control over Z axis which can give them a perception of what they actually are i.e. square or circle.
 
 Suppose there is a person C, which is a Cube and has an access to third dimension. We can deduce the following statements from this
@@ -89,7 +88,7 @@ He can just swoop in take the things and go off and no one will ever take a noti
 # The Perfect Murderer
 -----------------------------------------------------------------
 
-Imagine a person who can just pull out your heart out of your body without cutting you open. SCARY right! also it seems quite SciFi. But this can be a reality of the person has an access to 4th dimension and you don't.
+Imagine a person who can just pull out your heart out of your body without cutting you open. SCARY right! also it seems quite Sci-Fi. But this can be a reality of the person has an access to 4th dimension and you don't.
 
 FIGURE 5
 
@@ -98,8 +97,12 @@ This guy can now become the perfect murderer because he don't need any weapons t
 
 # Some pointers to think about
 -------------------------------------------------------------------
-
 1] What happens if the 4D creature intersects our 3D world at more than one place.
-2] Can this lead to teleportation? Just like Nightcrawler in X-men.
+2] Can we now explain the powers of Nightcrawler in X-men
+3] Can 4D person see what you had in your breakfast? Who wants that!!
+4] Can we say that 4D person cannot be killed by a bullet?
+5] Can we create a lightning fast transport along 4th dimension?
 
-Please drop your views in comment box below, I would like to hear from you guys. Also put answers to above points in comment section below.
+The examples I explained above were very basic, if you really want to dive deep into this then just dive deep into your imaginations and jot your ideas.
+
+What did you think about this? I would love to hear from you guys.
