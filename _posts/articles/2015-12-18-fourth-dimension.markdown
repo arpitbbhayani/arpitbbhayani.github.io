@@ -50,7 +50,7 @@ You might have seen a magic trick where a person disappears from a place and sho
 
 Suppose a magician $$ X $$ is at place $$ P1 $$. If he has an access to $$ 4^{th} $$ dimension then he can simply move along it and reach place $$ P2 $$ without even getting noticed. This is just an extension of rule mentioned above.
 
-To explain it better lets go back to our $$ 2D $$ example. Suppose Cube C rise up so that its $$ Z \neq 0 $$. Suddenly he will be invisible to $$ A $$ and $$ B $$. $$ C $$ now moves $$ 20 $$ units to left and goes down to intersect at $$ Z \eq 0 $$. As soon as this happens $$ C $$ becomes visible to $$ A $$ and $$ B $$ all of a sudden.
+To explain it better lets go back to our $$ 2D $$ example. Suppose Cube C rise up so that its $$ Z \neq 0 $$. Suddenly he will be invisible to $$ A $$ and $$ B $$. $$ C $$ now moves $$ 20 $$ units to left and goes down to intersect at $$ Z = 0 $$. As soon as this happens $$ C $$ becomes visible to $$ A $$ and $$ B $$ all of a sudden.
 
 <div class="ui image">
     <img src="/static/images/fourth-dimension/2.jpg" alt="{{page.title}}" />
