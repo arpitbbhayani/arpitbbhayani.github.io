@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Deploy Grafana and Graphite an Ubuntu 14.04 server</title>
+  <meta name="description" content="Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx...">
+
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="canonical" href="http://arpitbbhayani.github.io/grafana.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit's Blog" href="http://arpitbbhayani.github.io/feed.xml">
+
+  <meta property="og:image" content="http://grafana.org/assets/img/docs/nice_dashboard.png"/>
+  <meta property="og:title" content="Deploy Grafana and Graphite an Ubuntu 14.04 server | Arpit's Blog"/>
+  <meta property="og:url" content="http://arpitbbhayani.github.io/grafana.html"/>
+  <meta property="og:site_name" content="Arpit's Blog"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbbhayani.github.io/grafana.html">
+  <meta name="twitter:title" content="Deploy Grafana and Graphite an Ubuntu 14.04 server | Arpit's Blog">
+  <meta name="twitter:description" content="Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx...">
+  <meta name="twitter:image" content="http://grafana.org/assets/img/docs/nice_dashboard.png">
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
+    <a href='/' class="item">
+        <div class="small-logo">
+            <span class="name1">
+                Arpit
+                <span class="name2">Bhayani</span>
+            </span>
+            <div class="tag-line">
+                
+            </div>
+        </div>
+    </a>
+    <div class="right menu item">
+        <div class="ui dropdown white item">
+            Categories
+            <i class="dropdown white icon"></i>
+            <div class="menu">
+                <a href='/tag/science' class="white item">Science</a>
+                <a href='/tag/techie' class="white item">Techie</a>
+            </div>
+        </div>
+        <a class="white item" href="/programming.html" style="line-height: 15px;">
+            <i class="code icon"></i>
+            Competitive Programming
+        </a>
+        <a class="white item" href="/about-me.html" style="line-height: 15px;">
+            <i class="user icon"></i>
+            About me
+        </a>
+    </div>
+</div>
+
+        <br/>
+
+        <div style="background: #FFF; padding-bottom: 50px;">
+            <section class="module parallax parallax-1" style='background-image: url("http://grafana.org/assets/img/docs/nice_dashboard.png");'>
+    <div class="article-title">
+        <div class="ui stackable grid">
+            <div class="one wide column"></div>
+            <div class="fourteen wide column">
+                <div class="white">Deploy Grafana and Graphite an Ubuntu 14.04 server</div>
+                <div class="article-tags">
+                    
+                    <a href='/tag/techie' class="ui large label blue">techie</a>
+                    
+                    <a href='/tag/devops' class="ui large label blue">devops</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui hidden section divider"></div>
+            <div class="article-content">
+                <p>Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.</p>
+
+<p><strong>Before starting following this setup, please go through my previous post on <a href="http://arpitbbhayani.github.io/graphite.html">Deploy Graphite and Nginx on an Ubuntu 14.04 server</a></strong></p>
+
+<h2 id="what-is-what">What is what</h2>
+
+<h3 id="what-is-grafana">What is Grafana?</h3>
+<p>Grafana is a tool for visualising time-series data for various application analytics. It is a great tool when used in combination with Graphite. It gives us flexibility of creating dashboards and share them with teams.
+<a href="http://grafana.org/">Grafana Official</a></p>
+
+<h1 id="installing-graphite">Installing Graphite</h1>
+
+<p>To install Graphite please follow this tutorial on <a href="arpitbbhayani.github.io/graphite.html">Deploy Graphite and Nginx on an Ubuntu 14.04 server</a>.</p>
+
+<h1 id="installing-grafana">Installing Grafana</h1>
+
+<h2 id="install-ubuntu-packages">Install Ubuntu Packages</h2>
+
+<p>Executing following commands will install Grafana on your machine</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;deb https://packagecloud.io/grafana/stable/debian/ wheezy main&#39;</span> <span class="p">|</span>  sudo tee -a /etc/apt/sources.list
+curl https://packagecloud.io/gpg.key <span class="p">|</span> sudo apt-key add -
+sudo apt-get update
+sudo apt-get install grafana</code></pre></figure>
+
+<h2 id="create-a-database-for-grafana">Create a database for Grafana</h2>
+
+<p>Just as we created the database for Graphite on PostgreSQL, we will create a database for Grafana as well. Create a database <strong>grafana</strong> and give user <strong>graphite</strong> (the user having access to Graphite database) ownership of it.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="err">$</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">grafana</span> <span class="k">WITH</span> <span class="k">OWNER</span> <span class="n">graphite</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="configure-grafana">Configure Grafana</h2>
+
+<p>Edit the Grafana configuration file</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/grafana/grafana.ini</code></pre></figure>
+
+<p>The settings should be something like this</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>database<span class="o">]</span>
+<span class="nb">type</span> <span class="o">=</span> postgres
+<span class="nv">host</span> <span class="o">=</span> 127.0.0.1:5432
+<span class="nv">name</span> <span class="o">=</span> grafana
+<span class="nv">user</span> <span class="o">=</span> graphite
+<span class="nv">password</span> <span class="o">=</span> mypassword
+
+<span class="o">[</span>server<span class="o">]</span>
+<span class="nv">protocol</span> <span class="o">=</span> http
+<span class="nv">http_addr</span> <span class="o">=</span> 127.0.0.1
+<span class="nv">http_port</span> <span class="o">=</span> 3000
+<span class="nv">domain</span> <span class="o">=</span> grafana.yourservername.com
+<span class="nv">enforce_domain</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">root_url</span> <span class="o">=</span> %<span class="o">(</span>protocol<span class="o">)</span>s://%<span class="o">(</span>domain<span class="o">)</span>s/
+
+<span class="o">[</span>security<span class="o">]</span>
+<span class="nv">admin_user</span> <span class="o">=</span> admin
+<span class="nv">admin_password</span> <span class="o">=</span> your_secure_password
+<span class="nv">secret_key</span> <span class="o">=</span> your_random_secret_salt</code></pre></figure>
+
+<p>Once your configuration is done, you can start Grafana Server by running</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo service grafana-server start</code></pre></figure>
+
+<p>The log files are located at <strong>/var/log/grafana/grafana.log</strong></p>
+
+<p>If everything goes well the log file should have content</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>tail /var/log/grafana/grafana.log
+
+<span class="o">[</span>0<span class="o">]</span>: default.paths.data<span class="o">=</span>/var/lib/grafana
+<span class="o">[</span>1<span class="o">]</span>: default.paths.logs<span class="o">=</span>/var/log/grafana
+Paths:
+  home: /usr/share/grafana
+  data: /var/lib/grafana
+  logs: /var/log/grafana
+
+2015/12/16 06:37:15 <span class="o">[</span>I<span class="o">]</span> Database: postgres
+2015/12/16 06:37:15 <span class="o">[</span>I<span class="o">]</span> Migrator: Starting DB migration
+2015/12/16 06:37:15 <span class="o">[</span>I<span class="o">]</span> Listen: http://127.0.0.1:3000</code></pre></figure>
+
+<h2 id="setup-nginx-for-graphite">Setup Nginx for Graphite</h2>
+
+<p>Let us first create all files and links</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo touch /etc/nginx/sites-enabled/grafana
+sudo ln -s /etc/nginx/sites-enabled/grafana /etc/nginx/sites-available/grafana
+
+<span class="c"># Log files</span>
+sudo touch /var/log/nginx/grafana.access.log
+sudo chmod <span class="m">666</span> /var/log/nginx/grafana.access.log
+sudo touch /var/log/nginx/grafana.error.log
+sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></pre></figure>
+
+<p>Now we are ready for configuring Nginx server for Grafana</p>
+
+<p>Open file <em>/etc/nginx/sites-enabled/grafana</em> and put following content in it</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/nginx/sites-enabled/grafana</code></pre></figure>
+
+<p>Nginx configuration</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">server</span> <span class="p">{</span>
+  <span class="nx">server_name</span> <span class="nx">grafana</span><span class="p">.</span><span class="nx">yourservername</span><span class="p">.</span><span class="nx">com</span><span class="p">;</span>
+  <span class="nx">listen</span> <span class="mi">80</span><span class="p">;</span>
+
+  <span class="nx">rewrite</span> <span class="o">^</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//$host$1 permanent;</span>
+<span class="p">}</span>
+
+
+<span class="nx">server</span> <span class="p">{</span>
+  <span class="nx">server_name</span> <span class="nx">grafana</span><span class="p">.</span><span class="nx">yourservername</span><span class="p">.</span><span class="nx">com</span><span class="p">;</span>
+
+
+  <span class="nx">listen</span> <span class="mi">443</span> <span class="nx">ssl</span> <span class="nx">spdy</span><span class="p">;</span>
+
+
+  <span class="nx">access_log</span> <span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/grafana.access.log;</span>
+  <span class="nx">error_log</span>  <span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/grafana.error.log;</span>
+
+
+  <span class="nx">location</span> <span class="o">=</span> <span class="err">/robots.txt {</span>
+    <span class="nx">echo</span> <span class="s2">&quot;User-agent: *\nDisallow: /\n&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">location</span> <span class="o">/</span> <span class="p">{</span>
+    <span class="nx">proxy_pass</span>         <span class="nx">http</span><span class="o">:</span><span class="c1">//localhost:3000;</span>
+    <span class="nx">proxy_set_header</span>   <span class="nx">Host</span> <span class="nx">$host</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Now you can view a working Grafana on your server. Just hit <em>http://grafana.yourservername.com</em> from your favourite browser.</p>
+
+<h1 id="see-it-working">See it working</h1>
+
+<p>Once you open the Grafana page, you will see a page something like this.</p>
+
+<div class="ui image">
+    <img src="/static/images/grafana1.png" alt="Grafana" />
+</div>
+
+<p>Log in to the system with default credentials</p>
+
+<ul>
+  <li>username: admin</li>
+  <li>password: admin</li>
+</ul>
+
+<p>Once you are logged in, you should see a screen like this.</p>
+
+<div class="ui image">
+    <img src="/static/images/grafana2.png" alt="Grafana" />
+</div>
+
+<p>Before you see any analytics information here, you should add your data source. The data source you will add will be Graphite that was setup earlier.</p>
+
+<p>Goto <strong>Data Source</strong> -&gt; <strong>Add New</strong></p>
+
+<p>Make following changes:</p>
+
+<ul>
+  <li>Name: <strong>graphite</strong></li>
+  <li>URL: <strong>graphite.yourservername.com</strong></li>
+</ul>
+
+<p>You should test your connection before adding any dashboard.</p>
+
+<div class="ui image">
+    <img src="/static/images/grafana3.png" alt="Grafana" />
+</div>
+
+<p>Once the connection is successful, now we are ready to add our first dashboard. Go to home page and goto <strong>New Dashboard</strong> -&gt; <strong>New</strong></p>
+
+<p>Once that is done, you can add panels to it. To add graphs in panels click on <strong>Green Button</strong> -&gt; <strong>Add Panel</strong> -&gt; <strong>Graph</strong>. At the botton you will see metrics in which select <em>test</em> and <em>count</em>. Then you will see screen something like this.</p>
+
+<div class="ui image">
+    <img src="/static/images/grafana4.png" alt="Grafana" />
+</div>
+
+<h2 id="more-information">More Information</h2>
+<p>Please follow the below links in order to know more about Grafana and its amazing customizations.</p>
+
+<ul>
+  <li><a href="http://docs.grafana.org/">Grafana Documentation</a></li>
+  <li><a href="http://docs.grafana.org/datasources/graphite/">Adding Graphite to Grafana Official</a></li>
+  <li><a href="http://docs.grafana.org/tutorials/hubot_howto/">Adding HuBot to Grafana</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'arpitbhayani';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <a href="#" class="back-to-top"></a>
+        <footer class="ui column centered grid">
+    <div class="row">
+        <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
+            <a class="white item" href="/all-posts.html">
+                <i class="database icon"></i>
+                Archives
+            </a>
+            <a class="white item" href="/feed.xml">
+                <i class="rss icon"></i>
+                RSS Feed
+            </a>
+            <a class="white item" href="/disclaimer.html">
+                <i class="announcement icon"></i>
+                Disclaimer
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column center aligned white">
+            Designed and written with <i class="heart red icon"></i> by <a class="white" href="/about-me.html">Arpit</a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    <head>
+    <link rel="stylesheet" href="/static/css/ux.css">
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/semantic/dist/semantic.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+
+</html>
