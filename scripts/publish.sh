@@ -14,5 +14,6 @@ cp -r $SITE_DIR/* $TMP_FOLDER
 
 cd $ROOT
 git checkout master
-# cp $TMP_FOLDER/* .
-# git status
+cd $ROOT
+cp -r $TMP_FOLDER/* .
+git status
