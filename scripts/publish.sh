@@ -17,3 +17,8 @@ git checkout master
 cd $ROOT
 cp -r $TMP_FOLDER/* .
 git status
+git add --all
+git commit -m 'Publishing latest site'
+git push origin master
+
+git checkout source
