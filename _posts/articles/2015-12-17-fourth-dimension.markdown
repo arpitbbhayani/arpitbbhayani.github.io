@@ -6,7 +6,6 @@ comments: true
 tags:
  - science
  - fourth-dimension
- - fiction
  - sci-fi
 ---
 
