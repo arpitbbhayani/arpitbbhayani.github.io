@@ -6,6 +6,8 @@ comments: true
 tags:
  - science
  - fourth-dimension
+ - fiction
+ - sci-fi
 ---
 
 Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world of $$ X $$, $$ Y $$ and $$ Z $$ axis, but though all the Sci-Fi hype we do know that there exists a tiny possibility of higher dimensions that we currently cannot perceive. Lets talk about that ....
