@@ -18,5 +18,5 @@ highlighter: pygments
 
 # Build settings
 markdown: kramdown
-
+twitter_username: arpit_bhayani
 exclude: [static/semantic/src/, static/semantic/tasks, static/node_modules]
