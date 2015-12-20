@@ -17,8 +17,12 @@ git checkout master
 cd $ROOT
 cp -r $TMP_FOLDER/* .
 git status
-git add --all
-git commit -m 'Publishing latest site'
-git push origin master
+
+read -p "Do you wish to continue with publishing it to master?" yn
+case $yn in
+    [Yy]* ) git add --all; git commit -m 'Publishing latest site'; git push origin master; break;;
+    [Nn]* ) exit;;
+    * ) echo "Please answer yes or no.";;
+esac
 
 git checkout source
