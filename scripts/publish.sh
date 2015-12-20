@@ -1,5 +1,3 @@
-# Copies _site folder
-
 ROOT=/Users/arpitbhayani/arpitbbhayani.github.io/
 TMP_FOLDER=/tmp/arpitbbhayani.github.io/
 SITE_DIR=/Users/arpitbhayani/arpitbbhayani.github.io/_site/
@@ -18,7 +16,8 @@ git checkout master
 cp -r $TMP_FOLDER/* .
 git status
 
-read -p "Do you wish to see the diff of all files? [y/n]" yn
+printf "\e[34m Do you wish to see the diff of all files? [y/n]"
+read yn
 while true; do
     case $yn in
         [Yy]* ) git diff; break;;
@@ -27,7 +26,8 @@ while true; do
     esac
 done
 
-read -p "Do you wish to continue with publishing it to master? [y/n]" yn
+printf "\e[34m Do you wish to continue with publishing it to master? [y/n]"
+read yn
 while true; do
     case $yn in
         [Yy]* ) git add --all; git commit -m 'Publishing latest site'; git push origin master; break;;
