@@ -19,10 +19,10 @@ cd $ROOT
 cp -r $TMP_FOLDER/* .
 git status
 
-read -p "Do you wish to continue with publishing it to master?" yn
+read -p "Do you wish to continue with publishing it to master? [y/n]" yn
 case $yn in
     [Yy]* ) git add --all; git commit -m 'Publishing latest site'; git push origin master; break;;
-    [Nn]* ) git reset --hard origin/master; exit;;
+    [Nn]* ) git reset --hard origin/master; break;;
     * ) echo "Please answer yes or no.";;
 esac
 
