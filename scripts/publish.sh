@@ -18,12 +18,23 @@ git checkout master
 cp -r $TMP_FOLDER/* .
 git status
 
+read -p "Do you wish to see the diff of all files? [y/n]" yn
+while true; do
+    case $yn in
+        [Yy]* ) git diff; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 read -p "Do you wish to continue with publishing it to master? [y/n]" yn
-case $yn in
-    [Yy]* ) git add --all; git commit -m 'Publishing latest site'; git push origin master; break;;
-    [Nn]* ) git reset --hard origin/master; break;;
-    * ) echo "Please answer yes or no.";;
-esac
+while true; do
+    case $yn in
+        [Yy]* ) git add --all; git commit -m 'Publishing latest site'; git push origin master; break;;
+        [Nn]* ) git reset --hard origin/master; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 git checkout source
 
