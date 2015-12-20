@@ -10,6 +10,8 @@ else
     mkdir $TMP_FOLDER
 fi
 
+jekyll build
+
 cp -r $SITE_DIR/* $TMP_FOLDER
 
 cd $ROOT
