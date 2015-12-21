@@ -6,19 +6,23 @@ blockquote {
 	overflow: auto;
 }
 
+article:hover {
+    background-color: #F5F5F5;
+}
+
 .ui.label {
-    -moz-box-shadow: 5px 5px 5px #ccc;
-    -webkit-box-shadow: 5px 5px 5px #ccc;
-    box-shadow: 5px 5px 5px #ccc;
+    -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.28);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.28);
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border-radius:5px;
 }
 
 img {
-    -moz-box-shadow: 10px 10px 5px #ccc;
-    -webkit-box-shadow: 10px 10px 5px #ccc;
-    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 10px 10px 5px rgba(0,0,0,0.18);
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.18);
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
     border-radius:10px;
@@ -108,8 +112,10 @@ pre {
 }
 
 .article-content {
-    font-size: 18px;
-    line-height: 30px;
+    color: rgba(0,0,0,0.8);
+    word-wrap: break-word;
+    font-size: 21px;
+    line-height: 1.58;
 }
 
 a.back-to-top {
