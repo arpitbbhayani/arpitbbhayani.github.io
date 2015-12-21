@@ -1,6 +1,6 @@
 competitive-programming
 science
-solar-system
+planets
 space
 alpha-centauri
 techie
@@ -8,3 +8,4 @@ python
 devops
 fourth-dimension
 sci-fi
+geometry
