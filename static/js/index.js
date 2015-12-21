@@ -2,6 +2,10 @@ $(document).ready(function() {
     $('.menu .item').tab();
     $('.ui.dropdown').dropdown();
 
+    $('a').click(function() {
+        $(this).transition('pulse');
+    });
+
     var amountScrolled = 30;
 
     $(window).scroll(function() {
