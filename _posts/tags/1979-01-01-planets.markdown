@@ -1,8 +1,8 @@
 ---
 layout:			default
-title:			All solar-system articles
+title:			All planets articles
 category:		tag
-passed-tag:		solar-system
+passed-tag:		planets
 type:           dummy
 ---
 

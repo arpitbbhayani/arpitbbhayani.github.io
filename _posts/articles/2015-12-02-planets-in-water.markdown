@@ -5,7 +5,7 @@ layout: post
 comments: true
 tags:
  - science
- - solar-system
+ - planets
  - space
 ---
 

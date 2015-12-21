@@ -5,6 +5,7 @@ layout: post
 comments: true
 tags:
  - science
+ - space
  - alpha-centauri
 ---
 
