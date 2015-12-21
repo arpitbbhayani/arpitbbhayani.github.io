@@ -7,13 +7,12 @@ layout: default
     {% include lead_article_snippet.html post=post %}
 {% endif %}
 {% endfor %}
-<div class="ui basic segment">
-    {% for post in site.posts offset:1 limit:5 %}
-    {% if post.type != 'dummy' %}
-        {% include article_snippet.html post=post %}
-    {% endif %}
-    {% endfor %}
-</div>
+
+{% for post in site.posts offset:1 limit:5 %}
+{% if post.type != 'dummy' %}
+    {% include article_snippet.html post=post %}
+{% endif %}
+{% endfor %}
 
 <div class="ui section hidden divider"></div>
 <div class="ui large header center aligned">
