@@ -5,8 +5,8 @@
     <description>I am a developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words. You might find something really crazy in here ...</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Dec 2015 09:36:57 +0530</pubDate>
-    <lastBuildDate>Tue, 22 Dec 2015 09:36:57 +0530</lastBuildDate>
+    <pubDate>Tue, 22 Dec 2015 09:53:54 +0530</pubDate>
+    <lastBuildDate>Tue, 22 Dec 2015 09:53:54 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -96,9 +96,9 @@
     &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Since we can find out these distances using regular measurement techniques, we can thus find out &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now will do some extrapolation. If you observe the figure above, it is clear that an angle measuring &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; at the center of the Earth spans a distance &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt; at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when &lt;script type=&quot;math/tex&quot;&gt;\theta = 360^{o}&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; at the center of the Earth spans a distance &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt; at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when &lt;script type=&quot;math/tex&quot;&gt;\theta = 360^{o}&lt;/script&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
@@ -155,21 +155,6 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.&lt;/p&gt;
-
-&lt;h1 id=&quot;some-pointers-to-think-about&quot;&gt;Some pointers to think about&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;The examples I mentioned above are really vague, but this can be taken to altogether very different levels. If you can think along the lines you can try to answer the following pointers.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;What happens if the &lt;script type=&quot;math/tex&quot;&gt;4D&lt;/script&gt; creature intersects our &lt;script type=&quot;math/tex&quot;&gt;3D&lt;/script&gt; world at more than one place.&lt;/li&gt;
-  &lt;li&gt;Do we now have an explanation of the powers of Nightcrawler in X-men?&lt;/li&gt;
-  &lt;li&gt;Can &lt;script type=&quot;math/tex&quot;&gt;4D&lt;/script&gt; person see what you had in your breakfast?&lt;/li&gt;
-  &lt;li&gt;Can we say that &lt;script type=&quot;math/tex&quot;&gt;4D&lt;/script&gt; person cannot be killed by a bullet?&lt;/li&gt;
-  &lt;li&gt;Can we create a lightning fast transport along &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension?&lt;/li&gt;
-  &lt;li&gt;Does this mean that &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension plus Flash’s speed = Teleportation?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you really want to dive deep into this then just dive deep into your imaginations and jot your ideas.&lt;/p&gt;
 
 &lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
 </description>
