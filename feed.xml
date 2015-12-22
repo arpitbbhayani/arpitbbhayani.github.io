@@ -5,8 +5,8 @@
     <description>I am a developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words. You might find something really crazy in here ...</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Dec 2015 09:53:54 +0530</pubDate>
-    <lastBuildDate>Tue, 22 Dec 2015 09:53:54 +0530</lastBuildDate>
+    <pubDate>Tue, 22 Dec 2015 09:56:20 +0530</pubDate>
+    <lastBuildDate>Tue, 22 Dec 2015 09:56:20 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -28,7 +28,7 @@
 &lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
 
 &lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/earth-circumference/1.jpg&quot; /&gt;
+    &lt;img src=&quot;http://arpitbbhayani.github.io/static/images/earth-circumference/1.jpg&quot; /&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
