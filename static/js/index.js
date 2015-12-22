@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.menu .item').tab();
     $('.ui.dropdown').dropdown();
 
-    $('a').click(function() {
+    $('.ui.label').click(function() {
         $(this).transition('pulse');
     });
 
