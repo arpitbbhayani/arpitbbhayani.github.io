@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>How big is our Earth?</title>
-  <meta name="description" content="Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets talk about that …">
+  <meta name="description" content="Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …">
 
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
@@ -18,12 +18,12 @@
   <meta property="og:url" content="http://arpitbbhayani.github.io/earth-circumference.html"/>
   <meta property="og:site_name" content="Arpit's Blog"/>
   <meta property="og:type" content="blog"/>
-  <meta property="og:description" content="Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets talk about that …" />
+  <meta property="og:description" content="Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …" />
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="http://arpitbbhayani.github.io/earth-circumference.html">
   <meta name="twitter:title" content="How big is our Earth? | Arpit's Blog">
-  <meta name="twitter:description" content="Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets talk about that …">
+  <meta name="twitter:description" content="Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …">
   <meta name="twitter:image" content="http://localhost:4000/static/images/earth-circumference/earth.jpg">
 
 </head>
@@ -100,9 +100,138 @@
         <div class="twelve wide column">
             <div class="ui hidden section divider"></div>
             <div class="article-content">
-                <p>Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets talk about that …</p>
+                <p>Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …</p>
 
-<h2 id="section">#</h2>
+<h1 id="the-assumptions">The Assumptions</h1>
+<hr />
+<p>Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:</p>
+
+<ul>
+  <li>Earth is a perfect sphere.</li>
+  <li>Since Sun is very very far and big, so the rays reaching Earth are parallel.</li>
+  <li>The objects we are using (pole) are perpendicular to the ground.</li>
+</ul>
+
+<h1 id="construction">Construction</h1>
+<hr />
+<p>Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.</p>
+
+<div class="ui image">
+    <img src="/static/images/earth-circumference/1.jpg" />
+</div>
+
+<p>Suppose <script type="math/tex">WX</script> and <script type="math/tex">YZ</script> are two poles present in two cities. Sun rays are incident on that pole and rays <script type="math/tex">DC</script> and <script type="math/tex">BA</script> casts a shadow <script type="math/tex">XC</script> and <script type="math/tex">ZA</script> at an angle <script type="math/tex">\theta_{1}</script> and <script type="math/tex">\theta_{2}</script> with top of the poles respectively.</p>
+
+<p>Now some geometrical construction:</p>
+
+<ul>
+  <li>Extend <script type="math/tex">WX</script> and <script type="math/tex">YZ</script> to meet at <script type="math/tex">O</script>, the center of the Earth. Let <script type="math/tex">\theta</script> be the angle between.</li>
+  <li>Extend line <script type="math/tex">BA</script> to meet <script type="math/tex">WO</script> at <script type="math/tex">A'</script>.</li>
+</ul>
+
+<p>Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.</p>
+
+<h1 id="derivation">Derivation</h1>
+<hr />
+<p>Lines <script type="math/tex">DC</script> and <script type="math/tex">BA'</script> are parallel and <script type="math/tex">WA'</script> acts as a transversal so we can say that</p>
+
+<blockquote>
+  <script type="math/tex; mode=display">\angle CWA' = \angle BA'W = \theta_{2} \\
+    \equiv  \angle CWA' = \angle YA'X = \theta_{2}</script>
+</blockquote>
+
+<p>Since <script type="math/tex">\angle YA'X = \theta_{2}</script> so we can say that</p>
+
+<blockquote>
+  <script type="math/tex; mode=display">\angle YA'O = 180^{o} - \theta_{2}</script>
+</blockquote>
+
+<p>Now let us consider <script type="math/tex">\triangle OA'Y</script>, we know sum of all angles of a triangle is <script type="math/tex">180^{o}</script>, hence</p>
+
+<blockquote>
+  <script type="math/tex; mode=display">\angle YA'O + \angle A'OY + \angle OYA' = 180^{o} \\
+    \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
+    \therefore \theta = \theta_{2} - \theta_{1}</script>
+</blockquote>
+
+<p>Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.</p>
+
+<blockquote>
+  <script type="math/tex; mode=display">\theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})</script>
+</blockquote>
+
+<table class="ui very basic table">
+    <thead>
+        <th>Distance</th>
+        <th>What it represents</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>l(CX)</td>
+            <td>Length of the shadow of pole WX</td>
+        </tr>
+        <tr>
+            <td>l(WX)</td>
+            <td>Length of pole WX</td>
+        </tr>
+        <tr>
+            <td>l(AZ)</td>
+            <td>Length of the shadow of pole YZ</td>
+        </tr>
+        <tr>
+            <td>l(YZ)</td>
+            <td>Length of pole YZ</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Since we can find out these distances using regular measurement techniques, we can thus find out <script type="math/tex">\theta</script>.</p>
+
+<p>Now will do some extrapolation. If you observe the figure above, it is clear that an angle measuring <script type="math/tex">\theta</script> at the center of the Earth spans a distance <script type="math/tex">l(XZ)</script> at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when <script type="math/tex">\theta = 360^{o}</script>.</p>
+
+<blockquote>
+  <script type="math/tex; mode=display">\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
+    \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
+    \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}</script>
+</blockquote>
+
+<p>The only thing unknown in above equation is <script type="math/tex">l(XZ)</script>, which is the distance between poles. To make our lives simpler we will use some GPS for this. If we know the latitude and longitude of the two poles then the distance between them can be calculated very easily. For quick calculations on this you can follow this <a href="http://www.movable-type.co.uk/scripts/latlong.html">link</a></p>
+
+<h1 id="find-how-big-is-our-earth">Find how big is our Earth</h1>
+<hr />
+<p>As we now have the Radius of the Earth <script type="math/tex">R</script> from above calculations, and if we assume that earth is a perfect sphere, we can find out</p>
+
+<ul>
+  <li>Total surface area <script type="math/tex">4 \pi R^{2}</script></li>
+  <li>Volume <script type="math/tex">\frac{4}{3} \pi R^{3}</script></li>
+</ul>
+
+<p>Actual values are in the table below just to cross check your results</p>
+
+<table class="ui very basic table">
+    <thead>
+        <th>Measure</th>
+        <th>Value</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Radius of Earth</td>
+            <td>6,371 km</td>
+        </tr>
+        <tr>
+            <td>Surface area of Earth</td>
+            <td>509805890 km<sup>2</sup></td>
+        </tr>
+        <tr>
+            <td>Volume of Earth</td>
+            <td>1.08321×10<sup>12</sup> km<sup>3</sup></td>
+        </tr>
+        <tr>
+            <td>l(YZ)</td>
+            <td>Length of pole YZ</td>
+        </tr>
+    </tbody>
+</table>
 
 <h1 id="the-history">The History</h1>
 <hr />
