@@ -90,9 +90,9 @@ $$
     </tbody>
 </table>
 
-Since we can find out these distances using regular measurement techniques, we can thus find out $$ \theta $$.
+Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out $$ \theta $$.
 
-Now will do some extrapolation. If you observe the figure above, it is clear that an angle measuring $$ \theta $$ at the center of the Earth spans a distance $$ l(XZ) $$ at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when $$ \theta = 360^{o} $$.
+Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring $$ \theta $$ at the center of the Earth spans a distance $$ l(XZ) $$ at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when $$ \theta = 360^{o} $$.
 
 > $$
     \frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
@@ -138,8 +138,6 @@ Actual values are in the table below just to cross check your results
 </table>
 
 
-
-
 # The History
 --------------------------------------------------
 The method was first proposed by Eratosthenes way back in **250 BC**. Lets see how it was done back then ...
@@ -149,19 +147,5 @@ In ancient Egypt there was a city named Syene. Eratosthenes was told that in a w
 > Eratosthenes calculated the circumference of Earth to be equal to **46,620 km**.
 
 Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.
-
-
-# Some pointers to think about
--------------------------------------------------------------------
-The examples I mentioned above are really vague, but this can be taken to altogether very different levels. If you can think along the lines you can try to answer the following pointers.
-
-* What happens if the $$ 4D $$ creature intersects our $$ 3D $$ world at more than one place.
-* Do we now have an explanation of the powers of Nightcrawler in X-men?
-* Can $$ 4D $$ person see what you had in your breakfast?
-* Can we say that $$ 4D $$ person cannot be killed by a bullet?
-* Can we create a lightning fast transport along $$ 4^{th} $$ dimension?
-* Does this mean that $$ 4^{th} $$ dimension plus Flash's speed = Teleportation?
-
-If you really want to dive deep into this then just dive deep into your imaginations and jot your ideas.
 
 What do you think about this? I would love to hear from you guys.
