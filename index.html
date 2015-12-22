@@ -2,13 +2,13 @@
 layout: default
 ---
 
-{% for post in site.posts limit:1 %}
+{% for post in site.tags['science'] limit:1 %}
 {% if post.type != 'dummy' %}
     {% include lead_article_snippet.html post=post %}
 {% endif %}
 {% endfor %}
 
-{% for post in site.posts offset:1 limit:5 %}
+{% for post in site.tags['science'] offset:1 limit:5 %}
 {% if post.type != 'dummy' %}
     {% include article_snippet.html post=post %}
 {% endif %}
@@ -16,7 +16,7 @@ layout: default
 
 <div class="ui section hidden divider"></div>
 <div class="ui large header center aligned">
-    <a class="ui very huge button blue" href="{% post_url 1979-01-01-all-posts %}">
+    <a class="ui very huge button blue" href="/tag/science">
         Click here to see all posts
     </a>
 </div>

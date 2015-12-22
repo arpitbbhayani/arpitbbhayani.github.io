@@ -40,11 +40,11 @@ footer {
 }
 
 a.white {
-    border-bottom: 3px solid #161b2d;
+    border-bottom: 2px solid #161b2d;
 }
 
 a.white:hover {
-    border-bottom: 3px solid #FFF;
+    border-bottom: 2px solid #FFF;
 }
 
 em {
