@@ -9,7 +9,7 @@ tags:
  - planets
 ---
 
-Is it really hard to find out circumference of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...
+Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...
 
 # The Assumptions
 --------------------------------------------------
