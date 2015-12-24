@@ -9,6 +9,14 @@ type: dummy
     {% include personal.html %}
 </div>
 
+<div class="ui centered one column grid">
+    <div class="column center aligned">
+        <div class="github-card" data-github="arpitbbhayani" data-width="400" data-height="" data-theme="default"></div>
+        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    </div>
+</div>
+
+
 <div class="ui centered two column grid">
     <div class="column">
         <div class="ui center aligned basic segment">
