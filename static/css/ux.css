@@ -105,7 +105,7 @@ pre {
     font-size: 42px;
     line-height: 50px;
     position: absolute;
-    top: 200px;
+    top: 230px;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -144,13 +144,13 @@ section.module.content {
   padding: 40px 0;
 }
 section.module.parallax {
-  height: 400px;
+  height: 500px;
   margin-top: -20px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #162B2D;
+  background-color: #161B2D;
 }
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.8);
