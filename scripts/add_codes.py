@@ -29,7 +29,7 @@ if __name__ == '__main__':
         exit()
 
     if not options.question_code:
-        print 'You forgot to specify --question_code'
+        print 'You forgot to specify --qcode'
         exit()
 
     process(options.in_file, 'codechef', 'Codechef', options.question_code)
