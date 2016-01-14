@@ -1,0 +1,73 @@
+---
+categories: codechef
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Codechef solution for SPALNUM
+---
+
+Following is the solution for Codechef Question: [SPALNUM](https://www.codechef.com/problems/SPALNUM)
+
+{% highlight cpp %}
+/*
+ *  Author: Arpit Bhayani
+ *  http://arpitbbhayani.github.io
+ */
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <climits>
+#include <deque>
+#include <iostream>
+#include <list>
+#include <limits>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+
+#define ll long long
+
+#define MIN(a, b) a < b ? a : b
+
+using namespace std;
+
+int array[100010];
+
+int is_palin(int n) {
+    int y = n;
+    int x = 0;
+    while(n) {
+        int t = n % 10;
+        x = x * 10 + t;
+        n = n / 10;
+    }
+    return y == x;
+}
+
+int main(int argc, char *argv[]) {
+    int t;
+    for(int i = 1; i <= 100001; i++ ) {
+        array[i] = is_palin(i);
+    }
+
+    scanf("%d", &t);
+
+    while( t-- ) {
+        int l, r;
+        ll int answer = 0;
+        scanf("%d%d", &l, &r);
+        for(int i = l; i <= r ; i++) {
+            if(array[i]) {
+                answer += (ll int)(i);
+            }
+        }
+        printf("%lld\n", answer);
+    }
+    return 0;
+}
+
+{% endhighlight %}
