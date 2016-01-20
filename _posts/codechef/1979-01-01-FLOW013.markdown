@@ -1,0 +1,55 @@
+---
+categories: codechef
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Codechef solution for FLOW013
+---
+
+Following is the solution for Codechef Question: [FLOW013](https://www.codechef.com/problems/FLOW013)
+
+{% highlight cpp %}
+/*
+ *  Author: Arpit Bhayani
+ *  http://arpitbbhayani.github.io
+ */
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <climits>
+#include <deque>
+#include <iostream>
+#include <list>
+#include <limits>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+
+#define ll long long
+
+#define MIN(a, b) a < b ? a : b
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    int t;
+    scanf("%d", &t);
+
+    while( t-- ) {
+        int a, b, c;
+        scanf("%d%d%d", &a, &b, &c);
+        if(a && b && c && (a+b+c) == 180) {
+            printf("YES\n");
+        }
+        else {
+            printf("NO\n");
+        }
+    }
+    return 0;
+}
+
+{% endhighlight %}
