@@ -1,0 +1,59 @@
+---
+categories: codechef
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Codechef solution for FLOW016
+---
+
+Following is the solution for Codechef Question: [FLOW016](https://www.codechef.com/problems/FLOW016)
+
+{% highlight cpp %}
+/*
+ *  Author: Arpit Bhayani
+ *  http://arpitbbhayani.github.io
+ */
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <climits>
+#include <deque>
+#include <iostream>
+#include <list>
+#include <limits>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+
+#define ll long long
+
+#define MIN(a, b) a < b ? a : b
+
+using namespace std;
+
+int gcd(int a, int b) {
+    if( b == 0 ) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+int main(int argc, char *argv[]) {
+    int t;
+    scanf("%d", &t);
+
+    while( t-- ) {
+        int n, m, g, l;
+        scanf("%d%d", &n, &m);
+        g = gcd(n, m);
+        l = (n * m) / g;
+        printf("%d %d\n", g, l);
+    }
+    return 0;
+}
+
+{% endhighlight %}
