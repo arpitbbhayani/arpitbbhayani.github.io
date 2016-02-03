@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>Codechef solution for FLOW017</title>
+  <meta name="description" content="Following is the solution for Codechef Question: FLOW017">
+
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="canonical" href="http://arpitbbhayani.github.io/codechef/FLOW017.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit's Blog" href="http://arpitbbhayani.github.io/feed.xml">
+
+  <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
+  <meta property="og:title" content="Codechef solution for FLOW017 | Arpit's Blog"/>
+  <meta property="og:url" content="http://arpitbbhayani.github.io/codechef/FLOW017.html"/>
+  <meta property="og:site_name" content="Arpit's Blog"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Following is the solution for Codechef Question: FLOW017" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbbhayani.github.io/codechef/FLOW017.html">
+  <meta name="twitter:title" content="Codechef solution for FLOW017 | Arpit's Blog">
+  <meta name="twitter:description" content="Following is the solution for Codechef Question: FLOW017">
+  <meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg">
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
+    <a href='/' class="item">
+        <div class="small-logo">
+            <span class="name1">
+                Arpit
+                <span class="name2">Bhayani</span>
+            </span>
+            <div class="tag-line">
+                
+            </div>
+        </div>
+    </a>
+    <div class="right menu item" style="font-size: 14px;">
+        <a class="white item" href="/tag/science" style="line-height: 15px;">
+            <i class="lightning icon"></i>
+            Science
+        </a>
+        <a class="white item" href="/tag/techie" style="line-height: 15px;">
+            <i class="code icon"></i>
+            Techie
+        </a>
+        <a class="white item" href="/programming.html" style="line-height: 15px;">
+            <i class="terminal icon"></i>
+            Competitive Programming
+        </a>
+        <a class="white item" href="/about-me.html" style="line-height: 15px;">
+            <i class="user icon"></i>
+            About me
+        </a>
+    </div>
+</div>
+
+        <br/>
+
+        <div style="background: #FFF; padding-bottom: 50px;">
+            <section class="module parallax parallax-1" style='background-image: url("https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg");'>
+    <div class="article-title">
+        <div class="ui stackable grid">
+            <div class="one wide column"></div>
+            <div class="fourteen wide column">
+                <div class="white">Codechef solution for FLOW017</div>
+                <div class="article-tags">
+                    
+                    <a href='/tag/competitive-programming' class="ui large label blue">competitive-programming</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui hidden section divider"></div>
+            <div class="article-content">
+                <p>Following is the solution for Codechef Question: <a href="https://www.codechef.com/problems/FLOW017">FLOW017</a></p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cm">/*</span>
+<span class="cm"> *  Author: Arpit Bhayani</span>
+<span class="cm"> *  http://arpitbbhayani.github.io</span>
+<span class="cm"> */</span>
+<span class="cp">#include &lt;cmath&gt;</span>
+<span class="cp">#include &lt;cstdio&gt;</span>
+<span class="cp">#include &lt;cstdlib&gt;</span>
+<span class="cp">#include &lt;climits&gt;</span>
+<span class="cp">#include &lt;deque&gt;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;list&gt;</span>
+<span class="cp">#include &lt;limits&gt;</span>
+<span class="cp">#include &lt;map&gt;</span>
+<span class="cp">#include &lt;queue&gt;</span>
+<span class="cp">#include &lt;set&gt;</span>
+<span class="cp">#include &lt;stack&gt;</span>
+<span class="cp">#include &lt;vector&gt;</span>
+
+<span class="cp">#define ll long long</span>
+
+<span class="cp">#define MIN(a, b) a &lt; b ? a : b</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+
+    <span class="k">while</span><span class="p">(</span> <span class="n">t</span><span class="o">--</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">ll</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">answer</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld%lld%lld&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/codechef/FLOW017.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Codechef solution for FLOW017&amp;url=http://arpitbbhayani.github.io/codechef/FLOW017.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'arpitbhayani';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <a href="#" class="back-to-top"></a>
+        <footer class="ui column centered grid">
+    <div class="row">
+        <div class="ui borderless menu" style="background-color: #161b2d; border-radius: 0; z-index: 2; margin: 0;">
+            <a class="white item" href="/all-posts.html">
+                <i class="database icon"></i>
+                Archives
+            </a>
+            <a class="white item" href="/feed.xml">
+                <i class="rss icon"></i>
+                RSS Feed
+            </a>
+            <a class="white item" href="/disclaimer.html">
+                <i class="announcement icon"></i>
+                Disclaimer
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column center aligned white">
+            Designed and written with <i class="heart red icon"></i> by <a class="white" href="/about-me.html">Arpit</a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    <head>
+    <link rel="stylesheet" href="/static/css/ux.css">
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/semantic/dist/semantic.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+
+</html>
