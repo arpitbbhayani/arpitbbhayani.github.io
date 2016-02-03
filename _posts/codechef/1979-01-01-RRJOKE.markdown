@@ -1,0 +1,55 @@
+---
+categories: codechef
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Codechef solution for RRJOKE
+---
+
+Following is the solution for Codechef Question: [RRJOKE](https://www.codechef.com/problems/RRJOKE)
+
+{% highlight cpp %}
+/*
+ *  Author: Arpit Bhayani
+ *  http://arpitbbhayani.github.io
+ */
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <climits>
+#include <deque>
+#include <iostream>
+#include <list>
+#include <limits>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+
+#define ll long long
+
+#define MIN(a, b) a < b ? a : b
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    int t;
+    scanf("%d", &t);
+
+    while( t-- ) {
+        int n, answer = 0;
+        scanf("%d", &n);
+        for(int i = 1; i <= n; i++) {
+            int x, y;
+            scanf("%d%d", &x, &y);
+            answer = answer ^ i;
+        }
+        printf("%d\n", answer);
+    }
+    return 0;
+}
+
+{% endhighlight %}
