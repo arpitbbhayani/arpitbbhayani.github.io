@@ -149,16 +149,10 @@
         <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld%lld%lld&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
 
         <span class="n">answer</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">);</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">k</span><span class="o">--</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">n</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">m</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="n">answer</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">abs</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">));</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">abs</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">);</span>
         <span class="p">}</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">abs</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">)</span> <span class="o">-</span> <span class="n">k</span><span class="p">);</span>
 
         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
     <span class="p">}</span>
