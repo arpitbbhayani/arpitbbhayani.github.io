@@ -1,0 +1,35 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for SILVER
+---
+
+Following is the solution for Spoj Question: [SILVER](http://www.spoj.com/problems/SILVER/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+int main( int argc , char * argv[] ) {
+	int n,i;
+
+	scanf("%d" , &n);
+
+	while ( n != 0 ) {
+		int pow = 1;
+		for ( i = 0 ; i <= n ; i++ ) {
+			if ( pow > n ) {
+				printf("%d\n" , i-1);
+				break;
+			}
+			pow = pow * 2;
+		}
+		scanf("%d" , &n);
+	}
+	return 0;
+}
+
+{% endhighlight %}

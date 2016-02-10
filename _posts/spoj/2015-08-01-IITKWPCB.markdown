@@ -1,0 +1,41 @@
+---
+categories: spoj
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Spoj solution for IITKWPCB
+---
+
+Following is the solution for Spoj Question: [IITKWPCB](http://www.spoj.com/problems/IITKWPCB/)
+
+{% highlight cpp %}
+#include <stdio.h>
+
+long long int gcd ( long long int a , long long int b ) {
+	if ( b == 0 )
+		return a;
+	return gcd ( b , a%b );
+}
+
+int main ( int argc , char * argv[] ) {
+	int t;
+	scanf("%d" , &t);
+
+	while ( t-- ) {
+		long long int n;
+		scanf("%lld" , &n);
+		long long int i;
+		for ( i = n/2 ; i>= 1 ; i-- ) {
+			if ( gcd( n , i ) == 1 ) {
+				printf("%lld\n" , i);
+				break;
+			}
+		}
+
+	}
+	return 0;
+}
+
+{% endhighlight %}
