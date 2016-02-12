@@ -23,26 +23,26 @@
     <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-  <title>Codechef solution for COMM3 | Arpit Bhayani | Blog</title>
-  <meta name="description" content="Following is the solution for Codechef Question: COMM3">
+  <title>Codechef solution for TEST | Arpit Bhayani | Blog</title>
+  <meta name="description" content="Following is the solution for Codechef Question: TEST">
   <meta name="keywords" content="competitive-programming, blog, computer science, physics, competitive programming, open source, quora widget" />
 
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
-  <link rel="canonical" href="http://arpitbbhayani.github.io/codechef/COMM3.html">
+  <link rel="canonical" href="http://arpitbbhayani.github.io/codechef/TEST.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog" href="http://arpitbbhayani.github.io/feed.xml">
 
   <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
-  <meta property="og:title" content="Codechef solution for COMM3 | Arpit Bhayani | Blog"/>
-  <meta property="og:url" content="http://arpitbbhayani.github.io/codechef/COMM3.html"/>
+  <meta property="og:title" content="Codechef solution for TEST | Arpit Bhayani | Blog"/>
+  <meta property="og:url" content="http://arpitbbhayani.github.io/codechef/TEST.html"/>
   <meta property="og:site_name" content="Arpit Bhayani | Blog"/>
   <meta property="og:type" content="blog"/>
-  <meta property="og:description" content="Following is the solution for Codechef Question: COMM3" />
+  <meta property="og:description" content="Following is the solution for Codechef Question: TEST" />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbbhayani.github.io/codechef/COMM3.html">
-  <meta name="twitter:title" content="Codechef solution for COMM3 | Arpit Bhayani | Blog">
-  <meta name="twitter:description" content="Following is the solution for Codechef Question: COMM3">
+  <meta name="twitter:url" content="http://arpitbbhayani.github.io/codechef/TEST.html">
+  <meta name="twitter:title" content="Codechef solution for TEST | Arpit Bhayani | Blog">
+  <meta name="twitter:description" content="Following is the solution for Codechef Question: TEST">
   <meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg">
 
 </head>
@@ -99,7 +99,7 @@
         <div class="ui stackable grid">
             <div class="one wide column"></div>
             <div class="fourteen wide column">
-                <div class="white">Codechef solution for COMM3</div>
+                <div class="white">Codechef solution for TEST</div>
                 <div class="article-tags">
                     
                     <a href='/tag/competitive-programming' class="ui large label blue">competitive-programming</a>
@@ -115,7 +115,7 @@
         <div class="twelve wide column">
             <div class="ui hidden section divider"></div>
             <div class="article-content">
-                <p>Following is the solution for Codechef Question: <a href="https://www.codechef.com/problems/COMM3">COMM3</a></p>
+                <p>Following is the solution for Codechef Question: <a href="https://www.codechef.com/problems/TEST">TEST</a></p>
 
 <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cm">/*</span>
 <span class="cm"> *  Author: Arpit Bhayani</span>
@@ -145,28 +145,11 @@
     <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
     <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
 
-    <span class="kt">char</span> <span class="n">answer</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;no&quot;</span><span class="p">,</span> <span class="s">&quot;yes&quot;</span><span class="p">};</span>
-    <span class="k">while</span><span class="p">(</span> <span class="n">t</span><span class="o">--</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="kt">float</span> <span class="n">r</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
-
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-        <span class="p">}</span>
-
-        <span class="c1">// first and second</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">+</span> <span class="p">((</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">;</span>
-
-        <span class="c1">// first and third</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="o">+</span> <span class="p">((</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">;</span>
-
-        <span class="c1">// second and third</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">+</span> <span class="p">((</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">;</span>
-
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">[</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">]);</span>
+    <span class="k">while</span><span class="p">(</span> <span class="n">t</span> <span class="o">!=</span> <span class="mi">42</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
     <span class="p">}</span>
+
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -177,11 +160,11 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/codechef/COMM3.html" rel="nofollow" target="_blank" title="Share on Facebook">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/codechef/TEST.html" rel="nofollow" target="_blank" title="Share on Facebook">
                 <i class="facebook icon"></i>
                 Share on Facebook
             </a>
-            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Codechef solution for COMM3&amp;url=http://arpitbbhayani.github.io/codechef/COMM3.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Codechef solution for TEST&amp;url=http://arpitbbhayani.github.io/codechef/TEST.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
                 <i class="twitter icon"></i>
                 Share on Twitter
             </a>
