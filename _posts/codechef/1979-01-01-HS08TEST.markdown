@@ -1,0 +1,57 @@
+---
+categories: codechef
+comments: true
+img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+layout: post
+tags:
+- competitive-programming
+title: Codechef solution for HS08TEST
+---
+
+Following is the solution for Codechef Question: [HS08TEST](https://www.codechef.com/problems/HS08TEST)
+
+{% highlight cpp %}
+/*
+ *  Author: Arpit Bhayani
+ *  http://arpitbbhayani.github.io
+ */
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <climits>
+#include <deque>
+#include <iostream>
+#include <list>
+#include <limits>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+
+#define ll long long
+
+#define MIN(a, b) a < b ? a : b
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    int x;
+    float i, ans;
+
+    scanf("%d%f", &x, &i);
+
+    if (x % 5 != 0) {
+        ans = i;
+    }
+    else {
+        ans = i - x - 0.5;
+        if (ans < 0) {
+            ans = i;
+        }
+    }
+    printf("%.2f\n", ans);
+    return 0;
+}
+
+{% endhighlight %}
