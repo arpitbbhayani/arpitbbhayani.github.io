@@ -23,26 +23,26 @@
     <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-  <title>Spoj solution for MANGOES | Arpit Bhayani | Blog</title>
-  <meta name="description" content="Following is the solution for Spoj Question: MANGOES">
+  <title>Codechef solution for INTEST | Arpit Bhayani | Blog</title>
+  <meta name="description" content="Following is the solution for Codechef Question: INTEST">
   <meta name="keywords" content="competitive-programming, blog, computer science, physics, competitive programming, open source, quora widget" />
 
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
-  <link rel="canonical" href="http://arpitbbhayani.github.io/spoj/MANGOES.html">
+  <link rel="canonical" href="http://arpitbbhayani.github.io/codechef/INTEST.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog" href="http://arpitbbhayani.github.io/feed.xml">
 
   <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
-  <meta property="og:title" content="Spoj solution for MANGOES | Arpit Bhayani | Blog"/>
-  <meta property="og:url" content="http://arpitbbhayani.github.io/spoj/MANGOES.html"/>
+  <meta property="og:title" content="Codechef solution for INTEST | Arpit Bhayani | Blog"/>
+  <meta property="og:url" content="http://arpitbbhayani.github.io/codechef/INTEST.html"/>
   <meta property="og:site_name" content="Arpit Bhayani | Blog"/>
   <meta property="og:type" content="blog"/>
-  <meta property="og:description" content="Following is the solution for Spoj Question: MANGOES" />
+  <meta property="og:description" content="Following is the solution for Codechef Question: INTEST" />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbbhayani.github.io/spoj/MANGOES.html">
-  <meta name="twitter:title" content="Spoj solution for MANGOES | Arpit Bhayani | Blog">
-  <meta name="twitter:description" content="Following is the solution for Spoj Question: MANGOES">
+  <meta name="twitter:url" content="http://arpitbbhayani.github.io/codechef/INTEST.html">
+  <meta name="twitter:title" content="Codechef solution for INTEST | Arpit Bhayani | Blog">
+  <meta name="twitter:description" content="Following is the solution for Codechef Question: INTEST">
   <meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg">
 
 </head>
@@ -99,7 +99,7 @@
         <div class="ui stackable grid">
             <div class="one wide column"></div>
             <div class="fourteen wide column">
-                <div class="white">Spoj solution for MANGOES</div>
+                <div class="white">Codechef solution for INTEST</div>
                 <div class="article-tags">
                     
                     <a href='/tag/competitive-programming' class="ui large label blue">competitive-programming</a>
@@ -115,31 +115,46 @@
         <div class="twelve wide column">
             <div class="ui hidden section divider"></div>
             <div class="article-content">
-                <p>Following is the solution for Spoj Question: <a href="http://www.spoj.com/problems/MANGOES/">MANGOES</a></p>
+                <p>Following is the solution for Codechef Question: <a href="https://www.codechef.com/problems/INTEST">INTEST</a></p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;stdio.h&gt;</span>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cm">/*</span>
+<span class="cm"> *  Author: Arpit Bhayani</span>
+<span class="cm"> *  http://arpitbbhayani.github.io</span>
+<span class="cm"> */</span>
+<span class="cp">#include &lt;cmath&gt;</span>
+<span class="cp">#include &lt;cstdio&gt;</span>
+<span class="cp">#include &lt;cstdlib&gt;</span>
+<span class="cp">#include &lt;climits&gt;</span>
+<span class="cp">#include &lt;deque&gt;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;list&gt;</span>
+<span class="cp">#include &lt;limits&gt;</span>
+<span class="cp">#include &lt;map&gt;</span>
+<span class="cp">#include &lt;queue&gt;</span>
+<span class="cp">#include &lt;set&gt;</span>
+<span class="cp">#include &lt;stack&gt;</span>
+<span class="cp">#include &lt;vector&gt;</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[]</span> <span class="p">)</span> <span class="p">{</span>
-	<span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
-	<span class="kt">long</span> <span class="kt">long</span> <span class="n">sum</span> <span class="p">,</span> <span class="n">n</span> <span class="p">,</span> <span class="n">m</span><span class="p">;</span>
- 
-	<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
-    
-	<span class="k">while</span><span class="p">(</span> <span class="n">t</span><span class="o">--</span> <span class="p">)</span> <span class="p">{</span>
-		<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span> <span class="p">;</span>
-        
-		<span class="k">if</span><span class="p">(</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
-			<span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">3</span> <span class="p">;</span>
-		<span class="k">else</span>
-			<span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">;</span>
-       
-		<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span><span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-        
-		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span> <span class="p">;</span>
-	<span class="p">}</span>
-    
-	<span class="k">return</span> <span class="mi">0</span> <span class="p">;</span>
+<span class="cp">#define ll long long</span>
+
+<span class="cp">#define MIN(a, b) a &lt; b ? a : b</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">ll</span> <span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
+
+    <span class="k">while</span><span class="p">(</span> <span class="n">t</span><span class="o">--</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="n">ll</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
+
 
             </div>
         </div>
@@ -147,11 +162,11 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/spoj/MANGOES.html" rel="nofollow" target="_blank" title="Share on Facebook">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/codechef/INTEST.html" rel="nofollow" target="_blank" title="Share on Facebook">
                 <i class="facebook icon"></i>
                 Share on Facebook
             </a>
-            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Spoj solution for MANGOES&amp;url=http://arpitbbhayani.github.io/spoj/MANGOES.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Codechef solution for INTEST&amp;url=http://arpitbbhayani.github.io/codechef/INTEST.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
                 <i class="twitter icon"></i>
                 Share on Twitter
             </a>
