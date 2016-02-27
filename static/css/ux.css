@@ -1,6 +1,22 @@
-body {
-    background-color: rgb(22, 25, 47);
+#progress-wrapper {
+    z-index: 500;
 }
+
+body {
+    background-color: #FFF;
+}
+
+#main-nav-menu .item {
+    line-height: 15px;
+    border-bottom: 0px solid rgba(0,0,0,0);
+}
+
+#main-nav-menu .item:hover {
+    background-color: #FFF;
+    color: #F56B6B;
+    border-bottom: 0px solid #F56B6B;
+}
+
 blockquote {
     background-color: #EEE;
     padding: 0.5em 0.5em 0.5em 0.5em;
@@ -35,9 +51,6 @@ img {
     border-radius:10px;
 }
 
-body {
-    background-color: #161b2d;
-}
 footer {
     background: #161b2d;
 }
@@ -224,12 +237,7 @@ section.module.parallax h1 {
 .small-logo {
     font-family: 'Exo 2', sans-serif;
     font-size: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 20px;
-
     cursor: pointer;
-    width: 350px;
 }
 
 .small-logo .tag-line {
@@ -238,13 +246,13 @@ section.module.parallax h1 {
 
 .small-logo .name1 {
     padding: 6px 0;
-    color: #EEE;
+    color: #F56B6B;
 }
 
 .small-logo .name2 {
     padding: 6px 6px;
-    color: #161B2D;
-    background-color: #EEE;
+    color: #FFFFFF;
+    background-color: #F56B6B;
     -webkit-border-top-right-radius: 5px;
        -moz-border-radius-topright: 5px;
             border-top-right-radius: 5px;
