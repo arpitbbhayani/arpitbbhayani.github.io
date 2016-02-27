@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.1.6 - Form
+ * # Semantic UI 2.1.8 - Form
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -98,7 +98,7 @@
 .ui.form input[type="time"],
 .ui.form input[type="text"],
 .ui.form input[type="url"] {
-  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
@@ -590,11 +590,6 @@
   position: relative;
   cursor: default;
   point-events: none;
-  text-shadow: none !important;
-  color: transparent !important;
-  -webkit-transition: all 0s linear;
-  transition: all 0s linear;
-  z-index: 100;
 }
 .ui.loading.form:before {
   position: absolute;
@@ -964,6 +959,7 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
+              -ms-grid-row-align: center;
           align-items: center;
 }
 .ui.form .inline.fields .field {
