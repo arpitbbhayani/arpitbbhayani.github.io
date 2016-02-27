@@ -87,28 +87,35 @@
 </div>
 
         <div style="padding-bottom: 50px; padding-top: 70px;">
-            <section class="module parallax parallax-1" style='background-image: url("http://arpitbbhayani.github.io/static/images/graphite2.png");'>
-    <div class="article-title">
-        <div class="ui stackable grid">
-            <div class="one wide column"></div>
-            <div class="fourteen wide column">
-                <div class="white">Deploy Graphite and Nginx on an Ubuntu 14.04 server</div>
-                <div class="article-tags">
-                    
-                    <a href='/tag/techie' class="ui large label blue">techie</a>
-                    
-                    <a href='/tag/devops' class="ui large label blue">devops</a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="ui stackable grid" style="background-color: #FFFFFF;">
+            <div class="ui stackable grid">
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <div class="ui hidden section divider"></div>
+            <div class="ui hidden divider"></div>
+            <div class="ui header">
+                <h1><i>Deploy Graphite and Nginx on an Ubuntu 14.04 server</i></h1>
+            </div>
+            <div>
+                
+                <a href='/tag/techie' class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">techie</a>
+                
+                <a href='/tag/devops' class="ui basic grey label" data-content="See all posts tagged with devops" data-variation="tiny">devops</a>
+                
+            </div>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="">
+                <img class="ui centered large image" src="http://arpitbbhayani.github.io/static/images/graphite2.png"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
             <div class="article-content">
                 <p>Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.</p>
 
@@ -425,9 +432,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p>Once you are logged in, you should see a screen like this.</p>
 
-<div class="ui image">
-    <img src="/static/images/graphite1.png" alt="Landing page of Graphite" />
-</div>
+<p><img class="ui large centered image" src="/static/images/graphite1.png" alt="Landing page of Graphite" /></p>
 
 <p>First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with <strong>test.</strong> will be recorded as our pattern. Lets add some random data</p>
 
@@ -443,9 +448,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p><strong>I already had some data in the system, your graph will look a bit different but should be similar</strong></p>
 
-<div class="ui image">
-    <img src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
-</div>
+<p><img class="ui large centered image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" /></p>
 
 <p>This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.</p>
 

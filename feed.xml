@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 Feb 2016 01:13:11 +0530</pubDate>
-    <lastBuildDate>Sun, 28 Feb 2016 01:13:11 +0530</lastBuildDate>
+    <pubDate>Sun, 28 Feb 2016 02:23:16 +0530</pubDate>
+    <lastBuildDate>Sun, 28 Feb 2016 02:23:16 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -27,9 +27,7 @@
 &lt;hr /&gt;
 &lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;http://arpitbbhayani.github.io/static/images/earth-circumference/1.jpg&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;http://arpitbbhayani.github.io/static/images/earth-circumference/1.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
 
@@ -182,9 +180,7 @@
 
 &lt;p&gt;Suppose there is a person &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;, which is a Cube and has an access to &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension. We can deduce the following statements from this&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/fourth-dimension/1.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/1.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; will see &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; as another fellow line as long as &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; intersects their world at &lt;script type=&quot;math/tex&quot;&gt;Z = 0&lt;/script&gt;.&lt;/li&gt;
@@ -221,9 +217,7 @@
 
 &lt;p&gt;To explain it better lets go back to our &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; example. Suppose Cube C rise up so that its &lt;script type=&quot;math/tex&quot;&gt;Z \neq 0&lt;/script&gt;. Suddenly he will be invisible to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; now moves &lt;script type=&quot;math/tex&quot;&gt;20&lt;/script&gt; units to left and goes down to intersect at &lt;script type=&quot;math/tex&quot;&gt;Z = 0&lt;/script&gt;. As soon as this happens &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; becomes visible to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; all of a sudden.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/fourth-dimension/2.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/2.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From the perspective of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; just disappeared from a place and showed up at another. So for them this was like the magic trick.&lt;/p&gt;
 
@@ -238,9 +232,7 @@
 
 &lt;p&gt;The answer is &lt;strong&gt;YES&lt;/strong&gt;. This can be done in a very very simple way but this requires access to higher dimensions. Suppose you enter this &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; world but you still have an access to &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension, and the tumor is exposed from its 3rd dimension, you can access tumor directly pick it up and throw it away, without any need of cutting open &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/fourth-dimension/3.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/3.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If we just extend this example to our world, we can say that if someone has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
 * Bloodless Surgery
@@ -254,9 +246,7 @@
 
 &lt;p&gt;From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so now since he is a thief, he can steal anything from any safe in this whole world without even getting noticed. This means no treasure can be kept safe from his hands, not even art like Picasso’s paintings are safe, nothing can be kept safe from him.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/fourth-dimension/4.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/4.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;He can just swoop in take the things and go off and no one will ever take a notice of this.&lt;/p&gt;
 
@@ -264,9 +254,7 @@
 &lt;hr /&gt;
 &lt;p&gt;Imagine if suddenly your heart comes out of your body! SCARY right! also it seems quite Sci-Fi. But this can be a reality if a person has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension and you don’t.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/fourth-dimension/5.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/5.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This guy can now become the perfect murderer because he don’t need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.&lt;/p&gt;
 
@@ -439,9 +427,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 
 &lt;p&gt;Once you open the Grafana page, you will see a page something like this.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/grafana1.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana1.png&quot; alt=&quot;Grafana&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Log in to the system with default credentials&lt;/p&gt;
 
@@ -452,9 +438,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 
 &lt;p&gt;Once you are logged in, you should see a screen like this.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/grafana2.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana2.png&quot; alt=&quot;Grafana&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Before you see any analytics information here, you should add your data source. The data source you will add will be Graphite that was setup earlier.&lt;/p&gt;
 
@@ -469,17 +453,13 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 
 &lt;p&gt;You should test your connection before adding any dashboard.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/grafana3.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana3.png&quot; alt=&quot;Grafana&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the connection is successful, now we are ready to add our first dashboard. Go to home page and goto &lt;strong&gt;New Dashboard&lt;/strong&gt; -&amp;gt; &lt;strong&gt;New&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Once that is done, you can add panels to it. To add graphs in panels click on &lt;strong&gt;Green Button&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Add Panel&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Graph&lt;/strong&gt;. At the botton you will see metrics in which select &lt;em&gt;test&lt;/em&gt; and &lt;em&gt;count&lt;/em&gt;. Then you will see screen something like this.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/grafana4.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana4.png&quot; alt=&quot;Grafana&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;more-information&quot;&gt;More Information&lt;/h2&gt;
 &lt;p&gt;Please follow the below links in order to know more about Grafana and its amazing customizations.&lt;/p&gt;
@@ -818,9 +798,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 
 &lt;p&gt;Once you are logged in, you should see a screen like this.&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/graphite1.png&quot; alt=&quot;Landing page of Graphite&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/graphite1.png&quot; alt=&quot;Landing page of Graphite&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with &lt;strong&gt;test.&lt;/strong&gt; will be recorded as our pattern. Lets add some random data&lt;/p&gt;
 
@@ -836,9 +814,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 
 &lt;p&gt;&lt;strong&gt;I already had some data in the system, your graph will look a bit different but should be similar&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;ui image&quot;&gt;
-    &lt;img src=&quot;/static/images/graphite2.png&quot; alt=&quot;test.count graph in Graphite&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/graphite2.png&quot; alt=&quot;test.count graph in Graphite&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.&lt;/p&gt;
 </description>
