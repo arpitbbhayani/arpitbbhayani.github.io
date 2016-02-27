@@ -1,9 +1,16 @@
+body {
+    background-color: rgb(22, 25, 47);
+}
 blockquote {
     background-color: #EEE;
     padding: 0.5em 0.5em 0.5em 0.5em;
 	border-left: 11px solid #ccc;
 	margin: 1.7em 0 1.7em 0.3em;
 	overflow: auto;
+}
+
+article {
+    background-color: #FFFFFF;
 }
 
 article:hover {
@@ -40,7 +47,7 @@ footer {
 }
 
 a.white {
-    border-bottom: 2px solid #161b2d;
+    border-bottom: 2px solid rgba(22, 27, 45, 0.89);
 }
 
 a.white:hover {
@@ -145,7 +152,7 @@ section.module.content {
 }
 section.module.parallax {
   height: 500px;
-  margin-top: -20px;
+  margin-top: -100px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
