@@ -168,9 +168,7 @@ Now you can view a working Grafana on your server. Just hit *http://grafana.your
 
 Once you open the Grafana page, you will see a page something like this.
 
-<div class="ui image">
-    <img src='/static/images/grafana1.png' alt='Grafana'/>
-</div>
+<img class="ui large centered image" src='/static/images/grafana1.png' alt='Grafana'/>
 
 Log in to the system with default credentials
 
@@ -179,9 +177,7 @@ Log in to the system with default credentials
 
 Once you are logged in, you should see a screen like this.
 
-<div class="ui image">
-    <img src='/static/images/grafana2.png' alt='Grafana'/>
-</div>
+<img class="ui large centered image" src='/static/images/grafana2.png' alt='Grafana'/>
 
 Before you see any analytics information here, you should add your data source. The data source you will add will be Graphite that was setup earlier.
 
@@ -194,17 +190,14 @@ Make following changes:
 
 You should test your connection before adding any dashboard.
 
-<div class="ui image">
-    <img src='/static/images/grafana3.png' alt='Grafana'/>
-</div>
+<img class="ui large centered image" src='/static/images/grafana3.png' alt='Grafana'/>
 
 Once the connection is successful, now we are ready to add our first dashboard. Go to home page and goto **New Dashboard** -> **New**
 
 Once that is done, you can add panels to it. To add graphs in panels click on **Green Button** -> **Add Panel** -> **Graph**. At the botton you will see metrics in which select *test* and *count*. Then you will see screen something like this.
 
-<div class="ui image">
-    <img src='/static/images/grafana4.png' alt='Grafana'/>
-</div>
+
+<img class="ui large centered image" src='/static/images/grafana4.png' alt='Grafana'/>
 
 
 ## More Information

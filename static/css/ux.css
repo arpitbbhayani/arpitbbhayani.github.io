@@ -7,14 +7,17 @@ body {
 }
 
 #main-nav-menu .item {
+    font-family: 'Exo 2', 'Arial';
+    font-weight: bold;
+    letter-spacing: 0.0001em;
     line-height: 15px;
-    border-bottom: 0px solid rgba(0,0,0,0);
+    border-bottom: 2px solid rgba(0,0,0,0);
 }
 
-#main-nav-menu .item:hover {
+#main-nav-menu .right.menu .item:hover {
     background-color: #FFF;
     color: #F56B6B;
-    border-bottom: 0px solid #F56B6B;
+    border-bottom: 2px solid #F56B6B;
 }
 
 blockquote {
@@ -34,9 +37,9 @@ article:hover {
 }
 
 .ui.label {
-    -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.28);
-    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.28);
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.28);
+    -moz-box-shadow: 2px 3px 3px rgba(0,0,0,0.28);
+    -webkit-box-shadow: 2px 3px 3px rgba(0,0,0,0.28);
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.28);
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border-radius:5px;
@@ -120,21 +123,10 @@ pre {
     color: #386E77 !important;
 }
 
-
-.article-title {
-    font-size: 42px;
-    line-height: 50px;
-    position: absolute;
-    top: 230px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-}
-
 .article-content {
     color: rgba(0,0,0,0.8);
     word-wrap: break-word;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 1.58;
 }
 
@@ -153,33 +145,6 @@ a.back-to-top {
 	border-radius: 30px;
 }
 
-/*** Parallax ***/
-/* ============================================================
-  SECTIONS
-============================================================ */
-section.module:last-child {
-  margin-bottom: 0;
-}
-section.module.content {
-  padding: 40px 0;
-}
-section.module.parallax {
-  height: 500px;
-  margin-top: -100px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #161B2D;
-}
-section.module.parallax h1 {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 600px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
 
 /*
  * Text effects
