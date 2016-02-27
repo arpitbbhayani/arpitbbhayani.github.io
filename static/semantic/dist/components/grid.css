@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.1.6 - Grid
+ * # Semantic UI 2.1.8 - Grid
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -1324,7 +1324,6 @@
 .ui.grid > .row > .justified.column {
   text-align: justify;
   -webkit-hyphens: auto;
-     -moz-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
 }
