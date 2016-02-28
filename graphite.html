@@ -108,9 +108,9 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <div class="">
+            <a href="http://arpitbbhayani.github.io/static/images/graphite2.png">
                 <img class="ui centered large image" src="http://arpitbbhayani.github.io/static/images/graphite2.png"/>
-            </div>
+            </a>
         </div>
     </div>
     <div class="row">
@@ -432,7 +432,9 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p>Once you are logged in, you should see a screen like this.</p>
 
-<p><img class="ui large centered image" src="/static/images/graphite1.png" alt="Landing page of Graphite" /></p>
+<p><a href="/static/images/graphite1.png">
+    <img class="ui large centered image" src="/static/images/graphite1.png" alt="Landing page of Graphite" />
+</a></p>
 
 <p>First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with <strong>test.</strong> will be recorded as our pattern. Lets add some random data</p>
 
@@ -448,7 +450,9 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p><strong>I already had some data in the system, your graph will look a bit different but should be similar</strong></p>
 
-<p><img class="ui large centered image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" /></p>
+<p><a href="/static/images/graphite2.png">
+<img class="ui large centered image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
+</a></p>
 
 <p>This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.</p>
 
