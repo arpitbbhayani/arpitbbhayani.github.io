@@ -1,0 +1,13 @@
+---
+layout:			default
+title:			All how-it-works articles
+category:		tag
+passed-tag:		how-it-works
+type:           dummy
+---
+
+{% for post in site.tags[page.passed-tag] %}
+{% if post.type != 'dummy' %}
+    {% include article_snippet.html post=post %}
+{% endif %}
+{% endfor %}
