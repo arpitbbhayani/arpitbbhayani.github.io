@@ -29,6 +29,7 @@
 
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
   <link rel="canonical" href="http://arpitbbhayani.github.io/graphite.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog" href="http://arpitbbhayani.github.io/feed.xml">
 
@@ -110,8 +111,8 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <a href="http://arpitbbhayani.github.io/static/images/graphite2.png">
-                <img class="ui centered large image" src="http://arpitbbhayani.github.io/static/images/graphite2.png"/>
+            <a href="http://arpitbbhayani.github.io/static/images/graphite2.png" data-lightbox="http://arpitbbhayani.github.io/static/images/graphite2.png" data-title="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
+                <img class="ui centered large image" src="http://arpitbbhayani.github.io/static/images/graphite2.png" alt="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
             </a>
         </div>
     </div>
@@ -434,7 +435,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p>Once you are logged in, you should see a screen like this.</p>
 
-<p><a href="/static/images/graphite1.png">
+<p><a href="/static/images/graphite1.png" data-lightbox="/static/images/graphite1.png" data-title="Landing page of Graphite">
     <img class="ui large centered image" src="/static/images/graphite1.png" alt="Landing page of Graphite" />
 </a></p>
 
@@ -452,8 +453,8 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p><strong>I already had some data in the system, your graph will look a bit different but should be similar</strong></p>
 
-<p><a href="/static/images/graphite2.png">
-<img class="ui large centered image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
+<p><a href="/static/images/graphite2.png" data-lightbox="/static/images/graphite2.png" data-title="test.count graph in Graphite">
+    <img class="ui large centered image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
 </a></p>
 
 <p>This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.</p>
@@ -520,6 +521,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
     <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script src="/static/js/scrollProgress.js"></script>
+    <script src="/static/js/lightbox.js"></script>
 </head>
 
 </html>

@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Mar 2016 00:32:33 +0530</pubDate>
-    <lastBuildDate>Tue, 01 Mar 2016 00:32:33 +0530</lastBuildDate>
+    <pubDate>Tue, 01 Mar 2016 01:28:03 +0530</pubDate>
+    <lastBuildDate>Tue, 01 Mar 2016 01:28:03 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 &lt;p&gt;Let me tell you in brief how it worked. &lt;strong&gt;Quarts Crystal&lt;/strong&gt; has a spacial property that it is &lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;piezoelectric&lt;/a&gt;, which means that&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot;&gt;
-&lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
@@ -53,16 +53,16 @@
 
 &lt;p&gt;Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.png&quot;&gt;
-&lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;hyperfine-interaction&quot;&gt;Hyperfine interaction&lt;/h3&gt;
 
 &lt;p&gt;The interaction between nucleus and its surrounding environment is known as &lt;strong&gt;hyperfine interaction&lt;/strong&gt;. The magnitude of these interactions are very very small but enough to shift energy levels.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot;&gt;
-&lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following&lt;/p&gt;
@@ -91,8 +91,8 @@
 
 &lt;p&gt;An atomic clock consists of a traditional &lt;strong&gt;Quartz Crystal&lt;/strong&gt; which is used for marking mechanical pulse just like in closed based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;battery operated quartz crystal&lt;/a&gt;. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot;&gt;
-&lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Properties of Cesium atoms we care about:&lt;/p&gt;
@@ -111,8 +111,8 @@
 
 &lt;p&gt;The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. &lt;strong&gt;Higher the number of ions incident on it higher will be the current generated&lt;/strong&gt;.&lt;/p&gt;
@@ -175,8 +175,8 @@
 &lt;hr /&gt;
 &lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/earth-circumference/1.jpg&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/earth-circumference/1.jpg&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/earth-circumference/1.jpg&quot; data-lightbox=&quot;/static/images/earth-circumference/1.jpg&quot; data-title=&quot;How big is our Earth?&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/earth-circumference/1.jpg&quot; alt=&quot;How big is our Earth?&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
@@ -330,8 +330,8 @@
 
 &lt;p&gt;Suppose there is a person &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;, which is a Cube and has an access to &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension. We can deduce the following statements from this&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/1.jpg&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/1.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/1.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/1.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/1.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -369,8 +369,8 @@
 
 &lt;p&gt;To explain it better lets go back to our &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; example. Suppose Cube C rise up so that its &lt;script type=&quot;math/tex&quot;&gt;Z \neq 0&lt;/script&gt;. Suddenly he will be invisible to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; now moves &lt;script type=&quot;math/tex&quot;&gt;20&lt;/script&gt; units to left and goes down to intersect at &lt;script type=&quot;math/tex&quot;&gt;Z = 0&lt;/script&gt;. As soon as this happens &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; becomes visible to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; all of a sudden.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/2.jpg&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/2.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/2.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/2.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/2.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;From the perspective of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; just disappeared from a place and showed up at another. So for them this was like the magic trick.&lt;/p&gt;
@@ -386,8 +386,8 @@
 
 &lt;p&gt;The answer is &lt;strong&gt;YES&lt;/strong&gt;. This can be done in a very very simple way but this requires access to higher dimensions. Suppose you enter this &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; world but you still have an access to &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension, and the tumor is exposed from its 3rd dimension, you can access tumor directly pick it up and throw it away, without any need of cutting open &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/3.jpg&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/3.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/3.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/3.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/3.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If we just extend this example to our world, we can say that if someone has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
@@ -402,8 +402,8 @@
 
 &lt;p&gt;From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so now since he is a thief, he can steal anything from any safe in this whole world without even getting noticed. This means no treasure can be kept safe from his hands, not even art like Picasso’s paintings are safe, nothing can be kept safe from him.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/4.jpg&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/4.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/4.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/4.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/4.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;He can just swoop in take the things and go off and no one will ever take a notice of this.&lt;/p&gt;
@@ -412,8 +412,8 @@
 &lt;hr /&gt;
 &lt;p&gt;Imagine if suddenly your heart comes out of your body! SCARY right! also it seems quite Sci-Fi. But this can be a reality if a person has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension and you don’t.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/5.jpg&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/5.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/5.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/5.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/fourth-dimension/5.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This guy can now become the perfect murderer because he don’t need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.&lt;/p&gt;
@@ -587,8 +587,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 
 &lt;p&gt;Once you open the Grafana page, you will see a page something like this.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana1.png&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana1.png&quot; alt=&quot;Grafana&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/grafana1.png&quot; data-lightbox=&quot;/static/images/grafana1.png&quot; data-title=&quot;Grafana&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana1.png&quot; alt=&quot;Grafana&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Log in to the system with default credentials&lt;/p&gt;
@@ -600,8 +600,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 
 &lt;p&gt;Once you are logged in, you should see a screen like this.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana2.png&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana2.png&quot; alt=&quot;Grafana&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/grafana2.png&quot; data-lightbox=&quot;/static/images/grafana2.png&quot; data-title=&quot;Grafana&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana2.png&quot; alt=&quot;Grafana&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Before you see any analytics information here, you should add your data source. The data source you will add will be Graphite that was setup earlier.&lt;/p&gt;
@@ -617,16 +617,16 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 
 &lt;p&gt;You should test your connection before adding any dashboard.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana3.png&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana3.png&quot; alt=&quot;Grafana&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/grafana3.png&quot; data-lightbox=&quot;/static/images/grafana3.png&quot; data-title=&quot;Grafana&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana3.png&quot; alt=&quot;Grafana&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the connection is successful, now we are ready to add our first dashboard. Go to home page and goto &lt;strong&gt;New Dashboard&lt;/strong&gt; -&amp;gt; &lt;strong&gt;New&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Once that is done, you can add panels to it. To add graphs in panels click on &lt;strong&gt;Green Button&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Add Panel&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Graph&lt;/strong&gt;. At the botton you will see metrics in which select &lt;em&gt;test&lt;/em&gt; and &lt;em&gt;count&lt;/em&gt;. Then you will see screen something like this.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana4.png&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana4.png&quot; alt=&quot;Grafana&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/grafana4.png&quot; data-lightbox=&quot;/static/images/grafana4.png&quot; data-title=&quot;Grafana&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/grafana4.png&quot; alt=&quot;Grafana&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;more-information&quot;&gt;More Information&lt;/h2&gt;
@@ -966,7 +966,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 
 &lt;p&gt;Once you are logged in, you should see a screen like this.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/graphite1.png&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/graphite1.png&quot; data-lightbox=&quot;/static/images/graphite1.png&quot; data-title=&quot;Landing page of Graphite&quot;&gt;
     &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/graphite1.png&quot; alt=&quot;Landing page of Graphite&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
@@ -984,8 +984,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 
 &lt;p&gt;&lt;strong&gt;I already had some data in the system, your graph will look a bit different but should be similar&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/graphite2.png&quot;&gt;
-&lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/graphite2.png&quot; alt=&quot;test.count graph in Graphite&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/graphite2.png&quot; data-lightbox=&quot;/static/images/graphite2.png&quot; data-title=&quot;test.count graph in Graphite&quot;&gt;
+    &lt;img class=&quot;ui large centered image&quot; src=&quot;/static/images/graphite2.png&quot; alt=&quot;test.count graph in Graphite&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.&lt;/p&gt;

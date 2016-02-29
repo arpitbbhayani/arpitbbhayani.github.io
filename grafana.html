@@ -29,6 +29,7 @@
 
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
   <link rel="canonical" href="http://arpitbbhayani.github.io/grafana.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog" href="http://arpitbbhayani.github.io/feed.xml">
 
@@ -110,8 +111,8 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <a href="http://grafana.org/assets/img/docs/nice_dashboard.png">
-                <img class="ui centered large image" src="http://grafana.org/assets/img/docs/nice_dashboard.png"/>
+            <a href="http://grafana.org/assets/img/docs/nice_dashboard.png" data-lightbox="http://grafana.org/assets/img/docs/nice_dashboard.png" data-title="Deploy Grafana and Graphite an Ubuntu 14.04 server">
+                <img class="ui centered large image" src="http://grafana.org/assets/img/docs/nice_dashboard.png" alt="Deploy Grafana and Graphite an Ubuntu 14.04 server">
             </a>
         </div>
     </div>
@@ -256,8 +257,8 @@ sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></p
 
 <p>Once you open the Grafana page, you will see a page something like this.</p>
 
-<p><a href="/static/images/grafana1.png">
-<img class="ui large centered image" src="/static/images/grafana1.png" alt="Grafana" />
+<p><a href="/static/images/grafana1.png" data-lightbox="/static/images/grafana1.png" data-title="Grafana">
+    <img class="ui large centered image" src="/static/images/grafana1.png" alt="Grafana" />
 </a></p>
 
 <p>Log in to the system with default credentials</p>
@@ -269,8 +270,8 @@ sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></p
 
 <p>Once you are logged in, you should see a screen like this.</p>
 
-<p><a href="/static/images/grafana2.png">
-<img class="ui large centered image" src="/static/images/grafana2.png" alt="Grafana" />
+<p><a href="/static/images/grafana2.png" data-lightbox="/static/images/grafana2.png" data-title="Grafana">
+    <img class="ui large centered image" src="/static/images/grafana2.png" alt="Grafana" />
 </a></p>
 
 <p>Before you see any analytics information here, you should add your data source. The data source you will add will be Graphite that was setup earlier.</p>
@@ -286,16 +287,16 @@ sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></p
 
 <p>You should test your connection before adding any dashboard.</p>
 
-<p><a href="/static/images/grafana3.png">
-<img class="ui large centered image" src="/static/images/grafana3.png" alt="Grafana" />
+<p><a href="/static/images/grafana3.png" data-lightbox="/static/images/grafana3.png" data-title="Grafana">
+    <img class="ui large centered image" src="/static/images/grafana3.png" alt="Grafana" />
 </a></p>
 
 <p>Once the connection is successful, now we are ready to add our first dashboard. Go to home page and goto <strong>New Dashboard</strong> -&gt; <strong>New</strong></p>
 
 <p>Once that is done, you can add panels to it. To add graphs in panels click on <strong>Green Button</strong> -&gt; <strong>Add Panel</strong> -&gt; <strong>Graph</strong>. At the botton you will see metrics in which select <em>test</em> and <em>count</em>. Then you will see screen something like this.</p>
 
-<p><a href="/static/images/grafana4.png">
-<img class="ui large centered image" src="/static/images/grafana4.png" alt="Grafana" />
+<p><a href="/static/images/grafana4.png" data-lightbox="/static/images/grafana4.png" data-title="Grafana">
+    <img class="ui large centered image" src="/static/images/grafana4.png" alt="Grafana" />
 </a></p>
 
 <h2 id="more-information">More Information</h2>
@@ -369,6 +370,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></p
     <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script src="/static/js/scrollProgress.js"></script>
+    <script src="/static/js/lightbox.js"></script>
 </head>
 
 </html>
