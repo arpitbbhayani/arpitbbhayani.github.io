@@ -1,3 +1,6 @@
+::-moz-selection { background: rgba(245, 107, 107, 0.22); }
+::selection { background: rgba(245, 107, 107, 0.22); }
+
 #progress-wrapper {
     z-index: 500;
 }

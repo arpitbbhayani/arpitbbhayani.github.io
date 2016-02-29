@@ -11,9 +11,12 @@ layout: default
                 <h1><i>{{ page.title }}</i></h1>
             </div>
             <div>
-                {% for tag in page.tags %}
-                <a href='/tag/{{tag}}' class="ui basic grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
-                {% endfor %}
+                <span class="ui tiny header grey"><i>{{page.date | date: '%B %d, %Y'}}</i></span>
+                <span class="ui right aligned basic segment">
+                    {% for tag in page.tags %}
+                    <a href='/tag/{{tag}}' class="ui basic grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
+                    {% endfor %}
+                </span>
             </div>
             <div class="ui divider"></div>
         </div>
