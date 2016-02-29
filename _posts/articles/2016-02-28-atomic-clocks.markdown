@@ -9,7 +9,7 @@ tags:
  - how-it-works
 ---
 
-If you think the accuracy of atomic clock is because of radioactivity or atomic decay, then you are wrong. Lets find out the truth behind it.
+The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.
 
 There are some very common myths about atomic clocks, the most most famous are
 
