@@ -19,8 +19,8 @@ Imagine a plane $$ P $$ which is a 2D world and let there be 2 people $$ A $$ an
 
 Suppose there is a person $$ C $$, which is a Cube and has an access to $$ 3^{rd} $$ dimension. We can deduce the following statements from this
 
-<a href="/static/images/fourth-dimension/1.jpg">
-<img class="ui large centered image" src="/static/images/fourth-dimension/1.jpg" alt="{{page.title}}" />
+<a href="/static/images/fourth-dimension/1.jpg" data-lightbox="/static/images/fourth-dimension/1.jpg" data-title="{{page.title}}">
+    <img class="ui large centered image" src='/static/images/fourth-dimension/1.jpg' alt='{{page.title}}'/>
 </a>
 
 * $$ A $$ and $$ B $$ will see $$ C $$ as another fellow line as long as $$ C $$ intersects their world at $$ Z = 0 $$.
@@ -51,8 +51,9 @@ Suppose a magician $$ X $$ is at place $$ P1 $$. If he has an access to $$ 4^{th
 
 To explain it better lets go back to our $$ 2D $$ example. Suppose Cube C rise up so that its $$ Z \neq 0 $$. Suddenly he will be invisible to $$ A $$ and $$ B $$. $$ C $$ now moves $$ 20 $$ units to left and goes down to intersect at $$ Z = 0 $$. As soon as this happens $$ C $$ becomes visible to $$ A $$ and $$ B $$ all of a sudden.
 
-<a href="/static/images/fourth-dimension/2.jpg">
-<img class="ui large centered image"  src="/static/images/fourth-dimension/2.jpg" alt="{{page.title}}" />
+
+<a href="/static/images/fourth-dimension/2.jpg" data-lightbox="/static/images/fourth-dimension/2.jpg" data-title="{{page.title}}">
+    <img class="ui large centered image" src='/static/images/fourth-dimension/2.jpg' alt='{{page.title}}'/>
 </a>
 
 From the perspective of $$ A $$ and $$ B $$, $$ C $$ just disappeared from a place and showed up at another. So for them this was like the magic trick.
@@ -69,8 +70,8 @@ In our example of $$ 2D $$ world, imagine there is a $$ 2D $$ - tumor inside the
 
 The answer is **YES**. This can be done in a very very simple way but this requires access to higher dimensions. Suppose you enter this $$ 2D $$ world but you still have an access to $$ 3^{rd} $$ dimension, and the tumor is exposed from its 3rd dimension, you can access tumor directly pick it up and throw it away, without any need of cutting open $$ A $$.
 
-<a href="/static/images/fourth-dimension/3.jpg">
-<img class="ui large centered image" src="/static/images/fourth-dimension/3.jpg" alt="{{page.title}}" />
+<a href="/static/images/fourth-dimension/3.jpg" data-lightbox="/static/images/fourth-dimension/3.jpg" data-title="{{page.title}}">
+    <img class="ui large centered image" src='/static/images/fourth-dimension/3.jpg' alt='{{page.title}}'/>
 </a>
 
 If we just extend this example to our world, we can say that if someone has an access to $$ 4^{th} $$ dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
@@ -86,8 +87,8 @@ What if a person with such amazing capabilities became a thief. This is will be 
 
 From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so now since he is a thief, he can steal anything from any safe in this whole world without even getting noticed. This means no treasure can be kept safe from his hands, not even art like Picasso's paintings are safe, nothing can be kept safe from him.
 
-<a href="/static/images/fourth-dimension/4.jpg">
-<img class="ui large centered image" src="/static/images/fourth-dimension/4.jpg" alt="{{page.title}}" />
+<a href="/static/images/fourth-dimension/4.jpg" data-lightbox="/static/images/fourth-dimension/4.jpg" data-title="{{page.title}}">
+    <img class="ui large centered image" src='/static/images/fourth-dimension/4.jpg' alt='{{page.title}}'/>
 </a>
 
 He can just swoop in take the things and go off and no one will ever take a notice of this.
@@ -96,8 +97,8 @@ He can just swoop in take the things and go off and no one will ever take a noti
 -----------------------------------------------------------------
 Imagine if suddenly your heart comes out of your body! SCARY right! also it seems quite Sci-Fi. But this can be a reality if a person has an access to $$ 4^{th} $$ dimension and you don't.
 
-<a href="/static/images/fourth-dimension/5.jpg">
-<img class="ui large centered image" src="/static/images/fourth-dimension/5.jpg" alt="{{page.title}}" />
+<a href="/static/images/fourth-dimension/5.jpg" data-lightbox="/static/images/fourth-dimension/5.jpg" data-title="{{page.title}}">
+    <img class="ui large centered image" src='/static/images/fourth-dimension/5.jpg' alt='{{page.title}}'/>
 </a>
 
 This guy can now become the perfect murderer because he don't need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the $$ 4^{th} $$ dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.

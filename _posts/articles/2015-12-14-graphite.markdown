@@ -390,7 +390,7 @@ Login to the system with credentials that you provided while creating the superu
 
 Once you are logged in, you should see a screen like this.
 
-<a href='/static/images/graphite1.png'>
+<a href="/static/images/graphite1.png" data-lightbox="/static/images/graphite1.png" data-title="Landing page of Graphite">
     <img class="ui large centered image" src='/static/images/graphite1.png' alt='Landing page of Graphite'/>
 </a>
 
@@ -413,8 +413,8 @@ Now you should see something like this.
 
 **I already had some data in the system, your graph will look a bit different but should be similar**
 
-<a href='/static/images/graphite2.png'>
-<img class="ui large centered image" src='/static/images/graphite2.png' alt='test.count graph in Graphite'/>
+<a href="/static/images/graphite2.png" data-lightbox="/static/images/graphite2.png" data-title="test.count graph in Graphite">
+    <img class="ui large centered image" src='/static/images/graphite2.png' alt='test.count graph in Graphite'/>
 </a>
 
 This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.
