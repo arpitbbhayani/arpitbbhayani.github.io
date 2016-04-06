@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Mar 2016 03:20:56 +0530</pubDate>
-    <lastBuildDate>Wed, 02 Mar 2016 03:20:56 +0530</lastBuildDate>
+    <pubDate>Wed, 06 Apr 2016 23:18:07 +0530</pubDate>
+    <lastBuildDate>Wed, 06 Apr 2016 23:18:07 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -145,8 +145,8 @@
 
 </description>
         <pubDate>Sun, 28 Feb 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/atomic-clocks.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/atomic-clocks.html</guid>
+        <link>http://arpitbbhayani.github.io/science/atomic-clocks.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/science/atomic-clocks.html</guid>
         
         <category>science</category>
         
@@ -154,6 +154,8 @@
         
         <category>how-it-works</category>
         
+        
+        <category>science</category>
         
       </item>
     
@@ -307,8 +309,8 @@
 &lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
 </description>
         <pubDate>Sun, 20 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/earth-circumference.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/earth-circumference.html</guid>
+        <link>http://arpitbbhayani.github.io/science/earth-circumference.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/science/earth-circumference.html</guid>
         
         <category>science</category>
         
@@ -316,6 +318,8 @@
         
         <category>planets</category>
         
+        
+        <category>science</category>
         
       </item>
     
@@ -436,8 +440,8 @@
 &lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/fourth-dimension.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/fourth-dimension.html</guid>
+        <link>http://arpitbbhayani.github.io/science/fourth-dimension.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/science/fourth-dimension.html</guid>
         
         <category>science</category>
         
@@ -445,6 +449,8 @@
         
         <category>sci-fi</category>
         
+        
+        <category>science</category>
         
       </item>
     
@@ -639,13 +645,15 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafa
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 15 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/grafana.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/grafana.html</guid>
+        <link>http://arpitbbhayani.github.io/techie/grafana.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/techie/grafana.html</guid>
         
         <category>techie</category>
         
         <category>devops</category>
         
+        
+        <category>techie</category>
         
       </item>
     
@@ -991,13 +999,15 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 &lt;p&gt;This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.&lt;/p&gt;
 </description>
         <pubDate>Mon, 14 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/graphite.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/graphite.html</guid>
+        <link>http://arpitbbhayani.github.io/techie/graphite.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/techie/graphite.html</guid>
         
         <category>techie</category>
         
         <category>devops</category>
         
+        
+        <category>techie</category>
         
       </item>
     
@@ -1139,13 +1149,15 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 &lt;/ol&gt;
 </description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/python-package.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/python-package.html</guid>
+        <link>http://arpitbbhayani.github.io/techie/python-package.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/techie/python-package.html</guid>
         
         <category>techie</category>
         
         <category>python</category>
         
+        
+        <category>techie</category>
         
       </item>
     
@@ -1170,8 +1182,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 &lt;p&gt;We now have no clue about what technology will exist 1000 years from now, but we all would love to go on a space trip and visit our closest star after sun.&lt;/p&gt;
 </description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/alpha-centauri.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/alpha-centauri.html</guid>
+        <link>http://arpitbbhayani.github.io/science/alpha-centauri.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/science/alpha-centauri.html</guid>
         
         <category>science</category>
         
@@ -1179,6 +1191,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
         
         <category>alpha-centauri</category>
         
+        
+        <category>science</category>
         
       </item>
     
@@ -1238,8 +1252,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 &lt;p&gt;From the table above, we can find that the planet Saturn has density of 0.7 gm/cm&lt;sup&gt;3&lt;/sup&gt; which is less than the density of water 1.0 gm/cm&lt;sup&gt;3&lt;/sup&gt;. Hence planet Saturn will float while the other planets will simply sink down to the bottom of the tank.&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbbhayani.github.io/planets-in-water.html</link>
-        <guid isPermaLink="true">http://arpitbbhayani.github.io/planets-in-water.html</guid>
+        <link>http://arpitbbhayani.github.io/science/planets-in-water.html</link>
+        <guid isPermaLink="true">http://arpitbbhayani.github.io/science/planets-in-water.html</guid>
         
         <category>science</category>
         
@@ -1247,6 +1261,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
         
         <category>space</category>
         
+        
+        <category>science</category>
         
       </item>
     
