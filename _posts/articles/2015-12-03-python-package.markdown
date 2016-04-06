@@ -6,6 +6,7 @@ comments: true
 tags:
  - techie
  - python
+categories: techie
 ---
 
 Did you write something cool in Python? Wanna publish it? This post will help you publish your python module hosted on [github.com](http://github.com) on official [Python Package Index](https://pypi.python.org). After going through all the steps mentioned in this post, your Python module will be accessible via `pip` and `easy_install`.

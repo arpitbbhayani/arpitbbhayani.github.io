@@ -7,6 +7,7 @@ tags:
  - science
  - space
  - alpha-centauri
+categories: science
 ---
 
 Which is the nearest star to us after sun - **Alpha Centauri**. Can you go to it in your lifetime? ... Lets find out.

@@ -7,6 +7,7 @@ tags:
  - science
  - planets
  - space
+categories: science
 ---
 
 Suppose we have a very big tank, big enough to contain all eight planets of our solar system) full of water. What happens when we drop all eight planets into this tank?

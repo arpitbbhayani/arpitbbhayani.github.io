@@ -7,6 +7,7 @@ tags:
  - science
  - busting-myth
  - how-it-works
+categories: science
 ---
 
 The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.
