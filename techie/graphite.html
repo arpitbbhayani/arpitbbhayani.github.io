@@ -48,17 +48,7 @@
 
 </head>
 
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-71339255-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
+    
     <body>
         <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -102,16 +92,17 @@
         <div class="two wide column"></div>
         <div class="twelve wide column">
             <div class="ui hidden divider"></div>
-            <div class="ui header">
-                <h1><i>Deploy Graphite and Nginx on an Ubuntu 14.04 server</i></h1>
+            <div class="ui header article-title">
+                <h1>Deploy Graphite and Nginx on an Ubuntu 14.04 server</h1>
             </div>
+            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced image" src="/static/images/myAvatar_icon.png" /><span class="article-author lightGrey">Arpit Bhayani</span>
             <div>
-                <span class="ui tiny header grey"><i>December 14, 2015</i></span>
+                <span class="article-publish-date lightGrey">December 14, 2015</span>
                 <span class="ui right aligned basic segment">
                     
-                    <a href='/tag/techie' class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">techie</a>
+                    <a style="font-weight: normal;" href='/tag/techie' class="article-category ui basic inverted grey label" data-content="See all posts tagged with techie" data-variation="tiny">techie</a>
                     
-                    <a href='/tag/devops' class="ui basic grey label" data-content="See all posts tagged with devops" data-variation="tiny">devops</a>
+                    <a style="font-weight: normal;" href='/tag/devops' class="article-category ui basic inverted grey label" data-content="See all posts tagged with devops" data-variation="tiny">devops</a>
                     
                 </span>
             </div>
@@ -122,7 +113,7 @@
         <div class="two wide column"></div>
         <div class="twelve wide column">
             <a href="http://arpitbbhayani.github.io/static/images/graphite2.png" data-lightbox="http://arpitbbhayani.github.io/static/images/graphite2.png" data-title="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
-                <img class="ui centered large image" src="http://arpitbbhayani.github.io/static/images/graphite2.png" alt="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
+                <img class="ui centered large image stylish" src="http://arpitbbhayani.github.io/static/images/graphite2.png" alt="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
             </a>
         </div>
     </div>
@@ -446,7 +437,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 <p>Once you are logged in, you should see a screen like this.</p>
 
 <p><a href="/static/images/graphite1.png" data-lightbox="/static/images/graphite1.png" data-title="Landing page of Graphite">
-    <img class="ui large centered image" src="/static/images/graphite1.png" alt="Landing page of Graphite" />
+    <img class="ui large centered stylish image" src="/static/images/graphite1.png" alt="Landing page of Graphite" />
 </a></p>
 
 <p>First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with <strong>test.</strong> will be recorded as our pattern. Lets add some random data</p>
@@ -464,7 +455,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 <p><strong>I already had some data in the system, your graph will look a bit different but should be similar</strong></p>
 
 <p><a href="/static/images/graphite2.png" data-lightbox="/static/images/graphite2.png" data-title="test.count graph in Graphite">
-    <img class="ui large centered image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
+    <img class="ui large centered stylish image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
 </a></p>
 
 <p>This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.</p>
