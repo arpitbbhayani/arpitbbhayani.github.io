@@ -21,14 +21,16 @@
                 </div>
                 <br/>
                 <div class="">
-                    <a class="ui very huge header" href="{{post.url}}">{{post.title}}</a>
+                    <a class="ui very huge header" href="{{post.url}}">
+                      <h1>{{post.title}}</h1>
+                    </a>
                 </div>
                 <div class="ui divider"></div>
                 <div class="">
                     <div class="">{{post.excerpt | markdownify}}</div>
                 </div>
                 <div class="">
-                    <br/><a href='{{post.url}}'>Read More</a>
+                    <br/><a href='{{post.url}}'>Read More <i class="long arrow right icon"></i></a>
                 </div>
             </div>
         </div>

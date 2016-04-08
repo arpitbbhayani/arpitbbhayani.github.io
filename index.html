@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include opensource.html %}
-
 {% for post in site.tags['science'] limit:1 %}
 {% if post.type != 'dummy' %}
     {% include lead_article_snippet.html post=post %}

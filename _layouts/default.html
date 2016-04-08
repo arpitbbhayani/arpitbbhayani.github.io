@@ -5,12 +5,18 @@
     <body>
         {% include fb_comment_plugin.html %}
         {% include header.html %}
-        <div style="padding-bottom: 50px; padding-top: 70px;">
+        <div style="padding-bottom: 50px; padding-top: 30px;">
+            <div class="ui section hidden divider"></div>
             {{content}}
         </div>
-
-        <a href="#" class="back-to-top"></a>
         {% include footer.html %}
     </body>
     {% include late_head.html %}
+    <script>
+    {% if page.layout == 'post' %}
+      Cookies.set("IS_POST", "TRUE");
+    {% else %}
+      Cookies.set("IS_POST", "FALSE");
+    {% endif %}
+    </script>
 </html>

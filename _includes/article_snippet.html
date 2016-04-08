@@ -20,14 +20,16 @@
                 </div>
                 <br/>
                 <div class="">
-                    <a href="{{post.url}}" class="ui large header">{{post.title}}</a>
+                    <a href="{{post.url}}" class="ui large header">
+                      <h2>{{post.title}}</h2>
+                    </a>
                 </div>
                 <div class="ui divider"></div>
                 <div class="">
                     <div class="description">{{post.excerpt| markdownify}}</div>
                 </div>
                 <div class="">
-                    <br/><a href='{{post.url}}'>Read More</a>
+                    <br/><a href='{{post.url}}'>Read More <i class="long arrow right icon"></i></a>
                 </div>
             </div>
         </div>

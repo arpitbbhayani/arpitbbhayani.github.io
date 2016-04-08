@@ -1,8 +1,9 @@
-::-moz-selection { background: rgba(245, 107, 107, 0.22); }
-::selection { background: rgba(245, 107, 107, 0.22); }
-
 #progress-wrapper {
     z-index: 500;
+}
+
+.mode-button {
+  cursor: pointer;
 }
 
 .lightGrey {
@@ -13,7 +14,7 @@ body {
     background-color: #FFF;
 }
 
-#main-nav-menu .item {
+.main-nav-menu .item {
     font-family: 'Exo 2', 'Arial';
     font-weight: bold;
     letter-spacing: 0.0001em;
@@ -21,7 +22,11 @@ body {
     border-bottom: 2px solid rgba(0,0,0,0);
 }
 
-#main-nav-menu .right.menu .item:hover {
+.main-nav-menu .item:hover {
+  background-color: #FFF !important;
+}
+
+.main-nav-menu .right.menu .item:hover {
     background-color: #FFF;
     color: #F56B6B;
     border-bottom: 2px solid #F56B6B;
@@ -35,13 +40,13 @@ blockquote {
 	overflow: auto;
 }
 
-article {
+/*article {
     background-color: #FFFFFF;
 }
 
 article:hover {
     background-color: #F5F5F5;
-}
+}*/
 
 .ui.label {
     -moz-box-shadow: 2px 3px 3px rgba(0,0,0,0.28);
@@ -62,7 +67,7 @@ img.stylish {
 }
 
 footer {
-    background: #161b2d;
+    background: #FFFFFF;
 }
 
 .ui.image {
@@ -137,27 +142,6 @@ pre {
     line-height: 1.58;
 }
 
-a.back-to-top {
-	display: none;
-	width: 60px;
-	height: 60px;
-	text-indent: -9999px;
-	position: fixed;
-	z-index: 999;
-	right: 20px;
-	bottom: 20px;
-	background: #27AE61 url("/static/images/up-arrow.png") no-repeat center 43%;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-}
-
-
-/*
- * Text effects
- */
-
-/*** ***/
 
 /*************************/
 /*           Logo        */
