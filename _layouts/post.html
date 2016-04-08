@@ -7,14 +7,15 @@ layout: default
         <div class="two wide column"></div>
         <div class="twelve wide column">
             <div class="ui hidden divider"></div>
-            <div class="ui header">
-                <h1><i>{{ page.title }}</i></h1>
+            <div class="ui header article-title">
+                <h1>{{ page.title }}</h1>
             </div>
+            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced image" src="/static/images/myAvatar_icon.png" /><span class="article-author lightGrey">Arpit Bhayani</span>
             <div>
-                <span class="ui tiny header grey"><i>{{page.date | date: '%B %d, %Y'}}</i></span>
+                <span class="article-publish-date lightGrey">{{page.date | date: '%B %d, %Y'}}</span>
                 <span class="ui right aligned basic segment">
                     {% for tag in page.tags %}
-                    <a href='/tag/{{tag}}' class="ui basic grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
+                    <a style="font-weight: normal;" href='/tag/{{tag}}' class="article-category ui basic inverted grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
                     {% endfor %}
                 </span>
             </div>
@@ -25,7 +26,7 @@ layout: default
         <div class="two wide column"></div>
         <div class="twelve wide column">
             <a href="{{page.img}}" data-lightbox="{{page.img}}" data-title="{{page.title}}">
-                <img class="ui centered large image" src="{{page.img}}" alt="{{page.title}}">
+                <img class="ui centered large image stylish" src="{{page.img}}" alt="{{page.title}}">
             </a>
         </div>
     </div>

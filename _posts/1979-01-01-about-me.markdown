@@ -24,7 +24,7 @@ type: dummy
     <div class="ui centered two column stackable grid">
         <div class="column">
             <div class="ui center aligned basic segment">
-                <img src='/static/images/myAvatar.png'>
+                <img class="stylish" src='/static/images/myAvatar.png'>
             </div>
         </div>
         <div class="column">

@@ -106,7 +106,7 @@ Now emerging from the radiation chamber we have a stream of high energy cesium i
 The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.
 
 <a href="/static/images/atomic-clocks/feedback-loop-atomic-clock.png" data-lightbox="/static/images/atomic-clocks/feedback-loop-atomic-clock.png" data-title="{{page.title}}">
-    <img class="ui large centered image" src='/static/images/atomic-clocks/feedback-loop-atomic-clock.png' alt='{{page.title}}'/>
+    <img class="ui large centered stylish image" src='/static/images/atomic-clocks/feedback-loop-atomic-clock.png' alt='{{page.title}}'/>
 </a>
 
 Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. **Higher the number of ions incident on it higher will be the current generated**.

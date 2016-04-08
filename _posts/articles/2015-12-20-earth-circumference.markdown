@@ -25,7 +25,7 @@ Before we start calculating, we need to assume few things, which will help us ap
 Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.
 
 <a href="/static/images/earth-circumference/1.jpg" data-lightbox="/static/images/earth-circumference/1.jpg" data-title="{{page.title}}">
-    <img class="ui large centered image" src='/static/images/earth-circumference/1.jpg' alt='{{page.title}}'/>
+    <img class="ui large centered stylish image" src='/static/images/earth-circumference/1.jpg' alt='{{page.title}}'/>
 </a>
 
 Suppose $$ WX $$ and $$ YZ $$ are two poles present in two cities. Sun rays are incident on that pole and rays $$ DC $$ and $$ BA $$ casts a shadow $$ XC $$ and $$ ZA $$ at an angle $$ \theta_{1} $$ and $$ \theta_{2} $$ with top of the poles respectively.
@@ -41,20 +41,20 @@ Since poles are perpendicular to the ground so if we extend the poles they will 
 -----------------------------------------------------
 Lines $$ DC $$ and $$ BA' $$ are parallel and $$ WA' $$ acts as a transversal so we can say that
 
-> $$
+$$
     \angle CWA' = \angle BA'W = \theta_{2} \\
     \equiv  \angle CWA' = \angle YA'X = \theta_{2}
 $$
 
 Since $$ \angle YA'X = \theta_{2} $$ so we can say that
 
-> $$
+$$
     \angle YA'O = 180^{o} - \theta_{2}
 $$
 
 Now let us consider $$ \triangle OA'Y $$, we know sum of all angles of a triangle is $$ 180^{o} $$, hence
 
-> $$
+$$
     \angle YA'O + \angle A'OY + \angle OYA' = 180^{o} \\
     \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
     \therefore \theta = \theta_{2} - \theta_{1}
@@ -62,7 +62,7 @@ $$
 
 Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.
 
-> $$
+$$
     \theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})
 $$
 
@@ -95,7 +95,7 @@ Note that these lengths are to be calculated nearly at the same time because wit
 
 Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring $$ \theta $$ at the center of the Earth spans a distance $$ l(XZ) $$ at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when $$ \theta = 360^{o} $$.
 
-> $$
+$$
     \frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
     \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
     \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}

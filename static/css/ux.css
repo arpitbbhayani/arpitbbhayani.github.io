@@ -5,6 +5,10 @@
     z-index: 500;
 }
 
+.lightGrey {
+  color: #868686 !important;
+}
+
 body {
     background-color: #FFF;
 }
@@ -24,9 +28,9 @@ body {
 }
 
 blockquote {
-    background-color: #EEE;
+    background-color: #FAFAFA;
     padding: 0.5em 0.5em 0.5em 0.5em;
-	border-left: 11px solid #ccc;
+	border-left: 7px solid #EEE;
 	margin: 1.7em 0 1.7em 0.3em;
 	overflow: auto;
 }
@@ -48,7 +52,7 @@ article:hover {
     border-radius:5px;
 }
 
-img {
+img.stylish {
     -moz-box-shadow: 10px 10px 5px rgba(0,0,0,0.18);
     -webkit-box-shadow: 10px 10px 5px rgba(0,0,0,0.18);
     box-shadow: 10px 10px 5px rgba(0,0,0,0.18);
