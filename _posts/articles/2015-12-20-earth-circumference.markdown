@@ -6,11 +6,12 @@ comments: true
 tags:
  - science
  - geometry
- - planets
+ - how-was-it-calculated
 categories: science
 seo:
  tags:
   - calculate circumference of earth
+  - how was it calculated
   - basic geometry
   - eratosthenes method
   - use of shadow

@@ -1,91 +1,82 @@
 <div class="ui grid">
   <div class="row computer tablet only">
-    <div class="ui fixed borderless menu main-nav-menu" style="background: rgb(255, 255, 255); border-radius: 0; margin: 0; line-height: 15px;">
-        <a href='/' class="item">
-            <div class="small-logo">
-                <span class="name1">
-                    Arpit
-                    <span class="name2">Bhayani</span>
-                </span>
-            </div>
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      {% if page.layout != 'post' %}
+      <div class="right menu">
+        <a class="item" href="/tag/science">
+          <i class="lightning icon"></i>
+          Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
         </a>
-        {% if page.layout != 'post' %}
-        <div class="right small menu item">
-            <a class="item" href="/tag/science">
-                <i class="lightning icon"></i>
-                Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
-            </a>
-            <div class="ui dropdown item">
+        <div class="ui dropdown item">
+          <i class="code icon"></i>Techie<i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item" href="/tag/techie">
               <i class="code icon"></i>
-              <span class="text">Techie</span>
-              <i class="dropdown icon"></i>
-              <div class="menu">
-                <a class="item" href="/tag/techie">
-                    <i class="code icon"></i>
-                    Tech Articles <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
-                </a>
-                <a class="item" href="{% post_url 1979-01-01-programming %}">
-                    <i class="terminal icon"></i>
-                    Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
-                </a>
-              </div>
-            </div>
-            <a class="item" href="{% post_url 1979-01-01-about-me %}">
-                <i class="user icon"></i>
-                About me <div class="">&nbsp;</div>
+              Tech Articles <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
             </a>
-        </div>
-        {% else %}
-        <div class="ui grey header item main-nav-page-title">
-            <i>{{page.title}}</i>
-        </div>
-        <div class="right small icon menu item">
-            <div class="item mode-button">
-                <i class="idea icon"></i>
-            </div>
-            <a class="item" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny">
-                <i class="facebook icon"></i>
+            <a class="item" href="{% post_url 1979-01-01-programming %}">
+              <i class="terminal icon"></i>
+              Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
             </a>
-            <a class="item" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny">
-                <i class="twitter icon"></i>
-            </a>
+         </div>
         </div>
-        {% endif %}
+        <a class="item" href="{% post_url 1979-01-01-about-me %}">
+          <i class="user icon"></i>
+          About me <div class="">&nbsp;</div>
+        </a>
+      </div>
+      {% else %}
+      <div class="ui grey header item main-nav-page-title">
+        <i>{{page.title}}</i>
+      </div>
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <a class="item" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      {% endif %}
     </div>
   </div>
   <div class="row mobile only">
-    <div class="ui fixed borderless menu main-nav-menu" style="background: rgb(255, 255, 255); border-radius: 0; margin: 0; line-height: 15px;">
-      <a class="item" href="/">
-          <i class="home icon"></i>
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
       </a>
       {% if page.layout != 'post' %}
-      <div class="item">
-          <div class="small-logo">
-              <span class="name1">
-                  Arpit
-                  <span class="name2">Bhayani</span>
-              </span>
-          </div>
-      </div>
       <div class="right menu">
         <div class="ui dropdown item">
           <i class="content icon"></i>
           <div class="menu">
             <a class="item" href="/tag/science">
-                <i class="lightning icon"></i>
-                Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
+              <i class="lightning icon"></i>
+              Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
             </a>
             <a class="item" href="/tag/techie">
-                <i class="code icon"></i>
-                Techie <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
+              <i class="code icon"></i>
+              Tech Articles <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
             </a>
             <a class="item" href="{% post_url 1979-01-01-programming %}">
-                <i class="terminal icon"></i>
-                Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
-            </a>
-            <a class="item" href="{% post_url 1979-01-01-about-me %}">
-                <i class="user icon"></i>
-                About me <div class="">&nbsp;</div>
+              <i class="terminal icon"></i>
+              Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
             </a>
           </div>
         </div>
@@ -93,16 +84,16 @@
       {% else %}
       <div class="right menu">
         <div class="item mode-button">
-            <i class="idea icon"></i>
+          <i class="sun icon"></i>
         </div>
         <div class="ui dropdown item">
           <i class="content icon"></i>
           <div class="menu">
             <a class="item" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank">
-                <i class="facebook icon"></i> Share on Facebook
+              <i class="facebook icon"></i> Share it on facebook
             </a>
             <a class="item" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank">
-                <i class="twitter icon"></i> Tweet about it
+              <i class="twitter icon"></i> Tweet about it
             </a>
           </div>
         </div>
