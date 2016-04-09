@@ -14,7 +14,8 @@ body {
     background-color: #FFF;
 }
 
-.main-nav-menu .item {
+.main-nav-menu .item,
+.main-nav-menu .right.menu .dropdown.item .menu .item {
     font-family: 'Exo 2', 'Arial';
     font-weight: bold;
     letter-spacing: 0.0001em;
@@ -26,8 +27,9 @@ body {
   background-color: #FFF !important;
 }
 
+.main-nav-menu .right.menu .dropdown.item .menu .item:hover,
 .main-nav-menu .right.menu .item:hover {
-    background-color: #FFF;
+    background-color: #FFF !important;
     color: #F56B6B;
     border-bottom: 2px solid #F56B6B;
 }
