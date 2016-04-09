@@ -15,7 +15,7 @@ layout: default
                 <span class="article-publish-date lightGrey">{{page.date | date: '%B %d, %Y'}}</span>
                 <span class="ui right aligned basic segment">
                     {% for tag in page.tags %}
-                    <a style="font-weight: normal;" href='/tag/{{tag}}' class="article-category ui basic inverted grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
+                    <a style="font-weight: normal;" href='/tag/{{tag}}.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
                     {% endfor %}
                 </span>
             </div>
