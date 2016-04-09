@@ -33,11 +33,11 @@ body {
 }
 
 blockquote {
-    background-color: #FAFAFA;
+    background-color: #ffffcc;
     padding: 0.5em 0.5em 0.5em 0.5em;
-	border-left: 7px solid #EEE;
-	margin: 1.7em 0 1.7em 0.3em;
-	overflow: auto;
+  	border-left: 11px solid rgba(0, 0, 0, 0.17);
+  	margin: 1.7em 0 1.7em 0.3em;
+  	overflow: auto;
 }
 
 /*article {

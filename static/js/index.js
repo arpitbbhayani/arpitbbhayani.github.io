@@ -1,25 +1,58 @@
-var THEMES = ['DAY', 'NIGHT', 'SEPIA'];
+var THEMES = ['DAY', 'SEPIA'];
 
 var THEME_CONFIG = {
   'DAY': {
     'body': ['background-color', '#FFFFFF'],
-    'p, h1, h2, h3, h4, h5, h6, li': ['color', '#000000']
-  },
-  'NIGHT': {
-    'body': ['background-color', '#1d1f21'],
-    'p, h1, h2, h3, h4, h5, h6, li': ['color', '#FFFFDD']
+    'p, h1, h2, h3, h4, h5, h6, li': ['color', '#000000'],
+    'th, td': ['color', '#000000'],
+    'blockquote p': ['color', '#000000'],
+    '.MathJax_Display': ['color', '#000000']
   },
   'SEPIA': {
     'body': ['background-color', '#FFF4DE'],
-    'p, h1, h2, h3, h4, h5, h6, li': ['color', '#000000']
+    'p, h1, h2, h3, h4, h5, h6, li': ['color', '#000000'],
+    'th, td': ['color', '#000000'],
+    'blockquote p': ['color', '#000000'],
+    '.MathJax_Display': ['color', '#000000']
   }
 }
 
-function applyTheme(theme) {
+function applyThemeConfig(theme) {
   var config = THEME_CONFIG[theme];
   for(var key in config) {
     $(key).css(config[key][0], config[key][1]);
   }
+}
+
+function initTheme() {
+  if (!Cookies.get('THEME')) {
+    Cookies.set('THEME', '0');
+  }
+}
+
+function applyTheme() {
+  var c = Cookies.get('THEME');
+  if(!c) {
+    return;
+  }
+
+  c = parseInt(c);
+  var is_post = Cookies.get("IS_POST");
+  if(!is_post || is_post == "FALSE") {
+    applyThemeConfig(THEMES[0]);
+  }
+  else {
+    applyThemeConfig(THEMES[c]);
+  }
+}
+
+function setNextTheme() {
+  var c = Cookies.get('THEME');
+  if(!c) {
+    return;
+  }
+  c = (parseInt(c) + 1) % THEMES.length;
+  Cookies.set('THEME', c);
 }
 
 $(document).ready(function() {
@@ -49,26 +82,12 @@ $(document).ready(function() {
         bottom: false
     });
 
-
-    if (!Cookies.get('THEME')) {
-      Cookies.set('THEME', '0');
-    }
-
-    var c = Cookies.get('THEME');
-
-    var is_post = Cookies.get("IS_POST");
-    if(!is_post || is_post == "FALSE") {
-      applyTheme(THEMES[0]);
-    }
-    else {
-      applyTheme(THEMES[c]);
-    }
+    initTheme();
+    applyTheme();
 
     $('.mode-button').click(function() {
-      var c = Cookies.get('THEME');
-      c = (parseInt(c) + 1) % THEMES.length;
-      Cookies.set('THEME', c);
-      applyTheme(THEMES[c]);
+      setNextTheme();
+      applyTheme();
     });
 
 });

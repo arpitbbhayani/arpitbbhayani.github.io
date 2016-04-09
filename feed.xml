@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Apr 2016 03:55:24 +0530</pubDate>
-    <lastBuildDate>Sat, 09 Apr 2016 03:55:24 +0530</lastBuildDate>
+    <pubDate>Sat, 09 Apr 2016 12:06:06 +0530</pubDate>
+    <lastBuildDate>Sat, 09 Apr 2016 12:06:06 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -1196,7 +1196,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
 
 &lt;p&gt;Let us find out the densities of various planets of our very own Solar System.&lt;/p&gt;
 
-&lt;table class=&quot;ui table&quot;&gt;
+&lt;table class=&quot;ui very basic table&quot;&gt;
 &lt;thead&gt;
 	&lt;th&gt;Planet&lt;/th&gt;
 	&lt;th&gt;Density (in gm/cm&lt;sup&gt;3&lt;/sup&gt;)&lt;/th&gt;
