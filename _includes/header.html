@@ -15,14 +15,21 @@
                 <i class="lightning icon"></i>
                 Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
             </a>
-            <a class="item" href="/tag/techie">
-                <i class="code icon"></i>
-                Techie <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
-            </a>
-            <a class="item" href="{% post_url 1979-01-01-programming %}">
-                <i class="terminal icon"></i>
-                Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
-            </a>
+            <div class="ui dropdown item">
+              <i class="code icon"></i>
+              <span class="text">Techie</span>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <a class="item" href="/tag/techie">
+                    <i class="code icon"></i>
+                    Tech Articles <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
+                </a>
+                <a class="item" href="{% post_url 1979-01-01-programming %}">
+                    <i class="terminal icon"></i>
+                    Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
+                </a>
+              </div>
+            </div>
             <a class="item" href="{% post_url 1979-01-01-about-me %}">
                 <i class="user icon"></i>
                 About me <div class="">&nbsp;</div>
