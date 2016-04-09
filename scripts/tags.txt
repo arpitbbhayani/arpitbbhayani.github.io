@@ -1,4 +1,5 @@
 competitive-programming
+programming
 science
 planets
 space
@@ -11,3 +12,5 @@ sci-fi
 geometry
 busting-myth
 how-it-works
+how-was-it-calculated
+gravity
