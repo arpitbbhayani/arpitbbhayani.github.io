@@ -18,7 +18,7 @@ We all know, when an object is dropped into the water it will either sink or wil
 
 Let us find out the densities of various planets of our very own Solar System.
 
-<table class="ui table">
+<table class="ui very basic table">
 <thead>
 	<th>Planet</th>
 	<th>Density (in gm/cm<sup>3</sup>)</th>
