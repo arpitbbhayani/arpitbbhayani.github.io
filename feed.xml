@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Apr 2016 12:30:34 +0530</pubDate>
-    <lastBuildDate>Sat, 09 Apr 2016 12:30:34 +0530</lastBuildDate>
+    <pubDate>Sat, 09 Apr 2016 13:04:02 +0530</pubDate>
+    <lastBuildDate>Sat, 09 Apr 2016 13:04:02 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -1003,15 +1003,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
     
       <item>
         <title>Host your python package using github on PyPI</title>
-        <description>&lt;p&gt;Did you write something cool in Python? Wanna publish it? This post will help you publish your python module hosted on &lt;a href=&quot;http://github.com&quot;&gt;github.com&lt;/a&gt; on official &lt;a href=&quot;https://pypi.python.org&quot;&gt;Python Package Index&lt;/a&gt;. After going through all the steps mentioned in this post, your Python module will be accessible via &lt;code&gt;pip&lt;/code&gt; and &lt;code&gt;easy_install&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So let us start :smile:&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-pypi&quot;&gt;What is PyPI?&lt;/h2&gt;
-
-&lt;p&gt;PyPI is the official Python Packages Index.&lt;/p&gt;
-
-&lt;p&gt;If you have written something cool, and you want others to use it, so you can host it and distribute it via PyPI. Once you publish it on PyPI then it will can downloaded via a simple command &lt;code&gt;pip install &amp;lt;package&amp;gt;&lt;/code&gt;. Life becomes simpler with this one line installation.&lt;/p&gt;
+        <description>&lt;p&gt;PyPI is the official Python Packages Index. Once you publish it on PyPI then it will can downloaded via a simple command &lt;code&gt;pip install &amp;lt;package&amp;gt;&lt;/code&gt;. Life becomes simpler with this one line installation.&lt;/p&gt;
 
 &lt;h2 id=&quot;create-accounts&quot;&gt;1: Create accounts&lt;/h2&gt;
 
@@ -1153,9 +1145,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
     
       <item>
         <title>Can I go to Alpha Centauri in my lifetime?</title>
-        <description>&lt;p&gt;Which is the nearest star to us after sun - &lt;strong&gt;Alpha Centauri&lt;/strong&gt;. Can you go to it in your lifetime? … Lets find out.&lt;/p&gt;
-
-&lt;p&gt;Yes you can do that but not in this lifetime. The nearest neighbor to our over own Sun is &lt;strong&gt;Alpha Centauri&lt;/strong&gt;. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10&lt;sup&gt;15&lt;/sup&gt; m.&lt;/p&gt;
+        <description>&lt;p&gt;The nearest neighbor to our over own Sun is &lt;strong&gt;Alpha Centauri&lt;/strong&gt;. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10&lt;sup&gt;15&lt;/sup&gt; m.&lt;/p&gt;
 
 &lt;p&gt;Lets be optimistic and suppose we find out a way to travel at the 100&lt;sup&gt;th&lt;/sup&gt; part of speed of light (which is close to impossible), but suppose we found. Now assuming that we travel at this high speed, the time we take to reach Alpha Centauri is&lt;/p&gt;
 
@@ -1257,7 +1247,7 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
       </item>
     
       <item>
-        <title>Leetcode solution for zigzag-conversion</title>
+        <title>Solution for programming question zigzag-conversion on leetcode</title>
         <description>&lt;p&gt;Following is the solution for Leetcode Question: &lt;a href=&quot;https://leetcode.com/problems/zigzag-conversion/&quot;&gt;zigzag-conversion&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1303,13 +1293,15 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
         
         <category>competitive-programming</category>
         
+        <category>programming</category>
+        
         
         <category>leetcode</category>
         
       </item>
     
       <item>
-        <title>Leetcode solution for word-search</title>
+        <title>Solution for programming question word-search on leetcode</title>
         <description>&lt;p&gt;Following is the solution for Leetcode Question: &lt;a href=&quot;https://leetcode.com/problems/word-search/&quot;&gt;word-search&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1396,6 +1388,8 @@ sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graph
         <guid isPermaLink="true">http://arpitbbhayani.github.io/leetcode/word-search.html</guid>
         
         <category>competitive-programming</category>
+        
+        <category>programming</category>
         
         
         <category>leetcode</category>
