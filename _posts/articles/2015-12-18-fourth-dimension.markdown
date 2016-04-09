@@ -8,6 +8,13 @@ tags:
  - fourth-dimension
  - sci-fi
 categories: science
+seo:
+ tags:
+  - fourth dimension
+  - fiction
+  - spatial dimension
+  - hyperspace
+ description: Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world but what if someone can access the 4th dimension. Lets talk about that ...
 ---
 
 Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world but what if someone can access the 4th dimension. Lets talk about that ...

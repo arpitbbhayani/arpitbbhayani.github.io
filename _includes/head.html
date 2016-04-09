@@ -22,8 +22,8 @@
     <meta name="theme-color" content="#ffffff">
 
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}, {%endif%}{{ site.keywords }}" />
+  <meta name="description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.seo.tags %}{{ page.seo.tags | join: ', ' }}, {%endif%}" />
 
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
@@ -36,12 +36,12 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
   <meta property="og:site_name" content="{{site.title}}"/>
   <meta property="og:type" content="blog"/>
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <meta name="twitter:title" content="{% if page.title %}{{page.title}} | {% endif %}{{site.title}}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:image" content="{% if page.img %}{{page.img}}{% else %}{{site.img}}{% endif %}">
 
 </head>

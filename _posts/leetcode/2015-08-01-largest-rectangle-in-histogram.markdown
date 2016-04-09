@@ -3,9 +3,17 @@ categories: leetcode
 comments: true
 img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
 layout: post
+seo:
+  description: Here is the solution for programming question largest-rectangle-in-histogram
+    on leetcode
+  tags:
+  - solution
+  - source code
+  - programming
 tags:
 - competitive-programming
-title: Leetcode solution for largest-rectangle-in-histogram
+- programming
+title: Solution for programming question largest-rectangle-in-histogram on leetcode
 ---
 
 Following is the solution for Leetcode Question: [largest-rectangle-in-histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)

@@ -8,11 +8,15 @@ tags:
  - space
  - alpha-centauri
 categories: science
+seo:
+ tags:
+  - universe
+  - alpha centauri
+  - reach alpha centauri
+ description: What if one day you decide to go on a space drive and want to reach the nearest sun, can you do this in your lifetime? Lets find out ....
 ---
 
-Which is the nearest star to us after sun - **Alpha Centauri**. Can you go to it in your lifetime? ... Lets find out.
-
-Yes you can do that but not in this lifetime. The nearest neighbor to our over own Sun is **Alpha Centauri**. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10<sup>15</sup> m.
+The nearest neighbor to our over own Sun is **Alpha Centauri**. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10<sup>15</sup> m.
 
 Lets be optimistic and suppose we find out a way to travel at the 100<sup>th</sup> part of speed of light (which is close to impossible), but suppose we found. Now assuming that we travel at this high speed, the time we take to reach Alpha Centauri is
 

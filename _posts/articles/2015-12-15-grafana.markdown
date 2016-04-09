@@ -7,6 +7,12 @@ tags:
  - techie
  - devops
 categories: techie
+seo:
+ tags:
+  - grafana
+  - devops
+  - monitoring tool setup
+ description: Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.
 ---
 
 Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.

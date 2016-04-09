@@ -8,6 +8,13 @@ tags:
  - geometry
  - planets
 categories: science
+seo:
+ tags:
+  - calculate circumference of earth
+  - basic geometry
+  - eratosthenes method
+  - use of shadow
+ description: Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...
 ---
 
 Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...

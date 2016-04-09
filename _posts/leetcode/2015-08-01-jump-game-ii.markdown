@@ -3,9 +3,16 @@ categories: leetcode
 comments: true
 img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
 layout: post
+seo:
+  description: Here is the solution for programming question jump-game-ii on leetcode
+  tags:
+  - solution
+  - source code
+  - programming
 tags:
 - competitive-programming
-title: Leetcode solution for jump-game-ii
+- programming
+title: Solution for programming question jump-game-ii on leetcode
 ---
 
 Following is the solution for Leetcode Question: [jump-game-ii](https://leetcode.com/problems/jump-game-ii/)

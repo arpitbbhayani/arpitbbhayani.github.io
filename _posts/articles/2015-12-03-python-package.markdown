@@ -7,17 +7,16 @@ tags:
  - techie
  - python
 categories: techie
+seo:
+ tags:
+  - python package
+  - pip
+  - publish python package
+  - easy_install
+ description: If you have written something cool in Python and want to make it installable via pip and easy_install, this post will help you publish your python online.
 ---
 
-Did you write something cool in Python? Wanna publish it? This post will help you publish your python module hosted on [github.com](http://github.com) on official [Python Package Index](https://pypi.python.org). After going through all the steps mentioned in this post, your Python module will be accessible via `pip` and `easy_install`.
-
-So let us start :smile:
-
-## What is PyPI?
-
-PyPI is the official Python Packages Index.
-
-If you have written something cool, and you want others to use it, so you can host it and distribute it via PyPI. Once you publish it on PyPI then it will can downloaded via a simple command `pip install <package>`. Life becomes simpler with this one line installation.
+PyPI is the official Python Packages Index. Once you publish it on PyPI then it will can downloaded via a simple command `pip install <package>`. Life becomes simpler with this one line installation.
 
 ## 1: Create accounts
 

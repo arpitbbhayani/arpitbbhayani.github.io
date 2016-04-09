@@ -8,6 +8,16 @@ tags:
  - busting-myth
  - how-it-works
 categories: science
+seo:
+ tags:
+  - how atomic clock works
+  - how it works
+  - atomic clocks
+  - working principle of atomic clock
+  - working principle
+  - engineering
+  - use of cesium
+ description: The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.
 ---
 
 The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.
