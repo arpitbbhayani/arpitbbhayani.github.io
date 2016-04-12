@@ -12,5 +12,5 @@ sci-fi
 geometry
 busting-myth
 how-it-works
-how-was-it-calculated
+how-was-it-measured
 gravity
