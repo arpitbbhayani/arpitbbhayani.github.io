@@ -6,7 +6,7 @@ comments: true
 tags:
  - science
  - geometry
- - how-was-it-calculated
+ - how-was-it-measured
 categories: science
 seo:
  tags:

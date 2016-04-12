@@ -5,7 +5,7 @@ layout: post
 comments: true
 tags:
  - science
- - how-was-it-calculated
+ - how-was-it-measured
  - gravity
 categories: science
 seo:
