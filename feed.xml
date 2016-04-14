@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Apr 2016 23:02:57 +0530</pubDate>
-    <lastBuildDate>Thu, 14 Apr 2016 23:02:57 +0530</lastBuildDate>
+    <pubDate>Thu, 14 Apr 2016 23:06:17 +0530</pubDate>
+    <lastBuildDate>Thu, 14 Apr 2016 23:06:17 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -105,9 +105,12 @@
 
 &lt;h2 id=&quot;where-have-i-seen-that-before&quot;&gt;Where have I seen that before?&lt;/h2&gt;
 &lt;hr /&gt;
-&lt;p&gt;Electron gun sees its household application in
-- Old TV sets used to render images on screen using such electron gun.
-- Computer screens also used this technology to raster images on screen.&lt;/p&gt;
+&lt;p&gt;Electron gun sees its household application in&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Old TV sets used to render images on screen using such electron gun.&lt;/li&gt;
+  &lt;li&gt;Computer screens also used this technology to raster images on screen.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.&lt;/p&gt;
 
