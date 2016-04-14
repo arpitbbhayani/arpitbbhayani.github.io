@@ -112,6 +112,7 @@ An important question here to ask is, if rod is positively charged then, when an
 ## Where have I seen that before?
 ---------------------------------------------------
 Electron gun sees its household application in
+
 - Old TV sets used to render images on screen using such electron gun.
 - Computer screens also used this technology to raster images on screen.
 
