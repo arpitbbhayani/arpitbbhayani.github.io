@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbbhayani.github.io/</link>
     <atom:link href="http://arpitbbhayani.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Apr 2016 22:48:44 +0530</pubDate>
-    <lastBuildDate>Thu, 14 Apr 2016 22:48:44 +0530</lastBuildDate>
+    <pubDate>Thu, 14 Apr 2016 23:02:57 +0530</pubDate>
+    <lastBuildDate>Thu, 14 Apr 2016 23:02:57 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -102,6 +102,14 @@
 &lt;h3 id=&quot;why-electrons-do-not-cling-to-anode&quot;&gt;Why electrons do not cling to anode&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;p&gt;An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don’t it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{10} th&lt;/script&gt; of speed of light which is &lt;script type=&quot;math/tex&quot;&gt;3 * 10^7 m/s&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-have-i-seen-that-before&quot;&gt;Where have I seen that before?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Electron gun sees its household application in
+- Old TV sets used to render images on screen using such electron gun.
+- Computer screens also used this technology to raster images on screen.&lt;/p&gt;
+
+&lt;p&gt;Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.&lt;/p&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 &lt;hr /&gt;
