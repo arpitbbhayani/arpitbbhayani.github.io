@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>The Electron Gun | Way to wipe electrons off the atom | Arpit Bhayani | Blog</title>
+  <meta name="description" content="Can we isolate electrons from an atom? Can we have a gun that shoot electrons? Evidently we had such thing in our homes. Let's find out how, where and what!">
+  <meta name="keywords" content="how electron gun works, thermionic emission, electron, cathode ray tube, crt, " />
+
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbbhayani.github.io/science/electron-gun.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog" href="http://arpitbbhayani.github.io/feed.xml">
+
+  <meta property="og:image" content="http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png"/>
+  <meta property="og:title" content="The Electron Gun | Way to wipe electrons off the atom | Arpit Bhayani | Blog"/>
+  <meta property="og:url" content="http://arpitbbhayani.github.io/science/electron-gun.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Blog"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Can we isolate electrons from an atom? Can we have a gun that shoot electrons? Evidently we had such thing in our homes. Let's find out how, where and what!" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbbhayani.github.io/science/electron-gun.html">
+  <meta name="twitter:title" content="The Electron Gun | Way to wipe electrons off the atom | Arpit Bhayani | Blog">
+  <meta name="twitter:description" content="Can we isolate electrons from an atom? Can we have a gun that shoot electrons? Evidently we had such thing in our homes. Let's find out how, where and what!">
+  <meta name="twitter:image" content="http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png">
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="ui grey header item main-nav-page-title">
+        <i>The Electron Gun | Way to wipe electrons off the atom</i>
+      </div>
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/science/electron-gun.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=The Electron Gun | Way to wipe electrons off the atom&amp;url=http://arpitbbhayani.github.io/science/electron-gun.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <div class="ui dropdown item">
+          <i class="content icon"></i>
+          <div class="menu">
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/science/electron-gun.html" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
+            </a>
+            <a class="item" href="https://twitter.com/intent/tweet?text=The Electron Gun | Way to wipe electrons off the atom&amp;url=http://arpitbbhayani.github.io/science/electron-gun.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui hidden divider"></div>
+            <div class="ui header article-title">
+                <h1>The Electron Gun | Way to wipe electrons off the atom</h1>
+            </div>
+            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced image" src="/static/images/myAvatar_icon.png" /><span class="article-author lightGrey">Arpit Bhayani</span>
+            <div>
+                <span class="article-publish-date lightGrey">April 14, 2016</span>
+                <span class="ui right aligned basic segment">
+                    
+                    <a style="font-weight: normal;" href='/tag/science.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with science" data-variation="tiny">science</a>
+                    
+                    <a style="font-weight: normal;" href='/tag/how-it-works.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with how-it-works" data-variation="tiny">how-it-works</a>
+                    
+                    <a style="font-weight: normal;" href='/tag/particle-physics.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with particle-physics" data-variation="tiny">particle-physics</a>
+                    
+                </span>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png" data-lightbox="http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png" data-title="The Electron Gun | Way to wipe electrons off the atom">
+                <img class="ui centered large image stylish" src="http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png" alt="The Electron Gun | Way to wipe electrons off the atom">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="article-content">
+                <p>An atom is composed of three sub-atomic particles, namely</p>
+
+<ul>
+  <li>electrons</li>
+  <li>protons</li>
+  <li>neutrons</li>
+</ul>
+
+<p>To our curiosity, let’s see how we can isolate electrons from an atom; what we could do with these isolated electrons; and how we can leverage this energy and make a gun out of it.</p>
+
+<h1 id="the-history">The history</h1>
+<hr />
+<p>Human race has always been very curious about everything around. The epitome of this curiosity has led to a number of amazing discoveries and inventions. One of the major discoveries include <strong>discovery of electron</strong>. Until 1897, it was believed that the atom was indivisible and was considered to be the fundamental unit of matter. But <a href="https://en.wikipedia.org/wiki/J._J._Thomson">Sir J. J. Thomson</a> discovered a particle that nobody had ever seen, it was an <strong>Electron</strong>.</p>
+
+<p>Let’s take it a step further and see how we can make a gun that shoot electrons.</p>
+
+<h2 id="lets-get-the-electrons-out">Let’s get the electrons out</h2>
+<hr />
+<p>Metal atoms have a tendency to lose electron(s) and create positively charge ions hence it should be fairly easy to remove electrons from metals. A small bolt of energy should suffice in breaking the potential barrier and make electrons move out of the atom. So if we supply some energy, let’s say heat energy, should and will pop out of atoms. This process is called as <strong>Thermionic Emission</strong> and the amount of energy required to remove an electron from the atom is called its <strong>Ionization Energy</strong>.</p>
+
+<p>So we take a piece to metal (a thin filament) and heat it to a very high temperature; this will make electrons within it break the potential barrier and will start to move around in the lattice structure.</p>
+
+<h4 id="thermionic-emission">Thermionic Emission</h4>
+<hr />
+<p>Thermionic emission is an flow of charge (positive or negative) which is induced by thermal energy. Hence when we supply heat energy to metals, the potential barrier breaks and electrons are removed from the atom and are free to move around, and positively charged ions are left behind in lattice.</p>
+
+<h2 id="accelerate-electrons">Accelerate electrons</h2>
+<hr />
+<p>A gun is something which shoots an object at a very high speed. So an Electron Gun should shoot out electrons at a very high speed. This implies we need to provide some kind of acceleration to the electrons to create a gun out of it. Let’s use electrostatic force of attraction for this.</p>
+
+<p>Electrons are negatively charged particle, so if we have something positively charged near them, electrons will feel a very high force of attraction and will get acceleration. The anode (positively charged rod) is created by connecting an electrode to the positive terminal of a power supply and the hot piece of metal is connected to its negative terminal.</p>
+
+<p><a href="/static/images/electron-gun/accelerating-electrons.png" data-lightbox="/static/images/electron-gun/accelerating-electrons.png" data-title="The Electron Gun | Way to wipe electrons off the atom">
+    <img class="ui large centered stylish image" src="/static/images/electron-gun/accelerating-electrons.png" alt="The Electron Gun | Way to wipe electrons off the atom" />
+</a></p>
+
+<p>Lets calculate at what speed these electrons will move.</p>
+
+<p>Electrical energy of one electron, <script type="math/tex">E_e</script> is given by</p>
+
+<script type="math/tex; mode=display">E_e = charge . voltage \\
+    \therefore E_e = e.V</script>
+
+<p>where,</p>
+
+<ul>
+  <li><script type="math/tex">e</script>, Charge on electron,</li>
+  <li><script type="math/tex">V</script>, accelerating voltage (difference between the cathode and the anode)</li>
+</ul>
+
+<p>when this electron is moving, the energy <script type="math/tex">E_e</script> is converted into kinetic energy <script type="math/tex">K.E.</script>,</p>
+
+<script type="math/tex; mode=display">\therefore E_e = K.E \\
+    \therefore e.V = \frac{m.v^2}{2} \\
+    \therefore v = \sqrt{ \frac{2.e.V}{m} }</script>
+
+<p>where,</p>
+
+<ul>
+  <li><script type="math/tex">e</script>, Charge on electron,</li>
+  <li><script type="math/tex">V</script>, Voltage applied across anode and cathode,</li>
+  <li><script type="math/tex">m</script>, Mass of the electron</li>
+</ul>
+
+<p>Thus we now have high speed electrons coming off metal surface.</p>
+
+<h2 id="lets-make-it-stronger-and-sharper">Let’s make it stronger and sharper</h2>
+<hr />
+<p>If we put a positively charged rod near heated metal then electrons will only be accelerated towards the rod, each will feel attraction and will start to move towards positivity. Needless to say, such thing will not be useful. What we always need is something that can make a wild impact i.e. something which is stronger and sharper.</p>
+
+<h4 id="stronger">Stronger</h4>
+<hr />
+<p>Strength of the electron beam is directly proportional to the number of electrons that come out of metal surface. Thus higher the temperature, higher will be the kinetic energy of electrons and higher will be probability of electrons breaking the potential barrier and moving out and thus making the beam stronger.</p>
+
+<h4 id="sharper">Sharper</h4>
+<hr />
+<p>Making the beam sharper implies somehow converging these electrons and narrowing down beam into a thin sharp ray. In order to do that, we need some kind of force that will make this happen, some force that will make electrons move away from it. Yes that’s right! the <strong>electrostatic force of repulsion</strong>. What if we make these electrons pass through a ring which is negatively charged? <strong>repulsion</strong>. Thus we get a narrower and sharper beam of electrons.</p>
+
+<h2 id="lets-make-a-gun">Let’s make a gun</h2>
+<hr />
+<p>If we combine everything mentioned above we get a narrow sharp beam of electrons originating from hot metal place, converging along the way and getting attracted towards the positively charged rod (anode). But where is the gun? We do not want the electrons to be attracted to anode and get absorbed. We want them to be projected out. So what do we do? Yes! we create a hole in the rod and let the beam of electrons pass through it.</p>
+
+<p>Bingo! we now have an Electron Gun!</p>
+
+<p><a href="/static/images/electron-gun/electron-gun-working.png" data-lightbox="/static/images/electron-gun/electron-gun-working.png" data-title="The Electron Gun | Way to wipe electrons off the atom">
+    <img class="ui large centered stylish image" src="/static/images/electron-gun/electron-gun-working.png" alt="The Electron Gun | Way to wipe electrons off the atom" />
+</a></p>
+
+<h3 id="why-electrons-do-not-cling-to-anode">Why electrons do not cling to anode</h3>
+<hr />
+<p>An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don’t it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling <script type="math/tex">\frac{1}{10} th</script> of speed of light which is <script type="math/tex">3 * 10^7 m/s</script>.</p>
+
+<h1 id="references">References</h1>
+<hr />
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Electron_gun">Electron Gun Wiki</a></li>
+  <li><a href="http://www.nuffieldfoundation.org/practical-physics/electron-guns">Practical Physics</a></li>
+  <li><a href="http://www.schoolphysics.co.uk/age14-16/Atomic%20physics/text/Electron_gun/index.html">School Physics</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/science/electron-gun.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=The Electron Gun | Way to wipe electrons off the atom&amp;url=http://arpitbbhayani.github.io/science/electron-gun.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="fb-comments" data-numposts="5" width="100%"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid">
+    <div class="row">
+        <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0;">
+            <a class=" item" href="/all-posts.html">
+                <i class="database icon"></i>
+                Archives
+            </a>
+            <a class=" item" href="/feed.xml">
+                <i class="rss icon"></i>
+                RSS Feed
+            </a>
+            <a class=" item" href="/disclaimer.html">
+                <i class="announcement icon"></i>
+                Disclaimer
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column center aligned ">
+            Designed and written with <i class="heart red icon"></i> by <a class="" href="/about-me.html">Arpit</a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    <head>
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <script src="/static/js/js.cookie.js"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+
+    <script>
+    
+      Cookies.set("IS_POST", "TRUE");
+    
+    </script>
+</html>
