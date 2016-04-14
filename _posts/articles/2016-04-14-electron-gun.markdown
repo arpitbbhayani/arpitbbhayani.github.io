@@ -109,6 +109,14 @@ Bingo! we now have an Electron Gun!
 ---------------------------------------------------
 An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don't it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling $$ \frac{1}{10} th $$ of speed of light which is $$ 3 * 10^7 m/s $$.
 
+## Where have I seen that before?
+---------------------------------------------------
+Electron gun sees its household application in
+- Old TV sets used to render images on screen using such electron gun.
+- Computer screens also used this technology to raster images on screen.
+
+Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.
+
 # References
 ----------------------------------------------------
 - [Electron Gun Wiki](https://en.wikipedia.org/wiki/Electron_gun)
