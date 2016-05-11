@@ -23,6 +23,12 @@
     });
   });
   </script>
+  {% else if page.url == '/about-me.html' %}
+  <script>
+  $(document).ready(function() {
+    $('.item[data-tab]').tab();
+  });
+  </script>
   {% endif %}
 
 </head>
