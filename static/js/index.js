@@ -77,7 +77,7 @@ $(document).ready(function() {
     });
 
     scrollProgress.set({
-        color: '#F56B6B',
+        color: '#27619D',
         height: '3px',
         bottom: false
     });

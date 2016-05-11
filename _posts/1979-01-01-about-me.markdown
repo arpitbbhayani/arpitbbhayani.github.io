@@ -6,40 +6,110 @@ type: dummy
 ---
 
 <div style="background: #FFF;">
-    <div style="margin-top: -20px;">
-        {% include personal.html %}
-    </div>
-
-    <div class="ui centered stackable two column grid">
-        <div class="column center aligned">
-            <div class="github-card" data-github="arpitbbhayani" data-width="400" data-height="" data-theme="default"></div>
-            <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-        </div>
-        <div class="column center aligned">
-            <div iframe="yes" type="card" quora-profile="https://www.quora.com/profile/Arpit-Bhayani"></div>
-            <script src="http://codeville.org.in/static/js/quora-widget.min.js"></script>
-        </div>
-    </div>
-
-    <div class="ui centered two column stackable grid">
-        <div class="column">
-            <div class="ui center aligned basic segment">
-                <img class="stylish" src='/static/images/myAvatar.png'>
+  <div style="margin-top: -20px;">
+      {% include personal.html %}
+  </div>
+  <div class="ui one column padded grid center aligned">
+    <div class="ui row">
+      <div class="ui feed">
+        <div class="event">
+          <div class="label">
+            <img src="/static/images/myAvatar_icon.png">
+          </div>
+          <div class="content">
+            <div class="summary">
+              <a class="user">
+                Arpit
+              </a> joined <a href="http://www.practo.com">Practo</a> as DevOps Engineer
+              <div class="date">
+                August 2015-Present
+              </div>
             </div>
-        </div>
-        <div class="column">
-            <div class="ui center aligned basic segment">
-                <a class="twitter-timeline" href="https://twitter.com/arpit_bhayani" data-widget-id="675737137438822400">Tweets by @arpit_bhayani</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <div class="meta">
+              <p>
+                <p>Responsibilities:</p>
+                <ul>
+                  <li>Designing and developing internal tools.</li>
+                  <li>Managing staging and production environment and infrastructure.</li>
+                </ul>
+                <p>Highlights:</p>
+                <ul>
+                  <li>Owner of product that automates the task of populating staging instances with random yet meaningful data.</li>
+                  <li>Lead developer of a project that exposes database as a service and ensures high horizontal scalability and availability.</li>
+                  <li>Owner of internal tool that manage staging environment, instances and infrastructure.</li>
+                </ul>
+              </p>
             </div>
+          </div>
         </div>
+        <div class="event">
+          <div class="label">
+            <img src="/static/images/myAvatar_icon.png">
+          </div>
+          <div class="content">
+            <div class="summary">
+              <a class="user">
+                Arpit
+              </a> completed his master's degree from <a href="https://www.iiit.ac.in/">IIIT Hyderabad</a> in Data Science.
+              <div class="date">
+                July 2013 - July 2015
+              </div>
+            </div>
+            <div class="meta">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="label">
+            <img src="/static/images/myAvatar_icon.png">
+          </div>
+          <div class="content">
+            <div class="summary">
+              <a class="user">
+                Arpit
+              </a> joined <a href="http://www.saba.com">Saba Softwares</a> as Associate Software Engineer
+              <div class="date">
+                July 2012 - July 2013
+              </div>
+            </div>
+            <div class="meta">
+              <p>
+                <p>Responsibilities:</p>
+                <ul>
+                  <li>Full Stack developer</li>
+                  <li>Java API design and development</li>
+                  <li>Performance improvement</li>
+                  <li>Refactoring and database design</li>
+                </ul>
+                <p>Highlights:</p>
+                <ul>
+                  <li>Lead developer of Offline reviews feature</li>
+                  <li>Language Check feature</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="label">
+            <img src="/static/images/myAvatar_icon.png">
+          </div>
+          <div class="content">
+            <div class="summary">
+              <a class="user">
+                Arpit
+              </a> completed his bachelor's degree from <a href="https://www.coep.org.in/">COE, Pune</a> in Information Technology.
+              <div class="date">
+                June 2008 - May 2012
+              </div>
+            </div>
+            <div class="meta">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="ui section divider hidden"></div>
-    <div class="ui center aligned basic segment">
-        <a class="social_icon" href="mailto:arpit.b.bhayani@gmail.com"><i class="very huge mail icon"></i></a>
-        <a class="social_icon" href="https://github.com/arpitbbhayani"><i class="very huge github square icon"></i></a>
-        <a class="social_icon" href="https://facebook.com/itsmearpit"><i class="very huge facebook square icon"></i></a>
-        <a class="social_icon" href="https://www.linkedin.com/profile/view?id=42931734"><i class="very huge linkedin square icon"></i></a>
-    </div>
+  </div>    
 </div>

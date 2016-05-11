@@ -2,21 +2,66 @@
 layout: default
 ---
 
-{% for post in site.tags['science'] limit:1 %}
-{% if post.type != 'dummy' %}
-    {% include lead_article_snippet.html post=post %}
-{% endif %}
-{% endfor %}
+<div id="particles" style="width: 100%;height: 300px;overflow: hidden;">
+  <div class="intro" style="position: absolute;
+  left: 0;
+  top: 150px;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;">
+    {% include personal.html %}
+  </div>
+</div>
 
-{% for post in site.tags['science'] offset:1 limit:5 %}
-{% if post.type != 'dummy' %}
-    {% include article_snippet.html post=post %}
-{% endif %}
-{% endfor %}
 
-<div class="ui section hidden divider"></div>
-<div class="ui large header center aligned">
-    <a class="ui very huge button blue" href="/tag/science">
-        Click here to see all posts
-    </a>
+<div class="ui one column very padded grid center aligned">
+  <div class="ui row">
+    <div class="mega-tagline">
+      <i class="large quote left icon grey"></i><span>I breathe when I code</span><i class="large quote right icon grey"></i>
+      <div class="ui divider"></div>
+    </div>
+  </div>
+  <div class="ui sixteen column row">
+    <div class="one wide column"></div>
+    <div class="twelve wide column">
+      <div class="ui items">
+        <div class="item">
+          <div class="ui medium circular image">
+            <img src="/static/images/arpit.jpg">
+          </div>
+          <div class="middle aligned content left aligned">
+            <p class="megaheader">Hi! I'm <b>Arpit</b> and I'm a <b>programmer</b> with an insane passion for solving real life problems.</p>
+            <div class="ui divider"></div>
+            <div class="extra">
+              <p>This is the right place to find some information <a href="{% post_url 1979-01-01-about-me %}">about me</a>, discover my projects or read my posts about <a href="{% post_url 1979-01-01-programming %}">programming</a>, <a href="/tag/techie">tech-stuff</a> and <a href="/tag/science">science</a>.</p>
+            </div>
+            <div class="ui divider"></div>
+            <div class="extra">
+              <div class="ui center aligned container">
+                  <div class="ui borderless compact menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0;  padding: 0;">
+                    <a class="item" href="mailto:arpit.b.bhayani@gmail.com">
+                        <i class="mail icon"></i>
+                        E-Mail
+                    </a>
+                    <a class="item" href="https://github.com/arpitbbhayani">
+                        <i class="github icon"></i>
+                        Github
+                    </a>
+                    <a class="item" href="https://facebook.com/itsmearpit">
+                        <i class="facebook icon"></i>
+                        Facebook
+                    </a>
+                    <a class="item" href="https://www.linkedin.com/in/arpitbhayani">
+                        <i class="linkedin icon"></i>
+                        LinkedIn
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="one wide column"></div>
+  </div>
 </div>
