@@ -1,6 +1,6 @@
 ---
 title: Disclaimer
-img:    /static/images/myAvatar.png
+img:    /static/images/arpit.jpg
 layout: default
 type: dummy
 ---
@@ -8,12 +8,13 @@ type: dummy
 
 <div class="ui centered two column grid">
     <div class="column">
+        <div class="ui hidden divider"></div>
         <div class="ui center aligned basic segment">
-            <img class="stylish" src='/static/images/myAvatar.png'>
+            <img class="stylish image ui large centered" src='/static/images/arpit.jpg'>
         </div>
     </div>
     <div class="column">
-        <div class="ui basic segment">
+        <div class="ui basic padded segment">
             <div class="ui header large">Disclaimer</div>
             <div class="ui divider"></div>
             <p>
@@ -44,7 +45,7 @@ type: dummy
                 The blog owner is not responsible for the content in comments.
             </p>
 
-            **This policy is subject to change at anytime.**
+            <b>This policy is subject to change at anytime.</b>
         </div>
     </div>
 </div>

@@ -11,7 +11,7 @@ email: arpit.b.bhayani@gmail.com
 description: I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arpitbbhayani.github.io" # the base hostname & protocol for your site
-img: http://arpitbbhayani.github.io/static/images/myAvatar.png
+img: http://arpitbbhayani.github.io/static/images/arpit.jpg
 keywords: blog, computer science, physics, competitive programming, open source, quora widget
 
 permalink: /:categories/:title.html

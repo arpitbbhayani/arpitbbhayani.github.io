@@ -1,6 +1,6 @@
 ---
 title: About me
-img:    /static/images/myAvatar.png
+img:    /static/images/arpit.jpg
 layout: default
 type: dummy
 ---
