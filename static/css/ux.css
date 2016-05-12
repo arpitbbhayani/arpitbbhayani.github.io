@@ -26,9 +26,7 @@ body {
 .main-nav-menu .item,
 .main-nav-menu .right.menu .dropdown.item .menu .item {
     font-family: 'Exo 2', 'Arial';
-    font-weight: bold;
     letter-spacing: 0.0001em;
-    line-height: 15px;
     border-bottom: 2px solid rgba(0,0,0,0);
 }
 
@@ -99,12 +97,12 @@ em {
 }
 
 li {
-    line-height: 1.7285em;
+    line-height: 1.6285em;
 }
 
 pre code {
-	line-height: 1.4em;
-	font-size: 15px;
+	line-height: 1.2em;
+	font-size: 14px;
 }
 pre {
     padding: 1em 1em 1em 1em;

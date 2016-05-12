@@ -64,15 +64,16 @@ $(document).ready(function() {
         $(this).transition('pulse');
     });
 
-    var amountScrolled = 30;
+    var amountScrolled = 100;
+    var $main_nav_page_title_obj = $('.main-nav-page-title');
 
-    $('.main-nav-page-title').hide();
+    $main_nav_page_title_obj.hide();
 
     $(window).scroll(function() {
     	if ( $(window).scrollTop() > amountScrolled ) {
-            $('.main-nav-page-title').fadeIn('slow');
+            $main_nav_page_title_obj.fadeIn('slow');
     	} else {
-            $('.main-nav-page-title').fadeOut('slow');
+            $main_nav_page_title_obj.fadeOut('slow');
     	}
     });
 
