@@ -57,7 +57,7 @@
   Page Heading
 ---------------*/
 
-@headerFontWeight : bold;
+@headerFontWeight : normal;
 @headerLineHeight : 1.2857em;
 
 @h1 : 2rem;
