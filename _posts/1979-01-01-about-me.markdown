@@ -13,9 +13,9 @@ type: dummy
     <div class="column">
       <div class="ui basic segment">
         <div class="ui menu very basic borderless secondary pointing top">
-            <a class="active item grey" data-tab="about-me">About me</a>
-            <a class="item grey" data-tab="education">Education</a>
-            <a class="item grey" data-tab="career">Career</a>
+            <a class="active item grey" data-tab="about-me"><i class="user icon"></i>About me</a>
+            <a class="item grey" data-tab="education"><i class="student icon"></i>Education</a>
+            <a class="item grey" data-tab="career"><i class="bullseye icon"></i>Career</a>
         </div>
 
         <div class="ui active tab" data-tab="about-me">
