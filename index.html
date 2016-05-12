@@ -33,7 +33,7 @@
   <link rel="canonical" href="http://arpitbbhayani.github.io/">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog" href="http://arpitbbhayani.github.io/feed.xml">
 
-  <meta property="og:image" content="http://arpitbbhayani.github.io/static/images/myAvatar.png"/>
+  <meta property="og:image" content="http://arpitbbhayani.github.io/static/images/arpit.jpg"/>
   <meta property="og:title" content="Arpit Bhayani | Blog"/>
   <meta property="og:url" content="http://arpitbbhayani.github.io/"/>
   <meta property="og:site_name" content="Arpit Bhayani | Blog"/>
@@ -44,7 +44,9 @@
   <meta name="twitter:url" content="http://arpitbbhayani.github.io/">
   <meta name="twitter:title" content="Arpit Bhayani | Blog">
   <meta name="twitter:description" content="I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.">
-  <meta name="twitter:image" content="http://arpitbbhayani.github.io/static/images/myAvatar.png">
+  <meta name="twitter:image" content="http://arpitbbhayani.github.io/static/images/arpit.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
 
 </head>
 
@@ -91,7 +93,7 @@
           <div class="menu">
             <a class="item" href="/tag/techie">
               <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">3</div>
+              Tech Stuff <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">3</div>
             </a>
             <a class="item" href="/programming.html">
               <i class="terminal icon"></i>
@@ -144,316 +146,127 @@
 
         <div style="padding-bottom: 50px; padding-top: 10px;">
             <div class="ui section hidden divider"></div>
-            
+            <div id="particles" style="width: 100%;height: 300px;overflow: hidden;">
+  <div class="intro" style="position: absolute;
+  left: 0;
+  top: 150px;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;">
+    <style>
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Just+Me+Again+Down+Here);
+.shouldbe {border-bottom:2px solid white;font-family: 'Just Me Again Down Here', cursive; padding:0 10px; font-size:48px !important; font-weight: normal !important;}
+</style>
 
-    
-<article>
-    <div class="ui stackable grid">
-        <div class="eight wide column">
-            <div class="ui segment basic">
-                <div class="ui fluid image">
-                    <div class="ui green ribbon label">
-                        <i class="date icon"></i>April 14, 2016
-                    </div>
-                    <a href='/science/electron-gun.html'><img class="stylish" src="http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png"></a>
-                </div>
-            </div>
-        </div>
-        <div class="eight wide column fluid">
-            <div class="ui basic segment middle aligned">
-                <div class="ui section divider hidden"></div>
-                <div class="">
-                
-                    <a href='/tag/science.html' class="ui basic grey label large" data-content="See all posts tagged with science" data-variation="tiny">science</a>
-                
-                    <a href='/tag/how-it-works.html' class="ui basic grey label large" data-content="See all posts tagged with how-it-works" data-variation="tiny">how-it-works</a>
-                
-                    <a href='/tag/particle-physics.html' class="ui basic grey label large" data-content="See all posts tagged with particle-physics" data-variation="tiny">particle-physics</a>
-                
-                </div>
-                <br/>
-                <div class="">
-                    <a class="ui very huge header" href="/science/electron-gun.html">
-                      <h1>The Electron Gun | Way to wipe electrons off the atom</h1>
-                    </a>
-                </div>
-                <div class="ui divider"></div>
-                <div class="">
-                    <div class="">Can we isolate electrons from an atom? Can we have a gun that shoot electrons? Evidently we had such thing in our homes. Let's find out how, where and what!</div>
-                </div>
-                <div class="">
-                    <br/><a href='/science/electron-gun.html'>Read More <i class="long arrow right icon"></i></a>
-                </div>
-            </div>
-        </div>
+<script>
+var index = 0;
+var wordlist = ['I am a programmer', 'I breathe when I code', 'I write tech blogs', 'I write science articles'],
+randomWordInt;
+function changeWord() {
+    randomWordInt = setInterval(randomWord, 3000);
+}
+function randomWord() {
+    index  = index + 1;
+    index = index % wordlist.length;
+    var i = index;
+    var shouldBe = wordlist[i];
+    $('.shouldbe').fadeOut('fast', function(){
+        $('.shouldbe').text(shouldBe);
+    });
+    $('.shouldbe').fadeIn('fast');
+}
+changeWord();
+</script>
+
+<div style="padding-top: 35px; margin-bottom: 35px; height: 100px;">
+    <div class="ui large header center aligned" style="line-height: 80px; color: #27619D;">
+        <span class="shouldbe">I am a programmer</span>.
     </div>
-</article>
+</div>
+
+  </div>
+</div>
 
 
-
-
-
-
-    
-<article>
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            <div class="ui segment basic">
-                <div class="ui fluid image">
-                    <div class="ui green ribbon label">
-                        <i class="date icon"></i>April 08, 2016
-                    </div>
-                    <a href='/science/cavendish-experiment.html'><img class="stylish" src="http://arpitbbhayani.github.io/static/images/cavendish-experiment/cavendish-experiment-intro.png"></a>
-                </div>
-            </div>
-        </div>
-        <div class="twelve wide column fluid">
-            <div class="ui basic segment">
-                <div class="">
-                
-                    <a href='/tag/science.html' class="ui grey label basic" data-content="See all posts tagged with science" data-variation="tiny">science</a>
-                
-                    <a href='/tag/how-was-it-measured.html' class="ui grey label basic" data-content="See all posts tagged with how-was-it-measured" data-variation="tiny">how-was-it-measured</a>
-                
-                    <a href='/tag/gravity.html' class="ui grey label basic" data-content="See all posts tagged with gravity" data-variation="tiny">gravity</a>
-                
-                </div>
-                <br/>
-                <div class="">
-                    <a href="/science/cavendish-experiment.html" class="ui large header">
-                      <h2>Finding out Gravitational Constant - The Cavendish Experiment</h2>
-                    </a>
-                </div>
-                <div class="ui divider"></div>
-                <div class="">
-                    <div class="description">The gravitational force was discovered by Sir Isaac Newton, but he was not the one who calculated the Gravitational Constant. Finding out G was stroke of genius and was discovered by a British scientist Henry Cavendish in 1797–1798.</div>
-                </div>
-                <div class="">
-                    <br/><a href='/science/cavendish-experiment.html'>Read More <i class="long arrow right icon"></i></a>
-                </div>
-            </div>
-        </div>
+<div class="ui one column very padded grid center aligned">
+  <div class="ui row">
+    <div class="mega-tagline">
+      <i class="large quote left icon grey"></i><span>I breathe when I code</span><i class="large quote right icon grey"></i>
+      <div class="ui divider"></div>
     </div>
-</article>
-
-
-
-
-    
-<article>
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            <div class="ui segment basic">
-                <div class="ui fluid image">
-                    <div class="ui green ribbon label">
-                        <i class="date icon"></i>February 28, 2016
-                    </div>
-                    <a href='/science/atomic-clocks.html'><img class="stylish" src="http://arpitbbhayani.github.io/static/images/atomic-clocks/atomic-clocks.png"></a>
-                </div>
+  </div>
+  <div class="ui sixteen column row">
+    <div class="one wide column"></div>
+    <div class="twelve wide column">
+      <div class="ui items">
+        <div class="item">
+          <div class="ui medium circular image">
+            <img src="/static/images/arpit.jpg">
+          </div>
+          <div class="middle aligned content left aligned">
+            <p class="megaheader">Hi! I'm <b>Arpit</b> and I'm a <b>programmer</b> with an insane passion for solving real life problems.</p>
+            <div class="ui divider"></div>
+            <div class="extra">
+              <p>This is the right place to find some information <a href="/about-me.html">about me</a>, discover my projects or read my posts about <a href="/programming.html">programming</a>, <a href="/tag/techie">tech-stuff</a> and <a href="/tag/science">science</a>.</p>
             </div>
-        </div>
-        <div class="twelve wide column fluid">
-            <div class="ui basic segment">
-                <div class="">
-                
-                    <a href='/tag/science.html' class="ui grey label basic" data-content="See all posts tagged with science" data-variation="tiny">science</a>
-                
-                    <a href='/tag/particle-physics.html' class="ui grey label basic" data-content="See all posts tagged with particle-physics" data-variation="tiny">particle-physics</a>
-                
-                    <a href='/tag/how-it-works.html' class="ui grey label basic" data-content="See all posts tagged with how-it-works" data-variation="tiny">how-it-works</a>
-                
-                </div>
-                <br/>
-                <div class="">
-                    <a href="/science/atomic-clocks.html" class="ui large header">
-                      <h2>How atomic clock works | busting several myths about it</h2>
+            <div class="ui divider"></div>
+            <div class="extra">
+              <div class="ui center aligned container">
+                  <div class="ui borderless compact menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0;  padding: 0;">
+                    <a class="item" href="mailto:arpit.b.bhayani@gmail.com">
+                        <i class="mail icon"></i>
                     </a>
-                </div>
-                <div class="ui divider"></div>
-                <div class="">
-                    <div class="description">The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.</div>
-                </div>
-                <div class="">
-                    <br/><a href='/science/atomic-clocks.html'>Read More <i class="long arrow right icon"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</article>
-
-
-
-
-    
-<article>
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            <div class="ui segment basic">
-                <div class="ui fluid image">
-                    <div class="ui green ribbon label">
-                        <i class="date icon"></i>December 20, 2015
-                    </div>
-                    <a href='/science/earth-circumference.html'><img class="stylish" src="http://arpitbbhayani.github.io/static/images/earth-circumference/earth.jpg"></a>
-                </div>
-            </div>
-        </div>
-        <div class="twelve wide column fluid">
-            <div class="ui basic segment">
-                <div class="">
-                
-                    <a href='/tag/science.html' class="ui grey label basic" data-content="See all posts tagged with science" data-variation="tiny">science</a>
-                
-                    <a href='/tag/geometry.html' class="ui grey label basic" data-content="See all posts tagged with geometry" data-variation="tiny">geometry</a>
-                
-                    <a href='/tag/how-was-it-measured.html' class="ui grey label basic" data-content="See all posts tagged with how-was-it-measured" data-variation="tiny">how-was-it-measured</a>
-                
-                </div>
-                <br/>
-                <div class="">
-                    <a href="/science/earth-circumference.html" class="ui large header">
-                      <h2>How big is our Earth?</h2>
+                    <a class="item" href="https://github.com/arpitbbhayani">
+                        <i class="github icon"></i>
                     </a>
-                </div>
-                <div class="ui divider"></div>
-                <div class="">
-                    <div class="description">Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...</div>
-                </div>
-                <div class="">
-                    <br/><a href='/science/earth-circumference.html'>Read More <i class="long arrow right icon"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</article>
-
-
-
-
-    
-<article>
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            <div class="ui segment basic">
-                <div class="ui fluid image">
-                    <div class="ui green ribbon label">
-                        <i class="date icon"></i>December 18, 2015
-                    </div>
-                    <a href='/science/fourth-dimension.html'><img class="stylish" src="http://im.ziffdavisinternational.com/ign_latam/screenshot/default/mstiteli-2012-rus-bdrip-avc-0031_dj8t.jpg"></a>
-                </div>
-            </div>
-        </div>
-        <div class="twelve wide column fluid">
-            <div class="ui basic segment">
-                <div class="">
-                
-                    <a href='/tag/science.html' class="ui grey label basic" data-content="See all posts tagged with science" data-variation="tiny">science</a>
-                
-                    <a href='/tag/fourth-dimension.html' class="ui grey label basic" data-content="See all posts tagged with fourth-dimension" data-variation="tiny">fourth-dimension</a>
-                
-                    <a href='/tag/sci-fi.html' class="ui grey label basic" data-content="See all posts tagged with sci-fi" data-variation="tiny">sci-fi</a>
-                
-                </div>
-                <br/>
-                <div class="">
-                    <a href="/science/fourth-dimension.html" class="ui large header">
-                      <h2>The Fourth Dimension - too Sci-Fi to be true</h2>
+                    <a class="item" href="https://facebook.com/itsmearpit">
+                        <i class="facebook icon"></i>
                     </a>
-                </div>
-                <div class="ui divider"></div>
-                <div class="">
-                    <div class="description">Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world but what if someone can access the 4th dimension. Lets talk about that ...</div>
-                </div>
-                <div class="">
-                    <br/><a href='/science/fourth-dimension.html'>Read More <i class="long arrow right icon"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</article>
-
-
-
-
-    
-<article>
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            <div class="ui segment basic">
-                <div class="ui fluid image">
-                    <div class="ui green ribbon label">
-                        <i class="date icon"></i>December 03, 2015
-                    </div>
-                    <a href='/science/alpha-centauri.html'><img class="stylish" src="http://twanight.org/newTWAN/photos/3002877.jpg"></a>
-                </div>
-            </div>
-        </div>
-        <div class="twelve wide column fluid">
-            <div class="ui basic segment">
-                <div class="">
-                
-                    <a href='/tag/science.html' class="ui grey label basic" data-content="See all posts tagged with science" data-variation="tiny">science</a>
-                
-                    <a href='/tag/space.html' class="ui grey label basic" data-content="See all posts tagged with space" data-variation="tiny">space</a>
-                
-                    <a href='/tag/alpha-centauri.html' class="ui grey label basic" data-content="See all posts tagged with alpha-centauri" data-variation="tiny">alpha-centauri</a>
-                
-                </div>
-                <br/>
-                <div class="">
-                    <a href="/science/alpha-centauri.html" class="ui large header">
-                      <h2>Can I go to Alpha Centauri in my lifetime?</h2>
+                    <a class="item" href="https://www.linkedin.com/in/arpitbhayani">
+                        <i class="linkedin icon"></i>
                     </a>
-                </div>
-                <div class="ui divider"></div>
-                <div class="">
-                    <div class="description">What if one day you decide to go on a space drive and want to reach the nearest sun, can you do this in your lifetime? Lets find out ....</div>
-                </div>
-                <div class="">
-                    <br/><a href='/science/alpha-centauri.html'>Read More <i class="long arrow right icon"></i></a>
-                </div>
+                    <a class="item" href="https://twitter.com/arpit_bhayani">
+                        <i class="twitter icon"></i>
+                    </a>
+                  </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</article>
-
-
-
-
-<div class="ui section hidden divider"></div>
-<div class="ui large header center aligned">
-    <a class="ui very huge button blue" href="/tag/science">
-        Click here to see all posts
-    </a>
+    <div class="one wide column"></div>
+  </div>
 </div>
 
         </div>
-        <footer class="ui column centered grid">
-    <div class="row">
-        <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0;">
-            <a class=" item" href="/all-posts.html">
-                <i class="database icon"></i>
-                Archives
-            </a>
-            <a class=" item" href="/feed.xml">
-                <i class="rss icon"></i>
-                RSS Feed
-            </a>
-            <a class=" item" href="/disclaimer.html">
-                <i class="announcement icon"></i>
-                Disclaimer
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column center aligned ">
-            Designed and written with <i class="heart red icon"></i> by <a class="" href="/about-me.html">Arpit</a>
-        </div>
-    </div>
+        <footer class="ui column centered grid" style="background-color: #F0F0F0;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #EEE;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Proudly hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">GitHub</a>.<br/>
+          Designed and coded with <i class="heart red icon"></i> by <a class="" href="/about-me.html">myself</a>.
+      </div>
+  </div>
 </footer>
 
     </body>
     <head>
-  <script src="/static/js/jquery-1.11.3.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <link rel="stylesheet" href="/static/css/ux.css">
@@ -462,6 +275,24 @@
   <script src="/static/js/scrollProgress.js"></script>
   <script src="/static/js/lightbox.js"></script>
   <script src="/static/js/index.js"></script>
+
+  
+  <script src="/static/js/particleground.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#particles').particleground({
+      // dotColor: 'rgba(245, 107, 107, 0.33)',
+      // lineColor: 'rgba(245, 107, 107, 0.33)'
+      dotColor: '#BBB',
+      lineColor: '#BBB'
+    });
+    $('.intro').css({
+      'margin-top': -($('.intro').height() / 2)
+    });
+  });
+  </script>
+  
+
 </head>
 
     <script>

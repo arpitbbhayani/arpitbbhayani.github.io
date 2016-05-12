@@ -46,6 +46,8 @@
   <meta name="twitter:description" content="Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx...">
   <meta name="twitter:image" content="http://grafana.org/assets/img/docs/nice_dashboard.png">
 
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
 </head>
 
     <script>
@@ -381,33 +383,33 @@ sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></p
 </div>
 
         </div>
-        <footer class="ui column centered grid">
-    <div class="row">
-        <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0;">
-            <a class=" item" href="/all-posts.html">
-                <i class="database icon"></i>
-                Archives
-            </a>
-            <a class=" item" href="/feed.xml">
-                <i class="rss icon"></i>
-                RSS Feed
-            </a>
-            <a class=" item" href="/disclaimer.html">
-                <i class="announcement icon"></i>
-                Disclaimer
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="column center aligned ">
-            Designed and written with <i class="heart red icon"></i> by <a class="" href="/about-me.html">Arpit</a>
-        </div>
-    </div>
+        <footer class="ui column centered grid" style="background-color: #F0F0F0;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #EEE;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Proudly hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">GitHub</a>.<br/>
+          Designed and coded with <i class="heart red icon"></i> by <a class="" href="/about-me.html">myself</a>.
+      </div>
+  </div>
 </footer>
 
     </body>
     <head>
-  <script src="/static/js/jquery-1.11.3.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <link rel="stylesheet" href="/static/css/ux.css">
@@ -416,6 +418,15 @@ sudo chmod <span class="m">666</span> /var/log/nginx/grafana.error.log</code></p
   <script src="/static/js/scrollProgress.js"></script>
   <script src="/static/js/lightbox.js"></script>
   <script src="/static/js/index.js"></script>
+
+  
+  <script>
+  $(document).ready(function() {
+    $('.item[data-tab]').tab();
+  });
+  </script>
+  
+
 </head>
 
     <script>

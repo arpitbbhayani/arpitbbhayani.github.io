@@ -1,3 +1,12 @@
+.megaheader {
+  font-size: 1.482354rem;
+}
+
+.mega-tagline {
+  font-family: monospace, sans-serif, serif;
+  font-size: 2rem;
+}
+
 #progress-wrapper {
     z-index: 500;
 }
@@ -30,8 +39,8 @@ body {
 .main-nav-menu .right.menu .dropdown.item .menu .item:hover,
 .main-nav-menu .right.menu .item:hover {
     background-color: #FFF !important;
-    color: #F56B6B;
-    border-bottom: 2px solid #F56B6B;
+    color: #27619D;
+    border-bottom: 2px solid #27619D;
 }
 
 blockquote {
@@ -135,7 +144,7 @@ pre {
 .article-content {
     color: rgba(0,0,0,0.8);
     word-wrap: break-word;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.58;
 }
 
@@ -199,13 +208,13 @@ pre {
 
 .small-logo .name1 {
     padding: 6px 0;
-    color: #F56B6B;
+    color: #27619D;
 }
 
 .small-logo .name2 {
     padding: 6px 6px;
     color: #FFFFFF;
-    background-color: #F56B6B;
+    background-color: #27619D;
     -webkit-border-top-right-radius: 5px;
        -moz-border-radius-topright: 5px;
             border-top-right-radius: 5px;
