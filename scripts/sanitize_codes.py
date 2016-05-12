@@ -4,7 +4,7 @@ import yaml
 sites = ['leetcode', 'spoj', 'codechef']
 
 for site in sites:
-    SOURCE_DIR = '/Users/arpitbhayani/arpitbbhayani.github.io/_posts/%s' % site
+    SOURCE_DIR = '/Users/arpitbhayani/arpitbhayani.me/_posts/%s' % site
 
     files = os.listdir(SOURCE_DIR)
     for f in files:

@@ -1,6 +1,6 @@
 ---
 title: Finding out Gravitational Constant - The Cavendish Experiment
-img: http://arpitbbhayani.github.io/static/images/cavendish-experiment/cavendish-experiment-intro.png
+img: http://arpitbhayani.me/static/images/cavendish-experiment/cavendish-experiment-intro.png
 layout: post
 comments: true
 tags:

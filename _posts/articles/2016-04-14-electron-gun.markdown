@@ -1,6 +1,6 @@
 ---
 title: The Electron Gun | Way to wipe electrons off the atom
-img: http://arpitbbhayani.github.io/static/images/electron-gun/electron-gun.png
+img: http://arpitbhayani.me/static/images/electron-gun/electron-gun.png
 layout: post
 comments: true
 tags:

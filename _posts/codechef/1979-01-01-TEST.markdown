@@ -20,7 +20,7 @@ Following is the solution for Codechef Question: [TEST](https://www.codechef.com
 {% highlight cpp %}
 /*
  *  Author: Arpit Bhayani
- *  http://arpitbbhayani.github.io
+ *  http://arpitbhayani.me
  */
 #include <cmath>
 #include <cstdio>
