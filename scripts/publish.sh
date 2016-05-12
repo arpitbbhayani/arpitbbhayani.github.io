@@ -1,6 +1,6 @@
-ROOT=/Users/arpitbhayani/arpitbbhayani.github.io/
-TMP_FOLDER=/tmp/arpitbbhayani.github.io/
-SITE_DIR=/Users/arpitbhayani/arpitbbhayani.github.io/_site/
+ROOT=/Users/arpitbhayani/arpitbhayani.me/
+TMP_FOLDER=/tmp/arpitbhayani.me/
+SITE_DIR=/Users/arpitbhayani/arpitbhayani.me/_site/
 
 if [ -d $TMP_FOLDER ]; then
     rm -rf $TMP_FOLDER
