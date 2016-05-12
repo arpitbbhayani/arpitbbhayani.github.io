@@ -30,18 +30,18 @@
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="stylesheet" href="/static/css/lightbox.css">
-  <link rel="canonical" href="http://arpitbbhayani.github.io/scripts/question_template.txt">
-  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology" href="http://arpitbbhayani.github.io/feed.xml">
+  <link rel="canonical" href="http://arpitbhayani.me/scripts/question_template.txt">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology" href="http://arpitbhayani.me/feed.xml">
 
   <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
   <meta property="og:title" content="$SITE_NAME$ solution for $QCODE$ | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology"/>
-  <meta property="og:url" content="http://arpitbbhayani.github.io/scripts/question_template.txt"/>
+  <meta property="og:url" content="http://arpitbhayani.me/scripts/question_template.txt"/>
   <meta property="og:site_name" content="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology"/>
   <meta property="og:type" content="blog"/>
   <meta property="og:description" content="I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words." />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbbhayani.github.io/scripts/question_template.txt">
+  <meta name="twitter:url" content="http://arpitbhayani.me/scripts/question_template.txt">
   <meta name="twitter:title" content="$SITE_NAME$ solution for $QCODE$ | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology">
   <meta name="twitter:description" content="I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.">
   <meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg">
@@ -188,11 +188,11 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbbhayani.github.io/scripts/question_template.txt" rel="nofollow" target="_blank" title="Share on Facebook">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/scripts/question_template.txt" rel="nofollow" target="_blank" title="Share on Facebook">
                 <i class="facebook icon"></i>
                 Share on Facebook
             </a>
-            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=$SITE_NAME$ solution for $QCODE$&amp;url=http://arpitbbhayani.github.io/scripts/question_template.txt&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=$SITE_NAME$ solution for $QCODE$&amp;url=http://arpitbhayani.me/scripts/question_template.txt&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
                 <i class="twitter icon"></i>
                 Share on Twitter
             </a>
