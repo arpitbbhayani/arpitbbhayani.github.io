@@ -48,7 +48,7 @@ h5 {
   font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   line-height: 1.2857em;
   margin: calc(2rem -  0.14285em ) 0em 1rem;
-  font-weight: bold;
+  font-weight: normal;
   padding: 0em;
 }
 h1 {
