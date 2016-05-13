@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html</loc>
+<lastmod>2016-05-13T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/science/electron-gun.html</loc>
 <lastmod>2016-04-14T00:00:00+05:30</lastmod>
 </url>
@@ -1049,6 +1053,10 @@
 <lastmod>1979-01-01T00:00:00+05:30</lastmod>
 </url>
 <url>
+<loc>http://arpitbhayani.me/tag/particle-physics.html</loc>
+<lastmod>1979-01-01T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/tag/how-was-it-measured.html</loc>
 <lastmod>1979-01-01T00:00:00+05:30</lastmod>
 </url>
@@ -1074,6 +1082,10 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/tag/devops.html</loc>
+<lastmod>1979-01-01T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://arpitbhayani.me/tag/database-admin.html</loc>
 <lastmod>1979-01-01T00:00:00+05:30</lastmod>
 </url>
 <url>
@@ -1333,10 +1345,10 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-05-13T07:50:05+05:30</lastmod>
+<lastmod>2016-05-13T07:52:40+05:30</lastmod>
 </url>
 <url>
 <loc>http://arpitbhayani.me/robots_test.html</loc>
-<lastmod>2016-05-13T07:50:05+05:30</lastmod>
+<lastmod>2016-05-13T07:52:40+05:30</lastmod>
 </url>
 </urlset>
