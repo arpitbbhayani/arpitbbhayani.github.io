@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 May 2016 08:39:16 +0530</pubDate>
-    <lastBuildDate>Fri, 13 May 2016 08:39:16 +0530</lastBuildDate>
+    <pubDate>Fri, 13 May 2016 14:58:24 +0530</pubDate>
+    <lastBuildDate>Fri, 13 May 2016 14:58:24 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -65,8 +65,7 @@
 &lt;hr /&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get update
-sudo apt-get install mysql-server-5.6 mysql-server-core-5.6
-sudo apt-get install mysql-client-5.6 mysql-client-core-5.6&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mysql-client-core-5.6&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;At this point we have MySQL 5.6 listening at port &lt;code&gt;3306&lt;/code&gt; (default port)&lt;/p&gt;
 
