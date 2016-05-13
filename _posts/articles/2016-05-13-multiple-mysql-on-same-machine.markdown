@@ -70,8 +70,7 @@ Since all but one products require MySQL 5.6, so lets install it first and then 
 ------------------------------------
 {% highlight bash %}
 sudo apt-get update
-sudo apt-get install mysql-server-5.6 mysql-server-core-5.6
-sudo apt-get install mysql-client-5.6 mysql-client-core-5.6
+sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mysql-client-core-5.6
 {% endhighlight %}
 
 At this point we have MySQL 5.6 listening at port `3306` (default port)
