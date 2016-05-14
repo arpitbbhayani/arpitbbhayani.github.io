@@ -7,7 +7,7 @@ tags:
  - science
  - particle-physics
  - how-it-works
-categories: science
+categories: curiosity
 seo:
  tags:
   - how atomic clock works

@@ -1,0 +1,14 @@
+---
+layout:			default
+title:			All Tech Articles
+type:       dummy
+---
+
+
+<div class="ui basic segment">
+{% for post in site.categories['techie'] %}
+{% if post.type != 'dummy' %}
+    {% include article_snippet.html post=post %}
+{% endif %}
+{% endfor %}
+</div>

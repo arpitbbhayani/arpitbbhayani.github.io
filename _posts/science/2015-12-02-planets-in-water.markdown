@@ -14,6 +14,7 @@ seo:
   - density
   - saturn floats
  description: What happens when we put all of our planets in a giant tub of water? Will of them sink? Lets find out
+type: dummy
 ---
 
 Suppose we have a very big tank, big enough to contain all eight planets of our solar system) full of water. What happens when we drop all eight planets into this tank?

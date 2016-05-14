@@ -7,7 +7,7 @@ tags:
  - science
  - how-was-it-measured
  - gravity
-categories: science
+categories: curiosity
 seo:
  tags:
   - how was gravitational constant calculated

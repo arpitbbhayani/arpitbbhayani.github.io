@@ -7,7 +7,7 @@ tags:
  - science
  - fourth-dimension
  - sci-fi
-categories: science
+categories: curiosity
 seo:
  tags:
   - fourth dimension

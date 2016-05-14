@@ -16,6 +16,7 @@ seo:
   - cathode ray tube
   - crt
  description: Can we isolate electrons from an atom? Can we have a gun that shoot electrons? Evidently we had such thing in our homes. Let's find out how, where and what!
+type: dummy
 ---
 
 An atom is composed of three sub-atomic particles, namely

@@ -14,17 +14,17 @@
         <div class="ui dropdown item">
           <i class="ellipsis vertical icon"></i>Blogs<i class="dropdown icon"></i>
           <div class="menu">
-            <a class="item" href="/tag/science">
+            <a class="item" href="{% post_url 1979-01-01-curiosity %}">
               <i class="lightning icon"></i>
-              Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
+              Get Curious <div class="ui basic grey label">{{ site.categories['curiosity'] | size }}</div>
             </a>
-            <a class="item" href="/tag/techie">
+            <a class="item" href="{% post_url 1979-01-01-techie %}">
               <i class="code icon"></i>
-              Tech Stuff <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
+              Tech Articles <div class="ui basic grey label">{{ site.categories['techie'] | size }}</div>
             </a>
             <a class="item" href="{% post_url 1979-01-01-programming %}">
               <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
+              Programming <div class="ui basic grey label" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
             </a>
          </div>
         </div>
@@ -66,17 +66,17 @@
         <div class="ui dropdown item">
           <i class="content icon"></i>
           <div class="menu">
-            <a class="item" href="/tag/science">
+            <a class="item" href="{% post_url 1979-01-01-curiosity %}">
               <i class="lightning icon"></i>
-              Science <div class="ui basic grey label" data-content="See all posts tagged with science" data-variation="tiny">{{ site.tags.science | size }}</div>
+              Get Curious <div class="ui basic grey label">{{ site.categories['curiosity'] | size }}</div>
             </a>
-            <a class="item" href="/tag/techie">
+            <a class="item" href="{% post_url 1979-01-01-techie %}">
               <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label" data-content="See all posts tagged with techie" data-variation="tiny">{{ site.tags.techie | size }}</div>
+              Tech Articles <div class="ui basic grey label">{{ site.categories['techie'] | size }}</div>
             </a>
             <a class="item" href="{% post_url 1979-01-01-programming %}">
               <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
+              Programming <div class="ui basic grey label">{{ site.tags.competitive-programming | size }}</div>
             </a>
           </div>
         </div>
