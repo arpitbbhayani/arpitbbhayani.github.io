@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology</title>
+    <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
+    <link>http://arpitbhayani.me/</link>
+    <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 14 May 2016 12:22:44 +0530</pubDate>
+    <lastBuildDate>Sat, 14 May 2016 12:22:44 +0530</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Multiple MySQL versions running on one server</title>
+        <description>&lt;p&gt;There are many situations where there is a require where you need to run multiple instances of MySQL on same machine.&lt;/p&gt;
+
+&lt;p&gt;Some situations are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;test a new MySQL release while leaving an existing production setup undisturbed&lt;/li&gt;
+  &lt;li&gt;give different users access to different &lt;code&gt;mysqld&lt;/code&gt; servers that they manage themselves&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;problem-description&quot;&gt;Problem description&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;I have a machine having 5 products already setup. All products are using MySQL 5.5 as its default database. Now its time to upgrade all but one product to use MySQL 5.6. The table below shows the before and after version requirements of MySQL for various products. Looking at the table we find that all products except product C wants to use MySQL 5.6.&lt;/p&gt;
+
+&lt;table class=&quot;ui small table&quot;&gt;
+&lt;thead&gt;
+    &lt;th&gt;Products&lt;/th&gt;
+    &lt;th&gt;MySQL version before&lt;/th&gt;
+    &lt;th&gt;MySQL version after&lt;/th&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+     &lt;tr&gt;
+         &lt;td&gt;Product A&lt;/td&gt;
+         &lt;td&gt;MySQL 5.5&lt;/td&gt;
+         &lt;td&gt;MySQL 5.6&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+         &lt;td&gt;Product B&lt;/td&gt;
+         &lt;td&gt;MySQL 5.5&lt;/td&gt;
+         &lt;td&gt;MySQL 5.6&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr class=&quot;negative&quot;&gt;
+         &lt;td&gt;Product C&lt;/td&gt;
+         &lt;td&gt;MySQL 5.5&lt;/td&gt;
+         &lt;td&gt;MySQL 5.5&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+         &lt;td&gt;Product D&lt;/td&gt;
+         &lt;td&gt;MySQL 5.5&lt;/td&gt;
+         &lt;td&gt;MySQL 5.6&lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+         &lt;td&gt;Product E&lt;/td&gt;
+         &lt;td&gt;MySQL 5.5&lt;/td&gt;
+         &lt;td&gt;MySQL 5.6&lt;/td&gt;
+     &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Since all but one products require MySQL 5.6, so lets install it first and then we will work to figure out a way to install MySQL 5.5 as well.&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-mysql-56&quot;&gt;Installing MySQL 5.6&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get update
+sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mysql-client-core-5.6&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;At this point we have MySQL 5.6 listening at port &lt;code&gt;3306&lt;/code&gt; (default port)&lt;/p&gt;
+
+&lt;h1 id=&quot;approach-to-solution&quot;&gt;Approach to solution&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;There are several approaches with which you can achieve multiple MySQL versions running in same machine. Some of them are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use binaries of specific version&lt;/li&gt;
+  &lt;li&gt;Build everything from MySQL source&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;issues-in-above-approaches&quot;&gt;Issues in above approaches:&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Evidently we can only have one version of MySQL setup on the machine using default installation procedure with &lt;code&gt;apt-get&lt;/code&gt;. Hence if we try to install one version over other then it will replace the first version and will retain the second version. Hence we cannot have 2 versions of MySQL with default installation procedure.&lt;/p&gt;
+
+&lt;p&gt;Building everything from scratch involves a lot of complications at source level. In order to debug any issues that might arise, you should be aware what happens in various scripts/commands that you run. I did spend a day in building from the source but it eventually turned out to be complete waste of time, efforts and debugging.&lt;/p&gt;
+
+&lt;h1 id=&quot;docker-to-the-rescue&quot;&gt;Docker to the rescue&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we had a container in which we have a MySQL 5.5 installed and if we can publish the container’s port(s) to the host, then we can connect to container’s MySQL just like a local database.&lt;/p&gt;
+
+&lt;p&gt;We can have all of the above with &lt;strong&gt;Docker&lt;/strong&gt;. If you dont know what docker is, please read this official &lt;a href=&quot;https://www.docker.com/what-docker&quot;&gt;What is Docker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-docker&quot;&gt;Installing Docker&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;To install docker on your machine execute following command on your shell.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -sSL https://get.docker.com/ &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;spin-off-mysql-55-container&quot;&gt;Spin off MySQL 5.5 container&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Execute following command and this will download MySQL 5.5 image and will spin off the container. This container will have MySQL 5.5 installed on port &lt;code&gt;3306&lt;/code&gt;. But on host machine port &lt;code&gt;3310&lt;/code&gt; will be forwarded.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo docker run --name mysql-55-container -p 127.0.0.1:3310:3306 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+     -e &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;rootpassword -d mysql:5.5&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;NOTE: Password for root user is rootpassword, you can change it to anything.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;connect-to-mysql-55&quot;&gt;Connect to MySQL 5.5&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql -u root -p --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;127.0.0.1 --port&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3310&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;connect-to-mysql-56&quot;&gt;Connect to MySQL 5.6&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql -u root -p&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;And voila! you have both My SQL 5.5 and MySQL 5.6 installed and running on same machine.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can configure your application product C to use host &lt;code&gt;127.0.0.1&lt;/code&gt; and port &lt;code&gt;3310&lt;/code&gt; and thus you have products A, B, D and E running on MySQL 5.6 and product C running on MySQL 5.5.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 May 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html</guid>
+        
+        <category>techie</category>
+        
+        <category>devops</category>
+        
+        <category>database-admin</category>
+        
+        
+        <category>techie</category>
+        
+      </item>
+    
+      <item>
+        <title>The Electron Gun | Way to wipe electrons off the atom</title>
+        <description>&lt;p&gt;An atom is composed of three sub-atomic particles, namely&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;electrons&lt;/li&gt;
+  &lt;li&gt;protons&lt;/li&gt;
+  &lt;li&gt;neutrons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To our curiosity, let’s see how we can isolate electrons from an atom; what we could do with these isolated electrons; and how we can leverage this energy and make a gun out of it.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-history&quot;&gt;The history&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Human race has always been very curious about everything around. The epitome of this curiosity has led to a number of amazing discoveries and inventions. One of the major discoveries include &lt;strong&gt;discovery of electron&lt;/strong&gt;. Until 1897, it was believed that the atom was indivisible and was considered to be the fundamental unit of matter. But &lt;a href=&quot;https://en.wikipedia.org/wiki/J._J._Thomson&quot;&gt;Sir J. J. Thomson&lt;/a&gt; discovered a particle that nobody had ever seen, it was an &lt;strong&gt;Electron&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s take it a step further and see how we can make a gun that shoot electrons.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-the-electrons-out&quot;&gt;Let’s get the electrons out&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Metal atoms have a tendency to lose electron(s) and create positively charge ions hence it should be fairly easy to remove electrons from metals. A small bolt of energy should suffice in breaking the potential barrier and make electrons move out of the atom. So if we supply some energy, let’s say heat energy, should and will pop out of atoms. This process is called as &lt;strong&gt;Thermionic Emission&lt;/strong&gt; and the amount of energy required to remove an electron from the atom is called its &lt;strong&gt;Ionization Energy&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So we take a piece to metal (a thin filament) and heat it to a very high temperature; this will make electrons within it break the potential barrier and will start to move around in the lattice structure.&lt;/p&gt;
+
+&lt;h4 id=&quot;thermionic-emission&quot;&gt;Thermionic Emission&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Thermionic emission is an flow of charge (positive or negative) which is induced by thermal energy. Hence when we supply heat energy to metals, the potential barrier breaks and electrons are removed from the atom and are free to move around, and positively charged ions are left behind in lattice.&lt;/p&gt;
+
+&lt;h2 id=&quot;accelerate-electrons&quot;&gt;Accelerate electrons&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;A gun is something which shoots an object at a very high speed. So an Electron Gun should shoot out electrons at a very high speed. This implies we need to provide some kind of acceleration to the electrons to create a gun out of it. Let’s use electrostatic force of attraction for this.&lt;/p&gt;
+
+&lt;p&gt;Electrons are negatively charged particle, so if we have something positively charged near them, electrons will feel a very high force of attraction and will get acceleration. The anode (positively charged rod) is created by connecting an electrode to the positive terminal of a power supply and the hot piece of metal is connected to its negative terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; data-lightbox=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets calculate at what speed these electrons will move.&lt;/p&gt;
+
+&lt;p&gt;Electrical energy of one electron, &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E_e = charge . voltage \\
+    \therefore E_e = e.V&lt;/script&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, accelerating voltage (difference between the cathode and the anode)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;when this electron is moving, the energy &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is converted into kinetic energy &lt;script type=&quot;math/tex&quot;&gt;K.E.&lt;/script&gt;,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\therefore E_e = K.E \\
+    \therefore e.V = \frac{m.v^2}{2} \\
+    \therefore v = \sqrt{ \frac{2.e.V}{m} }&lt;/script&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, Voltage applied across anode and cathode,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;, Mass of the electron&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus we now have high speed electrons coming off metal surface.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-it-stronger-and-sharper&quot;&gt;Let’s make it stronger and sharper&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we put a positively charged rod near heated metal then electrons will only be accelerated towards the rod, each will feel attraction and will start to move towards positivity. Needless to say, such thing will not be useful. What we always need is something that can make a wild impact i.e. something which is stronger and sharper.&lt;/p&gt;
+
+&lt;h4 id=&quot;stronger&quot;&gt;Stronger&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Strength of the electron beam is directly proportional to the number of electrons that come out of metal surface. Thus higher the temperature, higher will be the kinetic energy of electrons and higher will be probability of electrons breaking the potential barrier and moving out and thus making the beam stronger.&lt;/p&gt;
+
+&lt;h4 id=&quot;sharper&quot;&gt;Sharper&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Making the beam sharper implies somehow converging these electrons and narrowing down beam into a thin sharp ray. In order to do that, we need some kind of force that will make this happen, some force that will make electrons move away from it. Yes that’s right! the &lt;strong&gt;electrostatic force of repulsion&lt;/strong&gt;. What if we make these electrons pass through a ring which is negatively charged? &lt;strong&gt;repulsion&lt;/strong&gt;. Thus we get a narrower and sharper beam of electrons.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-a-gun&quot;&gt;Let’s make a gun&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we combine everything mentioned above we get a narrow sharp beam of electrons originating from hot metal place, converging along the way and getting attracted towards the positively charged rod (anode). But where is the gun? We do not want the electrons to be attracted to anode and get absorbed. We want them to be projected out. So what do we do? Yes! we create a hole in the rod and let the beam of electrons pass through it.&lt;/p&gt;
+
+&lt;p&gt;Bingo! we now have an Electron Gun!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/electron-gun-working.png&quot; data-lightbox=&quot;/static/images/electron-gun/electron-gun-working.png&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/electron-gun-working.png&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;why-electrons-do-not-cling-to-anode&quot;&gt;Why electrons do not cling to anode&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don’t it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{10} th&lt;/script&gt; of speed of light which is &lt;script type=&quot;math/tex&quot;&gt;3 * 10^7 m/s&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-have-i-seen-that-before&quot;&gt;Where have I seen that before?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Electron gun sees its household application in&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Old TV sets used to render images on screen using such electron gun.&lt;/li&gt;
+  &lt;li&gt;Computer screens also used this technology to raster images on screen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Electron_gun&quot;&gt;Electron Gun Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.nuffieldfoundation.org/practical-physics/electron-guns&quot;&gt;Practical Physics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.schoolphysics.co.uk/age14-16/Atomic%20physics/text/Electron_gun/index.html&quot;&gt;School Physics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/science/electron-gun.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/science/electron-gun.html</guid>
+        
+        <category>science</category>
+        
+        <category>how-it-works</category>
+        
+        <category>particle-physics</category>
+        
+        
+        <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>The Electron Gun | Way to wipe electrons off the atom</title>
+        <description>&lt;p&gt;An atom is composed of three sub-atomic particles, namely&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;electrons&lt;/li&gt;
+  &lt;li&gt;protons&lt;/li&gt;
+  &lt;li&gt;neutrons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To our curiosity, let’s see how we can isolate electrons from an atom; what we could do with these isolated electrons; and how we can leverage this energy and make a gun out of it.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-history&quot;&gt;The history&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Human race has always been very curious about everything around. The epitome of this curiosity has led to a number of amazing discoveries and inventions. One of the major discoveries include &lt;strong&gt;discovery of electron&lt;/strong&gt;. Until 1897, it was believed that the atom was indivisible and was considered to be the fundamental unit of matter. But &lt;a href=&quot;https://en.wikipedia.org/wiki/J._J._Thomson&quot;&gt;Sir J. J. Thomson&lt;/a&gt; discovered a particle that nobody had ever seen, it was an &lt;strong&gt;Electron&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s take it a step further and see how we can make a gun that shoot electrons.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-the-electrons-out&quot;&gt;Let’s get the electrons out&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Metal atoms have a tendency to lose electron(s) and create positively charge ions hence it should be fairly easy to remove electrons from metals. A small bolt of energy should suffice in breaking the potential barrier and make electrons move out of the atom. So if we supply some energy, let’s say heat energy, should and will pop out of atoms. This process is called as &lt;strong&gt;Thermionic Emission&lt;/strong&gt; and the amount of energy required to remove an electron from the atom is called its &lt;strong&gt;Ionization Energy&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So we take a piece to metal (a thin filament) and heat it to a very high temperature; this will make electrons within it break the potential barrier and will start to move around in the lattice structure.&lt;/p&gt;
+
+&lt;h4 id=&quot;thermionic-emission&quot;&gt;Thermionic Emission&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Thermionic emission is an flow of charge (positive or negative) which is induced by thermal energy. Hence when we supply heat energy to metals, the potential barrier breaks and electrons are removed from the atom and are free to move around, and positively charged ions are left behind in lattice.&lt;/p&gt;
+
+&lt;h2 id=&quot;accelerate-electrons&quot;&gt;Accelerate electrons&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;A gun is something which shoots an object at a very high speed. So an Electron Gun should shoot out electrons at a very high speed. This implies we need to provide some kind of acceleration to the electrons to create a gun out of it. Let’s use electrostatic force of attraction for this.&lt;/p&gt;
+
+&lt;p&gt;Electrons are negatively charged particle, so if we have something positively charged near them, electrons will feel a very high force of attraction and will get acceleration. The anode (positively charged rod) is created by connecting an electrode to the positive terminal of a power supply and the hot piece of metal is connected to its negative terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; data-lightbox=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets calculate at what speed these electrons will move.&lt;/p&gt;
+
+&lt;p&gt;Electrical energy of one electron, &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E_e = charge . voltage \\
+    \therefore E_e = e.V&lt;/script&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, accelerating voltage (difference between the cathode and the anode)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;when this electron is moving, the energy &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is converted into kinetic energy &lt;script type=&quot;math/tex&quot;&gt;K.E.&lt;/script&gt;,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\therefore E_e = K.E \\
+    \therefore e.V = \frac{m.v^2}{2} \\
+    \therefore v = \sqrt{ \frac{2.e.V}{m} }&lt;/script&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, Voltage applied across anode and cathode,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;, Mass of the electron&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus we now have high speed electrons coming off metal surface.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-it-stronger-and-sharper&quot;&gt;Let’s make it stronger and sharper&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we put a positively charged rod near heated metal then electrons will only be accelerated towards the rod, each will feel attraction and will start to move towards positivity. Needless to say, such thing will not be useful. What we always need is something that can make a wild impact i.e. something which is stronger and sharper.&lt;/p&gt;
+
+&lt;h4 id=&quot;stronger&quot;&gt;Stronger&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Strength of the electron beam is directly proportional to the number of electrons that come out of metal surface. Thus higher the temperature, higher will be the kinetic energy of electrons and higher will be probability of electrons breaking the potential barrier and moving out and thus making the beam stronger.&lt;/p&gt;
+
+&lt;h4 id=&quot;sharper&quot;&gt;Sharper&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Making the beam sharper implies somehow converging these electrons and narrowing down beam into a thin sharp ray. In order to do that, we need some kind of force that will make this happen, some force that will make electrons move away from it. Yes that’s right! the &lt;strong&gt;electrostatic force of repulsion&lt;/strong&gt;. What if we make these electrons pass through a ring which is negatively charged? &lt;strong&gt;repulsion&lt;/strong&gt;. Thus we get a narrower and sharper beam of electrons.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-a-gun&quot;&gt;Let’s make a gun&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we combine everything mentioned above we get a narrow sharp beam of electrons originating from hot metal place, converging along the way and getting attracted towards the positively charged rod (anode). But where is the gun? We do not want the electrons to be attracted to anode and get absorbed. We want them to be projected out. So what do we do? Yes! we create a hole in the rod and let the beam of electrons pass through it.&lt;/p&gt;
+
+&lt;p&gt;Bingo! we now have an Electron Gun!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/electron-gun-working.png&quot; data-lightbox=&quot;/static/images/electron-gun/electron-gun-working.png&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/electron-gun-working.png&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;why-electrons-do-not-cling-to-anode&quot;&gt;Why electrons do not cling to anode&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don’t it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{10} th&lt;/script&gt; of speed of light which is &lt;script type=&quot;math/tex&quot;&gt;3 * 10^7 m/s&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-have-i-seen-that-before&quot;&gt;Where have I seen that before?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Electron gun sees its household application in&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Old TV sets used to render images on screen using such electron gun.&lt;/li&gt;
+  &lt;li&gt;Computer screens also used this technology to raster images on screen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Electron_gun&quot;&gt;Electron Gun Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.nuffieldfoundation.org/practical-physics/electron-guns&quot;&gt;Practical Physics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.schoolphysics.co.uk/age14-16/Atomic%20physics/text/Electron_gun/index.html&quot;&gt;School Physics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/electron-gun.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/electron-gun.html</guid>
+        
+        <category>science</category>
+        
+        <category>how-it-works</category>
+        
+        <category>particle-physics</category>
+        
+        
+        <category>curiosity</category>
+        
+      </item>
+    
+      <item>
+        <title>Finding out Gravitational Constant - The Cavendish Experiment</title>
+        <description>&lt;p&gt;The gravitational force was discovered by &lt;a href=&quot;https://en.wikipedia.org/wiki/Isaac_Newton&quot;&gt;Sir Isaac Newton&lt;/a&gt;, but he was not the one who calculated the &lt;strong&gt;Gravitational Constant&lt;/strong&gt; (&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;). Finding out &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; was a stroke of genius and was first discovered by a British scientist &lt;a href=&quot;https://en.wikipedia.org/wiki/Henry_Cavendish&quot;&gt;Henry Cavendish&lt;/a&gt; in 1797–1798, but no where in his publication he mentioned anything about this instead he was just &lt;strong&gt;“Weighing the Earth”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But an interesting by-product of the experiment came out as the value &lt;strong&gt;Gravitational Constant &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;&lt;/strong&gt;. The value that was obtained from the experiment was having an error of just &lt;script type=&quot;math/tex&quot;&gt;1\%&lt;/script&gt;. So let’s not anymore take value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; for granted, and find out how it was calculated in the first place.&lt;/p&gt;
+
+&lt;h1 id=&quot;first-step&quot;&gt;First step&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Going with the intuition let’s jot down the formula of gravitational force.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F = G (\frac{m_1.m_2}{r^2})&lt;/script&gt;
+
+&lt;p&gt;To calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; all we need are the values of variables except &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. Lets see what we have got or can get easily&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Regular ruler or measuring device can help us measure the distance.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt;: Measuring gravitational force, now should be tricky (◔ૂ◔)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The experiment that calculated the Gravitational force of attraction between two bodies was the &lt;strong&gt;Cavendish experiment&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Please note that I am simplifying the experiment apparatus for better understanding. The original experimental apparatus was pretty gigantic and complex. If you want to go into details of that please see the reference links below.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;the-prerequisite&quot;&gt;The prerequisite&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we know the apparatus, we should know what a &lt;strong&gt;torsion spring&lt;/strong&gt; is.&lt;/p&gt;
+
+&lt;h3 id=&quot;torsion-spring&quot;&gt;Torsion Spring&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;A torsion spring is a spring that works on the principle of twisting. When this spring is twisted, it exerts a torque which is proportional to the angle of the twist.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tau_s \propto F_s \propto \theta&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\tau_s&lt;/script&gt;: Torque exerted on spring&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F_s&lt;/script&gt;: Force component of torque&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: angle with which the spring is twisted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-setup&quot;&gt;The setup&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;There is a torsion spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; fixed at the top and there is a horizontal bar with identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; is mounted on this thin bar. Now two very huge identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;, are then mounted to the ground in the position as shown in the image.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a light source &lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt; that incidents a laser beam on mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and the reflected light is captured on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-we-trying-to-do-here&quot;&gt;What are we trying to do here?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;We are trying to measure the gravitational force of attraction between these lead balls.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;At time &lt;script type=&quot;math/tex&quot;&gt;t = 0&lt;/script&gt;, all the 4 balls are co-planar. and lines joining identical balls are perpendicular to each other. The laser beam is turned on and the beam then hits the mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and is reflected back at point &lt;script type=&quot;math/tex&quot;&gt;P_1&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Now after some time, the gravitational force of attraction between balls &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt; will generate a torque; and eventually will create a twist in the spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point &lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at &lt;strong&gt;equilibrum&lt;/strong&gt; the twisting force will be equal to gravitational force of attraction.&lt;/p&gt;
+
+&lt;h2 id=&quot;calculation&quot;&gt;Calculation&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;From the above procedure we have &lt;strong&gt;Angle of twist &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/strong&gt;. To exactly calculate the value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;, few more parameters are required, one important being &lt;strong&gt;Torsion Coefficient&lt;/strong&gt;, which is the measure of resistance provided by spring during twisting.&lt;/p&gt;
+
+&lt;p&gt;The torsion coefficient can be easily calculated, using period of oscillation due to inertia of smaller lead balls. The final equation that gives the &lt;strong&gt;Torsion Coefficient&lt;/strong&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;K = \frac{2\pi^2.m_2.L^2}{T^2}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;: Period of oscillation of horizontal bar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The final equation with which we can easily calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;G = \frac{K.\theta.r^2}{L.m_1.m_2}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;: Gravitational constant&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: Angle of twist&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Distance between balls at equilibrium&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: Mass of larger lead ball&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.school-for-champions.com/science/gravitation_cavendish_experiment_derivation.htm&quot;&gt;Derivation of above equations&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;interesting-resources&quot;&gt;Interesting Resources&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2PdiUoKa9Nw&quot;&gt;Knowing more about Henry Cavendish&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cavendish_experiment&quot;&gt;Cavendish Experiment Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ffden-2.phys.uaf.edu/211_fall2010.web.dir/Smith_Elliot/Cav_World.html&quot;&gt;Cavendish experiment in brief&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4JGgYjJhGEE&quot;&gt;Demonstration of cavendish method&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.physicsclassroom.com/class/circles/Lesson-3/Cavendish-and-the-Value-of-G&quot;&gt;Cavendish and the Value of G&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/science/cavendish-experiment.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/science/cavendish-experiment.html</guid>
+        
+        <category>science</category>
+        
+        <category>how-was-it-measured</category>
+        
+        <category>gravity</category>
+        
+        
+        <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>Finding out Gravitational Constant - The Cavendish Experiment</title>
+        <description>&lt;p&gt;The gravitational force was discovered by &lt;a href=&quot;https://en.wikipedia.org/wiki/Isaac_Newton&quot;&gt;Sir Isaac Newton&lt;/a&gt;, but he was not the one who calculated the &lt;strong&gt;Gravitational Constant&lt;/strong&gt; (&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;). Finding out &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; was a stroke of genius and was first discovered by a British scientist &lt;a href=&quot;https://en.wikipedia.org/wiki/Henry_Cavendish&quot;&gt;Henry Cavendish&lt;/a&gt; in 1797–1798, but no where in his publication he mentioned anything about this instead he was just &lt;strong&gt;“Weighing the Earth”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But an interesting by-product of the experiment came out as the value &lt;strong&gt;Gravitational Constant &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;&lt;/strong&gt;. The value that was obtained from the experiment was having an error of just &lt;script type=&quot;math/tex&quot;&gt;1\%&lt;/script&gt;. So let’s not anymore take value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; for granted, and find out how it was calculated in the first place.&lt;/p&gt;
+
+&lt;h1 id=&quot;first-step&quot;&gt;First step&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Going with the intuition let’s jot down the formula of gravitational force.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F = G (\frac{m_1.m_2}{r^2})&lt;/script&gt;
+
+&lt;p&gt;To calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; all we need are the values of variables except &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. Lets see what we have got or can get easily&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Regular ruler or measuring device can help us measure the distance.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt;: Measuring gravitational force, now should be tricky (◔ૂ◔)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The experiment that calculated the Gravitational force of attraction between two bodies was the &lt;strong&gt;Cavendish experiment&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Please note that I am simplifying the experiment apparatus for better understanding. The original experimental apparatus was pretty gigantic and complex. If you want to go into details of that please see the reference links below.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;the-prerequisite&quot;&gt;The prerequisite&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we know the apparatus, we should know what a &lt;strong&gt;torsion spring&lt;/strong&gt; is.&lt;/p&gt;
+
+&lt;h3 id=&quot;torsion-spring&quot;&gt;Torsion Spring&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;A torsion spring is a spring that works on the principle of twisting. When this spring is twisted, it exerts a torque which is proportional to the angle of the twist.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tau_s \propto F_s \propto \theta&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\tau_s&lt;/script&gt;: Torque exerted on spring&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F_s&lt;/script&gt;: Force component of torque&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: angle with which the spring is twisted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-setup&quot;&gt;The setup&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;There is a torsion spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; fixed at the top and there is a horizontal bar with identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; is mounted on this thin bar. Now two very huge identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;, are then mounted to the ground in the position as shown in the image.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a light source &lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt; that incidents a laser beam on mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and the reflected light is captured on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-we-trying-to-do-here&quot;&gt;What are we trying to do here?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;We are trying to measure the gravitational force of attraction between these lead balls.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;At time &lt;script type=&quot;math/tex&quot;&gt;t = 0&lt;/script&gt;, all the 4 balls are co-planar. and lines joining identical balls are perpendicular to each other. The laser beam is turned on and the beam then hits the mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and is reflected back at point &lt;script type=&quot;math/tex&quot;&gt;P_1&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Now after some time, the gravitational force of attraction between balls &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt; will generate a torque; and eventually will create a twist in the spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point &lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at &lt;strong&gt;equilibrum&lt;/strong&gt; the twisting force will be equal to gravitational force of attraction.&lt;/p&gt;
+
+&lt;h2 id=&quot;calculation&quot;&gt;Calculation&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;From the above procedure we have &lt;strong&gt;Angle of twist &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/strong&gt;. To exactly calculate the value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;, few more parameters are required, one important being &lt;strong&gt;Torsion Coefficient&lt;/strong&gt;, which is the measure of resistance provided by spring during twisting.&lt;/p&gt;
+
+&lt;p&gt;The torsion coefficient can be easily calculated, using period of oscillation due to inertia of smaller lead balls. The final equation that gives the &lt;strong&gt;Torsion Coefficient&lt;/strong&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;K = \frac{2\pi^2.m_2.L^2}{T^2}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;: Period of oscillation of horizontal bar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The final equation with which we can easily calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;G = \frac{K.\theta.r^2}{L.m_1.m_2}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;: Gravitational constant&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: Angle of twist&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Distance between balls at equilibrium&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: Mass of larger lead ball&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.school-for-champions.com/science/gravitation_cavendish_experiment_derivation.htm&quot;&gt;Derivation of above equations&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;interesting-resources&quot;&gt;Interesting Resources&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2PdiUoKa9Nw&quot;&gt;Knowing more about Henry Cavendish&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cavendish_experiment&quot;&gt;Cavendish Experiment Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ffden-2.phys.uaf.edu/211_fall2010.web.dir/Smith_Elliot/Cav_World.html&quot;&gt;Cavendish experiment in brief&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4JGgYjJhGEE&quot;&gt;Demonstration of cavendish method&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.physicsclassroom.com/class/circles/Lesson-3/Cavendish-and-the-Value-of-G&quot;&gt;Cavendish and the Value of G&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/cavendish-experiment.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/cavendish-experiment.html</guid>
+        
+        <category>science</category>
+        
+        <category>how-was-it-measured</category>
+        
+        <category>gravity</category>
+        
+        
+        <category>curiosity</category>
+        
+      </item>
+    
+      <item>
+        <title>How atomic clock works | busting several myths about it</title>
+        <description>&lt;p&gt;The accuracy of atomic clock is not because of its radioactivity or atomic decay … lets find out the truth behind it.&lt;/p&gt;
+
+&lt;p&gt;There are some very common myths about atomic clocks, the most most famous are&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Atomic clocks are radioactive&lt;/li&gt;
+  &lt;li&gt;Atomic clocks works on principle of atomic decay&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lets see how our world is in sync with a clock so accurate that it &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;time-keeping-before-atomic-clocks&quot;&gt;Time keeping before atomic clocks&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using &lt;strong&gt;Quarts Crystal&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let me tell you in brief how it worked. &lt;strong&gt;Quarts Crystal&lt;/strong&gt; has a spacial property that it is &lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;piezoelectric&lt;/a&gt;, which means that&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;When you apply pressure to it it generates tiny electric current.&lt;/li&gt;
+  &lt;li&gt;When you pass electricity through it, it vibrates at a precise frequency.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of &lt;strong&gt;32,768 Hz&lt;/strong&gt;, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this…&lt;/p&gt;
+
+&lt;h2 id=&quot;issue-with-battery-operated-quartz-crystal&quot;&gt;Issue with battery operated Quartz Crystal&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A &lt;strong&gt;FEEDBACK LOOP&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how&lt;/p&gt;
+
+&lt;h1 id=&quot;lets-get-some-basics-right&quot;&gt;Lets get some basics right&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts&lt;/p&gt;
+
+&lt;h3 id=&quot;atomic-structure-of-cesium&quot;&gt;Atomic structure of Cesium&lt;/h3&gt;
+
+&lt;p&gt;Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hyperfine-interaction&quot;&gt;Hyperfine interaction&lt;/h3&gt;
+
+&lt;p&gt;The interaction between nucleus and its surrounding environment is known as &lt;strong&gt;hyperfine interaction&lt;/strong&gt;. The magnitude of these interactions are very very small but enough to shift energy levels.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;electrostatic force of attraction,&lt;/li&gt;
+  &lt;li&gt;magnetic field of spinning nucleus and&lt;/li&gt;
+  &lt;li&gt;gravity pull between the two.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.&lt;/p&gt;
+
+&lt;h3 id=&quot;resonant-frequency-of-atoms&quot;&gt;Resonant frequency of atoms&lt;/h3&gt;
+
+&lt;p&gt;Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.&lt;/p&gt;
+
+&lt;p&gt;This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance &lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;special-case-of-cesium-atom&quot;&gt;Special case of cesium atom&lt;/h3&gt;
+
+&lt;p&gt;Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt;, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.&lt;/p&gt;
+
+&lt;h1 id=&quot;working&quot;&gt;Working&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Basics done! let’s jump into the working of it.&lt;/p&gt;
+
+&lt;p&gt;An atomic clock consists of a traditional &lt;strong&gt;Quartz Crystal&lt;/strong&gt; which is used for marking mechanical pulse just like in closed based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;battery operated quartz crystal&lt;/a&gt;. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Properties of Cesium atoms we care about:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Cesium atoms can be present in two states: Low energy and High energy.&lt;/li&gt;
+  &lt;li&gt;They can be separated by applying magnetic field.&lt;/li&gt;
+  &lt;li&gt;Low energy cesium atoms can be converted into high energy by applying external radiation.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First the Cesium chloride is heated in an oven, this creates a gaseous stream of cesium ions. This stream contains both the low and high energy ions. Now first magnetic filter is applied to this stream. The application of magnetic field to this stream bifurcates the stream into two sub-streams. One containing low energy cesium and other containing high energy cesium.&lt;/p&gt;
+
+&lt;p&gt;Now the low energy cesium stream is passed through a radiation chamber in which the a radiation of frequency &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt; is bombarded on it. This will make the low energy cesium to go into high energy state.&lt;/p&gt;
+
+&lt;p&gt;Now emerging from the radiation chamber we have a stream of high energy cesium ions; but not all are converted to high energy state if there is an offset in radiation frequency. Hence to know how many cesium atoms jumped into high energy state another magnetic filter is applied. Hence we deduce that, &lt;strong&gt;closer the radiation frequency is to resonant frequency of cesium, higher will be conversion rate of low energy cesium to high energy cesium&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. &lt;strong&gt;Higher the number of ions incident on it higher will be the current generated&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This current is passed to &lt;strong&gt;Quartz Oscillator&lt;/strong&gt; with which we mark one pulse. This oscillator is responsible to control wavelength (in turn frequency) of incident radiation.&lt;/p&gt;
+
+&lt;p&gt;Suppose the quartz oscillator looses its energy. As soon as this happens, the radiation in the chamber weakens. Hence number of cesium atoms jumping into high energy state drops. This tells another electric circuit to zap the oscillator and correct the period of oscillation. And thus locking its frequency in a very narrow range. This locked frequency is then divided by 9,192,631,770 which results in the familiar one pulse per second.&lt;/p&gt;
+
+&lt;p&gt;Now we see how we overcame the drawback of traditional Quartz Clock and created a much much accurate atomic clock which &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is how an atomic clock works. In above working principle of this we found that&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;There was no radioactivity&lt;/li&gt;
+  &lt;li&gt;There was no atomic decay&lt;/li&gt;
+  &lt;li&gt;It really had Quartz Oscillator in it, so we did not move out of it.&lt;/li&gt;
+  &lt;li&gt;Using interaction happening at such a scale of nanometers we could solve one of the biggest problem.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;for-more-info&quot;&gt;For more info:&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;Resonance&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;Piezoelectric Effect&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;Mechanism of Quartz Clock&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://science.howstuffworks.com/atomic-clock3.htm&quot;&gt;How does a practical cesium atomic clock works?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www3.nd.edu/~techrev/Archive/Winter2002/a4.html&quot;&gt;Atomic Clocks: What Time is it, Really?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cmp.liv.ac.uk/frink/thesis/thesis/node14.html&quot;&gt;Hyperfine interactions&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sun, 28 Feb 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/science/atomic-clocks.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/science/atomic-clocks.html</guid>
+        
+        <category>science</category>
+        
+        <category>particle-physics</category>
+        
+        <category>how-it-works</category>
+        
+        
+        <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>How atomic clock works | busting several myths about it</title>
+        <description>&lt;p&gt;The accuracy of atomic clock is not because of its radioactivity or atomic decay … lets find out the truth behind it.&lt;/p&gt;
+
+&lt;p&gt;There are some very common myths about atomic clocks, the most most famous are&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Atomic clocks are radioactive&lt;/li&gt;
+  &lt;li&gt;Atomic clocks works on principle of atomic decay&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lets see how our world is in sync with a clock so accurate that it &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;time-keeping-before-atomic-clocks&quot;&gt;Time keeping before atomic clocks&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using &lt;strong&gt;Quarts Crystal&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let me tell you in brief how it worked. &lt;strong&gt;Quarts Crystal&lt;/strong&gt; has a spacial property that it is &lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;piezoelectric&lt;/a&gt;, which means that&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;When you apply pressure to it it generates tiny electric current.&lt;/li&gt;
+  &lt;li&gt;When you pass electricity through it, it vibrates at a precise frequency.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of &lt;strong&gt;32,768 Hz&lt;/strong&gt;, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this…&lt;/p&gt;
+
+&lt;h2 id=&quot;issue-with-battery-operated-quartz-crystal&quot;&gt;Issue with battery operated Quartz Crystal&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A &lt;strong&gt;FEEDBACK LOOP&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how&lt;/p&gt;
+
+&lt;h1 id=&quot;lets-get-some-basics-right&quot;&gt;Lets get some basics right&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts&lt;/p&gt;
+
+&lt;h3 id=&quot;atomic-structure-of-cesium&quot;&gt;Atomic structure of Cesium&lt;/h3&gt;
+
+&lt;p&gt;Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hyperfine-interaction&quot;&gt;Hyperfine interaction&lt;/h3&gt;
+
+&lt;p&gt;The interaction between nucleus and its surrounding environment is known as &lt;strong&gt;hyperfine interaction&lt;/strong&gt;. The magnitude of these interactions are very very small but enough to shift energy levels.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;electrostatic force of attraction,&lt;/li&gt;
+  &lt;li&gt;magnetic field of spinning nucleus and&lt;/li&gt;
+  &lt;li&gt;gravity pull between the two.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.&lt;/p&gt;
+
+&lt;h3 id=&quot;resonant-frequency-of-atoms&quot;&gt;Resonant frequency of atoms&lt;/h3&gt;
+
+&lt;p&gt;Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.&lt;/p&gt;
+
+&lt;p&gt;This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance &lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;special-case-of-cesium-atom&quot;&gt;Special case of cesium atom&lt;/h3&gt;
+
+&lt;p&gt;Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt;, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.&lt;/p&gt;
+
+&lt;h1 id=&quot;working&quot;&gt;Working&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Basics done! let’s jump into the working of it.&lt;/p&gt;
+
+&lt;p&gt;An atomic clock consists of a traditional &lt;strong&gt;Quartz Crystal&lt;/strong&gt; which is used for marking mechanical pulse just like in closed based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;battery operated quartz crystal&lt;/a&gt;. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Properties of Cesium atoms we care about:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Cesium atoms can be present in two states: Low energy and High energy.&lt;/li&gt;
+  &lt;li&gt;They can be separated by applying magnetic field.&lt;/li&gt;
+  &lt;li&gt;Low energy cesium atoms can be converted into high energy by applying external radiation.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First the Cesium chloride is heated in an oven, this creates a gaseous stream of cesium ions. This stream contains both the low and high energy ions. Now first magnetic filter is applied to this stream. The application of magnetic field to this stream bifurcates the stream into two sub-streams. One containing low energy cesium and other containing high energy cesium.&lt;/p&gt;
+
+&lt;p&gt;Now the low energy cesium stream is passed through a radiation chamber in which the a radiation of frequency &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt; is bombarded on it. This will make the low energy cesium to go into high energy state.&lt;/p&gt;
+
+&lt;p&gt;Now emerging from the radiation chamber we have a stream of high energy cesium ions; but not all are converted to high energy state if there is an offset in radiation frequency. Hence to know how many cesium atoms jumped into high energy state another magnetic filter is applied. Hence we deduce that, &lt;strong&gt;closer the radiation frequency is to resonant frequency of cesium, higher will be conversion rate of low energy cesium to high energy cesium&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. &lt;strong&gt;Higher the number of ions incident on it higher will be the current generated&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This current is passed to &lt;strong&gt;Quartz Oscillator&lt;/strong&gt; with which we mark one pulse. This oscillator is responsible to control wavelength (in turn frequency) of incident radiation.&lt;/p&gt;
+
+&lt;p&gt;Suppose the quartz oscillator looses its energy. As soon as this happens, the radiation in the chamber weakens. Hence number of cesium atoms jumping into high energy state drops. This tells another electric circuit to zap the oscillator and correct the period of oscillation. And thus locking its frequency in a very narrow range. This locked frequency is then divided by 9,192,631,770 which results in the familiar one pulse per second.&lt;/p&gt;
+
+&lt;p&gt;Now we see how we overcame the drawback of traditional Quartz Clock and created a much much accurate atomic clock which &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is how an atomic clock works. In above working principle of this we found that&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;There was no radioactivity&lt;/li&gt;
+  &lt;li&gt;There was no atomic decay&lt;/li&gt;
+  &lt;li&gt;It really had Quartz Oscillator in it, so we did not move out of it.&lt;/li&gt;
+  &lt;li&gt;Using interaction happening at such a scale of nanometers we could solve one of the biggest problem.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;for-more-info&quot;&gt;For more info:&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;Resonance&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;Piezoelectric Effect&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;Mechanism of Quartz Clock&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://science.howstuffworks.com/atomic-clock3.htm&quot;&gt;How does a practical cesium atomic clock works?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www3.nd.edu/~techrev/Archive/Winter2002/a4.html&quot;&gt;Atomic Clocks: What Time is it, Really?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cmp.liv.ac.uk/frink/thesis/thesis/node14.html&quot;&gt;Hyperfine interactions&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sun, 28 Feb 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/atomic-clocks.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/atomic-clocks.html</guid>
+        
+        <category>science</category>
+        
+        <category>particle-physics</category>
+        
+        <category>how-it-works</category>
+        
+        
+        <category>curiosity</category>
+        
+      </item>
+    
+      <item>
+        <title>How big is our Earth?</title>
+        <description>&lt;p&gt;Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …&lt;/p&gt;
+
+&lt;h1 id=&quot;the-assumptions&quot;&gt;The Assumptions&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Earth is a perfect sphere.&lt;/li&gt;
+  &lt;li&gt;Since Sun is very very far and big, so the rays reaching Earth are parallel.&lt;/li&gt;
+  &lt;li&gt;The objects we are using (pole) are perpendicular to the ground.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;construction&quot;&gt;Construction&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/earth-circumference/1.jpg&quot; data-lightbox=&quot;/static/images/earth-circumference/1.jpg&quot; data-title=&quot;How big is our Earth?&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/earth-circumference/1.jpg&quot; alt=&quot;How big is our Earth?&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
+
+&lt;p&gt;Now some geometrical construction:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extend &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; to meet at &lt;script type=&quot;math/tex&quot;&gt;O&lt;/script&gt;, the center of the Earth. Let &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; be the angle between.&lt;/li&gt;
+  &lt;li&gt;Extend line &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; to meet &lt;script type=&quot;math/tex&quot;&gt;WO&lt;/script&gt; at &lt;script type=&quot;math/tex&quot;&gt;A&#39;&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.&lt;/p&gt;
+
+&lt;h1 id=&quot;derivation&quot;&gt;Derivation&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Lines &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&#39;&lt;/script&gt; are parallel and &lt;script type=&quot;math/tex&quot;&gt;WA&#39;&lt;/script&gt; acts as a transversal so we can say that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle CWA&#39; = \angle BA&#39;W = \theta_{2} \\
+    \equiv  \angle CWA&#39; = \angle YA&#39;X = \theta_{2}&lt;/script&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\angle YA&#39;X = \theta_{2}&lt;/script&gt; so we can say that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O = 180^{o} - \theta_{2}&lt;/script&gt;
+
+&lt;p&gt;Now let us consider &lt;script type=&quot;math/tex&quot;&gt;\triangle OA&#39;Y&lt;/script&gt;, we know sum of all angles of a triangle is &lt;script type=&quot;math/tex&quot;&gt;180^{o}&lt;/script&gt;, hence&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O + \angle A&#39;OY + \angle OYA&#39; = 180^{o} \\
+    \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
+    \therefore \theta = \theta_{2} - \theta_{1}&lt;/script&gt;
+
+&lt;p&gt;Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})&lt;/script&gt;
+
+&lt;table class=&quot;ui very basic table&quot;&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Distance&lt;/th&gt;
+        &lt;th&gt;What it represents&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(CX)&lt;/td&gt;
+            &lt;td&gt;Length of the shadow of pole WX&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(WX)&lt;/td&gt;
+            &lt;td&gt;Length of pole WX&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(AZ)&lt;/td&gt;
+            &lt;td&gt;Length of the shadow of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(YZ)&lt;/td&gt;
+            &lt;td&gt;Length of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; at the center of the Earth spans a distance &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt; at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when &lt;script type=&quot;math/tex&quot;&gt;\theta = 360^{o}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
+    \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
+    \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}&lt;/script&gt;
+
+&lt;p&gt;The only thing unknown in above equation is &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt;, which is the distance between poles. To make our lives simpler we will use some GPS for this. If we know the latitude and longitude of the two poles then the distance between them can be calculated very easily. For quick calculations on this you can follow this &lt;a href=&quot;http://www.movable-type.co.uk/scripts/latlong.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;find-how-big-is-our-earth&quot;&gt;Find how big is our Earth&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;As we now have the Radius of the Earth &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; from above calculations, and if we assume that earth is a perfect sphere, we can find out&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Total surface area &lt;script type=&quot;math/tex&quot;&gt;4 \pi R^{2}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Volume &lt;script type=&quot;math/tex&quot;&gt;\frac{4}{3} \pi R^{3}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Actual values are in the table below just to cross check your results&lt;/p&gt;
+
+&lt;table class=&quot;ui very basic table&quot;&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Measure&lt;/th&gt;
+        &lt;th&gt;Value&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Radius of Earth&lt;/td&gt;
+            &lt;td&gt;6,371 km&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Surface area of Earth&lt;/td&gt;
+            &lt;td&gt;509805890 km&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Volume of Earth&lt;/td&gt;
+            &lt;td&gt;1.08321×10&lt;sup&gt;12&lt;/sup&gt; km&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(YZ)&lt;/td&gt;
+            &lt;td&gt;Length of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;the-history&quot;&gt;The History&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;The method was first proposed by Eratosthenes way back in &lt;strong&gt;250 BC&lt;/strong&gt;. Lets see how it was done back then …&lt;/p&gt;
+
+&lt;p&gt;In ancient Egypt there was a city named Syene. Eratosthenes was told that in a well during &lt;a href=&quot;https://en.wikipedia.org/wiki/Summer_solstice&quot;&gt;Summer Solstice&lt;/a&gt; at noon time if he tries to look down a well he will be blocking the reflection of sun from the water, which actually implies the Sun was directly overhead. Syene was present on Tropic Of Cancer and to its north was a city called Alexandria. It is believed that Eratosthenes hired a man to calculate the distance between Syene and Alexandria. The hired man went from Syene to Alexandria and back walking finding out the distance to be &lt;strong&gt;5,000 stadia&lt;/strong&gt; (stadia was the unit of measurement back then in ancient Egypt, its conversion to metric system is 1 stade = 185 m)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Eratosthenes calculated the circumference of Earth to be equal to &lt;strong&gt;46,620 km&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.&lt;/p&gt;
+
+&lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 Dec 2015 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/science/earth-circumference.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/science/earth-circumference.html</guid>
+        
+        <category>science</category>
+        
+        <category>geometry</category>
+        
+        <category>how-was-it-measured</category>
+        
+        
+        <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>How big is our Earth?</title>
+        <description>&lt;p&gt;Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …&lt;/p&gt;
+
+&lt;h1 id=&quot;the-assumptions&quot;&gt;The Assumptions&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Earth is a perfect sphere.&lt;/li&gt;
+  &lt;li&gt;Since Sun is very very far and big, so the rays reaching Earth are parallel.&lt;/li&gt;
+  &lt;li&gt;The objects we are using (pole) are perpendicular to the ground.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;construction&quot;&gt;Construction&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/earth-circumference/1.jpg&quot; data-lightbox=&quot;/static/images/earth-circumference/1.jpg&quot; data-title=&quot;How big is our Earth?&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/earth-circumference/1.jpg&quot; alt=&quot;How big is our Earth?&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
+
+&lt;p&gt;Now some geometrical construction:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extend &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; to meet at &lt;script type=&quot;math/tex&quot;&gt;O&lt;/script&gt;, the center of the Earth. Let &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; be the angle between.&lt;/li&gt;
+  &lt;li&gt;Extend line &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; to meet &lt;script type=&quot;math/tex&quot;&gt;WO&lt;/script&gt; at &lt;script type=&quot;math/tex&quot;&gt;A&#39;&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.&lt;/p&gt;
+
+&lt;h1 id=&quot;derivation&quot;&gt;Derivation&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Lines &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&#39;&lt;/script&gt; are parallel and &lt;script type=&quot;math/tex&quot;&gt;WA&#39;&lt;/script&gt; acts as a transversal so we can say that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle CWA&#39; = \angle BA&#39;W = \theta_{2} \\
+    \equiv  \angle CWA&#39; = \angle YA&#39;X = \theta_{2}&lt;/script&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\angle YA&#39;X = \theta_{2}&lt;/script&gt; so we can say that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O = 180^{o} - \theta_{2}&lt;/script&gt;
+
+&lt;p&gt;Now let us consider &lt;script type=&quot;math/tex&quot;&gt;\triangle OA&#39;Y&lt;/script&gt;, we know sum of all angles of a triangle is &lt;script type=&quot;math/tex&quot;&gt;180^{o}&lt;/script&gt;, hence&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O + \angle A&#39;OY + \angle OYA&#39; = 180^{o} \\
+    \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
+    \therefore \theta = \theta_{2} - \theta_{1}&lt;/script&gt;
+
+&lt;p&gt;Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})&lt;/script&gt;
+
+&lt;table class=&quot;ui very basic table&quot;&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Distance&lt;/th&gt;
+        &lt;th&gt;What it represents&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(CX)&lt;/td&gt;
+            &lt;td&gt;Length of the shadow of pole WX&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(WX)&lt;/td&gt;
+            &lt;td&gt;Length of pole WX&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(AZ)&lt;/td&gt;
+            &lt;td&gt;Length of the shadow of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(YZ)&lt;/td&gt;
+            &lt;td&gt;Length of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; at the center of the Earth spans a distance &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt; at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when &lt;script type=&quot;math/tex&quot;&gt;\theta = 360^{o}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
+    \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
+    \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}&lt;/script&gt;
+
+&lt;p&gt;The only thing unknown in above equation is &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt;, which is the distance between poles. To make our lives simpler we will use some GPS for this. If we know the latitude and longitude of the two poles then the distance between them can be calculated very easily. For quick calculations on this you can follow this &lt;a href=&quot;http://www.movable-type.co.uk/scripts/latlong.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;find-how-big-is-our-earth&quot;&gt;Find how big is our Earth&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;As we now have the Radius of the Earth &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; from above calculations, and if we assume that earth is a perfect sphere, we can find out&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Total surface area &lt;script type=&quot;math/tex&quot;&gt;4 \pi R^{2}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Volume &lt;script type=&quot;math/tex&quot;&gt;\frac{4}{3} \pi R^{3}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Actual values are in the table below just to cross check your results&lt;/p&gt;
+
+&lt;table class=&quot;ui very basic table&quot;&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Measure&lt;/th&gt;
+        &lt;th&gt;Value&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Radius of Earth&lt;/td&gt;
+            &lt;td&gt;6,371 km&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Surface area of Earth&lt;/td&gt;
+            &lt;td&gt;509805890 km&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Volume of Earth&lt;/td&gt;
+            &lt;td&gt;1.08321×10&lt;sup&gt;12&lt;/sup&gt; km&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(YZ)&lt;/td&gt;
+            &lt;td&gt;Length of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;the-history&quot;&gt;The History&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;The method was first proposed by Eratosthenes way back in &lt;strong&gt;250 BC&lt;/strong&gt;. Lets see how it was done back then …&lt;/p&gt;
+
+&lt;p&gt;In ancient Egypt there was a city named Syene. Eratosthenes was told that in a well during &lt;a href=&quot;https://en.wikipedia.org/wiki/Summer_solstice&quot;&gt;Summer Solstice&lt;/a&gt; at noon time if he tries to look down a well he will be blocking the reflection of sun from the water, which actually implies the Sun was directly overhead. Syene was present on Tropic Of Cancer and to its north was a city called Alexandria. It is believed that Eratosthenes hired a man to calculate the distance between Syene and Alexandria. The hired man went from Syene to Alexandria and back walking finding out the distance to be &lt;strong&gt;5,000 stadia&lt;/strong&gt; (stadia was the unit of measurement back then in ancient Egypt, its conversion to metric system is 1 stade = 185 m)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Eratosthenes calculated the circumference of Earth to be equal to &lt;strong&gt;46,620 km&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.&lt;/p&gt;
+
+&lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 Dec 2015 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/earth-circumference.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/earth-circumference.html</guid>
+        
+        <category>science</category>
+        
+        <category>geometry</category>
+        
+        <category>how-was-it-measured</category>
+        
+        
+        <category>curiosity</category>
+        
+      </item>
+    
+      <item>
+        <title>The Fourth Dimension - too Sci-Fi to be true</title>
+        <description>&lt;p&gt;Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world but what if someone can access the 4th dimension. Lets talk about that …&lt;/p&gt;
+
+&lt;h1 id=&quot;the-rule-of--n1th--dimension&quot;&gt;The rule of &lt;script type=&quot;math/tex&quot;&gt;n+1^{th}&lt;/script&gt; dimension&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Imagine a plane &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; which is a 2D world and let there be 2 people &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; is a circle and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is a square. Since this is a 2D world, &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; can see everything on plane &lt;script type=&quot;math/tex&quot;&gt;P&lt;/script&gt; but only as a &lt;strong&gt;line&lt;/strong&gt;. They have no control over &lt;script type=&quot;math/tex&quot;&gt;Z-axis&lt;/script&gt; which can give them a perception of what they actually are i.e. square or circle.&lt;/p&gt;
+
+&lt;p&gt;Suppose there is a person &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;, which is a Cube and has an access to &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension. We can deduce the following statements from this&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/1.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/1.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/fourth-dimension/1.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; will see &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; as another fellow line as long as &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; intersects their world at &lt;script type=&quot;math/tex&quot;&gt;Z = 0&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; will stop seeing &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; when it moves along &lt;script type=&quot;math/tex&quot;&gt;Z-axis&lt;/script&gt; i.e. when &lt;script type=&quot;math/tex&quot;&gt;Z \neq 0&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This can be easily explained mathematically with concept of intersection and projections. But in naive terms, it can be explained with a statement “&lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; cannot see up or down (along &lt;script type=&quot;math/tex&quot;&gt;Z-axis&lt;/script&gt;) hence they cannot know what is happening there”. So for &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; is only a line and nothing else.&lt;/p&gt;
+
+&lt;p&gt;So now we deduce a rule from this&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a object moves along &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension, other 2 dimensional objects cannot perceive it&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let us extend it to 3D world.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a object moves along &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension, other 3 dimensional objects cannot perceive it&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So in general we can say that&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a object moves along &lt;script type=&quot;math/tex&quot;&gt;n+1^{th}&lt;/script&gt; dimension, other &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; dimensional objects cannot perceive it&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now your brain might be rushing and must be thinking a lot of crazy things that can be done with this. Lets analyze …&lt;/p&gt;
+
+&lt;h1 id=&quot;where-the-hell-did-he-go&quot;&gt;Where the hell did he go&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;You might have seen a magic trick where a person disappears from a place and shows up at another. You might also know how the trick it is done. Can this be done for real? &lt;strong&gt;YES&lt;/strong&gt;, this can surely be done in real if one has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension. How? lets dig deeper into it.&lt;/p&gt;
+
+&lt;p&gt;Suppose a magician &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; is at place &lt;script type=&quot;math/tex&quot;&gt;P1&lt;/script&gt;. If he has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension then he can simply move along it and reach place &lt;script type=&quot;math/tex&quot;&gt;P2&lt;/script&gt; without even getting noticed. This is just an extension of rule mentioned above.&lt;/p&gt;
+
+&lt;p&gt;To explain it better lets go back to our &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; example. Suppose Cube C rise up so that its &lt;script type=&quot;math/tex&quot;&gt;Z \neq 0&lt;/script&gt;. Suddenly he will be invisible to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; now moves &lt;script type=&quot;math/tex&quot;&gt;20&lt;/script&gt; units to left and goes down to intersect at &lt;script type=&quot;math/tex&quot;&gt;Z = 0&lt;/script&gt;. As soon as this happens &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; becomes visible to &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; all of a sudden.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/2.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/2.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/fourth-dimension/2.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;From the perspective of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; just disappeared from a place and showed up at another. So for them this was like the magic trick.&lt;/p&gt;
+
+&lt;p&gt;If we extend this explanation to our &lt;script type=&quot;math/tex&quot;&gt;3&lt;/script&gt; dimensional world we can easily deduce how a person with an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension can disappear at place and shows up at another. So next time you see this trick … there might be a tiny possibility that the magician has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension. So beware!&lt;/p&gt;
+
+&lt;h1 id=&quot;the-saviour&quot;&gt;The saviour&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Since you live in &lt;script type=&quot;math/tex&quot;&gt;3&lt;/script&gt; dimension and your &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension is exposed and free to access, a person with access to it can see through you. Lets find out how …&lt;/p&gt;
+
+&lt;p&gt;In our example of &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; world, imagine there is a &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; - tumor inside the square &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; that needs to be removed. He asks &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; for some help. &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; told him that he has no other option but cut him open and remove the tumor. &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; straight away said NO to this. Can this be done in any other simpler way?&lt;/p&gt;
+
+&lt;p&gt;The answer is &lt;strong&gt;YES&lt;/strong&gt;. This can be done in a very very simple way but this requires access to higher dimensions. Suppose you enter this &lt;script type=&quot;math/tex&quot;&gt;2D&lt;/script&gt; world but you still have an access to &lt;script type=&quot;math/tex&quot;&gt;3^{rd}&lt;/script&gt; dimension, and the tumor is exposed from its 3rd dimension, you can access tumor directly pick it up and throw it away, without any need of cutting open &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/3.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/3.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/fourth-dimension/3.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If we just extend this example to our world, we can say that if someone has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension then he can in so many ways be very very useful in healthcare. Some things that can be done are
+* Bloodless Surgery
+* tumor detection and removal
+* Detect blood clotting in early stage
+* Blood less transplantation of various organs, etc.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-phantom-thief&quot;&gt;The Phantom Thief&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;What if a person with such amazing capabilities became a thief. This is will be very menial but we can at least spare a thought on this…&lt;/p&gt;
+
+&lt;p&gt;From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so now since he is a thief, he can steal anything from any safe in this whole world without even getting noticed. This means no treasure can be kept safe from his hands, not even art like Picasso’s paintings are safe, nothing can be kept safe from him.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/4.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/4.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/fourth-dimension/4.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;He can just swoop in take the things and go off and no one will ever take a notice of this.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-perfect-murderer&quot;&gt;The Perfect Murderer&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Imagine if suddenly your heart comes out of your body! SCARY right! also it seems quite Sci-Fi. But this can be a reality if a person has an access to &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension and you don’t.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/fourth-dimension/5.jpg&quot; data-lightbox=&quot;/static/images/fourth-dimension/5.jpg&quot; data-title=&quot;The Fourth Dimension - too Sci-Fi to be true&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/fourth-dimension/5.jpg&quot; alt=&quot;The Fourth Dimension - too Sci-Fi to be true&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This guy can now become the perfect murderer because he don’t need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.&lt;/p&gt;
+
+&lt;h1 id=&quot;some-pointers-to-think-about&quot;&gt;Some pointers to think about&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;The examples I mentioned above are really vague, but this can be taken to altogether very different levels. If you can think along the lines you can try to answer the following pointers.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What happens if the &lt;script type=&quot;math/tex&quot;&gt;4D&lt;/script&gt; creature intersects our &lt;script type=&quot;math/tex&quot;&gt;3D&lt;/script&gt; world at more than one place.&lt;/li&gt;
+  &lt;li&gt;Do we now have an explanation of the powers of Nightcrawler in X-men?&lt;/li&gt;
+  &lt;li&gt;Can &lt;script type=&quot;math/tex&quot;&gt;4D&lt;/script&gt; person see what you had in your breakfast?&lt;/li&gt;
+  &lt;li&gt;Can we say that &lt;script type=&quot;math/tex&quot;&gt;4D&lt;/script&gt; person cannot be killed by a bullet?&lt;/li&gt;
+  &lt;li&gt;Can we create a lightning fast transport along &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension?&lt;/li&gt;
+  &lt;li&gt;Does this mean that &lt;script type=&quot;math/tex&quot;&gt;4^{th}&lt;/script&gt; dimension plus Flash’s speed = Teleportation?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you really want to dive deep into this then just dive deep into your imaginations and jot your ideas.&lt;/p&gt;
+
+&lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Dec 2015 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/science/fourth-dimension.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/science/fourth-dimension.html</guid>
+        
+        <category>science</category>
+        
+        <category>fourth-dimension</category>
+        
+        <category>sci-fi</category>
+        
+        
+        <category>science</category>
+        
+      </item>
+    
+  </channel>
+</rss>

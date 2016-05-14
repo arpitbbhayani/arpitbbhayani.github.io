@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>How big is our Earth? | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology</title>
+  <meta name="description" content="Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...">
+  <meta name="keywords" content="calculate circumference of earth, how was it calculated, basic geometry, eratosthenes method, use of shadow, " />
+
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/science/earth-circumference.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology" href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/earth-circumference/earth.jpg"/>
+  <meta property="og:title" content="How big is our Earth? | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology"/>
+  <meta property="og:url" content="http://arpitbhayani.me/science/earth-circumference.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/science/earth-circumference.html">
+  <meta name="twitter:title" content="How big is our Earth? | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology">
+  <meta name="twitter:description" content="Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/earth-circumference/earth.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="ui grey item main-nav-page-title">
+        <p><i>How big is our Earth?</i></p>
+      </div>
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/science/earth-circumference.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=How big is our Earth?&amp;url=http://arpitbhayani.me/science/earth-circumference.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <div class="ui dropdown item">
+          <i class="content icon"></i>
+          <div class="menu">
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/science/earth-circumference.html" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
+            </a>
+            <a class="item" href="https://twitter.com/intent/tweet?text=How big is our Earth?&amp;url=http://arpitbhayani.me/science/earth-circumference.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui hidden divider"></div>
+            <div class="ui header article-title">
+                <h1>How big is our Earth?</h1>
+            </div>
+            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani</span>
+            <div>
+                <span class="article-publish-date lightGrey">December 20, 2015</span>
+                <span class="ui right aligned basic segment">
+                    
+                    <a style="font-weight: normal;" href='/tag/science.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with science" data-variation="tiny">science</a>
+                    
+                    <a style="font-weight: normal;" href='/tag/geometry.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with geometry" data-variation="tiny">geometry</a>
+                    
+                    <a style="font-weight: normal;" href='/tag/how-was-it-measured.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with how-was-it-measured" data-variation="tiny">how-was-it-measured</a>
+                    
+                </span>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="http://arpitbhayani.me/static/images/earth-circumference/earth.jpg" data-lightbox="http://arpitbhayani.me/static/images/earth-circumference/earth.jpg" data-title="How big is our Earth?">
+                <img class="ui centered huge image stylish" src="http://arpitbhayani.me/static/images/earth-circumference/earth.jpg" alt="How big is our Earth?">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="article-content">
+                <p>Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …</p>
+
+<h1 id="the-assumptions">The Assumptions</h1>
+<hr />
+<p>Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:</p>
+
+<ul>
+  <li>Earth is a perfect sphere.</li>
+  <li>Since Sun is very very far and big, so the rays reaching Earth are parallel.</li>
+  <li>The objects we are using (pole) are perpendicular to the ground.</li>
+</ul>
+
+<h1 id="construction">Construction</h1>
+<hr />
+<p>Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.</p>
+
+<p><a href="/static/images/earth-circumference/1.jpg" data-lightbox="/static/images/earth-circumference/1.jpg" data-title="How big is our Earth?">
+    <img class="ui large centered stylish image" src="/static/images/earth-circumference/1.jpg" alt="How big is our Earth?" />
+</a></p>
+
+<p>Suppose <script type="math/tex">WX</script> and <script type="math/tex">YZ</script> are two poles present in two cities. Sun rays are incident on that pole and rays <script type="math/tex">DC</script> and <script type="math/tex">BA</script> casts a shadow <script type="math/tex">XC</script> and <script type="math/tex">ZA</script> at an angle <script type="math/tex">\theta_{1}</script> and <script type="math/tex">\theta_{2}</script> with top of the poles respectively.</p>
+
+<p>Now some geometrical construction:</p>
+
+<ul>
+  <li>Extend <script type="math/tex">WX</script> and <script type="math/tex">YZ</script> to meet at <script type="math/tex">O</script>, the center of the Earth. Let <script type="math/tex">\theta</script> be the angle between.</li>
+  <li>Extend line <script type="math/tex">BA</script> to meet <script type="math/tex">WO</script> at <script type="math/tex">A'</script>.</li>
+</ul>
+
+<p>Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.</p>
+
+<h1 id="derivation">Derivation</h1>
+<hr />
+<p>Lines <script type="math/tex">DC</script> and <script type="math/tex">BA'</script> are parallel and <script type="math/tex">WA'</script> acts as a transversal so we can say that</p>
+
+<script type="math/tex; mode=display">\angle CWA' = \angle BA'W = \theta_{2} \\
+    \equiv  \angle CWA' = \angle YA'X = \theta_{2}</script>
+
+<p>Since <script type="math/tex">\angle YA'X = \theta_{2}</script> so we can say that</p>
+
+<script type="math/tex; mode=display">\angle YA'O = 180^{o} - \theta_{2}</script>
+
+<p>Now let us consider <script type="math/tex">\triangle OA'Y</script>, we know sum of all angles of a triangle is <script type="math/tex">180^{o}</script>, hence</p>
+
+<script type="math/tex; mode=display">\angle YA'O + \angle A'OY + \angle OYA' = 180^{o} \\
+    \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
+    \therefore \theta = \theta_{2} - \theta_{1}</script>
+
+<p>Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.</p>
+
+<script type="math/tex; mode=display">\theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})</script>
+
+<table class="ui very basic table">
+    <thead>
+        <th>Distance</th>
+        <th>What it represents</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>l(CX)</td>
+            <td>Length of the shadow of pole WX</td>
+        </tr>
+        <tr>
+            <td>l(WX)</td>
+            <td>Length of pole WX</td>
+        </tr>
+        <tr>
+            <td>l(AZ)</td>
+            <td>Length of the shadow of pole YZ</td>
+        </tr>
+        <tr>
+            <td>l(YZ)</td>
+            <td>Length of pole YZ</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out <script type="math/tex">\theta</script>.</p>
+
+<p>Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring <script type="math/tex">\theta</script> at the center of the Earth spans a distance <script type="math/tex">l(XZ)</script> at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when <script type="math/tex">\theta = 360^{o}</script>.</p>
+
+<script type="math/tex; mode=display">\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
+    \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
+    \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}</script>
+
+<p>The only thing unknown in above equation is <script type="math/tex">l(XZ)</script>, which is the distance between poles. To make our lives simpler we will use some GPS for this. If we know the latitude and longitude of the two poles then the distance between them can be calculated very easily. For quick calculations on this you can follow this <a href="http://www.movable-type.co.uk/scripts/latlong.html">link</a></p>
+
+<h1 id="find-how-big-is-our-earth">Find how big is our Earth</h1>
+<hr />
+<p>As we now have the Radius of the Earth <script type="math/tex">R</script> from above calculations, and if we assume that earth is a perfect sphere, we can find out</p>
+
+<ul>
+  <li>Total surface area <script type="math/tex">4 \pi R^{2}</script></li>
+  <li>Volume <script type="math/tex">\frac{4}{3} \pi R^{3}</script></li>
+</ul>
+
+<p>Actual values are in the table below just to cross check your results</p>
+
+<table class="ui very basic table">
+    <thead>
+        <th>Measure</th>
+        <th>Value</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Radius of Earth</td>
+            <td>6,371 km</td>
+        </tr>
+        <tr>
+            <td>Surface area of Earth</td>
+            <td>509805890 km<sup>2</sup></td>
+        </tr>
+        <tr>
+            <td>Volume of Earth</td>
+            <td>1.08321×10<sup>12</sup> km<sup>3</sup></td>
+        </tr>
+        <tr>
+            <td>l(YZ)</td>
+            <td>Length of pole YZ</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 id="the-history">The History</h1>
+<hr />
+<p>The method was first proposed by Eratosthenes way back in <strong>250 BC</strong>. Lets see how it was done back then …</p>
+
+<p>In ancient Egypt there was a city named Syene. Eratosthenes was told that in a well during <a href="https://en.wikipedia.org/wiki/Summer_solstice">Summer Solstice</a> at noon time if he tries to look down a well he will be blocking the reflection of sun from the water, which actually implies the Sun was directly overhead. Syene was present on Tropic Of Cancer and to its north was a city called Alexandria. It is believed that Eratosthenes hired a man to calculate the distance between Syene and Alexandria. The hired man went from Syene to Alexandria and back walking finding out the distance to be <strong>5,000 stadia</strong> (stadia was the unit of measurement back then in ancient Egypt, its conversion to metric system is 1 stade = 185 m)</p>
+
+<blockquote>
+  <p>Eratosthenes calculated the circumference of Earth to be equal to <strong>46,620 km</strong>.</p>
+</blockquote>
+
+<p>Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.</p>
+
+<p>What do you think about this? I would love to hear from you guys.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/science/earth-circumference.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=How big is our Earth?&amp;url=http://arpitbhayani.me/science/earth-circumference.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="fb-comments" data-numposts="5" width="100%"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid" style="background-color: #F0F0F0;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #EEE;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Proudly hosted on <a href="https://github.com/arpitbbhayani/arpitbhayani.me">GitHub</a>.<br/>
+          Designed and coded with <i class="heart red icon"></i> by <a class="" href="/about-me.html">myself</a>.
+      </div>
+  </div>
+</footer>
+
+    </body>
+    <head>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <script src="/static/js/js.cookie.js"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+
+  
+  <script>
+  $(document).ready(function() {
+    $('.item[data-tab]').tab();
+  });
+  </script>
+  
+
+</head>
+
+    <script>
+    
+      Cookies.set("IS_POST", "TRUE");
+    
+    </script>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>Deploy Graphite and Nginx on an Ubuntu 14.04 server | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology</title>
+  <meta name="description" content="Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver w...">
+  <meta name="keywords" content="graphite, devops, monitoring tool setup, " />
+
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/techie/graphite.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology" href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/graphite2.png"/>
+  <meta property="og:title" content="Deploy Graphite and Nginx on an Ubuntu 14.04 server | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology"/>
+  <meta property="og:url" content="http://arpitbhayani.me/techie/graphite.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver w..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/techie/graphite.html">
+  <meta name="twitter:title" content="Deploy Graphite and Nginx on an Ubuntu 14.04 server | Arpit Bhayani | An avid programmer, passionate about code, design, startups and technology">
+  <meta name="twitter:description" content="Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver w...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/graphite2.png">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="ui grey item main-nav-page-title">
+        <p><i>Deploy Graphite and Nginx on an Ubuntu 14.04 server</i></p>
+      </div>
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/graphite.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=Deploy Graphite and Nginx on an Ubuntu 14.04 server&amp;url=http://arpitbhayani.me/techie/graphite.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div>
+        <div class="ui dropdown item">
+          <i class="content icon"></i>
+          <div class="menu">
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/graphite.html" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
+            </a>
+            <a class="item" href="https://twitter.com/intent/tweet?text=Deploy Graphite and Nginx on an Ubuntu 14.04 server&amp;url=http://arpitbhayani.me/techie/graphite.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui hidden divider"></div>
+            <div class="ui header article-title">
+                <h1>Deploy Graphite and Nginx on an Ubuntu 14.04 server</h1>
+            </div>
+            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani</span>
+            <div>
+                <span class="article-publish-date lightGrey">December 14, 2015</span>
+                <span class="ui right aligned basic segment">
+                    
+                    <a style="font-weight: normal;" href='/tag/techie.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with techie" data-variation="tiny">techie</a>
+                    
+                    <a style="font-weight: normal;" href='/tag/devops.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with devops" data-variation="tiny">devops</a>
+                    
+                </span>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="http://arpitbhayani.me/static/images/graphite2.png" data-lightbox="http://arpitbhayani.me/static/images/graphite2.png" data-title="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
+                <img class="ui centered huge image stylish" src="http://arpitbhayani.me/static/images/graphite2.png" alt="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="article-content">
+                <p>Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.</p>
+
+<h2 id="what-is-what">What is what</h2>
+
+<h3 id="what-is-graphite">What is Graphite?</h3>
+<p>Graphite is an open source software that is used for monitoring any system. The monitored data is the numeric information that represents any performance metric. Graphite also as a renderer which renders this information as graphs.
+<a href="http://graphite.readthedocs.org/en/1.0/overview.html">Official Documentation</a></p>
+
+<h3 id="what-is-nginx">What is Nginx?</h3>
+<p>NGINX is a very fast Webserver, its faster than most web servers available in the market. The biggest advantage of Nginx is its concurrency (because of asynchronous nature). It can also act as</p>
+
+<ol>
+  <li>HTTP Cache</li>
+  <li>Reverse Proxy</li>
+  <li>Load Balancer</li>
+</ol>
+
+<p>For more information visit <a href="https://en.wikipedia.org/wiki/Nginx">Nginx Wiki</a></p>
+
+<h1 id="installing-nginx">Installing Nginx</h1>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install nginx nginx-extras</code></pre></figure>
+
+<h1 id="installing-graphite">Installing Graphite</h1>
+
+<h2 id="graphite-ubuntu-package-installation">Graphite Ubuntu Package Installation</h2>
+
+<p>Install Graphite packages</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get update
+sudo apt-get install graphite-web graphite-carbon</code></pre></figure>
+
+<p><strong>NOTE</strong>: During the installation, you will be asked if during uninstallation of Graphite you also like to remove its files. Please select <strong>NO</strong> because anyways you can delete them manually. The files are kept in <code>/var/lib/graphite/whisper</code>.</p>
+
+<h2 id="install-and-configure-postgresql-database">Install and Configure PostgreSQL Database</h2>
+<p>Graphite internally uses carbon and whisper database library for storing data. But the web application is a Django application which needs some data store for its own purpose. The default data store configured is SQLite3 database files. But this is not a full fledged database system hence we will use PostgreSQL.</p>
+
+<p>Script to install database and libs used by Graphite to communicate with PostgreSQL</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install postgresql libpq-dev python-psycopg2</code></pre></figure>
+
+<p>Once our PostgreSQL is installed we will create a user and a database</p>
+
+<p>Login to PostgreSQL console</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo -u postgres psql</code></pre></figure>
+
+<p>Create a user <em>graphite</em> which will be used by Django to operate on our database.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="err">$</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">graphite</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span></code></pre></figure>
+
+<p>Please make sure you select a secure password for your user.</p>
+
+<p>Create a database <em>graphite</em> and give our new user <em>graphite</em> ownership of it.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="err">$</span> <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">graphite</span> <span class="k">WITH</span> <span class="k">OWNER</span> <span class="n">graphite</span><span class="p">;</span></code></pre></figure>
+
+<p>Please verify is database is created or not by connection to it</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="err">$</span> <span class="err">\</span><span class="k">c</span> <span class="n">graphite</span></code></pre></figure>
+
+<p>If you can successfully connect to the database <em>graphite</em> then you are good to go to next step.</p>
+
+<p>Exit from the PostgreSQL console</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="err">$</span> <span class="err">\</span><span class="n">q</span></code></pre></figure>
+
+<h2 id="configure-graphite-web-application">Configure Graphite Web Application</h2>
+
+<p>Now, as we have our PostgreSQL database and user ready to go we can now move to configuring the web application.</p>
+
+<p>Open the Graphite web app configuration file:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/graphite/local_settings.py</code></pre></figure>
+
+<p>Uncomment the <em>SECRET_KEY</em> and give a nice random value to it</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;MY NICE RANDOM SALT&#39;</span></code></pre></figure>
+
+<p>Uncomment the <em>TIMEZONE</em> and set it to some appropriate value. I have set it to UTC, but you may choose any one you like</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;UTC&#39;</span></code></pre></figure>
+
+<p>Uncomment the <em>USE_REMOTE_USER_AUTHENTICATION</em> and set tot to <em>True</em> so that remote user will be authenticated first before making any DB changes</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">USE_REMOTE_USER_AUTHENTICATION</span> <span class="o">=</span> True</code></pre></figure>
+
+<p>Change the database dictionary definition:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="o">:</span> <span class="s1">&#39;graphite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="o">:</span> <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;USER&#39;</span><span class="o">:</span> <span class="s1">&#39;graphite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="o">:</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="o">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Save and close this file.</p>
+
+<h2 id="sync-the-database">Sync the Database</h2>
+<p>Once your web application is configured, it is time to sync your database, create a super user and create the correct structure.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo graphite-manage syncdb</code></pre></figure>
+
+<p><strong>NOTE</strong>: It will ask you to create a superuser. Make sure you remember the credentials with which you create one. This user will be used to connect to Graphite application and be admin of it. Being admin you will change interface of Graphite and create graphs.</p>
+
+<h2 id="configure-carbon">Configure Carbon</h2>
+<p>Carbon is the Graphite storage backend.</p>
+
+<p>Open the configuration file:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/default/graphite-carbon</code></pre></figure>
+
+<p>Change value of <em>CARBON_CACHE_ENABLED</em> to <em>true</em></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">CARBON_CACHE_ENABLED</span> <span class="o">=</span> <span class="nb">true</span></code></pre></figure>
+
+<p>This enables the carbon service to start at boot</p>
+
+<p>Save and close the file.</p>
+
+<p>Next, open the Carbon configuration file:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/carbon/carbon.conf</code></pre></figure>
+
+<p>Set <em>ENABLE_LOGROTATION</em> to <em>True</em> to turn on log rotation</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">ENABLE_LOGROTATION</span> <span class="o">=</span> True</code></pre></figure>
+
+<p>Save and close the file</p>
+
+<h2 id="configuring-storage-schemas">Configuring Storage Schemas</h2>
+<p>Now, open the storage schema file. This tells Carbon how long to store values and how detailed these values should be:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/carbon/storage-schemas.conf</code></pre></figure>
+
+<p>Inside you will find entries like</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>carbon<span class="o">]</span>
+<span class="nv">pattern</span> <span class="o">=</span> ^carbon<span class="se">\.</span>
+<span class="nv">retentions</span> <span class="o">=</span> 60:90d</code></pre></figure>
+
+<p>which implies:
+pattern that matches regular expression <em>^carbon.</em> should retain the data with retention policy <em>60:90d</em> which is</p>
+
+<ul>
+  <li>how often a metric is recorded: 60 seconds</li>
+  <li>length of time to store those values: 90 days</li>
+</ul>
+
+<p>For detail information on retention policy visit <a href="http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-schemas-conf">here</a></p>
+
+<p>Now we need to add our own entry. Let’s take an example <em>test</em> i.e. we need to monitor data points and our data point entries will start with string <em>test</em>.</p>
+
+<p><strong>NOTE</strong>: This entry should be added before the default entry mentioned at the bottom of the file</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span><span class="nb">test</span><span class="o">]</span>
+<span class="nv">pattern</span> <span class="o">=</span> ^test<span class="se">\.</span>
+<span class="nv">retentions</span> <span class="o">=</span> 10s:10m,1m:1h</code></pre></figure>
+
+<p>This will match any metrics beginning with “test.”. It will store the data it collects two times, in varying detail.</p>
+
+<p>The first archive definition <em>(1s:10m)</em> will create a data point every ten  seconds. It will store the values for only ten minutes.</p>
+
+<p>The second archive <em>(1m:1h)</em> will create a data point every one minute. It will gather all of the data from the past minute (six points, since the previous archive creates a point every ten seconds) and aggregate it to create the point. By default, it does this by averaging the points, but we can adjust this later. It stores the data at this level of detail for one hour.</p>
+
+<p><strong>This example is taken from this <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-graphite-on-an-ubuntu-14-04-server">link</a></strong></p>
+
+<p>Save and close the file.</p>
+
+<h2 id="storage-aggregation-methods">Storage Aggregation Methods</h2>
+<p>This aggregation methods are used when we try to fetch data that is less detailed (In our previous example we saw 6 data points were aggregated to create 1 data point). Understanding aggregation is important is we want accurate metrics.</p>
+
+<p>Default aggregation method is taking out mean of values which implies that all retention policies other than most detailed one will create data points by taking mean of all data points it received.</p>
+
+<p>We can specify the aggregation configuration in file called <em>storage-aggregation.conf</em> . A sample file is already provided by Carbon, so you can simply copy-paste it for default behaviour.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo cp /usr/share/doc/graphite-carbon/examples/storage-aggregation.conf.example /etc/carbon/storage-aggregation.conf</code></pre></figure>
+
+<p>You can view <a href="http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-aggregation-conf">official documentation</a> to understand it better.</p>
+
+<p>Save and close the file.</p>
+
+<p>Start the carbon service</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo service carbon-cache start</code></pre></figure>
+
+<h2 id="setup-uwsgi-and-init-script">Setup uwsgi and init script</h2>
+<p>To install <em>uwsgi</em> globally you can run following command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install python-dev
+sudo pip install uwsgi</code></pre></figure>
+
+<p>If <em>pip</em> is not installed in your system, you can run following command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install python-pip</code></pre></figure>
+
+<p>The entrance file for Django application is stored in directory <em>/usr/share/graphite-web</em> and is by default named as <em>graphite.wsgi</em>. You should rename it to <em>graphite_wsgi.py</em>.</p>
+
+<p>You can do this by executing following command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo cp /usr/share/graphite-web/graphite.wsgi /usr/share/graphite-web/graphite_wsgi.py</code></pre></figure>
+
+<p>Create log files and socket files with appropriate permissions</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo touch /var/run/graphite.sock
+sudo chmod <span class="m">777</span> /var/run/graphite.sock
+sudo touch /var/log/graphite.log
+sudo chmod <span class="m">777</span> /var/log/graphite.log</code></pre></figure>
+
+<p>Once you have <em>uwsgi</em> setup in your system its time to set up the init script which will make it easier to manage the service.</p>
+
+<p>Create the following file</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/init/uwsgi-graphite.conf</code></pre></figure>
+
+<p>And put following content in it</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># vim: syntax=upstart</span>
+
+env <span class="nv">UWSGI_BIN</span><span class="o">=</span>/usr/local/bin/uwsgi
+env <span class="nv">PYTHONPATH</span><span class="o">=</span>/usr/share/graphite-web
+
+expect fork
+<span class="nb">umask </span>0000
+
+start on runlevel <span class="o">[</span>2345<span class="o">]</span>
+stop on runlevel <span class="o">[</span>!2345<span class="o">]</span>
+
+script
+  <span class="nb">exec</span> <span class="nv">$UWSGI_BIN</span> --socket /var/run/graphite.sock --master --need-app <span class="se">\</span>
+  --catch-exceptions --reload-on-exception --pp <span class="nv">$PYTHONPATH</span> <span class="se">\</span>
+  -w graphite_wsgi:application --buffer-size <span class="m">32768</span> -p <span class="m">4</span> -O <span class="m">2</span> &gt;&gt;/var/log/graphite.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+end script</code></pre></figure>
+
+<p>Now you can start the Graphite Web application service using following command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo service uwsgi-graphite start</code></pre></figure>
+
+<p>But before you can see anything on browser you need to setup Nginx configuration</p>
+
+<h2 id="setup-nginx-for-graphite">Setup Nginx for Graphite</h2>
+
+<p>Let us first create all files and links</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo touch /etc/nginx/sites-enabled/graphite
+sudo ln -s /etc/nginx/sites-enabled/graphite /etc/nginx/sites-available/graphite
+
+<span class="c"># Log files</span>
+sudo touch /var/log/nginx/graphite.access.log
+sudo chmod <span class="m">666</span> /var/log/nginx/graphite.access.log
+sudo touch /var/log/nginx/graphite.error.log
+sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></pre></figure>
+
+<p>Now we are ready for configuring Nginx server for Graphite</p>
+
+<p>Open file <em>/etc/nginx/sites-enabled/graphite</em> and put following content in it</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/nginx/sites-enabled/graphite</code></pre></figure>
+
+<p>Nginx configuration</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">server</span> <span class="p">{</span>
+  <span class="nx">server_name</span> <span class="nx">graphite</span><span class="p">.</span><span class="nx">yourservername</span><span class="p">.</span><span class="nx">com</span><span class="p">;</span>
+  <span class="nx">listen</span> <span class="mi">80</span><span class="p">;</span>
+
+  <span class="nx">rewrite</span> <span class="o">^</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//$host$1 permanent;</span>
+<span class="p">}</span>
+
+
+<span class="nx">server</span> <span class="p">{</span>
+  <span class="nx">server_name</span> <span class="nx">graphite</span><span class="p">.</span><span class="nx">yourservername</span><span class="p">.</span><span class="nx">com</span><span class="p">;</span>
+
+
+  <span class="nx">listen</span> <span class="mi">443</span> <span class="nx">ssl</span> <span class="nx">spdy</span><span class="p">;</span>
+
+
+  <span class="nx">access_log</span> <span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/graphite.access.log;</span>
+  <span class="nx">error_log</span>  <span class="o">/</span><span class="kd">var</span><span class="err">/log/nginx/graphite.error.log;</span>
+
+
+  <span class="nx">location</span> <span class="o">=</span> <span class="err">/robots.txt {</span>
+    <span class="nx">echo</span> <span class="s2">&quot;User-agent: *\nDisallow: /\n&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+  <span class="nx">root</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">share</span><span class="o">/</span><span class="nx">graphite</span><span class="o">-</span><span class="nx">web</span><span class="p">;</span>
+
+  <span class="nx">location</span> <span class="o">=</span> <span class="err">/favicon.ico {</span>
+    <span class="k">return</span> <span class="mi">204</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">location</span> <span class="o">/</span><span class="nx">content</span> <span class="p">{</span>
+    <span class="nx">alias</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">share</span><span class="o">/</span><span class="nx">graphite</span><span class="o">-</span><span class="nx">web</span><span class="o">/</span><span class="kr">static</span><span class="p">;</span>
+    <span class="nx">expires</span> <span class="nx">max</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">location</span> <span class="o">/</span> <span class="p">{</span>
+    <span class="nx">uwsgi_pass</span> <span class="nx">unix</span><span class="o">:</span><span class="err">/var/run/graphite.sock;</span>
+    <span class="nx">include</span> <span class="nx">uwsgi_params</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Now you can view a working Graphite on your server. Just hit <em>http://graphite.yourservername.com</em> from your favourite browser.</p>
+
+<h1 id="see-it-working">See it working</h1>
+
+<p>Login to the system with credentials that you provided while creating the superuser.</p>
+
+<p>Once you are logged in, you should see a screen like this.</p>
+
+<p><a href="/static/images/graphite1.png" data-lightbox="/static/images/graphite1.png" data-title="Landing page of Graphite">
+    <img class="ui large centered stylish image" src="/static/images/graphite1.png" alt="Landing page of Graphite" />
+</a></p>
+
+<p>First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with <strong>test.</strong> will be recorded as our pattern. Lets add some random data</p>
+
+<p>In order to add data we need to run following</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&quot;test.count 9 `date +%s`&quot;</span> <span class="p">|</span> nc -q0 127.0.0.1 2003<span class="p">;</span></code></pre></figure>
+
+<p>This will add one data metric of value 9 in system. Lets add some more data; this time wee loop through values</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="m">4</span> <span class="m">6</span> <span class="m">8</span> <span class="m">16</span> 2<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;test.count $i `date +%s`&quot;</span> <span class="p">|</span> nc -q0 127.0.0.1 2003<span class="p">;</span> sleep 6<span class="p">;</span> <span class="k">done</span></code></pre></figure>
+
+<p>Now you should see something like this.</p>
+
+<p><strong>I already had some data in the system, your graph will look a bit different but should be similar</strong></p>
+
+<p><a href="/static/images/graphite2.png" data-lightbox="/static/images/graphite2.png" data-title="test.count graph in Graphite">
+    <img class="ui large centered stylish image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
+</a></p>
+
+<p>This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/graphite.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Deploy Graphite and Nginx on an Ubuntu 14.04 server&amp;url=http://arpitbhayani.me/techie/graphite.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="fb-comments" data-numposts="5" width="100%"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid" style="background-color: #F0F0F0;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #EEE;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Proudly hosted on <a href="https://github.com/arpitbbhayani/arpitbhayani.me">GitHub</a>.<br/>
+          Designed and coded with <i class="heart red icon"></i> by <a class="" href="/about-me.html">myself</a>.
+      </div>
+  </div>
+</footer>
+
+    </body>
+    <head>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <script src="/static/js/js.cookie.js"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+
+  
+  <script>
+  $(document).ready(function() {
+    $('.item[data-tab]').tab();
+  });
+  </script>
+  
+
+</head>
+
+    <script>
+    
+      Cookies.set("IS_POST", "TRUE");
+    
+    </script>
+</html>
