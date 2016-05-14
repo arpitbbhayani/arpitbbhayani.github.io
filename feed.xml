@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 May 2016 14:58:24 +0530</pubDate>
-    <lastBuildDate>Fri, 13 May 2016 14:58:24 +0530</lastBuildDate>
+    <pubDate>Sat, 14 May 2016 12:16:11 +0530</pubDate>
+    <lastBuildDate>Sat, 14 May 2016 12:16:11 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -263,6 +263,134 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
       </item>
     
       <item>
+        <title>The Electron Gun | Way to wipe electrons off the atom</title>
+        <description>&lt;p&gt;An atom is composed of three sub-atomic particles, namely&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;electrons&lt;/li&gt;
+  &lt;li&gt;protons&lt;/li&gt;
+  &lt;li&gt;neutrons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To our curiosity, let’s see how we can isolate electrons from an atom; what we could do with these isolated electrons; and how we can leverage this energy and make a gun out of it.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-history&quot;&gt;The history&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Human race has always been very curious about everything around. The epitome of this curiosity has led to a number of amazing discoveries and inventions. One of the major discoveries include &lt;strong&gt;discovery of electron&lt;/strong&gt;. Until 1897, it was believed that the atom was indivisible and was considered to be the fundamental unit of matter. But &lt;a href=&quot;https://en.wikipedia.org/wiki/J._J._Thomson&quot;&gt;Sir J. J. Thomson&lt;/a&gt; discovered a particle that nobody had ever seen, it was an &lt;strong&gt;Electron&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s take it a step further and see how we can make a gun that shoot electrons.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-the-electrons-out&quot;&gt;Let’s get the electrons out&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Metal atoms have a tendency to lose electron(s) and create positively charge ions hence it should be fairly easy to remove electrons from metals. A small bolt of energy should suffice in breaking the potential barrier and make electrons move out of the atom. So if we supply some energy, let’s say heat energy, should and will pop out of atoms. This process is called as &lt;strong&gt;Thermionic Emission&lt;/strong&gt; and the amount of energy required to remove an electron from the atom is called its &lt;strong&gt;Ionization Energy&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So we take a piece to metal (a thin filament) and heat it to a very high temperature; this will make electrons within it break the potential barrier and will start to move around in the lattice structure.&lt;/p&gt;
+
+&lt;h4 id=&quot;thermionic-emission&quot;&gt;Thermionic Emission&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Thermionic emission is an flow of charge (positive or negative) which is induced by thermal energy. Hence when we supply heat energy to metals, the potential barrier breaks and electrons are removed from the atom and are free to move around, and positively charged ions are left behind in lattice.&lt;/p&gt;
+
+&lt;h2 id=&quot;accelerate-electrons&quot;&gt;Accelerate electrons&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;A gun is something which shoots an object at a very high speed. So an Electron Gun should shoot out electrons at a very high speed. This implies we need to provide some kind of acceleration to the electrons to create a gun out of it. Let’s use electrostatic force of attraction for this.&lt;/p&gt;
+
+&lt;p&gt;Electrons are negatively charged particle, so if we have something positively charged near them, electrons will feel a very high force of attraction and will get acceleration. The anode (positively charged rod) is created by connecting an electrode to the positive terminal of a power supply and the hot piece of metal is connected to its negative terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; data-lightbox=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/accelerating-electrons.png&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets calculate at what speed these electrons will move.&lt;/p&gt;
+
+&lt;p&gt;Electrical energy of one electron, &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E_e = charge . voltage \\
+    \therefore E_e = e.V&lt;/script&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, accelerating voltage (difference between the cathode and the anode)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;when this electron is moving, the energy &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is converted into kinetic energy &lt;script type=&quot;math/tex&quot;&gt;K.E.&lt;/script&gt;,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\therefore E_e = K.E \\
+    \therefore e.V = \frac{m.v^2}{2} \\
+    \therefore v = \sqrt{ \frac{2.e.V}{m} }&lt;/script&gt;
+
+&lt;p&gt;where,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, Voltage applied across anode and cathode,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;, Mass of the electron&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus we now have high speed electrons coming off metal surface.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-it-stronger-and-sharper&quot;&gt;Let’s make it stronger and sharper&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we put a positively charged rod near heated metal then electrons will only be accelerated towards the rod, each will feel attraction and will start to move towards positivity. Needless to say, such thing will not be useful. What we always need is something that can make a wild impact i.e. something which is stronger and sharper.&lt;/p&gt;
+
+&lt;h4 id=&quot;stronger&quot;&gt;Stronger&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Strength of the electron beam is directly proportional to the number of electrons that come out of metal surface. Thus higher the temperature, higher will be the kinetic energy of electrons and higher will be probability of electrons breaking the potential barrier and moving out and thus making the beam stronger.&lt;/p&gt;
+
+&lt;h4 id=&quot;sharper&quot;&gt;Sharper&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Making the beam sharper implies somehow converging these electrons and narrowing down beam into a thin sharp ray. In order to do that, we need some kind of force that will make this happen, some force that will make electrons move away from it. Yes that’s right! the &lt;strong&gt;electrostatic force of repulsion&lt;/strong&gt;. What if we make these electrons pass through a ring which is negatively charged? &lt;strong&gt;repulsion&lt;/strong&gt;. Thus we get a narrower and sharper beam of electrons.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-make-a-gun&quot;&gt;Let’s make a gun&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;If we combine everything mentioned above we get a narrow sharp beam of electrons originating from hot metal place, converging along the way and getting attracted towards the positively charged rod (anode). But where is the gun? We do not want the electrons to be attracted to anode and get absorbed. We want them to be projected out. So what do we do? Yes! we create a hole in the rod and let the beam of electrons pass through it.&lt;/p&gt;
+
+&lt;p&gt;Bingo! we now have an Electron Gun!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/electron-gun-working.png&quot; data-lightbox=&quot;/static/images/electron-gun/electron-gun-working.png&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/electron-gun-working.png&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;why-electrons-do-not-cling-to-anode&quot;&gt;Why electrons do not cling to anode&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don’t it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{10} th&lt;/script&gt; of speed of light which is &lt;script type=&quot;math/tex&quot;&gt;3 * 10^7 m/s&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-have-i-seen-that-before&quot;&gt;Where have I seen that before?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;Electron gun sees its household application in&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Old TV sets used to render images on screen using such electron gun.&lt;/li&gt;
+  &lt;li&gt;Computer screens also used this technology to raster images on screen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Electron_gun&quot;&gt;Electron Gun Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.nuffieldfoundation.org/practical-physics/electron-guns&quot;&gt;Practical Physics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.schoolphysics.co.uk/age14-16/Atomic%20physics/text/Electron_gun/index.html&quot;&gt;School Physics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 14 Apr 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/electron-gun.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/electron-gun.html</guid>
+        
+        <category>science</category>
+        
+        <category>how-it-works</category>
+        
+        <category>particle-physics</category>
+        
+        
+        <category>curiosity</category>
+        
+      </item>
+    
+      <item>
         <title>Finding out Gravitational Constant - The Cavendish Experiment</title>
         <description>&lt;p&gt;The gravitational force was discovered by &lt;a href=&quot;https://en.wikipedia.org/wiki/Isaac_Newton&quot;&gt;Sir Isaac Newton&lt;/a&gt;, but he was not the one who calculated the &lt;strong&gt;Gravitational Constant&lt;/strong&gt; (&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;). Finding out &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; was a stroke of genius and was first discovered by a British scientist &lt;a href=&quot;https://en.wikipedia.org/wiki/Henry_Cavendish&quot;&gt;Henry Cavendish&lt;/a&gt; in 1797–1798, but no where in his publication he mentioned anything about this instead he was just &lt;strong&gt;“Weighing the Earth”&lt;/strong&gt;.&lt;/p&gt;
 
@@ -393,6 +521,140 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         
         
         <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>Finding out Gravitational Constant - The Cavendish Experiment</title>
+        <description>&lt;p&gt;The gravitational force was discovered by &lt;a href=&quot;https://en.wikipedia.org/wiki/Isaac_Newton&quot;&gt;Sir Isaac Newton&lt;/a&gt;, but he was not the one who calculated the &lt;strong&gt;Gravitational Constant&lt;/strong&gt; (&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;). Finding out &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; was a stroke of genius and was first discovered by a British scientist &lt;a href=&quot;https://en.wikipedia.org/wiki/Henry_Cavendish&quot;&gt;Henry Cavendish&lt;/a&gt; in 1797–1798, but no where in his publication he mentioned anything about this instead he was just &lt;strong&gt;“Weighing the Earth”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But an interesting by-product of the experiment came out as the value &lt;strong&gt;Gravitational Constant &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;&lt;/strong&gt;. The value that was obtained from the experiment was having an error of just &lt;script type=&quot;math/tex&quot;&gt;1\%&lt;/script&gt;. So let’s not anymore take value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; for granted, and find out how it was calculated in the first place.&lt;/p&gt;
+
+&lt;h1 id=&quot;first-step&quot;&gt;First step&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Going with the intuition let’s jot down the formula of gravitational force.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F = G (\frac{m_1.m_2}{r^2})&lt;/script&gt;
+
+&lt;p&gt;To calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; all we need are the values of variables except &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. Lets see what we have got or can get easily&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Regular ruler or measuring device can help us measure the distance.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt;: Measuring gravitational force, now should be tricky (◔ૂ◔)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The experiment that calculated the Gravitational force of attraction between two bodies was the &lt;strong&gt;Cavendish experiment&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Please note that I am simplifying the experiment apparatus for better understanding. The original experimental apparatus was pretty gigantic and complex. If you want to go into details of that please see the reference links below.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;the-prerequisite&quot;&gt;The prerequisite&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we know the apparatus, we should know what a &lt;strong&gt;torsion spring&lt;/strong&gt; is.&lt;/p&gt;
+
+&lt;h3 id=&quot;torsion-spring&quot;&gt;Torsion Spring&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;A torsion spring is a spring that works on the principle of twisting. When this spring is twisted, it exerts a torque which is proportional to the angle of the twist.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tau_s \propto F_s \propto \theta&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\tau_s&lt;/script&gt;: Torque exerted on spring&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F_s&lt;/script&gt;: Force component of torque&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: angle with which the spring is twisted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-setup&quot;&gt;The setup&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;There is a torsion spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; fixed at the top and there is a horizontal bar with identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; is mounted on this thin bar. Now two very huge identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;, are then mounted to the ground in the position as shown in the image.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a light source &lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt; that incidents a laser beam on mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and the reflected light is captured on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-we-trying-to-do-here&quot;&gt;What are we trying to do here?&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;We are trying to measure the gravitational force of attraction between these lead balls.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;At time &lt;script type=&quot;math/tex&quot;&gt;t = 0&lt;/script&gt;, all the 4 balls are co-planar. and lines joining identical balls are perpendicular to each other. The laser beam is turned on and the beam then hits the mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and is reflected back at point &lt;script type=&quot;math/tex&quot;&gt;P_1&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Now after some time, the gravitational force of attraction between balls &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt; will generate a torque; and eventually will create a twist in the spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point &lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at &lt;strong&gt;equilibrum&lt;/strong&gt; the twisting force will be equal to gravitational force of attraction.&lt;/p&gt;
+
+&lt;h2 id=&quot;calculation&quot;&gt;Calculation&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;From the above procedure we have &lt;strong&gt;Angle of twist &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/strong&gt;. To exactly calculate the value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;, few more parameters are required, one important being &lt;strong&gt;Torsion Coefficient&lt;/strong&gt;, which is the measure of resistance provided by spring during twisting.&lt;/p&gt;
+
+&lt;p&gt;The torsion coefficient can be easily calculated, using period of oscillation due to inertia of smaller lead balls. The final equation that gives the &lt;strong&gt;Torsion Coefficient&lt;/strong&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;K = \frac{2\pi^2.m_2.L^2}{T^2}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;: Period of oscillation of horizontal bar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The final equation with which we can easily calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;G = \frac{K.\theta.r^2}{L.m_1.m_2}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;: Gravitational constant&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: Angle of twist&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Distance between balls at equilibrium&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: Mass of larger lead ball&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.school-for-champions.com/science/gravitation_cavendish_experiment_derivation.htm&quot;&gt;Derivation of above equations&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;interesting-resources&quot;&gt;Interesting Resources&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2PdiUoKa9Nw&quot;&gt;Knowing more about Henry Cavendish&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cavendish_experiment&quot;&gt;Cavendish Experiment Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ffden-2.phys.uaf.edu/211_fall2010.web.dir/Smith_Elliot/Cav_World.html&quot;&gt;Cavendish experiment in brief&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4JGgYjJhGEE&quot;&gt;Demonstration of cavendish method&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.physicsclassroom.com/class/circles/Lesson-3/Cavendish-and-the-Value-of-G&quot;&gt;Cavendish and the Value of G&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 08 Apr 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/cavendish-experiment.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/cavendish-experiment.html</guid>
+        
+        <category>science</category>
+        
+        <category>how-was-it-measured</category>
+        
+        <category>gravity</category>
+        
+        
+        <category>curiosity</category>
         
       </item>
     
@@ -543,6 +805,156 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         
         
         <category>science</category>
+        
+      </item>
+    
+      <item>
+        <title>How atomic clock works | busting several myths about it</title>
+        <description>&lt;p&gt;The accuracy of atomic clock is not because of its radioactivity or atomic decay … lets find out the truth behind it.&lt;/p&gt;
+
+&lt;p&gt;There are some very common myths about atomic clocks, the most most famous are&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Atomic clocks are radioactive&lt;/li&gt;
+  &lt;li&gt;Atomic clocks works on principle of atomic decay&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lets see how our world is in sync with a clock so accurate that it &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;time-keeping-before-atomic-clocks&quot;&gt;Time keeping before atomic clocks&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using &lt;strong&gt;Quarts Crystal&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let me tell you in brief how it worked. &lt;strong&gt;Quarts Crystal&lt;/strong&gt; has a spacial property that it is &lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;piezoelectric&lt;/a&gt;, which means that&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;When you apply pressure to it it generates tiny electric current.&lt;/li&gt;
+  &lt;li&gt;When you pass electricity through it, it vibrates at a precise frequency.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of &lt;strong&gt;32,768 Hz&lt;/strong&gt;, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this…&lt;/p&gt;
+
+&lt;h2 id=&quot;issue-with-battery-operated-quartz-crystal&quot;&gt;Issue with battery operated Quartz Crystal&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A &lt;strong&gt;FEEDBACK LOOP&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how&lt;/p&gt;
+
+&lt;h1 id=&quot;lets-get-some-basics-right&quot;&gt;Lets get some basics right&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts&lt;/p&gt;
+
+&lt;h3 id=&quot;atomic-structure-of-cesium&quot;&gt;Atomic structure of Cesium&lt;/h3&gt;
+
+&lt;p&gt;Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hyperfine-interaction&quot;&gt;Hyperfine interaction&lt;/h3&gt;
+
+&lt;p&gt;The interaction between nucleus and its surrounding environment is known as &lt;strong&gt;hyperfine interaction&lt;/strong&gt;. The magnitude of these interactions are very very small but enough to shift energy levels.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;electrostatic force of attraction,&lt;/li&gt;
+  &lt;li&gt;magnetic field of spinning nucleus and&lt;/li&gt;
+  &lt;li&gt;gravity pull between the two.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.&lt;/p&gt;
+
+&lt;h3 id=&quot;resonant-frequency-of-atoms&quot;&gt;Resonant frequency of atoms&lt;/h3&gt;
+
+&lt;p&gt;Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.&lt;/p&gt;
+
+&lt;p&gt;This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance &lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;special-case-of-cesium-atom&quot;&gt;Special case of cesium atom&lt;/h3&gt;
+
+&lt;p&gt;Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt;, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.&lt;/p&gt;
+
+&lt;h1 id=&quot;working&quot;&gt;Working&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Basics done! let’s jump into the working of it.&lt;/p&gt;
+
+&lt;p&gt;An atomic clock consists of a traditional &lt;strong&gt;Quartz Crystal&lt;/strong&gt; which is used for marking mechanical pulse just like in closed based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;battery operated quartz crystal&lt;/a&gt;. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Properties of Cesium atoms we care about:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Cesium atoms can be present in two states: Low energy and High energy.&lt;/li&gt;
+  &lt;li&gt;They can be separated by applying magnetic field.&lt;/li&gt;
+  &lt;li&gt;Low energy cesium atoms can be converted into high energy by applying external radiation.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First the Cesium chloride is heated in an oven, this creates a gaseous stream of cesium ions. This stream contains both the low and high energy ions. Now first magnetic filter is applied to this stream. The application of magnetic field to this stream bifurcates the stream into two sub-streams. One containing low energy cesium and other containing high energy cesium.&lt;/p&gt;
+
+&lt;p&gt;Now the low energy cesium stream is passed through a radiation chamber in which the a radiation of frequency &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt; is bombarded on it. This will make the low energy cesium to go into high energy state.&lt;/p&gt;
+
+&lt;p&gt;Now emerging from the radiation chamber we have a stream of high energy cesium ions; but not all are converted to high energy state if there is an offset in radiation frequency. Hence to know how many cesium atoms jumped into high energy state another magnetic filter is applied. Hence we deduce that, &lt;strong&gt;closer the radiation frequency is to resonant frequency of cesium, higher will be conversion rate of low energy cesium to high energy cesium&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. &lt;strong&gt;Higher the number of ions incident on it higher will be the current generated&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This current is passed to &lt;strong&gt;Quartz Oscillator&lt;/strong&gt; with which we mark one pulse. This oscillator is responsible to control wavelength (in turn frequency) of incident radiation.&lt;/p&gt;
+
+&lt;p&gt;Suppose the quartz oscillator looses its energy. As soon as this happens, the radiation in the chamber weakens. Hence number of cesium atoms jumping into high energy state drops. This tells another electric circuit to zap the oscillator and correct the period of oscillation. And thus locking its frequency in a very narrow range. This locked frequency is then divided by 9,192,631,770 which results in the familiar one pulse per second.&lt;/p&gt;
+
+&lt;p&gt;Now we see how we overcame the drawback of traditional Quartz Clock and created a much much accurate atomic clock which &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is how an atomic clock works. In above working principle of this we found that&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;There was no radioactivity&lt;/li&gt;
+  &lt;li&gt;There was no atomic decay&lt;/li&gt;
+  &lt;li&gt;It really had Quartz Oscillator in it, so we did not move out of it.&lt;/li&gt;
+  &lt;li&gt;Using interaction happening at such a scale of nanometers we could solve one of the biggest problem.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;for-more-info&quot;&gt;For more info:&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;Resonance&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;Piezoelectric Effect&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;Mechanism of Quartz Clock&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://science.howstuffworks.com/atomic-clock3.htm&quot;&gt;How does a practical cesium atomic clock works?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www3.nd.edu/~techrev/Archive/Winter2002/a4.html&quot;&gt;Atomic Clocks: What Time is it, Really?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cmp.liv.ac.uk/frink/thesis/thesis/node14.html&quot;&gt;Hyperfine interactions&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sun, 28 Feb 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/atomic-clocks.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/atomic-clocks.html</guid>
+        
+        <category>science</category>
+        
+        <category>particle-physics</category>
+        
+        <category>how-it-works</category>
+        
+        
+        <category>curiosity</category>
         
       </item>
     
@@ -701,6 +1113,160 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
       </item>
     
       <item>
+        <title>How big is our Earth?</title>
+        <description>&lt;p&gt;Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …&lt;/p&gt;
+
+&lt;h1 id=&quot;the-assumptions&quot;&gt;The Assumptions&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Earth is a perfect sphere.&lt;/li&gt;
+  &lt;li&gt;Since Sun is very very far and big, so the rays reaching Earth are parallel.&lt;/li&gt;
+  &lt;li&gt;The objects we are using (pole) are perpendicular to the ground.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;construction&quot;&gt;Construction&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/static/images/earth-circumference/1.jpg&quot; data-lightbox=&quot;/static/images/earth-circumference/1.jpg&quot; data-title=&quot;How big is our Earth?&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/earth-circumference/1.jpg&quot; alt=&quot;How big is our Earth?&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
+
+&lt;p&gt;Now some geometrical construction:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extend &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; to meet at &lt;script type=&quot;math/tex&quot;&gt;O&lt;/script&gt;, the center of the Earth. Let &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; be the angle between.&lt;/li&gt;
+  &lt;li&gt;Extend line &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; to meet &lt;script type=&quot;math/tex&quot;&gt;WO&lt;/script&gt; at &lt;script type=&quot;math/tex&quot;&gt;A&#39;&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.&lt;/p&gt;
+
+&lt;h1 id=&quot;derivation&quot;&gt;Derivation&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Lines &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&#39;&lt;/script&gt; are parallel and &lt;script type=&quot;math/tex&quot;&gt;WA&#39;&lt;/script&gt; acts as a transversal so we can say that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle CWA&#39; = \angle BA&#39;W = \theta_{2} \\
+    \equiv  \angle CWA&#39; = \angle YA&#39;X = \theta_{2}&lt;/script&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\angle YA&#39;X = \theta_{2}&lt;/script&gt; so we can say that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O = 180^{o} - \theta_{2}&lt;/script&gt;
+
+&lt;p&gt;Now let us consider &lt;script type=&quot;math/tex&quot;&gt;\triangle OA&#39;Y&lt;/script&gt;, we know sum of all angles of a triangle is &lt;script type=&quot;math/tex&quot;&gt;180^{o}&lt;/script&gt;, hence&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O + \angle A&#39;OY + \angle OYA&#39; = 180^{o} \\
+    \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
+    \therefore \theta = \theta_{2} - \theta_{1}&lt;/script&gt;
+
+&lt;p&gt;Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})&lt;/script&gt;
+
+&lt;table class=&quot;ui very basic table&quot;&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Distance&lt;/th&gt;
+        &lt;th&gt;What it represents&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(CX)&lt;/td&gt;
+            &lt;td&gt;Length of the shadow of pole WX&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(WX)&lt;/td&gt;
+            &lt;td&gt;Length of pole WX&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(AZ)&lt;/td&gt;
+            &lt;td&gt;Length of the shadow of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(YZ)&lt;/td&gt;
+            &lt;td&gt;Length of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; at the center of the Earth spans a distance &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt; at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when &lt;script type=&quot;math/tex&quot;&gt;\theta = 360^{o}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
+    \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
+    \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}&lt;/script&gt;
+
+&lt;p&gt;The only thing unknown in above equation is &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt;, which is the distance between poles. To make our lives simpler we will use some GPS for this. If we know the latitude and longitude of the two poles then the distance between them can be calculated very easily. For quick calculations on this you can follow this &lt;a href=&quot;http://www.movable-type.co.uk/scripts/latlong.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;find-how-big-is-our-earth&quot;&gt;Find how big is our Earth&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;As we now have the Radius of the Earth &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; from above calculations, and if we assume that earth is a perfect sphere, we can find out&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Total surface area &lt;script type=&quot;math/tex&quot;&gt;4 \pi R^{2}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Volume &lt;script type=&quot;math/tex&quot;&gt;\frac{4}{3} \pi R^{3}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Actual values are in the table below just to cross check your results&lt;/p&gt;
+
+&lt;table class=&quot;ui very basic table&quot;&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Measure&lt;/th&gt;
+        &lt;th&gt;Value&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Radius of Earth&lt;/td&gt;
+            &lt;td&gt;6,371 km&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Surface area of Earth&lt;/td&gt;
+            &lt;td&gt;509805890 km&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Volume of Earth&lt;/td&gt;
+            &lt;td&gt;1.08321×10&lt;sup&gt;12&lt;/sup&gt; km&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;l(YZ)&lt;/td&gt;
+            &lt;td&gt;Length of pole YZ&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;the-history&quot;&gt;The History&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;The method was first proposed by Eratosthenes way back in &lt;strong&gt;250 BC&lt;/strong&gt;. Lets see how it was done back then …&lt;/p&gt;
+
+&lt;p&gt;In ancient Egypt there was a city named Syene. Eratosthenes was told that in a well during &lt;a href=&quot;https://en.wikipedia.org/wiki/Summer_solstice&quot;&gt;Summer Solstice&lt;/a&gt; at noon time if he tries to look down a well he will be blocking the reflection of sun from the water, which actually implies the Sun was directly overhead. Syene was present on Tropic Of Cancer and to its north was a city called Alexandria. It is believed that Eratosthenes hired a man to calculate the distance between Syene and Alexandria. The hired man went from Syene to Alexandria and back walking finding out the distance to be &lt;strong&gt;5,000 stadia&lt;/strong&gt; (stadia was the unit of measurement back then in ancient Egypt, its conversion to metric system is 1 stade = 185 m)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Eratosthenes calculated the circumference of Earth to be equal to &lt;strong&gt;46,620 km&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.&lt;/p&gt;
+
+&lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 Dec 2015 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/curiosity/earth-circumference.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/earth-circumference.html</guid>
+        
+        <category>science</category>
+        
+        <category>geometry</category>
+        
+        <category>how-was-it-measured</category>
+        
+        
+        <category>curiosity</category>
+        
+      </item>
+    
+      <item>
         <title>The Fourth Dimension - too Sci-Fi to be true</title>
         <description>&lt;p&gt;Dimensions in simple terms are the number of axes you can move along. We all live in a 3D world but what if someone can access the 4th dimension. Lets talk about that …&lt;/p&gt;
 
@@ -825,738 +1391,6 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         <category>fourth-dimension</category>
         
         <category>sci-fi</category>
-        
-        
-        <category>science</category>
-        
-      </item>
-    
-      <item>
-        <title>Deploy Grafana and Graphite an Ubuntu 14.04 server</title>
-        <description>&lt;p&gt;Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Before starting following this setup, please go through my previous post on &lt;a href=&quot;http://arpitbhayani.me/graphite.html&quot;&gt;Deploy Graphite and Nginx on an Ubuntu 14.04 server&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-what&quot;&gt;What is what&lt;/h2&gt;
-
-&lt;h3 id=&quot;what-is-grafana&quot;&gt;What is Grafana?&lt;/h3&gt;
-&lt;p&gt;Grafana is a tool for visualising time-series data for various application analytics. It is a great tool when used in combination with Graphite. It gives us flexibility of creating dashboards and share them with teams.
-&lt;a href=&quot;http://grafana.org/&quot;&gt;Grafana Official&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;installing-graphite&quot;&gt;Installing Graphite&lt;/h1&gt;
-
-&lt;p&gt;To install Graphite please follow this tutorial on &lt;a href=&quot;arpitbhayani.me/graphite.html&quot;&gt;Deploy Graphite and Nginx on an Ubuntu 14.04 server&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;installing-grafana&quot;&gt;Installing Grafana&lt;/h1&gt;
-
-&lt;h2 id=&quot;install-ubuntu-packages&quot;&gt;Install Ubuntu Packages&lt;/h2&gt;
-
-&lt;p&gt;Executing following commands will install Grafana on your machine&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;deb https://packagecloud.io/grafana/stable/debian/ wheezy main&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;  sudo tee -a /etc/apt/sources.list
-curl https://packagecloud.io/gpg.key &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sudo apt-key add -
-sudo apt-get update
-sudo apt-get install grafana&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;create-a-database-for-grafana&quot;&gt;Create a database for Grafana&lt;/h2&gt;
-
-&lt;p&gt;Just as we created the database for Graphite on PostgreSQL, we will create a database for Grafana as well. Create a database &lt;strong&gt;grafana&lt;/strong&gt; and give user &lt;strong&gt;graphite&lt;/strong&gt; (the user having access to Graphite database) ownership of it.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grafana&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OWNER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graphite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;configure-grafana&quot;&gt;Configure Grafana&lt;/h2&gt;
-
-&lt;p&gt;Edit the Grafana configuration file&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/grafana/grafana.ini&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The settings should be something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;database&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; postgres
-&lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1:5432
-&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; grafana
-&lt;span class=&quot;nv&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; graphite
-&lt;span class=&quot;nv&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; mypassword
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;server&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; http
-&lt;span class=&quot;nv&quot;&gt;http_addr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 127.0.0.1
-&lt;span class=&quot;nv&quot;&gt;http_port&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3000
-&lt;span class=&quot;nv&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; grafana.yourservername.com
-&lt;span class=&quot;nv&quot;&gt;enforce_domain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;root_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;protocol&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s://%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;domain&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s/
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;security&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;admin_user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; admin
-&lt;span class=&quot;nv&quot;&gt;admin_password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; your_secure_password
-&lt;span class=&quot;nv&quot;&gt;secret_key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; your_random_secret_salt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Once your configuration is done, you can start Grafana Server by running&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo service grafana-server start&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The log files are located at &lt;strong&gt;/var/log/grafana/grafana.log&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If everything goes well the log file should have content&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tail /var/log/grafana/grafana.log
-
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;: default.paths.data&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/var/lib/grafana
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;: default.paths.logs&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/var/log/grafana
-Paths:
-  home: /usr/share/grafana
-  data: /var/lib/grafana
-  logs: /var/log/grafana
-
-2015/12/16 06:37:15 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Database: postgres
-2015/12/16 06:37:15 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Migrator: Starting DB migration
-2015/12/16 06:37:15 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Listen: http://127.0.0.1:3000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;setup-nginx-for-graphite&quot;&gt;Setup Nginx for Graphite&lt;/h2&gt;
-
-&lt;p&gt;Let us first create all files and links&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo touch /etc/nginx/sites-enabled/grafana
-sudo ln -s /etc/nginx/sites-enabled/grafana /etc/nginx/sites-available/grafana
-
-&lt;span class=&quot;c&quot;&gt;# Log files&lt;/span&gt;
-sudo touch /var/log/nginx/grafana.access.log
-sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafana.access.log
-sudo touch /var/log/nginx/grafana.error.log
-sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/grafana.error.log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now we are ready for configuring Nginx server for Grafana&lt;/p&gt;
-
-&lt;p&gt;Open file &lt;em&gt;/etc/nginx/sites-enabled/grafana&lt;/em&gt; and put following content in it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/nginx/sites-enabled/grafana&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Nginx configuration&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;grafana&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourservername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;rewrite&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//$host$1 permanent;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-
-&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;grafana&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourservername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ssl&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;spdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;access_log&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/log/nginx/grafana.access.log;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;error_log&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/log/nginx/grafana.error.log;&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/robots.txt {&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;User-agent: *\nDisallow: /\n&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;proxy_pass&lt;/span&gt;         &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//localhost:3000;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;proxy_set_header&lt;/span&gt;   &lt;span class=&quot;nx&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now you can view a working Grafana on your server. Just hit &lt;em&gt;http://grafana.yourservername.com&lt;/em&gt; from your favourite browser.&lt;/p&gt;
-
-&lt;h1 id=&quot;see-it-working&quot;&gt;See it working&lt;/h1&gt;
-
-&lt;p&gt;Once you open the Grafana page, you will see a page something like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana1.png&quot; data-lightbox=&quot;/static/images/grafana1.png&quot; data-title=&quot;Grafana&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/grafana1.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Log in to the system with default credentials&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;username: admin&lt;/li&gt;
-  &lt;li&gt;password: admin&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Once you are logged in, you should see a screen like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana2.png&quot; data-lightbox=&quot;/static/images/grafana2.png&quot; data-title=&quot;Grafana&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/grafana2.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Before you see any analytics information here, you should add your data source. The data source you will add will be Graphite that was setup earlier.&lt;/p&gt;
-
-&lt;p&gt;Goto &lt;strong&gt;Data Source&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Add New&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Make following changes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Name: &lt;strong&gt;graphite&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;URL: &lt;strong&gt;graphite.yourservername.com&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You should test your connection before adding any dashboard.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana3.png&quot; data-lightbox=&quot;/static/images/grafana3.png&quot; data-title=&quot;Grafana&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/grafana3.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Once the connection is successful, now we are ready to add our first dashboard. Go to home page and goto &lt;strong&gt;New Dashboard&lt;/strong&gt; -&amp;gt; &lt;strong&gt;New&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Once that is done, you can add panels to it. To add graphs in panels click on &lt;strong&gt;Green Button&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Add Panel&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Graph&lt;/strong&gt;. At the botton you will see metrics in which select &lt;em&gt;test&lt;/em&gt; and &lt;em&gt;count&lt;/em&gt;. Then you will see screen something like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/grafana4.png&quot; data-lightbox=&quot;/static/images/grafana4.png&quot; data-title=&quot;Grafana&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/grafana4.png&quot; alt=&quot;Grafana&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;more-information&quot;&gt;More Information&lt;/h2&gt;
-&lt;p&gt;Please follow the below links in order to know more about Grafana and its amazing customizations.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://docs.grafana.org/&quot;&gt;Grafana Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://docs.grafana.org/datasources/graphite/&quot;&gt;Adding Graphite to Grafana Official&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://docs.grafana.org/tutorials/hubot_howto/&quot;&gt;Adding HuBot to Grafana&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 15 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/grafana.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/grafana.html</guid>
-        
-        <category>techie</category>
-        
-        <category>devops</category>
-        
-        
-        <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>Deploy Graphite and Nginx on an Ubuntu 14.04 server</title>
-        <description>&lt;p&gt;Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-what&quot;&gt;What is what&lt;/h2&gt;
-
-&lt;h3 id=&quot;what-is-graphite&quot;&gt;What is Graphite?&lt;/h3&gt;
-&lt;p&gt;Graphite is an open source software that is used for monitoring any system. The monitored data is the numeric information that represents any performance metric. Graphite also as a renderer which renders this information as graphs.
-&lt;a href=&quot;http://graphite.readthedocs.org/en/1.0/overview.html&quot;&gt;Official Documentation&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-nginx&quot;&gt;What is Nginx?&lt;/h3&gt;
-&lt;p&gt;NGINX is a very fast Webserver, its faster than most web servers available in the market. The biggest advantage of Nginx is its concurrency (because of asynchronous nature). It can also act as&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;HTTP Cache&lt;/li&gt;
-  &lt;li&gt;Reverse Proxy&lt;/li&gt;
-  &lt;li&gt;Load Balancer&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;For more information visit &lt;a href=&quot;https://en.wikipedia.org/wiki/Nginx&quot;&gt;Nginx Wiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;installing-nginx&quot;&gt;Installing Nginx&lt;/h1&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install nginx nginx-extras&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;installing-graphite&quot;&gt;Installing Graphite&lt;/h1&gt;
-
-&lt;h2 id=&quot;graphite-ubuntu-package-installation&quot;&gt;Graphite Ubuntu Package Installation&lt;/h2&gt;
-
-&lt;p&gt;Install Graphite packages&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get update
-sudo apt-get install graphite-web graphite-carbon&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: During the installation, you will be asked if during uninstallation of Graphite you also like to remove its files. Please select &lt;strong&gt;NO&lt;/strong&gt; because anyways you can delete them manually. The files are kept in &lt;code&gt;/var/lib/graphite/whisper&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;install-and-configure-postgresql-database&quot;&gt;Install and Configure PostgreSQL Database&lt;/h2&gt;
-&lt;p&gt;Graphite internally uses carbon and whisper database library for storing data. But the web application is a Django application which needs some data store for its own purpose. The default data store configured is SQLite3 database files. But this is not a full fledged database system hence we will use PostgreSQL.&lt;/p&gt;
-
-&lt;p&gt;Script to install database and libs used by Graphite to communicate with PostgreSQL&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install postgresql libpq-dev python-psycopg2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Once our PostgreSQL is installed we will create a user and a database&lt;/p&gt;
-
-&lt;p&gt;Login to PostgreSQL console&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo -u postgres psql&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Create a user &lt;em&gt;graphite&lt;/em&gt; which will be used by Django to operate on our database.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graphite&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;mypassword&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Please make sure you select a secure password for your user.&lt;/p&gt;
-
-&lt;p&gt;Create a database &lt;em&gt;graphite&lt;/em&gt; and give our new user &lt;em&gt;graphite&lt;/em&gt; ownership of it.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graphite&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OWNER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graphite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Please verify is database is created or not by connection to it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graphite&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you can successfully connect to the database &lt;em&gt;graphite&lt;/em&gt; then you are good to go to next step.&lt;/p&gt;
-
-&lt;p&gt;Exit from the PostgreSQL console&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;configure-graphite-web-application&quot;&gt;Configure Graphite Web Application&lt;/h2&gt;
-
-&lt;p&gt;Now, as we have our PostgreSQL database and user ready to go we can now move to configuring the web application.&lt;/p&gt;
-
-&lt;p&gt;Open the Graphite web app configuration file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/graphite/local_settings.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Uncomment the &lt;em&gt;SECRET_KEY&lt;/em&gt; and give a nice random value to it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;SECRET_KEY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MY NICE RANDOM SALT&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Uncomment the &lt;em&gt;TIMEZONE&lt;/em&gt; and set it to some appropriate value. I have set it to UTC, but you may choose any one you like&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;TIME_ZONE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;UTC&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Uncomment the &lt;em&gt;USE_REMOTE_USER_AUTHENTICATION&lt;/em&gt; and set tot to &lt;em&gt;True&lt;/em&gt; so that remote user will be authenticated first before making any DB changes&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;USE_REMOTE_USER_AUTHENTICATION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; True&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Change the database dictionary definition:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;NAME&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;graphite&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;ENGINE&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;django.db.backends.postgresql_psycopg2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;USER&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;graphite&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;PASSWORD&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;mypassword&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;HOST&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;127.0.0.1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;&amp;#39;PORT&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Save and close this file.&lt;/p&gt;
-
-&lt;h2 id=&quot;sync-the-database&quot;&gt;Sync the Database&lt;/h2&gt;
-&lt;p&gt;Once your web application is configured, it is time to sync your database, create a super user and create the correct structure.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo graphite-manage syncdb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: It will ask you to create a superuser. Make sure you remember the credentials with which you create one. This user will be used to connect to Graphite application and be admin of it. Being admin you will change interface of Graphite and create graphs.&lt;/p&gt;
-
-&lt;h2 id=&quot;configure-carbon&quot;&gt;Configure Carbon&lt;/h2&gt;
-&lt;p&gt;Carbon is the Graphite storage backend.&lt;/p&gt;
-
-&lt;p&gt;Open the configuration file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/default/graphite-carbon&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Change value of &lt;em&gt;CARBON_CACHE_ENABLED&lt;/em&gt; to &lt;em&gt;true&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CARBON_CACHE_ENABLED&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This enables the carbon service to start at boot&lt;/p&gt;
-
-&lt;p&gt;Save and close the file.&lt;/p&gt;
-
-&lt;p&gt;Next, open the Carbon configuration file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/carbon/carbon.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Set &lt;em&gt;ENABLE_LOGROTATION&lt;/em&gt; to &lt;em&gt;True&lt;/em&gt; to turn on log rotation&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;ENABLE_LOGROTATION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; True&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Save and close the file&lt;/p&gt;
-
-&lt;h2 id=&quot;configuring-storage-schemas&quot;&gt;Configuring Storage Schemas&lt;/h2&gt;
-&lt;p&gt;Now, open the storage schema file. This tells Carbon how long to store values and how detailed these values should be:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/carbon/storage-schemas.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Inside you will find entries like&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;carbon&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;pattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ^carbon&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;retentions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 60:90d&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;which implies:
-pattern that matches regular expression &lt;em&gt;^carbon.&lt;/em&gt; should retain the data with retention policy &lt;em&gt;60:90d&lt;/em&gt; which is&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;how often a metric is recorded: 60 seconds&lt;/li&gt;
-  &lt;li&gt;length of time to store those values: 90 days&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For detail information on retention policy visit &lt;a href=&quot;http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-schemas-conf&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now we need to add our own entry. Let’s take an example &lt;em&gt;test&lt;/em&gt; i.e. we need to monitor data points and our data point entries will start with string &lt;em&gt;test&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: This entry should be added before the default entry mentioned at the bottom of the file&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;pattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ^test&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;retentions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 10s:10m,1m:1h&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will match any metrics beginning with “test.”. It will store the data it collects two times, in varying detail.&lt;/p&gt;
-
-&lt;p&gt;The first archive definition &lt;em&gt;(1s:10m)&lt;/em&gt; will create a data point every ten  seconds. It will store the values for only ten minutes.&lt;/p&gt;
-
-&lt;p&gt;The second archive &lt;em&gt;(1m:1h)&lt;/em&gt; will create a data point every one minute. It will gather all of the data from the past minute (six points, since the previous archive creates a point every ten seconds) and aggregate it to create the point. By default, it does this by averaging the points, but we can adjust this later. It stores the data at this level of detail for one hour.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;This example is taken from this &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-and-use-graphite-on-an-ubuntu-14-04-server&quot;&gt;link&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Save and close the file.&lt;/p&gt;
-
-&lt;h2 id=&quot;storage-aggregation-methods&quot;&gt;Storage Aggregation Methods&lt;/h2&gt;
-&lt;p&gt;This aggregation methods are used when we try to fetch data that is less detailed (In our previous example we saw 6 data points were aggregated to create 1 data point). Understanding aggregation is important is we want accurate metrics.&lt;/p&gt;
-
-&lt;p&gt;Default aggregation method is taking out mean of values which implies that all retention policies other than most detailed one will create data points by taking mean of all data points it received.&lt;/p&gt;
-
-&lt;p&gt;We can specify the aggregation configuration in file called &lt;em&gt;storage-aggregation.conf&lt;/em&gt; . A sample file is already provided by Carbon, so you can simply copy-paste it for default behaviour.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo cp /usr/share/doc/graphite-carbon/examples/storage-aggregation.conf.example /etc/carbon/storage-aggregation.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can view &lt;a href=&quot;http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-aggregation-conf&quot;&gt;official documentation&lt;/a&gt; to understand it better.&lt;/p&gt;
-
-&lt;p&gt;Save and close the file.&lt;/p&gt;
-
-&lt;p&gt;Start the carbon service&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo service carbon-cache start&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;setup-uwsgi-and-init-script&quot;&gt;Setup uwsgi and init script&lt;/h2&gt;
-&lt;p&gt;To install &lt;em&gt;uwsgi&lt;/em&gt; globally you can run following command&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-dev
-sudo pip install uwsgi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If &lt;em&gt;pip&lt;/em&gt; is not installed in your system, you can run following command&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-pip&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The entrance file for Django application is stored in directory &lt;em&gt;/usr/share/graphite-web&lt;/em&gt; and is by default named as &lt;em&gt;graphite.wsgi&lt;/em&gt;. You should rename it to &lt;em&gt;graphite_wsgi.py&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can do this by executing following command&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo cp /usr/share/graphite-web/graphite.wsgi /usr/share/graphite-web/graphite_wsgi.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Create log files and socket files with appropriate permissions&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo touch /var/run/graphite.sock
-sudo chmod &lt;span class=&quot;m&quot;&gt;777&lt;/span&gt; /var/run/graphite.sock
-sudo touch /var/log/graphite.log
-sudo chmod &lt;span class=&quot;m&quot;&gt;777&lt;/span&gt; /var/log/graphite.log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Once you have &lt;em&gt;uwsgi&lt;/em&gt; setup in your system its time to set up the init script which will make it easier to manage the service.&lt;/p&gt;
-
-&lt;p&gt;Create the following file&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/init/uwsgi-graphite.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And put following content in it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# vim: syntax=upstart&lt;/span&gt;
-
-env &lt;span class=&quot;nv&quot;&gt;UWSGI_BIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin/uwsgi
-env &lt;span class=&quot;nv&quot;&gt;PYTHONPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/share/graphite-web
-
-expect fork
-&lt;span class=&quot;nb&quot;&gt;umask &lt;/span&gt;0000
-
-start on runlevel &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;2345&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-stop on runlevel &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;!2345&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-
-script
-  &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UWSGI_BIN&lt;/span&gt; --socket /var/run/graphite.sock --master --need-app &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  --catch-exceptions --reload-on-exception --pp &lt;span class=&quot;nv&quot;&gt;$PYTHONPATH&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  -w graphite_wsgi:application --buffer-size &lt;span class=&quot;m&quot;&gt;32768&lt;/span&gt; -p &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; -O &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &amp;gt;&amp;gt;/var/log/graphite.log 2&amp;gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;
-end script&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now you can start the Graphite Web application service using following command&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo service uwsgi-graphite start&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;But before you can see anything on browser you need to setup Nginx configuration&lt;/p&gt;
-
-&lt;h2 id=&quot;setup-nginx-for-graphite&quot;&gt;Setup Nginx for Graphite&lt;/h2&gt;
-
-&lt;p&gt;Let us first create all files and links&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo touch /etc/nginx/sites-enabled/graphite
-sudo ln -s /etc/nginx/sites-enabled/graphite /etc/nginx/sites-available/graphite
-
-&lt;span class=&quot;c&quot;&gt;# Log files&lt;/span&gt;
-sudo touch /var/log/nginx/graphite.access.log
-sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graphite.access.log
-sudo touch /var/log/nginx/graphite.error.log
-sudo chmod &lt;span class=&quot;m&quot;&gt;666&lt;/span&gt; /var/log/nginx/graphite.error.log&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now we are ready for configuring Nginx server for Graphite&lt;/p&gt;
-
-&lt;p&gt;Open file &lt;em&gt;/etc/nginx/sites-enabled/graphite&lt;/em&gt; and put following content in it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo vim /etc/nginx/sites-enabled/graphite&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Nginx configuration&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;graphite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourservername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;rewrite&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//$host$1 permanent;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-
-&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;graphite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yourservername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ssl&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;spdy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;access_log&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/log/nginx/graphite.access.log;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;error_log&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/log/nginx/graphite.error.log;&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/robots.txt {&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;User-agent: *\nDisallow: /\n&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-
-  &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;graphite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/favicon.ico {&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;204&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;graphite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expires&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;uwsgi_pass&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;unix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/var/run/graphite.sock;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uwsgi_params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now you can view a working Graphite on your server. Just hit &lt;em&gt;http://graphite.yourservername.com&lt;/em&gt; from your favourite browser.&lt;/p&gt;
-
-&lt;h1 id=&quot;see-it-working&quot;&gt;See it working&lt;/h1&gt;
-
-&lt;p&gt;Login to the system with credentials that you provided while creating the superuser.&lt;/p&gt;
-
-&lt;p&gt;Once you are logged in, you should see a screen like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/graphite1.png&quot; data-lightbox=&quot;/static/images/graphite1.png&quot; data-title=&quot;Landing page of Graphite&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/graphite1.png&quot; alt=&quot;Landing page of Graphite&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with &lt;strong&gt;test.&lt;/strong&gt; will be recorded as our pattern. Lets add some random data&lt;/p&gt;
-
-&lt;p&gt;In order to add data we need to run following&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;test.count 9 `date +%s`&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; nc -q0 127.0.0.1 2003&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will add one data metric of value 9 in system. Lets add some more data; this time wee loop through values&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; i in &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;16&lt;/span&gt; 2&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;test.count $i `date +%s`&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; nc -q0 127.0.0.1 2003&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; sleep 6&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now you should see something like this.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;I already had some data in the system, your graph will look a bit different but should be similar&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/graphite2.png&quot; data-lightbox=&quot;/static/images/graphite2.png&quot; data-title=&quot;test.count graph in Graphite&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/graphite2.png&quot; alt=&quot;test.count graph in Graphite&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 14 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/graphite.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/graphite.html</guid>
-        
-        <category>techie</category>
-        
-        <category>devops</category>
-        
-        
-        <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>Host your python package using github on PyPI</title>
-        <description>&lt;p&gt;PyPI is the official Python Packages Index. Once you publish it on PyPI then it will can downloaded via a simple command &lt;code&gt;pip install &amp;lt;package&amp;gt;&lt;/code&gt;. Life becomes simpler with this one line installation.&lt;/p&gt;
-
-&lt;h2 id=&quot;create-accounts&quot;&gt;1: Create accounts&lt;/h2&gt;
-
-&lt;p&gt;In order to submit your package on PyPI you need to have few accounts on PyPI websites. These account will enable you to maintain your packages and will provide you with an interface to edit your package.&lt;/p&gt;
-
-&lt;p&gt;Create your account on following sites:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://pypi.python.org/pypi?%3Aaction=register_form&quot;&gt;PyPI Live&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://testpypi.python.org/pypi?%3Aaction=register_form&quot;&gt;PyPI Test&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;the-pypirc-file&quot;&gt;2: The &lt;code&gt;.pypirc&lt;/code&gt; file&lt;/h2&gt;
-
-&lt;p&gt;Now create a file in your home folder named &lt;code&gt;.pypirc&lt;/code&gt;, which will be your configuration file that holds the authentication information of your PyPI accounts.&lt;/p&gt;
-
-&lt;p&gt;Create file &lt;code&gt;.pypirc&lt;/code&gt; and put the contents shown below&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vim ~/.pypirc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code&gt;.pypirc&lt;/code&gt; file contents&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distutils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;servers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;pypi&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;pypitest&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pypi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;repository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//pypi.python.org/pypi&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;YOUR_USERNAME_HERE&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;YOUR_PASSWORD_HERE&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pypitest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;repository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//testpypi.python.org/pypi&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;YOUR_USERNAME_HERE&lt;/span&gt;
-&lt;span class=&quot;nl&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;YOUR_PASSWORD_HERE&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You should replace &lt;code&gt;YOUR_USERNAME_HERE&lt;/code&gt; and &lt;code&gt;YOUR_PASSWORD_HERE&lt;/code&gt; with your username and password from PyPI sites that you just created.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-python-package-directory-structure&quot;&gt;3: The Python Package directory structure&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;source_dir&lt;/code&gt; is a root directory that contains your python package&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;my_python_package&lt;/code&gt; is your main python package that you want to publish&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;source_dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;                 &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_python_package&lt;/span&gt;       &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;package&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FILES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;          &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;README&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;md&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cfg&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|--&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Setup your directory structure as shown above, with appropriate changes, and host it on &lt;a href=&quot;http://github.com&quot;&gt;github.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;release-on-github-and-get-the-download-link&quot;&gt;4: Release on github and get the download link&lt;/h2&gt;
-
-&lt;p&gt;This step involves releasing your package on github. This will create a download link of your complete source. In order to release your github project, you need to carry on following steps:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Go to your project homepage on &lt;a href=&quot;http://github.com&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;On top, you will see &lt;em&gt;Release link&lt;/em&gt;. Click on it.&lt;/li&gt;
-  &lt;li&gt;Click on &lt;em&gt;Draft a new relase&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Fill in all the details
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Tag version&lt;/em&gt; should be the version number of your package release&lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;Release Title&lt;/em&gt; can be anything you want.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Click &lt;em&gt;Publish release&lt;/em&gt; at the bottom of the page&lt;/li&gt;
-  &lt;li&gt;Now under &lt;em&gt;Releases&lt;/em&gt; you can view all of your releases.&lt;/li&gt;
-  &lt;li&gt;Copy the download link (tar.gz) and save it somewhere.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;editing-files&quot;&gt;5: Editing files&lt;/h2&gt;
-
-&lt;p&gt;Open the &lt;em&gt;setup.py&lt;/em&gt; file and add following skeleton to it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;distutils.core&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;my_python_package&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;packages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;my_python_package&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;version number&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Ideally should be same as your github release tag varsion&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;description&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;author_email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;github package source url&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;download_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;download link you saved&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;keywords&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;tag1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;tag2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;classifiers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Open the &lt;em&gt;setup.cfg&lt;/em&gt; file and add following skeleton to it&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;README&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;md&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now push everything to github.&lt;/p&gt;
-
-&lt;h2 id=&quot;publish-the-package&quot;&gt;6: Publish the package&lt;/h2&gt;
-
-&lt;p&gt;Execute following commands&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py register -r pypitest&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This command will try to register your package on PyPI test server. This makesures that everything you have setup is correct.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py sdist upload -r pypitest&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This command will upload your package on test repository and now you should see your package on &lt;a href=&quot;https://testpypi.python.org/pypi&quot;&gt;PyPI Test&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now you are ready to publish your package on PyPI Live Server. Execute following commands&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py register -r pypi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python setup.py sdist upload -r pypi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Congratulations! You just published your python package on PyPI&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://wiki.python.org/moin/CheeseShopTutorial#Submitting_Packages_to_the_Package_Index&quot;&gt;Official Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Thu, 03 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/python-package.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/python-package.html</guid>
-        
-        <category>techie</category>
-        
-        <category>python</category>
-        
-        
-        <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>Can I go to Alpha Centauri in my lifetime?</title>
-        <description>&lt;p&gt;The nearest neighbor to our over own Sun is &lt;strong&gt;Alpha Centauri&lt;/strong&gt;. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10&lt;sup&gt;15&lt;/sup&gt; m.&lt;/p&gt;
-
-&lt;p&gt;Lets be optimistic and suppose we find out a way to travel at the 100&lt;sup&gt;th&lt;/sup&gt; part of speed of light (which is close to impossible), but suppose we found. Now assuming that we travel at this high speed, the time we take to reach Alpha Centauri is&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align*}
-  time&amp;= \frac{distance}{speed} \\\\
-        &amp;= \frac{4.37\ lightyears}{0.01\ *\ lightspeed} \\\\
-        &amp;= \frac{4.37}{0.01} \\\\
-        &amp;= 437\ years\\\\
-\end{align*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;If you see the magnitude of 100&lt;sup&gt;th&lt;/sup&gt; part of light, it is 10792528.488 km/hr, and that is &lt;strong&gt;HUGE&lt;/strong&gt;. Attaining such high speed is, till now, practically impossible. Hence at least in this lifetime you cannot get anyway near &lt;strong&gt;Alpha Centauri&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;We now have no clue about what technology will exist 1000 years from now, but we all would love to go on a space trip and visit our closest star after sun.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 03 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/science/alpha-centauri.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/science/alpha-centauri.html</guid>
-        
-        <category>science</category>
-        
-        <category>space</category>
-        
-        <category>alpha-centauri</category>
         
         
         <category>science</category>
