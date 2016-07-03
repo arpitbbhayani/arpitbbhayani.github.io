@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 May 2016 11:04:30 +0530</pubDate>
-    <lastBuildDate>Mon, 30 May 2016 11:04:30 +0530</lastBuildDate>
+    <pubDate>Mon, 04 Jul 2016 00:51:39 +0530</pubDate>
+    <lastBuildDate>Mon, 04 Jul 2016 00:51:39 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -437,8 +437,8 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 &lt;hr /&gt;
 &lt;p&gt;There is a torsion spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; fixed at the top and there is a horizontal bar with identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; is mounted on this thin bar. Now two very huge identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;, are then mounted to the ground in the position as shown in the image.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.jpg&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.jpg&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.jpg&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;There is a light source &lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt; that incidents a laser beam on mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and the reflected light is captured on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
@@ -453,8 +453,8 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 &lt;p&gt;As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point &lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.png&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.jpg&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.jpg&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.jpg&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at &lt;strong&gt;equilibrum&lt;/strong&gt; the twisting force will be equal to gravitational force of attraction.&lt;/p&gt;
@@ -677,8 +677,8 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 &lt;p&gt;Let me tell you in brief how it worked. &lt;strong&gt;Quarts Crystal&lt;/strong&gt; has a spacial property that it is &lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;piezoelectric&lt;/a&gt;, which means that&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
@@ -702,16 +702,16 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 &lt;p&gt;Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;hyperfine-interaction&quot;&gt;Hyperfine interaction&lt;/h3&gt;
 
 &lt;p&gt;The interaction between nucleus and its surrounding environment is known as &lt;strong&gt;hyperfine interaction&lt;/strong&gt;. The magnitude of these interactions are very very small but enough to shift energy levels.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following&lt;/p&gt;
@@ -740,8 +740,8 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 &lt;p&gt;An atomic clock consists of a traditional &lt;strong&gt;Quartz Crystal&lt;/strong&gt; which is used for marking mechanical pulse just like in closed based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;battery operated quartz crystal&lt;/a&gt;. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Properties of Cesium atoms we care about:&lt;/p&gt;
@@ -760,8 +760,8 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 &lt;p&gt;The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.png&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
+&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
+    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. &lt;strong&gt;Higher the number of ions incident on it higher will be the current generated&lt;/strong&gt;.&lt;/p&gt;
