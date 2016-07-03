@@ -1,6 +1,6 @@
 ---
 title: How atomic clock works | busting several myths about it
-img: http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.png
+img: http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg
 layout: post
 comments: true
 tags:
@@ -36,8 +36,8 @@ I will not go into a very long history of time keeping but will surely try to pu
 Let me tell you in brief how it worked. **Quarts Crystal** has a spacial property that it is [piezoelectric][piezoelectric], which means that
 
 
-<a href="/static/images/atomic-clocks/quartz-piezoelectric.png" data-lightbox="/static/images/atomic-clocks/quartz-piezoelectric.png" data-title="{{page.title}}">
-    <img class="ui medium right floated image" src='/static/images/atomic-clocks/quartz-piezoelectric.png' alt='{{page.title}}'/>
+<a href="/static/images/atomic-clocks/quartz-piezoelectric.jpg" data-lightbox="/static/images/atomic-clocks/quartz-piezoelectric.jpg" data-title="{{page.title}}">
+    <img class="ui medium right floated image" src='/static/images/atomic-clocks/quartz-piezoelectric.jpg' alt='{{page.title}}'/>
 </a>
 
 
@@ -60,16 +60,16 @@ Before we start digging into working principle of an Atomic clock and eventually
 
 Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.
 
-<a href="/static/images/atomic-clocks/cesium-atom.png" data-lightbox="/static/images/atomic-clocks/cesium-atom.png" data-title="{{page.title}}">
-    <img class="ui medium centered image" src='/static/images/atomic-clocks/cesium-atom.png' alt='{{page.title}}'/>
+<a href="/static/images/atomic-clocks/cesium-atom.jpg" data-lightbox="/static/images/atomic-clocks/cesium-atom.jpg" data-title="{{page.title}}">
+    <img class="ui medium centered image" src='/static/images/atomic-clocks/cesium-atom.jpg' alt='{{page.title}}'/>
 </a>
 
 ### Hyperfine interaction
 
 The interaction between nucleus and its surrounding environment is known as **hyperfine interaction**. The magnitude of these interactions are very very small but enough to shift energy levels.
 
-<a href="/static/images/atomic-clocks/hyperfine-interactions.png" data-lightbox="/static/images/atomic-clocks/hyperfine-interactions.png" data-title="{{page.title}}">
-    <img class="ui medium right floated image" src='/static/images/atomic-clocks/hyperfine-interactions.png' alt='{{page.title}}'/>
+<a href="/static/images/atomic-clocks/hyperfine-interactions.jpg" data-lightbox="/static/images/atomic-clocks/hyperfine-interactions.jpg" data-title="{{page.title}}">
+    <img class="ui medium right floated image" src='/static/images/atomic-clocks/hyperfine-interactions.jpg' alt='{{page.title}}'/>
 </a>
 
 Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following
@@ -97,8 +97,8 @@ Basics done! let's jump into the working of it.
 
 An atomic clock consists of a traditional **Quartz Crystal** which is used for marking mechanical pulse just like in closed based on [battery operated quartz crystal][quartz-clock]. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.
 
-<a href="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png" data-lightbox="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png" data-title="{{page.title}}">
-    <img class="ui medium right floated image" src='/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.png' alt='{{page.title}}'/>
+<a href="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg" data-lightbox="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg" data-title="{{page.title}}">
+    <img class="ui medium right floated image" src='/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg' alt='{{page.title}}'/>
 </a>
 
 Properties of Cesium atoms we care about:
@@ -115,8 +115,8 @@ Now emerging from the radiation chamber we have a stream of high energy cesium i
 
 The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.
 
-<a href="/static/images/atomic-clocks/feedback-loop-atomic-clock.png" data-lightbox="/static/images/atomic-clocks/feedback-loop-atomic-clock.png" data-title="{{page.title}}">
-    <img class="ui large centered stylish image" src='/static/images/atomic-clocks/feedback-loop-atomic-clock.png' alt='{{page.title}}'/>
+<a href="/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg" data-lightbox="/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg" data-title="{{page.title}}">
+    <img class="ui large centered stylish image" src='/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg' alt='{{page.title}}'/>
 </a>
 
 Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. **Higher the number of ions incident on it higher will be the current generated**.

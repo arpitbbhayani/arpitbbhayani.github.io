@@ -1,6 +1,6 @@
 ---
 title: The Electron Gun | Way to wipe electrons off the atom
-img: http://arpitbhayani.me/static/images/electron-gun/electron-gun.png
+img: http://arpitbhayani.me/static/images/electron-gun/electron-gun.jpg
 layout: post
 comments: true
 tags:
@@ -49,8 +49,8 @@ A gun is something which shoots an object at a very high speed. So an Electron G
 
 Electrons are negatively charged particle, so if we have something positively charged near them, electrons will feel a very high force of attraction and will get acceleration. The anode (positively charged rod) is created by connecting an electrode to the positive terminal of a power supply and the hot piece of metal is connected to its negative terminal.
 
-<a href="/static/images/electron-gun/accelerating-electrons.png" data-lightbox="/static/images/electron-gun/accelerating-electrons.png" data-title="{{page.title}}">
-    <img class="ui large centered stylish image" src='/static/images/electron-gun/accelerating-electrons.png' alt='{{page.title}}'/>
+<a href="/static/images/electron-gun/accelerating-electrons.jpg" data-lightbox="/static/images/electron-gun/accelerating-electrons.jpg" data-title="{{page.title}}">
+    <img class="ui large centered stylish image" src='/static/images/electron-gun/accelerating-electrons.jpg' alt='{{page.title}}'/>
 </a>
 
 Lets calculate at what speed these electrons will move.
@@ -101,8 +101,8 @@ If we combine everything mentioned above we get a narrow sharp beam of electrons
 
 Bingo! we now have an Electron Gun!
 
-<a href="/static/images/electron-gun/electron-gun-working.png" data-lightbox="/static/images/electron-gun/electron-gun-working.png" data-title="{{page.title}}">
-    <img class="ui large centered stylish image" src='/static/images/electron-gun/electron-gun-working.png' alt='{{page.title}}'/>
+<a href="/static/images/electron-gun/electron-gun-working.jpg" data-lightbox="/static/images/electron-gun/electron-gun-working.jpg" data-title="{{page.title}}">
+    <img class="ui large centered stylish image" src='/static/images/electron-gun/electron-gun-working.jpg' alt='{{page.title}}'/>
 </a>
 
 ### Why electrons do not cling to anode

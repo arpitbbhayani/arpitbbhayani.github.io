@@ -1,6 +1,6 @@
 ---
 title: Finding out Gravitational Constant - The Cavendish Experiment
-img: http://arpitbhayani.me/static/images/cavendish-experiment/cavendish-experiment-intro.png
+img: http://arpitbhayani.me/static/images/cavendish-experiment/cavendish-experiment-intro.jpg
 layout: post
 comments: true
 tags:
@@ -65,8 +65,8 @@ where
 ---------------------------------------------------
 There is a torsion spring $$ S $$ fixed at the top and there is a horizontal bar with identical lead balls, each of mass $$ m_2 $$, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror $$ M $$ is mounted on this thin bar. Now two very huge identical lead balls, each of mass $$ m_1 $$, are then mounted to the ground in the position as shown in the image.
 
-<a href="/static/images/cavendish-experiment/cavendish-experiment-setup.png" data-lightbox="/static/images/cavendish-experiment/cavendish-experiment-setup.png" data-title="{{page.title}}">
-    <img class="ui large centered stylish image" src='/static/images/cavendish-experiment/cavendish-experiment-setup.png' alt='{{page.title}}'/>
+<a href="/static/images/cavendish-experiment/cavendish-experiment-setup.jpg" data-lightbox="/static/images/cavendish-experiment/cavendish-experiment-setup.jpg" data-title="{{page.title}}">
+    <img class="ui large centered stylish image" src='/static/images/cavendish-experiment/cavendish-experiment-setup.jpg' alt='{{page.title}}'/>
 </a>
 
 There is a light source $$ L $$ that incidents a laser beam on mirror $$ M $$ and the reflected light is captured on surface $$ C $$.
@@ -81,8 +81,8 @@ At time $$ t = 0 $$, all the 4 balls are co-planar. and lines joining identical 
 
 As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point $$ P_2 $$ on surface $$ C $$.
 
-<a href="/static/images/cavendish-experiment/cavendish-experiment-working.png" data-lightbox="/static/images/cavendish-experiment/cavendish-experiment-working.png" data-title="{{page.title}}">
-    <img class="ui large centered stylish image" src='/static/images/cavendish-experiment/cavendish-experiment-working.png' alt='{{page.title}}'/>
+<a href="/static/images/cavendish-experiment/cavendish-experiment-working.jpg" data-lightbox="/static/images/cavendish-experiment/cavendish-experiment-working.jpg" data-title="{{page.title}}">
+    <img class="ui large centered stylish image" src='/static/images/cavendish-experiment/cavendish-experiment-working.jpg' alt='{{page.title}}'/>
 </a>
 
 The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at __equilibrum__ the twisting force will be equal to gravitational force of attraction.
