@@ -105,9 +105,9 @@ pre code {
 	font-size: 14px;
 }
 pre {
-    padding: 1em 1em 1em 1em;
-	border-left: 11px solid rgba(0, 0, 0, 0.17);
-	margin: 1.7em 0 1.7em 0em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+	border-left: 7px solid rgba(0, 0, 0, 0.17);
+	margin: 1.4em 0 1.4em 0em;
 	overflow: auto;
 }
 /* target IE7 and IE6 */
