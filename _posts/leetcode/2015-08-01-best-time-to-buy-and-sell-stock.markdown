@@ -1,7 +1,7 @@
 ---
 categories: leetcode
 comments: true
-img: https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg
+img: https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true
 layout: post
 seo:
   description: Here is the solution for programming question best-time-to-buy-and-sell-stock
@@ -10,15 +10,29 @@ seo:
   - solution
   - source code
   - programming
+  - leetcode
+  - best-time-to-buy-and-sell-stock Solution
 tags:
 - competitive-programming
 - programming
-title: Solution for programming question best-time-to-buy-and-sell-stock on leetcode
+title: LEETCODE best-time-to-buy-and-sell-stock Solution
 ---
+The correct, optimal and working solution for programming question best-time-to-buy-and-sell-stock on leetcode
 
-Following is the solution for Leetcode Question: [best-time-to-buy-and-sell-stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-
+<div class="ui secondary pointing large menu">
+  <a class="grey item" data-tab="problem-statement">
+    Problem Statement
+  </a>
+  <a class="active item grey" data-tab="solution">
+    Solution
+  </a>
+</div>
+<div class="ui bottom attached tab" data-tab="problem-statement">
+    <iframe src="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
+</div>
+<div class="ui bottom attached active tab" data-tab="solution">
 {% highlight cpp %}
+
 class Solution {
 public:
     int maxProfit(vector<int> &prices) {
@@ -39,4 +53,6 @@ public:
         
     }
 };
+
 {% endhighlight %}
+</div>

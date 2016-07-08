@@ -23,13 +23,13 @@ type: dummy
         </div>
         <div class="ui active tab">
             <div class="ui bottom attached active tab" data-tab="spoj">
-                {% include question_set.html s='spoj' cols=1 %}
+                {% include question_set.html s='spoj' cols=4 %}
             </div>
             <div class="ui tab" data-tab="leetcode">
-                {% include question_set.html s='leetcode' cols=1 %}
+                {% include question_set.html s='leetcode' cols=2 %}
             </div>
             <div class="ui tab" data-tab="codechef">
-                {% include question_set.html s='codechef' cols=1 %}
+                {% include question_set.html s='codechef' cols=4 %}
             </div>
         </div>
     </div>
