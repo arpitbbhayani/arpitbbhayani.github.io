@@ -20,6 +20,9 @@ type: dummy
           <a class="item grey" data-tab="codechef">
             Codechef <div class="ui basic grey label">{{ site.categories.codechef | size }}</div>
           </a>
+          <a class="grey item" data-tab="hackerrank">
+            HackerRank <div class="ui basic grey label">{{ site.categories.hackerrank | size }}</div>
+          </a>
         </div>
         <div class="ui active tab">
             <div class="ui bottom attached active tab" data-tab="spoj">
@@ -30,6 +33,9 @@ type: dummy
             </div>
             <div class="ui tab" data-tab="codechef">
                 {% include question_set.html s='codechef' cols=4 %}
+            </div>
+            <div class="ui tab" data-tab="hackerrank">
+                {% include question_set.html s='hackerrank' cols=3 %}
             </div>
         </div>
     </div>
@@ -46,6 +52,9 @@ type: dummy
           <a class="item grey" data-tab="codechef">
             Codechef <div class="ui basic grey label">{{ site.categories.codechef | size }}</div>
           </a>
+          <a class="item grey" data-tab="hackerrank">
+            HackerRank <div class="ui basic grey label">{{ site.categories.hackerrank | size }}</div>
+          </a>
         </div>
         <div class="ui active tab">
             <div class="ui bottom attached active tab" data-tab="spoj">
@@ -56,6 +65,9 @@ type: dummy
             </div>
             <div class="ui tab" data-tab="codechef">
                 {% include question_set.html s='codechef' cols=1 %}
+            </div>
+            <div class="ui tab" data-tab="hackerrank">
+                {% include question_set.html s='hackerrank' cols=1 %}
             </div>
         </div>
     </div>
