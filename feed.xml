@@ -5,9 +5,89 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Jul 2016 17:44:27 +0530</pubDate>
-    <lastBuildDate>Mon, 11 Jul 2016 17:44:27 +0530</lastBuildDate>
+    <pubDate>Mon, 11 Jul 2016 17:56:21 +0530</pubDate>
+    <lastBuildDate>Mon, 11 Jul 2016 17:56:21 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>HACKERRANK maximum-draws Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/maximum-draws&quot;&gt;maximum-draws&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/maximum-draws&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 11 Jul 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/maximum-draws.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/maximum-draws.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
     
       <item>
         <title>HACKERRANK find-point Solution</title>
@@ -1187,160 +1267,6 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         
         
         <category>curiosity</category>
-        
-      </item>
-    
-      <item>
-        <title>How big is our Earth?</title>
-        <description>&lt;p&gt;Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how …&lt;/p&gt;
-
-&lt;h1 id=&quot;the-assumptions&quot;&gt;The Assumptions&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Earth is a perfect sphere.&lt;/li&gt;
-  &lt;li&gt;Since Sun is very very far and big, so the rays reaching Earth are parallel.&lt;/li&gt;
-  &lt;li&gt;The objects we are using (pole) are perpendicular to the ground.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;construction&quot;&gt;Construction&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/earth-circumference/1.jpg&quot; data-lightbox=&quot;/static/images/earth-circumference/1.jpg&quot; data-title=&quot;How big is our Earth?&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/earth-circumference/1.jpg&quot; alt=&quot;How big is our Earth?&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; are two poles present in two cities. Sun rays are incident on that pole and rays &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; casts a shadow &lt;script type=&quot;math/tex&quot;&gt;XC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;ZA&lt;/script&gt; at an angle &lt;script type=&quot;math/tex&quot;&gt;\theta_{1}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta_{2}&lt;/script&gt; with top of the poles respectively.&lt;/p&gt;
-
-&lt;p&gt;Now some geometrical construction:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Extend &lt;script type=&quot;math/tex&quot;&gt;WX&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;YZ&lt;/script&gt; to meet at &lt;script type=&quot;math/tex&quot;&gt;O&lt;/script&gt;, the center of the Earth. Let &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; be the angle between.&lt;/li&gt;
-  &lt;li&gt;Extend line &lt;script type=&quot;math/tex&quot;&gt;BA&lt;/script&gt; to meet &lt;script type=&quot;math/tex&quot;&gt;WO&lt;/script&gt; at &lt;script type=&quot;math/tex&quot;&gt;A&#39;&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.&lt;/p&gt;
-
-&lt;h1 id=&quot;derivation&quot;&gt;Derivation&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Lines &lt;script type=&quot;math/tex&quot;&gt;DC&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;BA&#39;&lt;/script&gt; are parallel and &lt;script type=&quot;math/tex&quot;&gt;WA&#39;&lt;/script&gt; acts as a transversal so we can say that&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle CWA&#39; = \angle BA&#39;W = \theta_{2} \\
-    \equiv  \angle CWA&#39; = \angle YA&#39;X = \theta_{2}&lt;/script&gt;
-
-&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\angle YA&#39;X = \theta_{2}&lt;/script&gt; so we can say that&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O = 180^{o} - \theta_{2}&lt;/script&gt;
-
-&lt;p&gt;Now let us consider &lt;script type=&quot;math/tex&quot;&gt;\triangle OA&#39;Y&lt;/script&gt;, we know sum of all angles of a triangle is &lt;script type=&quot;math/tex&quot;&gt;180^{o}&lt;/script&gt;, hence&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\angle YA&#39;O + \angle A&#39;OY + \angle OYA&#39; = 180^{o} \\
-    \therefore (180^{o} - \theta_{2}) + (\theta) + (\theta_{1}) = 180^{o} \\
-    \therefore \theta = \theta_{2} - \theta_{1}&lt;/script&gt;
-
-&lt;p&gt;Now all we need are the angles made by sun rays at top of the pole. This is pretty simple by the use of trigonometry.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_{1} = tan^{-1}(\frac{l(CX)}{l(WX)}) and \theta_{2} = tan^{-1}(\frac{l(AZ)}{l(YZ)})&lt;/script&gt;
-
-&lt;table class=&quot;ui very basic table&quot;&gt;
-    &lt;thead&gt;
-        &lt;th&gt;Distance&lt;/th&gt;
-        &lt;th&gt;What it represents&lt;/th&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;l(CX)&lt;/td&gt;
-            &lt;td&gt;Length of the shadow of pole WX&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;l(WX)&lt;/td&gt;
-            &lt;td&gt;Length of pole WX&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;l(AZ)&lt;/td&gt;
-            &lt;td&gt;Length of the shadow of pole YZ&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;l(YZ)&lt;/td&gt;
-            &lt;td&gt;Length of pole YZ&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Note that these lengths are to be calculated nearly at the same time because with time the lengths of the shadows will change because of change in apparent position of Sun. Since we have all the ingredients we can now find out &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now time for some extrapolation. If you observe the figure above, it is clear that an angle measuring &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; at the center of the Earth spans a distance &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt; at its circumference, which is nothing but the distance between two poles. So we can say that the circumference will be equal to the distance spanned when &lt;script type=&quot;math/tex&quot;&gt;\theta = 360^{o}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{360^{o}}{\theta} = \frac{Circumference}{l(XZ)} \\
-    \therefore \frac{360^{o}}{\theta} = \frac{2 \pi R}{l(XZ)} \\
-    \therefore R = \frac{360^{o} * l(XZ)}{2 \pi \theta}&lt;/script&gt;
-
-&lt;p&gt;The only thing unknown in above equation is &lt;script type=&quot;math/tex&quot;&gt;l(XZ)&lt;/script&gt;, which is the distance between poles. To make our lives simpler we will use some GPS for this. If we know the latitude and longitude of the two poles then the distance between them can be calculated very easily. For quick calculations on this you can follow this &lt;a href=&quot;http://www.movable-type.co.uk/scripts/latlong.html&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;find-how-big-is-our-earth&quot;&gt;Find how big is our Earth&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;As we now have the Radius of the Earth &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; from above calculations, and if we assume that earth is a perfect sphere, we can find out&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Total surface area &lt;script type=&quot;math/tex&quot;&gt;4 \pi R^{2}&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;Volume &lt;script type=&quot;math/tex&quot;&gt;\frac{4}{3} \pi R^{3}&lt;/script&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Actual values are in the table below just to cross check your results&lt;/p&gt;
-
-&lt;table class=&quot;ui very basic table&quot;&gt;
-    &lt;thead&gt;
-        &lt;th&gt;Measure&lt;/th&gt;
-        &lt;th&gt;Value&lt;/th&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Radius of Earth&lt;/td&gt;
-            &lt;td&gt;6,371 km&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Surface area of Earth&lt;/td&gt;
-            &lt;td&gt;509805890 km&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Volume of Earth&lt;/td&gt;
-            &lt;td&gt;1.08321×10&lt;sup&gt;12&lt;/sup&gt; km&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;l(YZ)&lt;/td&gt;
-            &lt;td&gt;Length of pole YZ&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 id=&quot;the-history&quot;&gt;The History&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;The method was first proposed by Eratosthenes way back in &lt;strong&gt;250 BC&lt;/strong&gt;. Lets see how it was done back then …&lt;/p&gt;
-
-&lt;p&gt;In ancient Egypt there was a city named Syene. Eratosthenes was told that in a well during &lt;a href=&quot;https://en.wikipedia.org/wiki/Summer_solstice&quot;&gt;Summer Solstice&lt;/a&gt; at noon time if he tries to look down a well he will be blocking the reflection of sun from the water, which actually implies the Sun was directly overhead. Syene was present on Tropic Of Cancer and to its north was a city called Alexandria. It is believed that Eratosthenes hired a man to calculate the distance between Syene and Alexandria. The hired man went from Syene to Alexandria and back walking finding out the distance to be &lt;strong&gt;5,000 stadia&lt;/strong&gt; (stadia was the unit of measurement back then in ancient Egypt, its conversion to metric system is 1 stade = 185 m)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Eratosthenes calculated the circumference of Earth to be equal to &lt;strong&gt;46,620 km&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Obviously he was off by some margin, but we should give him credit for coming up with this back in 250 BC, about 2300 years ago.&lt;/p&gt;
-
-&lt;p&gt;What do you think about this? I would love to hear from you guys.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 20 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/science/earth-circumference.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/science/earth-circumference.html</guid>
-        
-        <category>science</category>
-        
-        <category>geometry</category>
-        
-        <category>how-was-it-measured</category>
-        
-        
-        <category>science</category>
         
       </item>
     
