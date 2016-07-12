@@ -5,9 +5,107 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Jul 2016 17:56:21 +0530</pubDate>
-    <lastBuildDate>Mon, 11 Jul 2016 17:56:21 +0530</lastBuildDate>
+    <pubDate>Tue, 12 Jul 2016 23:02:29 +0530</pubDate>
+    <lastBuildDate>Tue, 12 Jul 2016 23:02:29 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>HACKERRANK possible-path Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/possible-path&quot;&gt;possible-path&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/possible-path&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%lld%lld%lld%lld&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;u1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;u2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gcd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;YES&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;NO&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 12 Jul 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/possible-path.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/possible-path.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
     
       <item>
         <title>HACKERRANK maximum-draws Solution</title>
@@ -1117,156 +1215,6 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         
         
         <category>science</category>
-        
-      </item>
-    
-      <item>
-        <title>How atomic clock works | busting several myths about it</title>
-        <description>&lt;p&gt;The accuracy of atomic clock is not because of its radioactivity or atomic decay … lets find out the truth behind it.&lt;/p&gt;
-
-&lt;p&gt;There are some very common myths about atomic clocks, the most most famous are&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Atomic clocks are radioactive&lt;/li&gt;
-  &lt;li&gt;Atomic clocks works on principle of atomic decay&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Lets see how our world is in sync with a clock so accurate that it &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;time-keeping-before-atomic-clocks&quot;&gt;Time keeping before atomic clocks&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using &lt;strong&gt;Quarts Crystal&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let me tell you in brief how it worked. &lt;strong&gt;Quarts Crystal&lt;/strong&gt; has a spacial property that it is &lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;piezoelectric&lt;/a&gt;, which means that&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/quartz-piezoelectric.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/quartz-piezoelectric.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/quartz-piezoelectric.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;When you apply pressure to it it generates tiny electric current.&lt;/li&gt;
-  &lt;li&gt;When you pass electricity through it, it vibrates at a precise frequency.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of &lt;strong&gt;32,768 Hz&lt;/strong&gt;, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this…&lt;/p&gt;
-
-&lt;h2 id=&quot;issue-with-battery-operated-quartz-crystal&quot;&gt;Issue with battery operated Quartz Crystal&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A &lt;strong&gt;FEEDBACK LOOP&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how&lt;/p&gt;
-
-&lt;h1 id=&quot;lets-get-some-basics-right&quot;&gt;Lets get some basics right&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts&lt;/p&gt;
-
-&lt;h3 id=&quot;atomic-structure-of-cesium&quot;&gt;Atomic structure of Cesium&lt;/h3&gt;
-
-&lt;p&gt;Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/cesium-atom.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/cesium-atom.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium centered image&quot; src=&quot;/static/images/atomic-clocks/cesium-atom.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;hyperfine-interaction&quot;&gt;Hyperfine interaction&lt;/h3&gt;
-
-&lt;p&gt;The interaction between nucleus and its surrounding environment is known as &lt;strong&gt;hyperfine interaction&lt;/strong&gt;. The magnitude of these interactions are very very small but enough to shift energy levels.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/hyperfine-interactions.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/hyperfine-interactions.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/hyperfine-interactions.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;electrostatic force of attraction,&lt;/li&gt;
-  &lt;li&gt;magnetic field of spinning nucleus and&lt;/li&gt;
-  &lt;li&gt;gravity pull between the two.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.&lt;/p&gt;
-
-&lt;h3 id=&quot;resonant-frequency-of-atoms&quot;&gt;Resonant frequency of atoms&lt;/h3&gt;
-
-&lt;p&gt;Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.&lt;/p&gt;
-
-&lt;p&gt;This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance &lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;special-case-of-cesium-atom&quot;&gt;Special case of cesium atom&lt;/h3&gt;
-
-&lt;p&gt;Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt;, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.&lt;/p&gt;
-
-&lt;h1 id=&quot;working&quot;&gt;Working&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Basics done! let’s jump into the working of it.&lt;/p&gt;
-
-&lt;p&gt;An atomic clock consists of a traditional &lt;strong&gt;Quartz Crystal&lt;/strong&gt; which is used for marking mechanical pulse just like in closed based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;battery operated quartz crystal&lt;/a&gt;. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui medium right floated image&quot; src=&quot;/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Properties of Cesium atoms we care about:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Cesium atoms can be present in two states: Low energy and High energy.&lt;/li&gt;
-  &lt;li&gt;They can be separated by applying magnetic field.&lt;/li&gt;
-  &lt;li&gt;Low energy cesium atoms can be converted into high energy by applying external radiation.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;First the Cesium chloride is heated in an oven, this creates a gaseous stream of cesium ions. This stream contains both the low and high energy ions. Now first magnetic filter is applied to this stream. The application of magnetic field to this stream bifurcates the stream into two sub-streams. One containing low energy cesium and other containing high energy cesium.&lt;/p&gt;
-
-&lt;p&gt;Now the low energy cesium stream is passed through a radiation chamber in which the a radiation of frequency &lt;strong&gt;9,192,631,770 cycles per second&lt;/strong&gt; is bombarded on it. This will make the low energy cesium to go into high energy state.&lt;/p&gt;
-
-&lt;p&gt;Now emerging from the radiation chamber we have a stream of high energy cesium ions; but not all are converted to high energy state if there is an offset in radiation frequency. Hence to know how many cesium atoms jumped into high energy state another magnetic filter is applied. Hence we deduce that, &lt;strong&gt;closer the radiation frequency is to resonant frequency of cesium, higher will be conversion rate of low energy cesium to high energy cesium&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg&quot; data-lightbox=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg&quot; data-title=&quot;How atomic clock works | busting several myths about it&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg&quot; alt=&quot;How atomic clock works | busting several myths about it&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. &lt;strong&gt;Higher the number of ions incident on it higher will be the current generated&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This current is passed to &lt;strong&gt;Quartz Oscillator&lt;/strong&gt; with which we mark one pulse. This oscillator is responsible to control wavelength (in turn frequency) of incident radiation.&lt;/p&gt;
-
-&lt;p&gt;Suppose the quartz oscillator looses its energy. As soon as this happens, the radiation in the chamber weakens. Hence number of cesium atoms jumping into high energy state drops. This tells another electric circuit to zap the oscillator and correct the period of oscillation. And thus locking its frequency in a very narrow range. This locked frequency is then divided by 9,192,631,770 which results in the familiar one pulse per second.&lt;/p&gt;
-
-&lt;p&gt;Now we see how we overcame the drawback of traditional Quartz Clock and created a much much accurate atomic clock which &lt;strong&gt;looses 1 second in 138 million years&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is how an atomic clock works. In above working principle of this we found that&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;There was no radioactivity&lt;/li&gt;
-  &lt;li&gt;There was no atomic decay&lt;/li&gt;
-  &lt;li&gt;It really had Quartz Oscillator in it, so we did not move out of it.&lt;/li&gt;
-  &lt;li&gt;Using interaction happening at such a scale of nanometers we could solve one of the biggest problem.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;for-more-info&quot;&gt;For more info:&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Resonance&quot;&gt;Resonance&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Piezoelectricity&quot;&gt;Piezoelectric Effect&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Quartz_clock&quot;&gt;Mechanism of Quartz Clock&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://science.howstuffworks.com/atomic-clock3.htm&quot;&gt;How does a practical cesium atomic clock works?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www3.nd.edu/~techrev/Archive/Winter2002/a4.html&quot;&gt;Atomic Clocks: What Time is it, Really?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.cmp.liv.ac.uk/frink/thesis/thesis/node14.html&quot;&gt;Hyperfine interactions&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Sun, 28 Feb 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/curiosity/atomic-clocks.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/atomic-clocks.html</guid>
-        
-        <category>science</category>
-        
-        <category>particle-physics</category>
-        
-        <category>how-it-works</category>
-        
-        
-        <category>curiosity</category>
         
       </item>
     
