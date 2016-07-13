@@ -5,9 +5,110 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jul 2016 00:25:23 +0530</pubDate>
-    <lastBuildDate>Thu, 14 Jul 2016 00:25:23 +0530</lastBuildDate>
+    <pubDate>Thu, 14 Jul 2016 00:46:36 +0530</pubDate>
+    <lastBuildDate>Thu, 14 Jul 2016 00:46:36 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>HACKERRANK reverse-game Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/reverse-game&quot;&gt;reverse-game&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/reverse-game&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/reverse-game.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/reverse-game.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
     
       <item>
         <title>HACKERRANK restaurant Solution</title>
@@ -886,134 +987,6 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         
         
         <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>The Electron Gun | Way to wipe electrons off the atom</title>
-        <description>&lt;p&gt;An atom is composed of three sub-atomic particles, namely&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;electrons&lt;/li&gt;
-  &lt;li&gt;protons&lt;/li&gt;
-  &lt;li&gt;neutrons&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To our curiosity, let’s see how we can isolate electrons from an atom; what we could do with these isolated electrons; and how we can leverage this energy and make a gun out of it.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-history&quot;&gt;The history&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Human race has always been very curious about everything around. The epitome of this curiosity has led to a number of amazing discoveries and inventions. One of the major discoveries include &lt;strong&gt;discovery of electron&lt;/strong&gt;. Until 1897, it was believed that the atom was indivisible and was considered to be the fundamental unit of matter. But &lt;a href=&quot;https://en.wikipedia.org/wiki/J._J._Thomson&quot;&gt;Sir J. J. Thomson&lt;/a&gt; discovered a particle that nobody had ever seen, it was an &lt;strong&gt;Electron&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s take it a step further and see how we can make a gun that shoot electrons.&lt;/p&gt;
-
-&lt;h2 id=&quot;lets-get-the-electrons-out&quot;&gt;Let’s get the electrons out&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;Metal atoms have a tendency to lose electron(s) and create positively charge ions hence it should be fairly easy to remove electrons from metals. A small bolt of energy should suffice in breaking the potential barrier and make electrons move out of the atom. So if we supply some energy, let’s say heat energy, should and will pop out of atoms. This process is called as &lt;strong&gt;Thermionic Emission&lt;/strong&gt; and the amount of energy required to remove an electron from the atom is called its &lt;strong&gt;Ionization Energy&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;So we take a piece to metal (a thin filament) and heat it to a very high temperature; this will make electrons within it break the potential barrier and will start to move around in the lattice structure.&lt;/p&gt;
-
-&lt;h4 id=&quot;thermionic-emission&quot;&gt;Thermionic Emission&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;Thermionic emission is an flow of charge (positive or negative) which is induced by thermal energy. Hence when we supply heat energy to metals, the potential barrier breaks and electrons are removed from the atom and are free to move around, and positively charged ions are left behind in lattice.&lt;/p&gt;
-
-&lt;h2 id=&quot;accelerate-electrons&quot;&gt;Accelerate electrons&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;A gun is something which shoots an object at a very high speed. So an Electron Gun should shoot out electrons at a very high speed. This implies we need to provide some kind of acceleration to the electrons to create a gun out of it. Let’s use electrostatic force of attraction for this.&lt;/p&gt;
-
-&lt;p&gt;Electrons are negatively charged particle, so if we have something positively charged near them, electrons will feel a very high force of attraction and will get acceleration. The anode (positively charged rod) is created by connecting an electrode to the positive terminal of a power supply and the hot piece of metal is connected to its negative terminal.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/accelerating-electrons.jpg&quot; data-lightbox=&quot;/static/images/electron-gun/accelerating-electrons.jpg&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/accelerating-electrons.jpg&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Lets calculate at what speed these electrons will move.&lt;/p&gt;
-
-&lt;p&gt;Electrical energy of one electron, &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is given by&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;E_e = charge . voltage \\
-    \therefore E_e = e.V&lt;/script&gt;
-
-&lt;p&gt;where,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, accelerating voltage (difference between the cathode and the anode)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;when this electron is moving, the energy &lt;script type=&quot;math/tex&quot;&gt;E_e&lt;/script&gt; is converted into kinetic energy &lt;script type=&quot;math/tex&quot;&gt;K.E.&lt;/script&gt;,&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\therefore E_e = K.E \\
-    \therefore e.V = \frac{m.v^2}{2} \\
-    \therefore v = \sqrt{ \frac{2.e.V}{m} }&lt;/script&gt;
-
-&lt;p&gt;where,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;e&lt;/script&gt;, Charge on electron,&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt;, Voltage applied across anode and cathode,&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;, Mass of the electron&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Thus we now have high speed electrons coming off metal surface.&lt;/p&gt;
-
-&lt;h2 id=&quot;lets-make-it-stronger-and-sharper&quot;&gt;Let’s make it stronger and sharper&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;If we put a positively charged rod near heated metal then electrons will only be accelerated towards the rod, each will feel attraction and will start to move towards positivity. Needless to say, such thing will not be useful. What we always need is something that can make a wild impact i.e. something which is stronger and sharper.&lt;/p&gt;
-
-&lt;h4 id=&quot;stronger&quot;&gt;Stronger&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;Strength of the electron beam is directly proportional to the number of electrons that come out of metal surface. Thus higher the temperature, higher will be the kinetic energy of electrons and higher will be probability of electrons breaking the potential barrier and moving out and thus making the beam stronger.&lt;/p&gt;
-
-&lt;h4 id=&quot;sharper&quot;&gt;Sharper&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;Making the beam sharper implies somehow converging these electrons and narrowing down beam into a thin sharp ray. In order to do that, we need some kind of force that will make this happen, some force that will make electrons move away from it. Yes that’s right! the &lt;strong&gt;electrostatic force of repulsion&lt;/strong&gt;. What if we make these electrons pass through a ring which is negatively charged? &lt;strong&gt;repulsion&lt;/strong&gt;. Thus we get a narrower and sharper beam of electrons.&lt;/p&gt;
-
-&lt;h2 id=&quot;lets-make-a-gun&quot;&gt;Let’s make a gun&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;If we combine everything mentioned above we get a narrow sharp beam of electrons originating from hot metal place, converging along the way and getting attracted towards the positively charged rod (anode). But where is the gun? We do not want the electrons to be attracted to anode and get absorbed. We want them to be projected out. So what do we do? Yes! we create a hole in the rod and let the beam of electrons pass through it.&lt;/p&gt;
-
-&lt;p&gt;Bingo! we now have an Electron Gun!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/electron-gun/electron-gun-working.jpg&quot; data-lightbox=&quot;/static/images/electron-gun/electron-gun-working.jpg&quot; data-title=&quot;The Electron Gun | Way to wipe electrons off the atom&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/electron-gun/electron-gun-working.jpg&quot; alt=&quot;The Electron Gun | Way to wipe electrons off the atom&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;why-electrons-do-not-cling-to-anode&quot;&gt;Why electrons do not cling to anode&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;An important question here to ask is, if rod is positively charged then, when an electron is passing through the hole, why don’t it cling to the rod? The answer is some electrons do cling to the rod. But if electrons have very high speed (high kinetic energy), the force of attraction has to be very large for electrons to cling and not pass through the hole. Typically electrons travel with speed equalling &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{10} th&lt;/script&gt; of speed of light which is &lt;script type=&quot;math/tex&quot;&gt;3 * 10^7 m/s&lt;/script&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;where-have-i-seen-that-before&quot;&gt;Where have I seen that before?&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;Electron gun sees its household application in&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Old TV sets used to render images on screen using such electron gun.&lt;/li&gt;
-  &lt;li&gt;Computer screens also used this technology to raster images on screen.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Because of the high energy electron beam that it is, electron gun has some amazing engineering application like welding and accurate measurement. It is also used as a catalyst in ionization process.&lt;/p&gt;
-
-&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Electron_gun&quot;&gt;Electron Gun Wiki&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.nuffieldfoundation.org/practical-physics/electron-guns&quot;&gt;Practical Physics&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.schoolphysics.co.uk/age14-16/Atomic%20physics/text/Electron_gun/index.html&quot;&gt;School Physics&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 14 Apr 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/science/electron-gun.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/science/electron-gun.html</guid>
-        
-        <category>science</category>
-        
-        <category>how-it-works</category>
-        
-        <category>particle-physics</category>
-        
-        
-        <category>science</category>
         
       </item>
     
