@@ -5,9 +5,93 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jul 2016 23:41:10 +0530</pubDate>
-    <lastBuildDate>Wed, 13 Jul 2016 23:41:10 +0530</lastBuildDate>
+    <pubDate>Wed, 13 Jul 2016 23:56:13 +0530</pubDate>
+    <lastBuildDate>Wed, 13 Jul 2016 23:56:13 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>HACKERRANK sherlock-and-moving-tiles Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/sherlock-and-moving-tiles&quot;&gt;sherlock-and-moving-tiles&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/sherlock-and-moving-tiles&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%.4LF&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 13 Jul 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/sherlock-and-moving-tiles.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/sherlock-and-moving-tiles.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
     
       <item>
         <title>HACKERRANK handshake Solution</title>
@@ -1011,140 +1095,6 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
         
         
         <category>science</category>
-        
-      </item>
-    
-      <item>
-        <title>Finding out Gravitational Constant - The Cavendish Experiment</title>
-        <description>&lt;p&gt;The gravitational force was discovered by &lt;a href=&quot;https://en.wikipedia.org/wiki/Isaac_Newton&quot;&gt;Sir Isaac Newton&lt;/a&gt;, but he was not the one who calculated the &lt;strong&gt;Gravitational Constant&lt;/strong&gt; (&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;). Finding out &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; was a stroke of genius and was first discovered by a British scientist &lt;a href=&quot;https://en.wikipedia.org/wiki/Henry_Cavendish&quot;&gt;Henry Cavendish&lt;/a&gt; in 1797–1798, but no where in his publication he mentioned anything about this instead he was just &lt;strong&gt;“Weighing the Earth”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;But an interesting by-product of the experiment came out as the value &lt;strong&gt;Gravitational Constant &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;&lt;/strong&gt;. The value that was obtained from the experiment was having an error of just &lt;script type=&quot;math/tex&quot;&gt;1\%&lt;/script&gt;. So let’s not anymore take value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; for granted, and find out how it was calculated in the first place.&lt;/p&gt;
-
-&lt;h1 id=&quot;first-step&quot;&gt;First step&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Going with the intuition let’s jot down the formula of gravitational force.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;F = G (\frac{m_1.m_2}{r^2})&lt;/script&gt;
-
-&lt;p&gt;To calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; all we need are the values of variables except &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. Lets see what we have got or can get easily&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: The mass can be measured with any regular weighing machine.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Regular ruler or measuring device can help us measure the distance.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt;: Measuring gravitational force, now should be tricky (◔ૂ◔)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The experiment that calculated the Gravitational force of attraction between two bodies was the &lt;strong&gt;Cavendish experiment&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Please note that I am simplifying the experiment apparatus for better understanding. The original experimental apparatus was pretty gigantic and complex. If you want to go into details of that please see the reference links below.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;the-prerequisite&quot;&gt;The prerequisite&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Before we know the apparatus, we should know what a &lt;strong&gt;torsion spring&lt;/strong&gt; is.&lt;/p&gt;
-
-&lt;h3 id=&quot;torsion-spring&quot;&gt;Torsion Spring&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;A torsion spring is a spring that works on the principle of twisting. When this spring is twisted, it exerts a torque which is proportional to the angle of the twist.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tau_s \propto F_s \propto \theta&lt;/script&gt;
-
-&lt;p&gt;where&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\tau_s&lt;/script&gt;: Torque exerted on spring&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;F_s&lt;/script&gt;: Force component of torque&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: angle with which the spring is twisted&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;the-setup&quot;&gt;The setup&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;There is a torsion spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; fixed at the top and there is a horizontal bar with identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; is mounted on this thin bar. Now two very huge identical lead balls, each of mass &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;, are then mounted to the ground in the position as shown in the image.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.jpg&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.jpg&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-setup.jpg&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There is a light source &lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt; that incidents a laser beam on mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and the reflected light is captured on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-are-we-trying-to-do-here&quot;&gt;What are we trying to do here?&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;We are trying to measure the gravitational force of attraction between these lead balls.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;At time &lt;script type=&quot;math/tex&quot;&gt;t = 0&lt;/script&gt;, all the 4 balls are co-planar. and lines joining identical balls are perpendicular to each other. The laser beam is turned on and the beam then hits the mirror &lt;script type=&quot;math/tex&quot;&gt;M&lt;/script&gt; and is reflected back at point &lt;script type=&quot;math/tex&quot;&gt;P_1&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;. Now after some time, the gravitational force of attraction between balls &lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt; will generate a torque; and eventually will create a twist in the spring &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point &lt;script type=&quot;math/tex&quot;&gt;P_2&lt;/script&gt; on surface &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.jpg&quot; data-lightbox=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.jpg&quot; data-title=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/cavendish-experiment/cavendish-experiment-working.jpg&quot; alt=&quot;Finding out Gravitational Constant - The Cavendish Experiment&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at &lt;strong&gt;equilibrum&lt;/strong&gt; the twisting force will be equal to gravitational force of attraction.&lt;/p&gt;
-
-&lt;h2 id=&quot;calculation&quot;&gt;Calculation&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;From the above procedure we have &lt;strong&gt;Angle of twist &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/strong&gt;. To exactly calculate the value of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;, few more parameters are required, one important being &lt;strong&gt;Torsion Coefficient&lt;/strong&gt;, which is the measure of resistance provided by spring during twisting.&lt;/p&gt;
-
-&lt;p&gt;The torsion coefficient can be easily calculated, using period of oscillation due to inertia of smaller lead balls. The final equation that gives the &lt;strong&gt;Torsion Coefficient&lt;/strong&gt; is&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;K = \frac{2\pi^2.m_2.L^2}{T^2}&lt;/script&gt;
-
-&lt;p&gt;where&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;T&lt;/script&gt;: Period of oscillation of horizontal bar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The final equation with which we can easily calculate &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; is&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;G = \frac{K.\theta.r^2}{L.m_1.m_2}&lt;/script&gt;
-
-&lt;p&gt;where&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;: Gravitational constant&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;K&lt;/script&gt;: Torsion Coefficient&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;: Angle of twist&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;: Distance between balls at equilibrium&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;L&lt;/script&gt;: Length of horizontal bar on which smaller balls are mounted&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_1&lt;/script&gt;: Mass of larger lead ball&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;m_2&lt;/script&gt;: Mass of smaller lead ball&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.school-for-champions.com/science/gravitation_cavendish_experiment_derivation.htm&quot;&gt;Derivation of above equations&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;interesting-resources&quot;&gt;Interesting Resources&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2PdiUoKa9Nw&quot;&gt;Knowing more about Henry Cavendish&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cavendish_experiment&quot;&gt;Cavendish Experiment Wiki&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ffden-2.phys.uaf.edu/211_fall2010.web.dir/Smith_Elliot/Cav_World.html&quot;&gt;Cavendish experiment in brief&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4JGgYjJhGEE&quot;&gt;Demonstration of cavendish method&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.physicsclassroom.com/class/circles/Lesson-3/Cavendish-and-the-Value-of-G&quot;&gt;Cavendish and the Value of G&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 08 Apr 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/curiosity/cavendish-experiment.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/curiosity/cavendish-experiment.html</guid>
-        
-        <category>science</category>
-        
-        <category>how-was-it-measured</category>
-        
-        <category>gravity</category>
-        
-        
-        <category>curiosity</category>
         
       </item>
     
