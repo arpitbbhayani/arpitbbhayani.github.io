@@ -5,9 +5,93 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jul 2016 00:46:36 +0530</pubDate>
-    <lastBuildDate>Thu, 14 Jul 2016 00:46:36 +0530</lastBuildDate>
+    <pubDate>Thu, 14 Jul 2016 01:00:18 +0530</pubDate>
+    <lastBuildDate>Thu, 14 Jul 2016 01:00:18 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>HACKERRANK strange-grid Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/strange-grid&quot;&gt;strange-grid&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/strange-grid&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/strange-grid.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/strange-grid.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
     
       <item>
         <title>HACKERRANK reverse-game Solution</title>
@@ -859,131 +943,6 @@ Content-Length: 30
         <category>http</category>
         
         <category>networking</category>
-        
-        
-        <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>Multiple MySQL versions running on one server</title>
-        <description>&lt;p&gt;There are many situations where there is a require where you need to run multiple instances of MySQL on same machine.&lt;/p&gt;
-
-&lt;p&gt;Some situations are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;test a new MySQL release while leaving an existing production setup undisturbed&lt;/li&gt;
-  &lt;li&gt;give different users access to different &lt;code&gt;mysqld&lt;/code&gt; servers that they manage themselves&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;problem-description&quot;&gt;Problem description&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;I have a machine having 5 products already setup. All products are using MySQL 5.5 as its default database. Now its time to upgrade all but one product to use MySQL 5.6. The table below shows the before and after version requirements of MySQL for various products. Looking at the table we find that all products except product C wants to use MySQL 5.6.&lt;/p&gt;
-
-&lt;table class=&quot;ui small table&quot;&gt;
-&lt;thead&gt;
-    &lt;th&gt;Products&lt;/th&gt;
-    &lt;th&gt;MySQL version before&lt;/th&gt;
-    &lt;th&gt;MySQL version after&lt;/th&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-     &lt;tr&gt;
-         &lt;td&gt;Product A&lt;/td&gt;
-         &lt;td&gt;MySQL 5.5&lt;/td&gt;
-         &lt;td&gt;MySQL 5.6&lt;/td&gt;
-     &lt;/tr&gt;
-     &lt;tr&gt;
-         &lt;td&gt;Product B&lt;/td&gt;
-         &lt;td&gt;MySQL 5.5&lt;/td&gt;
-         &lt;td&gt;MySQL 5.6&lt;/td&gt;
-     &lt;/tr&gt;
-     &lt;tr class=&quot;negative&quot;&gt;
-         &lt;td&gt;Product C&lt;/td&gt;
-         &lt;td&gt;MySQL 5.5&lt;/td&gt;
-         &lt;td&gt;MySQL 5.5&lt;/td&gt;
-     &lt;/tr&gt;
-     &lt;tr&gt;
-         &lt;td&gt;Product D&lt;/td&gt;
-         &lt;td&gt;MySQL 5.5&lt;/td&gt;
-         &lt;td&gt;MySQL 5.6&lt;/td&gt;
-     &lt;/tr&gt;
-     &lt;tr&gt;
-         &lt;td&gt;Product E&lt;/td&gt;
-         &lt;td&gt;MySQL 5.5&lt;/td&gt;
-         &lt;td&gt;MySQL 5.6&lt;/td&gt;
-     &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Since all but one products require MySQL 5.6, so lets install it first and then we will work to figure out a way to install MySQL 5.5 as well.&lt;/p&gt;
-
-&lt;h1 id=&quot;installing-mysql-56&quot;&gt;Installing MySQL 5.6&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get update
-sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mysql-client-core-5.6&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;At this point we have MySQL 5.6 listening at port &lt;code&gt;3306&lt;/code&gt; (default port)&lt;/p&gt;
-
-&lt;h1 id=&quot;approach-to-solution&quot;&gt;Approach to solution&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;There are several approaches with which you can achieve multiple MySQL versions running in same machine. Some of them are&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Use binaries of specific version&lt;/li&gt;
-  &lt;li&gt;Build everything from MySQL source&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;issues-in-above-approaches&quot;&gt;Issues in above approaches:&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;Evidently we can only have one version of MySQL setup on the machine using default installation procedure with &lt;code&gt;apt-get&lt;/code&gt;. Hence if we try to install one version over other then it will replace the first version and will retain the second version. Hence we cannot have 2 versions of MySQL with default installation procedure.&lt;/p&gt;
-
-&lt;p&gt;Building everything from scratch involves a lot of complications at source level. In order to debug any issues that might arise, you should be aware what happens in various scripts/commands that you run. I did spend a day in building from the source but it eventually turned out to be complete waste of time, efforts and debugging.&lt;/p&gt;
-
-&lt;h1 id=&quot;docker-to-the-rescue&quot;&gt;Docker to the rescue&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;If we had a container in which we have a MySQL 5.5 installed and if we can publish the container’s port(s) to the host, then we can connect to container’s MySQL just like a local database.&lt;/p&gt;
-
-&lt;p&gt;We can have all of the above with &lt;strong&gt;Docker&lt;/strong&gt;. If you dont know what docker is, please read this official &lt;a href=&quot;https://www.docker.com/what-docker&quot;&gt;What is Docker&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;installing-docker&quot;&gt;Installing Docker&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;To install docker on your machine execute following command on your shell.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -sSL https://get.docker.com/ &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;spin-off-mysql-55-container&quot;&gt;Spin off MySQL 5.5 container&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;Execute following command and this will download MySQL 5.5 image and will spin off the container. This container will have MySQL 5.5 installed on port &lt;code&gt;3306&lt;/code&gt;. But on host machine port &lt;code&gt;3310&lt;/code&gt; will be forwarded.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo docker run --name mysql-55-container -p 127.0.0.1:3310:3306 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-     -e &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;rootpassword -d mysql:5.5&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;em&gt;NOTE: Password for root user is rootpassword, you can change it to anything.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;connect-to-mysql-55&quot;&gt;Connect to MySQL 5.5&lt;/h2&gt;
-&lt;hr /&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql -u root -p --host&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;127.0.0.1 --port&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3310&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;connect-to-mysql-56&quot;&gt;Connect to MySQL 5.6&lt;/h2&gt;
-&lt;hr /&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql -u root -p&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;And voila! you have both My SQL 5.5 and MySQL 5.6 installed and running on same machine.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Now you can configure your application product C to use host &lt;code&gt;127.0.0.1&lt;/code&gt; and port &lt;code&gt;3310&lt;/code&gt; and thus you have products A, B, D and E running on MySQL 5.6 and product C running on MySQL 5.5.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 13 May 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html</guid>
-        
-        <category>techie</category>
-        
-        <category>devops</category>
-        
-        <category>database-admin</category>
         
         
         <category>techie</category>
