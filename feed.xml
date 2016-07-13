@@ -5,8 +5,8 @@
     <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jul 2016 01:00:18 +0530</pubDate>
-    <lastBuildDate>Thu, 14 Jul 2016 01:00:18 +0530</lastBuildDate>
+    <pubDate>Thu, 14 Jul 2016 01:30:30 +0530</pubDate>
+    <lastBuildDate>Thu, 14 Jul 2016 01:30:30 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -83,6 +83,106 @@
         <pubDate>Thu, 14 Jul 2016 00:00:00 +0530</pubDate>
         <link>http://arpitbhayani.me/hackerrank/strange-grid.html</link>
         <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/strange-grid.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
+    
+      <item>
+        <title>HACKERRANK sherlock-and-divisors Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/sherlock-and-divisors&quot;&gt;sherlock-and-divisors&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/sherlock-and-divisors&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/sherlock-and-divisors.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/sherlock-and-divisors.html</guid>
         
         <category>competitive-programming</category>
         
@@ -764,188 +864,6 @@
         
         
         <category>hackerrank</category>
-        
-      </item>
-    
-      <item>
-        <title>HTTP Requests - The Hard Way with Netcat</title>
-        <description>&lt;p&gt;Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.&lt;/p&gt;
-
-&lt;p&gt;This complete process is abstracted by the tools like &lt;a href=&quot;https://curl.haxx.se/&quot;&gt;curl&lt;/a&gt;, requests libraries and utilities like &lt;a href=&quot;https://www.getpostman.com/&quot;&gt;Postman&lt;/a&gt;. Instead of using these tools and utilities, we shall go by the hard way and see HTTP messages in action.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-webserver&quot;&gt;The Webserver&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;For experimentation purpose let’s create a very basic webserver in &lt;a href=&quot;flask.pocoo.org&quot;&gt;Python Flask framework&lt;/a&gt; that exposes a trivial Hello World end point.&lt;/p&gt;
-
-&lt;h3 id=&quot;python-webserver-script&quot;&gt;Python webserver script&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;from flask import Flask
-&lt;span class=&quot;nv&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Flask&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;__name__&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-@app.route&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-def hello&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;:
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello, World!&amp;quot;&lt;/span&gt;
-
-app.run&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;installing-requirements&quot;&gt;Installing requirements&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pip install flask&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;start-the-webserver&quot;&gt;Start the webserver&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;python hello.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The server listens on port &lt;em&gt;3000&lt;/em&gt; . If you hit from the browser &lt;a href=&quot;http://localhost:3000/hello&quot;&gt;http://localhost:3000/hello&lt;/a&gt;, you should see &lt;em&gt;Hello, World!&lt;/em&gt; rendered.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-http-request-message&quot;&gt;The HTTP Request Message&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;A HTTP Client talks to HTTP Server via a common protocol that is understandable by the two parties. A sample HTTP request message looks something like&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;GET /hello.html HTTP/1.1
-User-Agent: Mozilla/4.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;compatible&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; MSIE5.01&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Windows NT&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Host: www.sample-server.com
-Accept-Language: en-us
-Accept-Encoding: gzip, deflate
-Connection: Keep-Alive&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To understand more about HTTP Request messages, see references at the end of this article.&lt;/p&gt;
-
-&lt;p&gt;The HTTP Communication happens over a TCP Connection. So we create a TCP connection with the server and try to get response from it. To get a TCP connection I will use &lt;em&gt;netcat&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;netcat&quot;&gt;Netcat&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;netcat&lt;/em&gt; is the utility that is used for just about anything under the sun involving TCP or UDP. It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6.&lt;/p&gt;
-
-&lt;p&gt;The webserver that was created above is listening on port &lt;em&gt;3000&lt;/em&gt; . Lets create a TCP Connection and connect to it using &lt;em&gt;netcat&lt;/em&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;netcat localhost 3000&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The command along with creating a TCP connection, will also open a STDIN. Anything passed in that input stream will reach the server via the connection. Lets see what happens when we provide &lt;em&gt;This is a sample&lt;/em&gt; as input.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/http-requests/bad-request.jpg&quot; data-lightbox=&quot;/static/images/http-requests/bad-request.jpg&quot; data-title=&quot;Bad Request example with netcat&quot;&gt;
-    &lt;img class=&quot;ui huge centered stylish image&quot; src=&quot;/static/images/http-requests/bad-request.jpg&quot; alt=&quot;Bad Request example with netcat&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The input message given is not a valid HTTP message hence server responded with a status code of &lt;em&gt;400&lt;/em&gt; which is for &lt;a href=&quot;https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html&quot;&gt;Bad Request&lt;/a&gt;. And if you closely observe the server logs on flask application, you will see an entry of our last request.&lt;/p&gt;
-
-&lt;p&gt;Since the server is a HTTP Server, so it understands HTTP request. Let’s create one to hit our exposed API endpoint  &lt;em&gt;/hello&lt;/em&gt; .&lt;/p&gt;
-
-&lt;p&gt;The HTTP request message for this request looks something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;GET /hello HTTP/1.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And you should see output like this&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/http-requests/get-request.jpg&quot; data-lightbox=&quot;/static/images/http-requests/get-request.jpg&quot; data-title=&quot;GET Request example with netcat&quot;&gt;
-    &lt;img class=&quot;ui huge centered stylish image&quot; src=&quot;/static/images/http-requests/get-request.jpg&quot; alt=&quot;GET Request example with netcat&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The HTTP Server understands the message sent from the client and it responded back as directed by the source code.&lt;/p&gt;
-
-&lt;h1 id=&quot;complex-requests-and-http-request-messages&quot;&gt;Complex Requests and HTTP Request Messages&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;get-method-with-query-params-and-headers&quot;&gt;GET method with query params and headers&lt;/h3&gt;
-&lt;p&gt;Following method exposes an endpoint which accepts a &lt;a href=&quot;https://en.wikipedia.org/wiki/Query_string&quot;&gt;query parameter&lt;/a&gt; named &lt;em&gt;name&lt;/em&gt;, and returns a response with &lt;em&gt;name&lt;/em&gt; in it.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/user&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Requested for name = &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;http-request-message&quot;&gt;HTTP Request Message&lt;/h4&gt;
-&lt;p&gt;Provide the HTTP request message below when STDIN opens up after you execute &lt;em&gt;netcat&lt;/em&gt; command and connect with the server.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;GET /user?name&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arpit HTTP/1.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;output&quot;&gt;Output&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;/static/images/http-requests/get-request-with-query-params.jpg&quot; data-lightbox=&quot;/static/images/http-requests/get-request-with-query-params.jpg&quot; data-title=&quot;GET Request example with query params using netcat&quot;&gt;
-    &lt;img class=&quot;ui huge centered stylish image&quot; src=&quot;/static/images/http-requests/get-request-with-query-params.jpg&quot; alt=&quot;GET Request example with query params using netcat&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;basic-post-method-example&quot;&gt;Basic POST Method example&lt;/h3&gt;
-&lt;p&gt;Following method accepts form data via HTTP POST method and returns a dummy response with &lt;em&gt;username&lt;/em&gt; and &lt;em&gt;password&lt;/em&gt; in it.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/login&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Login successful for &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;http-request-message-1&quot;&gt;HTTP Request Message&lt;/h4&gt;
-&lt;p&gt;Provide the HTTP request message below when STDIN opens up after you execute &lt;em&gt;netcat&lt;/em&gt; command and connect with the server.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;POST /login HTTP/1.1
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 32
-
-&lt;span class=&quot;nv&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;arpit&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;welcome&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;output-1&quot;&gt;Output&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;/static/images/http-requests/post-request-with-form-data.jpg&quot; data-lightbox=&quot;/static/images/http-requests/post-request-with-form-data.jpg&quot; data-title=&quot;POST Request example with form data using netcat&quot;&gt;
-    &lt;img class=&quot;ui huge centered stylish image&quot; src=&quot;/static/images/http-requests/post-request-with-form-data.jpg&quot; alt=&quot;POST Request example with form data using netcat&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;post-method-with-json-request-body&quot;&gt;POST Method with JSON Request Body&lt;/h3&gt;
-&lt;p&gt;Following method accepts JSON data that contains a field &lt;em&gt;id&lt;/em&gt; with integer value via HTTP POST method and returns a dummy response with &lt;em&gt;id&lt;/em&gt; in it.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/save&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;save_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;user_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Saving user with id = &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;http-request-message-2&quot;&gt;HTTP Request Message&lt;/h4&gt;
-&lt;p&gt;Provide the HTTP request message below when STDIN opens up after you execute &lt;em&gt;netcat&lt;/em&gt; command and connect with the server.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;POST /save HTTP/1.1
-Content-Type: application/json
-Content-Length: 30
-
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;: 1092, &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;Arpit&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;output-2&quot;&gt;Output&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;/static/images/http-requests/post-request-with-json-data.jpg&quot; data-lightbox=&quot;/static/images/http-requests/post-request-with-json-data.jpg&quot; data-title=&quot;POST Request example with json data using netcat&quot;&gt;
-    &lt;img class=&quot;ui huge centered stylish image&quot; src=&quot;/static/images/http-requests/post-request-with-json-data.jpg&quot; alt=&quot;POST Request example with json data using netcat&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;The hard way to hit REST endpoints was not hard at all ;-) Stay curious and dive deep.&lt;/p&gt;
-
-&lt;h1 id=&quot;references&quot;&gt;References:&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html&quot;&gt;HTTP/1.1: HTTP Message&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.tutorialspoint.com/http/http_requests.htm&quot;&gt;HTTP Requests - Tutorialspoint&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.tcpipguide.com/free/t_HTTPRequestMessageFormat.htm&quot;&gt;The TCP/IP Guide - HTTP Request Message Format&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html&quot;&gt;HTTP Status Codes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://linux.die.net/man/1/nc&quot;&gt;Netcat man page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html&quot;&gt;HTTP Methods&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 05 Jul 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html</guid>
-        
-        <category>techie</category>
-        
-        <category>http</category>
-        
-        <category>networking</category>
-        
-        
-        <category>techie</category>
         
       </item>
     
