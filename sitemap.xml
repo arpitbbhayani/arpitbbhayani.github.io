@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/hackerrank/even-odd-query.html</loc>
+<lastmod>2016-07-16T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/hackerrank/summing-the-n-series.html</loc>
 <lastmod>2016-07-15T00:00:00+05:30</lastmod>
 </url>
@@ -1441,6 +1445,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-07-15T22:49:17+05:30</lastmod>
+<lastmod>2016-07-15T23:12:15+05:30</lastmod>
 </url>
 </urlset>
