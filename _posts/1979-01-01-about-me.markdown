@@ -16,7 +16,6 @@ type: dummy
             <a class="active item grey" data-tab="about-me"><i class="user icon"></i>About me</a>
             <a class="item grey" data-tab="education"><i class="student icon"></i>Education</a>
             <a class="item grey" data-tab="career"><i class="bullseye icon"></i>Career</a>
-            <a class="item grey" data-tab="mentor"><i class="child icon"></i>Mentoring</a>
         </div>
 
         <div class="ui active tab" data-tab="about-me">
@@ -27,9 +26,6 @@ type: dummy
         </div>
         <div class="ui tab" data-tab="career">
           {% include about-me-career.html %}
-        </div>
-        <div class="ui tab" data-tab="mentor">
-          {% include about-me-mentor.html %}
         </div>
       </div>
     </div>
