@@ -15,8 +15,9 @@
     },
     "clean": "dist/"
   },
-  "permission": false,
-  "rtl": "No",
+  "permission": 744,
+  "autoInstall": false,
+  "rtl": false,
   "components": [
     "reset",
     "site",
@@ -68,5 +69,5 @@
     "state",
     "visibility"
   ],
-  "version": "2.1.8"
+  "version": "2.2.2"
 }

@@ -139,10 +139,14 @@ pre {
     color: #386E77 !important;
 }
 
+.article-title {
+    font-family: 'Exo 2', sans-serif !important;
+    font-size: 3rem !important;
+    font-weight: bold !important;
+}
+
 .article-content {
-    color: rgba(0,0,0,0.8);
     word-wrap: break-word;
-    font-size: 15px;
     line-height: 1.58;
 }
 
@@ -151,22 +155,12 @@ pre {
 /*           Logo        */
 /*************************/
 
-.tag-line {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #737C7F;
-}
-
 .logo {
     font-family: 'Exo 2', sans-serif;
     font-size: 64px;
     padding: 10px 0;
 
     cursor: pointer;
-}
-
-.logo .tag-line {
-    font-size: 32px;
 }
 
 .logo .icon {
@@ -178,20 +172,17 @@ pre {
 
 .logo .name1 {
     padding: 10px 0;
-    color: #53D1DB;
 }
 
 .logo .name2 {
-    padding: 20px 20px;
-
-    color: #EEE;
-    background-color: #1c242a;
+    color: #ff0000;
+    /*background-color: #1c242a;
     -webkit-border-top-right-radius: 15px;
        -moz-border-radius-topright: 15px;
             border-top-right-radius: 15px;
     -webkit-border-top-left-radius: 15px;
        -moz-border-radius-topleft: 15px;
-            border-top-left-radius: 15px;
+            border-top-left-radius: 15px;*/
 }
 
 .small-logo {
@@ -200,23 +191,17 @@ pre {
     cursor: pointer;
 }
 
-.small-logo .tag-line {
-    font-size: 16px;
-}
-
 .small-logo .name1 {
     padding: 6px 0;
-    color: #27619D;
 }
 
 .small-logo .name2 {
-    padding: 6px 6px;
-    color: #FFFFFF;
-    background-color: #27619D;
+    color: #ff0000;
+    /*background-color: #27619D;
     -webkit-border-top-right-radius: 5px;
        -moz-border-radius-topright: 5px;
             border-top-right-radius: 5px;
     -webkit-border-top-left-radius: 5px;
        -moz-border-radius-topleft: 5px;
-            border-top-left-radius: 5px;
+            border-top-left-radius: 5px;*/
 }

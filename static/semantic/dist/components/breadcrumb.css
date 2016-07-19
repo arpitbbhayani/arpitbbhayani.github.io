@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - Breadcrumb
+ * # Semantic UI 2.2.2 - Breadcrumb
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -37,23 +36,23 @@
 .ui.breadcrumb .divider {
   display: inline-block;
   opacity: 0.7;
-  margin: 0em 0.1875rem 0em;
-  font-size: 0.9375em;
+  margin: 0em 0.16666667rem 0em;
+  font-size: 0.94444444em;
   color: rgba(0, 0, 0, 0.4);
   vertical-align: baseline;
 }
 
 /* Link */
 .ui.breadcrumb a {
-  color: #4183C4;
+  color: #f87c7c;
 }
 .ui.breadcrumb a:hover {
-  color: #1e70bf;
+  color: #ff3d3d;
 }
 
 /* Icon Divider */
 .ui.breadcrumb .icon.divider {
-  font-size: 0.875em;
+  font-size: 0.83333333em;
   vertical-align: baseline;
 }
 
@@ -70,7 +69,7 @@
 /* Loose Coupling */
 .ui.breadcrumb.segment {
   display: inline-block;
-  padding: 0.6875em 1em;
+  padding: 0.72222222em 1em;
 }
 
 
@@ -88,28 +87,28 @@
 *******************************/
 
 .ui.mini.breadcrumb {
-  font-size: 0.6875rem;
+  font-size: 0.72222222rem;
 }
 .ui.tiny.breadcrumb {
-  font-size: 0.875rem;
+  font-size: 0.83333333rem;
 }
 .ui.small.breadcrumb {
-  font-size: 0.9375rem;
+  font-size: 0.94444444rem;
 }
 .ui.breadcrumb {
   font-size: 1rem;
 }
 .ui.large.breadcrumb {
-  font-size: 1.125rem;
+  font-size: 1.16666667rem;
 }
 .ui.big.breadcrumb {
-  font-size: 1.3125rem;
+  font-size: 1.27777778rem;
 }
 .ui.huge.breadcrumb {
-  font-size: 1.4375rem;
+  font-size: 1.44444444rem;
 }
 .ui.massive.breadcrumb {
-  font-size: 1.6875rem;
+  font-size: 1.72222222rem;
 }
 
 

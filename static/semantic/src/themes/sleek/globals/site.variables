@@ -6,11 +6,11 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Roboto';
+@fontName          : 'Source Sans Pro';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont          : 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
@@ -25,10 +25,10 @@
 --------------------*/
 
 /* This is the single variable that controls them all */
-@emSize   : 16px;
+@emSize   : 18px;
 
 /* The size of page text  */
-@fontSize : 16px;
+@fontSize : 18px;
 
 
 /*-------------------
@@ -116,7 +116,7 @@
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.4285em;
-@textColor           : rgba(0, 0, 0, 0.87);
+@textColor           : rgba(51, 51, 51, 0.87);
 
 /*-------------------
       Paragraph
@@ -129,7 +129,7 @@
        Links
 --------------------*/
 
-@linkColor           : #4183C4;
+@linkColor           : #f87c7c;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
@@ -138,10 +138,10 @@
   Highlighted Text
 --------------------*/
 
-@highlightBackground      : #CCE2FF;
+@highlightBackground      : #c8fffc;
 @highlightColor           : @textColor;
 
-@inputHighlightBackground : rgba(100, 100, 100, 0.4);
+@inputHighlightBackground : rgba(0, 0, 0, 0.4);
 @inputHighlightColor      : @textColor;
 
 
@@ -265,10 +265,10 @@
      Alpha Colors
 --------------------*/
 
-@subtleTransparentBlack     : rgba(0, 0, 0, 0.03);
-@transparentBlack           : rgba(0, 0, 0, 0.05);
-@strongTransparentBlack     : rgba(0, 0, 0, 0.10);
-@veryStrongTransparentBlack : rgba(0, 0, 0, 0.15);
+@subtleTransparentBlack     : rgba(51, 51, 51, 0.03);
+@transparentBlack           : rgba(51, 51, 51, 0.05);
+@strongTransparentBlack     : rgba(51, 51, 51, 0.10);
+@veryStrongTransparentBlack : rgba(51, 51, 51, 0.15);
 
 @subtleTransparentWhite     : rgba(255, 255, 255, 0.02);
 @transparentWhite           : rgba(255, 255, 255, 0.08);

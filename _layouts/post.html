@@ -6,20 +6,21 @@ layout: default
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <div class="ui hidden divider"></div>
-            <div class="ui header article-title">
-                <h1>{{ page.title }}</h1>
+            <div class="ui header center aligned">
+                <h1 class="article-title">{{ page.title }}</h1>
             </div>
-            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani</span>
-            <div>
-                <span class="article-publish-date lightGrey">{{page.date | date: '%B %d, %Y'}}</span>
-                <span class="ui right aligned basic segment">
-                    {% for tag in page.tags %}
-                    <a style="font-weight: normal;" href='/tag/{{tag}}.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with {{tag}}" data-variation="tiny">{{tag}}</a>
-                    {% endfor %}
-                </span>
+            <div class="ui center aligned basic fluid segment">
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> {{page.date | date: '%B %d, %Y'}}</span>
+                <div>
+                    <div class="ui center aligned basic fluid segment">
+                        <div class="ui horizontal list">
+                            {% for tag in page.tags %}
+                            <a style="font-weight: normal;" href='/tag/{{tag}}.html' class="ui item article-category" data-content="All {{tag}} posts" data-variation="tiny inverted" data-position="bottom center">{{tag}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ui divider"></div>
         </div>
     </div>
     <div class="row">

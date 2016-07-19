@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - Step
+ * # Semantic UI 2.2.2 - Step
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -16,23 +15,20 @@
 
 .ui.steps {
   display: -webkit-inline-box;
-  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   margin: 1em 0em;
   background: '';
   box-shadow: none;
-  line-height: 1.125em;
-  border-radius: 0.25rem;
+  line-height: 1.16666667em;
+  border-radius: 0.22222222rem;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
 
@@ -54,34 +50,28 @@
 .ui.steps .step {
   position: relative;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   vertical-align: middle;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0em 0em;
-  padding: 1.125em 2em;
+  padding: 1.16666667em 2em;
   background: #FFFFFF;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
   box-shadow: none;
   border-radius: 0em;
   border: none;
@@ -100,8 +90,8 @@
   right: 0%;
   border: medium none;
   background-color: #FFFFFF;
-  width: 1.125em;
-  height: 1.125em;
+  width: 1.16666667em;
+  height: 1.16666667em;
   border-style: solid;
   border-color: rgba(34, 36, 38, 0.15);
   border-width: 0px 1px 1px 0px;
@@ -114,12 +104,12 @@
 /* First Step */
 .ui.steps .step:first-child {
   padding-left: 2em;
-  border-radius: 0.25rem 0em 0em 0.25rem;
+  border-radius: 0.22222222rem 0em 0em 0.22222222rem;
 }
 
 /* Last Step */
 .ui.steps .step:last-child {
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 0.22222222rem 0.22222222rem 0em;
 }
 .ui.steps .step:last-child {
   border-right: none;
@@ -128,7 +118,7 @@
 
 /* Only Step */
 .ui.steps .step:only-child {
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
 }
 
 
@@ -139,8 +129,8 @@
 
 /* Title */
 .ui.steps .step .title {
-  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 1.125em;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1.16666667em;
   font-weight: bold;
 }
 .ui.steps .step > .title {
@@ -150,8 +140,8 @@
 /* Description */
 .ui.steps .step .description {
   font-weight: normal;
-  font-size: 0.9375em;
-  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.94444444em;
+  color: rgba(51, 51, 51, 0.87);
 }
 .ui.steps .step > .description {
   width: 100%;
@@ -170,16 +160,13 @@
 .ui.steps .step > .icon ~ .content {
   display: block;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-  -webkit-align-self: middle;
-      -ms-flex-item-align: middle;
-          align-self: middle;
+  -ms-flex-item-align: middle;
+      align-self: middle;
 }
 .ui.steps .step > .icon ~ .content {
   -webkit-box-flex: 1 0 auto;
-  -webkit-flex-grow: 1 0 auto;
       -ms-flex-positive: 1 0 auto;
           flex-grow: 1 0 auto;
 }
@@ -213,9 +200,8 @@
   position: static;
   text-align: center;
   content: counters(ordered, ".");
-  -webkit-align-self: middle;
-      -ms-flex-item-align: middle;
-          align-self: middle;
+  -ms-flex-item-align: middle;
+      align-self: middle;
   margin-right: 1rem;
   font-size: 2.5em;
   counter-increment: ordered;
@@ -224,9 +210,8 @@
 }
 .ui.ordered.steps .step > * {
   display: block;
-  -webkit-align-self: middle;
-      -ms-flex-item-align: middle;
-          align-self: middle;
+  -ms-flex-item-align: middle;
+      align-self: middle;
 }
 
 /*--------------
@@ -235,36 +220,33 @@
 
 .ui.vertical.steps {
   display: -webkit-inline-box;
-  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: visible;
 }
 .ui.vertical.steps .step {
   -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   border-radius: 0em;
-  padding: 1.125em 2em;
+  padding: 1.16666667em 2em;
   border-right: none;
   border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
 .ui.vertical.steps .step:first-child {
-  padding: 1.125em 2em;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  padding: 1.16666667em 2em;
+  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
 }
 .ui.vertical.steps .step:last-child {
   border-bottom: none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
 }
 .ui.vertical.steps .step:only-child {
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
 }
 
 /* Arrow */
@@ -298,13 +280,11 @@
 @media only screen and (max-width: 767px) {
   .ui.steps {
     display: -webkit-inline-box;
-    display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
     overflow: visible;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -312,18 +292,17 @@
     width: 100% !important;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0em;
-    padding: 1.125em 2em;
+    padding: 1.16666667em 2em;
   }
   .ui.steps .step:first-child {
-    padding: 1.125em 2em;
-    border-radius: 0.25rem 0.25rem 0em 0em;
+    padding: 1.16666667em 2em;
+    border-radius: 0.22222222rem 0.22222222rem 0em 0em;
   }
   .ui.steps .step:last-child {
-    border-radius: 0em 0em 0.25rem 0.25rem;
+    border-radius: 0em 0em 0.22222222rem 0.22222222rem;
   }
   
 /* Arrow */
@@ -376,7 +355,7 @@
   background: #F3F4F5;
 }
 .ui.steps .step.active .title {
-  color: #4183C4;
+  color: #f87c7c;
 }
 .ui.ordered.steps .step.active:before,
 .ui.steps .active.step .icon {
@@ -404,7 +383,7 @@
 .ui.steps a.active.step:hover {
   cursor: pointer;
   background: #DCDDDE;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 
 /* Completed */
@@ -443,13 +422,11 @@
 @media only screen and (max-width: 991px) {
   .ui[class*="tablet stackable"].steps {
     display: -webkit-inline-box;
-    display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
     overflow: visible;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
   }
@@ -458,18 +435,17 @@
   .ui[class*="tablet stackable"].steps .step {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0em;
-    padding: 1.125em 2em;
+    padding: 1.16666667em 2em;
   }
   .ui[class*="tablet stackable"].steps .step:first-child {
-    padding: 1.125em 2em;
-    border-radius: 0.25rem 0.25rem 0em 0em;
+    padding: 1.16666667em 2em;
+    border-radius: 0.22222222rem 0.22222222rem 0em 0em;
   }
   .ui[class*="tablet stackable"].steps .step:last-child {
-    border-radius: 0em 0em 0.25rem 0.25rem;
+    border-radius: 0em 0em 0.22222222rem 0.22222222rem;
   }
   
 /* Arrow */
@@ -497,7 +473,6 @@
 /* Fluid */
 .ui.fluid.steps {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
@@ -513,25 +488,25 @@
   width: calc(100% +  2px ) !important;
   margin: 0em -1px -1px;
   max-width: calc(100% +  2px );
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
 }
 .ui.attached.steps .step:first-child {
-  border-radius: 0.25rem 0em 0em 0em;
+  border-radius: 0.22222222rem 0em 0em 0em;
 }
 .ui.attached.steps .step:last-child {
-  border-radius: 0em 0.25rem 0em 0em;
+  border-radius: 0em 0.22222222rem 0em 0em;
 }
 
 /* Bottom */
 .ui.bottom.attached.steps {
   margin: -1px -1px 0em;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
 }
 .ui.bottom.attached.steps .step:first-child {
-  border-radius: 0em 0em 0em 0.25rem;
+  border-radius: 0em 0em 0em 0.22222222rem;
 }
 .ui.bottom.attached.steps .step:last-child {
-  border-radius: 0em 0em 0.25rem 0em;
+  border-radius: 0em 0em 0.22222222rem 0em;
 }
 
 /*-------------------
@@ -556,9 +531,8 @@
 .ui.six.steps > .step,
 .ui.seven.steps > .step,
 .ui.eight.steps > .step {
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 .ui.one.steps > .step {
   width: 100%;
@@ -589,17 +563,37 @@
        Sizes
 --------------------*/
 
-.ui.small.step,
-.ui.small.steps .step {
-  font-size: 0.9375rem;
+.ui.mini.steps .step,
+.ui.mini.step {
+  font-size: 0.72222222rem;
 }
-.ui.step,
-.ui.steps .step {
+.ui.tiny.steps .step,
+.ui.tiny.step {
+  font-size: 0.83333333rem;
+}
+.ui.small.steps .step,
+.ui.small.step {
+  font-size: 0.94444444rem;
+}
+.ui.steps .step,
+.ui.step {
   font-size: 1rem;
 }
-.ui.large.step,
-.ui.large.steps .step {
-  font-size: 1.125rem;
+.ui.large.steps .step,
+.ui.large.step {
+  font-size: 1.16666667rem;
+}
+.ui.big.steps .step,
+.ui.big.step {
+  font-size: 1.27777778rem;
+}
+.ui.huge.steps .step,
+.ui.huge.step {
+  font-size: 1.44444444rem;
+}
+.ui.massive.steps .step,
+.ui.massive.step {
+  font-size: 1.72222222rem;
 }
 
 

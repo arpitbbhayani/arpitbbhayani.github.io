@@ -12,11 +12,4 @@
         {% include footer.html %}
     </body>
     {% include late_head.html %}
-    <script>
-    {% if page.layout == 'post' %}
-      Cookies.set("IS_POST", "TRUE");
-    {% else %}
-      Cookies.set("IS_POST", "FALSE");
-    {% endif %}
-    </script>
 </html>

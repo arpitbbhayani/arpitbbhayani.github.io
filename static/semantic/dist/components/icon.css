@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - Icon
+ * # Semantic UI 2.2.2 - Icon
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -16,8 +15,8 @@
 
 @font-face {
   font-family: 'Icons';
-  src: url("../themes/default/assets/fonts/icons.eot");
-  src: url("../themes/default/assets/fonts/icons.eot?#iefix") format('embedded-opentype'), url("../themes/default/assets/fonts/icons.woff2") format('woff2'), url("../themes/default/assets/fonts/icons.woff") format('woff'), url("../themes/default/assets/fonts/icons.ttf") format('truetype'), url("../themes/default/assets/fonts/icons.svg#icons") format('svg');
+  src: url("./../themes/default/assets/fonts/icons.eot");
+  src: url("./../themes/default/assets/fonts/icons.eot?#iefix") format('embedded-opentype'), url("./../themes/default/assets/fonts/icons.woff2") format('woff2'), url("./../themes/default/assets/fonts/icons.woff") format('woff'), url("./../themes/default/assets/fonts/icons.ttf") format('truetype'), url("./../themes/default/assets/fonts/icons.svg#icons") format('svg');
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -377,7 +376,7 @@ i.black.icon {
 i.inverted.black.icon {
   color: #545454 !important;
 }
-i.inverted.bordeblack.black.icon,
+i.inverted.bordered.black.icon,
 i.inverted.circular.black.icon {
   background-color: #1B1C1D !important;
   color: #FFFFFF !important;
@@ -390,17 +389,17 @@ i.inverted.circular.black.icon {
 i.mini.icon,
 i.mini.icons {
   line-height: 1;
-  font-size: 0.6875rem;
+  font-size: 0.4em;
 }
 i.tiny.icon,
 i.tiny.icons {
   line-height: 1;
-  font-size: 0.875rem;
+  font-size: 0.5em;
 }
 i.small.icon,
 i.small.icons {
   line-height: 1;
-  font-size: 0.9375em;
+  font-size: 0.94444444em;
 }
 i.icon,
 i.icons {
