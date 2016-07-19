@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/hackerrank/rectangular-game.html</loc>
+<lastmod>2016-07-19T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/hackerrank/even-odd-query.html</loc>
 <lastmod>2016-07-16T00:00:00+05:30</lastmod>
 </url>
@@ -1445,6 +1449,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-07-16T13:32:39+05:30</lastmod>
+<lastmod>2016-07-17T23:27:23+05:30</lastmod>
 </url>
 </urlset>
