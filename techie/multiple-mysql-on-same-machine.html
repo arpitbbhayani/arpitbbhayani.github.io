@@ -27,6 +27,7 @@
   <meta name="description" content="Have multiple MySQL versions running on same server within 5 minutes.">
   <meta name="keywords" content="docker, multiple mysqls one machine, multiple mysql one server, multiple mysql, multiple mysql versions, " />
 
+  <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="stylesheet" href="/static/css/lightbox.css">
@@ -87,13 +88,13 @@
         <p><i>Multiple MySQL versions running on one server</i></p>
       </div>
       <div class="right menu">
-        <div class="item mode-button">
+        <!-- <div class="item mode-button">
           <i class="sun icon"></i>
-        </div>
-        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny">
+        </div> -->
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny inverted" data-position="bottom center">
           <i class="facebook icon"></i>
         </a>
-        <a class="item" href="https://twitter.com/intent/tweet?text=Multiple MySQL versions running on one server&amp;url=http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny">
+        <a class="item" href="https://twitter.com/intent/tweet?text=Multiple MySQL versions running on one server&amp;url=http://arpitbhayani.me/techie/multiple-mysql-on-same-machine.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny inverted" data-position="bottom right">
           <i class="twitter icon"></i>
         </a>
       </div>
@@ -112,9 +113,9 @@
       </a>
       
       <div class="right menu">
-        <div class="item mode-button">
+        <!-- <div class="item mode-button">
           <i class="sun icon"></i>
-        </div>
+        </div> -->
         <div class="ui dropdown item">
           <i class="content icon"></i>
           <div class="menu">
@@ -138,24 +139,25 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <div class="ui hidden divider"></div>
-            <div class="ui header article-title">
-                <h1>Multiple MySQL versions running on one server</h1>
+            <div class="ui header center aligned">
+                <h1 class="article-title">Multiple MySQL versions running on one server</h1>
             </div>
-            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani</span>
-            <div>
-                <span class="article-publish-date lightGrey">May 13, 2016</span>
-                <span class="ui right aligned basic segment">
-                    
-                    <a style="font-weight: normal;" href='/tag/techie.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with techie" data-variation="tiny">techie</a>
-                    
-                    <a style="font-weight: normal;" href='/tag/devops.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with devops" data-variation="tiny">devops</a>
-                    
-                    <a style="font-weight: normal;" href='/tag/database-admin.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with database-admin" data-variation="tiny">database-admin</a>
-                    
-                </span>
+            <div class="ui center aligned basic fluid segment">
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> May 13, 2016</span>
+                <div>
+                    <div class="ui center aligned basic fluid segment">
+                        <div class="ui horizontal list">
+                            
+                            <a style="font-weight: normal;" href='/tag/techie.html' class="ui item article-category" data-content="All techie posts" data-variation="tiny inverted" data-position="bottom center">techie</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/devops.html' class="ui item article-category" data-content="All devops posts" data-variation="tiny inverted" data-position="bottom center">devops</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/database-admin.html' class="ui item article-category" data-content="All database-admin posts" data-variation="tiny inverted" data-position="bottom center">database-admin</a>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ui divider"></div>
         </div>
     </div>
     <div class="row">
@@ -334,8 +336,6 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
     <head>
   <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <link rel="stylesheet" href="/static/css/ux.css">
-  <script src="/static/js/js.cookie.js"></script>
   <script src="/static/semantic/dist/semantic.min.js"></script>
   <script src="/static/js/scrollProgress.js"></script>
   <script src="/static/js/lightbox.js"></script>
@@ -351,9 +351,4 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 </head>
 
-    <script>
-    
-      Cookies.set("IS_POST", "TRUE");
-    
-    </script>
 </html>

@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - Search
+ * # Semantic UI 2.2.2 - Search
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -26,11 +25,11 @@
   font-style: normal;
   font-weight: normal;
   line-height: 1.2142em;
-  padding: 0.5804em 0.875em;
+  padding: 0.50401111em 0.77777778em;
   font-size: 1em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
   box-shadow: 0em 0em 0em 0em transparent inset;
   -webkit-transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
   transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
@@ -58,19 +57,20 @@
   left: 0%;
   -webkit-transform-origin: center top;
           transform-origin: center top;
+  white-space: normal;
   background: #FFFFFF;
   margin-top: 0.5em;
   width: 18em;
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
   box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.08);
   border: 1px solid #D4D4D5;
   z-index: 998;
 }
 .ui.search > .results > :first-child {
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
 }
 .ui.search > .results > :last-child {
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
 }
 
 /*--------------
@@ -82,8 +82,8 @@
   display: block;
   overflow: hidden;
   font-size: 1em;
-  padding: 0.875em 1.125em;
-  color: rgba(0, 0, 0, 0.87);
+  padding: 0.83333333em 1.16666667em;
+  color: rgba(51, 51, 51, 0.87);
   line-height: 1.33;
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
 }
@@ -115,14 +115,14 @@
 }
 .ui.search > .results .result .title {
   margin: -0.14285em 0em 0em;
-  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.85);
 }
 .ui.search > .results .result .description {
   margin-top: 0;
-  font-size: 0.9375em;
+  font-size: 0.94444444em;
   color: rgba(0, 0, 0, 0.4);
 }
 .ui.search > .results .result .price {
@@ -138,15 +138,15 @@
   padding: 1em 1em;
 }
 .ui.search > .results > .message .header {
-  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 .ui.search > .results > .message .description {
   margin-top: 0.25rem;
   font-size: 1em;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 
 /* View All Results */
@@ -154,8 +154,8 @@
   display: block;
   border-top: none;
   background: #F3F4F5;
-  padding: 0.9375em 1em;
-  color: rgba(0, 0, 0, 0.87);
+  padding: 0.94444444em 1em;
+  color: rgba(51, 51, 51, 0.87);
   font-weight: bold;
   text-align: center;
 }
@@ -185,9 +185,9 @@
   content: '';
   top: 50%;
   left: 50%;
-  margin: -0.65625em 0em 0em -0.65625em;
-  width: 1.3125em;
-  height: 1.3125em;
+  margin: -0.63888889em 0em 0em -0.63888889em;
+  width: 1.27777778em;
+  height: 1.27777778em;
   border-radius: 500rem;
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
@@ -196,9 +196,9 @@
   content: '';
   top: 50%;
   left: 50%;
-  margin: -0.65625em 0em 0em -0.65625em;
-  width: 1.3125em;
-  height: 1.3125em;
+  margin: -0.63888889em 0em 0em -0.63888889em;
+  width: 1.27777778em;
+  height: 1.27777778em;
   -webkit-animation: button-spin 0.6s linear;
           animation: button-spin 0.6s linear;
   -webkit-animation-iteration-count: infinite;
@@ -230,7 +230,7 @@
   background: #F3F4F5;
 }
 .ui.category.search > .results .category.active > .name {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 .ui.search > .results .result.active,
 .ui.category.search > .results .category .result.active {
@@ -257,7 +257,7 @@
 ---------------*/
 
 .ui.search.selection .prompt {
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
 }
 
 /* Remove input */
@@ -309,10 +309,10 @@
 
 /* First / Last */
 .ui.category.search > .results .category:first-child .name + .result {
-  border-radius: 0em 0.25rem 0em 0em;
+  border-radius: 0em 0.22222222rem 0em 0em;
 }
 .ui.category.search > .results .category:last-child .result:last-child {
-  border-radius: 0em 0em 0.25rem 0em;
+  border-radius: 0em 0em 0.22222222rem 0em;
 }
 
 /* Category Result */
@@ -323,7 +323,7 @@
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
   -webkit-transition: background 0.1s ease, border-color 0.1s ease;
   transition: background 0.1s ease, border-color 0.1s ease;
-  padding: 0.875em 1.125em;
+  padding: 0.83333333em 1.16666667em;
 }
 .ui.category.search > .results .category:last-child .result:last-child {
   border-bottom: none;
@@ -333,7 +333,7 @@
 .ui.category.search > .results .category > .name {
   width: 100px;
   background: transparent;
-  font-family: 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1em;
   float: 1em;
   float: left;
@@ -374,25 +374,25 @@
 ---------------*/
 
 .ui.mini.search {
-  font-size: 0.6875em;
+  font-size: 0.72222222em;
 }
 .ui.small.search {
-  font-size: 0.9375em;
+  font-size: 0.94444444em;
 }
 .ui.search {
   font-size: 1em;
 }
 .ui.large.search {
-  font-size: 1.125em;
+  font-size: 1.16666667em;
 }
 .ui.big.search {
-  font-size: 1.3125em;
+  font-size: 1.27777778em;
 }
 .ui.huge.search {
-  font-size: 1.4375em;
+  font-size: 1.44444444em;
 }
 .ui.massive.search {
-  font-size: 1.6875em;
+  font-size: 1.72222222em;
 }
 
 

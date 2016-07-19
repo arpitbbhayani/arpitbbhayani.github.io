@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - Segment
+ * # Semantic UI 2.2.2 - Segment
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -20,7 +19,7 @@
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   margin: 1rem 0em;
   padding: 1em 1em;
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
 .ui.segment:first-child {
@@ -82,7 +81,7 @@
 }
 .ui.grid.segment {
   margin: 1rem 0em;
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
 }
 
 /* Table */
@@ -179,7 +178,7 @@
   bottom: -3px;
   left: 0%;
   border-top: 1px solid rgba(34, 36, 38, 0.15);
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(51, 51, 51, 0.03);
   width: 100%;
   height: 6px;
   visibility: visible;
@@ -201,7 +200,7 @@
 .ui.stacked.inverted.segments:after,
 .ui.stacked.inverted.segment:before,
 .ui.stacked.inverted.segment:after {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(51, 51, 51, 0.03);
   border-top: 1px solid rgba(34, 36, 38, 0.35);
 }
 
@@ -227,7 +226,6 @@
 /* Compact Group */
 .ui.compact.segments {
   display: -webkit-inline-box;
-  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
@@ -235,7 +233,6 @@
 .ui.segments .compact.segment {
   display: block;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
 }
@@ -271,14 +268,13 @@
 .ui.segments {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
   margin: 1rem 0em;
   border: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
 }
 .ui.segments:first-child {
   margin-top: 0em;
@@ -304,7 +300,7 @@
   bottom: 0px;
   margin-bottom: 0em;
   top: 0px;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
 }
 
 /* Bottom */
@@ -314,7 +310,12 @@
   margin-top: 0em;
   margin-bottom: 0em;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
+}
+
+/* Only */
+.ui.segments:not(.horizontal) > .segment:only-child {
+  border-radius: 0.22222222rem;
 }
 
 /* Nested Group */
@@ -332,12 +333,10 @@
 /* Horizontal Group */
 .ui.horizontal.segments {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: transparent;
@@ -346,7 +345,7 @@
   background-color: #FFFFFF;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   margin: 1rem 0em;
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
 
@@ -363,7 +362,6 @@
 /* Horizontal Segment */
 .ui.horizontal.segments > .segment {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
           flex: 1 1 auto;
   -ms-flex: 1 1 0px;
   
@@ -421,7 +419,7 @@
   background: rgba(255, 255, 255, 0.8);
   width: 100%;
   height: 100%;
-  border-radius: 0.25rem;
+  border-radius: 0.22222222rem;
   z-index: 100;
 }
 .ui.loading.segment:after {
@@ -660,7 +658,7 @@
 
 /* Nested */
 .ui.inverted.segment .segment {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 .ui.inverted.segment .inverted.segment {
   color: rgba(255, 255, 255, 0.9);
@@ -714,7 +712,7 @@
   box-shadow: none;
   border: 1px solid #D4D4D5;
 }
-.ui.attached + .ui.attached.segment:not(.top) {
+.ui.attached:not(.message) + .ui.attached.segment:not(.top) {
   border-top: none;
 }
 
@@ -724,7 +722,7 @@
   margin-bottom: 0em;
   top: 0px;
   margin-top: 1rem;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
 }
 .ui.segment[class*="top attached"]:first-child {
   margin-top: 0em;
@@ -737,10 +735,47 @@
   top: 0px;
   margin-bottom: 1rem;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
 }
 .ui.segment[class*="bottom attached"]:last-child {
   margin-bottom: 0em;
+}
+
+/*-------------------
+        Size
+--------------------*/
+
+.ui.mini.segments .segment,
+.ui.mini.segment {
+  font-size: 0.72222222rem;
+}
+.ui.tiny.segments .segment,
+.ui.tiny.segment {
+  font-size: 0.83333333rem;
+}
+.ui.small.segments .segment,
+.ui.small.segment {
+  font-size: 0.94444444rem;
+}
+.ui.segments .segment,
+.ui.segment {
+  font-size: 1rem;
+}
+.ui.large.segments .segment,
+.ui.large.segment {
+  font-size: 1.16666667rem;
+}
+.ui.big.segments .segment,
+.ui.big.segment {
+  font-size: 1.27777778rem;
+}
+.ui.huge.segments .segment,
+.ui.huge.segment {
+  font-size: 1.44444444rem;
+}
+.ui.massive.segments .segment,
+.ui.massive.segment {
+  font-size: 1.72222222rem;
 }
 
 

@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - List
+ * # Semantic UI 2.2.2 - List
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -49,8 +48,8 @@ ol.ui.list li,
   table-layout: fixed;
   list-style-type: none;
   list-style-position: outside;
-  padding: 0.1875em 0em;
-  line-height: 1.125em;
+  padding: 0.16666667em 0em;
+  line-height: 1.16666667em;
 }
 ul.ui.list > li:first-child:after,
 ol.ui.list > li:first-child:after,
@@ -88,7 +87,7 @@ ol.ui.list ol,
 ul.ui.list ul li,
 ol.ui.list ol li,
 .ui.list .list > .item {
-  padding: 0.125em 0em;
+  padding: 0.11111111em 0em;
   line-height: inherit;
 }
 
@@ -97,8 +96,8 @@ ol.ui.list ol li,
 .ui.list > .item > i.icon {
   display: table-cell;
   margin: 0em;
-  padding-top: 0.0625em;
-  padding-right: 0.25em;
+  padding-top: 0.08333333em;
+  padding-right: 0.22222222em;
   vertical-align: top;
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
@@ -135,7 +134,7 @@ ol.ui.list ol li,
 /* Content */
 .ui.list .list > .item > .content,
 .ui.list > .item > .content {
-  line-height: 1.125em;
+  line-height: 1.16666667em;
 }
 .ui.list .list > .item > .image + .content,
 .ui.list .list > .item > .icon + .content,
@@ -160,9 +159,9 @@ ol.ui.list ol li,
 .ui.list > .item .header {
   display: block;
   margin: 0em;
-  font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 
 /* Description */
@@ -182,11 +181,11 @@ ol.ui.list ol li,
 .ui.list .list > a.item,
 .ui.list > a.item {
   cursor: pointer;
-  color: #4183C4;
+  color: #f87c7c;
 }
 .ui.list .list > a.item:hover,
 .ui.list > a.item:hover {
-  color: #1e70bf;
+  color: #ff3d3d;
 }
 
 /* Linked Item Icons */
@@ -199,11 +198,11 @@ ol.ui.list ol li,
 .ui.list .list > .item a.header,
 .ui.list > .item a.header {
   cursor: pointer;
-  color: #4183C4 !important;
+  color: #f87c7c !important;
 }
 .ui.list .list > .item a.header:hover,
 .ui.list > .item a.header:hover {
-  color: #1e70bf !important;
+  color: #ff3d3d !important;
 }
 
 /* Floated Content */
@@ -236,8 +235,8 @@ ol.ui.list ol li,
   background-color: transparent;
   list-style-type: none;
   list-style-position: outside;
-  padding: 0.1875em 0em;
-  line-height: 1.125em;
+  padding: 0.16666667em 0em;
+  line-height: 1.16666667em;
 }
 .ui.menu .ui.list .list > .item:before,
 .ui.menu .ui.list > .item:before {
@@ -292,8 +291,8 @@ ol.ui.list ol li,
 /* Padding on all elements */
 .ui.horizontal.list > .item:first-child,
 .ui.horizontal.list > .item:last-child {
-  padding-top: 0.1875em;
-  padding-bottom: 0.1875em;
+  padding-top: 0.16666667em;
+  padding-bottom: 0.16666667em;
 }
 
 /* Horizontal List */
@@ -333,7 +332,7 @@ ol.ui.list ol li,
 
 .ui.list .list > a.item:hover .icon,
 .ui.list > a.item:hover .icon {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 
 
@@ -367,7 +366,7 @@ ol.ui.list ol li,
 }
 .ui.inverted.list .list > a.item:hover,
 .ui.inverted.list > a.item:hover {
-  color: #1e70bf;
+  color: #ff3d3d;
 }
 
 /* Linking Content */
@@ -375,7 +374,7 @@ ol.ui.list ol li,
   color: rgba(255, 255, 255, 0.9) !important;
 }
 .ui.inverted.list .item a:not(.ui):hover {
-  color: #1e70bf !important;
+  color: #ff3d3d !important;
 }
 
 /*-------------------
@@ -462,17 +461,17 @@ ol.ui.list ol li,
 }
 .ui.selection.list.list > .item:hover,
 .ui.selection.list > .item:hover {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(51, 51, 51, 0.03);
   color: rgba(0, 0, 0, 0.8);
 }
 .ui.selection.list .list > .item:active,
 .ui.selection.list > .item:active {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(51, 51, 51, 0.05);
   color: rgba(0, 0, 0, 0.9);
 }
 .ui.selection.list .list > .item.active,
 .ui.selection.list > .item.active {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(51, 51, 51, 0.05);
   color: rgba(0, 0, 0, 0.95);
 }
 
@@ -557,11 +556,17 @@ ul.ui.list li:before,
   position: absolute;
   top: auto;
   left: auto;
+  font-weight: normal;
   margin-left: -1.25rem;
   content: '•';
   opacity: 1;
   color: inherit;
   vertical-align: top;
+}
+ul.ui.list li:before,
+.ui.bulleted.list .list > a.item:before,
+.ui.bulleted.list > a.item:before {
+  color: rgba(51, 51, 51, 0.87);
 }
 ul.ui.list ul,
 .ui.bulleted.list .list {
@@ -583,7 +588,7 @@ ul.ui.horizontal.bulleted.list li:first-child,
 }
 ul.ui.horizontal.bulleted.list li::before,
 .ui.horizontal.bulleted.list > .item::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
 }
 ul.ui.horizontal.bulleted.list li:first-child::before,
 .ui.horizontal.bulleted.list > .item:first-child::before {
@@ -623,7 +628,7 @@ ol.ui.list li:before,
   counter-increment: ordered;
   content: counters(ordered, ".") " ";
   text-align: right;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(51, 51, 51, 0.87);
   vertical-align: middle;
   opacity: 0.8;
 }
@@ -708,7 +713,7 @@ ol.ui.horizontal.list li:before,
 .ui.divided.ordered.list .item .list {
   margin-left: 0em;
   margin-right: 0em;
-  padding-bottom: 0.1875em;
+  padding-bottom: 0.16666667em;
 }
 .ui.divided.ordered.list .item .list > .item {
   padding-left: 1em;
@@ -725,12 +730,16 @@ ol.ui.horizontal.list li:before,
 .ui.divided.horizontal.list {
   margin-left: 0em;
 }
+.ui.divided.horizontal.list > .item:not(:first-child) {
+  padding-left: 0.5em;
+}
+.ui.divided.horizontal.list > .item:not(:last-child) {
+  padding-right: 0.5em;
+}
 .ui.divided.horizontal.list > .item {
   border-top: none;
   border-left: 1px solid rgba(34, 36, 38, 0.15);
   margin: 0em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
   line-height: 0.6;
 }
 .ui.horizontal.divided.list > .item:first-child {
@@ -761,8 +770,8 @@ ol.ui.horizontal.list li:before,
 /* Padding on all elements */
 .ui.celled.list > .item:first-child,
 .ui.celled.list > .item:last-child {
-  padding-top: 0.1875em;
-  padding-bottom: 0.1875em;
+  padding-top: 0.16666667em;
+  padding-bottom: 0.16666667em;
 }
 
 /* Sub Menu */
@@ -784,7 +793,7 @@ ol.ui.horizontal.list li:before,
 .ui.celled.bulleted.list .item .list {
   margin-left: -1.25rem;
   margin-right: -1.25rem;
-  padding-bottom: 0.1875em;
+  padding-bottom: 0.16666667em;
 }
 
 /* Celled Ordered */
@@ -798,7 +807,7 @@ ol.ui.horizontal.list li:before,
 .ui.celled.ordered.list .item .list {
   margin-left: 0em;
   margin-right: 0em;
-  padding-bottom: 0.1875em;
+  padding-bottom: 0.16666667em;
 }
 .ui.celled.ordered.list .list > .item {
   padding-left: 1em;
@@ -837,31 +846,34 @@ ol.ui.horizontal.list li:before,
        Relaxed
 --------------------*/
 
-.ui.relaxed.list:not(.horizontal) > .item {
-  padding-top: 0.375em;
-  padding-bottom: 0.375em;
+.ui.relaxed.list:not(.horizontal) > .item:not(:first-child) {
+  padding-top: 0.33333333em;
 }
-.ui.relaxed.list:not(.horizontal) .list > .item {
-  padding-top: 0.1875em;
-  padding-bottom: 0.1875em;
+.ui.relaxed.list:not(.horizontal) > .item:not(:last-child) {
+  padding-bottom: 0.33333333em;
 }
-.ui.horizontal.relaxed.list > .item {
+.ui.horizontal.relaxed.list .list > .item:not(:first-child),
+.ui.horizontal.relaxed.list > .item:not(:first-child) {
   padding-left: 1rem;
+}
+.ui.horizontal.relaxed.list .list > .item:not(:last-child),
+.ui.horizontal.relaxed.list > .item:not(:last-child) {
   padding-right: 1rem;
 }
 
 /* Very Relaxed */
-.ui[class*="very relaxed"].list:not(.horizontal) > .item {
-  padding-top: 0.75em;
-  padding-bottom: 0.75em;
+.ui[class*="very relaxed"].list:not(.horizontal) > .item:not(:first-child) {
+  padding-top: 0.66666667em;
 }
-.ui[class*="very relaxed"].list:not(.horizontal) .list > .item {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+.ui[class*="very relaxed"].list:not(.horizontal) > .item:not(:last-child) {
+  padding-bottom: 0.66666667em;
 }
-.ui.horizontal[class*="very relaxed"].list .list > .item,
-.ui.horizontal[class*="very relaxed"].list > .item {
+.ui.horizontal[class*="very relaxed"].list .list > .item:not(:first-child),
+.ui.horizontal[class*="very relaxed"].list > .item:not(:first-child) {
   padding-left: 1.5rem;
+}
+.ui.horizontal[class*="very relaxed"].list .list > .item:not(:last-child),
+.ui.horizontal[class*="very relaxed"].list > .item:not(:last-child) {
   padding-right: 1.5rem;
 }
 
@@ -870,40 +882,40 @@ ol.ui.horizontal.list li:before,
 --------------------*/
 
 .ui.mini.list {
-  font-size: 0.6875em;
+  font-size: 0.72222222em;
 }
 .ui.tiny.list {
-  font-size: 0.875em;
+  font-size: 0.83333333em;
 }
 .ui.small.list {
-  font-size: 0.9375em;
+  font-size: 0.94444444em;
 }
 .ui.list {
   font-size: 1em;
 }
 .ui.large.list {
-  font-size: 1.125em;
+  font-size: 1.16666667em;
 }
 .ui.big.list {
-  font-size: 1.3125em;
+  font-size: 1.27777778em;
 }
 .ui.huge.list {
-  font-size: 1.4375em;
+  font-size: 1.44444444em;
 }
 .ui.massive.list {
-  font-size: 1.6875em;
+  font-size: 1.72222222em;
 }
 .ui.mini.horizontal.list .list > .item,
 .ui.mini.horizontal.list > .item {
-  font-size: 0.6875rem;
+  font-size: 0.72222222rem;
 }
 .ui.tiny.horizontal.list .list > .item,
 .ui.tiny.horizontal.list > .item {
-  font-size: 0.875rem;
+  font-size: 0.83333333rem;
 }
 .ui.small.horizontal.list .list > .item,
 .ui.small.horizontal.list > .item {
-  font-size: 0.9375rem;
+  font-size: 0.94444444rem;
 }
 .ui.horizontal.list .list > .item,
 .ui.horizontal.list > .item {
@@ -911,19 +923,19 @@ ol.ui.horizontal.list li:before,
 }
 .ui.large.horizontal.list .list > .item,
 .ui.large.horizontal.list > .item {
-  font-size: 1.125rem;
+  font-size: 1.16666667rem;
 }
 .ui.big.horizontal.list .list > .item,
 .ui.big.horizontal.list > .item {
-  font-size: 1.3125rem;
+  font-size: 1.27777778rem;
 }
 .ui.huge.horizontal.list .list > .item,
 .ui.huge.horizontal.list > .item {
-  font-size: 1.4375rem;
+  font-size: 1.44444444rem;
 }
 .ui.massive.horizontal.list .list > .item,
 .ui.massive.horizontal.list > .item {
-  font-size: 1.6875rem;
+  font-size: 1.72222222rem;
 }
 
 

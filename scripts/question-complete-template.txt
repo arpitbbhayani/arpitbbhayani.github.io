@@ -27,6 +27,7 @@
   <meta name="description" content="Here is the solution for programming question $REPLACE_QUESTION_DISPLAY_TEXT on $REPLACE_SITENAME">
   <meta name="keywords" content="solution, source code, programming, $REPLACE_SITENAME, $REPLACE_QUESTION_DISPLAY_TEXT Solution, " />
 
+  <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="stylesheet" href="/static/css/lightbox.css">
@@ -150,22 +151,23 @@
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            <div class="ui hidden divider"></div>
-            <div class="ui header article-title">
-                <h1>$REPLACE_SITENAME_CAPS $REPLACE_QUESTION_CODE Solution</h1>
+            <div class="ui header center aligned">
+                <h1 class="article-title">$REPLACE_SITENAME_CAPS $REPLACE_QUESTION_CODE Solution</h1>
             </div>
-            <img style="margin-bottom: 10px;" class="ui middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani</span>
-            <div>
-                <span class="article-publish-date lightGrey"></span>
-                <span class="ui right aligned basic segment">
-                    
-                    <a style="font-weight: normal;" href='/tag/competitive-programming.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with competitive-programming" data-variation="tiny">competitive-programming</a>
-                    
-                    <a style="font-weight: normal;" href='/tag/programming.html' class="article-category ui basic inverted grey label" data-content="See all posts tagged with programming" data-variation="tiny">programming</a>
-                    
-                </span>
+            <div class="ui center aligned basic fluid segment">
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> </span>
+                <div>
+                    <div class="ui center aligned basic fluid segment">
+                        <div class="ui horizontal list">
+                            
+                            <a style="font-weight: normal;" href='/tag/competitive-programming.html' class="ui item article-category" data-content="All competitive-programming posts" data-variation="tiny inverted" data-position="bottom center">competitive-programming</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/programming.html' class="ui item article-category" data-content="All programming posts" data-variation="tiny inverted" data-position="bottom center">programming</a>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ui divider"></div>
         </div>
     </div>
     <div class="row">
@@ -253,8 +255,6 @@
     <head>
   <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <link rel="stylesheet" href="/static/css/ux.css">
-  <script src="/static/js/js.cookie.js"></script>
   <script src="/static/semantic/dist/semantic.min.js"></script>
   <script src="/static/js/scrollProgress.js"></script>
   <script src="/static/js/lightbox.js"></script>
@@ -270,9 +270,4 @@
 
 </head>
 
-    <script>
-    
-      Cookies.set("IS_POST", "FALSE");
-    
-    </script>
 </html>

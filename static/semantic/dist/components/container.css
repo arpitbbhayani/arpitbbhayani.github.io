@@ -1,9 +1,8 @@
 /*!
- * # Semantic UI 2.1.8 - Container
+ * # Semantic UI 2.2.2 - Container
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -42,54 +41,54 @@
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .ui.container {
-    width: 719px;
+    width: 715px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   .ui.grid.container {
-    width: calc( 719px  +  2rem ) !important;
+    width: calc( 715px  +  2rem ) !important;
   }
   .ui.relaxed.grid.container {
-    width: calc( 719px  +  3rem ) !important;
+    width: calc( 715px  +  3rem ) !important;
   }
   .ui.very.relaxed.grid.container {
-    width: calc( 719px  +  5rem ) !important;
+    width: calc( 715px  +  5rem ) !important;
   }
 }
 
 /* Small Monitor */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .ui.container {
-    width: 927px;
+    width: 921px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   .ui.grid.container {
-    width: calc( 927px  +  2rem ) !important;
+    width: calc( 921px  +  2rem ) !important;
   }
   .ui.relaxed.grid.container {
-    width: calc( 927px  +  3rem ) !important;
+    width: calc( 921px  +  3rem ) !important;
   }
   .ui.very.relaxed.grid.container {
-    width: calc( 927px  +  5rem ) !important;
+    width: calc( 921px  +  5rem ) !important;
   }
 }
 
 /* Large Monitor */
 @media only screen and (min-width: 1200px) {
   .ui.container {
-    width: 1119px;
+    width: 1111px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   .ui.grid.container {
-    width: calc( 1119px  +  2rem ) !important;
+    width: calc( 1111px  +  2rem ) !important;
   }
   .ui.relaxed.grid.container {
-    width: calc( 1119px  +  3rem ) !important;
+    width: calc( 1111px  +  3rem ) !important;
   }
   .ui.very.relaxed.grid.container {
-    width: calc( 1119px  +  5rem ) !important;
+    width: calc( 1111px  +  5rem ) !important;
   }
 }
 
@@ -101,12 +100,12 @@
 
 /* Text Container */
 .ui.text.container {
-  font-family: 'Roboto Slab', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   max-width: 700px !important;
   line-height: 1.5;
 }
 .ui.text.container {
-  font-size: 1.125rem;
+  font-size: 1.16666667rem;
 }
 
 /* Fluid */
