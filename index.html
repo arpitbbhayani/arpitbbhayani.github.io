@@ -147,49 +147,7 @@
 
         <div style="padding-bottom: 50px; padding-top: 10px;">
             <div class="ui section hidden divider"></div>
-            <div id="particles" style="width: 100%;height: 300px;overflow: hidden;">
-  <div class="intro" style="position: absolute;
-  left: 0;
-  top: 150px;
-  padding: 0 20px;
-  width: 100%;
-  text-align: center;">
-    <style>
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Just+Me+Again+Down+Here);
-.shouldbe {border-bottom:2px solid white;font-family: 'Just Me Again Down Here', cursive; padding:0 10px; font-size:48px !important; font-weight: normal !important;}
-</style>
-
-<script>
-var index = 0;
-var wordlist = ['I am a programmer', 'I write tech blogs', 'I write science articles'],
-randomWordInt;
-function changeWord() {
-    randomWordInt = setInterval(randomWord, 3000);
-}
-function randomWord() {
-    index  = index + 1;
-    index = index % wordlist.length;
-    var i = index;
-    var shouldBe = wordlist[i];
-    $('.shouldbe').fadeOut('fast', function(){
-        $('.shouldbe').text(shouldBe);
-    });
-    $('.shouldbe').fadeIn('fast');
-}
-changeWord();
-</script>
-
-<div style="padding-top: 35px; margin-bottom: 35px; height: 100px;">
-    <div class="ui large header center aligned" style="line-height: 80px; color: #27619D;">
-        <span class="shouldbe">I am a programmer</span>.
-    </div>
-</div>
-
-  </div>
-</div>
-
-
-<div class="ui one column very padded grid center aligned">
+            <div class="ui one column very padded grid center aligned">
   <div class="ui row">
     <div class="mega-tagline">
       <i class="large quote left icon grey"></i><span>I code when I breathe</span><i class="large quote right icon grey"></i>
@@ -267,8 +225,8 @@ changeWord();
   </div>
   <div class="row">
       <div class="column center aligned">
-          Proudly hosted on <a href="https://github.com/arpitbbhayani/arpitbhayani.me">GitHub</a>.<br/>
-          Designed and coded with <i class="heart red icon"></i> by <a class="" href="/about-me.html">myself</a>.
+          Proudly hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">GitHub</a>.<br/>
+          Designed and coded with <i class="heart red icon"></i> by <a class="" href="/about-me.html">me</a>.
       </div>
   </div>
 </footer>
@@ -276,27 +234,15 @@ changeWord();
     </body>
     <head>
   <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  
   <script src="/static/semantic/dist/semantic.min.js"></script>
   <script src="/static/js/scrollProgress.js"></script>
   <script src="/static/js/lightbox.js"></script>
   <script src="/static/js/index.js"></script>
 
-  
-  <script src="/static/js/particleground.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    $('#particles').particleground({
-      // dotColor: 'rgba(245, 107, 107, 0.33)',
-      // lineColor: 'rgba(245, 107, 107, 0.33)'
-      dotColor: '#BBB',
-      lineColor: '#BBB'
-    });
-    $('.intro').css({
-      'margin-top': -($('.intro').height() / 2)
-    });
-  });
-  </script>
+
   
 
 </head>
