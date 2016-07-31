@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/hackerrank/cavity-map.html</loc>
+<lastmod>2016-07-31T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/hackerrank/utopian-tree.html</loc>
 <lastmod>2016-07-30T00:00:00+05:30</lastmod>
 </url>
@@ -1557,6 +1561,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-07-30T17:46:37+05:30</lastmod>
+<lastmod>2016-07-30T18:01:44+05:30</lastmod>
 </url>
 </urlset>
