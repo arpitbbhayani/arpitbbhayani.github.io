@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/hackerrank/maxsubarray.html</loc>
+<lastmod>2016-08-03T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/hackerrank/manasa-and-stones.html</loc>
 <lastmod>2016-08-03T00:00:00+05:30</lastmod>
 </url>
@@ -1585,6 +1589,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-08-03T09:00:24+05:30</lastmod>
+<lastmod>2016-08-03T09:08:49+05:30</lastmod>
 </url>
 </urlset>
