@@ -4,13 +4,13 @@ comments: true
 img: https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true
 layout: post
 seo:
-  description: Here is the solution for programming question Day 0: Hello, World. on hackerrank
+  description: Here is the solution for programming question Day 0 - Hello, World. on hackerrank
   tags:
   - solution
   - source code
   - programming
   - hackerrank
-  - Day 0: Hello, World. Solution
+  - Day 0 - Hello, World. Solution
 tags:
 - competitive-programming
 - programming
