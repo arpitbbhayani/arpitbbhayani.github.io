@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/hackerrank/maximum-element.html</loc>
+<lastmod>2016-08-25T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/hackerrank/tree-top-view.html</loc>
 <lastmod>2016-08-24T00:00:00+05:30</lastmod>
 </url>
@@ -1797,6 +1801,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-08-24T20:36:02+05:30</lastmod>
+<lastmod>2016-08-24T21:05:02+05:30</lastmod>
 </url>
 </urlset>
