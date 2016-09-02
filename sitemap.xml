@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/leetcode/reverse-linked-list.html</loc>
+<lastmod>2016-09-02T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/leetcode/palindrome-linked-list.html</loc>
 <lastmod>2016-09-02T00:00:00+05:30</lastmod>
 </url>
@@ -1837,6 +1841,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-09-02T23:01:48+05:30</lastmod>
+<lastmod>2016-09-02T23:53:41+05:30</lastmod>
 </url>
 </urlset>
