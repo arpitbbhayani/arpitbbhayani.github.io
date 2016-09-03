@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/leetcode/validate-binary-search-tree.html</loc>
+<lastmod>2016-09-03T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/leetcode/unique-binary-search-trees.html</loc>
 <lastmod>2016-09-03T00:00:00+05:30</lastmod>
 </url>
@@ -1873,6 +1877,6 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-09-03T18:22:23+05:30</lastmod>
+<lastmod>2016-09-03T18:49:42+05:30</lastmod>
 </url>
 </urlset>
