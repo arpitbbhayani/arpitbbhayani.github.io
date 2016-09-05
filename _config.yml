@@ -12,7 +12,7 @@ description: I am a coder, developer, designer, thinker, data scientist and phys
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arpitbhayani.me" # the base hostname & protocol for your site
 img: http://arpitbhayani.me/static/images/arpit.jpg
-keywords: blog, computer science, physics, competitive programming, open source, quora widget
+keywords: blog, computer science, physics, competitive programming
 
 permalink: /:categories/:title.html
 highlighter: pygments
