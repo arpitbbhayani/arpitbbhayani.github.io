@@ -1,0 +1,97 @@
+---
+categories: leetcode
+comments: true
+img: https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true
+layout: post
+seo:
+  description: Here is the solution for programming question Two Sum on leetcode
+  tags:
+  - solution
+  - source code
+  - programming
+  - leetcode
+  - Two Sum Solution
+tags:
+- competitive-programming
+- programming
+title: LEETCODE two-sum Solution
+---
+The correct, optimal and working solution for programming question [two-sum](https://leetcode.com/problems/two-sum/) on leetcode
+
+<div class="ui secondary pointing large menu">
+  <a class="grey item" data-tab="problem-statement">
+    Problem Statement
+  </a>
+  <a class="active item grey" data-tab="solution">
+    Solution
+  </a>
+</div>
+<div class="ui bottom attached tab" data-tab="problem-statement">
+    <iframe src="https://leetcode.com/problems/two-sum/" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
+</div>
+<div class="ui bottom attached active tab" data-tab="solution">
+{% highlight cpp %}
+/*
+ *  Author: Arpit Bhayani
+ *  http://arpitbhayani.me
+ */
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <climits>
+#include <deque>
+#include <iostream>
+#include <list>
+#include <limits>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+
+#define ll long long
+
+#define MIN(a, b) a < b ? a : b
+#define MAX(a, b) a > b ? a : b
+
+using namespace std;
+
+int readline(char *str) {
+    int i = 0;
+    char ch;
+    while((ch = getchar()) != '\n') {
+        str[i++] = ch;
+    }
+    str[i] = '\0';
+    return i;
+}
+
+int * twoSum(int* nums, int numsSize, int target) {
+    int * ans = (int *) malloc(2 * sizeof(int));
+    for(int i = 0 ; i < numsSize; i++) {
+        for(int j = i + 1; j < numsSize; j++) {
+            if(nums[i] + nums[j] == target) {
+                ans[0] = i;
+                ans[1] = j;
+            }
+        }
+    }
+    return ans;
+}
+
+int main(int argc, char *argv[]) {
+    int * arr = (int *) malloc(4 * sizeof(int));
+
+    arr[0] = 2;
+    arr[1] = 7;
+    arr[2] = 11;
+    arr[3] = 15;
+
+    int * t = twoSum(arr, 4, 9);
+    printf("%d %d\n", t[0], t[1]);
+
+    return 0;
+}
+
+{% endhighlight %}
+</div>
