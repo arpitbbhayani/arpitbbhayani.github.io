@@ -6,13 +6,7 @@ type: dummy
 ---
 
 
-<div class="ui centered two column grid">
-    <div class="column">
-        <div class="ui hidden divider"></div>
-        <div class="ui center aligned basic segment">
-            <img class="stylish image ui large centered" src='/static/images/arpit.jpg'>
-        </div>
-    </div>
+<div class="ui column grid">
     <div class="column">
         <div class="ui basic padded segment">
             <div class="ui header large">Disclaimer</div>
