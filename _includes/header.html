@@ -11,22 +11,8 @@
       </a>
       {% if page.layout != 'post' %}
       <div class="right menu">
-        <div class="ui dropdown item">
-          <i class="ellipsis vertical icon"></i>Blogs<i class="dropdown icon"></i>
-          <div class="menu">
-            <a class="item" href="{% post_url 1979-01-01-curiosity %}">
-              <i class="lightning icon"></i>
-              Get Curious <div class="ui basic grey label">{{ site.categories['curiosity'] | size }}</div>
-            </a>
-            <a class="item" href="{% post_url 1979-01-01-techie %}">
-              <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label">{{ site.categories['techie'] | size }}</div>
-            </a>
-            <a class="item" href="{% post_url 1979-01-01-programming %}">
-              <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label" data-variation="tiny">{{ site.tags.competitive-programming | size }}</div>
-            </a>
-         </div>
+        <div class="ui item">
+          <a href="{% post_url 1979-01-01-blogs %}">Blogs</a>
         </div>
         <a class="item" href="{% post_url 1979-01-01-about-me %}">
           <i class="ellipsis vertical icon"></i>

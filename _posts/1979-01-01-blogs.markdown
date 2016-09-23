@@ -1,0 +1,17 @@
+---
+title:  Blogs
+layout: default
+---
+
+<div class="ui basic segment">
+{% assign count = 0 %}
+{% for post in site.posts %}
+    {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
+        {% include article_snippet.html post=post %}
+        {% assign count = count | plus: 1 %}
+    {% endif %}
+    {% if count > 40 %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+</div>

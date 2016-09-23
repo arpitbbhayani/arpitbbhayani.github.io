@@ -23,3 +23,6 @@ markdown: kramdown
 exclude: [static/semantic/src/, static/semantic/tasks, static/node_modules]
 gems:
     - jekyll-sitemap
+blog_types:
+    - techie
+    - curiosity

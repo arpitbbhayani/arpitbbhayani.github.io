@@ -1,7 +1,7 @@
 ---
 layout:			default
 title:			Articles to quench your curiosity
-type:       dummy
+type:           dummy
 ---
 
 
