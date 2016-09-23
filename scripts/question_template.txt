@@ -84,27 +84,18 @@
         </div>
       </a>
       
+      <div class="ui grey item main-nav-page-title">
+        <p><i>$SITE_NAME$ solution for $QCODE$</i></p>
+      </div>
       <div class="right menu">
-        <div class="ui dropdown item">
-          <i class="ellipsis vertical icon"></i>Blogs<i class="dropdown icon"></i>
-          <div class="menu">
-            <a class="item" href="/curiosity.html">
-              <i class="lightning icon"></i>
-              Get Curious <div class="ui basic grey label">7</div>
-            </a>
-            <a class="item" href="/techie.html">
-              <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label">5</div>
-            </a>
-            <a class="item" href="/programming.html">
-              <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label" data-variation="tiny">434</div>
-            </a>
-         </div>
-        </div>
-        <a class="item" href="/about-me.html">
-          <i class="ellipsis vertical icon"></i>
-          About me <div class="">&nbsp;</div>
+        <!-- <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div> -->
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/scripts/question_template.txt" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny inverted" data-position="bottom center">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=$SITE_NAME$ solution for $QCODE$&amp;url=http://arpitbhayani.me/scripts/question_template.txt&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny inverted" data-position="bottom right">
+          <i class="twitter icon"></i>
         </a>
       </div>
       
@@ -122,20 +113,17 @@
       </a>
       
       <div class="right menu">
+        <!-- <div class="item mode-button">
+          <i class="sun icon"></i>
+        </div> -->
         <div class="ui dropdown item">
           <i class="content icon"></i>
           <div class="menu">
-            <a class="item" href="/curiosity.html">
-              <i class="lightning icon"></i>
-              Get Curious <div class="ui basic grey label">7</div>
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/scripts/question_template.txt" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
             </a>
-            <a class="item" href="/techie.html">
-              <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label">5</div>
-            </a>
-            <a class="item" href="/programming.html">
-              <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label">434</div>
+            <a class="item" href="https://twitter.com/intent/tweet?text=$SITE_NAME$ solution for $QCODE$&amp;url=http://arpitbhayani.me/scripts/question_template.txt&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
             </a>
           </div>
         </div>
