@@ -22,7 +22,7 @@ $(document).ready(function() {
 
     scrollProgress.set({
         color: '#f87c7c',
-        height: '3px',
+        height: '2px',
         bottom: false
     });
 
