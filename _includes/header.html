@@ -14,19 +14,17 @@
         <div class="ui item">
           <a href="{% post_url 1979-01-01-blogs %}">Blogs</a>
         </div>
-        <a class="item" href="{% post_url 1979-01-01-about-me %}">
-          <i class="ellipsis vertical icon"></i>
-          About me <div class="">&nbsp;</div>
-        </a>
+        <div class="ui item">
+            <a href="{% post_url 1979-01-01-about-me %}">
+              About me
+            </a>
+        </div>
       </div>
       {% else %}
       <div class="ui grey item main-nav-page-title">
         <p><i>{{page.title}}</i></p>
       </div>
       <div class="right menu">
-        <!-- <div class="item mode-button">
-          <i class="sun icon"></i>
-        </div> -->
         <a class="item" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny inverted" data-position="bottom center">
           <i class="facebook icon"></i>
         </a>
@@ -49,29 +47,12 @@
       </a>
       {% if page.layout != 'post' %}
       <div class="right menu">
-        <div class="ui dropdown item">
-          <i class="content icon"></i>
-          <div class="menu">
-            <a class="item" href="{% post_url 1979-01-01-curiosity %}">
-              <i class="lightning icon"></i>
-              Get Curious <div class="ui basic grey label">{{ site.categories['curiosity'] | size }}</div>
-            </a>
-            <a class="item" href="{% post_url 1979-01-01-techie %}">
-              <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label">{{ site.categories['techie'] | size }}</div>
-            </a>
-            <a class="item" href="{% post_url 1979-01-01-programming %}">
-              <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label">{{ site.tags.competitive-programming | size }}</div>
-            </a>
+          <div class="ui item">
+              <a href="{% post_url 1979-01-01-blogs %}">Blogs</a>
           </div>
-        </div>
       </div>
       {% else %}
       <div class="right menu">
-        <!-- <div class="item mode-button">
-          <i class="sun icon"></i>
-        </div> -->
         <div class="ui dropdown item">
           <i class="content icon"></i>
           <div class="menu">
