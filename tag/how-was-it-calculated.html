@@ -63,15 +63,6 @@
 </script>
 
     <body>
-        <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
         <div class="ui grid">
   <div class="row computer tablet only">
     <div class="ui fixed borderless menu main-nav-menu">
@@ -88,10 +79,11 @@
         <div class="ui item">
           <a href="/blogs.html">Blogs</a>
         </div>
-        <a class="item" href="/about-me.html">
-          <i class="ellipsis vertical icon"></i>
-          About me <div class="">&nbsp;</div>
-        </a>
+        <div class="ui item">
+            <a href="/about-me.html">
+              About me
+            </a>
+        </div>
       </div>
       
     </div>
@@ -108,23 +100,9 @@
       </a>
       
       <div class="right menu">
-        <div class="ui dropdown item">
-          <i class="content icon"></i>
-          <div class="menu">
-            <a class="item" href="/curiosity.html">
-              <i class="lightning icon"></i>
-              Get Curious <div class="ui basic grey label">7</div>
-            </a>
-            <a class="item" href="/techie.html">
-              <i class="code icon"></i>
-              Tech Articles <div class="ui basic grey label">5</div>
-            </a>
-            <a class="item" href="/programming.html">
-              <i class="terminal icon"></i>
-              Programming <div class="ui basic grey label">434</div>
-            </a>
+          <div class="ui item">
+              <a href="/blogs.html">Blogs</a>
           </div>
-        </div>
       </div>
       
     </div>
@@ -178,5 +156,14 @@
   
 
 </head>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 </html>

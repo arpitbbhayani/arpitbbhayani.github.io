@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
 
     scrollProgress.set({
-        color: '#27619D',
+        color: '#f87c7c',
         height: '3px',
         bottom: false
     });
