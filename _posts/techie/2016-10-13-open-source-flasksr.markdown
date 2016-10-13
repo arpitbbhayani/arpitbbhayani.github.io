@@ -15,7 +15,7 @@ seo:
   - flask extension
   - http streaming
   - fast render
- description: Every fucking website wants to improve "Time for First Paint". So I chose to do it for websites driven by Flask Framework. FlaskSR is the python package, a flask extension that you can use to minimize it.
+ description: Every fucking website wants to improve Time for First Paint. So I chose to do it for websites driven by Flask Framework. FlaskSR is the python package, a flask extension that you can use to minimize it.
 ---
 
 I attended [JSFoo conference in Bangalore on September 15 2016](https://www.facebook.com/events/655680127921534/) and the only takeaway from that conference was that every single website was just optimizing one thing **"Time for First Paint"**. For people who do not know what it is, here is a gist
