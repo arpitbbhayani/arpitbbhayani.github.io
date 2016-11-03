@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/techie/dhcp.html</loc>
+<lastmod>2016-11-03T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/techie/open-source-flasksr.html</loc>
 <lastmod>2016-10-13T00:00:00+05:30</lastmod>
 </url>
@@ -1941,10 +1945,10 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-10-13T23:56:47+05:30</lastmod>
+<lastmod>2016-10-14T00:04:02+05:30</lastmod>
 </url>
 <url>
 <loc>http://arpitbhayani.me/static/arpit_resume.pdf</loc>
-<lastmod>2016-10-13T23:56:47+05:30</lastmod>
+<lastmod>2016-10-14T00:04:02+05:30</lastmod>
 </url>
 </urlset>

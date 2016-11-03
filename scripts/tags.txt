@@ -19,3 +19,4 @@ http
 networking
 stream
 flask
+dhcp

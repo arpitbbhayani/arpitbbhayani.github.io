@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>DHCP - Dynamic Host Configuration Protocol | Arpit Bhayani Blog | Read at your own risk</title>
+  <meta name="description" content="An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP addr...">
+  <meta name="keywords" content="devops, dhcp, networking, notes on dhcp, computer networks, dhcp protocol, " />
+
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/techie/dhcp.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani Blog | Read at your own risk" href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/dhcp/dhcp.png"/>
+  <meta property="og:title" content="DHCP - Dynamic Host Configuration Protocol"/>
+  <meta property="og:url" content="http://arpitbhayani.me/techie/dhcp.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani Blog | Read at your own risk"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP addr..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/techie/dhcp.html">
+  <meta name="twitter:title" content="DHCP - Dynamic Host Configuration Protocol">
+  <meta name="twitter:description" content="An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP addr...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/dhcp/dhcp.png">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="ui grey item main-nav-page-title">
+        <p><i>DHCP - Dynamic Host Configuration Protocol</i></p>
+      </div>
+      <div class="right menu">
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/dhcp.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny" data-position="bottom center">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=DHCP - Dynamic Host Configuration Protocol&amp;url=http://arpitbhayani.me/techie/dhcp.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny" data-position="bottom right">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="content icon"></i>
+          <div class="menu">
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/dhcp.html" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
+            </a>
+            <a class="item" href="https://twitter.com/intent/tweet?text=DHCP - Dynamic Host Configuration Protocol&amp;url=http://arpitbhayani.me/techie/dhcp.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui header center aligned">
+                <h1 class="article-title">DHCP - Dynamic Host Configuration Protocol</h1>
+            </div>
+            <div class="ui center aligned basic fluid segment">
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> November 03, 2016</span>
+                <div>
+                    <div class="ui center aligned basic fluid segment">
+                        <div class="ui horizontal list">
+                            
+                            <a style="font-weight: normal;" href='/tag/devops.html' class="ui item article-category" data-content="All devops posts" data-variation="tiny" data-position="bottom center">devops</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/dhcp.html' class="ui item article-category" data-content="All dhcp posts" data-variation="tiny" data-position="bottom center">dhcp</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/networking.html' class="ui item article-category" data-content="All networking posts" data-variation="tiny" data-position="bottom center">networking</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="http://arpitbhayani.me/static/images/dhcp/dhcp.png" data-lightbox="http://arpitbhayani.me/static/images/dhcp/dhcp.png" data-title="DHCP - Dynamic Host Configuration Protocol">
+                <img class="ui centered huge image stylish" src="http://arpitbhayani.me/static/images/dhcp/dhcp.png" alt="DHCP - Dynamic Host Configuration Protocol">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="article-content">
+                <p>An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP address and other information like subnet mask etc are assigned to your computer automatically.</p>
+
+<p>DHCP is used to control the network configuration of a host through a remote server. It is an excellent alternative to the time-consuming manual configuration of network settings on a host or a network device.</p>
+
+<h2 id="how-it-works">How it works?</h2>
+
+<p>DHCP works on a client-server model. Being a protocol, it has it’s own set of messages that are exchanged between client and server.</p>
+
+<p><a href="/static/images/dhcp/dhcp.png" data-lightbox="/static/images/dhcp/dhcp.png" data-title="DHCP">
+    <img class="ui large centered stylish image" src="/static/images/dhcp/dhcp.png" alt="DHCP" />
+</a></p>
+
+<h2 id="dhcp-steps">DHCP Steps</h2>
+<ol>
+  <li>When the client computer (or device) boots up or is connected to a network, a <code>DHCPDISCOVER</code> message is sent from the client to the server. As there is no network configuration information on the client so the message is sent with <code>0.0.0.0</code> as source address and <code>255.255.255.255</code> as destination address. The transport protocol used for this message is <strong>UDP</strong> and the port number used is <strong>67</strong>. The client enters the initializing stage during this step.</li>
+  <li>When the DHCP server receives the <code>DHCPDISCOVER</code> request message then it replies with a <code>DHCPOFFER</code> message. This message contains all the network configuration settings required by the client. This message is sent as a broadcast (<code>255.255.255.255</code>) message for the client to receive it. UDP protocol is used at the transport layer with destination port as <strong>68</strong>.</li>
+  <li>The client forms a <code>DHCPREQUEST</code> message in reply to <code>DHCPOFFER</code> message and sends it to the server indicating it wants to accept the network configuration sent in the <code>DHCPOFFER</code> message. The <code>DHCPREQUEST</code> message will still contain the source address as <code>0.0.0.0</code> as the client is still not allowed to use the IP address passed to it through <code>DHCPOFFER</code> message.</li>
+  <li>Once the server receives <code>DHCPREQUEST</code> from the client, it sends the <code>DHCPACK</code> message indicating that now the client is allowed to use the IP address assigned to it.</li>
+</ol>
+
+<h2 id="dhcp-lease">DHCP Lease</h2>
+
+<p>A DHCP lease is the amount of time that the DHCP server grants to the DHCP client permission to use a particular IP address. A typical server allows its administrator to set the lease time.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
+  <li><a href="http://www.thegeekstuff.com/2013/03/dhcp-basics/">DHCP Basics</a></li>
+  <li><a href="http://www.nextstep4it.com/dhcp-interview-questions-answers/">DHCP QnAs</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/dhcp.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=DHCP - Dynamic Host Configuration Protocol&amp;url=http://arpitbhayani.me/techie/dhcp.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="fb-comments" data-numposts="5" width="100%"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid" style="background-color: #FAFAFA;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #FAFAFA;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a>.<br/>
+          Designed and developed with <i class="heart red icon"></i>by <a class="" href="/">me</a>.
+      </div>
+  </div>
+</footer>
+
+    </body>
+    <head>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</html>
