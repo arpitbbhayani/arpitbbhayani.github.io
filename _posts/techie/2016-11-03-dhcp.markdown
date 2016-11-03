@@ -1,0 +1,47 @@
+---
+title: DHCP - Dynamic Host Configuration Protocol
+img: http://arpitbhayani.me/static/images/dhcp/dhcp.png
+layout: post
+comments: true
+tags:
+ - devops
+ - dhcp
+ - networking
+categories: techie
+seo:
+ tags:
+  - devops
+  - dhcp
+  - networking
+  - notes on dhcp
+  - computer networks
+  - dhcp protocol
+ description: An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP address and other information like subnet mask etc are assigned to your computer automatically.
+---
+
+An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP address and other information like subnet mask etc are assigned to your computer automatically.
+
+DHCP is used to control the network configuration of a host through a remote server. It is an excellent alternative to the time-consuming manual configuration of network settings on a host or a network device.
+
+## How it works?
+
+DHCP works on a client-server model. Being a protocol, it has it’s own set of messages that are exchanged between client and server.
+
+<a href="/static/images/dhcp/dhcp.png" data-lightbox="/static/images/dhcp/dhcp.png" data-title="DHCP">
+    <img class="ui large centered stylish image" src='/static/images/dhcp/dhcp.png' alt='DHCP'/>
+</a>
+
+## DHCP Steps
+1. When the client computer (or device) boots up or is connected to a network, a `DHCPDISCOVER` message is sent from the client to the server. As there is no network configuration information on the client so the message is sent with `0.0.0.0` as source address and `255.255.255.255` as destination address. The transport protocol used for this message is **UDP** and the port number used is **67**. The client enters the initializing stage during this step.
+2. When the DHCP server receives the `DHCPDISCOVER` request message then it replies with a `DHCPOFFER` message. This message contains all the network configuration settings required by the client. This message is sent as a broadcast (`255.255.255.255`) message for the client to receive it. UDP protocol is used at the transport layer with destination port as **68**.
+3. The client forms a `DHCPREQUEST` message in reply to `DHCPOFFER` message and sends it to the server indicating it wants to accept the network configuration sent in the `DHCPOFFER` message. The `DHCPREQUEST` message will still contain the source address as `0.0.0.0` as the client is still not allowed to use the IP address passed to it through `DHCPOFFER` message.
+4. Once the server receives `DHCPREQUEST` from the client, it sends the `DHCPACK` message indicating that now the client is allowed to use the IP address assigned to it.
+
+## DHCP Lease
+
+A DHCP lease is the amount of time that the DHCP server grants to the DHCP client permission to use a particular IP address. A typical server allows its administrator to set the lease time.
+
+## References:
+
+* [DHCP Basics](http://www.thegeekstuff.com/2013/03/dhcp-basics/)
+* [DHCP QnAs](http://www.nextstep4it.com/dhcp-interview-questions-answers/)
