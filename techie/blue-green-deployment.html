@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>Blue Green Deployment | Arpit Bhayani Blog | Read at your own risk</title>
+  <meta name="description" content="Blue-green deployment is a release technique that reduces downtime and risk by running two identical production environments called Blue and Green.">
+  <meta name="keywords" content="devops, deployment, blue green, bluegreen, blue-green, no downtime, " />
+
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/techie/blue-green-deployment.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani Blog | Read at your own risk" href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/blue-green/blue-green.jpg"/>
+  <meta property="og:title" content="Blue Green Deployment"/>
+  <meta property="og:url" content="http://arpitbhayani.me/techie/blue-green-deployment.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani Blog | Read at your own risk"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Blue-green deployment is a release technique that reduces downtime and risk by running two identical production environments called Blue and Green." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/techie/blue-green-deployment.html">
+  <meta name="twitter:title" content="Blue Green Deployment">
+  <meta name="twitter:description" content="Blue-green deployment is a release technique that reduces downtime and risk by running two identical production environments called Blue and Green.">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/blue-green/blue-green.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="ui grey item main-nav-page-title">
+        <p><i>Blue Green Deployment</i></p>
+      </div>
+      <div class="right menu">
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/blue-green-deployment.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny" data-position="bottom center">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=Blue Green Deployment&amp;url=http://arpitbhayani.me/techie/blue-green-deployment.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny" data-position="bottom right">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="content icon"></i>
+          <div class="menu">
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/blue-green-deployment.html" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
+            </a>
+            <a class="item" href="https://twitter.com/intent/tweet?text=Blue Green Deployment&amp;url=http://arpitbhayani.me/techie/blue-green-deployment.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui header center aligned">
+                <h1 class="article-title">Blue Green Deployment</h1>
+            </div>
+            <div class="ui center aligned basic fluid segment">
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> November 04, 2016</span>
+                <div>
+                    <div class="ui center aligned basic fluid segment">
+                        <div class="ui horizontal list">
+                            
+                            <a style="font-weight: normal;" href='/tag/devops.html' class="ui item article-category" data-content="All devops posts" data-variation="tiny" data-position="bottom center">devops</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/deployment.html' class="ui item article-category" data-content="All deployment posts" data-variation="tiny" data-position="bottom center">deployment</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="http://arpitbhayani.me/static/images/blue-green/blue-green.jpg" data-lightbox="http://arpitbhayani.me/static/images/blue-green/blue-green.jpg" data-title="Blue Green Deployment">
+                <img class="ui centered huge image stylish" src="http://arpitbhayani.me/static/images/blue-green/blue-green.jpg" alt="Blue Green Deployment">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="article-content">
+                <p>The apt one liner about <strong>Blue Green</strong> deployment can be found out on <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html">Cloud Foundry</a> which is,</p>
+
+<blockquote>
+  <p>Blue-green deployment is a release technique that reduces downtime and risk by running two identical production environments called Blue and Green.</p>
+</blockquote>
+
+<p>The fundamental idea is to have two easily switchable environments to switch between.</p>
+
+<p>Different ways to switch:</p>
+
+<ul>
+  <li>One project did the switch by bouncing the web server rather than working on the router.</li>
+  <li>Another variation would be to use the same database, making the blue-green switches for web and domain layers.</li>
+</ul>
+
+<p>The two environments need to be different but as identical as possible. This can happen via following</p>
+
+<ul>
+  <li>different pieces of hardware</li>
+  <li>different virtual machines running on the same (or different) hardware</li>
+  <li>can also be a single operating environment partitioned into separate zones with separate IP addresses for the two slices</li>
+</ul>
+
+<h2 id="how-deployment-happens">How deployment happens:</h2>
+
+<p>At any time one of them, let’s say blue for the example, is live. As you prepare a new release of your software you do your final stage of testing in the green environment. Once the software is working in the green environment, you switch the router so that all incoming requests go to the green environment - the blue one is now idle.</p>
+
+<p>Both green and blue environments regularly cycles between live, previous version (for rollback) and staging the next version.</p>
+
+<h2 id="advantages">Advantages:</h2>
+
+<ul>
+  <li>Blue-green deployment also gives you a rapid way to rollback</li>
+  <li>You get a hot-standby working. Hence allows you to test your disaster-recovery procedure on every release.</li>
+</ul>
+
+<h2 id="disadvantages">Disadvantages:</h2>
+
+<ul>
+  <li>With rapid rollback there is one issue,
+dealing with missed transactions while the green environment was live.
+Solution: feed transactions to both environments in such a way as to keep the blue environment as a backup when the green is live</li>
+</ul>
+
+<h2 id="how-to-handle-database-changes">How to handle database changes:</h2>
+
+<p>You need to change the schema to support a new version of the software. The trick is to separate the deployment of schema changes from application upgrades. So first apply a database refactoring to change the schema to support both the new and old version of the application, deploy that, check everything is working fine so you have a rollback point, then deploy the new version of the application. And when the upgrade has bedded down remove the database support for the old version.</p>
+
+<h2 id="references">References:</h2>
+<ul>
+  <li><a href="http://martinfowler.com/bliki/BlueGreenDeployment.html">Martin Fowler on Blue Green Deployment</a></li>
+  <li><a href="https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html">Cloud Foundry on Blue Green Deployment</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/blue-green-deployment.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Blue Green Deployment&amp;url=http://arpitbhayani.me/techie/blue-green-deployment.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="fb-comments" data-numposts="5" width="100%"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid" style="background-color: #FAFAFA;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #FAFAFA;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a>.<br/>
+          Designed and developed with <i class="heart red icon"></i>by <a class="" href="/">me</a>.
+      </div>
+  </div>
+</footer>
+
+    </body>
+    <head>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</html>
