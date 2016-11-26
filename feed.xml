@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arpit Bhayani Blog | Read at your own risk</title>
-    <description>I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.</description>
+    <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Nov 2016 21:08:29 +0530</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2016 21:08:29 +0530</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <pubDate>Sat, 26 Nov 2016 08:35:01 +0530</pubDate>
+    <lastBuildDate>Sat, 26 Nov 2016 08:35:01 +0530</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>Blue Green Deployment</title>
