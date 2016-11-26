@@ -8,9 +8,9 @@
 # Site settings
 title: Arpit Bhayani Blog | Read at your own risk
 email: arpit.b.bhayani@gmail.com
-description: I am a coder, developer, designer, thinker, data scientist and physics enthusiast and this is where I put my random throughts and vague imaginations into words.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://arpitbhayani.me" # the base hostname & protocol for your site
+description: I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words.
+baseurl: ""
+url: "http://arpitbhayani.me"
 img: http://arpitbhayani.me/static/images/arpit.jpg
 keywords: blog, computer science, physics, competitive programming
 
