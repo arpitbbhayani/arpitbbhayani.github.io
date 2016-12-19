@@ -2,7 +2,7 @@
 categories: hackerrank
 comments: true
 img: https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true
-layout: post
+layout: programming_post
 seo:
   description: Here is the solution for programming question Insert a Node at the Tail of a Linked List on hackerrank
   tags:
