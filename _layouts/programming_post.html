@@ -24,21 +24,13 @@ layout: default
         </div>
     </div>
     <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            <a href="{{page.img}}" data-lightbox="{{page.img}}" data-title="{{page.title}}">
-                <img class="ui centered huge image stylish" src="{{page.img}}" alt="{{page.title}}">
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
+        <div class="one wide column"></div>
+        <div class="eleven wide column">
             <div class="article-content">
                 {{ content }}
             </div>
         </div>
-        <div class="two wide column">
+        <div class="four wide column">
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <!-- Programming Pages -->
           <ins class="adsbygoogle"
@@ -50,17 +42,12 @@ layout: default
           </script>
         </div>
     </div>
+</div>
+<div class="ui stackable grid">
     <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">
-                <i class="facebook icon"></i>
-                Share on Facebook
-            </a>
-            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter">
-                <i class="twitter icon"></i>
-                Share on Twitter
-            </a>
+        <div class="one wide column"></div>
+        <div class="eleven wide column">
+            {% if page.comments %}<div class="fb-comments" data-numposts="5" width="100%"></div>{% endif %}
         </div>
     </div>
     <div class="row">
@@ -73,13 +60,5 @@ layout: default
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-    </div>
-</div>
-<div class="ui stackable grid">
-    <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            {% if page.comments %}<div class="fb-comments" data-numposts="5" width="100%"></div>{% endif %}
-        </div>
     </div>
 </div>
