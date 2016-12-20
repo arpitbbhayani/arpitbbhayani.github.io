@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://arpitbhayani.me/hackerrank/sock-merchant.html</loc>
+<lastmod>2016-12-20T00:00:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://arpitbhayani.me/hackerrank/bon-appetit.html</loc>
 <lastmod>2016-12-20T00:00:00+05:30</lastmod>
 </url>
@@ -1973,10 +1977,10 @@
 </url>
 <url>
 <loc>http://arpitbhayani.me/google50dec2af28d956a1.html</loc>
-<lastmod>2016-12-20T00:21:41+05:30</lastmod>
+<lastmod>2016-12-20T09:53:59+05:30</lastmod>
 </url>
 <url>
 <loc>http://arpitbhayani.me/static/arpit_resume.pdf</loc>
-<lastmod>2016-12-20T00:21:41+05:30</lastmod>
+<lastmod>2016-12-20T09:53:59+05:30</lastmod>
 </url>
 </urlset>
