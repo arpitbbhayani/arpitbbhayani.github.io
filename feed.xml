@@ -5,8 +5,8 @@
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 22 Dec 2016 10:09:50 +0530</pubDate>
-    <lastBuildDate>Thu, 22 Dec 2016 10:09:50 +0530</lastBuildDate>
+    <pubDate>Thu, 22 Dec 2016 10:16:56 +0530</pubDate>
+    <lastBuildDate>Thu, 22 Dec 2016 10:16:56 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -81,6 +81,44 @@
         <pubDate>Thu, 22 Dec 2016 00:00:00 +0530</pubDate>
         <link>http://arpitbhayani.me/hackerrank/strange-advertising.html</link>
         <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/strange-advertising.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
+    
+      <item>
+        <title>HACKERRANK extra-long-factorials Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/extra-long-factorials&quot;&gt;extra-long-factorials&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/extra-long-factorials&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;raw_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 22 Dec 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/extra-long-factorials.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/extra-long-factorials.html</guid>
         
         <category>competitive-programming</category>
         
@@ -827,54 +865,6 @@ Solution: feed transactions to both environments in such a way as to keep the bl
         <category>devops</category>
         
         <category>deployment</category>
-        
-        
-        <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>DHCP - Dynamic Host Configuration Protocol</title>
-        <description>&lt;p&gt;An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP address and other information like subnet mask etc are assigned to your computer automatically.&lt;/p&gt;
-
-&lt;p&gt;DHCP is used to control the network configuration of a host through a remote server. It is an excellent alternative to the time-consuming manual configuration of network settings on a host or a network device.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-it-works&quot;&gt;How it works?&lt;/h2&gt;
-
-&lt;p&gt;DHCP works on a client-server model. Being a protocol, it has it’s own set of messages that are exchanged between client and server.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/static/images/dhcp/dhcp.png&quot; data-lightbox=&quot;/static/images/dhcp/dhcp.png&quot; data-title=&quot;DHCP&quot;&gt;
-    &lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/dhcp/dhcp.png&quot; alt=&quot;DHCP&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;dhcp-steps&quot;&gt;DHCP Steps&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;When the client computer (or device) boots up or is connected to a network, a &lt;code&gt;DHCPDISCOVER&lt;/code&gt; message is sent from the client to the server. As there is no network configuration information on the client so the message is sent with &lt;code&gt;0.0.0.0&lt;/code&gt; as source address and &lt;code&gt;255.255.255.255&lt;/code&gt; as destination address. The transport protocol used for this message is &lt;strong&gt;UDP&lt;/strong&gt; and the port number used is &lt;strong&gt;67&lt;/strong&gt;. The client enters the initializing stage during this step.&lt;/li&gt;
-  &lt;li&gt;When the DHCP server receives the &lt;code&gt;DHCPDISCOVER&lt;/code&gt; request message then it replies with a &lt;code&gt;DHCPOFFER&lt;/code&gt; message. This message contains all the network configuration settings required by the client. This message is sent as a broadcast (&lt;code&gt;255.255.255.255&lt;/code&gt;) message for the client to receive it. UDP protocol is used at the transport layer with destination port as &lt;strong&gt;68&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;The client forms a &lt;code&gt;DHCPREQUEST&lt;/code&gt; message in reply to &lt;code&gt;DHCPOFFER&lt;/code&gt; message and sends it to the server indicating it wants to accept the network configuration sent in the &lt;code&gt;DHCPOFFER&lt;/code&gt; message. The &lt;code&gt;DHCPREQUEST&lt;/code&gt; message will still contain the source address as &lt;code&gt;0.0.0.0&lt;/code&gt; as the client is still not allowed to use the IP address passed to it through &lt;code&gt;DHCPOFFER&lt;/code&gt; message.&lt;/li&gt;
-  &lt;li&gt;Once the server receives &lt;code&gt;DHCPREQUEST&lt;/code&gt; from the client, it sends the &lt;code&gt;DHCPACK&lt;/code&gt; message indicating that now the client is allowed to use the IP address assigned to it.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;dhcp-lease&quot;&gt;DHCP Lease&lt;/h2&gt;
-
-&lt;p&gt;A DHCP lease is the amount of time that the DHCP server grants to the DHCP client permission to use a particular IP address. A typical server allows its administrator to set the lease time.&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.thegeekstuff.com/2013/03/dhcp-basics/&quot;&gt;DHCP Basics&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.nextstep4it.com/dhcp-interview-questions-answers/&quot;&gt;DHCP QnAs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 03 Nov 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/dhcp.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/dhcp.html</guid>
-        
-        <category>devops</category>
-        
-        <category>dhcp</category>
-        
-        <category>networking</category>
         
         
         <category>techie</category>
