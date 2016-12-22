@@ -5,8 +5,8 @@
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 22 Dec 2016 10:16:56 +0530</pubDate>
-    <lastBuildDate>Thu, 22 Dec 2016 10:16:56 +0530</lastBuildDate>
+    <pubDate>Thu, 22 Dec 2016 21:24:24 +0530</pubDate>
+    <lastBuildDate>Thu, 22 Dec 2016 21:24:24 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -119,6 +119,222 @@
         <pubDate>Thu, 22 Dec 2016 00:00:00 +0530</pubDate>
         <link>http://arpitbhayani.me/hackerrank/extra-long-factorials.html</link>
         <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/extra-long-factorials.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>hackerrank</category>
+        
+      </item>
+    
+      <item>
+        <title>HACKERRANK append-and-delete Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/append-and-delete&quot;&gt;append-and-delete&lt;/a&gt; on hackerrank&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/append-and-delete&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;malloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prefix_length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_possible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Yes&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prefix_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prefix_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;No&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chances&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Yes&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;No&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Code for better Understanding&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+
+
+&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;#define ll long long&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;using namespace std;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;int readline(char *str) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    int i = 0;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    char ch;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    while((ch = getchar()) != &amp;#39;\n&amp;#39;) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        str[i++] = ch;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    str[i] = &amp;#39;\0&amp;#39;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    return i;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;int main(int argc, char *argv[]) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    char *s = (char *) malloc(110 * sizeof(char));&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    char *t = (char *) malloc(110 * sizeof(char));&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    int chances;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    int ls = readline(s);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    int lt = readline(t);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    scanf(&amp;quot;%d&amp;quot;, &amp;amp;chances);&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    int i = 0;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    while(s[i] &amp;amp;&amp;amp; t[i]) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        if(s[i] != t[i]) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;            break;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        i++;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    int prefix_length = i;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    int is_possible;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    if(chances &amp;gt;= (lt + ls)) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        printf(&amp;quot;Yes\n&amp;quot;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        return 0;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // When chances I have are greater than target length + source_length.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // Then it is always possible to construct t from s.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    int target_length = abs(lt - prefix_length);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    int source_length = abs(ls - prefix_length);&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    if(target_length &amp;gt; source_length) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // aaba&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // aabcde&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        chances -= (source_length); // deleting 1 char from s&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        chances -= (target_length); // adding 3 chars to s&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    else if(target_length &amp;lt; source_length) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // aabcde&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // aaba&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        chances -= (source_length); // deleting 3 chars from s&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        chances -= (target_length); // adding 1 char to s&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    else {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // aabcde&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        // aadefg&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        chances -= (source_length); // deleting 3 chars from s&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        chances -= (target_length); // adding 3 chars to s&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    if(chances &amp;lt; 0) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        is_possible = 0;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    else if(chances % 2 == 0) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        is_possible = 1;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    else {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        is_possible = 0;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    if(is_possible) {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        printf(&amp;quot;Yes\n&amp;quot;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    else {&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;        printf(&amp;quot;No\n&amp;quot;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;    }&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;    return 0;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 22 Dec 2016 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/hackerrank/append-and-delete.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/append-and-delete.html</guid>
         
         <category>competitive-programming</category>
         
@@ -799,75 +1015,6 @@
         
         
         <category>hackerrank</category>
-        
-      </item>
-    
-      <item>
-        <title>Blue Green Deployment</title>
-        <description>&lt;p&gt;The apt one liner about &lt;strong&gt;Blue Green&lt;/strong&gt; deployment can be found out on &lt;a href=&quot;https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html&quot;&gt;Cloud Foundry&lt;/a&gt; which is,&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Blue-green deployment is a release technique that reduces downtime and risk by running two identical production environments called Blue and Green.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The fundamental idea is to have two easily switchable environments to switch between.&lt;/p&gt;
-
-&lt;p&gt;Different ways to switch:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;One project did the switch by bouncing the web server rather than working on the router.&lt;/li&gt;
-  &lt;li&gt;Another variation would be to use the same database, making the blue-green switches for web and domain layers.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The two environments need to be different but as identical as possible. This can happen via following&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;different pieces of hardware&lt;/li&gt;
-  &lt;li&gt;different virtual machines running on the same (or different) hardware&lt;/li&gt;
-  &lt;li&gt;can also be a single operating environment partitioned into separate zones with separate IP addresses for the two slices&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;how-deployment-happens&quot;&gt;How deployment happens:&lt;/h2&gt;
-
-&lt;p&gt;At any time one of them, let’s say blue for the example, is live. As you prepare a new release of your software you do your final stage of testing in the green environment. Once the software is working in the green environment, you switch the router so that all incoming requests go to the green environment - the blue one is now idle.&lt;/p&gt;
-
-&lt;p&gt;Both green and blue environments regularly cycles between live, previous version (for rollback) and staging the next version.&lt;/p&gt;
-
-&lt;h2 id=&quot;advantages&quot;&gt;Advantages:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Blue-green deployment also gives you a rapid way to rollback&lt;/li&gt;
-  &lt;li&gt;You get a hot-standby working. Hence allows you to test your disaster-recovery procedure on every release.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;disadvantages&quot;&gt;Disadvantages:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;With rapid rollback there is one issue,
-dealing with missed transactions while the green environment was live.
-Solution: feed transactions to both environments in such a way as to keep the blue environment as a backup when the green is live&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;how-to-handle-database-changes&quot;&gt;How to handle database changes:&lt;/h2&gt;
-
-&lt;p&gt;You need to change the schema to support a new version of the software. The trick is to separate the deployment of schema changes from application upgrades. So first apply a database refactoring to change the schema to support both the new and old version of the application, deploy that, check everything is working fine so you have a rollback point, then deploy the new version of the application. And when the upgrade has bedded down remove the database support for the old version.&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://martinfowler.com/bliki/BlueGreenDeployment.html&quot;&gt;Martin Fowler on Blue Green Deployment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html&quot;&gt;Cloud Foundry on Blue Green Deployment&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 04 Nov 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/blue-green-deployment.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/blue-green-deployment.html</guid>
-        
-        <category>devops</category>
-        
-        <category>deployment</category>
-        
-        
-        <category>techie</category>
         
       </item>
     
