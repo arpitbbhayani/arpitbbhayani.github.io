@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>Correct, optmized and efficient solution to programming questions on Spoj | Arpit Bhayani | Geek at work</title>
+  <meta name="description" content="Solutions to programming questions on Spoj by Arpit. The solutions are efficient and optimized. It is NOT advisable to directly copy and paste the solution a...">
+  <meta name="keywords" content="spoj, solution, solution to spoj questions, competitive programming, " />
+
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/spoj/">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Geek at work" href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/arpit.jpg"/>
+  <meta property="og:title" content="Correct, optmized and efficient solution to programming questions on Spoj"/>
+  <meta property="og:url" content="http://arpitbhayani.me/spoj/"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Geek at work"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="Solutions to programming questions on Spoj by Arpit. The solutions are efficient and optimized. It is NOT advisable to directly copy and paste the solution a..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/spoj/">
+  <meta name="twitter:title" content="Correct, optmized and efficient solution to programming questions on Spoj">
+  <meta name="twitter:description" content="Solutions to programming questions on Spoj by Arpit. The solutions are efficient and optimized. It is NOT advisable to directly copy and paste the solution a...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/arpit.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <body>
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="ui item">
+          <a href="/blogs.html">Blogs</a>
+        </div>
+        <div class="ui item">
+          <a href="/programming.html" title="View solutions to 447 coding questions.">Coding Solutions</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+          <div class="ui item">
+              <a href="/blogs.html">Blogs</a>
+          </div>
+          <div class="ui item">
+            <a href="/programming.html" title="View solutions to 447 coding questions.">Coding Solutions</a>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui grid" style="background-color: #FFFFFF;">
+  <div class="row computer tablet only">
+    <div class="two wide column"></div>
+    <div class="twelve wide center aligned column">
+        <div class="ui medium image">
+            <image src="/static/images/spoj.png" />
+        </div>
+        
+
+
+
+<table class="ui very basic table">
+
+<tr class="row1">
+<td class="col1">
+
+
+<td>
+<a href="/spoj/ABCD.html" title="Click to view solution for SPOJ ABCD Solution"><i class="caret right icon"></i>ABCD</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ABCDEF.html" title="Click to view solution for SPOJ ABCDEF Solution"><i class="caret right icon"></i>ABCDEF</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ABCPATH.html" title="Click to view solution for SPOJ ABCPATH Solution"><i class="caret right icon"></i>ABCPATH</a>
+</td>
+</td></tr>
+<tr class="row2"><td class="col1">
+
+
+<td>
+<a href="/spoj/ABSURD.html" title="Click to view solution for SPOJ ABSURD Solution"><i class="caret right icon"></i>ABSURD</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ABSYS.html" title="Click to view solution for SPOJ ABSYS Solution"><i class="caret right icon"></i>ABSYS</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ACODE.html" title="Click to view solution for SPOJ ACODE Solution"><i class="caret right icon"></i>ACODE</a>
+</td>
+</td></tr>
+<tr class="row3"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACPC10A.html" title="Click to view solution for SPOJ ACPC10A Solution"><i class="caret right icon"></i>ACPC10A</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ACPC10D.html" title="Click to view solution for SPOJ ACPC10D Solution"><i class="caret right icon"></i>ACPC10D</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ACPC11B.html" title="Click to view solution for SPOJ ACPC11B Solution"><i class="caret right icon"></i>ACPC11B</a>
+</td>
+</td></tr>
+<tr class="row4"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACS.html" title="Click to view solution for SPOJ ACS Solution"><i class="caret right icon"></i>ACS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ADDREV.html" title="Click to view solution for SPOJ ADDREV Solution"><i class="caret right icon"></i>ADDREV</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ADV04L.html" title="Click to view solution for SPOJ ADV04L Solution"><i class="caret right icon"></i>ADV04L</a>
+</td>
+</td></tr>
+<tr class="row5"><td class="col1">
+
+
+<td>
+<a href="/spoj/AE00.html" title="Click to view solution for SPOJ AE00 Solution"><i class="caret right icon"></i>AE00</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/AFS.html" title="Click to view solution for SPOJ AFS Solution"><i class="caret right icon"></i>AFS</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/AGGRCOW.html" title="Click to view solution for SPOJ AGGRCOW Solution"><i class="caret right icon"></i>AGGRCOW</a>
+</td>
+</td></tr>
+<tr class="row6"><td class="col1">
+
+
+<td>
+<a href="/spoj/AIBOHP.html" title="Click to view solution for SPOJ AIBOHP Solution"><i class="caret right icon"></i>AIBOHP</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ALICESIE.html" title="Click to view solution for SPOJ ALICESIE Solution"><i class="caret right icon"></i>ALICESIE</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ALIEN.html" title="Click to view solution for SPOJ ALIEN Solution"><i class="caret right icon"></i>ALIEN</a>
+</td>
+</td></tr>
+<tr class="row7"><td class="col1">
+
+
+<td>
+<a href="/spoj/ALIEN2.html" title="Click to view solution for SPOJ ALIEN2 Solution"><i class="caret right icon"></i>ALIEN2</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/AMR10G.html" title="Click to view solution for SPOJ AMR10G Solution"><i class="caret right icon"></i>AMR10G</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/AMR11E.html" title="Click to view solution for SPOJ AMR11E Solution"><i class="caret right icon"></i>AMR11E</a>
+</td>
+</td></tr>
+<tr class="row8"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMR12D.html" title="Click to view solution for SPOJ AMR12D Solution"><i class="caret right icon"></i>AMR12D</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/AMR12G.html" title="Click to view solution for SPOJ AMR12G Solution"><i class="caret right icon"></i>AMR12G</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/AMSCO1.html" title="Click to view solution for SPOJ AMSCO1 Solution"><i class="caret right icon"></i>AMSCO1</a>
+</td>
+</td></tr>
+<tr class="row9"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMZRCK.html" title="Click to view solution for SPOJ AMZRCK Solution"><i class="caret right icon"></i>AMZRCK</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ANARC05B.html" title="Click to view solution for SPOJ ANARC05B Solution"><i class="caret right icon"></i>ANARC05B</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ANARC05H.html" title="Click to view solution for SPOJ ANARC05H Solution"><i class="caret right icon"></i>ANARC05H</a>
+</td>
+</td></tr>
+<tr class="row10"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC05I.html" title="Click to view solution for SPOJ ANARC05I Solution"><i class="caret right icon"></i>ANARC05I</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ANARC08G.html" title="Click to view solution for SPOJ ANARC08G Solution"><i class="caret right icon"></i>ANARC08G</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ANARC08H.html" title="Click to view solution for SPOJ ANARC08H Solution"><i class="caret right icon"></i>ANARC08H</a>
+</td>
+</td></tr>
+<tr class="row11"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC09A.html" title="Click to view solution for SPOJ ANARC09A Solution"><i class="caret right icon"></i>ANARC09A</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/AP2.html" title="Click to view solution for SPOJ AP2 Solution"><i class="caret right icon"></i>AP2</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/AP3.html" title="Click to view solution for SPOJ AP3 Solution"><i class="caret right icon"></i>AP3</a>
+</td>
+</td></tr>
+<tr class="row12"><td class="col1">
+
+
+<td>
+<a href="/spoj/APS.html" title="Click to view solution for SPOJ APS Solution"><i class="caret right icon"></i>APS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ARBITRAG.html" title="Click to view solution for SPOJ ARBITRAG Solution"><i class="caret right icon"></i>ARBITRAG</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ARDA1.html" title="Click to view solution for SPOJ ARDA1 Solution"><i class="caret right icon"></i>ARDA1</a>
+</td>
+</td></tr>
+<tr class="row13"><td class="col1">
+
+
+<td>
+<a href="/spoj/ARITH2.html" title="Click to view solution for SPOJ ARITH2 Solution"><i class="caret right icon"></i>ARITH2</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ARMY.html" title="Click to view solution for SPOJ ARMY Solution"><i class="caret right icon"></i>ARMY</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ARRAYSUB.html" title="Click to view solution for SPOJ ARRAYSUB Solution"><i class="caret right icon"></i>ARRAYSUB</a>
+</td>
+</td></tr>
+<tr class="row14"><td class="col1">
+
+
+<td>
+<a href="/spoj/ASCDFIB.html" title="Click to view solution for SPOJ ASCDFIB Solution"><i class="caret right icon"></i>ASCDFIB</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/BAISED.html" title="Click to view solution for SPOJ BAISED Solution"><i class="caret right icon"></i>BAISED</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/BALLOT.html" title="Click to view solution for SPOJ BALLOT Solution"><i class="caret right icon"></i>BALLOT</a>
+</td>
+</td></tr>
+<tr class="row15"><td class="col1">
+
+
+<td>
+<a href="/spoj/BANDW.html" title="Click to view solution for SPOJ BANDW Solution"><i class="caret right icon"></i>BANDW</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/BAT3.html" title="Click to view solution for SPOJ BAT3 Solution"><i class="caret right icon"></i>BAT3</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/BC.html" title="Click to view solution for SPOJ BC Solution"><i class="caret right icon"></i>BC</a>
+</td>
+</td></tr>
+<tr class="row16"><td class="col1">
+
+
+<td>
+<a href="/spoj/BEENUMS.html" title="Click to view solution for SPOJ BEENUMS Solution"><i class="caret right icon"></i>BEENUMS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/BENEFACT.html" title="Click to view solution for SPOJ BENEFACT Solution"><i class="caret right icon"></i>BENEFACT</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/BINSTIRL.html" title="Click to view solution for SPOJ BINSTIRL Solution"><i class="caret right icon"></i>BINSTIRL</a>
+</td>
+</td></tr>
+<tr class="row17"><td class="col1">
+
+
+<td>
+<a href="/spoj/BLINNET.html" title="Click to view solution for SPOJ BLINNET Solution"><i class="caret right icon"></i>BLINNET</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/BOGGLE.html" title="Click to view solution for SPOJ BOGGLE Solution"><i class="caret right icon"></i>BOGGLE</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/BOI7SEQ.html" title="Click to view solution for SPOJ BOI7SEQ Solution"><i class="caret right icon"></i>BOI7SEQ</a>
+</td>
+</td></tr>
+<tr class="row18"><td class="col1">
+
+
+<td>
+<a href="/spoj/BRIDGE.html" title="Click to view solution for SPOJ BRIDGE Solution"><i class="caret right icon"></i>BRIDGE</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/BUGLIFE.html" title="Click to view solution for SPOJ BUGLIFE Solution"><i class="caret right icon"></i>BUGLIFE</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/BUREAU.html" title="Click to view solution for SPOJ BUREAU Solution"><i class="caret right icon"></i>BUREAU</a>
+</td>
+</td></tr>
+<tr class="row19"><td class="col1">
+
+
+<td>
+<a href="/spoj/BUSYMAN.html" title="Click to view solution for SPOJ BUSYMAN Solution"><i class="caret right icon"></i>BUSYMAN</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/BWIDOW.html" title="Click to view solution for SPOJ BWIDOW Solution"><i class="caret right icon"></i>BWIDOW</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/BYTESM2.html" title="Click to view solution for SPOJ BYTESM2 Solution"><i class="caret right icon"></i>BYTESM2</a>
+</td>
+</td></tr>
+<tr class="row20"><td class="col1">
+
+
+<td>
+<a href="/spoj/CAM5.html" title="Click to view solution for SPOJ CAM5 Solution"><i class="caret right icon"></i>CAM5</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/CANDY.html" title="Click to view solution for SPOJ CANDY Solution"><i class="caret right icon"></i>CANDY</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/CANDY3.html" title="Click to view solution for SPOJ CANDY3 Solution"><i class="caret right icon"></i>CANDY3</a>
+</td>
+</td></tr>
+<tr class="row21"><td class="col1">
+
+
+<td>
+<a href="/spoj/CCHESS.html" title="Click to view solution for SPOJ CCHESS Solution"><i class="caret right icon"></i>CCHESS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/CFPARTY.html" title="Click to view solution for SPOJ CFPARTY Solution"><i class="caret right icon"></i>CFPARTY</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/CHOCOLA.html" title="Click to view solution for SPOJ CHOCOLA Solution"><i class="caret right icon"></i>CHOCOLA</a>
+</td>
+</td></tr>
+<tr class="row22"><td class="col1">
+
+
+<td>
+<a href="/spoj/CIRCLE_E.html" title="Click to view solution for SPOJ CIRCLE_E Solution"><i class="caret right icon"></i>CIRCLE_E</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/CLASSICO.html" title="Click to view solution for SPOJ CLASSICO Solution"><i class="caret right icon"></i>CLASSICO</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/CMPLS.html" title="Click to view solution for SPOJ CMPLS Solution"><i class="caret right icon"></i>CMPLS</a>
+</td>
+</td></tr>
+<tr class="row23"><td class="col1">
+
+
+<td>
+<a href="/spoj/COEF.html" title="Click to view solution for SPOJ COEF Solution"><i class="caret right icon"></i>COEF</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/COINS.html" title="Click to view solution for SPOJ COINS Solution"><i class="caret right icon"></i>COINS</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/COLONY.html" title="Click to view solution for SPOJ COLONY Solution"><i class="caret right icon"></i>COLONY</a>
+</td>
+</td></tr>
+<tr class="row24"><td class="col1">
+
+
+<td>
+<a href="/spoj/CPRMT.html" title="Click to view solution for SPOJ CPRMT Solution"><i class="caret right icon"></i>CPRMT</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/CRAN01.html" title="Click to view solution for SPOJ CRAN01 Solution"><i class="caret right icon"></i>CRAN01</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/CRAN02.html" title="Click to view solution for SPOJ CRAN02 Solution"><i class="caret right icon"></i>CRAN02</a>
+</td>
+</td></tr>
+<tr class="row25"><td class="col1">
+
+
+<td>
+<a href="/spoj/CRAZYSK.html" title="Click to view solution for SPOJ CRAZYSK Solution"><i class="caret right icon"></i>CRAZYSK</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/CRDS.html" title="Click to view solution for SPOJ CRDS Solution"><i class="caret right icon"></i>CRDS</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/CRSCNTRY.html" title="Click to view solution for SPOJ CRSCNTRY Solution"><i class="caret right icon"></i>CRSCNTRY</a>
+</td>
+</td></tr>
+<tr class="row26"><td class="col1">
+
+
+<td>
+<a href="/spoj/CSQUARE.html" title="Click to view solution for SPOJ CSQUARE Solution"><i class="caret right icon"></i>CSQUARE</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/CSTREET.html" title="Click to view solution for SPOJ CSTREET Solution"><i class="caret right icon"></i>CSTREET</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/CTGAME.html" title="Click to view solution for SPOJ CTGAME Solution"><i class="caret right icon"></i>CTGAME</a>
+</td>
+</td></tr>
+<tr class="row27"><td class="col1">
+
+
+<td>
+<a href="/spoj/DCEPC206.html" title="Click to view solution for SPOJ DCEPC206 Solution"><i class="caret right icon"></i>DCEPC206</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/DCEPC501.html" title="Click to view solution for SPOJ DCEPC501 Solution"><i class="caret right icon"></i>DCEPC501</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/DCEPC504.html" title="Click to view solution for SPOJ DCEPC504 Solution"><i class="caret right icon"></i>DCEPC504</a>
+</td>
+</td></tr>
+<tr class="row28"><td class="col1">
+
+
+<td>
+<a href="/spoj/DCRYPT.html" title="Click to view solution for SPOJ DCRYPT Solution"><i class="caret right icon"></i>DCRYPT</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/DIGNUM.html" title="Click to view solution for SPOJ DIGNUM Solution"><i class="caret right icon"></i>DIGNUM</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/DOTAA.html" title="Click to view solution for SPOJ DOTAA Solution"><i class="caret right icon"></i>DOTAA</a>
+</td>
+</td></tr>
+<tr class="row29"><td class="col1">
+
+
+<td>
+<a href="/spoj/EASYPIE.html" title="Click to view solution for SPOJ EASYPIE Solution"><i class="caret right icon"></i>EASYPIE</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/EDIST.html" title="Click to view solution for SPOJ EDIST Solution"><i class="caret right icon"></i>EDIST</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/EGYPIZZA.html" title="Click to view solution for SPOJ EGYPIZZA Solution"><i class="caret right icon"></i>EGYPIZZA</a>
+</td>
+</td></tr>
+<tr class="row30"><td class="col1">
+
+
+<td>
+<a href="/spoj/EIGHTS.html" title="Click to view solution for SPOJ EIGHTS Solution"><i class="caret right icon"></i>EIGHTS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/EKO.html" title="Click to view solution for SPOJ EKO Solution"><i class="caret right icon"></i>EKO</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ELEVTRBL.html" title="Click to view solution for SPOJ ELEVTRBL Solution"><i class="caret right icon"></i>ELEVTRBL</a>
+</td>
+</td></tr>
+<tr class="row31"><td class="col1">
+
+
+<td>
+<a href="/spoj/ENIGMATH.html" title="Click to view solution for SPOJ ENIGMATH Solution"><i class="caret right icon"></i>ENIGMATH</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/EXPEDI.html" title="Click to view solution for SPOJ EXPEDI Solution"><i class="caret right icon"></i>EXPEDI</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/FACEFRND.html" title="Click to view solution for SPOJ FACEFRND Solution"><i class="caret right icon"></i>FACEFRND</a>
+</td>
+</td></tr>
+<tr class="row32"><td class="col1">
+
+
+<td>
+<a href="/spoj/FACT0.html" title="Click to view solution for SPOJ FACT0 Solution"><i class="caret right icon"></i>FACT0</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/FARIDA.html" title="Click to view solution for SPOJ FARIDA Solution"><i class="caret right icon"></i>FARIDA</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/FASHION.html" title="Click to view solution for SPOJ FASHION Solution"><i class="caret right icon"></i>FASHION</a>
+</td>
+</td></tr>
+<tr class="row33"><td class="col1">
+
+
+<td>
+<a href="/spoj/FAST2.html" title="Click to view solution for SPOJ FAST2 Solution"><i class="caret right icon"></i>FAST2</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/FCTRL.html" title="Click to view solution for SPOJ FCTRL Solution"><i class="caret right icon"></i>FCTRL</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/FCTRL2.html" title="Click to view solution for SPOJ FCTRL2 Solution"><i class="caret right icon"></i>FCTRL2</a>
+</td>
+</td></tr>
+<tr class="row34"><td class="col1">
+
+
+<td>
+<a href="/spoj/FENCE1.html" title="Click to view solution for SPOJ FENCE1 Solution"><i class="caret right icon"></i>FENCE1</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/FINDSR.html" title="Click to view solution for SPOJ FINDSR Solution"><i class="caret right icon"></i>FINDSR</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/FUNPROB.html" title="Click to view solution for SPOJ FUNPROB Solution"><i class="caret right icon"></i>FUNPROB</a>
+</td>
+</td></tr>
+<tr class="row35"><td class="col1">
+
+
+<td>
+<a href="/spoj/GAMES.html" title="Click to view solution for SPOJ GAMES Solution"><i class="caret right icon"></i>GAMES</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/GARDENAR.html" title="Click to view solution for SPOJ GARDENAR Solution"><i class="caret right icon"></i>GARDENAR</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/GCD2.html" title="Click to view solution for SPOJ GCD2 Solution"><i class="caret right icon"></i>GCD2</a>
+</td>
+</td></tr>
+<tr class="row36"><td class="col1">
+
+
+<td>
+<a href="/spoj/GCPC11J.html" title="Click to view solution for SPOJ GCPC11J Solution"><i class="caret right icon"></i>GCPC11J</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/GIRLSNBS.html" title="Click to view solution for SPOJ GIRLSNBS Solution"><i class="caret right icon"></i>GIRLSNBS</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/GNY07H.html" title="Click to view solution for SPOJ GNY07H Solution"><i class="caret right icon"></i>GNY07H</a>
+</td>
+</td></tr>
+<tr class="row37"><td class="col1">
+
+
+<td>
+<a href="/spoj/GOODB.html" title="Click to view solution for SPOJ GOODB Solution"><i class="caret right icon"></i>GOODB</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/GUESSTHE.html" title="Click to view solution for SPOJ GUESSTHE Solution"><i class="caret right icon"></i>GUESSTHE</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/HAMSTER1.html" title="Click to view solution for SPOJ HAMSTER1 Solution"><i class="caret right icon"></i>HAMSTER1</a>
+</td>
+</td></tr>
+<tr class="row38"><td class="col1">
+
+
+<td>
+<a href="/spoj/HANGOVER.html" title="Click to view solution for SPOJ HANGOVER Solution"><i class="caret right icon"></i>HANGOVER</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/HAP01.html" title="Click to view solution for SPOJ HAP01 Solution"><i class="caret right icon"></i>HAP01</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/HARSHAD.html" title="Click to view solution for SPOJ HARSHAD Solution"><i class="caret right icon"></i>HARSHAD</a>
+</td>
+</td></tr>
+<tr class="row39"><td class="col1">
+
+
+<td>
+<a href="/spoj/HC12.html" title="Click to view solution for SPOJ HC12 Solution"><i class="caret right icon"></i>HC12</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/HEADSHOT.html" title="Click to view solution for SPOJ HEADSHOT Solution"><i class="caret right icon"></i>HEADSHOT</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/HERDING.html" title="Click to view solution for SPOJ HERDING Solution"><i class="caret right icon"></i>HERDING</a>
+</td>
+</td></tr>
+<tr class="row40"><td class="col1">
+
+
+<td>
+<a href="/spoj/HIGHWAYS.html" title="Click to view solution for SPOJ HIGHWAYS Solution"><i class="caret right icon"></i>HIGHWAYS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/HISTOGRA.html" title="Click to view solution for SPOJ HISTOGRA Solution"><i class="caret right icon"></i>HISTOGRA</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/HOTELS.html" title="Click to view solution for SPOJ HOTELS Solution"><i class="caret right icon"></i>HOTELS</a>
+</td>
+</td></tr>
+<tr class="row41"><td class="col1">
+
+
+<td>
+<a href="/spoj/IITKWPCB.html" title="Click to view solution for SPOJ IITKWPCB Solution"><i class="caret right icon"></i>IITKWPCB</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/IITKWPCJ.html" title="Click to view solution for SPOJ IITKWPCJ Solution"><i class="caret right icon"></i>IITKWPCJ</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/IITKWPCO.html" title="Click to view solution for SPOJ IITKWPCO Solution"><i class="caret right icon"></i>IITKWPCO</a>
+</td>
+</td></tr>
+<tr class="row42"><td class="col1">
+
+
+<td>
+<a href="/spoj/IITWPC4A.html" title="Click to view solution for SPOJ IITWPC4A Solution"><i class="caret right icon"></i>IITWPC4A</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/INVCNT.html" title="Click to view solution for SPOJ INVCNT Solution"><i class="caret right icon"></i>INVCNT</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/IWGBS.html" title="Click to view solution for SPOJ IWGBS Solution"><i class="caret right icon"></i>IWGBS</a>
+</td>
+</td></tr>
+<tr class="row43"><td class="col1">
+
+
+<td>
+<a href="/spoj/JOKER1.html" title="Click to view solution for SPOJ JOKER1 Solution"><i class="caret right icon"></i>JOKER1</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/JULKA.html" title="Click to view solution for SPOJ JULKA Solution"><i class="caret right icon"></i>JULKA</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/KNGCHECK.html" title="Click to view solution for SPOJ KNGCHECK Solution"><i class="caret right icon"></i>KNGCHECK</a>
+</td>
+</td></tr>
+<tr class="row44"><td class="col1">
+
+
+<td>
+<a href="/spoj/KNJIGE.html" title="Click to view solution for SPOJ KNJIGE Solution"><i class="caret right icon"></i>KNJIGE</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/KOMPICI.html" title="Click to view solution for SPOJ KOMPICI Solution"><i class="caret right icon"></i>KOMPICI</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/KURUK14.html" title="Click to view solution for SPOJ KURUK14 Solution"><i class="caret right icon"></i>KURUK14</a>
+</td>
+</td></tr>
+<tr class="row45"><td class="col1">
+
+
+<td>
+<a href="/spoj/LCA.html" title="Click to view solution for SPOJ LCA Solution"><i class="caret right icon"></i>LCA</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/LCPC12E.html" title="Click to view solution for SPOJ LCPC12E Solution"><i class="caret right icon"></i>LCPC12E</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/LCPC12F.html" title="Click to view solution for SPOJ LCPC12F Solution"><i class="caret right icon"></i>LCPC12F</a>
+</td>
+</td></tr>
+<tr class="row46"><td class="col1">
+
+
+<td>
+<a href="/spoj/LISA.html" title="Click to view solution for SPOJ LISA Solution"><i class="caret right icon"></i>LISA</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/M3TILE.html" title="Click to view solution for SPOJ M3TILE Solution"><i class="caret right icon"></i>M3TILE</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/MAIN12A.html" title="Click to view solution for SPOJ MAIN12A Solution"><i class="caret right icon"></i>MAIN12A</a>
+</td>
+</td></tr>
+<tr class="row47"><td class="col1">
+
+
+<td>
+<a href="/spoj/MAIN74.html" title="Click to view solution for SPOJ MAIN74 Solution"><i class="caret right icon"></i>MAIN74</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/MAIN8_C.html" title="Click to view solution for SPOJ MAIN8_C Solution"><i class="caret right icon"></i>MAIN8_C</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/MAJOR.html" title="Click to view solution for SPOJ MAJOR Solution"><i class="caret right icon"></i>MAJOR</a>
+</td>
+</td></tr>
+<tr class="row48"><td class="col1">
+
+
+<td>
+<a href="/spoj/MANGOES.html" title="Click to view solution for SPOJ MANGOES Solution"><i class="caret right icon"></i>MANGOES</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/MAY99_2.html" title="Click to view solution for SPOJ MAY99_2 Solution"><i class="caret right icon"></i>MAY99_2</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/MC.html" title="Click to view solution for SPOJ MC Solution"><i class="caret right icon"></i>MC</a>
+</td>
+</td></tr>
+<tr class="row49"><td class="col1">
+
+
+<td>
+<a href="/spoj/MCUR98.html" title="Click to view solution for SPOJ MCUR98 Solution"><i class="caret right icon"></i>MCUR98</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/MINCOUNT.html" title="Click to view solution for SPOJ MINCOUNT Solution"><i class="caret right icon"></i>MINCOUNT</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/MIXTURES.html" title="Click to view solution for SPOJ MIXTURES Solution"><i class="caret right icon"></i>MIXTURES</a>
+</td>
+</td></tr>
+<tr class="row50"><td class="col1">
+
+
+<td>
+<a href="/spoj/NFURY.html" title="Click to view solution for SPOJ NFURY Solution"><i class="caret right icon"></i>NFURY</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/NGM.html" title="Click to view solution for SPOJ NGM Solution"><i class="caret right icon"></i>NGM</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/NICEBTRE.html" title="Click to view solution for SPOJ NICEBTRE Solution"><i class="caret right icon"></i>NICEBTRE</a>
+</td>
+</td></tr>
+<tr class="row51"><td class="col1">
+
+
+<td>
+<a href="/spoj/NITK06.html" title="Click to view solution for SPOJ NITK06 Solution"><i class="caret right icon"></i>NITK06</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/NITT2.html" title="Click to view solution for SPOJ NITT2 Solution"><i class="caret right icon"></i>NITT2</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/NOVICE62.html" title="Click to view solution for SPOJ NOVICE62 Solution"><i class="caret right icon"></i>NOVICE62</a>
+</td>
+</td></tr>
+<tr class="row52"><td class="col1">
+
+
+<td>
+<a href="/spoj/NSTEPS.html" title="Click to view solution for SPOJ NSTEPS Solution"><i class="caret right icon"></i>NSTEPS</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/OLOLO.html" title="Click to view solution for SPOJ OLOLO Solution"><i class="caret right icon"></i>OLOLO</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/ONP.html" title="Click to view solution for SPOJ ONP Solution"><i class="caret right icon"></i>ONP</a>
+</td>
+</td></tr>
+<tr class="row53"><td class="col1">
+
+
+<td>
+<a href="/spoj/PARTY.html" title="Click to view solution for SPOJ PARTY Solution"><i class="caret right icon"></i>PARTY</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/PEBBLE.html" title="Click to view solution for SPOJ PEBBLE Solution"><i class="caret right icon"></i>PEBBLE</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/PIE.html" title="Click to view solution for SPOJ PIE Solution"><i class="caret right icon"></i>PIE</a>
+</td>
+</td></tr>
+<tr class="row54"><td class="col1">
+
+
+<td>
+<a href="/spoj/POCRI.html" title="Click to view solution for SPOJ POCRI Solution"><i class="caret right icon"></i>POCRI</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/PRATA.html" title="Click to view solution for SPOJ PRATA Solution"><i class="caret right icon"></i>PRATA</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/PRIME1.html" title="Click to view solution for SPOJ PRIME1 Solution"><i class="caret right icon"></i>PRIME1</a>
+</td>
+</td></tr>
+<tr class="row55"><td class="col1">
+
+
+<td>
+<a href="/spoj/PRO.html" title="Click to view solution for SPOJ PRO Solution"><i class="caret right icon"></i>PRO</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/PT07Y.html" title="Click to view solution for SPOJ PT07Y Solution"><i class="caret right icon"></i>PT07Y</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/PT07Z.html" title="Click to view solution for SPOJ PT07Z Solution"><i class="caret right icon"></i>PT07Z</a>
+</td>
+</td></tr>
+<tr class="row56"><td class="col1">
+
+
+<td>
+<a href="/spoj/RMID.html" title="Click to view solution for SPOJ RMID Solution"><i class="caret right icon"></i>RMID</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/ROHAAN.html" title="Click to view solution for SPOJ ROHAAN Solution"><i class="caret right icon"></i>ROHAAN</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/RPLC.html" title="Click to view solution for SPOJ RPLC Solution"><i class="caret right icon"></i>RPLC</a>
+</td>
+</td></tr>
+<tr class="row57"><td class="col1">
+
+
+<td>
+<a href="/spoj/RPLE.html" title="Click to view solution for SPOJ RPLE Solution"><i class="caret right icon"></i>RPLE</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/SAMER08F.html" title="Click to view solution for SPOJ SAMER08F Solution"><i class="caret right icon"></i>SAMER08F</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/SHAHBG.html" title="Click to view solution for SPOJ SHAHBG Solution"><i class="caret right icon"></i>SHAHBG</a>
+</td>
+</td></tr>
+<tr class="row58"><td class="col1">
+
+
+<td>
+<a href="/spoj/SHAKTI.html" title="Click to view solution for SPOJ SHAKTI Solution"><i class="caret right icon"></i>SHAKTI</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/SILVER.html" title="Click to view solution for SPOJ SILVER Solution"><i class="caret right icon"></i>SILVER</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/SUBSUMS.html" title="Click to view solution for SPOJ SUBSUMS Solution"><i class="caret right icon"></i>SUBSUMS</a>
+</td>
+</td></tr>
+<tr class="row59"><td class="col1">
+
+
+<td>
+<a href="/spoj/SYNC13C.html" title="Click to view solution for SPOJ SYNC13C Solution"><i class="caret right icon"></i>SYNC13C</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/TEST.html" title="Click to view solution for SPOJ TEST Solution"><i class="caret right icon"></i>TEST</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/THEATRE.html" title="Click to view solution for SPOJ THEATRE Solution"><i class="caret right icon"></i>THEATRE</a>
+</td>
+</td></tr>
+<tr class="row60"><td class="col1">
+
+
+<td>
+<a href="/spoj/TOANDFRO.html" title="Click to view solution for SPOJ TOANDFRO Solution"><i class="caret right icon"></i>TOANDFRO</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/TRGRID.html" title="Click to view solution for SPOJ TRGRID Solution"><i class="caret right icon"></i>TRGRID</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/TRICOUNT.html" title="Click to view solution for SPOJ TRICOUNT Solution"><i class="caret right icon"></i>TRICOUNT</a>
+</td>
+</td></tr>
+<tr class="row61"><td class="col1">
+
+
+<td>
+<a href="/spoj/UCV2013A.html" title="Click to view solution for SPOJ UCV2013A Solution"><i class="caret right icon"></i>UCV2013A</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/UCV2013H.html" title="Click to view solution for SPOJ UCV2013H Solution"><i class="caret right icon"></i>UCV2013H</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/UCV2013J.html" title="Click to view solution for SPOJ UCV2013J Solution"><i class="caret right icon"></i>UCV2013J</a>
+</td>
+</td></tr>
+<tr class="row62"><td class="col1">
+
+
+<td>
+<a href="/spoj/UJ.html" title="Click to view solution for SPOJ UJ Solution"><i class="caret right icon"></i>UJ</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/VPL2_AA.html" title="Click to view solution for SPOJ VPL2_AA Solution"><i class="caret right icon"></i>VPL2_AA</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/WILLITST.html" title="Click to view solution for SPOJ WILLITST Solution"><i class="caret right icon"></i>WILLITST</a>
+</td>
+</td></tr>
+<tr class="row63"><td class="col1">
+
+
+<td>
+<a href="/spoj/WORDCNT.html" title="Click to view solution for SPOJ WORDCNT Solution"><i class="caret right icon"></i>WORDCNT</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/WORKB.html" title="Click to view solution for SPOJ WORKB Solution"><i class="caret right icon"></i>WORKB</a>
+</td>
+</td><td class="col3">
+
+
+<td>
+<a href="/spoj/WPC4F.html" title="Click to view solution for SPOJ WPC4F Solution"><i class="caret right icon"></i>WPC4F</a>
+</td>
+</td></tr>
+<tr class="row64"><td class="col1">
+
+
+<td>
+<a href="/spoj/WTK.html" title="Click to view solution for SPOJ WTK Solution"><i class="caret right icon"></i>WTK</a>
+</td>
+</td><td class="col2">
+
+
+<td>
+<a href="/spoj/YUMMY.html" title="Click to view solution for SPOJ YUMMY Solution"><i class="caret right icon"></i>YUMMY</a>
+</td>
+</td></tr>
+
+</table>
+
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="sixteen wide column">
+        <div class="ui medium image">
+            <image src="/static/images/spoj.png" />
+        </div>
+        
+
+
+
+<table class="ui very basic table">
+
+<tr class="row1">
+<td class="col1">
+
+
+<td>
+<a href="/spoj/ABCD.html" title="Click to view solution for SPOJ ABCD Solution"><i class="caret right icon"></i>ABCD</a>
+</td>
+</td></tr>
+<tr class="row2"><td class="col1">
+
+
+<td>
+<a href="/spoj/ABCDEF.html" title="Click to view solution for SPOJ ABCDEF Solution"><i class="caret right icon"></i>ABCDEF</a>
+</td>
+</td></tr>
+<tr class="row3"><td class="col1">
+
+
+<td>
+<a href="/spoj/ABCPATH.html" title="Click to view solution for SPOJ ABCPATH Solution"><i class="caret right icon"></i>ABCPATH</a>
+</td>
+</td></tr>
+<tr class="row4"><td class="col1">
+
+
+<td>
+<a href="/spoj/ABSURD.html" title="Click to view solution for SPOJ ABSURD Solution"><i class="caret right icon"></i>ABSURD</a>
+</td>
+</td></tr>
+<tr class="row5"><td class="col1">
+
+
+<td>
+<a href="/spoj/ABSYS.html" title="Click to view solution for SPOJ ABSYS Solution"><i class="caret right icon"></i>ABSYS</a>
+</td>
+</td></tr>
+<tr class="row6"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACODE.html" title="Click to view solution for SPOJ ACODE Solution"><i class="caret right icon"></i>ACODE</a>
+</td>
+</td></tr>
+<tr class="row7"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACPC10A.html" title="Click to view solution for SPOJ ACPC10A Solution"><i class="caret right icon"></i>ACPC10A</a>
+</td>
+</td></tr>
+<tr class="row8"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACPC10D.html" title="Click to view solution for SPOJ ACPC10D Solution"><i class="caret right icon"></i>ACPC10D</a>
+</td>
+</td></tr>
+<tr class="row9"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACPC11B.html" title="Click to view solution for SPOJ ACPC11B Solution"><i class="caret right icon"></i>ACPC11B</a>
+</td>
+</td></tr>
+<tr class="row10"><td class="col1">
+
+
+<td>
+<a href="/spoj/ACS.html" title="Click to view solution for SPOJ ACS Solution"><i class="caret right icon"></i>ACS</a>
+</td>
+</td></tr>
+<tr class="row11"><td class="col1">
+
+
+<td>
+<a href="/spoj/ADDREV.html" title="Click to view solution for SPOJ ADDREV Solution"><i class="caret right icon"></i>ADDREV</a>
+</td>
+</td></tr>
+<tr class="row12"><td class="col1">
+
+
+<td>
+<a href="/spoj/ADV04L.html" title="Click to view solution for SPOJ ADV04L Solution"><i class="caret right icon"></i>ADV04L</a>
+</td>
+</td></tr>
+<tr class="row13"><td class="col1">
+
+
+<td>
+<a href="/spoj/AE00.html" title="Click to view solution for SPOJ AE00 Solution"><i class="caret right icon"></i>AE00</a>
+</td>
+</td></tr>
+<tr class="row14"><td class="col1">
+
+
+<td>
+<a href="/spoj/AFS.html" title="Click to view solution for SPOJ AFS Solution"><i class="caret right icon"></i>AFS</a>
+</td>
+</td></tr>
+<tr class="row15"><td class="col1">
+
+
+<td>
+<a href="/spoj/AGGRCOW.html" title="Click to view solution for SPOJ AGGRCOW Solution"><i class="caret right icon"></i>AGGRCOW</a>
+</td>
+</td></tr>
+<tr class="row16"><td class="col1">
+
+
+<td>
+<a href="/spoj/AIBOHP.html" title="Click to view solution for SPOJ AIBOHP Solution"><i class="caret right icon"></i>AIBOHP</a>
+</td>
+</td></tr>
+<tr class="row17"><td class="col1">
+
+
+<td>
+<a href="/spoj/ALICESIE.html" title="Click to view solution for SPOJ ALICESIE Solution"><i class="caret right icon"></i>ALICESIE</a>
+</td>
+</td></tr>
+<tr class="row18"><td class="col1">
+
+
+<td>
+<a href="/spoj/ALIEN.html" title="Click to view solution for SPOJ ALIEN Solution"><i class="caret right icon"></i>ALIEN</a>
+</td>
+</td></tr>
+<tr class="row19"><td class="col1">
+
+
+<td>
+<a href="/spoj/ALIEN2.html" title="Click to view solution for SPOJ ALIEN2 Solution"><i class="caret right icon"></i>ALIEN2</a>
+</td>
+</td></tr>
+<tr class="row20"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMR10G.html" title="Click to view solution for SPOJ AMR10G Solution"><i class="caret right icon"></i>AMR10G</a>
+</td>
+</td></tr>
+<tr class="row21"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMR11E.html" title="Click to view solution for SPOJ AMR11E Solution"><i class="caret right icon"></i>AMR11E</a>
+</td>
+</td></tr>
+<tr class="row22"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMR12D.html" title="Click to view solution for SPOJ AMR12D Solution"><i class="caret right icon"></i>AMR12D</a>
+</td>
+</td></tr>
+<tr class="row23"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMR12G.html" title="Click to view solution for SPOJ AMR12G Solution"><i class="caret right icon"></i>AMR12G</a>
+</td>
+</td></tr>
+<tr class="row24"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMSCO1.html" title="Click to view solution for SPOJ AMSCO1 Solution"><i class="caret right icon"></i>AMSCO1</a>
+</td>
+</td></tr>
+<tr class="row25"><td class="col1">
+
+
+<td>
+<a href="/spoj/AMZRCK.html" title="Click to view solution for SPOJ AMZRCK Solution"><i class="caret right icon"></i>AMZRCK</a>
+</td>
+</td></tr>
+<tr class="row26"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC05B.html" title="Click to view solution for SPOJ ANARC05B Solution"><i class="caret right icon"></i>ANARC05B</a>
+</td>
+</td></tr>
+<tr class="row27"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC05H.html" title="Click to view solution for SPOJ ANARC05H Solution"><i class="caret right icon"></i>ANARC05H</a>
+</td>
+</td></tr>
+<tr class="row28"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC05I.html" title="Click to view solution for SPOJ ANARC05I Solution"><i class="caret right icon"></i>ANARC05I</a>
+</td>
+</td></tr>
+<tr class="row29"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC08G.html" title="Click to view solution for SPOJ ANARC08G Solution"><i class="caret right icon"></i>ANARC08G</a>
+</td>
+</td></tr>
+<tr class="row30"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC08H.html" title="Click to view solution for SPOJ ANARC08H Solution"><i class="caret right icon"></i>ANARC08H</a>
+</td>
+</td></tr>
+<tr class="row31"><td class="col1">
+
+
+<td>
+<a href="/spoj/ANARC09A.html" title="Click to view solution for SPOJ ANARC09A Solution"><i class="caret right icon"></i>ANARC09A</a>
+</td>
+</td></tr>
+<tr class="row32"><td class="col1">
+
+
+<td>
+<a href="/spoj/AP2.html" title="Click to view solution for SPOJ AP2 Solution"><i class="caret right icon"></i>AP2</a>
+</td>
+</td></tr>
+<tr class="row33"><td class="col1">
+
+
+<td>
+<a href="/spoj/AP3.html" title="Click to view solution for SPOJ AP3 Solution"><i class="caret right icon"></i>AP3</a>
+</td>
+</td></tr>
+<tr class="row34"><td class="col1">
+
+
+<td>
+<a href="/spoj/APS.html" title="Click to view solution for SPOJ APS Solution"><i class="caret right icon"></i>APS</a>
+</td>
+</td></tr>
+<tr class="row35"><td class="col1">
+
+
+<td>
+<a href="/spoj/ARBITRAG.html" title="Click to view solution for SPOJ ARBITRAG Solution"><i class="caret right icon"></i>ARBITRAG</a>
+</td>
+</td></tr>
+<tr class="row36"><td class="col1">
+
+
+<td>
+<a href="/spoj/ARDA1.html" title="Click to view solution for SPOJ ARDA1 Solution"><i class="caret right icon"></i>ARDA1</a>
+</td>
+</td></tr>
+<tr class="row37"><td class="col1">
+
+
+<td>
+<a href="/spoj/ARITH2.html" title="Click to view solution for SPOJ ARITH2 Solution"><i class="caret right icon"></i>ARITH2</a>
+</td>
+</td></tr>
+<tr class="row38"><td class="col1">
+
+
+<td>
+<a href="/spoj/ARMY.html" title="Click to view solution for SPOJ ARMY Solution"><i class="caret right icon"></i>ARMY</a>
+</td>
+</td></tr>
+<tr class="row39"><td class="col1">
+
+
+<td>
+<a href="/spoj/ARRAYSUB.html" title="Click to view solution for SPOJ ARRAYSUB Solution"><i class="caret right icon"></i>ARRAYSUB</a>
+</td>
+</td></tr>
+<tr class="row40"><td class="col1">
+
+
+<td>
+<a href="/spoj/ASCDFIB.html" title="Click to view solution for SPOJ ASCDFIB Solution"><i class="caret right icon"></i>ASCDFIB</a>
+</td>
+</td></tr>
+<tr class="row41"><td class="col1">
+
+
+<td>
+<a href="/spoj/BAISED.html" title="Click to view solution for SPOJ BAISED Solution"><i class="caret right icon"></i>BAISED</a>
+</td>
+</td></tr>
+<tr class="row42"><td class="col1">
+
+
+<td>
+<a href="/spoj/BALLOT.html" title="Click to view solution for SPOJ BALLOT Solution"><i class="caret right icon"></i>BALLOT</a>
+</td>
+</td></tr>
+<tr class="row43"><td class="col1">
+
+
+<td>
+<a href="/spoj/BANDW.html" title="Click to view solution for SPOJ BANDW Solution"><i class="caret right icon"></i>BANDW</a>
+</td>
+</td></tr>
+<tr class="row44"><td class="col1">
+
+
+<td>
+<a href="/spoj/BAT3.html" title="Click to view solution for SPOJ BAT3 Solution"><i class="caret right icon"></i>BAT3</a>
+</td>
+</td></tr>
+<tr class="row45"><td class="col1">
+
+
+<td>
+<a href="/spoj/BC.html" title="Click to view solution for SPOJ BC Solution"><i class="caret right icon"></i>BC</a>
+</td>
+</td></tr>
+<tr class="row46"><td class="col1">
+
+
+<td>
+<a href="/spoj/BEENUMS.html" title="Click to view solution for SPOJ BEENUMS Solution"><i class="caret right icon"></i>BEENUMS</a>
+</td>
+</td></tr>
+<tr class="row47"><td class="col1">
+
+
+<td>
+<a href="/spoj/BENEFACT.html" title="Click to view solution for SPOJ BENEFACT Solution"><i class="caret right icon"></i>BENEFACT</a>
+</td>
+</td></tr>
+<tr class="row48"><td class="col1">
+
+
+<td>
+<a href="/spoj/BINSTIRL.html" title="Click to view solution for SPOJ BINSTIRL Solution"><i class="caret right icon"></i>BINSTIRL</a>
+</td>
+</td></tr>
+<tr class="row49"><td class="col1">
+
+
+<td>
+<a href="/spoj/BLINNET.html" title="Click to view solution for SPOJ BLINNET Solution"><i class="caret right icon"></i>BLINNET</a>
+</td>
+</td></tr>
+<tr class="row50"><td class="col1">
+
+
+<td>
+<a href="/spoj/BOGGLE.html" title="Click to view solution for SPOJ BOGGLE Solution"><i class="caret right icon"></i>BOGGLE</a>
+</td>
+</td></tr>
+<tr class="row51"><td class="col1">
+
+
+<td>
+<a href="/spoj/BOI7SEQ.html" title="Click to view solution for SPOJ BOI7SEQ Solution"><i class="caret right icon"></i>BOI7SEQ</a>
+</td>
+</td></tr>
+<tr class="row52"><td class="col1">
+
+
+<td>
+<a href="/spoj/BRIDGE.html" title="Click to view solution for SPOJ BRIDGE Solution"><i class="caret right icon"></i>BRIDGE</a>
+</td>
+</td></tr>
+<tr class="row53"><td class="col1">
+
+
+<td>
+<a href="/spoj/BUGLIFE.html" title="Click to view solution for SPOJ BUGLIFE Solution"><i class="caret right icon"></i>BUGLIFE</a>
+</td>
+</td></tr>
+<tr class="row54"><td class="col1">
+
+
+<td>
+<a href="/spoj/BUREAU.html" title="Click to view solution for SPOJ BUREAU Solution"><i class="caret right icon"></i>BUREAU</a>
+</td>
+</td></tr>
+<tr class="row55"><td class="col1">
+
+
+<td>
+<a href="/spoj/BUSYMAN.html" title="Click to view solution for SPOJ BUSYMAN Solution"><i class="caret right icon"></i>BUSYMAN</a>
+</td>
+</td></tr>
+<tr class="row56"><td class="col1">
+
+
+<td>
+<a href="/spoj/BWIDOW.html" title="Click to view solution for SPOJ BWIDOW Solution"><i class="caret right icon"></i>BWIDOW</a>
+</td>
+</td></tr>
+<tr class="row57"><td class="col1">
+
+
+<td>
+<a href="/spoj/BYTESM2.html" title="Click to view solution for SPOJ BYTESM2 Solution"><i class="caret right icon"></i>BYTESM2</a>
+</td>
+</td></tr>
+<tr class="row58"><td class="col1">
+
+
+<td>
+<a href="/spoj/CAM5.html" title="Click to view solution for SPOJ CAM5 Solution"><i class="caret right icon"></i>CAM5</a>
+</td>
+</td></tr>
+<tr class="row59"><td class="col1">
+
+
+<td>
+<a href="/spoj/CANDY.html" title="Click to view solution for SPOJ CANDY Solution"><i class="caret right icon"></i>CANDY</a>
+</td>
+</td></tr>
+<tr class="row60"><td class="col1">
+
+
+<td>
+<a href="/spoj/CANDY3.html" title="Click to view solution for SPOJ CANDY3 Solution"><i class="caret right icon"></i>CANDY3</a>
+</td>
+</td></tr>
+<tr class="row61"><td class="col1">
+
+
+<td>
+<a href="/spoj/CCHESS.html" title="Click to view solution for SPOJ CCHESS Solution"><i class="caret right icon"></i>CCHESS</a>
+</td>
+</td></tr>
+<tr class="row62"><td class="col1">
+
+
+<td>
+<a href="/spoj/CFPARTY.html" title="Click to view solution for SPOJ CFPARTY Solution"><i class="caret right icon"></i>CFPARTY</a>
+</td>
+</td></tr>
+<tr class="row63"><td class="col1">
+
+
+<td>
+<a href="/spoj/CHOCOLA.html" title="Click to view solution for SPOJ CHOCOLA Solution"><i class="caret right icon"></i>CHOCOLA</a>
+</td>
+</td></tr>
+<tr class="row64"><td class="col1">
+
+
+<td>
+<a href="/spoj/CIRCLE_E.html" title="Click to view solution for SPOJ CIRCLE_E Solution"><i class="caret right icon"></i>CIRCLE_E</a>
+</td>
+</td></tr>
+<tr class="row65"><td class="col1">
+
+
+<td>
+<a href="/spoj/CLASSICO.html" title="Click to view solution for SPOJ CLASSICO Solution"><i class="caret right icon"></i>CLASSICO</a>
+</td>
+</td></tr>
+<tr class="row66"><td class="col1">
+
+
+<td>
+<a href="/spoj/CMPLS.html" title="Click to view solution for SPOJ CMPLS Solution"><i class="caret right icon"></i>CMPLS</a>
+</td>
+</td></tr>
+<tr class="row67"><td class="col1">
+
+
+<td>
+<a href="/spoj/COEF.html" title="Click to view solution for SPOJ COEF Solution"><i class="caret right icon"></i>COEF</a>
+</td>
+</td></tr>
+<tr class="row68"><td class="col1">
+
+
+<td>
+<a href="/spoj/COINS.html" title="Click to view solution for SPOJ COINS Solution"><i class="caret right icon"></i>COINS</a>
+</td>
+</td></tr>
+<tr class="row69"><td class="col1">
+
+
+<td>
+<a href="/spoj/COLONY.html" title="Click to view solution for SPOJ COLONY Solution"><i class="caret right icon"></i>COLONY</a>
+</td>
+</td></tr>
+<tr class="row70"><td class="col1">
+
+
+<td>
+<a href="/spoj/CPRMT.html" title="Click to view solution for SPOJ CPRMT Solution"><i class="caret right icon"></i>CPRMT</a>
+</td>
+</td></tr>
+<tr class="row71"><td class="col1">
+
+
+<td>
+<a href="/spoj/CRAN01.html" title="Click to view solution for SPOJ CRAN01 Solution"><i class="caret right icon"></i>CRAN01</a>
+</td>
+</td></tr>
+<tr class="row72"><td class="col1">
+
+
+<td>
+<a href="/spoj/CRAN02.html" title="Click to view solution for SPOJ CRAN02 Solution"><i class="caret right icon"></i>CRAN02</a>
+</td>
+</td></tr>
+<tr class="row73"><td class="col1">
+
+
+<td>
+<a href="/spoj/CRAZYSK.html" title="Click to view solution for SPOJ CRAZYSK Solution"><i class="caret right icon"></i>CRAZYSK</a>
+</td>
+</td></tr>
+<tr class="row74"><td class="col1">
+
+
+<td>
+<a href="/spoj/CRDS.html" title="Click to view solution for SPOJ CRDS Solution"><i class="caret right icon"></i>CRDS</a>
+</td>
+</td></tr>
+<tr class="row75"><td class="col1">
+
+
+<td>
+<a href="/spoj/CRSCNTRY.html" title="Click to view solution for SPOJ CRSCNTRY Solution"><i class="caret right icon"></i>CRSCNTRY</a>
+</td>
+</td></tr>
+<tr class="row76"><td class="col1">
+
+
+<td>
+<a href="/spoj/CSQUARE.html" title="Click to view solution for SPOJ CSQUARE Solution"><i class="caret right icon"></i>CSQUARE</a>
+</td>
+</td></tr>
+<tr class="row77"><td class="col1">
+
+
+<td>
+<a href="/spoj/CSTREET.html" title="Click to view solution for SPOJ CSTREET Solution"><i class="caret right icon"></i>CSTREET</a>
+</td>
+</td></tr>
+<tr class="row78"><td class="col1">
+
+
+<td>
+<a href="/spoj/CTGAME.html" title="Click to view solution for SPOJ CTGAME Solution"><i class="caret right icon"></i>CTGAME</a>
+</td>
+</td></tr>
+<tr class="row79"><td class="col1">
+
+
+<td>
+<a href="/spoj/DCEPC206.html" title="Click to view solution for SPOJ DCEPC206 Solution"><i class="caret right icon"></i>DCEPC206</a>
+</td>
+</td></tr>
+<tr class="row80"><td class="col1">
+
+
+<td>
+<a href="/spoj/DCEPC501.html" title="Click to view solution for SPOJ DCEPC501 Solution"><i class="caret right icon"></i>DCEPC501</a>
+</td>
+</td></tr>
+<tr class="row81"><td class="col1">
+
+
+<td>
+<a href="/spoj/DCEPC504.html" title="Click to view solution for SPOJ DCEPC504 Solution"><i class="caret right icon"></i>DCEPC504</a>
+</td>
+</td></tr>
+<tr class="row82"><td class="col1">
+
+
+<td>
+<a href="/spoj/DCRYPT.html" title="Click to view solution for SPOJ DCRYPT Solution"><i class="caret right icon"></i>DCRYPT</a>
+</td>
+</td></tr>
+<tr class="row83"><td class="col1">
+
+
+<td>
+<a href="/spoj/DIGNUM.html" title="Click to view solution for SPOJ DIGNUM Solution"><i class="caret right icon"></i>DIGNUM</a>
+</td>
+</td></tr>
+<tr class="row84"><td class="col1">
+
+
+<td>
+<a href="/spoj/DOTAA.html" title="Click to view solution for SPOJ DOTAA Solution"><i class="caret right icon"></i>DOTAA</a>
+</td>
+</td></tr>
+<tr class="row85"><td class="col1">
+
+
+<td>
+<a href="/spoj/EASYPIE.html" title="Click to view solution for SPOJ EASYPIE Solution"><i class="caret right icon"></i>EASYPIE</a>
+</td>
+</td></tr>
+<tr class="row86"><td class="col1">
+
+
+<td>
+<a href="/spoj/EDIST.html" title="Click to view solution for SPOJ EDIST Solution"><i class="caret right icon"></i>EDIST</a>
+</td>
+</td></tr>
+<tr class="row87"><td class="col1">
+
+
+<td>
+<a href="/spoj/EGYPIZZA.html" title="Click to view solution for SPOJ EGYPIZZA Solution"><i class="caret right icon"></i>EGYPIZZA</a>
+</td>
+</td></tr>
+<tr class="row88"><td class="col1">
+
+
+<td>
+<a href="/spoj/EIGHTS.html" title="Click to view solution for SPOJ EIGHTS Solution"><i class="caret right icon"></i>EIGHTS</a>
+</td>
+</td></tr>
+<tr class="row89"><td class="col1">
+
+
+<td>
+<a href="/spoj/EKO.html" title="Click to view solution for SPOJ EKO Solution"><i class="caret right icon"></i>EKO</a>
+</td>
+</td></tr>
+<tr class="row90"><td class="col1">
+
+
+<td>
+<a href="/spoj/ELEVTRBL.html" title="Click to view solution for SPOJ ELEVTRBL Solution"><i class="caret right icon"></i>ELEVTRBL</a>
+</td>
+</td></tr>
+<tr class="row91"><td class="col1">
+
+
+<td>
+<a href="/spoj/ENIGMATH.html" title="Click to view solution for SPOJ ENIGMATH Solution"><i class="caret right icon"></i>ENIGMATH</a>
+</td>
+</td></tr>
+<tr class="row92"><td class="col1">
+
+
+<td>
+<a href="/spoj/EXPEDI.html" title="Click to view solution for SPOJ EXPEDI Solution"><i class="caret right icon"></i>EXPEDI</a>
+</td>
+</td></tr>
+<tr class="row93"><td class="col1">
+
+
+<td>
+<a href="/spoj/FACEFRND.html" title="Click to view solution for SPOJ FACEFRND Solution"><i class="caret right icon"></i>FACEFRND</a>
+</td>
+</td></tr>
+<tr class="row94"><td class="col1">
+
+
+<td>
+<a href="/spoj/FACT0.html" title="Click to view solution for SPOJ FACT0 Solution"><i class="caret right icon"></i>FACT0</a>
+</td>
+</td></tr>
+<tr class="row95"><td class="col1">
+
+
+<td>
+<a href="/spoj/FARIDA.html" title="Click to view solution for SPOJ FARIDA Solution"><i class="caret right icon"></i>FARIDA</a>
+</td>
+</td></tr>
+<tr class="row96"><td class="col1">
+
+
+<td>
+<a href="/spoj/FASHION.html" title="Click to view solution for SPOJ FASHION Solution"><i class="caret right icon"></i>FASHION</a>
+</td>
+</td></tr>
+<tr class="row97"><td class="col1">
+
+
+<td>
+<a href="/spoj/FAST2.html" title="Click to view solution for SPOJ FAST2 Solution"><i class="caret right icon"></i>FAST2</a>
+</td>
+</td></tr>
+<tr class="row98"><td class="col1">
+
+
+<td>
+<a href="/spoj/FCTRL.html" title="Click to view solution for SPOJ FCTRL Solution"><i class="caret right icon"></i>FCTRL</a>
+</td>
+</td></tr>
+<tr class="row99"><td class="col1">
+
+
+<td>
+<a href="/spoj/FCTRL2.html" title="Click to view solution for SPOJ FCTRL2 Solution"><i class="caret right icon"></i>FCTRL2</a>
+</td>
+</td></tr>
+<tr class="row100"><td class="col1">
+
+
+<td>
+<a href="/spoj/FENCE1.html" title="Click to view solution for SPOJ FENCE1 Solution"><i class="caret right icon"></i>FENCE1</a>
+</td>
+</td></tr>
+<tr class="row101"><td class="col1">
+
+
+<td>
+<a href="/spoj/FINDSR.html" title="Click to view solution for SPOJ FINDSR Solution"><i class="caret right icon"></i>FINDSR</a>
+</td>
+</td></tr>
+<tr class="row102"><td class="col1">
+
+
+<td>
+<a href="/spoj/FUNPROB.html" title="Click to view solution for SPOJ FUNPROB Solution"><i class="caret right icon"></i>FUNPROB</a>
+</td>
+</td></tr>
+<tr class="row103"><td class="col1">
+
+
+<td>
+<a href="/spoj/GAMES.html" title="Click to view solution for SPOJ GAMES Solution"><i class="caret right icon"></i>GAMES</a>
+</td>
+</td></tr>
+<tr class="row104"><td class="col1">
+
+
+<td>
+<a href="/spoj/GARDENAR.html" title="Click to view solution for SPOJ GARDENAR Solution"><i class="caret right icon"></i>GARDENAR</a>
+</td>
+</td></tr>
+<tr class="row105"><td class="col1">
+
+
+<td>
+<a href="/spoj/GCD2.html" title="Click to view solution for SPOJ GCD2 Solution"><i class="caret right icon"></i>GCD2</a>
+</td>
+</td></tr>
+<tr class="row106"><td class="col1">
+
+
+<td>
+<a href="/spoj/GCPC11J.html" title="Click to view solution for SPOJ GCPC11J Solution"><i class="caret right icon"></i>GCPC11J</a>
+</td>
+</td></tr>
+<tr class="row107"><td class="col1">
+
+
+<td>
+<a href="/spoj/GIRLSNBS.html" title="Click to view solution for SPOJ GIRLSNBS Solution"><i class="caret right icon"></i>GIRLSNBS</a>
+</td>
+</td></tr>
+<tr class="row108"><td class="col1">
+
+
+<td>
+<a href="/spoj/GNY07H.html" title="Click to view solution for SPOJ GNY07H Solution"><i class="caret right icon"></i>GNY07H</a>
+</td>
+</td></tr>
+<tr class="row109"><td class="col1">
+
+
+<td>
+<a href="/spoj/GOODB.html" title="Click to view solution for SPOJ GOODB Solution"><i class="caret right icon"></i>GOODB</a>
+</td>
+</td></tr>
+<tr class="row110"><td class="col1">
+
+
+<td>
+<a href="/spoj/GUESSTHE.html" title="Click to view solution for SPOJ GUESSTHE Solution"><i class="caret right icon"></i>GUESSTHE</a>
+</td>
+</td></tr>
+<tr class="row111"><td class="col1">
+
+
+<td>
+<a href="/spoj/HAMSTER1.html" title="Click to view solution for SPOJ HAMSTER1 Solution"><i class="caret right icon"></i>HAMSTER1</a>
+</td>
+</td></tr>
+<tr class="row112"><td class="col1">
+
+
+<td>
+<a href="/spoj/HANGOVER.html" title="Click to view solution for SPOJ HANGOVER Solution"><i class="caret right icon"></i>HANGOVER</a>
+</td>
+</td></tr>
+<tr class="row113"><td class="col1">
+
+
+<td>
+<a href="/spoj/HAP01.html" title="Click to view solution for SPOJ HAP01 Solution"><i class="caret right icon"></i>HAP01</a>
+</td>
+</td></tr>
+<tr class="row114"><td class="col1">
+
+
+<td>
+<a href="/spoj/HARSHAD.html" title="Click to view solution for SPOJ HARSHAD Solution"><i class="caret right icon"></i>HARSHAD</a>
+</td>
+</td></tr>
+<tr class="row115"><td class="col1">
+
+
+<td>
+<a href="/spoj/HC12.html" title="Click to view solution for SPOJ HC12 Solution"><i class="caret right icon"></i>HC12</a>
+</td>
+</td></tr>
+<tr class="row116"><td class="col1">
+
+
+<td>
+<a href="/spoj/HEADSHOT.html" title="Click to view solution for SPOJ HEADSHOT Solution"><i class="caret right icon"></i>HEADSHOT</a>
+</td>
+</td></tr>
+<tr class="row117"><td class="col1">
+
+
+<td>
+<a href="/spoj/HERDING.html" title="Click to view solution for SPOJ HERDING Solution"><i class="caret right icon"></i>HERDING</a>
+</td>
+</td></tr>
+<tr class="row118"><td class="col1">
+
+
+<td>
+<a href="/spoj/HIGHWAYS.html" title="Click to view solution for SPOJ HIGHWAYS Solution"><i class="caret right icon"></i>HIGHWAYS</a>
+</td>
+</td></tr>
+<tr class="row119"><td class="col1">
+
+
+<td>
+<a href="/spoj/HISTOGRA.html" title="Click to view solution for SPOJ HISTOGRA Solution"><i class="caret right icon"></i>HISTOGRA</a>
+</td>
+</td></tr>
+<tr class="row120"><td class="col1">
+
+
+<td>
+<a href="/spoj/HOTELS.html" title="Click to view solution for SPOJ HOTELS Solution"><i class="caret right icon"></i>HOTELS</a>
+</td>
+</td></tr>
+<tr class="row121"><td class="col1">
+
+
+<td>
+<a href="/spoj/IITKWPCB.html" title="Click to view solution for SPOJ IITKWPCB Solution"><i class="caret right icon"></i>IITKWPCB</a>
+</td>
+</td></tr>
+<tr class="row122"><td class="col1">
+
+
+<td>
+<a href="/spoj/IITKWPCJ.html" title="Click to view solution for SPOJ IITKWPCJ Solution"><i class="caret right icon"></i>IITKWPCJ</a>
+</td>
+</td></tr>
+<tr class="row123"><td class="col1">
+
+
+<td>
+<a href="/spoj/IITKWPCO.html" title="Click to view solution for SPOJ IITKWPCO Solution"><i class="caret right icon"></i>IITKWPCO</a>
+</td>
+</td></tr>
+<tr class="row124"><td class="col1">
+
+
+<td>
+<a href="/spoj/IITWPC4A.html" title="Click to view solution for SPOJ IITWPC4A Solution"><i class="caret right icon"></i>IITWPC4A</a>
+</td>
+</td></tr>
+<tr class="row125"><td class="col1">
+
+
+<td>
+<a href="/spoj/INVCNT.html" title="Click to view solution for SPOJ INVCNT Solution"><i class="caret right icon"></i>INVCNT</a>
+</td>
+</td></tr>
+<tr class="row126"><td class="col1">
+
+
+<td>
+<a href="/spoj/IWGBS.html" title="Click to view solution for SPOJ IWGBS Solution"><i class="caret right icon"></i>IWGBS</a>
+</td>
+</td></tr>
+<tr class="row127"><td class="col1">
+
+
+<td>
+<a href="/spoj/JOKER1.html" title="Click to view solution for SPOJ JOKER1 Solution"><i class="caret right icon"></i>JOKER1</a>
+</td>
+</td></tr>
+<tr class="row128"><td class="col1">
+
+
+<td>
+<a href="/spoj/JULKA.html" title="Click to view solution for SPOJ JULKA Solution"><i class="caret right icon"></i>JULKA</a>
+</td>
+</td></tr>
+<tr class="row129"><td class="col1">
+
+
+<td>
+<a href="/spoj/KNGCHECK.html" title="Click to view solution for SPOJ KNGCHECK Solution"><i class="caret right icon"></i>KNGCHECK</a>
+</td>
+</td></tr>
+<tr class="row130"><td class="col1">
+
+
+<td>
+<a href="/spoj/KNJIGE.html" title="Click to view solution for SPOJ KNJIGE Solution"><i class="caret right icon"></i>KNJIGE</a>
+</td>
+</td></tr>
+<tr class="row131"><td class="col1">
+
+
+<td>
+<a href="/spoj/KOMPICI.html" title="Click to view solution for SPOJ KOMPICI Solution"><i class="caret right icon"></i>KOMPICI</a>
+</td>
+</td></tr>
+<tr class="row132"><td class="col1">
+
+
+<td>
+<a href="/spoj/KURUK14.html" title="Click to view solution for SPOJ KURUK14 Solution"><i class="caret right icon"></i>KURUK14</a>
+</td>
+</td></tr>
+<tr class="row133"><td class="col1">
+
+
+<td>
+<a href="/spoj/LCA.html" title="Click to view solution for SPOJ LCA Solution"><i class="caret right icon"></i>LCA</a>
+</td>
+</td></tr>
+<tr class="row134"><td class="col1">
+
+
+<td>
+<a href="/spoj/LCPC12E.html" title="Click to view solution for SPOJ LCPC12E Solution"><i class="caret right icon"></i>LCPC12E</a>
+</td>
+</td></tr>
+<tr class="row135"><td class="col1">
+
+
+<td>
+<a href="/spoj/LCPC12F.html" title="Click to view solution for SPOJ LCPC12F Solution"><i class="caret right icon"></i>LCPC12F</a>
+</td>
+</td></tr>
+<tr class="row136"><td class="col1">
+
+
+<td>
+<a href="/spoj/LISA.html" title="Click to view solution for SPOJ LISA Solution"><i class="caret right icon"></i>LISA</a>
+</td>
+</td></tr>
+<tr class="row137"><td class="col1">
+
+
+<td>
+<a href="/spoj/M3TILE.html" title="Click to view solution for SPOJ M3TILE Solution"><i class="caret right icon"></i>M3TILE</a>
+</td>
+</td></tr>
+<tr class="row138"><td class="col1">
+
+
+<td>
+<a href="/spoj/MAIN12A.html" title="Click to view solution for SPOJ MAIN12A Solution"><i class="caret right icon"></i>MAIN12A</a>
+</td>
+</td></tr>
+<tr class="row139"><td class="col1">
+
+
+<td>
+<a href="/spoj/MAIN74.html" title="Click to view solution for SPOJ MAIN74 Solution"><i class="caret right icon"></i>MAIN74</a>
+</td>
+</td></tr>
+<tr class="row140"><td class="col1">
+
+
+<td>
+<a href="/spoj/MAIN8_C.html" title="Click to view solution for SPOJ MAIN8_C Solution"><i class="caret right icon"></i>MAIN8_C</a>
+</td>
+</td></tr>
+<tr class="row141"><td class="col1">
+
+
+<td>
+<a href="/spoj/MAJOR.html" title="Click to view solution for SPOJ MAJOR Solution"><i class="caret right icon"></i>MAJOR</a>
+</td>
+</td></tr>
+<tr class="row142"><td class="col1">
+
+
+<td>
+<a href="/spoj/MANGOES.html" title="Click to view solution for SPOJ MANGOES Solution"><i class="caret right icon"></i>MANGOES</a>
+</td>
+</td></tr>
+<tr class="row143"><td class="col1">
+
+
+<td>
+<a href="/spoj/MAY99_2.html" title="Click to view solution for SPOJ MAY99_2 Solution"><i class="caret right icon"></i>MAY99_2</a>
+</td>
+</td></tr>
+<tr class="row144"><td class="col1">
+
+
+<td>
+<a href="/spoj/MC.html" title="Click to view solution for SPOJ MC Solution"><i class="caret right icon"></i>MC</a>
+</td>
+</td></tr>
+<tr class="row145"><td class="col1">
+
+
+<td>
+<a href="/spoj/MCUR98.html" title="Click to view solution for SPOJ MCUR98 Solution"><i class="caret right icon"></i>MCUR98</a>
+</td>
+</td></tr>
+<tr class="row146"><td class="col1">
+
+
+<td>
+<a href="/spoj/MINCOUNT.html" title="Click to view solution for SPOJ MINCOUNT Solution"><i class="caret right icon"></i>MINCOUNT</a>
+</td>
+</td></tr>
+<tr class="row147"><td class="col1">
+
+
+<td>
+<a href="/spoj/MIXTURES.html" title="Click to view solution for SPOJ MIXTURES Solution"><i class="caret right icon"></i>MIXTURES</a>
+</td>
+</td></tr>
+<tr class="row148"><td class="col1">
+
+
+<td>
+<a href="/spoj/NFURY.html" title="Click to view solution for SPOJ NFURY Solution"><i class="caret right icon"></i>NFURY</a>
+</td>
+</td></tr>
+<tr class="row149"><td class="col1">
+
+
+<td>
+<a href="/spoj/NGM.html" title="Click to view solution for SPOJ NGM Solution"><i class="caret right icon"></i>NGM</a>
+</td>
+</td></tr>
+<tr class="row150"><td class="col1">
+
+
+<td>
+<a href="/spoj/NICEBTRE.html" title="Click to view solution for SPOJ NICEBTRE Solution"><i class="caret right icon"></i>NICEBTRE</a>
+</td>
+</td></tr>
+<tr class="row151"><td class="col1">
+
+
+<td>
+<a href="/spoj/NITK06.html" title="Click to view solution for SPOJ NITK06 Solution"><i class="caret right icon"></i>NITK06</a>
+</td>
+</td></tr>
+<tr class="row152"><td class="col1">
+
+
+<td>
+<a href="/spoj/NITT2.html" title="Click to view solution for SPOJ NITT2 Solution"><i class="caret right icon"></i>NITT2</a>
+</td>
+</td></tr>
+<tr class="row153"><td class="col1">
+
+
+<td>
+<a href="/spoj/NOVICE62.html" title="Click to view solution for SPOJ NOVICE62 Solution"><i class="caret right icon"></i>NOVICE62</a>
+</td>
+</td></tr>
+<tr class="row154"><td class="col1">
+
+
+<td>
+<a href="/spoj/NSTEPS.html" title="Click to view solution for SPOJ NSTEPS Solution"><i class="caret right icon"></i>NSTEPS</a>
+</td>
+</td></tr>
+<tr class="row155"><td class="col1">
+
+
+<td>
+<a href="/spoj/OLOLO.html" title="Click to view solution for SPOJ OLOLO Solution"><i class="caret right icon"></i>OLOLO</a>
+</td>
+</td></tr>
+<tr class="row156"><td class="col1">
+
+
+<td>
+<a href="/spoj/ONP.html" title="Click to view solution for SPOJ ONP Solution"><i class="caret right icon"></i>ONP</a>
+</td>
+</td></tr>
+<tr class="row157"><td class="col1">
+
+
+<td>
+<a href="/spoj/PARTY.html" title="Click to view solution for SPOJ PARTY Solution"><i class="caret right icon"></i>PARTY</a>
+</td>
+</td></tr>
+<tr class="row158"><td class="col1">
+
+
+<td>
+<a href="/spoj/PEBBLE.html" title="Click to view solution for SPOJ PEBBLE Solution"><i class="caret right icon"></i>PEBBLE</a>
+</td>
+</td></tr>
+<tr class="row159"><td class="col1">
+
+
+<td>
+<a href="/spoj/PIE.html" title="Click to view solution for SPOJ PIE Solution"><i class="caret right icon"></i>PIE</a>
+</td>
+</td></tr>
+<tr class="row160"><td class="col1">
+
+
+<td>
+<a href="/spoj/POCRI.html" title="Click to view solution for SPOJ POCRI Solution"><i class="caret right icon"></i>POCRI</a>
+</td>
+</td></tr>
+<tr class="row161"><td class="col1">
+
+
+<td>
+<a href="/spoj/PRATA.html" title="Click to view solution for SPOJ PRATA Solution"><i class="caret right icon"></i>PRATA</a>
+</td>
+</td></tr>
+<tr class="row162"><td class="col1">
+
+
+<td>
+<a href="/spoj/PRIME1.html" title="Click to view solution for SPOJ PRIME1 Solution"><i class="caret right icon"></i>PRIME1</a>
+</td>
+</td></tr>
+<tr class="row163"><td class="col1">
+
+
+<td>
+<a href="/spoj/PRO.html" title="Click to view solution for SPOJ PRO Solution"><i class="caret right icon"></i>PRO</a>
+</td>
+</td></tr>
+<tr class="row164"><td class="col1">
+
+
+<td>
+<a href="/spoj/PT07Y.html" title="Click to view solution for SPOJ PT07Y Solution"><i class="caret right icon"></i>PT07Y</a>
+</td>
+</td></tr>
+<tr class="row165"><td class="col1">
+
+
+<td>
+<a href="/spoj/PT07Z.html" title="Click to view solution for SPOJ PT07Z Solution"><i class="caret right icon"></i>PT07Z</a>
+</td>
+</td></tr>
+<tr class="row166"><td class="col1">
+
+
+<td>
+<a href="/spoj/RMID.html" title="Click to view solution for SPOJ RMID Solution"><i class="caret right icon"></i>RMID</a>
+</td>
+</td></tr>
+<tr class="row167"><td class="col1">
+
+
+<td>
+<a href="/spoj/ROHAAN.html" title="Click to view solution for SPOJ ROHAAN Solution"><i class="caret right icon"></i>ROHAAN</a>
+</td>
+</td></tr>
+<tr class="row168"><td class="col1">
+
+
+<td>
+<a href="/spoj/RPLC.html" title="Click to view solution for SPOJ RPLC Solution"><i class="caret right icon"></i>RPLC</a>
+</td>
+</td></tr>
+<tr class="row169"><td class="col1">
+
+
+<td>
+<a href="/spoj/RPLE.html" title="Click to view solution for SPOJ RPLE Solution"><i class="caret right icon"></i>RPLE</a>
+</td>
+</td></tr>
+<tr class="row170"><td class="col1">
+
+
+<td>
+<a href="/spoj/SAMER08F.html" title="Click to view solution for SPOJ SAMER08F Solution"><i class="caret right icon"></i>SAMER08F</a>
+</td>
+</td></tr>
+<tr class="row171"><td class="col1">
+
+
+<td>
+<a href="/spoj/SHAHBG.html" title="Click to view solution for SPOJ SHAHBG Solution"><i class="caret right icon"></i>SHAHBG</a>
+</td>
+</td></tr>
+<tr class="row172"><td class="col1">
+
+
+<td>
+<a href="/spoj/SHAKTI.html" title="Click to view solution for SPOJ SHAKTI Solution"><i class="caret right icon"></i>SHAKTI</a>
+</td>
+</td></tr>
+<tr class="row173"><td class="col1">
+
+
+<td>
+<a href="/spoj/SILVER.html" title="Click to view solution for SPOJ SILVER Solution"><i class="caret right icon"></i>SILVER</a>
+</td>
+</td></tr>
+<tr class="row174"><td class="col1">
+
+
+<td>
+<a href="/spoj/SUBSUMS.html" title="Click to view solution for SPOJ SUBSUMS Solution"><i class="caret right icon"></i>SUBSUMS</a>
+</td>
+</td></tr>
+<tr class="row175"><td class="col1">
+
+
+<td>
+<a href="/spoj/SYNC13C.html" title="Click to view solution for SPOJ SYNC13C Solution"><i class="caret right icon"></i>SYNC13C</a>
+</td>
+</td></tr>
+<tr class="row176"><td class="col1">
+
+
+<td>
+<a href="/spoj/TEST.html" title="Click to view solution for SPOJ TEST Solution"><i class="caret right icon"></i>TEST</a>
+</td>
+</td></tr>
+<tr class="row177"><td class="col1">
+
+
+<td>
+<a href="/spoj/THEATRE.html" title="Click to view solution for SPOJ THEATRE Solution"><i class="caret right icon"></i>THEATRE</a>
+</td>
+</td></tr>
+<tr class="row178"><td class="col1">
+
+
+<td>
+<a href="/spoj/TOANDFRO.html" title="Click to view solution for SPOJ TOANDFRO Solution"><i class="caret right icon"></i>TOANDFRO</a>
+</td>
+</td></tr>
+<tr class="row179"><td class="col1">
+
+
+<td>
+<a href="/spoj/TRGRID.html" title="Click to view solution for SPOJ TRGRID Solution"><i class="caret right icon"></i>TRGRID</a>
+</td>
+</td></tr>
+<tr class="row180"><td class="col1">
+
+
+<td>
+<a href="/spoj/TRICOUNT.html" title="Click to view solution for SPOJ TRICOUNT Solution"><i class="caret right icon"></i>TRICOUNT</a>
+</td>
+</td></tr>
+<tr class="row181"><td class="col1">
+
+
+<td>
+<a href="/spoj/UCV2013A.html" title="Click to view solution for SPOJ UCV2013A Solution"><i class="caret right icon"></i>UCV2013A</a>
+</td>
+</td></tr>
+<tr class="row182"><td class="col1">
+
+
+<td>
+<a href="/spoj/UCV2013H.html" title="Click to view solution for SPOJ UCV2013H Solution"><i class="caret right icon"></i>UCV2013H</a>
+</td>
+</td></tr>
+<tr class="row183"><td class="col1">
+
+
+<td>
+<a href="/spoj/UCV2013J.html" title="Click to view solution for SPOJ UCV2013J Solution"><i class="caret right icon"></i>UCV2013J</a>
+</td>
+</td></tr>
+<tr class="row184"><td class="col1">
+
+
+<td>
+<a href="/spoj/UJ.html" title="Click to view solution for SPOJ UJ Solution"><i class="caret right icon"></i>UJ</a>
+</td>
+</td></tr>
+<tr class="row185"><td class="col1">
+
+
+<td>
+<a href="/spoj/VPL2_AA.html" title="Click to view solution for SPOJ VPL2_AA Solution"><i class="caret right icon"></i>VPL2_AA</a>
+</td>
+</td></tr>
+<tr class="row186"><td class="col1">
+
+
+<td>
+<a href="/spoj/WILLITST.html" title="Click to view solution for SPOJ WILLITST Solution"><i class="caret right icon"></i>WILLITST</a>
+</td>
+</td></tr>
+<tr class="row187"><td class="col1">
+
+
+<td>
+<a href="/spoj/WORDCNT.html" title="Click to view solution for SPOJ WORDCNT Solution"><i class="caret right icon"></i>WORDCNT</a>
+</td>
+</td></tr>
+<tr class="row188"><td class="col1">
+
+
+<td>
+<a href="/spoj/WORKB.html" title="Click to view solution for SPOJ WORKB Solution"><i class="caret right icon"></i>WORKB</a>
+</td>
+</td></tr>
+<tr class="row189"><td class="col1">
+
+
+<td>
+<a href="/spoj/WPC4F.html" title="Click to view solution for SPOJ WPC4F Solution"><i class="caret right icon"></i>WPC4F</a>
+</td>
+</td></tr>
+<tr class="row190"><td class="col1">
+
+
+<td>
+<a href="/spoj/WTK.html" title="Click to view solution for SPOJ WTK Solution"><i class="caret right icon"></i>WTK</a>
+</td>
+</td></tr>
+<tr class="row191"><td class="col1">
+
+
+<td>
+<a href="/spoj/YUMMY.html" title="Click to view solution for SPOJ YUMMY Solution"><i class="caret right icon"></i>YUMMY</a>
+</td>
+</td></tr>
+
+</table>
+
+    </div>
+  </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid" style="background-color: #FAFAFA;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #FAFAFA;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a>.<br/>
+          Designed and developed with <i class="heart red icon"></i>by <a class="" href="/">me</a>.
+      </div>
+  </div>
+</footer>
+
+    </body>
+    <head>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</html>
