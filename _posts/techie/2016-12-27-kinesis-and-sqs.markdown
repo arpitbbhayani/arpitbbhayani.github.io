@@ -5,9 +5,9 @@ layout: post
 comments: true
 tags:
  - devops
- - Amazon SQS
- - Amazon Kinesis
- - AWS
+ - sqs
+ - kinesis
+ - aws
 categories: techie
 seo:
  tags:
@@ -16,6 +16,7 @@ seo:
   - SQS
   - Kinesis
   - AWS
+  - Amazon Web Services
  description: SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of them have been designed keeping a lot of things and specific usecases in mind. Even though they provide similar set of functionalities, each of the service is highly optimized for some of its functionalities. So lets dive deep into this
 ---
 
