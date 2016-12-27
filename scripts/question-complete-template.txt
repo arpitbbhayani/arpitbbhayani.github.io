@@ -38,7 +38,7 @@
   <meta property="og:title" content="$REPLACE_SITENAME_CAPS $REPLACE_QUESTION_CODE Solution"/>
   <meta property="og:url" content="http://arpitbhayani.me/scripts/question-complete-template.txt"/>
   <meta property="og:site_name" content="Arpit Bhayani | Geek at work"/>
-  <meta property="og:type" content="blog"/>
+  <meta property="og:type" content="article"/>
   <meta property="og:description" content="Here is the solution for programming question $REPLACE_QUESTION_DISPLAY_TEXT on $REPLACE_SITENAME" />
 
   <meta name="twitter:card" content="summary">
