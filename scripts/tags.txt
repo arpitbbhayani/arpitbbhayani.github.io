@@ -21,3 +21,6 @@ stream
 flask
 dhcp
 deployment
+aws
+sqs
+kinesis

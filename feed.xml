@@ -5,8 +5,8 @@
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words. You will also find solution to various competitive programming questions here.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 23:23:26 +0530</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 23:23:26 +0530</lastBuildDate>
+    <pubDate>Tue, 27 Dec 2016 23:25:50 +0530</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 23:25:50 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -84,11 +84,11 @@
         
         <category>devops</category>
         
-        <category>Amazon SQS</category>
+        <category>sqs</category>
         
-        <category>Amazon Kinesis</category>
+        <category>kinesis</category>
         
-        <category>AWS</category>
+        <category>aws</category>
         
         
         <category>techie</category>
