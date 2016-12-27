@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <title>Kinesis and SQS - What should you choose and when | Arpit Bhayani | Geek at work</title>
+  <meta name="description" content="SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of t...">
+  <meta name="keywords" content="devops, SQS and Kinesis, SQS, Kinesis, AWS, " />
+
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/techie/kinesis-and-sqs.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Geek at work" href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg"/>
+  <meta property="og:title" content="Kinesis and SQS - What should you choose and when"/>
+  <meta property="og:url" content="http://arpitbhayani.me/techie/kinesis-and-sqs.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Geek at work"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:description" content="SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of t..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/techie/kinesis-and-sqs.html">
+  <meta name="twitter:title" content="Kinesis and SQS - What should you choose and when">
+  <meta name="twitter:description" content="SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of t...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <body>
+        <div class="ui grid">
+  <div class="row computer tablet only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="ui grey item main-nav-page-title">
+        <p><i>Kinesis and SQS - What should you choose and when</i></p>
+      </div>
+      <div class="right menu">
+        <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/kinesis-and-sqs.html" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny" data-position="bottom center">
+          <i class="facebook icon"></i>
+        </a>
+        <a class="item" href="https://twitter.com/intent/tweet?text=Kinesis and SQS - What should you choose and when&amp;url=http://arpitbhayani.me/techie/kinesis-and-sqs.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny" data-position="bottom right">
+          <i class="twitter icon"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mobile only">
+    <div class="ui fixed borderless menu main-nav-menu">
+      <a href='/' class="item">
+        <div class="small-logo">
+          <span class="name1">
+            Arpit
+            <span class="name2">Bhayani</span>
+          </span>
+        </div>
+      </a>
+      
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="content icon"></i>
+          <div class="menu">
+            <a class="item" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/kinesis-and-sqs.html" rel="nofollow" target="_blank">
+              <i class="facebook icon"></i> Share it on facebook
+            </a>
+            <a class="item" href="https://twitter.com/intent/tweet?text=Kinesis and SQS - What should you choose and when&amp;url=http://arpitbhayani.me/techie/kinesis-and-sqs.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank">
+              <i class="twitter icon"></i> Tweet about it
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        <div style="padding-bottom: 50px; padding-top: 10px;">
+            <div class="ui section hidden divider"></div>
+            <div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui header center aligned">
+                <h1 class="article-title">Kinesis and SQS - What should you choose and when</h1>
+            </div>
+            <div class="ui center aligned basic fluid segment">
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> December 27, 2016</span>
+                <div>
+                    <div class="ui center aligned basic fluid segment">
+                        <div class="ui horizontal list">
+                            
+                            <a style="font-weight: normal;" href='/tag/devops.html' class="ui item article-category" data-content="All devops posts" data-variation="tiny" data-position="bottom center">devops</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/Amazon SQS.html' class="ui item article-category" data-content="All Amazon SQS posts" data-variation="tiny" data-position="bottom center">Amazon SQS</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/Amazon Kinesis.html' class="ui item article-category" data-content="All Amazon Kinesis posts" data-variation="tiny" data-position="bottom center">Amazon Kinesis</a>
+                            
+                            <a style="font-weight: normal;" href='/tag/AWS.html' class="ui item article-category" data-content="All AWS posts" data-variation="tiny" data-position="bottom center">AWS</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg" data-lightbox="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg" data-title="Kinesis and SQS - What should you choose and when">
+                <img class="ui centered huge image stylish" src="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg" alt="Kinesis and SQS - What should you choose and when">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="article-content">
+                <p>SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of them have been designed keeping a lot of things and specific usecases in mind. Even though they provide similar set of functionalities, each of the service is highly optimized for some of its functionalities. So lets dive deep into this:</p>
+
+<h2 id="difference-between-messaging-and-streaming">Difference between Messaging and Streaming</h2>
+<p>In order to choose between SQS and Kinesis let us first understand the difference between Messaging and Streaming.</p>
+
+<p>SQS is a Distributed Message Queue, where user puts in a message and there are consumers that consumes them and start processing accordingly. Generally message systems are used when you want to perform some task asynchronously (deferred execution). So distributed messageing queues like SQS are ideal for scenarios where you have set of workers who handle your heavy duty processing and you want to avoid overloading your web-application with heavy duty tasks.</p>
+
+<p>Streaming (Message or Data Streaming) on other other is where you want real time streaming of data that is produced by one of the producer and that data is to be consumed by various set of applications in real time for some real time analysis, storage, backup, caching, etc. This is where streams come into picture.</p>
+
+<h2 id="what-is-sqs">What is SQS</h2>
+<p>According to <a href="https://aws.amazon.com/sqs/">Amazon</a>, Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service.</p>
+
+<h2 id="what-is-kinesis">What is Kinesis</h2>
+<p>According to <a href="https://aws.amazon.com/kinesis/">Amazon</a>, Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming data, and also providing the ability for you to build custom streaming data applications for specialized needs.</p>
+
+<h2 id="highlights-of-sqs">Highlights of SQS</h2>
+<ul>
+  <li>SQS is infinitely scalable.</li>
+  <li>SQS message queue can contain an unlimited number of messages.</li>
+  <li>You can set the limit on bytes that an Amazon SQS message can contain, between 1-256 KB.</li>
+  <li>You can also send messages larger than 256 KB (upto 2GB) by uploading to s3 and sending reference.</li>
+  <li>Retention period of messages is between 1 minute and 14 days.</li>
+  <li>SQS is reliable, highly scalable hosted queue for storing messages as they travel between computers.</li>
+  <li>Messages are automatically deleted once the message reaches its retention limit.</li>
+  <li>Standard queues provides at-least-once delivery. FIFO queues provide exactly-once processing.</li>
+  <li>SQS won’t deliver the same message to another consumer after it has been read for a configurable period (VisibilityTimeout).</li>
+</ul>
+
+<h2 id="highlights-of-kinesis">Highlights of Kinesis</h2>
+<ul>
+  <li>Made for heavy real-time processing.</li>
+  <li>Kinesis optimized for high-throughput.</li>
+  <li>You can read the same message from several applications</li>
+  <li>You can re-read messages in case you need to.</li>
+  <li>You can create a complex network of streams</li>
+  <li>Kinesis delivers all records for a given partition key to the same record processor</li>
+  <li>You can add data into Kinesis streams from hundreds of thousands of sources and within seconds.</li>
+  <li>The more shards you configure the faster you can write to and read from the queue.</li>
+</ul>
+
+<h2 id="how-to-choose-one">How to choose one</h2>
+<p>You should use Kinesis when</p>
+<ul>
+  <li>you want to route related records to the same record processor (as in streaming MapReduce).</li>
+  <li>you want ultiple applications to consume the same stream concurrently.</li>
+  <li>you want to consume records in the same order a few hours later.</li>
+</ul>
+
+<p>You should use SQS when</p>
+<ul>
+  <li>you want message-level ack/fail and visibility timeout.</li>
+  <li>you want to make message visible after certain delay.</li>
+  <li>you want to dynamically increase throughput at read time by adding multiple consumers.</li>
+  <li>you want to leveraging SQS’s ability to scale transparently.</li>
+</ul>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="https://aws.amazon.com/sqs/">Amazon SQS - Message Queueing Service</a></li>
+  <li><a href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a></li>
+  <li><a href="https://aws.amazon.com/kinesis/streams/faqs/">Amazon Kinesis Stream FAQs</a></li>
+  <li><a href="https://aws.amazon.com/sqs/faqs/">Amazon SQS FAQs</a></li>
+  <li><a href="https://www.quora.com/What-is-the-difference-between-Kinesis-and-SQS-It-seems-capable-of-serving-similar-use-cases-apart-from-the-shards-and-partition-keys">Answer on Quora by Aditya Krishnan, Product manager at Amazon</a></li>
+  <li><a href="http://stackoverflow.com/questions/26623673/why-should-i-use-amazon-kinesis-and-not-sns-sqs">Stackoverflow - Why should I use Amazon Kinesis and not SNS-SQS?</a></li>
+  <li><a href="http://fbrnc.net/blog/2016/03/messaging-on-aws">Messaging on AWS</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u=http://arpitbhayani.me/techie/kinesis-and-sqs.html" rel="nofollow" target="_blank" title="Share on Facebook">
+                <i class="facebook icon"></i>
+                Share on Facebook
+            </a>
+            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text=Kinesis and SQS - What should you choose and when&amp;url=http://arpitbhayani.me/techie/kinesis-and-sqs.html&amp;via=arpit_bhayani&amp;related=arpit_bhayani" rel="nofollow" target="_blank" title="Share on Twitter">
+                <i class="twitter icon"></i>
+                Share on Twitter
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="fb-comments" data-numposts="5" width="100%"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer class="ui column centered grid" style="background-color: #FAFAFA;">
+  <div class="row">
+      <div class="ui borderless menu main-nav-menu" style="box-shadow: None; border: 0; z-index: 2; margin: 0; padding: 0; background-color: #FAFAFA;">
+          <a class=" item" href="/all-posts.html">
+              <i class="database icon"></i>
+              Archives
+          </a>
+          <a class=" item" href="/feed.xml">
+              <i class="rss icon"></i>
+              RSS Feed
+          </a>
+          <a class=" item" href="/disclaimer.html">
+              <i class="announcement icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a>.<br/>
+          Designed and developed with <i class="heart red icon"></i>by <a class="" href="/">me</a>.
+      </div>
+  </div>
+</footer>
+
+    </body>
+    <head>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="/static/semantic/dist/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1121130051255202";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</html>
