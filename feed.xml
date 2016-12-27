@@ -5,12 +5,12 @@
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words. You will also find solution to various competitive programming questions here.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 23:30:34 +0530</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 23:30:34 +0530</lastBuildDate>
+    <pubDate>Tue, 27 Dec 2016 23:37:56 +0530</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 23:37:56 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
-        <title>Kinesis and SQS - Which one should you choose and when</title>
+        <title>Amazon's Kinesis and SQS - Which one should you choose and when?</title>
         <description>&lt;p&gt;SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of them have been designed keeping a lot of things and specific usecases in mind. Even though they provide similar set of functionalities, each of the service is highly optimized for some of its functionalities. So lets dive deep into this:&lt;/p&gt;
 
 &lt;h2 id=&quot;difference-between-messaging-and-streaming&quot;&gt;Difference between Messaging and Streaming&lt;/h2&gt;
