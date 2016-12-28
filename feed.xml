@@ -5,8 +5,8 @@
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words. You will also find solution to various competitive programming questions here.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 23:37:56 +0530</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 23:37:56 +0530</lastBuildDate>
+    <pubDate>Wed, 28 Dec 2016 09:07:51 +0530</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2016 09:07:51 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -55,7 +55,7 @@
 &lt;p&gt;You should use Kinesis when&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;you want to route related records to the same record processor (as in streaming MapReduce).&lt;/li&gt;
-  &lt;li&gt;you want ultiple applications to consume the same stream concurrently.&lt;/li&gt;
+  &lt;li&gt;you want multiple applications to consume the same stream concurrently.&lt;/li&gt;
   &lt;li&gt;you want to consume records in the same order a few hours later.&lt;/li&gt;
 &lt;/ul&gt;
 
