@@ -61,7 +61,7 @@ According to [Amazon](https://aws.amazon.com/kinesis/), Amazon Kinesis is a plat
 ## How to choose one
 You should use Kinesis when
  - you want to route related records to the same record processor (as in streaming MapReduce).
- - you want ultiple applications to consume the same stream concurrently.
+ - you want multiple applications to consume the same stream concurrently.
  - you want to consume records in the same order a few hours later.
 
  You should use SQS when
