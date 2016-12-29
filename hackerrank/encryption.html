@@ -23,28 +23,28 @@
     <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-  <title>LEETCODE combination-sum-ii Solution | Arpit Bhayani | Geek at work</title>
-  <meta name="description" content="Here is the solution for programming question combination-sum-ii on leetcode">
-  <meta name="keywords" content="solution, source code, programming, leetcode, combination-sum-ii Solution, " />
+  <title>HACKERRANK encryption Solution | Arpit Bhayani | Geek at work</title>
+  <meta name="description" content="Here is the solution for programming question Encryption on hackerrank">
+  <meta name="keywords" content="solution, source code, programming, hackerrank, Encryption Solution, " />
 
   <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="stylesheet" href="/static/css/lightbox.css">
-  <link rel="canonical" href="http://arpitbhayani.me/leetcode/combination-sum-ii.html">
+  <link rel="canonical" href="http://arpitbhayani.me/hackerrank/encryption.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Geek at work" href="http://arpitbhayani.me/feed.xml">
 
   <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true"/>
-  <meta property="og:title" content="LEETCODE combination-sum-ii Solution"/>
-  <meta property="og:url" content="http://arpitbhayani.me/leetcode/combination-sum-ii.html"/>
+  <meta property="og:title" content="HACKERRANK encryption Solution"/>
+  <meta property="og:url" content="http://arpitbhayani.me/hackerrank/encryption.html"/>
   <meta property="og:site_name" content="Arpit Bhayani | Geek at work"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Here is the solution for programming question combination-sum-ii on leetcode" />
+  <meta property="og:description" content="Here is the solution for programming question Encryption on hackerrank" />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbhayani.me/leetcode/combination-sum-ii.html">
-  <meta name="twitter:title" content="LEETCODE combination-sum-ii Solution">
-  <meta name="twitter:description" content="Here is the solution for programming question combination-sum-ii on leetcode">
+  <meta name="twitter:url" content="http://arpitbhayani.me/hackerrank/encryption.html">
+  <meta name="twitter:title" content="HACKERRANK encryption Solution">
+  <meta name="twitter:description" content="Here is the solution for programming question Encryption on hackerrank">
   <meta name="twitter:image" content="https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true">
 
   <script src="/static/js/jquery-1.11.3.min.js"></script>
@@ -125,10 +125,10 @@
         <div class="one wide column"></div>
         <div class="eleven wide column">
             <div class="ui header center aligned">
-                <h1 class="article-title">LEETCODE combination-sum-ii Solution</h1>
+                <h1 class="article-title">HACKERRANK encryption Solution</h1>
             </div>
             <div class="ui center aligned basic fluid segment">
-                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> August 01, 2015</span>
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> December 29, 2016</span>
                 <div>
                     <div class="ui center aligned basic fluid segment">
                         <div class="ui horizontal list">
@@ -147,7 +147,7 @@
         <div class="one wide column"></div>
         <div class="eleven wide column">
             <div class="article-content">
-                <p>The correct, optimal and working solution for programming question combination-sum-ii on leetcode</p>
+                <p>The correct, optimal and working solution for programming question <a href="https://www.hackerrank.com/challenges/encryption">encryption</a> on hackerrank</p>
 
 <div class="ui secondary pointing large menu">
   <a class="grey item" data-tab="problem-statement">
@@ -158,55 +158,75 @@
   </a>
 </div>
 <div class="ui bottom attached tab" data-tab="problem-statement">
-    <iframe src="https://leetcode.com/problems/combination-sum-ii/" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
+    <iframe src="https://www.hackerrank.com/challenges/encryption" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
 </div>
 <div class="ui bottom attached active tab" data-tab="solution">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cm">/*</span>
+<span class="cm"> *  Author: Arpit Bhayani</span>
+<span class="cm"> *  http://arpitbhayani.me</span>
+<span class="cm"> */</span>
+<span class="cp">#include &lt;cmath&gt;</span>
+<span class="cp">#include &lt;cstdio&gt;</span>
+<span class="cp">#include &lt;cstring&gt;</span>
+<span class="cp">#include &lt;cstdlib&gt;</span>
+<span class="cp">#include &lt;climits&gt;</span>
+<span class="cp">#include &lt;deque&gt;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;list&gt;</span>
+<span class="cp">#include &lt;limits&gt;</span>
+<span class="cp">#include &lt;map&gt;</span>
+<span class="cp">#include &lt;queue&gt;</span>
+<span class="cp">#include &lt;set&gt;</span>
+<span class="cp">#include &lt;stack&gt;</span>
+<span class="cp">#include &lt;vector&gt;</span>
 
-    <span class="n">set</span><span class="o">&lt;</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">buffer</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+<span class="cp">#define ll long long</span>
 
-    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">candidates</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span> <span class="p">)</span> <span class="p">{</span>
+<span class="cp">#define MIN(a, b) a &lt; b ? a : b</span>
+<span class="cp">#define MAX(a, b) a &gt; b ? a : b</span>
 
-    	<span class="k">if</span><span class="p">(</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
-    		<span class="k">return</span><span class="p">;</span>
-    	<span class="p">}</span>
-    
-    	<span class="k">if</span><span class="p">(</span> <span class="n">target</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
-    		<span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
-    		<span class="c1">//for( int i = 0 ; i  &lt; buffer.size() ; i++ ) {</span>
-    		<span class="c1">//	cout &lt;&lt; buffer[i] &lt;&lt; &quot; &quot;;</span>
-    		<span class="c1">//}</span>
-    		<span class="c1">//cout &lt;&lt; endl;</span>
-    		<span class="k">return</span><span class="p">;</span>
-    	<span class="p">}</span>
-    	
-    	<span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">k</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-    		<span class="n">buffer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    		<span class="n">print</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    		<span class="n">buffer</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
-    	<span class="p">}</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">readline</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">())</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">cols</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">!=</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cols</span><span class="o">++</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">combinationSum2</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-        
-        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">num</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-        
-        <span class="n">sort</span><span class="p">(</span><span class="n">num</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">num</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-        
-        <span class="n">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">target</span><span class="p">);</span>
-	
-	    <span class="k">for</span><span class="p">(</span> <span class="n">set</span><span class="o">&lt;</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="p">;</span> <span class="n">itr</span> <span class="o">!=</span> <span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">;</span> <span class="n">itr</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-		    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">itr</span><span class="p">);</span>
-	    <span class="p">}</span>
-	    
-	    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-        
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">str</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">cols</span> <span class="o">&amp;&amp;</span> <span class="n">str</span><span class="p">[</span><span class="n">index</span><span class="p">];</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">];</span>
+        <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">};</span></code></pre></figure>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 </div>
 
