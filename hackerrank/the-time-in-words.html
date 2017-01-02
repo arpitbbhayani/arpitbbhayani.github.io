@@ -23,28 +23,28 @@
     <meta name="msapplication-TileImage" content="/static/images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-  <title>HACKERRANK even-odd-query Solution | Arpit Bhayani | Geek at work</title>
-  <meta name="description" content="Here is the solution for programming question Even Odd Query on hackerrank">
-  <meta name="keywords" content="solution, source code, programming, hackerrank, Even Odd Query Solution, " />
+  <title>HACKERRANK the-time-in-words Solution | Arpit Bhayani | Geek at work</title>
+  <meta name="description" content="Here is the solution for programming question The Time in Words on hackerrank">
+  <meta name="keywords" content="solution, source code, programming, hackerrank, The Time in Words Solution, " />
 
   <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="stylesheet" href="/static/css/lightbox.css">
-  <link rel="canonical" href="http://arpitbhayani.me/hackerrank/even-odd-query.html">
+  <link rel="canonical" href="http://arpitbhayani.me/hackerrank/the-time-in-words.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Geek at work" href="http://arpitbhayani.me/feed.xml">
 
   <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true"/>
-  <meta property="og:title" content="HACKERRANK even-odd-query Solution"/>
-  <meta property="og:url" content="http://arpitbhayani.me/hackerrank/even-odd-query.html"/>
+  <meta property="og:title" content="HACKERRANK the-time-in-words Solution"/>
+  <meta property="og:url" content="http://arpitbhayani.me/hackerrank/the-time-in-words.html"/>
   <meta property="og:site_name" content="Arpit Bhayani | Geek at work"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Here is the solution for programming question Even Odd Query on hackerrank" />
+  <meta property="og:description" content="Here is the solution for programming question The Time in Words on hackerrank" />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbhayani.me/hackerrank/even-odd-query.html">
-  <meta name="twitter:title" content="HACKERRANK even-odd-query Solution">
-  <meta name="twitter:description" content="Here is the solution for programming question Even Odd Query on hackerrank">
+  <meta name="twitter:url" content="http://arpitbhayani.me/hackerrank/the-time-in-words.html">
+  <meta name="twitter:title" content="HACKERRANK the-time-in-words Solution">
+  <meta name="twitter:description" content="Here is the solution for programming question The Time in Words on hackerrank">
   <meta name="twitter:image" content="https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true">
 
   <script src="/static/js/jquery-1.11.3.min.js"></script>
@@ -125,10 +125,10 @@
         <div class="one wide column"></div>
         <div class="eleven wide column">
             <div class="ui header center aligned">
-                <h1 class="article-title">HACKERRANK even-odd-query Solution</h1>
+                <h1 class="article-title">HACKERRANK the-time-in-words Solution</h1>
             </div>
             <div class="ui center aligned basic fluid segment">
-                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> July 16, 2016</span>
+                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> January 02, 2017</span>
                 <div>
                     <div class="ui center aligned basic fluid segment">
                         <div class="ui horizontal list">
@@ -147,7 +147,7 @@
         <div class="one wide column"></div>
         <div class="eleven wide column">
             <div class="article-content">
-                <p>The correct, optimal and working solution for programming question <a href="https://www.hackerrank.com/challenges/even-odd-query">even-odd-query</a> on hackerrank</p>
+                <p>The correct, optimal and working solution for programming question <a href="https://www.hackerrank.com/challenges/the-time-in-words">the-time-in-words</a> on hackerrank</p>
 
 <div class="ui secondary pointing large menu">
   <a class="grey item" data-tab="problem-statement">
@@ -158,7 +158,7 @@
   </a>
 </div>
 <div class="ui bottom attached tab" data-tab="problem-statement">
-    <iframe src="https://www.hackerrank.com/challenges/even-odd-query" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
+    <iframe src="https://www.hackerrank.com/challenges/the-time-in-words" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
 </div>
 <div class="ui bottom attached active tab" data-tab="solution">
 
@@ -197,47 +197,44 @@
     <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100010</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">npow</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//printf(&quot; pow = %d - B\n&quot;, 1);</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">//printf(&quot; pow = %d - C\n&quot;, (a &amp; 1) ? 1 : 2);</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">char</span> <span class="n">nstr</span><span class="p">[</span><span class="mi">31</span><span class="p">][</span><span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;one&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">,</span> <span class="s">&quot;three&quot;</span><span class="p">,</span> <span class="s">&quot;four&quot;</span><span class="p">,</span> <span class="s">&quot;five&quot;</span><span class="p">,</span> <span class="s">&quot;six&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;seven&quot;</span><span class="p">,</span> <span class="s">&quot;eight&quot;</span><span class="p">,</span> <span class="s">&quot;nine&quot;</span><span class="p">,</span> <span class="s">&quot;ten&quot;</span><span class="p">,</span> <span class="s">&quot;eleven&quot;</span><span class="p">,</span> <span class="s">&quot;twelve&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;thirteen&quot;</span><span class="p">,</span> <span class="s">&quot;fourteen&quot;</span><span class="p">,</span> <span class="s">&quot;fifteen&quot;</span><span class="p">,</span> <span class="s">&quot;sixteen&quot;</span><span class="p">,</span> <span class="s">&quot;seventeen&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;eighteen&quot;</span><span class="p">,</span> <span class="s">&quot;nineteen&quot;</span><span class="p">,</span> <span class="s">&quot;twenty&quot;</span><span class="p">,</span> <span class="s">&quot;twenty one&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;twenty two&quot;</span><span class="p">,</span> <span class="s">&quot;twenty three&quot;</span><span class="p">,</span> <span class="s">&quot;twenty four&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;twenty five&quot;</span><span class="p">,</span> <span class="s">&quot;twenty six&quot;</span><span class="p">,</span> <span class="s">&quot;twenty seven&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;twenty eight&quot;</span><span class="p">,</span> <span class="s">&quot;twenty nine&quot;</span><span class="p">,</span> <span class="s">&quot;half&quot;</span><span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Even&quot;</span><span class="p">,</span> <span class="s">&quot;Odd&quot;</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
 
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s o&#39; clock&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s minute past %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">15</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;quarter past %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s minutes past %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s past %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">59</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">h</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">h</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s minute to %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="mi">45</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">h</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">h</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;quarter to %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">h</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">h</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">-</span> <span class="n">m</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s minutes to %s&quot;</span><span class="p">,</span> <span class="n">nstr</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">nstr</span><span class="p">[</span><span class="n">h</span><span class="p">]);</span>
     <span class="p">}</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">);</span>
 
-    <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">ans</span><span class="p">;</span>
-
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
-
-        <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span> <span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// Since the value just after &quot;x&quot;th index is 0</span>
-            <span class="c1">// so no matter what ans will be 1 -&gt; odd</span>
-            <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">else</span> <span class="p">{</span>
-            <span class="c1">// In all other cases the odd/even of base determines</span>
-            <span class="c1">// the odd/even of result</span>
-            <span class="n">ans</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
-        <span class="p">}</span>
-
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="n">ans</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">]);</span>
-    <span class="p">}</span>
-
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
