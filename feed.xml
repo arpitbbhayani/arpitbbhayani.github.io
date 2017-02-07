@@ -5,8 +5,8 @@
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words. You will also find solution to various competitive programming questions here.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Feb 2017 23:02:21 +0530</pubDate>
-    <lastBuildDate>Tue, 07 Feb 2017 23:02:21 +0530</lastBuildDate>
+    <pubDate>Tue, 07 Feb 2017 23:06:11 +0530</pubDate>
+    <lastBuildDate>Tue, 07 Feb 2017 23:06:11 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -462,6 +462,7 @@
         <description>&lt;p&gt;SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of them have been designed keeping a lot of things and specific usecases in mind. Even though they provide similar set of functionalities, each of the service is highly optimized for some of its functionalities. So lets dive deep into this:&lt;/p&gt;
 
 &lt;h2 id=&quot;difference-between-messaging-and-streaming&quot;&gt;Difference between Messaging and Streaming&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;p&gt;In order to choose between SQS and Kinesis let us first understand the difference between Messaging and Streaming.&lt;/p&gt;
 
 &lt;p&gt;SQS is a Distributed Message Queue, where user puts in a message and there are consumers that consumes them and start processing accordingly. Generally message systems are used when you want to perform some task asynchronously (deferred execution). So distributed messageing queues like SQS are ideal for scenarios where you have set of workers who handle your heavy duty processing and you want to avoid overloading your web-application with heavy duty tasks.&lt;/p&gt;
@@ -469,12 +470,15 @@
 &lt;p&gt;Streaming (Message or Data Streaming) on other other is where you want real time streaming of data that is produced by one of the producer and that data is to be consumed by various set of applications in real time for some real time analysis, storage, backup, caching, etc. This is where streams come into picture.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-sqs&quot;&gt;What is SQS&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;p&gt;According to &lt;a href=&quot;https://aws.amazon.com/sqs/&quot;&gt;Amazon&lt;/a&gt;, Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-kinesis&quot;&gt;What is Kinesis&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;p&gt;According to &lt;a href=&quot;https://aws.amazon.com/kinesis/&quot;&gt;Amazon&lt;/a&gt;, Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming data, and also providing the ability for you to build custom streaming data applications for specialized needs.&lt;/p&gt;
 
 &lt;h2 id=&quot;highlights-of-sqs&quot;&gt;Highlights of SQS&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;SQS is infinitely scalable.&lt;/li&gt;
   &lt;li&gt;SQS message queue can contain an unlimited number of messages.&lt;/li&gt;
@@ -488,6 +492,7 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;highlights-of-kinesis&quot;&gt;Highlights of Kinesis&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;Made for heavy real-time processing.&lt;/li&gt;
   &lt;li&gt;Kinesis optimized for high-throughput.&lt;/li&gt;
@@ -500,6 +505,7 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;how-to-choose-one&quot;&gt;How to choose one&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;p&gt;You should use Kinesis when&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;you want to route related records to the same record processor (as in streaming MapReduce).&lt;/li&gt;
@@ -516,6 +522,7 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/sqs/&quot;&gt;Amazon SQS - Message Queueing Service&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/kinesis/&quot;&gt;Amazon Kinesis&lt;/a&gt;&lt;/li&gt;
