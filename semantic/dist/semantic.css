@@ -25037,9 +25037,9 @@ Floated Menu / Item
   border-top: 1px solid rgba(34, 36, 38, 0.1);
   background: none;
   margin: 0em;
-  padding: 1em 1em;
+  padding: 0.5em 0.5em;
   box-shadow: none;
-  font-size: 1em;
+  font-size: 0.9375em;
   border-radius: 0em;
 }
 
@@ -25065,8 +25065,8 @@ Floated Menu / Item
 
 .ui.cards > .card > .content > .header:not(.ui),
 .ui.card > .content > .header:not(.ui) {
-  font-weight: bold;
-  font-size: 1.3125em;
+  font-weight: normal;
+  font-size: 1em;
   margin-top: -0.21425em;
   line-height: 1.2857em;
 }
@@ -25161,7 +25161,7 @@ Floated Menu / Item
 
 .ui.cards > .card .meta,
 .ui.card .meta {
-  font-size: 1em;
+  font-size: 0.9375em;
   color: rgba(0, 0, 0, 0.4);
 }
 

@@ -62,8 +62,8 @@
 @contentDivider: @borderWidth solid @internalBorderColor;
 @contentMargin: 0em;
 @contentBackground: none;
-@contentPadding: 1em 1em;
-@contentFontSize: 1em;
+@contentPadding: 0.5em 0.5em;
+@contentFontSize: @relativeSmall;
 @contentBorderRadius: 0em;
 @contentBoxShadow: none;
 @contentBorder: none;
@@ -71,13 +71,13 @@
 
 /* Header */
 @headerMargin: '';
-@headerFontWeight: bold;
-@headerFontSize: @relativeBig;
+@headerFontWeight: normal;
+@headerFontSize: @relativeMedium;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
 @headerColor: @darkTextColor;
 
 /* Metadata */
-@metaFontSize: @relativeMedium;
+@metaFontSize: @relativeSmall;
 @metaSpacing: 0.3em;
 @metaColor: @lightTextColor;
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arpit Bhayani | Geek at work</title>
+    <title>Arpit Bhayani | Geek at Work</title>
     <description>I am a full stack developer, optimization freak, curious and a naive physics enthusiast. This is where I put my random thoughts and vague imaginations into words. You will also find solution to various competitive programming questions here.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Feb 2017 23:06:11 +0530</pubDate>
-    <lastBuildDate>Tue, 07 Feb 2017 23:06:11 +0530</lastBuildDate>
+    <pubDate>Wed, 08 Feb 2017 01:43:50 +0530</pubDate>
+    <lastBuildDate>Wed, 08 Feb 2017 01:43:50 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
