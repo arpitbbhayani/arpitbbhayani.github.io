@@ -19,6 +19,7 @@ seo:
   - force of attraction
  description: The gravitational force was discovered by Sir Isaac Newton, but he was not the one who calculated the Gravitational Constant. Finding out G was stroke of genius and was discovered by a British scientist Henry Cavendish in 1797–1798.
 type: dummy
+mathjax: true
 ---
 
 The gravitational force was discovered by [Sir Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton), but he was not the one who calculated the __Gravitational Constant__ ($$ G $$). Finding out $$ G $$ was a stroke of genius and was first discovered by a British scientist [Henry Cavendish](https://en.wikipedia.org/wiki/Henry_Cavendish) in 1797–1798, but no where in his publication he mentioned anything about this instead he was just __"Weighing the Earth"__.

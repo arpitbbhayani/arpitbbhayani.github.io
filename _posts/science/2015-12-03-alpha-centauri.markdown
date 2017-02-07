@@ -15,6 +15,7 @@ seo:
   - reach alpha centauri
  description: What if one day you decide to go on a space drive and want to reach the nearest sun, can you do this in your lifetime? Lets find out ....
 type: dummy
+mathjax: true
 ---
 
 The nearest neighbor to our over own Sun is **Alpha Centauri**. This star is at a distance of 4.37 light-years from sun which is nearly 41.343 x 10<sup>15</sup> m.

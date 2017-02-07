@@ -17,6 +17,7 @@ seo:
   - use of shadow
  description: Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...
 type: dummy
+mathjax: true
 ---
 
 Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...

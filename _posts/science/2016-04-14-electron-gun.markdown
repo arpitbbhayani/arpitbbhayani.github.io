@@ -17,6 +17,7 @@ seo:
   - crt
  description: Can we isolate electrons from an atom? Can we have a gun that shoot electrons? Evidently we had such thing in our homes. Let's find out how, where and what!
 type: dummy
+mathjax: true
 ---
 
 An atom is composed of three sub-atomic particles, namely
