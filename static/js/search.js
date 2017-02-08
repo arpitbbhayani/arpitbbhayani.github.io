@@ -23,7 +23,7 @@ function displaySearchResults(results, store) {
         for (var i = 0; i < results.length; i++) {
             var post = window.store[results[i].ref];
             var template = '\
-                <div class="ui card">\
+            <div class="ui card">\
                 <div class="image">\
                     <img src="<%this.img%>">\
                 </div>\
@@ -38,7 +38,7 @@ function displaySearchResults(results, store) {
         }
         searchResults.innerHTML = appendString;
     } else {
-        searchResults.innerHTML = '<div class="ui huge center aligned basic label">Oops! No results found</div>';
+        searchResults.innerHTML = '<div class="ui huge center aligned basic label" style="font-weight: normal;">Oops! No results found</div>';
     }
 }
 

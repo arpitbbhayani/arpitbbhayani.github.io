@@ -6,10 +6,4 @@ $(document).ready(function() {
     $('.ui.label').click(function() {
         $(this).transition('pulse');
     });
-
-    scrollProgress.set({
-        color: '#f87c7c',
-        height: '2px',
-        bottom: false
-    });
 });
