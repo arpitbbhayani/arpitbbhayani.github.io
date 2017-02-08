@@ -11,19 +11,19 @@ seo:
 type: dummy
 ---
 
-<div class="ui basic segment center aligned inverted" style="background-color: #F0F0F0;">
+<div class="ui basic segment center aligned">
     <div class="ui big icon input transperent" style="width: 75%;">
         <input type="text" id="search-box" name="query" placeholder="Search">
-        <i class="search icon"></i>
+        <i class="search red icon"></i>
     </div>
 </div>
 
-<div class="ui basic segment">
-    <div class="ui six stackable cards doubling" id="search-results"></div>
+<div class="ui basic very padded segment">
+    <div class="ui four stackable cards doubling" id="search-results"></div>
 </div>
 
 <script>
-  {% assign posts = site.categories['geekatwork'] %}
+  {% assign posts = site.posts %}
   window.store = {
     {% for post in posts %}
       "{{ post.url | slugify }}": {

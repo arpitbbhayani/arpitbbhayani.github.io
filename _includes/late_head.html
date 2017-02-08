@@ -11,4 +11,14 @@
   <script src="/static/js/scrollProgress.js"></script>
   <script src="/static/js/lightbox.js"></script>
   <script src="/static/js/index.js"></script>
+
+  {% if page.layout == 'post' %}
+  <script>
+  scrollProgress.set({
+      color: '#f87c7c',
+      height: '2px',
+      bottom: false
+  });
+  </script>
+  {% endif %}
 </head>

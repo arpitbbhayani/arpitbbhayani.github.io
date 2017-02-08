@@ -1,16 +1,16 @@
 <div class="ui grid">
   <div class="row computer tablet only">
-    <div class="ui top borderless menu secondary fluid">
+    <div class="ui top borderless menu fluid">
     <div class="ui fitted item logo">
         <a href='/' class="ui item">Arpit Bhayani</a>
     </div>
       {% if page.layout != 'post' %}
       <div class="right menu">
         <div class="ui item">
-          <a href="{% post_url 1979-01-01-blogs %}">Blogs</a>
+          <a href="{% post_url 1979-01-01-blogs %}"><i class="file text outline grey icon"></i>Blogs</a>
         </div>
         <div class="ui item">
-          <a href="{% post_url 1979-01-01-programming %}">Coding Solutions</a>
+          <a href="{% post_url 1979-01-01-programming %}"><i class="laptop grey icon"></i>Coding Solutions</a>
         </div>
       </div>
       {% else %}
@@ -26,17 +26,17 @@
     </div>
   </div>
   <div class="row mobile only">
-    <div class="ui top borderless menu secondary fluid">
+    <div class="ui top borderless menu fluid">
         <div class="ui fitted item logo">
             <a href='/' class="ui item">Arpit Bhayani</a>
         </div>
       {% if page.layout != 'post' %}
       <div class="right menu">
           <div class="ui item">
-              <a href="{% post_url 1979-01-01-blogs %}">Blogs</a>
+              <a href="{% post_url 1979-01-01-blogs %}"><i class="file text outline grey icon"></i>Blogs</a>
           </div>
           <div class="ui item">
-            <a href="{% post_url 1979-01-01-programming %}">Coding Solutions</a>
+            <a href="{% post_url 1979-01-01-programming %}"><i class="laptop grey icon"></i>Coding Solutions</a>
           </div>
       </div>
       {% else %}
