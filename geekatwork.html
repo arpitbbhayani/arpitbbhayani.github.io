@@ -83,7 +83,7 @@
           <a href="/blogs.html">Blogs</a>
         </div>
         <div class="ui item">
-          <a href="/programming.html" title="View solutions to 451 coding questions.">Coding Solutions</a>
+          <a href="/programming.html">Coding Solutions</a>
         </div>
       </div>
       
@@ -100,7 +100,7 @@
               <a href="/blogs.html">Blogs</a>
           </div>
           <div class="ui item">
-            <a href="/programming.html" title="View solutions to 451 coding questions.">Coding Solutions</a>
+            <a href="/programming.html">Coding Solutions</a>
           </div>
       </div>
       
@@ -112,99 +112,25 @@
             <div class="ui section hidden divider"></div>
             <div class="ui basic segment center aligned inverted" style="background-color: #F0F0F0;">
     <div class="ui big icon input transperent" style="width: 75%;">
-        <input type="text" placeholder="search anything in Geek at Work ..." />
+        <input type="text" id="search-box" name="query" placeholder="Search" />
         <i class="search icon"></i>
     </div>
 </div>
 
 <div class="ui basic segment">
-    <div class="ui six stackable cards doubling">
-        <div class="ui card">
-            <div class="image">
-                <img src="http://arpitbhayani.me/static/images/electron-gun/electron-gun.jpg" />
-            </div>
-            <div class="content">
-                <a class="header">
-                Kristy</a>
-                <div class="meta">
-                    <span class="date">Joined in 2013</span>
-                </div>
-                <div class="description">
-                    Kristy is an art director living in New York.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                        22 Friends
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="http://arpitbhayani.me/static/images/electron-gun/electron-gun.jpg" />
-            </div>
-            <div class="content">
-                <a class="header">
-                Kristy</a>
-                <div class="meta">
-                    <span class="date">Joined in 2013</span>
-                </div>
-                <div class="description">
-                    Kristy is an art director living in New York.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                        22 Friends
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="http://arpitbhayani.me/static/images/electron-gun/electron-gun.jpg" />
-            </div>
-            <div class="content">
-                <a class="header">
-                Kristy</a>
-                <div class="meta">
-                    <span class="date">Joined in 2013</span>
-                </div>
-                <div class="description">
-                    Kristy is an art director living in New York.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                        22 Friends
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="http://arpitbhayani.me/static/images/electron-gun/electron-gun.jpg" />
-            </div>
-            <div class="content">
-                <a class="header">
-                Kristy</a>
-                <div class="meta">
-                    <span class="date">Joined in 2013</span>
-                </div>
-                <div class="description">
-                    Kristy is an art director living in New York.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                        22 Friends
-                </a>
-            </div>
-        </div>
-    </div>
+    <div class="ui six stackable cards doubling" id="search-results"></div>
 </div>
+
+<script>
+  
+  window.store = {
+    
+  };
+  window.all_posts = [
+    
+  ];
+</script>
+
 
         </div>
         <div class="ui divider"></div>
@@ -234,7 +160,12 @@
 </footer>
 
     </body>
-    <head>
+    
+<head>
+  
+  
+    <script src="/static/js/lunr.min.js"></script>
+    <script src="/static/js/search.js"></script>
   
   <script src="/static/js/semantic.min.js"></script>
   <script src="/static/js/scrollProgress.js"></script>
