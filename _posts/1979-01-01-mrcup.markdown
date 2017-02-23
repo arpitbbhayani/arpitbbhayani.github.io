@@ -12,36 +12,68 @@ seo:
 type: dummy
 ---
 
-<div class="ui basic center aligned segment">
-{% for post in site.categories['mrcup'] limit:1%}
-<div class="ui large image">
-    <a href="{{post.url}}">
-        <img src="{{post.img}}"/>
-    </a>
-</div>
-<div class="ui header">
-    <h1>
-        <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
-    </h1>
-</div>
-{% endfor %}
+
+<div class="ui one column very padded grid center aligned">
+    <div class="ui sixteen column row">
+        <div class="one wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui items">
+                {% for post in site.categories['mrcup'] limit:1%}
+                    <div class="item">
+                        <div class="ui large image">
+                            <img src="{{post.img}}">
+                        </div>
+                        <div class="middle aligned content left aligned">
+                            <h1 class="mrcup_article"><a href="{{post.url}}">{{post.title}}</a></h1>
+                            <div class="ui divider"></div>
+                            <h3 class="mrcup_article">{{post.excerpt}}</h3>
+                            <h4><a href="{{post.url}}">Read more <i class="right long arrow icon"></i></a></h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    <div class="one wide column"></div>
+  </div>
 </div>
 
 <div class="ui divider"></div>
 
-<div class="ui basic center aligned four column grid">
-    {% for post in site.categories['mrcup'] limit:10 offset:1 %}
-    <div class="ui column">
-        <div class="ui medium image">
-            <a href="{{post.url}}">
-                <img src="{{post.img}}"/>
-            </a>
-        </div>
-        <div class="ui header mrcup_article">
-            <h3>
-                <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
-            </h3>
+<div class="ui stackable grid">
+    <div class="row computer tablet only">
+        <div class="ui basic center aligned three column grid">
+            {% for post in site.categories['mrcup'] limit:9 offset:1 %}
+            <div class="ui column">
+                <div class="ui medium image">
+                    <a href="{{post.url}}">
+                        <img src="{{post.img}}"/>
+                    </a>
+                </div>
+                <div class="ui header mrcup_article">
+                    <h3>
+                        <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
+                    </h3>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
+    <div class="row mobile only">
+        <div class="ui basic center aligned two column grid">
+            {% for post in site.categories['mrcup'] limit:10 offset:1 %}
+            <div class="ui column">
+                <div class="ui medium image">
+                    <a href="{{post.url}}">
+                        <img src="{{post.img}}"/>
+                    </a>
+                </div>
+                <div class="ui header mrcup_article">
+                    <h3>
+                        <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
+                    </h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
