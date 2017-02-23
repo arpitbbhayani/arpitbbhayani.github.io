@@ -1,5 +1,6 @@
 ---
 title:  Mr. Cup - Cupful of Life
+img:   http://arpitbhayani.me/static/images/profiles/mrcup.jpg
 layout: default
 comments: true
 tags:
