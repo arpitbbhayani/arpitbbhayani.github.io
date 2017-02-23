@@ -9,7 +9,7 @@ seo:
  tags:
   - mr. cup
   - cupful of life
- description: Mr. Cup is smart and clean hearted. His life is full of ups and downs. Find out more about him here
+ description: Mr. Cup is smart and clean hearted. His life is a roller coaster ride ... full of ups and down, but he always tries to stay happy and positive. Checkout all of his life experiences here.
 type: dummy
 ---
 
