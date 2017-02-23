@@ -1,13 +1,21 @@
-.ui.menu .item:hover {
+/*.ui.menu .item:hover {
     background-color: #FFF !important;
-}
+}*/
 
-.logo a {
+/*.logo a {
     color: #F00 !important;
+}*/
+
+.mrcup_article {
+    font-family: 'Comfortaa', cursive !important;
 }
 
+.ui.top.menu * {
+  font-family: 'Comfortaa', cursive !important;
+}
 .megaheader {
-  font-size: 1.482354rem;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.982354rem;
 }
 
 .mega-tagline {
