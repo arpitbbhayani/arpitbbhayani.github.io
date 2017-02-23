@@ -57,7 +57,9 @@ layout: default
     <div class="row">
         <div class="two wide column"></div>
         <div class="twelve wide column">
-            {% if page.comments %}<div class="fb-comments" data-numposts="5" width="100%"></div>{% endif %}
+            {% if page.comments %}
+                {% include comment_plugin.html %}
+            {% endif %}
         </div>
     </div>
 </div>

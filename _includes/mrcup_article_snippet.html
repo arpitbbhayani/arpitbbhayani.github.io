@@ -1,0 +1,36 @@
+{% assign post=include.post %}
+<article>
+    <div class="ui stackable grid">
+        <div class="four wide column">
+            <div class="ui segment basic">
+                <div class="ui fluid image">
+                    <div class="ui green ribbon label">
+                        <i class="date icon"></i>{{post.date | date: '%B %d, %Y'}}
+                    </div>
+                    <a href='{{post.url}}'><img class="stylish" src="{{post.img}}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="twelve wide column fluid">
+            <div class="ui basic segment">
+                <div class="">
+                    <a href="{{post.url}}" class="ui large header">
+                      <h2>{{post.title}}</h2>
+                    </a>
+                </div>
+                <div class="ui divider"></div>
+                <div class="">
+                    <div class="description">{{post.seo.description}}</div>
+                </div>
+                <br/>
+                <div>
+                    <div class="ui horizontal list">
+                        {% for tag in post.tags %}
+                            <a href='/tag/{{tag}}.html' class="ui item article-category" data-content="All {{tag}} posts" data-variation="tiny"  data-position="bottom center">{{tag}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

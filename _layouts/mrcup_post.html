@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<div class="ui stackable grid one column">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <a href="{{page.img}}" data-lightbox="{{page.img}}" data-title="{{page.title}}">
+                <img class="ui centered huge image stylish" src="{{page.img}}" alt="{{page.title}}">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui header center aligned">
+                <h1 class="article-title">
+                    <div class="mrcup_article">
+                        {{ page.title }}
+                    </div>
+                </h1>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui header">
+                <h3 class="mrcup_article">{{ content }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            <div class="ui items">
+                {% if page.previous_in_category != nil %}
+                <div class="item">
+                    <div class="ui tiny circular image">
+                        <a href="{{page.previous_in_category.url}}">
+                            <img src="{{page.previous_in_category.img}}">
+                        </a>
+                    </div>
+                    <div class="middle aligned content left aligned">
+                        <a href="{{page.previous_in_category.url}}">{{page.previous_in_category.title}}</a>
+                    </div>
+                </div>
+                {% endif %}
+                {% if page.next_in_category != nil %}
+                <div class="item">
+                    <div class="ui tiny circular image">
+                        <a href="{{page.next_in_category.url}}">
+                            <img src="{{page.next_in_category.img}}">
+                        </a>
+                    </div>
+                    <div class="middle aligned content left aligned">
+                        <a href="{{page.next_in_category.url}}">{{page.next_in_category.title}}</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui stackable grid">
+    <div class="row">
+        <div class="two wide column"></div>
+        <div class="twelve wide column">
+            {% if page.comments %}
+                {% include comment_plugin.html %}
+            {% endif %}
+        </div>
+    </div>
+</div>

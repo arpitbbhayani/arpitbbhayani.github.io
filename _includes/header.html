@@ -1,64 +1,47 @@
 <div class="ui grid">
   <div class="row computer tablet only">
-    <div class="ui top borderless menu fluid">
-    <div class="ui fitted item logo">
-        <a href='/' class="ui item">
-            <div class="ui image small">
-                <img src="/static/images/logo.png" />
-            </div>
-        </a>
-    </div>
+    <div class="ui top teal borderless small menu fixed fluid">
+    <a href='/' class="ui item">
+        <div class="ui teal header">
+            Arpit (often_weird)
+        </div>
+    </a>
       {% if page.layout != 'post' %}
       <div class="right menu">
-        <div class="ui item">
-          <a href="{% post_url 1979-01-01-blogs %}"><i class="file text outline grey icon"></i>Blogs</a>
+        <div class="item">
+          <a class="ui teal header" href="{% post_url 1979-01-01-mrcup %}" data-content="Visit the world of Mr. Cup" data-variation="tiny" data-position="bottom center">Mr. Cup</a>
         </div>
-        <div class="ui item">
-          <a href="{% post_url 1979-01-01-programming %}"><i class="laptop grey icon"></i>Coding Solutions</a>
+        <div class="item">
+          <a class="ui teal header" href="{% post_url 1979-01-01-blogs %}" data-content="Check out my tech blogs" data-variation="tiny" data-position="bottom center">Blogs</a>
         </div>
       </div>
       {% else %}
       <div class="right menu">
-        <a class="item" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny" data-position="bottom center">
-          <i class="facebook f grey icon"></i>
-        </a>
-        <a class="item" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny" data-position="bottom right">
-          <i class="twitter grey icon"></i>
-        </a>
+          <div class="item">
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" data-content="Share it on facebook" data-variation="tiny" data-position="bottom center">
+                  <i class="facebook f white icon"></i>
+              </a>
+          </div>
+          <div class="item">
+              <a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank" data-content="Share it on twitter" data-variation="tiny" data-position="bottom right">
+                  <i class="twitter white icon"></i>
+              </a>
+          </div>
       </div>
       {% endif %}
     </div>
   </div>
   <div class="row mobile only">
     <div class="ui top borderless menu fluid">
-        <div class="ui fitted item logo">
-            <a href='/' class="ui item">
-                <div class="ui image small">
-                    <img src="/static/images/logo.png" />
-                </div>
-            </a>
-        </div>
+        <a href='/' class="ui item">
+            <div class="ui teal header">
+                Arpit
+            </div>
+        </a>
       {% if page.layout != 'post' %}
       <div class="right menu">
-          <div class="ui item">
-              <a href="{% post_url 1979-01-01-blogs %}"><i class="file text outline grey icon"></i>Blogs</a>
-          </div>
-          <div class="ui item">
-            <a href="{% post_url 1979-01-01-programming %}"><i class="laptop grey icon"></i>Coding Solutions</a>
-          </div>
-      </div>
-      {% else %}
-      <div class="right menu">
-        <div class="ui dropdown item">
-          <i class="content icon"></i>
-          <div class="menu">
-            <a class="item" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank">
-              <i class="facebook icon"></i> Share it on facebook
-            </a>
-            <a class="item" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank">
-              <i class="twitter icon"></i> Tweet about it
-            </a>
-          </div>
+        <div class="item">
+          <a class="ui teal header" href="{% post_url 1979-01-01-mrcup %}" data-content="Visit the world of Mr. Cup" data-variation="tiny" data-position="bottom center">Mr. Cup</a>
         </div>
       </div>
       {% endif %}

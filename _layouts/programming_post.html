@@ -46,9 +46,9 @@ layout: default
 <div class="ui stackable grid">
     <div class="row">
         <div class="one wide column"></div>
-        <div class="eleven wide column">
-            {% if page.comments %}<div class="fb-comments" data-numposts="5" width="100%"></div>{% endif %}
-        </div>
+        {% if page.comments %}
+            {% include comment_plugin.html %}
+        {% endif %}
     </div>
     <div class="row">
       <div class="one wide column"></div>

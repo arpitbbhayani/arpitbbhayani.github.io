@@ -1,0 +1,47 @@
+---
+title:  Mr. Cup - Cupful of Life
+layout: default
+comments: true
+tags:
+ - mr. cup
+seo:
+ tags:
+  - mr. cup
+  - cupful of life
+ description: Mr. Cup - Cupful of Life
+type: dummy
+---
+
+<div class="ui basic center aligned segment">
+{% for post in site.categories['mrcup'] limit:1%}
+<div class="ui huge image">
+    <a href="{{post.url}}">
+        <img src="{{post.img}}"/>
+    </a>
+</div>
+<div class="ui header">
+    <h1>
+        <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
+    </h1>
+</div>
+{% endfor %}
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui basic center aligned four column grid">
+    {% for post in site.categories['mrcup'] limit:10 offset:1 %}
+    <div class="ui column">
+        <div class="ui medium image">
+            <a href="{{post.url}}">
+                <img src="{{post.img}}"/>
+            </a>
+        </div>
+        <div class="ui header mrcup_article">
+            <h3>
+                <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
+            </h3>
+        </div>
+    </div>
+    {% endfor %}
+</div>
