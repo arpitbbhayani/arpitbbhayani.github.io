@@ -8,10 +8,10 @@
 # Site settings
 title: Arpit Bhayani | Geek at Work | Creator of Mr. Cup | Often Weird
 email: arpit.b.bhayani@gmail.com
-description: Whimsical geek, Often Weird, Guy who always codes, Gamer and a sketcher.
+description: Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.
 baseurl: ""
 url: "http://arpitbhayani.me"
-img: http://arpitbhayani.me/static/images/arpit.png
+img: http://arpitbhayani.me/static/images/profiles/arpit.jpg
 keywords: blog, computer science, competitive programming, mr cup
 
 permalink: /:categories/:title.html
