@@ -1,5 +1,5 @@
 ---
-title:  Mr. Cup - Cupful of Life | Life experiences of a clean hearted cup.
+title:  Mr. Cup - Cupful of Life | Life experiences of a clean hearted cup
 img:   http://arpitbhayani.me/static/images/profiles/mrcup.jpg
 layout: default
 comments: true
@@ -9,7 +9,7 @@ seo:
  tags:
   - mr. cup
   - cupful of life
- description: Mr. Cup is smart and clean hearted cup. His life is full of ups and downs but is sure damn funny and cute. Read his life experiences anf fall in love with him.
+ description: Mr. Cup is smart and clean hearted. His life is full of ups and downs. Find out more about him here
 type: dummy
 ---
 
