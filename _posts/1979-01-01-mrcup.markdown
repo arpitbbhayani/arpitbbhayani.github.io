@@ -14,7 +14,7 @@ type: dummy
 
 <div class="ui basic center aligned segment">
 {% for post in site.categories['mrcup'] limit:1%}
-<div class="ui huge image">
+<div class="ui large image">
     <a href="{{post.url}}">
         <img src="{{post.img}}"/>
     </a>
