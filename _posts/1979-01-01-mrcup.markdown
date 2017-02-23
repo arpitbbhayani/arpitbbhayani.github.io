@@ -8,7 +8,7 @@ seo:
  tags:
   - mr. cup
   - cupful of life
- description: Mr. Cup - Cupful of Life
+ description: Mr. Cup is cute, smart and clean hearted cup. Check out all his life experiences. Created by Arpit.
 type: dummy
 ---
 
