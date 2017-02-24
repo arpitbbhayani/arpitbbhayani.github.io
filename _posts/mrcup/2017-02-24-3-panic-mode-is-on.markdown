@@ -15,7 +15,7 @@ seo:
  description: As soon as Mr. Cup saw the airplane soaked in water, he panicked. Now all he wanted was to somehow fix it. The panic button was pressed and the panic mode was on! A torrent of possible fixes struck his mind, which confused him badly.
 ---
 
-As soon as Mr. Cup saw the airplane soaked in water, he panicked. Now all he wanted was to somehow fix it. The panic button was pressed and the panic mode was on! A torrent of possible fixes struck his mind, which confused him badly.
+As soon as Mr. Cup saw the air-plane soaked in water, he panicked. Now all he wanted was to somehow fix it. The panic button was pressed and the panic mode was on! A torrent of possible fixes struck his mind, which confused him badly.
 
 He started mopping away water from the floor. Things started off well, he thought “Well began is half done”. But little did he know, fate had some other plans for him 😉
 
