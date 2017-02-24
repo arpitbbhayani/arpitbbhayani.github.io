@@ -23,7 +23,7 @@ type: dummy
 </div>
 
 <script>
-  {% assign posts = site.posts %}
+  {% assign posts = site.categories['geekatwork'] %}
   window.store = {
     {% for post in posts %}
       "{{ post.url | slugify }}": {
