@@ -1,5 +1,5 @@
 ---
-title: 3 - The Thinking Cap
+title: 4 - The Thinking Cap
 img:    http://arpitbhayani.me/static/images/mrcup/4-the-thinking-cap.jpg
 layout: mrcup_post
 comments: true
