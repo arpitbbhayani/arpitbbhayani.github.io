@@ -24,6 +24,7 @@ He ran into his room, grabbed some paper, a scissor, a measuring tape and some g
 Just about the time when he thought of giving up, he calmed down, took a deep breath and chose to give this one last shot. He folded the paper neatly, divided it in half, then to a quarter, made some slant folds, then using scissor made some crisp cuts, glued small bits of paper together and to his surprise it started taking some familiar shape. So the chose to continue with it. The shape was neat, crisp and looked pretty impressive. He realised that he accidentally made a Boat out of it and that too a beautiful one.
 
 Boat instead of an air-plane … will his friends accept?
-What if someone put it in water … will this boat float?
+
+If put it in water … will this boat float?
 
 Stay Tuned!
