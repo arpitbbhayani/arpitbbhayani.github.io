@@ -5,9 +5,36 @@
     <description>Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Feb 2017 07:46:05 +0530</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 07:46:05 +0530</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 08:49:44 +0530</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 08:49:44 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>5 - The Confrontation</title>
+        <description>&lt;p&gt;Just as Mr. Cup finished making his boat, the doorbell rang. He quickly got up, cleaned up the mess and opened the door. Nervously he uttered “H…ee…lloooo …. guys!”. All of the friends greeted him together “Hello, Kipo!”. The real name of Mr. Cup is Kipo but he do not like his name so he makes everyone call him Mr. Cup; but no one actually does. 😉&lt;/p&gt;
+
+&lt;p&gt;Since luck has never been on his side, his friend, Gitto, out of nowhere, suggested all to play with air-plane again. Everyone got excited but Kipo got scared. He tried really hard to detour but it did not work. Everyone started inquiring about the air-plane; feeling the heat, Kipo ran into his room and grabbed the boat and very excitedly showed it to all of his friends.&lt;/p&gt;
+
+&lt;p&gt;The boat was pretty impressive and beautiful and big! Some of them had never seen anything like that before. Everyone got pretty excited seeing it, and wanted to play with it. Kipo started telling them about how he made it and what all it can do. Some of it was total hocus-pocus but they bought it. Meanwhile Gypsy ran towards bathroom, filled the bathtub with water and called everyone with the Boat. He snatched the Boat from Kipo’s hand and put it in water. The boat floated! it went with the stream from one end to the other. Kipo was relieved. 😀&lt;/p&gt;
+
+&lt;p&gt;Everyone was so happy with the Boat that they forgot about the air-plane. Because all they cared  about being happy, and they were happy with Boat right now. They were live-the-present-and-forget-the-past kinda cups 😉&lt;/p&gt;
+
+&lt;p&gt;Kipo, our Mr. Cup had a new learning today - “The worst always happens in your mind, not always in reality”. Holidays are over; everything almost went well for Kipo this summer. But tomorrow is the first day of new academic year at school. Something interesting is bound to happen.&lt;/p&gt;
+
+&lt;p&gt;Stay Tuned&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Mar 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/mrcup/5-the-confrontation.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/5-the-confrontation.html</guid>
+        
+        <category>mrcup</category>
+        
+        <category>story 5</category>
+        
+        
+        <category>mrcup</category>
+        
+      </item>
     
       <item>
         <title>4 - The Thinking Cap</title>
@@ -665,99 +692,6 @@ Will anyone find out?&lt;/p&gt;
         
         
         <category>hackerrank</category>
-        
-      </item>
-    
-      <item>
-        <title>Amazon's Kinesis and SQS - Which one should you choose and when?</title>
-        <description>&lt;p&gt;SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of them have been designed keeping a lot of things and specific usecases in mind. Even though they provide similar set of functionalities, each of the service is highly optimized for some of its functionalities. So lets dive deep into this:&lt;/p&gt;
-
-&lt;h2 id=&quot;difference-between-messaging-and-streaming&quot;&gt;Difference between Messaging and Streaming&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;In order to choose between SQS and Kinesis let us first understand the difference between Messaging and Streaming.&lt;/p&gt;
-
-&lt;p&gt;SQS is a Distributed Message Queue, where user puts in a message and there are consumers that consumes them and start processing accordingly. Generally message systems are used when you want to perform some task asynchronously (deferred execution). So distributed messageing queues like SQS are ideal for scenarios where you have set of workers who handle your heavy duty processing and you want to avoid overloading your web-application with heavy duty tasks.&lt;/p&gt;
-
-&lt;p&gt;Streaming (Message or Data Streaming) on other other is where you want real time streaming of data that is produced by one of the producer and that data is to be consumed by various set of applications in real time for some real time analysis, storage, backup, caching, etc. This is where streams come into picture.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-sqs&quot;&gt;What is SQS&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;According to &lt;a href=&quot;https://aws.amazon.com/sqs/&quot;&gt;Amazon&lt;/a&gt;, Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-kinesis&quot;&gt;What is Kinesis&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;According to &lt;a href=&quot;https://aws.amazon.com/kinesis/&quot;&gt;Amazon&lt;/a&gt;, Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming data, and also providing the ability for you to build custom streaming data applications for specialized needs.&lt;/p&gt;
-
-&lt;h2 id=&quot;highlights-of-sqs&quot;&gt;Highlights of SQS&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;SQS is infinitely scalable.&lt;/li&gt;
-  &lt;li&gt;SQS message queue can contain an unlimited number of messages.&lt;/li&gt;
-  &lt;li&gt;You can set the limit on bytes that an Amazon SQS message can contain, between 1-256 KB.&lt;/li&gt;
-  &lt;li&gt;You can also send messages larger than 256 KB (upto 2GB) by uploading to s3 and sending reference.&lt;/li&gt;
-  &lt;li&gt;Retention period of messages is between 1 minute and 14 days.&lt;/li&gt;
-  &lt;li&gt;SQS is reliable, highly scalable hosted queue for storing messages as they travel between computers.&lt;/li&gt;
-  &lt;li&gt;Messages are automatically deleted once the message reaches its retention limit.&lt;/li&gt;
-  &lt;li&gt;Standard queues provides at-least-once delivery. FIFO queues provide exactly-once processing.&lt;/li&gt;
-  &lt;li&gt;SQS won’t deliver the same message to another consumer after it has been read for a configurable period (VisibilityTimeout).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;highlights-of-kinesis&quot;&gt;Highlights of Kinesis&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;Made for heavy real-time processing.&lt;/li&gt;
-  &lt;li&gt;Kinesis optimized for high-throughput.&lt;/li&gt;
-  &lt;li&gt;You can read the same message from several applications&lt;/li&gt;
-  &lt;li&gt;You can re-read messages in case you need to.&lt;/li&gt;
-  &lt;li&gt;You can create a complex network of streams&lt;/li&gt;
-  &lt;li&gt;Kinesis delivers all records for a given partition key to the same record processor&lt;/li&gt;
-  &lt;li&gt;You can add data into Kinesis streams from hundreds of thousands of sources and within seconds.&lt;/li&gt;
-  &lt;li&gt;The more shards you configure the faster you can write to and read from the queue.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;how-to-choose-one&quot;&gt;How to choose one&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;p&gt;You should use Kinesis when&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;you want to route related records to the same record processor (as in streaming MapReduce).&lt;/li&gt;
-  &lt;li&gt;you want multiple applications to consume the same stream concurrently.&lt;/li&gt;
-  &lt;li&gt;you want to consume records in the same order a few hours later.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You should use SQS when&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;you want message-level ack/fail and visibility timeout.&lt;/li&gt;
-  &lt;li&gt;you want to make message visible after certain delay.&lt;/li&gt;
-  &lt;li&gt;you want to dynamically increase throughput at read time by adding multiple consumers.&lt;/li&gt;
-  &lt;li&gt;you want to leveraging SQS’s ability to scale transparently.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/sqs/&quot;&gt;Amazon SQS - Message Queueing Service&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/kinesis/&quot;&gt;Amazon Kinesis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/kinesis/streams/faqs/&quot;&gt;Amazon Kinesis Stream FAQs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/sqs/faqs/&quot;&gt;Amazon SQS FAQs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.quora.com/What-is-the-difference-between-Kinesis-and-SQS-It-seems-capable-of-serving-similar-use-cases-apart-from-the-shards-and-partition-keys&quot;&gt;Answer on Quora by Aditya Krishnan, Product manager at Amazon&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/26623673/why-should-i-use-amazon-kinesis-and-not-sns-sqs&quot;&gt;Stackoverflow - Why should I use Amazon Kinesis and not SNS-SQS?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://fbrnc.net/blog/2016/03/messaging-on-aws&quot;&gt;Messaging on AWS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 27 Dec 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/kinesis-and-sqs.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/kinesis-and-sqs.html</guid>
-        
-        <category>devops</category>
-        
-        <category>sqs</category>
-        
-        <category>kinesis</category>
-        
-        <category>aws</category>
-        
-        
-        <category>techie</category>
         
       </item>
     
