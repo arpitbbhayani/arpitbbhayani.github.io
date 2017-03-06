@@ -1,5 +1,5 @@
 ---
-title:  Mr. Cup - Cupful of Life | Life experiences of a clean hearted cup
+title:  Mr. Cup - Cupful of Life | Life of Kipo a.k.a Mr. Cup is a roller coaster ride. Every incident makes him understand life a little better and teaches him a valuable lesson. Come along and enjoy the journey. New episodes every Monday and Thursday.
 img:   http://arpitbhayani.me/static/images/profiles/mrcup.jpg
 layout: default
 comments: true
@@ -9,7 +9,7 @@ seo:
  tags:
   - mr. cup
   - cupful of life
- description: Mr. Cup is smart and clean hearted. His life is a roller coaster ride ... full of ups and down, but he always tries to stay happy and positive. Checkout all of his life experiences here.
+ description: Life of Kipo a.k.a Mr. Cup is a roller coaster ride. Every incident makes him understand life a little better and teaches him a valuable lesson. Come along and enjoy the journey. New episodes every Monday and Thursday.
 type: dummy
 ---
 
