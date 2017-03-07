@@ -42,7 +42,7 @@ type: dummy
 
 <div class="ui stackable grid">
     <div class="row computer tablet only">
-        <div class="ui basic center aligned three column grid">
+        <div class="ui basic center aligned four column grid">
             {% for post in site.categories['mrcup'] limit:9 offset:1 %}
             <div class="ui column">
                 <div class="ui medium image">
@@ -60,7 +60,7 @@ type: dummy
         </div>
     </div>
     <div class="row mobile only">
-        <div class="ui basic center aligned two column grid">
+        <div class="ui basic center aligned three column grid">
             {% for post in site.categories['mrcup'] limit:9 offset:1 %}
             <div class="ui column">
                 <div class="ui medium image">
