@@ -23,6 +23,6 @@ The boat was pretty impressive and beautiful and big! Some of them had never see
 
 Everyone was so happy with the Boat that they forgot about the air-plane. Because all they cared  about being happy, and they were happy with Boat right now. They were live-the-present-and-forget-the-past kinda cups 😉
 
-Kipo, our Mr. Cup had a new learning today - “The worst always happens in your mind, not always in reality”. Holidays are over; everything almost went well for Kipo this summer. But tomorrow is the first day of new academic year at school. Something interesting is bound to happen.
+Kipo, our Mr. Cup had a new learning today - “The worst always happens in your mind, not in reality”. Holidays are over; everything almost went well for Kipo this summer. But tomorrow is the first day of new academic year at school. Something interesting is bound to happen.
 
 Stay Tuned
