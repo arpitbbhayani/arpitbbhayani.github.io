@@ -15,7 +15,7 @@ seo:
  description: Mr. Cup did something really horrible :-( and is ignoring everyone right now, hoping no one finds out.
 ---
 
-Mr. Cup did something really horrible :-( and is ignoring everyone right now, hoping no one finds out.
+Mr. Cup did something really horrible ☹ and is ignoring everyone right now, hoping no one finds out.
 
 What did Mr. Cup do?
 Will anyone find out?
