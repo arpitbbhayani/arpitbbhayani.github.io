@@ -8,28 +8,28 @@
   <link rel="icon" type="image/png" href="/static/images/icons/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/static/images/icons/favicon-16x16.png" sizes="16x16" />
 
-  <title>All posts with tag | Arpit Bhayani | Geek at Work | Creator of Mr. Cup | Often Weird</title>
-  <meta name="description" content="Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.">
-  <meta name="keywords" content="" />
+  <title>MarkView - A fast in browser markdown previewer, also supports Github flavoured markdown. | Arpit Bhayani | Geek at Work | Creator of Mr. Cup | Often Weird</title>
+  <meta name="description" content="A fast in browser markdown previewer.">
+  <meta name="keywords" content="markdown, live markdown, github flavoured markdown, markdown to html, codemirror, marked.js, " />
 
   <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="stylesheet" href="/static/css/lightbox.css">
-  <link rel="canonical" href="http://arpitbhayani.me/tags.html">
+  <link rel="canonical" href="http://arpitbhayani.me/markview.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Geek at Work | Creator of Mr. Cup | Often Weird" href="http://arpitbhayani.me/feed.xml">
 
   <meta property="og:image" content="http://arpitbhayani.me/static/images/profiles/arpit.jpg"/>
-  <meta property="og:title" content="All posts with tag"/>
-  <meta property="og:url" content="http://arpitbhayani.me/tags.html"/>
+  <meta property="og:title" content="MarkView - A fast in browser markdown previewer, also supports Github flavoured markdown."/>
+  <meta property="og:url" content="http://arpitbhayani.me/markview.html"/>
   <meta property="og:site_name" content="Arpit Bhayani | Geek at Work | Creator of Mr. Cup | Often Weird"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher." />
+  <meta property="og:description" content="A fast in browser markdown previewer." />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbhayani.me/tags.html">
-  <meta name="twitter:title" content="All posts with tag">
-  <meta name="twitter:description" content="Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.">
+  <meta name="twitter:url" content="http://arpitbhayani.me/markview.html">
+  <meta name="twitter:title" content="MarkView - A fast in browser markdown previewer, also supports Github flavoured markdown.">
+  <meta name="twitter:description" content="A fast in browser markdown previewer.">
   <meta name="twitter:image" content="http://arpitbhayani.me/static/images/profiles/arpit.jpg">
 
   <script src="/static/js/jquery-1.11.3.min.js"></script>
@@ -97,9 +97,47 @@
 </div>
 
         <div style="padding-bottom: 50px; padding-top: 100px;">
-            <p>This is a plain excerpt and of no use</p>
+            <link rel="stylesheet" href="/static/css/codemirror.css" />
 
-<p>codechef<br />solution<br />solution to codechef questions<br />competitive programming<br />geekatwork<br />hackerrank<br />solution to hackerrank questions<br />leetcode<br />solution to leetcode questions<br />markdown<br />live markdown<br />github flavoured markdown<br />markdown to html<br />codemirror<br />marked.js<br />mr. cup<br />spoj<br />solution to spoj questions<br />competitive-programming<br />programming<br />science<br />planets<br />space<br />alpha-centauri<br />techie<br />python<br />devops<br />fourth-dimension<br />sci-fi<br />geometry<br />how-was-it-measured<br />particle-physics<br />how-it-works<br />gravity<br />database-admin<br />http<br />networking<br />stream<br />flask<br />dhcp<br />deployment<br />sqs<br />kinesis<br />aws<br />mrcup<br />story 1<br />story 2<br />story 3<br />story 4<br />story 5<br />story 6<br /></p>
+<script src="/static/js/codemirror.js"></script>
+
+<script src="/static/js/gfm.js"></script>
+
+<script src="/static/js/marked.js"></script>
+
+<div class="ui two column grid" style="margin-top: -75px;">
+    <div class="ui column" id="editor"></div>
+    <div class="ui column" id="preview" style="height: 600px; overflow-y: scroll;"></div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var editor = CodeMirror(document.getElementById("editor"), {
+        lineNumbers: true,
+        mode: "markdown",
+        theme: "material",
+        smartIndent: true,
+        lineWrapping: true,
+        styleActiveLine: true
+    });
+
+    marked.setOptions({
+        renderer: new marked.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false
+    });
+
+    editor.on("change", function(instance, changeObject) {
+        document.getElementById('preview').innerHTML = marked(instance.getValue());
+    });
+});
+</script>
+
 
         </div>
         <div class="ui divider"></div>
