@@ -5,9 +5,38 @@
     <description>Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Mar 2017 09:41:18 +0530</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 09:41:18 +0530</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 09:51:55 +0530</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 09:51:55 +0530</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>7 - The New Friend</title>
+        <description>&lt;p&gt;Kipo boarded the bus. Seeing so many new faces around, he was excited yet nervous. As he entered, he started looking for a seat. After few skimming the bus a few times, he found one in the second row from the last. He knew would be the “New Kid” in school and will be bombarded with questions so he started preparing them in mind one by one.&lt;/p&gt;
+
+&lt;p&gt;While Kipo was in middle of preparing his answer to the typical Hobby question, someone tapped him on his shoulder. Kipo turned and saw a kid wearing thick round glasses, he looked nerdy. The kid introduced himself with a lot of excitement and punch in his voice “Hi! I am Nick”. Kipo nervously replied “Iiiii …. aaammmm …. Kipo”.&lt;/p&gt;
+
+&lt;p&gt;After few ice-breakers they both started knowing each other a little better. One thing led to another and they found out that they both were 7th graders and will be attending the same class. Kipo was really happy to know this. After sometime, Nick went and called some of his other friends and introduced them to Kipo. It was hard for him to remember names of all he met but he was relieved, at least he will see some known faces in school now.&lt;/p&gt;
+
+&lt;p&gt;“We have reached! Get off quickly” shouted the bus driver. Everyone rushed towards the door to get off. Nick and Kipo started walking towards the classroom. While they were on their way, Nick started telling Kipo about the activities they have in school - quizzing, sports, drama, dancing and painting, which made Kipo really excited and he felt he was in right place.&lt;/p&gt;
+
+&lt;p&gt;Once they reached the classroom, Kipo and Nick started looking for a place. In the third row there was a seat for two available. They both went to the seat, to keep their bags. As Kipo was keeping his bag on the bench, someone pushed him. The push was powerful, Kipo lost his balance and fell on the floor. He heard a tough voice say “This is my seat! Go sit somewhere else!”. The turned and saw someone big!&lt;/p&gt;
+
+&lt;p&gt;Is Kipo in trouble?&lt;/p&gt;
+
+&lt;p&gt;Stay Tuned&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Mar 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/mrcup/7-the-new-friend.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/7-the-new-friend.html</guid>
+        
+        <category>mrcup</category>
+        
+        <category>story 7</category>
+        
+        
+        <category>mrcup</category>
+        
+      </item>
     
       <item>
         <title>6 - I Am Ready</title>
@@ -507,116 +536,6 @@ Will anyone find out?&lt;/p&gt;
         <pubDate>Mon, 02 Jan 2017 00:00:00 +0530</pubDate>
         <link>http://arpitbhayani.me/hackerrank/the-grid-search.html</link>
         <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/the-grid-search.html</guid>
-        
-        <category>competitive-programming</category>
-        
-        <category>programming</category>
-        
-        
-        <category>hackerrank</category>
-        
-      </item>
-    
-      <item>
-        <title>HACKERRANK kaprekar-numbers Solution</title>
-        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.hackerrank.com/challenges/kaprekar-numbers&quot;&gt;kaprekar-numbers&lt;/a&gt; on hackerrank&lt;/p&gt;
-
-&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
-  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
-    Problem Statement
-  &lt;/a&gt;
-  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
-    Solution
-  &lt;/a&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
-    &lt;iframe src=&quot;https://www.hackerrank.com/challenges/kaprekar-numbers&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cmath&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdio&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstring&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;climits&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;deque&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;list&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;limits&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;map&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;queue&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;set&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stack&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;cp&quot;&gt;#define ll long long&lt;/span&gt;
-
-&lt;span class=&quot;cp&quot;&gt;#define MIN(a, b) a &amp;lt; b ? a : b&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define MAX(a, b) a &amp;gt; b ? a : b&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;is_kaprekar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;sprintf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;%lld&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atoi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atoi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%lld%lld&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_kaprekar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%lld &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;INVALID RANGE&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 30 Dec 2016 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/hackerrank/kaprekar-numbers.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/kaprekar-numbers.html</guid>
         
         <category>competitive-programming</category>
         
