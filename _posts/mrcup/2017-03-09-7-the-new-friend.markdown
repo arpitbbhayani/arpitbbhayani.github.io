@@ -12,10 +12,10 @@ seo:
   - mrcup
   - story 7
   - the new friend
- description: Kipo boarded the bus. Seeing so many new faces around, he was excited yet nervous. As he entered, he started looking for a seat. After few skimming the bus a few times, he found one in the second row from the last. He knew would be the “New Kid” in school and will be bombarded with questions so he started preparing them in mind one by one.
+ description: Kipo boarded the bus. Seeing so many new faces around, he was excited yet nervous. As he entered, he started looking for a seat. After skimming the bus a few times, he found one in the second row from the last. He knew would be the “New Kid” in school and will be bombarded with questions so he started preparing them in mind one by one.
 ---
 
-Kipo boarded the bus. Seeing so many new faces around, he was excited yet nervous. As he entered, he started looking for a seat. After few skimming the bus a few times, he found one in the second row from the last. He knew would be the “New Kid” in school and will be bombarded with questions so he started preparing them in mind one by one.
+Kipo boarded the bus. Seeing so many new faces around, he was excited yet nervous. As he entered, he started looking for a seat. After skimming the bus a few times, he found one in the second row from the last. He knew would be the “New Kid” in school and will be bombarded with questions so he started preparing them in mind one by one.
 
 While Kipo was in middle of preparing his answer to the typical Hobby question, someone tapped him on his shoulder. Kipo turned and saw a kid wearing thick round glasses, he looked nerdy. The kid introduced himself with a lot of excitement and punch in his voice “Hi! I am Nick”. Kipo nervously replied “Iiiii …. aaammmm …. Kipo”.
 
