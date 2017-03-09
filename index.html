@@ -65,7 +65,55 @@ layout: default
             <div class="ui row">
                 <div class="ui left aligned basic segment">
                     <div class="ui orange header">
-                        <p class="megaheader">Most recent blogs</p>
+                        <p class="megaheader">Recent Mr. Cup Episodes</p>
+                    </div>
+                    <div class="ui small divider"></div>
+                    <div class="ui grid center aligned">
+                        <div class="ui three column row computer tablet only">
+                            {% for post in site.categories['mrcup'] limit:3 %}
+                            <div class="ui column">
+                                <div class="ui medium image">
+                                    <a href="{{post.url}}">
+                                        <img src="{{post.img}}"/>
+                                    </a>
+                                </div>
+                                <div class="ui header">
+                                    <a href="{{post.url}}">
+                                        {{post.title}}
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="ui one column row mobile only">
+                            {% for post in site.categories['mrcup'] limit:3 %}
+                            <div class="ui column">
+                                <div class="ui small image">
+                                    <a href="{{post.url}}">
+                                        <img src="{{post.img}}"/>
+                                    </a>
+                                </div>
+                                <div class="ui header">
+                                    <a href="{{post.url}}">
+                                        {{post.title}}
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="ui one column row">
+                            <a class="ui huge button basic orange" href="/">
+                                Checkout All Episodes Of Mr. Cup
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui section hidden divider"></div>
+            <div class="ui row">
+                <div class="ui left aligned basic segment">
+                    <div class="ui orange header">
+                        <p class="megaheader">Recent Blogs</p>
                     </div>
                     <div class="ui small divider"></div>
                     <div class="ui grid center aligned">
@@ -85,7 +133,26 @@ layout: default
                             </div>
                             {% endfor %}
                         </div>
-                        <div class="ui two column row mobile only">
+                        <div class="ui one column row mobile only">
+                            {% for post in site.categories['techie'] limit:3 %}
+                            <div class="ui column">
+                                <div class="ui small image">
+                                    <a href="{{post.url}}">
+                                        <img src="{{post.img}}"/>
+                                    </a>
+                                </div>
+                                <div class="ui header">
+                                    <a href="{{post.url}}">
+                                        {{post.title}}
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="ui one column row">
+                            <a class="ui huge button basic orange" href="/">
+                                View All Tech Blogs
+                            </a>
                         </div>
                     </div>
                 </div>
