@@ -43,7 +43,7 @@ type: dummy
 <div class="ui stackable grid">
     <div class="ui row stackable">
         <div class="ui basic center aligned four column grid">
-            {% for post in site.categories['mrcup'] limit:9 offset:1 %}
+            {% for post in site.categories['mrcup'] offset:1 %}
             <div class="ui column">
                 <div class="ui medium image">
                     <a href="{{post.url}}">
