@@ -30,21 +30,7 @@ layout: default
                     </div>
                     <div class="ui small divider"></div>
                     <div class="ui grid center aligned">
-                        <div class="ui three column row computer tablet only">
-                            <div class="ui column">
-                                <a href="https://github.com/arpitbbhayani/flasksr"><h2 style="font-family: monospace;">flasksr</h2></a>
-                                <p>Make flask pages load faster and better by streaming partial HTTP Responses</p>
-                            </div>
-                            <div class="ui column">
-                                <a href="https://github.com/arpitbbhayani/bucket-list"><h2 style="font-family: monospace;">bucket-list</h2></a>
-                                <p>A beautiful command line tool to manage your todos and bucket lists</p>
-                            </div>
-                            <div class="ui column">
-                                <a href="https://github.com/arpitbbhayani/jsoncache"><h2 style="font-family: monospace;">jsoncache</h2></a>
-                                <p>Easy way to manipulate JSON file for Python</p>
-                            </div>
-                        </div>
-                        <div class="ui two column row mobile only">
+                        <div class="ui three column row stackable">
                             <div class="ui column">
                                 <a href="https://github.com/arpitbbhayani/flasksr"><h2 style="font-family: monospace;">flasksr</h2></a>
                                 <p>Make flask pages load faster and better by streaming partial HTTP Responses</p>
@@ -69,26 +55,10 @@ layout: default
                     </div>
                     <div class="ui small divider"></div>
                     <div class="ui grid center aligned">
-                        <div class="ui three column row computer tablet only">
+                        <div class="ui three column row stackable">
                             {% for post in site.categories['mrcup'] limit:3 %}
                             <div class="ui column">
                                 <div class="ui medium image">
-                                    <a href="{{post.url}}">
-                                        <img src="{{post.img}}"/>
-                                    </a>
-                                </div>
-                                <div class="ui header">
-                                    <a href="{{post.url}}">
-                                        {{post.title}}
-                                    </a>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="ui one column row mobile only">
-                            {% for post in site.categories['mrcup'] limit:3 %}
-                            <div class="ui column">
-                                <div class="ui small image">
                                     <a href="{{post.url}}">
                                         <img src="{{post.img}}"/>
                                     </a>
@@ -117,26 +87,10 @@ layout: default
                     </div>
                     <div class="ui small divider"></div>
                     <div class="ui grid center aligned">
-                        <div class="ui three column row computer tablet only">
+                        <div class="ui three column row stackable">
                             {% for post in site.categories['techie'] limit:3 %}
                             <div class="ui column">
                                 <div class="ui medium image">
-                                    <a href="{{post.url}}">
-                                        <img src="{{post.img}}"/>
-                                    </a>
-                                </div>
-                                <div class="ui header">
-                                    <a href="{{post.url}}">
-                                        {{post.title}}
-                                    </a>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="ui one column row mobile only">
-                            {% for post in site.categories['techie'] limit:3 %}
-                            <div class="ui column">
-                                <div class="ui small image">
                                     <a href="{{post.url}}">
                                         <img src="{{post.img}}"/>
                                     </a>
