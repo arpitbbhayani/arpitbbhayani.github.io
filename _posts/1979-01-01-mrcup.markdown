@@ -41,26 +41,8 @@ type: dummy
 <div class="ui divider"></div>
 
 <div class="ui stackable grid">
-    <div class="row computer tablet only">
+    <div class="ui row stackable">
         <div class="ui basic center aligned four column grid">
-            {% for post in site.categories['mrcup'] limit:9 offset:1 %}
-            <div class="ui column">
-                <div class="ui medium image">
-                    <a href="{{post.url}}">
-                        <img src="{{post.img}}"/>
-                    </a>
-                </div>
-                <div class="ui header mrcup_article">
-                    <h3>
-                        <a href="{{post.url}}" class="mrcup_article">{{post.title}}</a>
-                    </h3>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="row mobile only">
-        <div class="ui basic center aligned three column grid">
             {% for post in site.categories['mrcup'] limit:9 offset:1 %}
             <div class="ui column">
                 <div class="ui medium image">
