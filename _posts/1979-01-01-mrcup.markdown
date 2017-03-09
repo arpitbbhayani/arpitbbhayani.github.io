@@ -40,9 +40,9 @@ type: dummy
 
 <div class="ui divider"></div>
 
-<div class="ui stackable grid">
-    <div class="ui row stackable">
-        <div class="ui basic center aligned four column grid">
+<div class="ui grid">
+    <div class="ui row">
+        <div class="ui basic center aligned four column grid stackable">
             {% for post in site.categories['mrcup'] offset:1 %}
             <div class="ui column">
                 <div class="ui medium image">
