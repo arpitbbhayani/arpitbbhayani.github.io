@@ -1,6 +1,6 @@
 ---
 title: Amazon's Kinesis and SQS - Which one should you choose and when?
-img: http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg
+img: http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.png
 layout: post
 comments: true
 tags:
