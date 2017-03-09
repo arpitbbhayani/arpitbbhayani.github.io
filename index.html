@@ -73,7 +73,9 @@ layout: default
                             {% for post in site.categories['techie'] limit:3 %}
                             <div class="ui column">
                                 <div class="ui medium image">
-                                    <img src="{{post.img}}"/>
+                                    <a href="{{post.url}}">
+                                        <img src="{{post.img}}"/>
+                                    </a>
                                 </div>
                                 <div class="ui header">
                                     <a href="{{post.url}}">
