@@ -24,7 +24,7 @@ He angrily opened the door and started rushing towards the classroom but after f
 He calmed down and starting thinking ideas through. He narrowed down to one that was a perfect blend; it was funny, cruel and silly at the same time and it also served the purpose of teaching that huge-potato-porker-lard-ass a lesson. With a wicked smile on his face, he opened the door and stared moving towards the classroom.
 
 What is the plan?
-What would happen if the plan backfired?
-Where was Nick when Kipo locked himself up in the bathroom?
+If the plan backfires, will he get his head squished by huge-potato-porker-lard-ass?
+Where was Nick when Kipo locked himself up?
 
 Stay Tuned
