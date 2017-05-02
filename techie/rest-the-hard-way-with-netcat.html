@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
-  <link rel="stylesheet" href="/static/css/lightbox.css">
   <link rel="canonical" href="http://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
 
@@ -82,9 +81,7 @@
     </div>
   </div>
 </div>
-<a href="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" data-lightbox="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" data-title="HTTP Requests - The Hard Way with Netcat">
-    <img class="ui centered large image stylish" src="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" alt="HTTP Requests - The Hard Way with Netcat">
-</a>
+<img class="ui centered large image stylish" src="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" alt="HTTP Requests - The Hard Way with Netcat">
 <div>
     <p>Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.</p>
 
@@ -137,9 +134,7 @@ Connection: Keep-Alive</code></pre></figure>
 
 <p>The command along with creating a TCP connection, will also open a STDIN. Anything passed in that input stream will reach the server via the connection. Lets see what happens when we provide <em>This is a sample</em> as input.</p>
 
-<p><a href="/static/images/http-requests/bad-request.jpg" data-lightbox="/static/images/http-requests/bad-request.jpg" data-title="Bad Request example with netcat">
-    <img class="ui huge centered stylish image" src="/static/images/http-requests/bad-request.jpg" alt="Bad Request example with netcat" />
-</a></p>
+<p><img class="ui huge centered stylish image" src="/static/images/http-requests/bad-request.jpg" alt="Bad Request example with netcat" /></p>
 
 <p>The input message given is not a valid HTTP message hence server responded with a status code of <em>400</em> which is for <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Bad Request</a>. And if you closely observe the server logs on flask application, you will see an entry of our last request.</p>
 
@@ -151,9 +146,7 @@ Connection: Keep-Alive</code></pre></figure>
 
 <p>And you should see output like this</p>
 
-<p><a href="/static/images/http-requests/get-request.jpg" data-lightbox="/static/images/http-requests/get-request.jpg" data-title="GET Request example with netcat">
-    <img class="ui huge centered stylish image" src="/static/images/http-requests/get-request.jpg" alt="GET Request example with netcat" />
-</a></p>
+<p><img class="ui huge centered stylish image" src="/static/images/http-requests/get-request.jpg" alt="GET Request example with netcat" /></p>
 
 <p>The HTTP Server understands the message sent from the client and it responded back as directed by the source code.</p>
 
@@ -175,9 +168,7 @@ Connection: Keep-Alive</code></pre></figure>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>GET /user?name<span class="o">=</span>arpit HTTP/1.1</code></pre></figure>
 
 <h4 id="output">Output</h4>
-<p><a href="/static/images/http-requests/get-request-with-query-params.jpg" data-lightbox="/static/images/http-requests/get-request-with-query-params.jpg" data-title="GET Request example with query params using netcat">
-    <img class="ui huge centered stylish image" src="/static/images/http-requests/get-request-with-query-params.jpg" alt="GET Request example with query params using netcat" />
-</a></p>
+<p><img class="ui huge centered stylish image" src="/static/images/http-requests/get-request-with-query-params.jpg" alt="GET Request example with query params using netcat" /></p>
 
 <h3 id="basic-post-method-example">Basic POST Method example</h3>
 <p>Following method accepts form data via HTTP POST method and returns a dummy response with <em>username</em> and <em>password</em> in it.</p>
@@ -200,9 +191,7 @@ Content-Length: <span class="m">32</span>
 <span class="nv">username</span><span class="o">=</span>arpit<span class="p">&amp;</span><span class="nv">password</span><span class="o">=</span>welcome</code></pre></figure>
 
 <h4 id="output-1">Output</h4>
-<p><a href="/static/images/http-requests/post-request-with-form-data.jpg" data-lightbox="/static/images/http-requests/post-request-with-form-data.jpg" data-title="POST Request example with form data using netcat">
-    <img class="ui huge centered stylish image" src="/static/images/http-requests/post-request-with-form-data.jpg" alt="POST Request example with form data using netcat" />
-</a></p>
+<p><img class="ui huge centered stylish image" src="/static/images/http-requests/post-request-with-form-data.jpg" alt="POST Request example with form data using netcat" /></p>
 
 <h3 id="post-method-with-json-request-body">POST Method with JSON Request Body</h3>
 <p>Following method accepts JSON data that contains a field <em>id</em> with integer value via HTTP POST method and returns a dummy response with <em>id</em> in it.</p>
@@ -224,9 +213,7 @@ Content-Length: <span class="m">30</span>
 <span class="o">{</span><span class="s2">&quot;id&quot;</span>: <span class="m">1092</span>, <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Arpit&quot;</span><span class="o">}</span></code></pre></figure>
 
 <h4 id="output-2">Output</h4>
-<p><a href="/static/images/http-requests/post-request-with-json-data.jpg" data-lightbox="/static/images/http-requests/post-request-with-json-data.jpg" data-title="POST Request example with json data using netcat">
-    <img class="ui huge centered stylish image" src="/static/images/http-requests/post-request-with-json-data.jpg" alt="POST Request example with json data using netcat" />
-</a></p>
+<p><img class="ui huge centered stylish image" src="/static/images/http-requests/post-request-with-json-data.jpg" alt="POST Request example with json data using netcat" /></p>
 
 <h2 id="conclusion">Conclusion</h2>
 <p>The hard way to hit REST endpoints was not hard at all ;-) Stay curious and dive deep.</p>
@@ -309,7 +296,6 @@ s.setAttribute('data-timestamp', +new Date());
   
   <script src="/static/js/semantic.min.js"></script>
   <script src="/static/js/scrollProgress.js"></script>
-  <script src="/static/js/lightbox.js"></script>
   <script src="/static/js/index.js"></script>
 
   

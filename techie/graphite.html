@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/semantic.min.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
-  <link rel="stylesheet" href="/static/css/lightbox.css">
   <link rel="canonical" href="http://arpitbhayani.me/techie/graphite.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
 
@@ -80,9 +79,7 @@
     </div>
   </div>
 </div>
-<a href="http://arpitbhayani.me/static/images/graphite2.png" data-lightbox="http://arpitbhayani.me/static/images/graphite2.png" data-title="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
-    <img class="ui centered large image stylish" src="http://arpitbhayani.me/static/images/graphite2.png" alt="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
-</a>
+<img class="ui centered large image stylish" src="http://arpitbhayani.me/static/images/graphite2.png" alt="Deploy Graphite and Nginx on an Ubuntu 14.04 server">
 <div>
     <p>Monitor your production systems and application analytics using Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.</p>
 
@@ -399,9 +396,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p>Once you are logged in, you should see a screen like this.</p>
 
-<p><a href="/static/images/graphite1.png" data-lightbox="/static/images/graphite1.png" data-title="Landing page of Graphite">
-    <img class="ui large centered stylish image" src="/static/images/graphite1.png" alt="Landing page of Graphite" />
-</a></p>
+<p><img class="ui large centered stylish image" src="/static/images/graphite1.png" alt="Landing page of Graphite" /></p>
 
 <p>First we need to add data into the system. Remember we added a pattern matcher in Storage Schema, according to which any pattern that starts with <strong>test.</strong> will be recorded as our pattern. Lets add some random data</p>
 
@@ -417,9 +412,7 @@ sudo chmod <span class="m">666</span> /var/log/nginx/graphite.error.log</code></
 
 <p><strong>I already had some data in the system, your graph will look a bit different but should be similar</strong></p>
 
-<p><a href="/static/images/graphite2.png" data-lightbox="/static/images/graphite2.png" data-title="test.count graph in Graphite">
-    <img class="ui large centered stylish image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" />
-</a></p>
+<p><img class="ui large centered stylish image" src="/static/images/graphite2.png" alt="test.count graph in Graphite" /></p>
 
 <p>This completes the setup of Graphite on your machine. Although the UI does not look good but when used along with Grafana, it gives a complete experience along with high level of customization and metric analytics.</p>
 
@@ -491,7 +484,6 @@ s.setAttribute('data-timestamp', +new Date());
   
   <script src="/static/js/semantic.min.js"></script>
   <script src="/static/js/scrollProgress.js"></script>
-  <script src="/static/js/lightbox.js"></script>
   <script src="/static/js/index.js"></script>
 
   
