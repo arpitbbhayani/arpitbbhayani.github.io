@@ -1,6 +1,6 @@
 ---
 title: Blue Green Deployment
-img: http://arpitbhayani.me/static/images/blue-green/blue-green.png
+img: http://arpitbhayani.me/static/images/blue-green/blue-green.jpg
 layout: post
 comments: true
 tags:

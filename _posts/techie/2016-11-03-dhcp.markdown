@@ -1,6 +1,6 @@
 ---
 title: DHCP - Dynamic Host Configuration Protocol
-img: http://arpitbhayani.me/static/images/dhcp/dhcp.png
+img: http://arpitbhayani.me/static/images/dhcp/dhcp.jpg
 layout: post
 comments: true
 tags:
@@ -27,7 +27,7 @@ DHCP is used to control the network configuration of a host through a remote ser
 
 DHCP works on a client-server model. Being a protocol, it has it’s own set of messages that are exchanged between client and server.
 
-<img class="ui large centered stylish image" src='/static/images/dhcp/dhcp.png' alt='DHCP'/>
+<img class="ui large centered stylish image" src='/static/images/dhcp/dhcp.jpg' alt='DHCP'/>
 
 ## DHCP Steps
 1. When the client computer (or device) boots up or is connected to a network, a `DHCPDISCOVER` message is sent from the client to the server. As there is no network configuration information on the client so the message is sent with `0.0.0.0` as source address and `255.255.255.255` as destination address. The transport protocol used for this message is **UDP** and the port number used is **67**. The client enters the initializing stage during this step.
