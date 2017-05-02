@@ -9,18 +9,20 @@ layout: default
   <div class="ui center aligned basic fluid segment">
     <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
       <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
-      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="{{page.date}}" itemprop="datePublished">{{page.date | date: '%B %d, %Y'}}</time></span>
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">{{page.date | date: '%B %d, %Y'}}</time></span>
     </div>
     <div>
       <br/>
       <div class="ui horizontal list">
         {% for tag in page.tags %}
-          <a itemprop="articleSection" href='/tag/{{tag}}.html' class="ui item" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">#{{tag}}</a>
+          <a href='/tag/{{tag}}.html' class="ui item" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">{{tag}}</span></a>
         {% endfor %}
       </div>
     </div>
   </div>
-  <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
+  </div>
   <div class="ui hidden divider"></div>
   <div itemprop="articleBody">
       {{ content }}
