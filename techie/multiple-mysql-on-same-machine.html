@@ -67,28 +67,32 @@
 
       <div class="ui text container">
         <div style="padding-bottom: 50px;">
-            <div class="ui header center aligned">
-  <h1 class="article-title">Multiple MySQL versions running on one server</h1>
-</div>
-<div class="ui center aligned basic fluid segment">
-  <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> May 13, 2016</span>
-  <div>
-    <br/>
-    <div class="ui horizontal list">
-      
-        <a href='/tag/techie.html' class="ui item article-category" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
-      
-        <a href='/tag/devops.html' class="ui item article-category" data-content="All devops posts" data-variation="tiny" data-position="bottom center">#devops</a>
-      
-        <a href='/tag/database-admin.html' class="ui item article-category" data-content="All database-admin posts" data-variation="tiny" data-position="bottom center">#database-admin</a>
-      
+            <div itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="ui header center aligned">
+    <h1 itemprop="name headline">Multiple MySQL versions running on one server</h1>
+  </div>
+  <div class="ui center aligned basic fluid segment">
+    <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
+      <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-05-13 00:00:00 +0530" itemprop="datePublished">May 13, 2016</time></span>
+    </div>
+    <div>
+      <br/>
+      <div class="ui horizontal list">
+        
+          <a itemprop="articleSection" href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
+        
+          <a itemprop="articleSection" href='/tag/devops.html' class="ui item" data-content="All devops posts" data-variation="tiny" data-position="bottom center">#devops</a>
+        
+          <a itemprop="articleSection" href='/tag/database-admin.html' class="ui item" data-content="All database-admin posts" data-variation="tiny" data-position="bottom center">#database-admin</a>
+        
+      </div>
     </div>
   </div>
-</div>
-<img class="ui centered large image" src="http://arpitbhayani.me/static/images/multiple-mysql/multiple-mysql.jpg" alt="Multiple MySQL versions running on one server" />
-<div class="ui hidden divider"></div>
-<div>
-    <p>There are many situations where there is a require where you need to run multiple instances of MySQL on same machine.</p>
+  <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/multiple-mysql/multiple-mysql.jpg" alt="Multiple MySQL versions running on one server" />
+  <div class="ui hidden divider"></div>
+  <div itemprop="articleBody">
+      <p>There are many situations where there is a require where you need to run multiple instances of MySQL on same machine.</p>
 
 <p>Some situations are:</p>
 
@@ -187,6 +191,7 @@ sudo apt-get install mysql-server-5.6 mysql-server-core-5.6 mysql-client-5.6 mys
 
 <p>Now you can configure your application product C to use host <code>127.0.0.1</code> and port <code>3310</code> and thus you have products A, B, D and E running on MySQL 5.6 and product C running on MySQL 5.5.</p>
 
+  </div>
 </div>
 <div class="ui basic segment">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

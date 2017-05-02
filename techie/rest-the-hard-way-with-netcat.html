@@ -67,28 +67,32 @@
 
       <div class="ui text container">
         <div style="padding-bottom: 50px;">
-            <div class="ui header center aligned">
-  <h1 class="article-title">HTTP Requests - The Hard Way with Netcat</h1>
-</div>
-<div class="ui center aligned basic fluid segment">
-  <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> July 05, 2016</span>
-  <div>
-    <br/>
-    <div class="ui horizontal list">
-      
-        <a href='/tag/techie.html' class="ui item article-category" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
-      
-        <a href='/tag/http.html' class="ui item article-category" data-content="All http posts" data-variation="tiny" data-position="bottom center">#http</a>
-      
-        <a href='/tag/networking.html' class="ui item article-category" data-content="All networking posts" data-variation="tiny" data-position="bottom center">#networking</a>
-      
+            <div itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="ui header center aligned">
+    <h1 itemprop="name headline">HTTP Requests - The Hard Way with Netcat</h1>
+  </div>
+  <div class="ui center aligned basic fluid segment">
+    <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
+      <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-07-05 00:00:00 +0530" itemprop="datePublished">July 05, 2016</time></span>
+    </div>
+    <div>
+      <br/>
+      <div class="ui horizontal list">
+        
+          <a itemprop="articleSection" href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
+        
+          <a itemprop="articleSection" href='/tag/http.html' class="ui item" data-content="All http posts" data-variation="tiny" data-position="bottom center">#http</a>
+        
+          <a itemprop="articleSection" href='/tag/networking.html' class="ui item" data-content="All networking posts" data-variation="tiny" data-position="bottom center">#networking</a>
+        
+      </div>
     </div>
   </div>
-</div>
-<img class="ui centered large image" src="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" alt="HTTP Requests - The Hard Way with Netcat" />
-<div class="ui hidden divider"></div>
-<div>
-    <p>Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.</p>
+  <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" alt="HTTP Requests - The Hard Way with Netcat" />
+  <div class="ui hidden divider"></div>
+  <div itemprop="articleBody">
+      <p>Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.</p>
 
 <p>This complete process is abstracted by the tools like <a href="https://curl.haxx.se/">curl</a>, requests libraries and utilities like <a href="https://www.getpostman.com/">Postman</a>. Instead of using these tools and utilities, we shall go by the hard way and see HTTP messages in action.</p>
 
@@ -233,6 +237,7 @@ Content-Length: <span class="m">30</span>
   <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP Methods</a></li>
 </ol>
 
+  </div>
 </div>
 <div class="ui basic segment">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
