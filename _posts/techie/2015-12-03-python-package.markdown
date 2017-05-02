@@ -19,7 +19,6 @@ seo:
 PyPI is the official Python Packages Index. Once you publish it on PyPI then it will can downloaded via a simple command `pip install <package>`. Life becomes simpler with this one line installation.
 
 ## 1: Create accounts
-
 In order to submit your package on PyPI you need to have few accounts on PyPI websites. These account will enable you to maintain your packages and will provide you with an interface to edit your package.
 
 Create your account on following sites:
@@ -29,7 +28,6 @@ Create your account on following sites:
 
 
 ## 2: The `.pypirc` file
-
 Now create a file in your home folder named `.pypirc`, which will be your configuration file that holds the authentication information of your PyPI accounts.
 
 Create file `.pypirc` and put the contents shown below
@@ -61,7 +59,6 @@ You should replace `YOUR_USERNAME_HERE` and `YOUR_PASSWORD_HERE` with your usern
 
 
 ## 3: The Python Package directory structure
-
 * `source_dir` is a root directory that contains your python package
 * `my_python_package` is your main python package that you want to publish
 
@@ -79,7 +76,6 @@ source_dir/                 # the source directory
 Setup your directory structure as shown above, with appropriate changes, and host it on [github.com](http://github.com).
 
 ## 4: Release on github and get the download link
-
 This step involves releasing your package on github. This will create a download link of your complete source. In order to release your github project, you need to carry on following steps:
 
 1. Go to your project homepage on [github](http://github.com)
@@ -94,7 +90,6 @@ This step involves releasing your package on github. This will create a download
 
 
 ## 5: Editing files
-
 Open the *setup.py* file and add following skeleton to it
 
 {% highlight python %}
@@ -125,7 +120,6 @@ Now push everything to github.
 
 
 ## 6: Publish the package
-
 Execute following commands
 
 {% highlight bash %}

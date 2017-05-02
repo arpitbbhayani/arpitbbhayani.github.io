@@ -10,8 +10,5 @@ layout: default
         {% include article_snippet.html post=post %}
         {% assign count = count | plus: 1 %}
     {% endif %}
-    {% if count > 40 %}
-        {% break %}
-    {% endif %}
 {% endfor %}
 </div>

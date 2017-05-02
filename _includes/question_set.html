@@ -4,12 +4,11 @@
     {% assign questions = site.categories[include.s] | sort: 'title' %}
 
     <table class="ui very basic table">
-
     {% tablerow question in questions cols: c %}
     {% assign words = question.title | split: ' ' %}
     {% assign code = words[1] %}
     <td>
-    <a href="{{question.url | prepend: site.baseurl}}" title="Click to view solution for {{question.title}}"><i class="caret right icon"></i>{{code}}</a>
+      <a href="{{question.url | prepend: site.baseurl}}" data-content="Solution for {{question.title}} on {{include.s}}"><i class="caret right icon"></i>{{code}}</a>
     </td>
     {% endtablerow %}
     </table>

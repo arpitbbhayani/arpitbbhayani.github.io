@@ -29,6 +29,5 @@ Now I was excited and I started writing a trivial yet important [Proof Of Concep
 The code is open sourced and can be found out on [Github](https://github.com/arpitbbhayani/flasksr). Feel free to give [PRs](https://github.com/arpitbbhayani/flasksr/pulls) and raise [Issues](https://github.com/arpitbbhayani/flasksr/issues).
 
 ### Extra Reads:
-------------------------------
 1. [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp)
 2. [New Perspective on Performance](http://www.keynote.com/resources/articles/new-perspective-performance)

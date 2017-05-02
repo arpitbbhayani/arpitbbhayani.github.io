@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Arpit Bhayani | Geek at Work | Creator of Mr. Cup | Often Weird
+title: Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.
 email: arpit.b.bhayani@gmail.com
 description: Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.
 baseurl: ""
@@ -25,5 +25,4 @@ gems:
     - jekyll-sitemap
 blog_types:
     - techie
-    - curiosity
 plugins_dir: _plugins

@@ -38,10 +38,8 @@ DHCP works on a client-server model. Being a protocol, it has it’s own set of 
 4. Once the server receives `DHCPREQUEST` from the client, it sends the `DHCPACK` message indicating that now the client is allowed to use the IP address assigned to it.
 
 ## DHCP Lease
-
 A DHCP lease is the amount of time that the DHCP server grants to the DHCP client permission to use a particular IP address. A typical server allows its administrator to set the lease time.
 
 ## References:
-
 * [DHCP Basics](http://www.thegeekstuff.com/2013/03/dhcp-basics/)
 * [DHCP QnAs](http://www.nextstep4it.com/dhcp-interview-questions-answers/)

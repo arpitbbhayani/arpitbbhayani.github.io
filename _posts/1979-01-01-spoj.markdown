@@ -17,22 +17,9 @@ seo:
 type: dummy
 ---
 
-<div class="ui grid" style="background-color: #FFFFFF;">
-  <div class="row computer tablet only">
-    <div class="two wide column"></div>
-    <div class="twelve wide center aligned column">
-        <div class="ui medium image">
-            <image src="/static/images/spoj.png"/>
-        </div>
-        {% include question_set.html s='spoj' cols=3 %}
-    </div>
+<div class="ui basic center aligned segment">
+  <div class="ui medium image">
+      <image src="/static/images/spoj.png"/>
   </div>
-  <div class="row mobile only">
-    <div class="sixteen wide column">
-        <div class="ui medium image">
-            <image src="/static/images/spoj.png"/>
-        </div>
-        {% include question_set.html s='spoj' cols=1 %}
-    </div>
-  </div>
+  {% include question_set.html s='spoj' cols=2 %}
 </div>

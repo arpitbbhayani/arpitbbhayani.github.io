@@ -22,8 +22,7 @@ Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Clien
 
 This complete process is abstracted by the tools like [curl](https://curl.haxx.se/), requests libraries and utilities like [Postman](https://www.getpostman.com/). Instead of using these tools and utilities, we shall go by the hard way and see HTTP messages in action.
 
-# The Webserver
-------------------------------
+## The Webserver
 For experimentation purpose let’s create a very basic webserver in [Python Flask framework](flask.pocoo.org) that exposes a trivial Hello World end point.
 
 ### Python webserver script
@@ -50,8 +49,7 @@ python hello.py
 
 The server listens on port _3000_ . If you hit from the browser [http://localhost:3000/hello](http://localhost:3000/hello), you should see _Hello, World!_ rendered.
 
-# The HTTP Request Message
-------------------------------
+## The HTTP Request Message
 A HTTP Client talks to HTTP Server via a common protocol that is understandable by the two parties. A sample HTTP request message looks something like
 
 {% highlight bash %}
@@ -67,8 +65,7 @@ To understand more about HTTP Request messages, see references at the end of thi
 
 The HTTP Communication happens over a TCP Connection. So we create a TCP connection with the server and try to get response from it. To get a TCP connection I will use _netcat_.
 
-# Netcat
-------------------------------
+## Netcat
 _netcat_ is the utility that is used for just about anything under the sun involving TCP or UDP. It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6.
 
 The webserver that was created above is listening on port _3000_ . Lets create a TCP Connection and connect to it using _netcat_.
@@ -101,8 +98,7 @@ And you should see output like this
 
 The HTTP Server understands the message sent from the client and it responded back as directed by the source code.
 
-# Complex Requests and HTTP Request Messages
-------------------------------
+## Complex Requests and HTTP Request Messages
 
 ### GET method with query params and headers
 Following method exposes an endpoint which accepts a [query parameter](https://en.wikipedia.org/wiki/Query_string) named _name_, and returns a response with _name_ in it.
@@ -128,7 +124,6 @@ GET /user?name=arpit HTTP/1.1
     <img class="ui huge centered stylish image" src='/static/images/http-requests/get-request-with-query-params.jpg' alt='GET Request example with query params using netcat'/>
 </a>
 
-------------------------------
 
 ### Basic POST Method example
 Following method accepts form data via HTTP POST method and returns a dummy response with _username_ and _password_ in it.
@@ -159,8 +154,6 @@ username=arpit&password=welcome
     <img class="ui huge centered stylish image" src='/static/images/http-requests/post-request-with-form-data.jpg' alt='POST Request example with form data using netcat'/>
 </a>
 
-------------------------------
-
 ### POST Method with JSON Request Body
 Following method accepts JSON data that contains a field _id_ with integer value via HTTP POST method and returns a dummy response with _id_ in it.
 {% highlight python %}
@@ -188,12 +181,10 @@ Content-Length: 30
     <img class="ui huge centered stylish image" src='/static/images/http-requests/post-request-with-json-data.jpg' alt='POST Request example with json data using netcat'/>
 </a>
 
-# Conclusion
-------------------------------
+## Conclusion
 The hard way to hit REST endpoints was not hard at all ;-) Stay curious and dive deep.
 
-# References:
-------------------------------
+## References:
 1. [HTTP/1.1: HTTP Message](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html)
 2. [HTTP Requests - Tutorialspoint](http://www.tutorialspoint.com/http/http_requests.htm)
 3. [The TCP/IP Guide - HTTP Request Message Format](http://www.tcpipguide.com/free/t_HTTPRequestMessageFormat.htm)

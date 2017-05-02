@@ -2,68 +2,25 @@
 layout: default
 ---
 
-<div class="ui stackable grid">
-    <div class="row">
-        <div class="one wide column"></div>
-        <div class="eleven wide column">
-            <div class="ui header center aligned">
-                <h1 class="article-title">{{ page.title }}</h1>
+<div class="ui header center aligned">
+    <h1 class="article-title">{{ page.title }}</h1>
+</div>
+<div class="ui center aligned basic fluid segment">
+    <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> {{page.date | date: '%B %d, %Y'}}</span>
+    <div>
+        <div class="ui center aligned basic fluid segment">
+            <div class="ui horizontal list">
+                {% for tag in page.tags %}
+                <a style="font-weight: normal;" href='/tag/{{tag}}.html' class="ui item article-category" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">{{tag}}</a>
+                {% endfor %}
             </div>
-            <div class="ui center aligned basic fluid segment">
-                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/arpit.png" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> {{page.date | date: '%B %d, %Y'}}</span>
-                <div>
-                    <div class="ui center aligned basic fluid segment">
-                        <div class="ui horizontal list">
-                            {% for tag in page.tags %}
-                            <a style="font-weight: normal;" href='/tag/{{tag}}.html' class="ui item article-category" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">{{tag}}</a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="one wide column"></div>
-        <div class="eleven wide column">
-            <div class="article-content">
-                {{ content }}
-            </div>
-        </div>
-        <div class="four wide column">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- Programming Pages -->
-          <ins class="adsbygoogle"
-               style="display:inline-block;width:300px;height:600px"
-               data-ad-client="ca-pub-9220578038638789"
-               data-ad-slot="1856055155"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
         </div>
     </div>
 </div>
-<div class="ui stackable grid">
-    <div class="row">
-        <div class="one wide column"></div>
-        {% if page.comments %}
-            {% include comment_plugin.html %}
-        {% endif %}
-    </div>
-    <div class="row">
-      <div class="one wide column"></div>
-      <div class="eleven wide column">
-        <div class="ui basic segment center aligned">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Programming Page Bottom -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:728px;height:90px"
-                 data-ad-client="ca-pub-9220578038638789"
-                 data-ad-slot="1576853555"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
-      </div>
-    </div>
+<div>
+    {{ content }}
 </div>
+{% include ads_plugin.html %}
+{% if page.comments %}
+    {% include comment_plugin.html %}
+{% endif %}
