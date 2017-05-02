@@ -74,20 +74,22 @@
   <div class="ui center aligned basic fluid segment">
     <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
       <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
-      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2015-12-03 00:00:00 +0530" itemprop="datePublished">December 03, 2015</time></span>
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2015-12-03" itemprop="datePublished">December 03, 2015</time></span>
     </div>
     <div>
       <br/>
       <div class="ui horizontal list">
         
-          <a itemprop="articleSection" href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
+          <a href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">techie</span></a>
         
-          <a itemprop="articleSection" href='/tag/python.html' class="ui item" data-content="All python posts" data-variation="tiny" data-position="bottom center">#python</a>
+          <a href='/tag/python.html' class="ui item" data-content="All python posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">python</span></a>
         
       </div>
     </div>
   </div>
-  <img itemprop="image" class="ui centered large image" src="http://i.imgur.com/vFzlsp5.png" alt="Host your python package using github on PyPI" />
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img itemprop="image" class="ui centered large image" src="http://i.imgur.com/vFzlsp5.png" alt="Host your python package using github on PyPI" />
+  </div>
   <div class="ui hidden divider"></div>
   <div itemprop="articleBody">
       <p>PyPI is the official Python Packages Index. Once you publish it on PyPI then it will can downloaded via a simple command <code>pip install &lt;package&gt;</code>. Life becomes simpler with this one line installation.</p>

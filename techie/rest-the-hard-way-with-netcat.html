@@ -74,22 +74,24 @@
   <div class="ui center aligned basic fluid segment">
     <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
       <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
-      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-07-05 00:00:00 +0530" itemprop="datePublished">July 05, 2016</time></span>
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-07-05" itemprop="datePublished">July 05, 2016</time></span>
     </div>
     <div>
       <br/>
       <div class="ui horizontal list">
         
-          <a itemprop="articleSection" href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
+          <a href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">techie</span></a>
         
-          <a itemprop="articleSection" href='/tag/http.html' class="ui item" data-content="All http posts" data-variation="tiny" data-position="bottom center">#http</a>
+          <a href='/tag/http.html' class="ui item" data-content="All http posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">http</span></a>
         
-          <a itemprop="articleSection" href='/tag/networking.html' class="ui item" data-content="All networking posts" data-variation="tiny" data-position="bottom center">#networking</a>
+          <a href='/tag/networking.html' class="ui item" data-content="All networking posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">networking</span></a>
         
       </div>
     </div>
   </div>
-  <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" alt="HTTP Requests - The Hard Way with Netcat" />
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg" alt="HTTP Requests - The Hard Way with Netcat" />
+  </div>
   <div class="ui hidden divider"></div>
   <div itemprop="articleBody">
       <p>Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.</p>

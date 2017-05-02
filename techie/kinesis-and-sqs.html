@@ -74,24 +74,26 @@
   <div class="ui center aligned basic fluid segment">
     <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
       <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
-      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-12-27 00:00:00 +0530" itemprop="datePublished">December 27, 2016</time></span>
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-12-27" itemprop="datePublished">December 27, 2016</time></span>
     </div>
     <div>
       <br/>
       <div class="ui horizontal list">
         
-          <a itemprop="articleSection" href='/tag/devops.html' class="ui item" data-content="All devops posts" data-variation="tiny" data-position="bottom center">#devops</a>
+          <a href='/tag/devops.html' class="ui item" data-content="All devops posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">devops</span></a>
         
-          <a itemprop="articleSection" href='/tag/sqs.html' class="ui item" data-content="All sqs posts" data-variation="tiny" data-position="bottom center">#sqs</a>
+          <a href='/tag/sqs.html' class="ui item" data-content="All sqs posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">sqs</span></a>
         
-          <a itemprop="articleSection" href='/tag/kinesis.html' class="ui item" data-content="All kinesis posts" data-variation="tiny" data-position="bottom center">#kinesis</a>
+          <a href='/tag/kinesis.html' class="ui item" data-content="All kinesis posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">kinesis</span></a>
         
-          <a itemprop="articleSection" href='/tag/aws.html' class="ui item" data-content="All aws posts" data-variation="tiny" data-position="bottom center">#aws</a>
+          <a href='/tag/aws.html' class="ui item" data-content="All aws posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">aws</span></a>
         
       </div>
     </div>
   </div>
-  <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg" alt="Amazon's Kinesis and SQS - Which one should you choose and when?" />
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/kinesis-and-sqs/kinesis-and-sqs.jpg" alt="Amazon's Kinesis and SQS - Which one should you choose and when?" />
+  </div>
   <div class="ui hidden divider"></div>
   <div itemprop="articleBody">
       <p>SQS and Kinesis have a lot of things in common. So people tend to think that they are similar and can be used interchangebly. But this is not true, both of them have been designed keeping a lot of things and specific usecases in mind. Even though they provide similar set of functionalities, each of the service is highly optimized for some of its functionalities. So lets dive deep into this:</p>

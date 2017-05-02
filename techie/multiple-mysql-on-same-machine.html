@@ -74,22 +74,24 @@
   <div class="ui center aligned basic fluid segment">
     <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
       <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
-      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-05-13 00:00:00 +0530" itemprop="datePublished">May 13, 2016</time></span>
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="2016-05-13" itemprop="datePublished">May 13, 2016</time></span>
     </div>
     <div>
       <br/>
       <div class="ui horizontal list">
         
-          <a itemprop="articleSection" href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#techie</a>
+          <a href='/tag/techie.html' class="ui item" data-content="All techie posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">techie</span></a>
         
-          <a itemprop="articleSection" href='/tag/devops.html' class="ui item" data-content="All devops posts" data-variation="tiny" data-position="bottom center">#devops</a>
+          <a href='/tag/devops.html' class="ui item" data-content="All devops posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">devops</span></a>
         
-          <a itemprop="articleSection" href='/tag/database-admin.html' class="ui item" data-content="All database-admin posts" data-variation="tiny" data-position="bottom center">#database-admin</a>
+          <a href='/tag/database-admin.html' class="ui item" data-content="All database-admin posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">database-admin</span></a>
         
       </div>
     </div>
   </div>
-  <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/multiple-mysql/multiple-mysql.jpg" alt="Multiple MySQL versions running on one server" />
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/multiple-mysql/multiple-mysql.jpg" alt="Multiple MySQL versions running on one server" />
+  </div>
   <div class="ui hidden divider"></div>
   <div itemprop="articleBody">
       <p>There are many situations where there is a require where you need to run multiple instances of MySQL on same machine.</p>
