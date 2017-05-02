@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
-    <description>Whimsical geek, Often Weird, Guy who always codes, Gamer and a Sketcher.</description>
+    <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 May 2017 23:37:38 +0530</pubDate>
-    <lastBuildDate>Tue, 02 May 2017 23:37:38 +0530</lastBuildDate>
+    <pubDate>Tue, 02 May 2017 23:43:49 +0530</pubDate>
+    <lastBuildDate>Tue, 02 May 2017 23:43:49 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
