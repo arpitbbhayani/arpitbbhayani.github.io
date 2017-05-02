@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-16x16.png" sizes="16x16" />
+
+  <title>How atomic clock works | busting several myths about it | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
+  <meta name="description" content="The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.">
+  <meta name="keywords" content="how atomic clock works, how it works, atomic clocks, working principle of atomic clock, working principle, engineering, use of cesium, " />
+
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/css/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="stylesheet" href="/static/css/lightbox.css">
+  <link rel="canonical" href="http://arpitbhayani.me/science/atomic-clocks.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg"/>
+  <meta property="og:title" content="How atomic clock works | busting several myths about it"/>
+  <meta property="og:url" content="http://arpitbhayani.me/science/atomic-clocks.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/science/atomic-clocks.html">
+  <meta name="twitter:title" content="How atomic clock works | busting several myths about it">
+  <meta name="twitter:description" content="The accuracy of atomic clock is not because of its radioactivity or atomic decay ... lets find out the truth behind it.">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <body>
+      <div class="ui secondary menu center aligned">
+    <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
+    <a class="item" href="/programming.html"><b>CODES</b></a>
+    <a class="item" href="/blogs.html"><b>BLOGS</b></a>
+</div>
+
+      <div class="ui text container">
+        <div style="padding-bottom: 50px;">
+            <div class="ui header center aligned">
+  <h1 class="article-title">How atomic clock works | busting several myths about it</h1>
+</div>
+<div class="ui center aligned basic fluid segment">
+  <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> February 28, 2016</span>
+  <div>
+    <br/>
+    <div class="ui horizontal list">
+      
+        <a href='/tag/science.html' class="ui item article-category" data-content="All science posts" data-variation="tiny" data-position="bottom center">#science</a>
+      
+        <a href='/tag/particle-physics.html' class="ui item article-category" data-content="All particle-physics posts" data-variation="tiny" data-position="bottom center">#particle-physics</a>
+      
+        <a href='/tag/how-it-works.html' class="ui item article-category" data-content="All how-it-works posts" data-variation="tiny" data-position="bottom center">#how-it-works</a>
+      
+    </div>
+  </div>
+</div>
+<a href="http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg" data-lightbox="http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg" data-title="How atomic clock works | busting several myths about it">
+    <img class="ui centered large image stylish" src="http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg" alt="How atomic clock works | busting several myths about it">
+</a>
+<div>
+    <p>The accuracy of atomic clock is not because of its radioactivity or atomic decay … lets find out the truth behind it.</p>
+
+<p>There are some very common myths about atomic clocks, the most most famous are</p>
+
+<ol>
+  <li>Atomic clocks are radioactive</li>
+  <li>Atomic clocks works on principle of atomic decay</li>
+</ol>
+
+<p>Lets see how our world is in sync with a clock so accurate that it <strong>looses 1 second in 138 million years</strong>.</p>
+
+<h1 id="time-keeping-before-atomic-clocks">Time keeping before atomic clocks</h1>
+<hr />
+<p>I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using <strong>Quarts Crystal</strong>.</p>
+
+<p>Let me tell you in brief how it worked. <strong>Quarts Crystal</strong> has a spacial property that it is <a href="https://en.wikipedia.org/wiki/Piezoelectricity">piezoelectric</a>, which means that</p>
+
+<p><a href="/static/images/atomic-clocks/quartz-piezoelectric.jpg" data-lightbox="/static/images/atomic-clocks/quartz-piezoelectric.jpg" data-title="How atomic clock works | busting several myths about it">
+    <img class="ui medium right floated image" src="/static/images/atomic-clocks/quartz-piezoelectric.jpg" alt="How atomic clock works | busting several myths about it" />
+</a></p>
+
+<ol>
+  <li>When you apply pressure to it it generates tiny electric current.</li>
+  <li>When you pass electricity through it, it vibrates at a precise frequency.</li>
+</ol>
+
+<p>Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of <strong>32,768 Hz</strong>, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this…</p>
+
+<h2 id="issue-with-battery-operated-quartz-crystal">Issue with battery operated Quartz Crystal</h2>
+<hr />
+<p>As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A <strong>FEEDBACK LOOP</strong>.</p>
+
+<p>But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how</p>
+
+<h1 id="lets-get-some-basics-right">Lets get some basics right</h1>
+<hr />
+<p>Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts</p>
+
+<h3 id="atomic-structure-of-cesium">Atomic structure of Cesium</h3>
+
+<p>Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.</p>
+
+<p><a href="/static/images/atomic-clocks/cesium-atom.jpg" data-lightbox="/static/images/atomic-clocks/cesium-atom.jpg" data-title="How atomic clock works | busting several myths about it">
+    <img class="ui medium centered image" src="/static/images/atomic-clocks/cesium-atom.jpg" alt="How atomic clock works | busting several myths about it" />
+</a></p>
+
+<h3 id="hyperfine-interaction">Hyperfine interaction</h3>
+
+<p>The interaction between nucleus and its surrounding environment is known as <strong>hyperfine interaction</strong>. The magnitude of these interactions are very very small but enough to shift energy levels.</p>
+
+<p><a href="/static/images/atomic-clocks/hyperfine-interactions.jpg" data-lightbox="/static/images/atomic-clocks/hyperfine-interactions.jpg" data-title="How atomic clock works | busting several myths about it">
+    <img class="ui medium right floated image" src="/static/images/atomic-clocks/hyperfine-interactions.jpg" alt="How atomic clock works | busting several myths about it" />
+</a></p>
+
+<p>Consider the representation above, the interaction between nucleus and electron is hyperfine interaction. This interaction is a combination of the following</p>
+
+<ol>
+  <li>electrostatic force of attraction,</li>
+  <li>magnetic field of spinning nucleus and</li>
+  <li>gravity pull between the two.</li>
+</ol>
+
+<p>The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.</p>
+
+<h3 id="resonant-frequency-of-atoms">Resonant frequency of atoms</h3>
+
+<p>Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.</p>
+
+<p>This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance <a href="https://en.wikipedia.org/wiki/Resonance">here</a>.</p>
+
+<h3 id="special-case-of-cesium-atom">Special case of cesium atom</h3>
+
+<p>Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is <strong>9,192,631,770 cycles per second</strong>, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.</p>
+
+<h1 id="working">Working</h1>
+<hr />
+<p>Basics done! let’s jump into the working of it.</p>
+
+<p>An atomic clock consists of a traditional <strong>Quartz Crystal</strong> which is used for marking mechanical pulse just like in closed based on <a href="https://en.wikipedia.org/wiki/Quartz_clock">battery operated quartz crystal</a>. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.</p>
+
+<p><a href="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg" data-lightbox="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg" data-title="How atomic clock works | busting several myths about it">
+    <img class="ui medium right floated image" src="/static/images/atomic-clocks/effect-of-magnetic-field-on-cesium.jpg" alt="How atomic clock works | busting several myths about it" />
+</a></p>
+
+<p>Properties of Cesium atoms we care about:</p>
+
+<ol>
+  <li>Cesium atoms can be present in two states: Low energy and High energy.</li>
+  <li>They can be separated by applying magnetic field.</li>
+  <li>Low energy cesium atoms can be converted into high energy by applying external radiation.</li>
+</ol>
+
+<p>First the Cesium chloride is heated in an oven, this creates a gaseous stream of cesium ions. This stream contains both the low and high energy ions. Now first magnetic filter is applied to this stream. The application of magnetic field to this stream bifurcates the stream into two sub-streams. One containing low energy cesium and other containing high energy cesium.</p>
+
+<p>Now the low energy cesium stream is passed through a radiation chamber in which the a radiation of frequency <strong>9,192,631,770 cycles per second</strong> is bombarded on it. This will make the low energy cesium to go into high energy state.</p>
+
+<p>Now emerging from the radiation chamber we have a stream of high energy cesium ions; but not all are converted to high energy state if there is an offset in radiation frequency. Hence to know how many cesium atoms jumped into high energy state another magnetic filter is applied. Hence we deduce that, <strong>closer the radiation frequency is to resonant frequency of cesium, higher will be conversion rate of low energy cesium to high energy cesium</strong>.</p>
+
+<p>The stream is again divided into two and now the sub-stream of high energy cesium ions is redirected to a detector.</p>
+
+<p><a href="/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg" data-lightbox="/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg" data-title="How atomic clock works | busting several myths about it">
+    <img class="ui large centered stylish image" src="/static/images/atomic-clocks/feedback-loop-atomic-clock.jpg" alt="How atomic clock works | busting several myths about it" />
+</a></p>
+
+<p>Now comes the catch: The purpose of the detector is to convert high energy cesium ions into electricity. <strong>Higher the number of ions incident on it higher will be the current generated</strong>.</p>
+
+<p>This current is passed to <strong>Quartz Oscillator</strong> with which we mark one pulse. This oscillator is responsible to control wavelength (in turn frequency) of incident radiation.</p>
+
+<p>Suppose the quartz oscillator looses its energy. As soon as this happens, the radiation in the chamber weakens. Hence number of cesium atoms jumping into high energy state drops. This tells another electric circuit to zap the oscillator and correct the period of oscillation. And thus locking its frequency in a very narrow range. This locked frequency is then divided by 9,192,631,770 which results in the familiar one pulse per second.</p>
+
+<p>Now we see how we overcame the drawback of traditional Quartz Clock and created a much much accurate atomic clock which <strong>looses 1 second in 138 million years</strong>.</p>
+
+<p>This is how an atomic clock works. In above working principle of this we found that</p>
+
+<ol>
+  <li>There was no radioactivity</li>
+  <li>There was no atomic decay</li>
+  <li>It really had Quartz Oscillator in it, so we did not move out of it.</li>
+  <li>Using interaction happening at such a scale of nanometers we could solve one of the biggest problem.</li>
+</ol>
+
+<h1 id="for-more-info">For more info:</h1>
+<hr />
+<ol>
+  <li><a href="https://en.wikipedia.org/wiki/Resonance">Resonance</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Piezoelectricity">Piezoelectric Effect</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Quartz_clock">Mechanism of Quartz Clock</a></li>
+  <li><a href="http://science.howstuffworks.com/atomic-clock3.htm">How does a practical cesium atomic clock works?</a></li>
+  <li><a href="http://www3.nd.edu/~techrev/Archive/Winter2002/a4.html">Atomic Clocks: What Time is it, Really?</a></li>
+  <li><a href="http://www.cmp.liv.ac.uk/frink/thesis/thesis/node14.html">Hyperfine interactions</a></li>
+</ol>
+
+
+</div>
+<div class="ui basic segment">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Programming Pages -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:100%;height:90px"
+       data-ad-client="ca-pub-9220578038638789"
+       data-ad-slot="1856055155"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "http://arpitbhayani.me/science/atomic-clocks.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/science/atomic-clocks.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer class="ui column centered grid">
+  <div class="row">
+      <div class="ui horizontal list">
+          <a class="item" href="/all-posts.html">
+              <i class="database grey icon"></i>
+              Archives
+          </a>
+          <a class="item" href="/disclaimer.html">
+              <i class="announcement grey icon"></i>
+              Disclaimer
+          </a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a><br/>
+          Designed and developed with <i class="heart red icon"></i><br/>
+      </div>
+  </div>
+</footer>
+
+      </div>
+    </body>
+    
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+  
+  <script src="/static/js/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/lightbox.js"></script>
+  <script src="/static/js/index.js"></script>
+
+  
+  <script>
+  scrollProgress.set({
+      color: '#000',
+      height: '3px',
+      bottom: false
+  });
+  </script>
+  
+</head>
+
+</html>
