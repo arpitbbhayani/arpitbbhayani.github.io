@@ -76,9 +76,7 @@ netcat localhost 3000
 
 The command along with creating a TCP connection, will also open a STDIN. Anything passed in that input stream will reach the server via the connection. Lets see what happens when we provide _This is a sample_ as input.
 
-<a href="/static/images/http-requests/bad-request.jpg" data-lightbox="/static/images/http-requests/bad-request.jpg" data-title="Bad Request example with netcat">
-    <img class="ui huge centered stylish image" src='/static/images/http-requests/bad-request.jpg' alt='Bad Request example with netcat'/>
-</a>
+<img class="ui huge centered stylish image" src='/static/images/http-requests/bad-request.jpg' alt='Bad Request example with netcat'/>
 
 The input message given is not a valid HTTP message hence server responded with a status code of _400_ which is for [Bad Request](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). And if you closely observe the server logs on flask application, you will see an entry of our last request.
 
@@ -92,9 +90,7 @@ GET /hello HTTP/1.1
 
 And you should see output like this
 
-<a href="/static/images/http-requests/get-request.jpg" data-lightbox="/static/images/http-requests/get-request.jpg" data-title="GET Request example with netcat">
-    <img class="ui huge centered stylish image" src='/static/images/http-requests/get-request.jpg' alt='GET Request example with netcat'/>
-</a>
+<img class="ui huge centered stylish image" src='/static/images/http-requests/get-request.jpg' alt='GET Request example with netcat'/>
 
 The HTTP Server understands the message sent from the client and it responded back as directed by the source code.
 
@@ -120,10 +116,7 @@ GET /user?name=arpit HTTP/1.1
 {% endhighlight %}
 
 #### Output
-<a href="/static/images/http-requests/get-request-with-query-params.jpg" data-lightbox="/static/images/http-requests/get-request-with-query-params.jpg" data-title="GET Request example with query params using netcat">
-    <img class="ui huge centered stylish image" src='/static/images/http-requests/get-request-with-query-params.jpg' alt='GET Request example with query params using netcat'/>
-</a>
-
+<img class="ui huge centered stylish image" src='/static/images/http-requests/get-request-with-query-params.jpg' alt='GET Request example with query params using netcat'/>
 
 ### Basic POST Method example
 Following method accepts form data via HTTP POST method and returns a dummy response with _username_ and _password_ in it.
@@ -150,9 +143,7 @@ username=arpit&password=welcome
 {% endhighlight bash %}
 
 #### Output
-<a href="/static/images/http-requests/post-request-with-form-data.jpg" data-lightbox="/static/images/http-requests/post-request-with-form-data.jpg" data-title="POST Request example with form data using netcat">
-    <img class="ui huge centered stylish image" src='/static/images/http-requests/post-request-with-form-data.jpg' alt='POST Request example with form data using netcat'/>
-</a>
+<img class="ui huge centered stylish image" src='/static/images/http-requests/post-request-with-form-data.jpg' alt='POST Request example with form data using netcat'/>
 
 ### POST Method with JSON Request Body
 Following method accepts JSON data that contains a field _id_ with integer value via HTTP POST method and returns a dummy response with _id_ in it.
@@ -177,9 +168,7 @@ Content-Length: 30
 {% endhighlight %}
 
 #### Output
-<a href="/static/images/http-requests/post-request-with-json-data.jpg" data-lightbox="/static/images/http-requests/post-request-with-json-data.jpg" data-title="POST Request example with json data using netcat">
-    <img class="ui huge centered stylish image" src='/static/images/http-requests/post-request-with-json-data.jpg' alt='POST Request example with json data using netcat'/>
-</a>
+<img class="ui huge centered stylish image" src='/static/images/http-requests/post-request-with-json-data.jpg' alt='POST Request example with json data using netcat'/>
 
 ## Conclusion
 The hard way to hit REST endpoints was not hard at all ;-) Stay curious and dive deep.

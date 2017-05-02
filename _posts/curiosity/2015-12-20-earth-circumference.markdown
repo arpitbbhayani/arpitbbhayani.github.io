@@ -33,9 +33,7 @@ Before we start calculating, we need to assume few things, which will help us ap
 --------------------------------------------------
 Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.
 
-<a href="/static/images/earth-circumference/1.jpg" data-lightbox="/static/images/earth-circumference/1.jpg" data-title="{{page.title}}">
-    <img class="ui large centered stylish image" src='/static/images/earth-circumference/1.jpg' alt='{{page.title}}'/>
-</a>
+<img class="ui large centered stylish image" src='/static/images/earth-circumference/1.jpg' alt='{{page.title}}'/>
 
 Suppose $$ WX $$ and $$ YZ $$ are two poles present in two cities. Sun rays are incident on that pole and rays $$ DC $$ and $$ BA $$ casts a shadow $$ XC $$ and $$ ZA $$ at an angle $$ \theta_{1} $$ and $$ \theta_{2} $$ with top of the poles respectively.
 
