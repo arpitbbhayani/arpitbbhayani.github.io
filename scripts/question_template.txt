@@ -20,6 +20,8 @@
   <link rel="canonical" href="http://arpitbhayani.me/scripts/question_template.txt">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
 
+  <meta property="fb:app_id" content="1055615241238486" />
+
   <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
   <meta property="og:title" content="$SITE_NAME$ solution for $QCODE$"/>
   <meta property="og:url" content="http://arpitbhayani.me/scripts/question_template.txt"/>
