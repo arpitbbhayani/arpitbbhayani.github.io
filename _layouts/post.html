@@ -7,9 +7,17 @@ layout: default
     <h1 itemprop="name headline">{{ page.title }}</h1>
   </div>
   <div class="ui center aligned basic fluid segment">
-    <div itemprop="author publisher" itemscope="" itemtype="http://schema.org/Person" >
+    <div>
+      <time datetime="{{page.date | date_to_xmlschema}}" itemprop="datePublished">
+        <span class="lightGrey">
+          {{page.date | date: '%B %d, %Y'}}
+        </span>
+      </time>
+    </div>
+    <br/>
+    <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" >
       <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
-      <span class="lightGrey" itemprop="name">Arpit Bhayani </span> | <span class="lightGrey"><time datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">{{page.date | date: '%B %d, %Y'}}</time></span>
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span>
     </div>
     <div>
       <br/>
@@ -21,6 +29,7 @@ layout: default
     </div>
   </div>
   <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="{{page.img}}" />
     <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
   </div>
   <div class="ui hidden divider"></div>
