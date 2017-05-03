@@ -5,8 +5,8 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 May 2017 19:50:57 +0530</pubDate>
-    <lastBuildDate>Wed, 03 May 2017 19:50:57 +0530</lastBuildDate>
+    <pubDate>Wed, 03 May 2017 20:11:27 +0530</pubDate>
+    <lastBuildDate>Wed, 03 May 2017 20:11:27 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -27,12 +27,11 @@
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Install the extension with the following command:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;pip install flasksr
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;flasksr-in-action&quot;&gt;FlaskSR in action&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/4745789/19834915/7354d69a-9e9a-11e6-8ab6-b7b95146a25c.gif&quot; alt=&quot;impact&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;https://cloud.githubusercontent.com/assets/4745789/19834915/7354d69a-9e9a-11e6-8ab6-b7b95146a25c.gif&quot; alt=&quot;FlaskSR Impact&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;p&gt;Once installed, the FlaskSR is easy to use. Let’s walk through setting up a basic application. Also please note that this is a very basic guide: we will be taking shortcuts here that you should never take in a real application.&lt;/p&gt;
