@@ -1,5 +1,21 @@
-competitive-programming
-programming
+codechef
+solution
+solution to codechef questions
+competitive programming
+geekatwork
+hackerrank
+solution to hackerrank questions
+leetcode
+solution to leetcode questions
+markdown
+live markdown
+github flavoured markdown
+markdown to html
+codemirror
+marked.js
+mr. cup
+spoj
+solution to spoj questions
 science
 planets
 space
@@ -21,6 +37,18 @@ stream
 flask
 dhcp
 deployment
-aws
 sqs
 kinesis
+aws
+mrcup
+story 1
+story 2
+story 3
+story 4
+story 5
+story 6
+story 7
+story 8
+story 9
+flasksr
+ux

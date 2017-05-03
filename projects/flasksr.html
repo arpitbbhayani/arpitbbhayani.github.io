@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/image/png" href="/static/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-16x16.png" sizes="16x16" />
+
+  <title>FlaskSR - Make pages load faster | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
+  <meta name="description" content="Make flask pages load faster and better by streaming partial HTTP Responses. Every web application tries to minimize the "Time to First Paint". This can be d...">
+  <meta name="keywords" content="flask, flasksr, python, fast, optimize, user experience, ui, ux, " />
+
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/css/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="canonical" href="http://arpitbhayani.me/projects/flasksr.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="fb:app_id" content="1055615241238486" />
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/projects/flasksr/flasksr.jpg"/>
+  <meta property="og:title" content="FlaskSR - Make pages load faster"/>
+  <meta property="og:url" content="http://arpitbhayani.me/projects/flasksr.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Make flask pages load faster and better by streaming partial HTTP Responses. Every web application tries to minimize the "Time to First Paint". This can be d..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/projects/flasksr.html">
+  <meta name="twitter:title" content="FlaskSR - Make pages load faster">
+  <meta name="twitter:description" content="Make flask pages load faster and better by streaming partial HTTP Responses. Every web application tries to minimize the "Time to First Paint". This can be d...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/projects/flasksr/flasksr.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <body>
+      <div class="ui secondary menu center aligned">
+    <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
+    <a class="item" href="/programming.html"><b>CODES</b></a>
+    <a class="item" href="/blogs.html"><b>BLOGS</b></a>
+    <a class="item" href="/projects.html"><b>PROJECTS</b></a>
+</div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+      <div class="ui text container">
+        <div style="padding-bottom: 50px;">
+            <div itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="ui header center aligned">
+    <h1 itemprop="name headline">FlaskSR - Make pages load faster</h1>
+  </div>
+  <div class="ui center aligned basic fluid segment">
+    <div>
+      <time datetime="2017-05-01T00:00:00+05:30" itemprop="datePublished">
+        <span class="lightGrey">
+          May 01, 2017
+        </span>
+      </time>
+    </div>
+    <br/>
+    <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" >
+      <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span>
+    </div>
+    <div>
+      <br/>
+      <div class="ui horizontal list">
+        
+          <a href='/tag/flasksr.html' class="ui item" data-content="All flasksr posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">flasksr</span></a>
+        
+          <a href='/tag/python.html' class="ui item" data-content="All python posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">python</span></a>
+        
+          <a href='/tag/ux.html' class="ui item" data-content="All ux posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">ux</span></a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="ui center aligned basic segment">
+    <iframe src="https://ghbtns.com/github-btn.html?user=arpitbbhayani&size=large&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+    <iframe src="https://ghbtns.com/github-btn.html?user=arpitbbhayani&size=large&repo=flasksr&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+  </div>
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="http://arpitbhayani.me/static/images/projects/flasksr/flasksr.jpg" />
+    <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/projects/flasksr/flasksr.jpg" alt="FlaskSR - Make pages load faster" />
+  </div>
+  <div class="ui hidden divider"></div>
+  <div itemprop="articleBody">
+      <p>FlaskSR provides an easy way to make flask pages load faster and better by streaming HTTP Responses.</p>
+
+<h2 id="why-should-you-use-this">Why should you use this?</h2>
+<p>Every web application tries to minimize the “Time to First Paint”. This can be done by streaming partial responses to client. FlaskSR enables this functionality in an easy way for <a href="http://flask.pocoo.org/">Flask Web Framework</a>. With FlaskSR you can start streaming partial HTTP responses depending on layout to client so that client starts seeing some content along the way instead of seeing all of the site’s content at once and thus making the pages load faster and better.</p>
+
+<p>Advantages:</p>
+<ul>
+  <li>Fully compatible with Jinja templates.</li>
+  <li>Minimizes Time for first paint.</li>
+  <li>No impact on SEO - as nothing goes via AJAX calls.</li>
+  <li>Start rendering important part of your page first so user start seeing important things first.</li>
+  <li>Improves perceived performance of the page.</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+<p>Install the extension with the following command:</p>
+
+<pre><code>pip install flasksr
+</code></pre>
+
+<h2 id="flasksr-in-action">FlaskSR in action</h2>
+<p><img src="https://cloud.githubusercontent.com/assets/4745789/19834915/7354d69a-9e9a-11e6-8ab6-b7b95146a25c.gif" alt="impact" /></p>
+
+<h2 id="usage">Usage</h2>
+<p>Once installed, the FlaskSR is easy to use. Let’s walk through setting up a basic application. Also please note that this is a very basic guide: we will be taking shortcuts here that you should never take in a real application.</p>
+
+<p>To begin we’ll set up a Flask app:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flasksr</span> <span class="kn">import</span> <span class="n">BasicSR</span><span class="p">,</span> <span class="n">Dom</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">render_menu</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;ul style=&quot;list-style-type: none; margin: 0; padding: 0;&quot;&gt;</span>
+<span class="s2">            &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;News&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s2">        &lt;/ul&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">render_body</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;div style=&quot;margin-top: 50px;&quot;&gt;Hello World!&lt;/div&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">render_first</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;html&gt;</span>
+<span class="s2">            &lt;head&gt;</span>
+<span class="s2">                &lt;title&gt;FlaskSR Example&lt;/title&gt;</span>
+<span class="s2">            &lt;/head&gt;</span>
+<span class="s2">            &lt;body&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">render_last</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            &lt;/body&gt;</span>
+<span class="s2">        &lt;/html&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">BasicSR</span><span class="p">(</span>
+        <span class="n">Dom</span><span class="p">(</span><span class="n">render_first</span><span class="p">),</span>
+        <span class="n">Dom</span><span class="p">(</span><span class="n">render_menu</span><span class="p">),</span>
+        <span class="n">Dom</span><span class="p">(</span><span class="n">render_body</span><span class="p">),</span>
+        <span class="n">Dom</span><span class="p">(</span><span class="n">render_last</span><span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">response</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">)</span></code></pre></figure>
+
+<p>Above example shows a very basic top down response streaming with <a href="https://arpitbbhayani.gitbooks.io/flasksr/content/sr/basicsr.html">BasicSR</a> For advanced usage when you want a particular part of your page to get rendered first you can use <a href="https://arpitbbhayani.gitbooks.io/flasksr/content/sr/layoutsr.html">LayoutSR</a></p>
+
+<h2 id="examples">Examples</h2>
+<p>You can find examples and sample usage <a href="https://github.com/arpitbbhayani/flasksr/tree/master/examples">here</a></p>
+
+<h2 id="documentation">Documentation</h2>
+<p>Complete documentation for FlaskSR is available on <a href="https://arpitbbhayani.gitbooks.io/flasksr/">FlaskSR’s GitBook</a>.</p>
+
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! If you would like to hack on FlaskSR, please follow these steps:</p>
+
+<ul>
+  <li>Fork this repository</li>
+  <li>Make your changes</li>
+  <li>Submit a pull request after running make check (ensure it does not error!)</li>
+  <li>Please give us adequate time to review your submission. Thanks!</li>
+</ul>
+
+  </div>
+</div>
+<div class="ui basic segment">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- arpitbhayani.me generic ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9220578038638789"
+       data-ad-slot="2902722754"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "http://arpitbhayani.me/projects/flasksr.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/projects/flasksr.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer class="ui column centered grid">
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a><br/>
+          Designed and developed with <i class="heart red icon"></i><br/>
+          <a class="item" href="/disclaimer.html">Disclaimer</a>
+      </div>
+  </div>
+</footer>
+
+      </div>
+    </body>
+    
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+  
+  <script src="/static/js/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/index.js"></script>
+
+  
+</head>
+
+</html>
