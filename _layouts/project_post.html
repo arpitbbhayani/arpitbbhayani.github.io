@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="ui header center aligned">
+    <h1 itemprop="name headline">{{ page.title }}</h1>
+  </div>
+  <div class="ui center aligned basic fluid segment">
+    <div>
+      <time datetime="{{page.date | date_to_xmlschema}}" itemprop="datePublished">
+        <span class="lightGrey">
+          {{page.date | date: '%B %d, %Y'}}
+        </span>
+      </time>
+    </div>
+    <br/>
+    <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" >
+      <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span>
+    </div>
+    <div>
+      <br/>
+      <div class="ui horizontal list">
+        {% for tag in page.tags %}
+          <a href='/tag/{{tag}}.html' class="ui item" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">{{tag}}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="ui center aligned basic segment">
+    <iframe src="https://ghbtns.com/github-btn.html?user={{page.github_user}}&size=large&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+    <iframe src="https://ghbtns.com/github-btn.html?user={{page.github_user}}&size=large&repo={{page.repo}}&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+  </div>
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="{{page.img}}" />
+    <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
+  </div>
+  <div class="ui hidden divider"></div>
+  <div itemprop="articleBody">
+      {{ content }}
+  </div>
+</div>
+{% include ads_plugin.html %}
+{% if page.comments %}
+    {% include comment_plugin.html %}
+{% endif %}

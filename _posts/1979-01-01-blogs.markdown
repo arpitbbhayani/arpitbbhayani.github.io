@@ -3,7 +3,7 @@ title:  Blogs
 layout: default
 ---
 
-<div class="ui basic segment">
+<div class="ui hidden divider"></div>
 {% assign count = 0 %}
 {% for post in site.posts %}
     {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
@@ -11,4 +11,3 @@ layout: default
         {% assign count = count | plus: 1 %}
     {% endif %}
 {% endfor %}
-</div>

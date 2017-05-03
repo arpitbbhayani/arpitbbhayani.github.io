@@ -1,0 +1,16 @@
+---
+layout:			default
+title:			All story-7 articles
+category:		tag
+passed-tag:		story-7
+type:           dummy
+---
+
+
+<div class="ui basic segment">
+{% for post in site.tags[page.passed-tag] %}
+{% if post.type != 'dummy' %}
+    {% include article_snippet.html post=post %}
+{% endif %}
+{% endfor %}
+</div>
