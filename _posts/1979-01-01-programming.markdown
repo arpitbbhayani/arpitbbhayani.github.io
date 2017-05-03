@@ -5,7 +5,7 @@ comments: true
 type: dummy
 ---
 
-<div class="ui hidden section divider"></div>
+<div class="ui hidden divider"></div>
 <div class="ui two column grid center aligned">
   <div class="column">
       <a class="ui item medium image" href="{% post_url 1979-01-01-hackerrank %}" title="View solutions to {{ site.categories.hackerrank | size }} questions">
