@@ -14,8 +14,8 @@
   <meta name="description" content="Here is the solution for programming question Strange Advertising on hackerrank">
   <meta name="keywords" content="solution, source code, programming, hackerrank, Strange Advertising Solution, " />
 
-  <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="canonical" href="http://arpitbhayani.me/hackerrank/strange-advertising.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
@@ -40,11 +40,19 @@
 </head>
 
     <body>
-      <div class="ui secondary menu center aligned">
+      <div class="ui secondary menu center aligned" style="background-color: #FFF;">
     <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
-    <a class="item" href="/programming.html"><b>CODES</b></a>
-    <a class="item" href="/blogs.html"><b>BLOGS</b></a>
-    <a class="item" href="/projects.html"><b>PROJECTS</b></a>
+    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
+    <a class="item ui computer only grid" href="/blogs.html"><b>BLOGS</b></a>
+    <a class="item ui computer only grid" href="/projects.html"><b>PROJECTS</b></a>
+    <a class="item right floated ui mobile tablet only grid" id="menu_button"><b><i class="content icon"></i></b></a>
+</div>
+
+<div id="menu_sidebar" class="ui sidebar right vertical menu">
+  <a class="item" id="close_button"><b>X</b></a>
+  <a class="item" href="/programming.html"><b>CODES</b></a>
+  <a class="item" href="/blogs.html"><b>BLOGS</b></a>
+  <a class="item" href="/projects.html"><b>PROJECTS</b></a>
 </div>
 
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -66,9 +74,9 @@
 
 </script>
 
-      <div class="ui text container">
-        <div style="padding-bottom: 50px;">
-            <div class="ui header center aligned">
+      <div class="pusher">
+        <div class="ui text container" style="padding-bottom: 50px;">
+          <div class="ui header center aligned">
     <h1 class="article-title">HACKERRANK strange-advertising Solution</h1>
 </div>
 <div class="ui center aligned basic fluid segment">

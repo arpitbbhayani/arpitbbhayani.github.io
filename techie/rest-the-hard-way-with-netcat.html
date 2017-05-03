@@ -14,8 +14,8 @@
   <meta name="description" content="All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!">
   <meta name="keywords" content="http-requests, netcat, calling rest api with netcat, calling rest api from microcontroller, http request messages, " />
 
-  <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
   <link rel="canonical" href="http://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html">
   <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
@@ -40,11 +40,19 @@
 </head>
 
     <body>
-      <div class="ui secondary menu center aligned">
+      <div class="ui secondary menu center aligned" style="background-color: #FFF;">
     <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
-    <a class="item" href="/programming.html"><b>CODES</b></a>
-    <a class="item" href="/blogs.html"><b>BLOGS</b></a>
-    <a class="item" href="/projects.html"><b>PROJECTS</b></a>
+    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
+    <a class="item ui computer only grid" href="/blogs.html"><b>BLOGS</b></a>
+    <a class="item ui computer only grid" href="/projects.html"><b>PROJECTS</b></a>
+    <a class="item right floated ui mobile tablet only grid" id="menu_button"><b><i class="content icon"></i></b></a>
+</div>
+
+<div id="menu_sidebar" class="ui sidebar right vertical menu">
+  <a class="item" id="close_button"><b>X</b></a>
+  <a class="item" href="/programming.html"><b>CODES</b></a>
+  <a class="item" href="/blogs.html"><b>BLOGS</b></a>
+  <a class="item" href="/projects.html"><b>PROJECTS</b></a>
 </div>
 
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -66,9 +74,9 @@
 
 </script>
 
-      <div class="ui text container">
-        <div style="padding-bottom: 50px;">
-            <div itemscope="" itemtype="http://schema.org/BlogPosting">
+      <div class="pusher">
+        <div class="ui text container" style="padding-bottom: 50px;">
+          <div itemscope="" itemtype="http://schema.org/BlogPosting">
   <div class="ui header center aligned">
     <h1 itemprop="name headline">HTTP Requests - The Hard Way with Netcat</h1>
   </div>
