@@ -38,13 +38,12 @@ Advantages:
 
 ## Installation
 Install the extension with the following command:
-
 ```
 pip install flasksr
 ```
 
 ## FlaskSR in action
-![impact](https://cloud.githubusercontent.com/assets/4745789/19834915/7354d69a-9e9a-11e6-8ab6-b7b95146a25c.gif)
+<img class="ui large centered image" src='https://cloud.githubusercontent.com/assets/4745789/19834915/7354d69a-9e9a-11e6-8ab6-b7b95146a25c.gif' alt='FlaskSR Impact'/>
 
 ## Usage
 Once installed, the FlaskSR is easy to use. Let's walk through setting up a basic application. Also please note that this is a very basic guide: we will be taking shortcuts here that you should never take in a real application.
