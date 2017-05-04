@@ -117,7 +117,7 @@
   </div>
   <div class="ui hidden divider"></div>
   <div itemprop="articleBody">
-      <p>Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implementations: one that store byte splices and other that store rune splices. The primary difference between the two is the that the later one stores data rune by rune (which makes a logical sense), so even if you have UTF-8 characters, the rune based implementation will take care of it. On the other hand the byte splice based implementation is optimized for ascii string, where one byte is enough to store a character.</p>
+      <p><a href="http://github.com/arpitbbhayani/tripod">Tripod</a> provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implementations: one that store byte splices and other that store rune splices. The primary difference between the two is the that the later one stores data rune by rune (which makes a logical sense), so even if you have UTF-8 characters, the rune based implementation will take care of it. On the other hand the byte splice based implementation is optimized for ascii string, where one byte is enough to store a character.</p>
 
 <h2 id="highlights">Highlights</h2>
 <p>PrefixStoreByteTrie</p>

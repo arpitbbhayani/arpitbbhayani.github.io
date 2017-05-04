@@ -5,13 +5,13 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 May 2017 19:23:20 +0530</pubDate>
-    <lastBuildDate>Thu, 04 May 2017 19:23:20 +0530</lastBuildDate>
+    <pubDate>Thu, 04 May 2017 19:29:23 +0530</pubDate>
+    <lastBuildDate>Thu, 04 May 2017 19:29:23 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Tripod - Fast in-memory prefix search in Go</title>
-        <description>&lt;p&gt;Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implementations: one that store byte splices and other that store rune splices. The primary difference between the two is the that the later one stores data rune by rune (which makes a logical sense), so even if you have UTF-8 characters, the rune based implementation will take care of it. On the other hand the byte splice based implementation is optimized for ascii string, where one byte is enough to store a character.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://github.com/arpitbbhayani/tripod&quot;&gt;Tripod&lt;/a&gt; provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implementations: one that store byte splices and other that store rune splices. The primary difference between the two is the that the later one stores data rune by rune (which makes a logical sense), so even if you have UTF-8 characters, the rune based implementation will take care of it. On the other hand the byte splice based implementation is optimized for ascii string, where one byte is enough to store a character.&lt;/p&gt;
 
 &lt;h2 id=&quot;highlights&quot;&gt;Highlights&lt;/h2&gt;
 &lt;p&gt;PrefixStoreByteTrie&lt;/p&gt;
