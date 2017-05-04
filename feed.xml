@@ -5,117 +5,139 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 May 2017 00:08:29 +0530</pubDate>
-    <lastBuildDate>Thu, 04 May 2017 00:08:29 +0530</lastBuildDate>
+    <pubDate>Thu, 04 May 2017 19:23:20 +0530</pubDate>
+    <lastBuildDate>Thu, 04 May 2017 19:23:20 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>FlaskSR - Make pages load faster</title>
-        <description>&lt;p&gt;FlaskSR provides an easy way to make flask pages load faster and better by streaming HTTP Responses.&lt;/p&gt;
+        <title>Tripod - Fast in-memory prefix search in Go</title>
+        <description>&lt;p&gt;Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implementations: one that store byte splices and other that store rune splices. The primary difference between the two is the that the later one stores data rune by rune (which makes a logical sense), so even if you have UTF-8 characters, the rune based implementation will take care of it. On the other hand the byte splice based implementation is optimized for ascii string, where one byte is enough to store a character.&lt;/p&gt;
 
-&lt;h2 id=&quot;why-should-you-use-this&quot;&gt;Why should you use this?&lt;/h2&gt;
-&lt;p&gt;Every web application tries to minimize the “Time to First Paint”. This can be done by streaming partial responses to client. FlaskSR enables this functionality in an easy way for &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask Web Framework&lt;/a&gt;. With FlaskSR you can start streaming partial HTTP responses depending on layout to client so that client starts seeing some content along the way instead of seeing all of the site’s content at once and thus making the pages load faster and better.&lt;/p&gt;
-
-&lt;p&gt;Advantages:&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot;&gt;Highlights&lt;/h2&gt;
+&lt;p&gt;PrefixStoreByteTrie&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Fully compatible with Jinja templates.&lt;/li&gt;
-  &lt;li&gt;Minimizes Time for first paint.&lt;/li&gt;
-  &lt;li&gt;No impact on SEO - as nothing goes via AJAX calls.&lt;/li&gt;
-  &lt;li&gt;Start rendering important part of your page first so user start seeing important things first.&lt;/li&gt;
-  &lt;li&gt;Improves perceived performance of the page.&lt;/li&gt;
+  &lt;li&gt;0 bytes of garbage allocation for &lt;code&gt;Put&lt;/code&gt; and &lt;code&gt;Exists&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;minimal and predictable allocations &lt;code&gt;(3 * (numOfElementsRetrieved) + 2)&lt;/code&gt; for
+&lt;code&gt;PrefixSearch&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;PrefixStoreRuneTrie&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;0 bytes of garbage allocation for &lt;code&gt;Put&lt;/code&gt; and &lt;code&gt;Exists&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;minimal and predictable allocations &lt;code&gt;(3 * (numOfElementsRetrieved) + 2)&lt;/code&gt; for
+&lt;code&gt;PrefixSearch&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;can safely store UTF-8 characters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;prefix-stores&quot;&gt;Prefix Stores&lt;/h2&gt;
+&lt;p&gt;PrefixStore is where you will store your prefix. You will call &lt;code&gt;Put&lt;/code&gt;, &lt;code&gt;Exists&lt;/code&gt;
+and &lt;code&gt;PrefixSearch&lt;/code&gt; on its instance. There are several type of implementations
+available for this. Each implementation of Prefix Store has some tailor-made
+optimization on method calls for type of data it can store. Following are the
+types available&lt;/p&gt;
+
+&lt;h3 id=&quot;prefixstorebytetrie&quot;&gt;PrefixStoreByteTrie&lt;/h3&gt;
+&lt;p&gt;This PrefixStore is implemented via an in-memory trie capable of storing only
+&lt;code&gt;[]byte&lt;/code&gt;. This should be used when you know that the data you would put in only
+has ASCII characters. No one is stopping you from putting any kind of &lt;code&gt;[]byte&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;prefixstorerunetrie&quot;&gt;PrefixStoreRuneTrie&lt;/h3&gt;
+&lt;p&gt;This PrefixStore is implemented via an in-memory trie capable of storing only
+&lt;code&gt;[]rune&lt;/code&gt;. This is useful when you want to store data that might have
+UTF-8 characters.&lt;/p&gt;
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Install the extension with the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pip install flasksr
-&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;flasksr-in-action&quot;&gt;FlaskSR in action&lt;/h2&gt;
-&lt;p&gt;&lt;img class=&quot;ui large centered image&quot; src=&quot;https://cloud.githubusercontent.com/assets/4745789/19834915/7354d69a-9e9a-11e6-8ab6-b7b95146a25c.gif&quot; alt=&quot;FlaskSR Impact&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;go get github.com/arpitbbhayani/tripod&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Once installed, the FlaskSR is easy to use. Let’s walk through setting up a basic application. Also please note that this is a very basic guide: we will be taking shortcuts here that you should never take in a real application.&lt;/p&gt;
+&lt;h2 id=&quot;quickstart-hello-world&quot;&gt;Quickstart: Hello, World!&lt;/h2&gt;
 
-&lt;p&gt;To begin we’ll set up a Flask app:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flasksr&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BasicSR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dom&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&amp;quot;github.com/arpitbbhayani/tripod&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vm&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tripod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CreatePrefixStoreByteTrie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
+	&lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;go&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;is&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;good&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;        &amp;lt;ul style=&amp;quot;list-style-type: none; margin: 0; padding: 0;&amp;quot;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;News&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Contact&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;        &amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;        &amp;lt;div style=&amp;quot;margin-top: 50px;&amp;quot;&amp;gt;Hello World!&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;        &amp;lt;html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;                &amp;lt;title&amp;gt;FlaskSR Example&amp;lt;/title&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render_last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;            &amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;        &amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;nd&quot;&gt;@app.route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BasicSR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render_menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render_body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render_last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;vm&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;0.0.0.0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Above example shows a very basic top down response streaming with &lt;a href=&quot;https://arpitbbhayani.gitbooks.io/flasksr/content/sr/basicsr.html&quot;&gt;BasicSR&lt;/a&gt; For advanced usage when you want a particular part of your page to get rendered first you can use &lt;a href=&quot;https://arpitbbhayani.gitbooks.io/flasksr/content/sr/layoutsr.html&quot;&gt;LayoutSR&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
-&lt;p&gt;You can find examples and sample usage &lt;a href=&quot;https://github.com/arpitbbhayani/flasksr/tree/master/examples&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+	&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PrefixSearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;g&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
-&lt;p&gt;Complete documentation for FlaskSR is available on &lt;a href=&quot;https://arpitbbhayani.gitbooks.io/flasksr/&quot;&gt;FlaskSR’s GitBook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://godoc.org/github.com/arpitbbhayani/tripod&quot;&gt;http://godoc.org/github.com/arpitbbhayani/tripod&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
-&lt;p&gt;We welcome contributions! If you would like to hack on FlaskSR, please follow these steps:&lt;/p&gt;
+&lt;h2 id=&quot;running-tests-and-benchmarks&quot;&gt;Running Tests and Benchmarks&lt;/h2&gt;
 
+&lt;h3 id=&quot;running-tests&quot;&gt;Running Tests&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; tests
+go &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;running-benchmarks&quot;&gt;Running Benchmarks&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; benchmarks
+go &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; -bench&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;. -benchmem&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;benchmarks&quot;&gt;Benchmarks&lt;/h2&gt;
+
+&lt;h3 id=&quot;conventions&quot;&gt;Conventions&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Fork this repository&lt;/li&gt;
-  &lt;li&gt;Make your changes&lt;/li&gt;
-  &lt;li&gt;Submit a pull request after running make check (ensure it does not error!)&lt;/li&gt;
-  &lt;li&gt;Please give us adequate time to review your submission. Thanks!&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;BenchmarkByteTriePut8&lt;/code&gt; means Benchmarking on a PrefixStoreByteTrie on
+ method &lt;code&gt;Put&lt;/code&gt; where each key is of size 8 bytes/runes.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;BenchmarkByteTriePrefixSearch8_10&lt;/code&gt; means Benchmarking on a
+ PrefixStoreByteTrie on method &lt;code&gt;PrefixSearch&lt;/code&gt; where 10 elements are
+ retrieved each of size 8 bytes/runes.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
+&lt;h4 id=&quot;prefixstorebytetrie-1&quot;&gt;PrefixStoreByteTrie&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;BenchmarkByteTriePut32-4                         3000000               395 ns/op               0 B/op          0 allocs/op
+BenchmarkByteTriePut128-4                        1000000              1660 ns/op               0 B/op          0 allocs/op
+BenchmarkByteTrieExists32-4                      3000000               454 ns/op               0 B/op          0 allocs/op
+BenchmarkByteTriePrefixSearch32_50-4               10000            224612 ns/op            5776 B/op        152 allocs/op
+BenchmarkByteTriePrefixSearch128_50-4               2000            926553 ns/op           10576 B/op        152 allocs/op
+BenchmarkByteTriePrefixSearch32_200-4               2000            921052 ns/op           22576 B/op        602 allocs/op
+BenchmarkByteTriePrefixSearch128_200-4               500           3530201 ns/op           41776 B/op        602 allocs/op
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;prefixstorerunetrie-1&quot;&gt;PrefixStoreRuneTrie&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;BenchmarkRuneTriePut32-4                         3000000               473 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTriePut128-4                        1000000              2038 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTrieExists32-4                      3000000               454 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTrieExists128-4                     1000000              1922 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTriePrefixSearch32_50-4               10000            225612 ns/op           10960 B/op        152 allocs/op
+BenchmarkRuneTriePrefixSearch128_50-4               2000            885550 ns/op           30160 B/op        152 allocs/op
+BenchmarkRuneTriePrefixSearch32_200-4               2000            742042 ns/op           42160 B/op        602 allocs/op
+BenchmarkRuneTriePrefixSearch128_200-4               500           3248185 ns/op          118960 B/op        602 allocs/op
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;contribution&quot;&gt;Contribution&lt;/h2&gt;
+&lt;p&gt;In case you loved this utility and have a great feature idea, then feel free to
+contribute . The complete utility is written in Go. So for contributing all you
+need to have is working knowledge of Go.&lt;/p&gt;
+
+&lt;h2 id=&quot;issues&quot;&gt;Issues&lt;/h2&gt;
+&lt;p&gt;Please report any glitch, bug, error or an unhandled exception. Feel free
+to &lt;a href=&quot;https://github.com/arpitbbhayani/tripod/issues/new&quot;&gt;create one&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 01 May 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/projects/flasksr.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/projects/flasksr.html</guid>
+        <pubDate>Tue, 25 Apr 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/projects/tripod.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/projects/tripod.html</guid>
         
-        <category>flasksr</category>
+        <category>trie</category>
         
-        <category>python</category>
+        <category>golang</category>
         
-        <category>ux</category>
+        <category>search</category>
         
         
         <category>projects</category>
