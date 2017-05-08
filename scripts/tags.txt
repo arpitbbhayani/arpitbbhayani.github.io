@@ -33,8 +33,8 @@ gravity
 database-admin
 http
 networking
-stream
-flask
+flasksr
+ux
 dhcp
 deployment
 sqs
@@ -50,5 +50,8 @@ story 6
 story 7
 story 8
 story 9
-flasksr
-ux
+trie
+golang
+search
+social-media
+security

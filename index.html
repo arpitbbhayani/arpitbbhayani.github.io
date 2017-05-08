@@ -23,10 +23,17 @@ layout: default
   </div>
   <div class="ui divider"></div>
   <div class="ui list">
-    {% for post in site.categories['techie'] limit: 5 %}
-    <a class="item" href="{{post.url}}">
-      <h5>{{post.title}}<span class="right floated computer only ui grid">{{post.date | date: '%B %d, %Y'}}</span></h5>
-    </a>
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+        {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
+            <a class="item" href="{{post.url}}">
+              <h5>{{post.title}}<span class="right floated computer only ui grid">{{post.date | date: '%B %d, %Y'}}</span></h5>
+            </a>
+            {% assign count = count | plus: 1 %}
+        {% endif %}
+        {% if count > 5 %}
+          {% break %}
+        {% endif %}
     {% endfor %}
   </div>
 </div>
