@@ -5,8 +5,8 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 May 2017 22:56:06 +0530</pubDate>
-    <lastBuildDate>Mon, 08 May 2017 22:56:06 +0530</lastBuildDate>
+    <pubDate>Mon, 08 May 2017 22:58:59 +0530</pubDate>
+    <lastBuildDate>Mon, 08 May 2017 22:58:59 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -24,7 +24,7 @@
 &lt;p&gt;&lt;img class=&quot;ui centered medium image&quot; src=&quot;/static/images/indian-celebrity/permissions-asked.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;why-did-i-do-this&quot;&gt;Why did I do this?&lt;/h2&gt;
-&lt;p&gt;The application that asks you to login via Facebook, can ask any kind of inforamtion from Facebook about you. But Facebook before giving away all inforamtion asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like &lt;a href=&quot;&quot;&gt;Cat Fly Quizzes&lt;/a&gt; gets all of your information, with your concent.&lt;/p&gt;
+&lt;p&gt;The application that asks you to login via Facebook, can ask any kind of inforamtion from Facebook about you. But Facebook before giving away all inforamtion asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like &lt;a href=&quot;http://catfly.in/&quot;&gt;Cat Fly Quizzes&lt;/a&gt; gets all of your information, with your concent.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-might-happen-when-such-app-gets-my-information&quot;&gt;What might happen when such app gets my information&lt;/h2&gt;
 &lt;p&gt;Such app/websites may:&lt;/p&gt;
