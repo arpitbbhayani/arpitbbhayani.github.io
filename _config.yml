@@ -25,4 +25,5 @@ gems:
     - jekyll-sitemap
 blog_types:
     - techie
+    - blog
 plugins_dir: _plugins

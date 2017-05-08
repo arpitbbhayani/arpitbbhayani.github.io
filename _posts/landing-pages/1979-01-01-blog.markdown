@@ -1,12 +1,12 @@
 ---
 layout:			default
-title:			All Tech Articles
+title:			Blog
 type:       dummy
 ---
 
 
 <div>
-{% for post in site.categories['techie'] %}
+{% for post in site.categories['blog'] %}
 {% if post.type != 'dummy' %}
     {% include article_snippet.html post=post %}
 {% endif %}

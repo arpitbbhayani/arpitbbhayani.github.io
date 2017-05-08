@@ -5,7 +5,7 @@ type:           dummy
 ---
 
 
-<div class="ui basic segment">
+<div>
 {% for post in site.categories['curiosity'] %}
 {% if post.type != 'dummy' %}
     {% include article_snippet.html post=post %}
