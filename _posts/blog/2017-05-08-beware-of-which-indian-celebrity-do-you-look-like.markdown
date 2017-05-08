@@ -44,7 +44,10 @@ YES. A big YES!
 
 You can revoke the permission that you granted to an app by going to your "Settings" in your Facebook account. Here is a small video I made that would guide you to revoke the permission.
 
-VIDEO GOES HERE
+<div class="ui center aligned basic segment">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6SjlXpUNrBM" frameborder="0" allowfullscreen></iframe>
+</div>
+
 
 Revoking the permission will prevent such apps from getting your data again.
 
