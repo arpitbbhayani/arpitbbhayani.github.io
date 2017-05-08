@@ -13,7 +13,7 @@ seo:
   - security
   - facebook
   - oauth
- description: When I tried Which indian celebrity do you look like?, the things I saw shocked me! Looks like Login via Facebook is dangerous if you are not alert.
+ description: When I tried Which indian celebrity do you look like? the things I saw shocked me! Looks like facebook login is dangerous if you are not careful and cautious.
 ---
 
 For last 3 odd days my [Facebook](https://facebook.com) Wall is flooded with post that looks something like above where almost every single friend of mine has posted "Which celebrity he looked like".
