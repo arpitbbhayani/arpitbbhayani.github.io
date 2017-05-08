@@ -5,25 +5,23 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 May 2017 22:19:15 +0530</pubDate>
-    <lastBuildDate>Mon, 08 May 2017 22:19:15 +0530</lastBuildDate>
+    <pubDate>Mon, 08 May 2017 22:56:06 +0530</pubDate>
+    <lastBuildDate>Mon, 08 May 2017 22:56:06 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Beware of - Which indian celebrity do you look like?</title>
-        <description>&lt;p&gt;For last 3 odd days my &lt;a href=&quot;https://facebook.com&quot;&gt;Facebook&lt;/a&gt; Wall is flooded with post that looks something like this&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;ui centered large image&quot; src=&quot;/static/images/indian-celebrity/login-via-facebook.jpg&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;For last 3 odd days my &lt;a href=&quot;https://facebook.com&quot;&gt;Facebook&lt;/a&gt; Wall is flooded with post that looks something like above where almost every single friend of mine has posted “Which celebrity he looked like”.&lt;/p&gt;
 
 &lt;p&gt;Initially I was not inclined to try this and for me all such things are mumbo jumbo. But then as this ritual was growing and was getting accepted at a huge pace, I thought, “Why Not?”; and I gave it a shot.&lt;/p&gt;
 
 &lt;p&gt;When I clicked on the link I was redirected to the page full of advertisments; and then I clicked the link that asked me to “Login via Facebook”. It redirected me to an “OAuth Dialog” and asked me for some permission. The set of permissions it asked me were insane.&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&quot;ui centered large image&quot; src=&quot;/static/images/indian-celebrity/oauth-dialog.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;ui centered medium image&quot; src=&quot;/static/images/indian-celebrity/oauth-dialog.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I wondered “Why an app like this needs to access my “Timeline post’?”. Hence instead of clicking “Continue” but I clicked “Edit this” and edited the set of information that Facebook should share with this app about me.&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&quot;ui centered large image&quot; src=&quot;/static/images/indian-celebrity/permissions-asked.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;ui centered medium image&quot; src=&quot;/static/images/indian-celebrity/permissions-asked.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;why-did-i-do-this&quot;&gt;Why did I do this?&lt;/h2&gt;
 &lt;p&gt;The application that asks you to login via Facebook, can ask any kind of inforamtion from Facebook about you. But Facebook before giving away all inforamtion asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like &lt;a href=&quot;&quot;&gt;Cat Fly Quizzes&lt;/a&gt; gets all of your information, with your concent.&lt;/p&gt;
@@ -43,7 +41,9 @@
 
 &lt;p&gt;You can revoke the permission that you granted to an app by going to your “Settings” in your Facebook account. Here is a small video I made that would guide you to revoke the permission.&lt;/p&gt;
 
-&lt;p&gt;VIDEO GOES HERE&lt;/p&gt;
+&lt;div class=&quot;ui center aligned basic segment&quot;&gt;
+  &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6SjlXpUNrBM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Revoking the permission will prevent such apps from getting your data again.&lt;/p&gt;
 
