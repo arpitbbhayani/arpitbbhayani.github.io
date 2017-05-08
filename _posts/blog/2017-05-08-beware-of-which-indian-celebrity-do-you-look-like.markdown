@@ -29,7 +29,7 @@ I wondered "Why an app like this needs to access my "Timeline post'?". Hence ins
 <img class="ui centered medium image" src='/static/images/indian-celebrity/permissions-asked.jpg' />
 
 ## Why did I do this?
-The application that asks you to login via Facebook, can ask any kind of inforamtion from Facebook about you. But Facebook before giving away all inforamtion asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like [Cat Fly Quizzes]() gets all of your information, with your concent.
+The application that asks you to login via Facebook, can ask any kind of inforamtion from Facebook about you. But Facebook before giving away all inforamtion asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like [Cat Fly Quizzes](http://catfly.in/) gets all of your information, with your concent.
 
 ## What might happen when such app gets my information
 Such app/websites may:
