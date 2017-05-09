@@ -20,7 +20,7 @@ For last 3 odd days my [Facebook](https://facebook.com) Wall is flooded with pos
 
 Initially I was not inclined to try this and for me all such things are mumbo jumbo. But then as this ritual was growing and was getting accepted at a huge pace, I thought, "Why Not?"; and I gave it a shot.
 
-When I clicked on the link I was redirected to the page full of advertisments; and then I clicked the link that asked me to "Login via Facebook". It redirected me to an "OAuth Dialog" and asked me for some permission. The set of permissions it asked me were insane.
+When I clicked on the link I was redirected to the page full of advertisements; and then I clicked the link that asked me to "Login via Facebook". It redirected me to an "OAuth Dialog" and asked me for some permission. The set of permissions it asked me were insane.
 
 <img class="ui centered medium image" src='/static/images/indian-celebrity/oauth-dialog.jpg' />
 
@@ -29,7 +29,7 @@ I wondered "Why an app like this needs to access my "Timeline post'?". Hence ins
 <img class="ui centered medium image" src='/static/images/indian-celebrity/permissions-asked.jpg' />
 
 ## Why did I do this?
-The application that asks you to login via Facebook, can ask any kind of inforamtion from Facebook about you. But Facebook before giving away all inforamtion asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like [Cat Fly Quizzes](http://catfly.in/) gets all of your information, with your concent.
+The application that asks you to login via Facebook, can ask any kind of information from Facebook about you. But Facebook before giving away all information asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like [Cat Fly Quizzes](http://catfly.in/) gets all of your information, with your consent.
 
 ## What might happen when such app gets my information
 Such app/websites may:
@@ -37,7 +37,7 @@ Such app/websites may:
  - Create fake profiles on different platforms and use it for illegal activities.
  - Misuse your photos and data to blackmail someone.
 
-There are tonnes of scarier scenarios but I am avoiding writing it. Just remember nothing on internet you share is safe. Dont trust something just because your friend trusts it. History suggests
+There are tonnes of scarier scenarios but I am avoiding writing it. Just remember nothing on Internet you share is safe. Don't trust something just because your friend trusts it.
 
 ## Can I revoke the permission that I granted?
 YES. A big YES!
