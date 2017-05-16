@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
   <div class="ui header center aligned">
@@ -33,7 +32,7 @@ layout: default
     <meta itemprop="url" content="{{page.img}}" />
     <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
   </div>
-  <div class="ui hidden divider"></div>
+  {% include ads_plugin2.html %}
   <div itemprop="articleBody">
       {{ content }}
   </div>
