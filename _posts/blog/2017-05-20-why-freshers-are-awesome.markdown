@@ -6,6 +6,7 @@ comments: true
 tags:
  - organization
  - people
+ - startup
 categories: blog
 seo:
  tags:
