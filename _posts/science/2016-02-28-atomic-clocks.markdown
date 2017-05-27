@@ -31,7 +31,6 @@ There are some very common myths about atomic clocks, the most most famous are
 Lets see how our world is in sync with a clock so accurate that it **looses 1 second in 138 million years**.
 
 # Time keeping before atomic clocks
---------------------------------------------------
 I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using **Quarts Crystal**.
 
 Let me tell you in brief how it worked. **Quarts Crystal** has a spacial property that it is [piezoelectric][piezoelectric], which means that
@@ -44,23 +43,19 @@ Let me tell you in brief how it worked. **Quarts Crystal** has a spacial propert
 Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of **32,768 Hz**, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this...
 
 ## Issue with battery operated Quartz Crystal
---------------------------------------------------
 As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A **FEEDBACK LOOP**.
 
 But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how
 
 # Lets get some basics right
---------------------------------------------------
 Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts
 
 ### Atomic structure of Cesium
-
 Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.
 
 <img class="ui medium centered image" src='/static/images/atomic-clocks/cesium-atom.jpg' alt='{{page.title}}'/>
 
 ### Hyperfine interaction
-
 The interaction between nucleus and its surrounding environment is known as **hyperfine interaction**. The magnitude of these interactions are very very small but enough to shift energy levels.
 
 <img class="ui medium right floated image" src='/static/images/atomic-clocks/hyperfine-interactions.jpg' alt='{{page.title}}'/>
@@ -74,18 +69,15 @@ Consider the representation above, the interaction between nucleus and electron 
 The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.
 
 ### Resonant frequency of atoms
-
 Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.
 
 This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance [here][resonance].
 
 ### Special case of cesium atom
-
 Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is **9,192,631,770 cycles per second**, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.
 
 
 # Working
---------------------------------------
 Basics done! let's jump into the working of it.
 
 An atomic clock consists of a traditional **Quartz Crystal** which is used for marking mechanical pulse just like in closed based on [battery operated quartz crystal][quartz-clock]. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.
@@ -125,7 +117,6 @@ This is how an atomic clock works. In above working principle of this we found t
 
 
 # For more info:
------------------------------------------------
 1. [Resonance][resonance]
 2. [Piezoelectric Effect][piezoelectric]
 3. [Mechanism of Quartz Clock][quartz-clock]

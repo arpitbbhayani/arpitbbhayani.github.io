@@ -23,7 +23,6 @@ mathjax: true
 Is it really hard to find out surface area of the Earth ourselves? Not much actually! All we need is little bit of Geometry. Lets find out how ...
 
 # The Assumptions
---------------------------------------------------
 Before we start calculating, we need to assume few things, which will help us apply concepts of geometry in our calculations. These assumptions are:
 
 * Earth is a perfect sphere.
@@ -31,7 +30,6 @@ Before we start calculating, we need to assume few things, which will help us ap
 * The objects we are using (pole) are perpendicular to the ground.
 
 # Construction
---------------------------------------------------
 Suppose we have two objects (prefereably a pole) present in two cities that are preferably north-sourth to each other. If city constraint is not met then the answer that you will get might have higher error rate.
 
 <img class="ui large centered stylish image" src='/static/images/earth-circumference/1.jpg' alt='{{page.title}}'/>
@@ -46,7 +44,6 @@ Now some geometrical construction:
 Since poles are perpendicular to the ground so if we extend the poles they will meet at the center of the Earth.
 
 # Derivation
------------------------------------------------------
 Lines $$ DC $$ and $$ BA' $$ are parallel and $$ WA' $$ acts as a transversal so we can say that
 
 $$
@@ -113,7 +110,6 @@ The only thing unknown in above equation is $$ l(XZ) $$, which is the distance b
 
 
 # Find how big is our Earth
--------------------------------------------------
 As we now have the Radius of the Earth $$ R $$ from above calculations, and if we assume that earth is a perfect sphere, we can find out
 
 * Total surface area $$ 4 \pi R^{2} $$
@@ -148,7 +144,6 @@ Actual values are in the table below just to cross check your results
 
 
 # The History
---------------------------------------------------
 The method was first proposed by Eratosthenes way back in **250 BC**. Lets see how it was done back then ...
 
 In ancient Egypt there was a city named Syene. Eratosthenes was told that in a well during [Summer Solstice](https://en.wikipedia.org/wiki/Summer_solstice) at noon time if he tries to look down a well he will be blocking the reflection of sun from the water, which actually implies the Sun was directly overhead. Syene was present on Tropic Of Cancer and to its north was a city called Alexandria. It is believed that Eratosthenes hired a man to calculate the distance between Syene and Alexandria. The hired man went from Syene to Alexandria and back walking finding out the distance to be **5,000 stadia** (stadia was the unit of measurement back then in ancient Egypt, its conversion to metric system is 1 stade = 185 m)

@@ -23,8 +23,6 @@ Dimensions in simple terms are the number of axes you can move along. We all liv
 
 
 # The rule of $$ n+1^{th} $$ dimension
---------------------------------------------------
-
 Imagine a plane $$ P $$ which is a 2D world and let there be 2 people $$ A $$ and $$ B $$. $$ A $$ is a circle and $$ B $$ is a square. Since this is a 2D world, $$ A $$ and $$ B $$ can see everything on plane $$ P $$ but only as a **line**. They have no control over $$ Z-axis $$ which can give them a perception of what they actually are i.e. square or circle.
 
 Suppose there is a person $$ C $$, which is a Cube and has an access to $$ 3^{rd} $$ dimension. We can deduce the following statements from this
@@ -52,7 +50,6 @@ Now your brain might be rushing and must be thinking a lot of crazy things that 
 
 
 # Where the hell did he go
------------------------------------------------------------
 You might have seen a magic trick where a person disappears from a place and shows up at another. You might also know how the trick it is done. Can this be done for real? **YES**, this can surely be done in real if one has an access to $$ 4^{th} $$ dimension. How? lets dig deeper into it.
 
 Suppose a magician $$ X $$ is at place $$ P1 $$. If he has an access to $$ 4^{th} $$ dimension then he can simply move along it and reach place $$ P2 $$ without even getting noticed. This is just an extension of rule mentioned above.
@@ -67,8 +64,6 @@ If we extend this explanation to our $$ 3 $$ dimensional world we can easily ded
 
 
 # The saviour
-------------------------------------------------------------
-
 Since you live in $$ 3 $$ dimension and your $$ 4^{th} $$ dimension is exposed and free to access, a person with access to it can see through you. Lets find out how ...
 
 In our example of $$ 2D $$ world, imagine there is a $$ 2D $$ - tumor inside the square $$ A $$ that needs to be removed. He asks $$ B $$ for some help. $$ B $$ told him that he has no other option but cut him open and remove the tumor. $$ A $$ straight away said NO to this. Can this be done in any other simpler way?
@@ -85,7 +80,6 @@ If we just extend this example to our world, we can say that if someone has an a
 
 
 # The Phantom Thief
------------------------------------------------------------------
 What if a person with such amazing capabilities became a thief. This is will be very menial but we can at least spare a thought on this...
 
 From last examples we see how a person with access to higher dimension can access anything directly without cutting open anything, so now since he is a thief, he can steal anything from any safe in this whole world without even getting noticed. This means no treasure can be kept safe from his hands, not even art like Picasso's paintings are safe, nothing can be kept safe from him.
@@ -95,7 +89,6 @@ From last examples we see how a person with access to higher dimension can acces
 He can just swoop in take the things and go off and no one will ever take a notice of this.
 
 # The Perfect Murderer
------------------------------------------------------------------
 Imagine if suddenly your heart comes out of your body! SCARY right! also it seems quite Sci-Fi. But this can be a reality if a person has an access to $$ 4^{th} $$ dimension and you don't.
 
 <img class="ui large centered stylish image" src='/static/images/fourth-dimension/5.jpg' alt='{{page.title}}'/>
@@ -103,7 +96,6 @@ Imagine if suddenly your heart comes out of your body! SCARY right! also it seem
 This guy can now become the perfect murderer because he don't need any weapons to kill someone, neither he requires any extra equipments like poison, rope, etc. nor will he leave his fingerprints anywhere. He just needs to extend his hand along the $$ 4^{th} $$ dimension and put it inside you and mess with your internal organs, and you will be dead in seconds.
 
 # Some pointers to think about
--------------------------------------------------------------------
 The examples I mentioned above are really vague, but this can be taken to altogether very different levels. If you can think along the lines you can try to answer the following pointers.
 
 * What happens if the $$ 4D $$ creature intersects our $$ 3D $$ world at more than one place.

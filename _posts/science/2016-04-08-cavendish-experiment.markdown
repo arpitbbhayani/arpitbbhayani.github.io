@@ -27,7 +27,6 @@ The gravitational force was discovered by [Sir Isaac Newton](https://en.wikipedi
 But an interesting by-product of the experiment came out as the value __Gravitational Constant $$ G $$__. The value that was obtained from the experiment was having an error of just $$ 1\% $$. So let's not anymore take value of $$ G $$ for granted, and find out how it was calculated in the first place.
 
 # First step
---------------------------------------------------
 Going with the intuition let's jot down the formula of gravitational force.
 
 $$
@@ -46,11 +45,9 @@ The experiment that calculated the Gravitational force of attraction between two
 _Please note that I am simplifying the experiment apparatus for better understanding. The original experimental apparatus was pretty gigantic and complex. If you want to go into details of that please see the reference links below._
 
 # The prerequisite
---------------------------------------------------
 Before we know the apparatus, we should know what a __torsion spring__ is.
 
 ### Torsion Spring
----------------------------------------------------
 A torsion spring is a spring that works on the principle of twisting. When this spring is twisted, it exerts a torque which is proportional to the angle of the twist.
 
 $$
@@ -64,7 +61,6 @@ where
 - $$ \theta $$: angle with which the spring is twisted
 
 # The setup
----------------------------------------------------
 There is a torsion spring $$ S $$ fixed at the top and there is a horizontal bar with identical lead balls, each of mass $$ m_2 $$, connected on its ends. The bar and the torsion spring are connected with very thin but strong bar. This assembly is free to rotate along vertical axis. A small mirror $$ M $$ is mounted on this thin bar. Now two very huge identical lead balls, each of mass $$ m_1 $$, are then mounted to the ground in the position as shown in the image.
 
 <img class="ui large centered stylish image" src='/static/images/cavendish-experiment/cavendish-experiment-setup.jpg' alt='{{page.title}}'/>
@@ -72,11 +68,9 @@ There is a torsion spring $$ S $$ fixed at the top and there is a horizontal bar
 There is a light source $$ L $$ that incidents a laser beam on mirror $$ M $$ and the reflected light is captured on surface $$ C $$.
 
 ## What are we trying to do here?
----------------------------------------------------
 We are trying to measure the gravitational force of attraction between these lead balls.
 
 ## How it works
----------------------------------------------------
 At time $$ t = 0 $$, all the 4 balls are co-planar. and lines joining identical balls are perpendicular to each other. The laser beam is turned on and the beam then hits the mirror $$ M $$ and is reflected back at point $$ P_1 $$ on surface $$ C $$. Now after some time, the gravitational force of attraction between balls $$ m_1 $$ and $$ m_2 $$ will generate a torque; and eventually will create a twist in the spring $$ S $$.
 
 As the spring twists, the mirror, that is mounted on the vertical bar, rotates along vertical axis. Since the light source did not move but the mirror did rotate hence the incident light will now be reflected at some different angle i.e. it will now reflect back to a different point $$ P_2 $$ on surface $$ C $$.
@@ -86,7 +80,6 @@ As the spring twists, the mirror, that is mounted on the vertical bar, rotates a
 The angle with which the spring was twisted can now be calculated easily with this observation. Since this twist was only because of the Gravitational Force of attraction, hence at __equilibrum__ the twisting force will be equal to gravitational force of attraction.
 
 ## Calculation
----------------------------------------------------
 From the above procedure we have __Angle of twist $$ \theta $$__. To exactly calculate the value of $$ G $$, few more parameters are required, one important being __Torsion Coefficient__, which is the measure of resistance provided by spring during twisting.
 
 The torsion coefficient can be easily calculated, using period of oscillation due to inertia of smaller lead balls. The final equation that gives the __Torsion Coefficient__ is
@@ -122,11 +115,9 @@ where
 
 
 # Interesting Resources
-----------------------------------------------------
 - [Knowing more about Henry Cavendish](https://www.youtube.com/watch?v=2PdiUoKa9Nw)
 
 # References
-----------------------------------------------------
 - [Cavendish Experiment Wiki](https://en.wikipedia.org/wiki/Cavendish_experiment)
 - [Cavendish experiment in brief](http://ffden-2.phys.uaf.edu/211_fall2010.web.dir/Smith_Elliot/Cav_World.html)
 - [Demonstration of cavendish method](https://www.youtube.com/watch?v=4JGgYjJhGEE)
