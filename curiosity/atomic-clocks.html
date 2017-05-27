@@ -39,25 +39,6 @@
 
 </head>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-9220578038638789",
-    enable_page_level_ads: true
-  });
-</script>
-
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-71339255-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
     <body>
       <div class="ui secondary menu center aligned" style="background-color: #FFF;">
     <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
@@ -75,6 +56,25 @@
   <a class="item" href="/curiosity.html"><b>CURIOSITY</b></a>
   <a class="item" href="/projects.html"><b>PROJECTS</b></a>
 </div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
       <div class="pusher">
         <div class="ui text container" style="padding-bottom: 50px;">
@@ -139,7 +139,6 @@
 <p>Lets see how our world is in sync with a clock so accurate that it <strong>looses 1 second in 138 million years</strong>.</p>
 
 <h1 id="time-keeping-before-atomic-clocks">Time keeping before atomic clocks</h1>
-<hr />
 <p>I will not go into a very long history of time keeping but will surely try to put it in some other post. So lets take a step backward and start our journey of keeping time using <strong>Quarts Crystal</strong>.</p>
 
 <p>Let me tell you in brief how it worked. <strong>Quarts Crystal</strong> has a spacial property that it is <a href="https://en.wikipedia.org/wiki/Piezoelectricity">piezoelectric</a>, which means that</p>
@@ -154,23 +153,19 @@
 <p>Because of this piezoelectric property of quartz, it is widely used in building clocks. When a battery is applied across a quartz crystal and because it vibrates at precise frequency of <strong>32,768 Hz</strong>, so applying a counter we can precisely know when time lapsed 1 second. But there is a big drawback of this…</p>
 
 <h2 id="issue-with-battery-operated-quartz-crystal">Issue with battery operated Quartz Crystal</h2>
-<hr />
 <p>As quartz crystal vibrates, it looses energy and it slows down and looses time. Hence it requires an electric pulse to reconfigure its vibrations again at that its natural frequency. How can we solve this? Yes! A <strong>FEEDBACK LOOP</strong>.</p>
 
 <p>But we need to create this feedback loop very very accurately. Atomic clocks do this very neatly and with amazing accuracy. Lets see how</p>
 
 <h1 id="lets-get-some-basics-right">Lets get some basics right</h1>
-<hr />
 <p>Before we start digging into working principle of an Atomic clock and eventually clearing our minds off the myths, we first need to clear our basics and some fundamental concepts</p>
 
 <h3 id="atomic-structure-of-cesium">Atomic structure of Cesium</h3>
-
 <p>Atomic number of cesium is 55, hence it has in all 55 electrons distributed in 6 orbits. Distribution of electrons in shells is something like this 2-8-18-18-8-1, having 1 electron in its outermost shell.</p>
 
 <p><img class="ui medium centered image" src="/static/images/atomic-clocks/cesium-atom.jpg" alt="How atomic clock works | busting several myths about it" /></p>
 
 <h3 id="hyperfine-interaction">Hyperfine interaction</h3>
-
 <p>The interaction between nucleus and its surrounding environment is known as <strong>hyperfine interaction</strong>. The magnitude of these interactions are very very small but enough to shift energy levels.</p>
 
 <p><img class="ui medium right floated image" src="/static/images/atomic-clocks/hyperfine-interactions.jpg" alt="How atomic clock works | busting several myths about it" /></p>
@@ -186,17 +181,14 @@
 <p>The energies of the hyperfine interaction occur in the radio and microwave region. The resultant force acts as a spring with minute amount of tension and hence electron while moving around the nucleus oscillates slightly.</p>
 
 <h3 id="resonant-frequency-of-atoms">Resonant frequency of atoms</h3>
-
 <p>Every atomic system or molecular system has a resonant frequency. In simple terms, when a electromagnetic radiation is incident on a atomic or molecular system then it interacts with the system in certain ways. The radiations consists of waves and each wave has a frequency. If the frequency of the radiation matches with the resonant frequency of the system, then the system vibrates with maximum amplitude and the energy is absorbed the atoms and molecules of the system.</p>
 
 <p>This oscillatory behavior is used to explain for various phenomenon like light absorption, light dispersion and radiation and is responsible for change of energy states of an atom. You can read more about resonance <a href="https://en.wikipedia.org/wiki/Resonance">here</a>.</p>
 
 <h3 id="special-case-of-cesium-atom">Special case of cesium atom</h3>
-
 <p>Cesium atom can be in two energy states: Low energy state and high energy state. In case of cesium atom, the resonant frequency is <strong>9,192,631,770 cycles per second</strong>, so if a radiation of same frequency is applied then atom will resonate and start moving from one energy state into another.</p>
 
 <h1 id="working">Working</h1>
-<hr />
 <p>Basics done! let’s jump into the working of it.</p>
 
 <p>An atomic clock consists of a traditional <strong>Quartz Crystal</strong> which is used for marking mechanical pulse just like in closed based on <a href="https://en.wikipedia.org/wiki/Quartz_clock">battery operated quartz crystal</a>. The main advancement required was in creating a feedback loop across Quartz Crystal so that whenever the crystal looses it energy it will be shot by an electric pulse so that the crystal regains it energy and thus always maintains a period.</p>
@@ -239,7 +231,6 @@
 </ol>
 
 <h1 id="for-more-info">For more info:</h1>
-<hr />
 <ol>
   <li><a href="https://en.wikipedia.org/wiki/Resonance">Resonance</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Piezoelectricity">Piezoelectric Effect</a></li>
