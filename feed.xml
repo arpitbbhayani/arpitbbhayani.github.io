@@ -5,8 +5,8 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 May 2017 23:20:41 +0530</pubDate>
-    <lastBuildDate>Sat, 27 May 2017 23:20:41 +0530</lastBuildDate>
+    <pubDate>Wed, 07 Jun 2017 08:28:01 +0530</pubDate>
+    <lastBuildDate>Wed, 07 Jun 2017 08:28:01 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -229,8 +229,8 @@ need to have is working knowledge of Go.&lt;/p&gt;
 to &lt;a href=&quot;https://github.com/arpitbbhayani/tripod/issues/new&quot;&gt;create one&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 25 Apr 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/projects/tripod.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/projects/tripod.html</guid>
+        <link>http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html</guid>
         
         <category>trie</category>
         

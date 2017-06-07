@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/image/png" href="/static/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-16x16.png" sizes="16x16" />
+
+  <title>Tripod - Fast in-memory prefix search in Go | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
+  <meta name="description" content="Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want...">
+  <meta name="keywords" content="trie, data structure, golang, prefix search, fast, optimal, string matching, " />
+
+  <link rel="stylesheet" href="/static/css/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="canonical" href="http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="fb:app_id" content="1055615241238486" />
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/projects/tripod/tripod.jpg"/>
+  <meta property="og:title" content="Tripod - Fast in-memory prefix search in Go"/>
+  <meta property="og:url" content="http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html">
+  <meta name="twitter:title" content="Tripod - Fast in-memory prefix search in Go">
+  <meta name="twitter:description" content="Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/projects/tripod/tripod.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <body>
+      <div class="ui secondary menu center aligned" style="background-color: #FFF;">
+    <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
+    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
+    <a class="item ui computer only grid" href="/blogs.html"><b>BLOGS</b></a>
+    <a class="item ui computer only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class="item ui computer only grid" href="/projects.html"><b>PROJECTS</b></a>
+    <a class="item right floated ui mobile tablet only grid" id="menu_button"><b><i class="content icon"></i></b></a>
+</div>
+
+<div id="menu_sidebar" class="ui sidebar right vertical menu">
+  <a class="item" id="close_button"><b>X</b></a>
+  <a class="item" href="/programming.html"><b>CODES</b></a>
+  <a class="item" href="/blogs.html"><b>BLOGS</b></a>
+  <a class="item" href="/curiosity.html"><b>CURIOSITY</b></a>
+  <a class="item" href="/projects.html"><b>PROJECTS</b></a>
+</div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+      <div class="pusher">
+        <div class="ui text container" style="padding-bottom: 50px;">
+          <div class="ui hidden divider"></div>
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="ui header center aligned">
+    <h1 itemprop="name headline">Tripod - Fast in-memory prefix search in Go</h1>
+  </div>
+  <div class="ui center aligned basic fluid segment">
+    <div>
+      <time datetime="2017-04-25T00:00:00+05:30" itemprop="datePublished">
+        <span class="lightGrey">
+          April 25, 2017
+        </span>
+      </time>
+    </div>
+    <br/>
+    <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" >
+      <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span>
+    </div>
+    <div>
+      <br/>
+      <div class="ui horizontal list">
+        
+          <a href='/tag/trie.html' class="ui item" data-content="All trie posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">trie</span></a>
+        
+          <a href='/tag/golang.html' class="ui item" data-content="All golang posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">golang</span></a>
+        
+          <a href='/tag/search.html' class="ui item" data-content="All search posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">search</span></a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="ui center aligned basic segment">
+    <iframe src="https://ghbtns.com/github-btn.html?user=arpitbbhayani&size=large&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+    <iframe src="https://ghbtns.com/github-btn.html?user=arpitbbhayani&size=large&repo=tripod&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+  </div>
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="http://arpitbhayani.me/static/images/projects/tripod/tripod.jpg" />
+    <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/projects/tripod/tripod.jpg" alt="Tripod - Fast in-memory prefix search in Go" />
+  </div>
+  <div class="ui hidden divider"></div>
+  <div itemprop="articleBody">
+      <p><a href="http://github.com/arpitbbhayani/tripod">Tripod</a> provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implementations: one that store byte splices and other that store rune splices. The primary difference between the two is the that the later one stores data rune by rune (which makes a logical sense), so even if you have UTF-8 characters, the rune based implementation will take care of it. On the other hand the byte splice based implementation is optimized for ascii string, where one byte is enough to store a character.</p>
+
+<h2 id="highlights">Highlights</h2>
+<p>PrefixStoreByteTrie</p>
+<ul>
+  <li>0 bytes of garbage allocation for <code>Put</code> and <code>Exists</code></li>
+  <li>minimal and predictable allocations <code>(3 * (numOfElementsRetrieved) + 2)</code> for
+<code>PrefixSearch</code></li>
+</ul>
+
+<p>PrefixStoreRuneTrie</p>
+<ul>
+  <li>0 bytes of garbage allocation for <code>Put</code> and <code>Exists</code></li>
+  <li>minimal and predictable allocations <code>(3 * (numOfElementsRetrieved) + 2)</code> for
+<code>PrefixSearch</code></li>
+  <li>can safely store UTF-8 characters</li>
+</ul>
+
+<h2 id="prefix-stores">Prefix Stores</h2>
+<p>PrefixStore is where you will store your prefix. You will call <code>Put</code>, <code>Exists</code>
+and <code>PrefixSearch</code> on its instance. There are several type of implementations
+available for this. Each implementation of Prefix Store has some tailor-made
+optimization on method calls for type of data it can store. Following are the
+types available</p>
+
+<h3 id="prefixstorebytetrie">PrefixStoreByteTrie</h3>
+<p>This PrefixStore is implemented via an in-memory trie capable of storing only
+<code>[]byte</code>. This should be used when you know that the data you would put in only
+has ASCII characters. No one is stopping you from putting any kind of <code>[]byte</code>.</p>
+
+<h3 id="prefixstorerunetrie">PrefixStoreRuneTrie</h3>
+<p>This PrefixStore is implemented via an in-memory trie capable of storing only
+<code>[]rune</code>. This is useful when you want to store data that might have
+UTF-8 characters.</p>
+
+<h2 id="installation">Installation</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>go get github.com/arpitbbhayani/tripod</code></pre></figure>
+
+<h2 id="quickstart-hello-world">Quickstart: Hello, World!</h2>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&quot;fmt&quot;</span>
+	<span class="s">&quot;github.com/arpitbbhayani/tripod&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">tr</span> <span class="o">:=</span> <span class="nx">tripod</span><span class="p">.</span><span class="nx">CreatePrefixStoreByteTrie</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+	<span class="nx">tr</span><span class="p">.</span><span class="nx">Put</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;go&quot;</span><span class="p">))</span>
+	<span class="nx">tr</span><span class="p">.</span><span class="nx">Put</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;is&quot;</span><span class="p">))</span>
+	<span class="nx">tr</span><span class="p">.</span><span class="nx">Put</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;good&quot;</span><span class="p">))</span>
+
+	<span class="nx">results</span> <span class="o">:=</span> <span class="nx">tr</span><span class="p">.</span><span class="nx">PrefixSearch</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;g&quot;</span><span class="p">))</span>
+	<span class="k">for</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">Front</span><span class="p">();</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">;</span> <span class="nx">e</span> <span class="p">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">Next</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">Value</span><span class="p">.([]</span><span class="kt">byte</span><span class="p">)))</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="documentation">Documentation</h2>
+<p><a href="http://godoc.org/github.com/arpitbbhayani/tripod">http://godoc.org/github.com/arpitbbhayani/tripod</a></p>
+
+<h2 id="running-tests-and-benchmarks">Running Tests and Benchmarks</h2>
+
+<h3 id="running-tests">Running Tests</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="nb">cd</span> tests
+go <span class="nb">test</span></code></pre></figure>
+
+<h3 id="running-benchmarks">Running Benchmarks</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="nb">cd</span> benchmarks
+go <span class="nb">test</span> -bench<span class="o">=</span>. -benchmem</code></pre></figure>
+
+<h2 id="benchmarks">Benchmarks</h2>
+
+<h3 id="conventions">Conventions</h3>
+<ul>
+  <li><code>BenchmarkByteTriePut8</code> means Benchmarking on a PrefixStoreByteTrie on
+ method <code>Put</code> where each key is of size 8 bytes/runes.</li>
+  <li><code>BenchmarkByteTriePrefixSearch8_10</code> means Benchmarking on a
+ PrefixStoreByteTrie on method <code>PrefixSearch</code> where 10 elements are
+ retrieved each of size 8 bytes/runes.</li>
+</ul>
+
+<h3 id="results">Results</h3>
+<h4 id="prefixstorebytetrie-1">PrefixStoreByteTrie</h4>
+<pre><code>BenchmarkByteTriePut32-4                         3000000               395 ns/op               0 B/op          0 allocs/op
+BenchmarkByteTriePut128-4                        1000000              1660 ns/op               0 B/op          0 allocs/op
+BenchmarkByteTrieExists32-4                      3000000               454 ns/op               0 B/op          0 allocs/op
+BenchmarkByteTriePrefixSearch32_50-4               10000            224612 ns/op            5776 B/op        152 allocs/op
+BenchmarkByteTriePrefixSearch128_50-4               2000            926553 ns/op           10576 B/op        152 allocs/op
+BenchmarkByteTriePrefixSearch32_200-4               2000            921052 ns/op           22576 B/op        602 allocs/op
+BenchmarkByteTriePrefixSearch128_200-4               500           3530201 ns/op           41776 B/op        602 allocs/op
+</code></pre>
+
+<h4 id="prefixstorerunetrie-1">PrefixStoreRuneTrie</h4>
+<pre><code>BenchmarkRuneTriePut32-4                         3000000               473 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTriePut128-4                        1000000              2038 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTrieExists32-4                      3000000               454 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTrieExists128-4                     1000000              1922 ns/op               0 B/op          0 allocs/op
+BenchmarkRuneTriePrefixSearch32_50-4               10000            225612 ns/op           10960 B/op        152 allocs/op
+BenchmarkRuneTriePrefixSearch128_50-4               2000            885550 ns/op           30160 B/op        152 allocs/op
+BenchmarkRuneTriePrefixSearch32_200-4               2000            742042 ns/op           42160 B/op        602 allocs/op
+BenchmarkRuneTriePrefixSearch128_200-4               500           3248185 ns/op          118960 B/op        602 allocs/op
+</code></pre>
+
+<h2 id="contribution">Contribution</h2>
+<p>In case you loved this utility and have a great feature idea, then feel free to
+contribute . The complete utility is written in Go. So for contributing all you
+need to have is working knowledge of Go.</p>
+
+<h2 id="issues">Issues</h2>
+<p>Please report any glitch, bug, error or an unhandled exception. Feel free
+to <a href="https://github.com/arpitbbhayani/tripod/issues/new">create one</a>.</p>
+
+  </div>
+</div>
+<div class="ui hidden divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- arpitbhayani.me generic ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden divider"></div>
+
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/projects/tripod-fast-in-memory-prefix-search-in-go.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer class="ui column centered grid">
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a><br/>
+          Designed and developed with <i class="heart red icon"></i><br/>
+          <a class="item" href="/disclaimer.html">Disclaimer</a>
+      </div>
+  </div>
+</footer>
+
+      </div>
+    </body>
+    
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+  
+  <script src="/static/js/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/index.js"></script>
+
+  
+</head>
+
+</html>
