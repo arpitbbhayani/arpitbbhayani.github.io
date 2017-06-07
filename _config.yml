@@ -24,6 +24,7 @@ exclude: [semantic, node_modules, static/semantic/src/, static/semantic/tasks, s
 gems:
     - jekyll-sitemap
 blog_types:
-    - techie
     - blog
+    - techie
+    - curiosity
 plugins_dir: _plugins
