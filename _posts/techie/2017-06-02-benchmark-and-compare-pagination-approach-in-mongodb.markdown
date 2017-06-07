@@ -37,7 +37,7 @@ All records of a collection are fetched page-wise. Size of each page is fixed du
 
 Following image shows the how two approach fares against each other.
 
-<img class="ui large centered stylish image" src='/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png' alt='Benchmark results'/>
+<img class="ui huge centered stylish image" src='/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png' alt='Benchmark results'/>
 
 A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for one approach than other. I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB's database drivier will yield better information about this behavior.
 
