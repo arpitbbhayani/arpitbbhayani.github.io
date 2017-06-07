@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/image/png" href="/static/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/images/icons/favicon-16x16.png" sizes="16x16" />
+
+  <title>Fast and Efficient Pagination in MongoDB | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
+  <meta name="description" content="MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ...">
+  <meta name="keywords" content="mongodb, pagination, Fast, efficient, " />
+
+  <link rel="stylesheet" href="/static/css/semantic.min.css">
+  <link rel="stylesheet" href="/static/css/ux.css">
+  <link rel="stylesheet" href="/static/css/pygments.css">
+  <link rel="canonical" href="http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
+
+  <meta property="fb:app_id" content="1055615241238486" />
+
+  <meta property="og:image" content="http://arpitbhayani.me/static/images/mongodb-pagination/pagination-in-mongod.jpg"/>
+  <meta property="og:title" content="Fast and Efficient Pagination in MongoDB"/>
+  <meta property="og:url" content="http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html"/>
+  <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ..." />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html">
+  <meta name="twitter:title" content="Fast and Efficient Pagination in MongoDB">
+  <meta name="twitter:description" content="MongoDB is a document based data store and hence pagination is one of the most common use case of it. Find out how you can paginate the results ...">
+  <meta name="twitter:image" content="http://arpitbhayani.me/static/images/mongodb-pagination/pagination-in-mongod.jpg">
+
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+
+</head>
+
+    <body>
+      <div class="ui secondary menu center aligned" style="background-color: #FFF;">
+    <a class="item" href="/" ><b>ARPIT BHAYANI</b></a>
+    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
+    <a class="item ui computer only grid" href="/blogs.html"><b>BLOGS</b></a>
+    <a class="item ui computer only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class="item ui computer only grid" href="/projects.html"><b>PROJECTS</b></a>
+    <a class="item right floated ui mobile tablet only grid" id="menu_button"><b><i class="content icon"></i></b></a>
+</div>
+
+<div id="menu_sidebar" class="ui sidebar right vertical menu">
+  <a class="item" id="close_button"><b>X</b></a>
+  <a class="item" href="/programming.html"><b>CODES</b></a>
+  <a class="item" href="/blogs.html"><b>BLOGS</b></a>
+  <a class="item" href="/curiosity.html"><b>CURIOSITY</b></a>
+  <a class="item" href="/projects.html"><b>PROJECTS</b></a>
+</div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+      <script src="//load.sumome.com/" data-sumo-site-id="2061ea85109a5c3656ef6e3cda82b2d437aedf57afdf13aae8546682a1303e9e" async="async"></script>
+
+      <div class="pusher">
+        <div class="ui text container" style="padding-bottom: 50px;">
+          <div class="ui hidden divider"></div>
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="ui header center aligned">
+    <h1 itemprop="name headline">Fast and Efficient Pagination in MongoDB</h1>
+  </div>
+  <div class="ui center aligned basic fluid segment">
+    <div>
+      <time datetime="2017-06-06T00:00:00+05:30" itemprop="datePublished">
+        <span class="lightGrey">
+          June 06, 2017
+        </span>
+      </time>
+    </div>
+    <br/>
+    <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" >
+      <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit.jpg" />
+      <span class="lightGrey" itemprop="name">Arpit Bhayani </span>
+    </div>
+    <div>
+      <br/>
+      <div class="ui horizontal list">
+        
+          <a href='/tag/mongodb.html' class="ui item" data-content="All mongodb posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">mongodb</span></a>
+        
+          <a href='/tag/scalability.html' class="ui item" data-content="All scalability posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">scalability</span></a>
+        
+      </div>
+    </div>
+  </div>
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="http://arpitbhayani.me/static/images/mongodb-pagination/pagination-in-mongod.jpg" />
+    <img itemprop="image" class="ui centered large image" src="http://arpitbhayani.me/static/images/mongodb-pagination/pagination-in-mongod.jpg" alt="Fast and Efficient Pagination in MongoDB" />
+  </div>
+  <div class="ui hidden divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- arpitbhayani.me generic ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden divider"></div>
+
+  <div itemprop="articleBody">
+      <p><a href="https://www.mongodb.com/">MongoDB</a> is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are</p>
+
+<ul>
+  <li>Batch processing</li>
+  <li>Showing huge set of results on user interface</li>
+</ul>
+
+<p>Paginating on client and server side are both really very expensive and should not be considered. Hence pagination is generally handled at database level and databases are optimized for such needs too.</p>
+
+<p>Below I shall explain you the 2 approaches through which you can easily paginate your MongoDB responses.
+Sample Document</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="p">{</span>
+        <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d17263623919cd5165bd&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Lisa Rogers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;marks&quot;</span> <span class="o">:</span> <span class="mi">34</span>
+    <span class="p">}</span></code></pre></figure>
+
+<h2 id="approach-1-using-cursorskip-and-cursorlimit">Approach 1: Using <code>cursor.skip</code> and <code>cursor.limit</code></h2>
+
+<p>MongoDB cursor has two methods that makes paging easy; they are</p>
+
+<ul>
+  <li><code>cursor.skip()</code></li>
+  <li><code>cursor.limit()</code></li>
+</ul>
+
+<p><code>skip(n)</code> will skip <code>n</code> documents from the cursor while <code>limit(n)</code> will cap the number of documents to be returned from the cursor. Thus combination of two naturally paginates the response.</p>
+
+<p>In Mongo Shell your pagination code looks something like this</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="c1">// Page 1</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1">// Page 2</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">skip</span><span class="p">(</span><span class="mi">5</span><span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1">// Page 3</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">skip</span><span class="p">(</span><span class="mi">5</span><span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+<p><code>.find()</code> will return a cursor pointing to all documents of the collection and then for each page we skip some and consume some. Through continuous skip and limit we get pagination in MongoDB.</p>
+
+<p>I am fond of Python and hence here is a small trivial function to implement pagination:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span>    <span class="k">def</span> <span class="nf">skiplimit</span><span class="p">(</span><span class="n">page_size</span><span class="p">,</span> <span class="n">page_num</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns a set of documents belonging to page number `page_num`</span>
+<span class="sd">        where size of each page is `page_size`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Calculate number of documents to skip</span>
+        <span class="n">skips</span> <span class="o">=</span> <span class="n">page_size</span> <span class="o">*</span> <span class="p">(</span><span class="n">page_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Skip and limit</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s1">&#39;students&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">()</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="n">skips</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">page_size</span><span class="p">)</span>
+
+        <span class="c1"># Return documents</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span></code></pre></figure>
+
+<h2 id="approach-2-using-_id-and-limit">Approach 2: Using <code>_id</code> and <code>limit</code></h2>
+
+<p>This approach will make effective use of default index on <code>_id</code> and nature of <code>ObjectId</code>.
+I bet you didn’t know that a <a href="https://docs.mongodb.com/manual/reference/bson-types/#objectid">Mongodb ObjectId</a> is a 12 byte structure containing</p>
+
+<ul>
+  <li>a 4-byte value representing the seconds since the Unix epoch,</li>
+  <li>a 3-byte machine identifier,</li>
+  <li>a 2-byte process id, and</li>
+  <li>a 3-byte counter, starting with a random value.</li>
+</ul>
+
+<p>Even I didn’t until I read the <a href="https://docs.mongodb.com/manual/reference/bson-types/#objectid">documentation</a>. Apart from its structure there is one very interesting property of ObjectId; which is - <em>ObjectId has natural ordering</em></p>
+
+<p>What does it mean? It simplifies that we can apply all the <em>less-than-s</em> and all the <em>greater-than-s you</em> want to it. If you don’t believe me, open Mongo shell and execute following set of commands</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="o">&gt;</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d49863623919cd56f52d&quot;</span><span class="p">)</span> <span class="o">&gt;</span>  <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d49863623919cd56f52e&quot;</span><span class="p">)</span>
+    <span class="kc">false</span>
+    <span class="o">&gt;</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d49863623919cd56f52d&quot;</span><span class="p">)</span> <span class="o">&gt;</span>  <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d49863623919cd56f52a&quot;</span><span class="p">)</span>
+    <span class="kc">true</span></code></pre></figure>
+
+<p>Using this property of ObjectId and also taking into consideration the fact that <code>_id</code> is always indexed, we can devise following approach for pagination:</p>
+
+<ol>
+  <li>Fetch a page of documents from database</li>
+  <li>Get the document id of the last document of the page</li>
+  <li>Retrieve documents greater than that id</li>
+</ol>
+
+<p>In Mongo Shell your pagination code looks something like this</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="c1">// Page 1</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="c1">// Page 2</span>
+    <span class="nx">last_id</span> <span class="o">=</span> <span class="p">...</span>  <span class="err">#</span> <span class="nx">logic</span> <span class="nx">to</span> <span class="nx">get</span> <span class="nx">last_id</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s1">&#39;_id&#39;</span><span class="o">:</span> <span class="p">{</span><span class="s1">&#39;$gt&#39;</span><span class="o">:</span> <span class="nx">last_id</span><span class="p">}}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="c1">// Page 3</span>
+    <span class="nx">last_id</span> <span class="o">=</span> <span class="p">...</span> <span class="err">#</span> <span class="nx">logic</span> <span class="nx">to</span> <span class="nx">get</span> <span class="nx">last_id</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s1">&#39;_id&#39;</span><span class="o">:</span> <span class="p">{</span><span class="s1">&#39;$gt&#39;</span><span class="o">:</span> <span class="nx">last_id</span><span class="p">}}).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></code></pre></figure>
+
+<p>Again, I am fond of Python and here is the Python implementation of this approach.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span></span>    <span class="k">def</span> <span class="nf">idlimit</span><span class="p">(</span><span class="n">page_size</span><span class="p">,</span> <span class="n">last_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Function returns `page_size` number of documents after last_id</span>
+<span class="sd">        and the new last_id.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">last_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c1"># When it is first page</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s1">&#39;students&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">()</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">page_size</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s1">&#39;students&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$gt&#39;</span><span class="p">:</span> <span class="n">last_id</span><span class="p">}})</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">page_size</span><span class="p">)</span>
+
+        <span class="c1"># Get the data      </span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="c1"># No documents left</span>
+            <span class="k">return</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span>
+
+        <span class="c1"># Since documents are naturally ordered with _id, last document will</span>
+        <span class="c1"># have max id.</span>
+        <span class="n">last_id</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;_id&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Return data and last_id</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">last_id</span></code></pre></figure>
+
+<blockquote>
+  <p>If you are using a field other than <code>_id</code> for offset, make sure the field is indexed and properly ordered else the performance will suffer.</p>
+</blockquote>
+
+<h2 id="closing-remarks">Closing Remarks</h2>
+
+<p>Both of the above approaches are valid and correct. But as we know, in field of Computer Science, whenever there are multiple options to achieve something, one always outperforms the other. Same is the situation here as well.</p>
+
+<p>Turns out, there is a severe problem with skip function. I have tried to jot it down in <a href="/techie/mongodb-cursor-skip-is-slow.html">this blog post</a>. Because of which second approach has advantage over first. But that is not it; I wrote a simple <a href="https://github.com/arpitbbhayani/mongo-pagination-benchmark">python code</a> to benchmark the two approaches for various combinations and it turns out <code>skip</code> performs better in some case. The results are compiled into <a href="/techie/benchmark-and-compare-pagination-approach-in-mongodb.html">this blog post</a>.</p>
+
+  </div>
+</div>
+<div class="ui hidden divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- arpitbhayani.me generic ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden divider"></div>
+
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/techie/fast-and-efficient-pagination-in-mongodb.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer class="ui column centered grid">
+  <div class="row">
+      <div class="column center aligned">
+          Hosted on <a href="https://github.com/arpitbbhayani/arpitbbhayani.github.io">Github</a><br/>
+          Designed and developed with <i class="heart red icon"></i><br/>
+          <a class="item" href="/disclaimer.html">Disclaimer</a>
+      </div>
+  </div>
+</footer>
+
+      </div>
+    </body>
+    
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+  
+  <script src="/static/js/semantic.min.js"></script>
+  <script src="/static/js/scrollProgress.js"></script>
+  <script src="/static/js/index.js"></script>
+
+  
+  <script>
+  scrollProgress.set({
+      color: '#000',
+      height: '3px',
+      bottom: false
+  });
+  </script>
+  
+</head>
+
+</html>

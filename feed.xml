@@ -5,9 +5,250 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Jun 2017 08:55:59 +0530</pubDate>
-    <lastBuildDate>Wed, 07 Jun 2017 08:55:59 +0530</lastBuildDate>
+    <pubDate>Wed, 07 Jun 2017 21:46:02 +0530</pubDate>
+    <lastBuildDate>Wed, 07 Jun 2017 21:46:02 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Fast and Efficient Pagination in MongoDB</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Batch processing&lt;/li&gt;
+  &lt;li&gt;Showing huge set of results on user interface&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Paginating on client and server side are both really very expensive and should not be considered. Hence pagination is generally handled at database level and databases are optimized for such needs too.&lt;/p&gt;
+
+&lt;p&gt;Below I shall explain you the 2 approaches through which you can easily paginate your MongoDB responses.
+Sample Document&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d17263623919cd5165bd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Lisa Rogers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;marks&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;approach-1-using-cursorskip-and-cursorlimit&quot;&gt;Approach 1: Using &lt;code&gt;cursor.skip&lt;/code&gt; and &lt;code&gt;cursor.limit&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;MongoDB cursor has two methods that makes paging easy; they are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;cursor.skip()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;cursor.limit()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;skip(n)&lt;/code&gt; will skip &lt;code&gt;n&lt;/code&gt; documents from the cursor while &lt;code&gt;limit(n)&lt;/code&gt; will cap the number of documents to be returned from the cursor. Thus combination of two naturally paginates the response.&lt;/p&gt;
+
+&lt;p&gt;In Mongo Shell your pagination code looks something like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Page 1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Page 2&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Page 3&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code&gt;.find()&lt;/code&gt; will return a cursor pointing to all documents of the collection and then for each page we skip some and consume some. Through continuous skip and limit we get pagination in MongoDB.&lt;/p&gt;
+
+&lt;p&gt;I am fond of Python and hence here is a small trivial function to implement pagination:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;skiplimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;returns a set of documents belonging to page number `page_num`&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;        where size of each page is `page_size`.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# Calculate number of documents to skip&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;skips&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Skip and limit&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;students&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;skips&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Return documents&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;approach-2-using-_id-and-limit&quot;&gt;Approach 2: Using &lt;code&gt;_id&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;This approach will make effective use of default index on &lt;code&gt;_id&lt;/code&gt; and nature of &lt;code&gt;ObjectId&lt;/code&gt;.
+I bet you didn’t know that a &lt;a href=&quot;https://docs.mongodb.com/manual/reference/bson-types/#objectid&quot;&gt;Mongodb ObjectId&lt;/a&gt; is a 12 byte structure containing&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a 4-byte value representing the seconds since the Unix epoch,&lt;/li&gt;
+  &lt;li&gt;a 3-byte machine identifier,&lt;/li&gt;
+  &lt;li&gt;a 2-byte process id, and&lt;/li&gt;
+  &lt;li&gt;a 3-byte counter, starting with a random value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Even I didn’t until I read the &lt;a href=&quot;https://docs.mongodb.com/manual/reference/bson-types/#objectid&quot;&gt;documentation&lt;/a&gt;. Apart from its structure there is one very interesting property of ObjectId; which is - &lt;em&gt;ObjectId has natural ordering&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;What does it mean? It simplifies that we can apply all the &lt;em&gt;less-than-s&lt;/em&gt; and all the &lt;em&gt;greater-than-s you&lt;/em&gt; want to it. If you don’t believe me, open Mongo shell and execute following set of commands&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52e&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52a&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Using this property of ObjectId and also taking into consideration the fact that &lt;code&gt;_id&lt;/code&gt; is always indexed, we can devise following approach for pagination:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Fetch a page of documents from database&lt;/li&gt;
+  &lt;li&gt;Get the document id of the last document of the page&lt;/li&gt;
+  &lt;li&gt;Retrieve documents greater than that id&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In Mongo Shell your pagination code looks something like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Page 1&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Page 2&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logic&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$gt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Page 3&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logic&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$gt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Again, I am fond of Python and here is the Python implementation of this approach.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;idlimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;Function returns `page_size` number of documents after last_id&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;        and the new last_id.&lt;/span&gt;
+&lt;span class=&quot;sd&quot;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# When it is first page&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;students&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;students&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$gt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Get the data      &lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;# No documents left&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Since documents are naturally ordered with _id, last document will&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# have max id.&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# Return data and last_id&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you are using a field other than &lt;code&gt;_id&lt;/code&gt; for offset, make sure the field is indexed and properly ordered else the performance will suffer.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;closing-remarks&quot;&gt;Closing Remarks&lt;/h2&gt;
+
+&lt;p&gt;Both of the above approaches are valid and correct. But as we know, in field of Computer Science, whenever there are multiple options to achieve something, one always outperforms the other. Same is the situation here as well.&lt;/p&gt;
+
+&lt;p&gt;Turns out, there is a severe problem with skip function. I have tried to jot it down in &lt;a href=&quot;/techie/mongodb-cursor-skip-is-slow.html&quot;&gt;this blog post&lt;/a&gt;. Because of which second approach has advantage over first. But that is not it; I wrote a simple &lt;a href=&quot;https://github.com/arpitbbhayani/mongo-pagination-benchmark&quot;&gt;python code&lt;/a&gt; to benchmark the two approaches for various combinations and it turns out &lt;code&gt;skip&lt;/code&gt; performs better in some case. The results are compiled into &lt;a href=&quot;/techie/benchmark-and-compare-pagination-approach-in-mongodb.html&quot;&gt;this blog post&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 06 Jun 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</guid>
+        
+        <category>mongodb</category>
+        
+        <category>scalability</category>
+        
+        
+        <category>techie</category>
+        
+      </item>
+    
+      <item>
+        <title>Why MongoDB's cursor.skip() is slow?</title>
+        <description>&lt;p&gt;MongoDB’s cursor object has a method called &lt;code&gt;skip&lt;/code&gt;, which as per &lt;a href=&quot;https://docs.mongodb.com/manual/reference/method/cursor.skip/#definition&quot;&gt;documentation and definition&lt;/a&gt;, controls where MongoDB begins returning results. Thus in combination with function &lt;a href=&quot;https://docs.mongodb.com/manual/reference/method/cursor.limit/&quot;&gt;limit&lt;/a&gt;, one can easily have paginated results.&lt;/p&gt;
+
+&lt;p&gt;I have written a blog post on &lt;a href=&quot;/techie/fast-and-efficient-pagination-in-mongodb.html&quot;&gt;how you can have Fast and Efficient Pagination in MongoDB&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But while going through the documentation of skip, there is something interesting to notice. There is a small warning in &lt;a href=&quot;https://docs.mongodb.com/manual/reference/method/cursor.skip/#behavior&quot;&gt;MongoDB documentation&lt;/a&gt;, that states&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The &lt;code&gt;cursor.skip()&lt;/code&gt; method is often expensive because it requires the server to walk from the beginning of the collection or index to get the offset or skip position before beginning to return results. As the offset (e.g. &lt;code&gt;pageNumber&lt;/code&gt; above) increases, &lt;code&gt;cursor.skip()&lt;/code&gt; will become slower and more CPU intensive. With larger collections, &lt;code&gt;cursor.skip()&lt;/code&gt; may become IO bound.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In short, MongoDB has to iterate over documents to skip them. Thus when collection or result set is huge and you need to skip documents for pagination, the call to &lt;code&gt;cursor.skip&lt;/code&gt; will be expensive. While going through the source code of &lt;code&gt;skip&lt;/code&gt; I found out that it does not use any index and hence gets slower when result set increases in size.&lt;/p&gt;
+
+&lt;p&gt;This also implies that if you use &lt;code&gt;skip&lt;/code&gt;  then the “skipping speed” will not improve even if you index the field.&lt;/p&gt;
+
+&lt;p&gt;But what if the size of result set is small? is calling &lt;code&gt;skip&lt;/code&gt; still a terrible idea?
+If skip was so terrible, then MongoDB team and community must had taken that decision long back. But they haven’t … why?&lt;/p&gt;
+
+&lt;p&gt;Because it is very efficient and fast for smaller result set. I have taken this opportunity to &lt;a href=&quot;/techie/benchmark-and-compare-pagination-approach-in-mongodb.html&quot;&gt;benchmark and compare&lt;/a&gt; the &lt;a href=&quot;/techie/fast-and-efficient-pagination-in-mongodb.html&quot;&gt;two approach for pagination&lt;/a&gt; and there I found out skip and limit based pagination works well for smaller result sets.&lt;/p&gt;
+
+&lt;p&gt;In conclusion, skip is not as bad one might think. But you must understand your use case well so as to make an informed decision.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 04 Jun 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</guid>
+        
+        <category>mongodb</category>
+        
+        <category>scalability</category>
+        
+        
+        <category>techie</category>
+        
+      </item>
+    
+      <item>
+        <title>Benchmark and compare the two approaches to paginate in MongoDB</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Batch processing&lt;/li&gt;
+  &lt;li&gt;Showing huge set of results on user interface&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are multiple approaches through which you can &lt;a href=&quot;/techie/fast-and-efficient-pagination-in-mongodb.html&quot;&gt;paginate your result set in MongoDB&lt;/a&gt;. This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go …&lt;/p&gt;
+
+&lt;h2 id=&quot;preset&quot;&gt;Preset&lt;/h2&gt;
+&lt;p&gt;Benchmark has been done over a non-indexed collection. Each document of the collection looks something like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d17263623919cd5165bd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Lisa Rogers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;marks&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;All records of a collection are fetched page-wise. Size of each page is fixed during fetch of the collection. Time to fetch one “page” is recorded.&lt;/p&gt;
+
+&lt;p&gt;Following image shows the how two approach fares against each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;ui large centered stylish image&quot; src=&quot;/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png&quot; alt=&quot;Benchmark results&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for one approach than other. I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB’s database drivier will yield better information about this behavior.&lt;/p&gt;
+
+&lt;p&gt;You would see some spikes in the response times, that are because of Disk Contention.&lt;/p&gt;
+
+&lt;p&gt;In short:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;For huge result set, paginating using &lt;code&gt;_id&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt; is far better than using &lt;code&gt;skip&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;For smaller result set, it does not matter, but prefer skip and limit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An interesting thing I observed is that after page size crosses 100, the gap between the two approach reduces to some extent. I am yet to perform detailed benchmark on that as such situation will never arise in practical applications.&lt;/p&gt;
+
+&lt;h2 id=&quot;source-code&quot;&gt;Source Code&lt;/h2&gt;
+
+&lt;p&gt;You can find the Python code used for this benchmark &lt;a href=&quot;https://github.com/arpitbbhayani/mongo-pagination-benchmark&quot;&gt;here&lt;/a&gt;. If you have any suggestion or improvement, do let me know.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Jun 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</guid>
+        
+        <category>mongodb</category>
+        
+        <category>scalability</category>
+        
+        
+        <category>techie</category>
+        
+      </item>
     
       <item>
         <title>Why Freshers Are Awesome</title>
@@ -364,92 +605,6 @@ Will Kipo continue to miss his old city, school and friends?&lt;/p&gt;
         <category>mrcup</category>
         
         <category>story 6</category>
-        
-        
-        <category>mrcup</category>
-        
-      </item>
-    
-      <item>
-        <title>5 - The Confrontation</title>
-        <description>&lt;p&gt;Just as Mr. Cup finished making his boat, the doorbell rang. He quickly got up, cleaned up the mess and opened the door. Nervously he uttered “H…ee…lloooo …. guys!”. All of the friends greeted him together “Hello, Kipo!”. The real name of Mr. Cup is Kipo but he do not like his name so he makes everyone call him Mr. Cup; but no one actually does. 😉&lt;/p&gt;
-
-&lt;p&gt;Since luck has never been on his side, his friend, Gitto, out of nowhere, suggested all to play with air-plane again. Everyone got excited but Kipo got scared. He tried really hard to detour but it did not work. Everyone started inquiring about the air-plane; feeling the heat, Kipo ran into his room and grabbed the boat and very excitedly showed it to all of his friends.&lt;/p&gt;
-
-&lt;p&gt;The boat was pretty impressive and beautiful and big! Some of them had never seen anything like that before. Everyone got pretty excited seeing it, and wanted to play with it. Kipo started telling them about how he made it and what all it can do. Some of it was total hocus-pocus but they bought it. Meanwhile Gypsy ran towards bathroom, filled the bathtub with water and called everyone with the Boat. He snatched the Boat from Kipo’s hand and put it in water. The boat floated! it went with the stream from one end to the other. Kipo was relieved. 😀&lt;/p&gt;
-
-&lt;p&gt;Everyone was so happy with the Boat that they forgot about the air-plane. Because all they cared  about being happy, and they were happy with Boat right now. They were live-the-present-and-forget-the-past kinda cups 😉&lt;/p&gt;
-
-&lt;p&gt;Kipo, our Mr. Cup had a new learning today - “The worst always happens in your mind, not in reality”. Holidays are over; everything almost went well for Kipo this summer. But tomorrow is the first day of new academic year at school. Something interesting is bound to happen.&lt;/p&gt;
-
-&lt;p&gt;Stay Tuned&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Mar 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/mrcup/5-the-confrontation.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/5-the-confrontation.html</guid>
-        
-        <category>mrcup</category>
-        
-        <category>story 5</category>
-        
-        
-        <category>mrcup</category>
-        
-      </item>
-    
-      <item>
-        <title>4 - The Thinking Cap</title>
-        <description>&lt;p&gt;The air-plane burnt and with it burned all the hopes of fixing it. Mr. Cup now just wanted things to be the way they were, but the series of events that happened were like a tracer bullet, shot from a gun, you can’t take it back; irreversible as some might say.&lt;/p&gt;
-
-&lt;p&gt;Shocked from what he did, he sat on his favourite saucer, put on his thinking cap and started finding some way out which is both possible and feasible. As he was thinking for some solution, something clicked, the bulb in his mind glowed and he decided to build his own air-plane, which should ideally be like the old one, and hope that no one would notice the change. The only problem with this idea was - he did not know how to build one. But still he gave this a shot!&lt;/p&gt;
-
-&lt;p&gt;He ran into his room, grabbed some paper, a scissor, a measuring tape and some glue. He started folding the paper in random directions, hoping it takes the shape of the air-plane. It was harder than he thought; he knew what he wanted to make, but the shapes he was creating were in no way looking like it, forget its capability of taking-off and flying high.&lt;/p&gt;
-
-&lt;p&gt;Just about the time when he thought of giving up, he calmed down, took a deep breath and chose to give this one last shot. He folded the paper neatly, divided it in half, then to a quarter, made some slant folds, then using scissor made some crisp cuts, glued small bits of paper together and to his surprise it started taking some familiar shape. So the chose to continue with it. The shape was neat, crisp and looked pretty impressive. He realised that he accidentally made a Boat out of it and that too a beautiful one.&lt;/p&gt;
-
-&lt;p&gt;Boat instead of an air-plane … will his friends accept?&lt;/p&gt;
-
-&lt;p&gt;If put it in water … will this boat float?&lt;/p&gt;
-
-&lt;p&gt;Stay Tuned!&lt;/p&gt;
-</description>
-        <pubDate>Mon, 27 Feb 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/mrcup/4-the-thinking-cap.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/4-the-thinking-cap.html</guid>
-        
-        <category>mrcup</category>
-        
-        <category>story 4</category>
-        
-        
-        <category>mrcup</category>
-        
-      </item>
-    
-      <item>
-        <title>3 - Panic Mode Is On</title>
-        <description>&lt;p&gt;As soon as Mr. Cup saw the air-plane soaked in water, he panicked. Now all he wanted was to somehow fix it. The panic button was pressed and the panic mode was on! A torrent of possible fixes struck his mind, which confused him badly.&lt;/p&gt;
-
-&lt;p&gt;He started mopping away water from the floor. Things started off well, he thought “Well began is half done”. But little did he know, fate had some other plans for him 😉&lt;/p&gt;
-
-&lt;p&gt;He thought, if Blow Dryer could dry hair so neatly, it could also dry the air-plane. Feeling excited about his idea, he quickly grabbed a Blow Dryer, plugged it in and started blowing hot air to the plane. As the first stream of hot air hit the air-plane, it took-off. He chased the plane but the it kept going around. He tried several times but the plane was adamant and didn’t want to stay grounded. Giving up on this idea, he thought of something which did not make the plane go whooooossssshhhhhh.&lt;/p&gt;
-
-&lt;p&gt;After Blow-Drying, Mr. Cup thought of Sun-Drying; so he took the plane out in the sun. He waited and waited but nothing much happened; he realised it will take hours to dry and he didn’t have that much time. So he wanted something to speedup the process.&lt;/p&gt;
-
-&lt;p&gt;He suddenly recalled something he studied in his science class. He went to his bedroom and grabbed his magnifying glass and focused it on the air-plane. Things started to speedup, he became happy and relieved that things were working out. But in some time he smelled something fishy! He looked down and to his surprise he saw, one of the wings caught fire. He did not expect this to happen; but it did! He immediately threw his magnifying glass away, but it was too late … the air-plane was ruined ☹&lt;/p&gt;
-
-&lt;p&gt;Did he put himself in some serious trouble?
-Will anything good ever happen to him?&lt;/p&gt;
-
-&lt;p&gt;Stay Tuned&lt;/p&gt;
-</description>
-        <pubDate>Fri, 24 Feb 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/mrcup/3-panic-mode-is-on.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/3-panic-mode-is-on.html</guid>
-        
-        <category>mrcup</category>
-        
-        <category>story 3</category>
         
         
         <category>mrcup</category>
