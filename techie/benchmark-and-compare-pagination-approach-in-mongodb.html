@@ -139,7 +139,6 @@
 
 <p>There are multiple approaches through which you can <a href="/techie/fast-and-efficient-pagination-in-mongodb.html">paginate your result set in MongoDB</a>. This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go …</p>
 
-<h2 id="preset">Preset</h2>
 <p>Benchmark has been done over a non-indexed collection. Each document of the collection looks something like this</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="p">{</span>
@@ -148,15 +147,15 @@
         <span class="s2">&quot;marks&quot;</span> <span class="o">:</span> <span class="mi">34</span>
     <span class="p">}</span></code></pre></figure>
 
-<p>All records of a collection are fetched page-wise. Size of each page is fixed during fetch of the collection. Time to fetch one “page” is recorded.</p>
+<p>All records of a collection are fetched page-wise. Size of each page is fixed during fetch of the collection. Each page is fetched <em>3</em> times and average of, time to fetch one “page”, 3 is recorded.</p>
 
 <p>Following image shows the how two approach fares against each other.</p>
 
 <p><img class="ui huge centered stylish image" src="/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png" alt="Benchmark results" /></p>
 
-<p>A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for one approach than other. I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB’s database drivier will yield better information about this behavior.</p>
+<p>A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for <code>skip</code> and <code>limit</code> approach than other. The approach using <code>_id</code> and <code>limit</code> almost gives constant performance and is independent of size of the result set.</p>
 
-<p>You would see some spikes in the response times, that are because of Disk Contention.</p>
+<p>I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB’s database drivier will yield better information about this behavior. You could see some spikes in the response times, that are because of Disk Contention.</p>
 
 <p>In short:</p>
 <ul>
@@ -164,9 +163,7 @@
   <li>For smaller result set, it does not matter, but prefer skip and limit.</li>
 </ul>
 
-<p>An interesting thing I observed is that after page size crosses 100, the gap between the two approach reduces to some extent. I am yet to perform detailed benchmark on that as such situation will never arise in practical applications.</p>
-
-<h2 id="source-code">Source Code</h2>
+<p>An interesting thing I observed is that after page size crosses 100, the gap between the two approach reduces to some extent. I am yet to perform detailed benchmark on that as such use-case (where page-size is more than 100) is pretty rare in practical applications.</p>
 
 <p>You can find the Python code used for this benchmark <a href="https://github.com/arpitbbhayani/mongo-pagination-benchmark">here</a>. If you have any suggestion or improvement, do let me know.</p>
 
