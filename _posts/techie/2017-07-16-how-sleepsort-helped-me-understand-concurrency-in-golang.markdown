@@ -1,0 +1,73 @@
+---
+title: How Sleepsort helped me understand concurrency in golang
+img: http://arpitbhayani.me/static/images/sleep-sort/sleep-sort.jpg
+layout: post
+comments: true
+tags:
+ - golang
+ - concurrency
+categories: techie
+seo:
+ tags:
+  - golang
+  - concurrency
+  - sleepsort
+  - sleep sort
+ description: How Sleepsort helped me understand concurrency in golang.
+---
+
+For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like [Java uses Threads](https://docs.oracle.com/javase/tutorial/essential/concurrency/) and modern languages like NodeJS and Python uses something called as [event loops](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/) for its asynchronous IO which is there to make IO based things concurrent.
+
+Recently I started diving deep into concurrency in [Golang](https://golang.org/) and I wanted to start with a good `"Hello World"` program for it. This time I thought of taking an unconventional way to write first concurrent program. Going through various examples over internet I could not find anything that made learning concurrency fun. I suddenly recalled [Sleepsort](http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/) and it was the ideal way to learn concurrency becuase it expects program to be concurrent.
+
+### The Concept
+For people who do not know what Sleep Sort is: spin `n` threads/co-routine (or whatever concurrent element the language has) for `n` numbers (to sort) and each for number `x` wait for time proportional to `x` (lets say `x` seconds) and then print/collect the number.
+
+### Implementation in Go
+This is a very basic Implementation of Sleep Sort in Golang using Go Routines and `WaitGroup`.
+
+{% highlight go %}
+// prints a number of sleeping for n seconds
+func sleepAndPrint(x int, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	// Sleeping for time proportional to value
+	time.Sleep(time.Duration(x) * time.Millisecond)
+
+	// Printing the value
+	fmt.Println(x)
+}
+
+// Sorts given integer slice using sleep sort
+func Sort(numbers []int) {
+	var wg sync.WaitGroup
+
+	// Creating wait group that waits of len(numbers) of go routines to finish
+	wg.Add(len(numbers))
+
+	for _, x := range numbers {
+		// Spinning a Go routine
+		go sleepAndPrint(x, &wg)
+	}
+
+	// Waiting for all go routines to finish
+	wg.Wait()
+}
+{% endhighlight %}
+
+I have published the code in a [Github Repository](https://github.com/arpitbbhayani/go-sleep-sort). Feel
+free to fork and play around with it.
+
+### What else can you do
+
+I encourage you to try it out, it will be fun; and also there are tonnes of other things that you can
+do/learn with it, For example,
+
+ - Instead of printing, collect the elements in a slice
+ - Go Channels for inter go-routine communication
+ - Use Mutex for synchronization making things routine-safe
+ - Make Sleep Sort handle negative numbers too
+ - And finally, Sort the numbers in descending order
+
+If you find any interesting way to learn concurrency or any new use case here, please post a comment below.
+I would love to know them.
