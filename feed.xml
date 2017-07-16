@@ -5,9 +5,84 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Jul 2017 17:22:51 +0530</pubDate>
-    <lastBuildDate>Sun, 16 Jul 2017 17:22:51 +0530</lastBuildDate>
+    <pubDate>Sun, 16 Jul 2017 18:13:00 +0530</pubDate>
+    <lastBuildDate>Sun, 16 Jul 2017 18:13:00 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>How Sleepsort helped me understand concurrency in golang</title>
+        <description>&lt;p&gt;For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/essential/concurrency/&quot;&gt;Threads&lt;/a&gt; and modern languages like NodeJS and Python uses something called as &lt;a href=&quot;https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/&quot;&gt;event loops&lt;/a&gt; for its asynchronous IO which is there to make IO based things concurrent.&lt;/p&gt;
+
+&lt;p&gt;Recently I started diving deep into concurrency in &lt;a href=&quot;https://golang.org/&quot;&gt;Golang&lt;/a&gt; and I wanted to start with a good &lt;code&gt;&quot;Hello World&quot;&lt;/code&gt; program for it. This time I thought of taking an unconventional way to write my first concurrent program. Going through various examples over the Internet I could not find anything that made it fun. I suddenly recalled &lt;a href=&quot;http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/&quot;&gt;Sleepsort&lt;/a&gt; and it was the ideal way (fun + new = &amp;lt;3) to learn concurrency.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-concept&quot;&gt;The Concept&lt;/h3&gt;
+&lt;p&gt;For people who do not know what Sleep Sort is, the basic goes something like this:
+spin &lt;code&gt;n&lt;/code&gt; threads/co-routine (or whatever concurrent element the language has) for &lt;code&gt;n&lt;/code&gt; numbers (to sort) and for each number &lt;code&gt;x&lt;/code&gt; wait for time proportional to &lt;code&gt;x&lt;/code&gt; (lets say &lt;code&gt;x&lt;/code&gt; seconds) and then print/collect the number.&lt;/p&gt;
+
+&lt;h3 id=&quot;implementation-in-go&quot;&gt;Implementation in Go&lt;/h3&gt;
+&lt;p&gt;This is a very basic Implementation of Sleep Sort in Golang using Go Routines and &lt;a href=&quot;https://golang.org/pkg/sync/#WaitGroup&quot;&gt;WaitGroup&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// prints a number of sleeping for n seconds&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sleepAndPrint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;WaitGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;defer&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Sleeping for time proportional to value&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Millisecond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Printing the value&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Sorts given integer slice using sleep sort&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wg&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;WaitGroup&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Creating wait group that waits of len(numbers) of go routines to finish&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;wg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;range&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;// Spinning a Go routine&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sleepAndPrint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// Waiting for all go routines to finish&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;wg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;I have published the code in a &lt;a href=&quot;https://github.com/arpitbbhayani/go-sleep-sort&quot;&gt;Github Repository&lt;/a&gt;. Feel
+free to fork and play around with it.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-else-can-you-do-with-it&quot;&gt;What else can you do with it&lt;/h3&gt;
+&lt;p&gt;I encourage you to try it out, and trust me it is really fun to learn concurrency through this; Apart from running the basic sleep sort you should also try to do/learn with it. For example,&lt;/p&gt;
+
+&lt;p&gt;Concurrency essentials&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Go Channels for inter go-routine communication&lt;/li&gt;
+  &lt;li&gt;Mutex for synchronization making things routine-safe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also try to&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;collect the elements in a slice, in place of printing&lt;/li&gt;
+  &lt;li&gt;make Sleep Sort handle negative numbers too&lt;/li&gt;
+  &lt;li&gt;sort the numbers in descending order&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you find any interesting way to learn concurrency or any new use case here, please post a comment below.
+I would love to know them.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Jul 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html</guid>
+        
+        <category>golang</category>
+        
+        <category>concurrency</category>
+        
+        
+        <category>techie</category>
+        
+      </item>
     
       <item>
         <title>HACKERRANK game-of-two-stacks Solution</title>
@@ -663,35 +738,6 @@ Where was Nick when Kipo locked himself up?&lt;/p&gt;
         <category>mrcup</category>
         
         <category>story 8</category>
-        
-        
-        <category>mrcup</category>
-        
-      </item>
-    
-      <item>
-        <title>7 - The New Friend</title>
-        <description>&lt;p&gt;Kipo boarded the bus. Seeing so many new faces around, he was excited yet nervous. As he entered, he started looking for a seat. After skimming the bus a few times, he found one in the second row from the last. He knew would be the “New Kid” in school and will be bombarded with questions so he started preparing them in mind one by one.&lt;/p&gt;
-
-&lt;p&gt;While Kipo was in middle of preparing his answer to the typical Hobby question, someone tapped him on his shoulder. Kipo turned and saw a kid wearing thick round glasses, he looked nerdy. The kid introduced himself with a lot of excitement and punch in his voice “Hi! I am Nick”. Kipo nervously replied “Iiiii …. aaammmm …. Kipo”.&lt;/p&gt;
-
-&lt;p&gt;After few ice-breakers they both started knowing each other a little better. One thing led to another and they found out that they both were 7th graders and will be attending the same class. Kipo was really happy to know this. After sometime, Nick went and called some of his other friends and introduced them to Kipo. It was hard for him to remember names of all he met but he was relieved, at least he will see some known faces in school now.&lt;/p&gt;
-
-&lt;p&gt;“We have reached! Get off quickly” shouted the bus driver. Everyone rushed towards the door to get off. Nick and Kipo started walking towards the classroom. While they were on their way, Nick started telling Kipo about the activities they have in school - quizzing, sports, drama, dancing and painting, which made Kipo really excited and he felt he was in right place.&lt;/p&gt;
-
-&lt;p&gt;Once they reached the classroom, Kipo and Nick started looking for a place. In the third row there was a seat for two available. They both went to the seat, to keep their bags. As Kipo was keeping his bag on the bench, someone pushed him. The push was powerful, Kipo lost his balance and fell on the floor. He heard a tough voice say “This is my seat! Go sit somewhere else!”. The turned and saw someone big!&lt;/p&gt;
-
-&lt;p&gt;Is Kipo in trouble?&lt;/p&gt;
-
-&lt;p&gt;Stay Tuned&lt;/p&gt;
-</description>
-        <pubDate>Thu, 09 Mar 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/mrcup/7-the-new-friend.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/7-the-new-friend.html</guid>
-        
-        <category>mrcup</category>
-        
-        <category>story 7</category>
         
         
         <category>mrcup</category>
