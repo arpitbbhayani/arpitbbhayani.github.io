@@ -16,12 +16,13 @@ seo:
  description: How Sleepsort helped me understand concurrency in golang.
 ---
 
-For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like [Java uses Threads](https://docs.oracle.com/javase/tutorial/essential/concurrency/) and modern languages like NodeJS and Python uses something called as [event loops](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/) for its asynchronous IO which is there to make IO based things concurrent.
+For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses [Threads](https://docs.oracle.com/javase/tutorial/essential/concurrency/) and modern languages like NodeJS and Python uses something called as [event loops](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/) for its asynchronous IO which is there to make IO based things concurrent.
 
-Recently I started diving deep into concurrency in [Golang](https://golang.org/) and I wanted to start with a good `"Hello World"` program for it. This time I thought of taking an unconventional way to write first concurrent program. Going through various examples over the Internet I could not find anything that made learning concurrency fun. I suddenly recalled [Sleepsort](http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/) and it was the ideal way to learn concurrency because it expects program to be concurrent.
+Recently I started diving deep into concurrency in [Golang](https://golang.org/) and I wanted to start with a good `"Hello World"` program for it. This time I thought of taking an unconventional way to write my first concurrent program. Going through various examples over the Internet I could not find anything that made it fun. I suddenly recalled [Sleepsort](http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/) and it was the ideal way (fun + new = <3) to learn concurrency.
 
 ### The Concept
-For people who do not know what Sleep Sort is: spin `n` threads/co-routine (or whatever concurrent element the language has) for `n` numbers (to sort) and each for number `x` wait for time proportional to `x` (lets say `x` seconds) and then print/collect the number.
+For people who do not know what Sleep Sort is, the basic goes something like this:
+spin `n` threads/co-routine (or whatever concurrent element the language has) for `n` numbers (to sort) and for each number `x` wait for time proportional to `x` (lets say `x` seconds) and then print/collect the number.
 
 ### Implementation in Go
 This is a very basic Implementation of Sleep Sort in Golang using Go Routines and [WaitGroup](https://golang.org/pkg/sync/#WaitGroup).
@@ -58,14 +59,12 @@ func Sort(numbers []int) {
 I have published the code in a [Github Repository](https://github.com/arpitbbhayani/go-sleep-sort). Feel
 free to fork and play around with it.
 
-### What else can you do
-
-I encourage you to try it out, it will be fun; and also there are tonnes of other things that you can
-do/learn with it. For example,
+### What else can you do with it
+I encourage you to try it out, and trust me it is really fun to learn concurrency through this; Apart from running the basic sleep sort you should also try to do/learn with it. For example,
 
 Concurrency essentials
  - Go Channels for inter go-routine communication
- - Use Mutex for synchronization making things routine-safe
+ - Mutex for synchronization making things routine-safe
 
 You can also try to
  - collect the elements in a slice, in place of printing
