@@ -2,27 +2,12 @@
 layout: default
 ---
 
-<div class="ui center aligned basic segment">
-  <div class="ui medium circular image">
-      <img src="/static/images/profiles/arpit.jpg">
-  </div>
-</div>
-
-<div class="ui center aligned basic segment">
-  <div class="ui header">
-    <h1>I solve my problems using programming</h1>
-  </div>
-  <div class="extra">
-      {% include social_icons.html %}
-  </div>
-</div>
-
 <div class="ui left aligned basic segment">
-  <div class="header">
-    <h3>Recent blogs</h3>
-  </div>
-  <div class="ui divider"></div>
-  <div class="ui list">
+    <div class="header">
+        <h3>What was I upto?</h3>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui list">
     {% assign count = 0 %}
     {% for post in site.posts %}
         {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
@@ -35,5 +20,18 @@ layout: default
           {% break %}
         {% endif %}
     {% endfor %}
-  </div>
+    </div>
+    <!-- <div class="ui hidden divider"></div>
+    <div class="ui center aligned basic segment">
+        <div class="ui header">
+            <h3>If above titles interests you, read more</h3>
+        </div>
+        <div class="ui large buttons">
+            <a class="ui basic red button">Codes</a>
+            <a class="ui basic blue button">Blogs</a>
+            <a class="ui basic green button">Tech Blogs</a>
+            <a class="ui basic teal button">Curiosity</a>
+            <a class="ui basic orange button">Projects</a>
+        </div>
+    </div> -->
 </div>

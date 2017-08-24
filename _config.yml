@@ -11,7 +11,7 @@ email: arpit.b.bhayani@gmail.com
 description: Blogs, Open source projects, solution to programming questions.
 baseurl: ""
 url: "http://arpitbhayani.me"
-img: http://arpitbhayani.me/static/images/profiles/arpit.jpg
+img: http://arpitbhayani.me/static/images/profiles/arpit.png
 keywords: blog, computer science, competitive programming, mr cup
 
 permalink: /:categories/:title.html
