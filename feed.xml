@@ -5,9 +5,87 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>http://arpitbhayani.me/</link>
     <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Aug 2017 22:23:56 +0530</pubDate>
-    <lastBuildDate>Thu, 24 Aug 2017 22:23:56 +0530</lastBuildDate>
+    <pubDate>Thu, 24 Aug 2017 22:45:44 +0530</pubDate>
+    <lastBuildDate>Thu, 24 Aug 2017 22:45:44 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Confusion Matrix Made Simple</title>
+        <description>&lt;p&gt;When I started with Data Mining 101, the first thing I came across was known as “The Confusion Matrix”. It seemed interesting at first so I started diving deep. It looked very simple at first, but then when more terms were introduced, things become complicated rather confusing; and then I realized the reason it is called &lt;strong&gt;“The Confusion Matrix”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The terms True/False Positives/Negatives are really very confusing to remember and hence I found a sleek way to understand it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Just add “ly predicted as” between two words&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So,
+True Positive → Truly predicted as Positive
+False Positive → Falsely predicted as Positive
+True Negative→ Truly predicted as Negative
+False Negative → Falsely predicted as Negative&lt;/p&gt;
+
+&lt;h2 id=&quot;interpreting-truefalse-positivenegative&quot;&gt;Interpreting True/False Positive/Negative&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;True Positive:&lt;/strong&gt;
+The data point is a True Positive if it is &lt;code&gt;truly&lt;/code&gt; predicted as &lt;code&gt;positive&lt;/code&gt;. If I try to elaborate &lt;code&gt;truly&lt;/code&gt; we get something like this: The data point is a True Positive if it is actually positive and is truly predicted as positive.&lt;/p&gt;
+
+&lt;p&gt;For a food lover:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a Burger is predicted as Burger and not Hotdog it comes under True Positive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Burger - Positive Class&lt;/li&gt;
+  &lt;li&gt;Hotdog - Negative Class&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For an animal lover:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a Dog is predicted as God and not Cat it comes under True Positive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dog - Positive Class&lt;/li&gt;
+  &lt;li&gt;Cat - Negative Class&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;False Positive&lt;/strong&gt;:
+It will be interesting when we try to interpret  False Positive.
+The data point is a False Positive if it is &lt;code&gt;falsely&lt;/code&gt; predicted as &lt;code&gt;positive&lt;/code&gt;. If I try to elaborate &lt;code&gt;falsely&lt;/code&gt; we get something like this: The data point is &lt;code&gt;False Positive&lt;/code&gt; if it is actually &lt;code&gt;Negative&lt;/code&gt; but it is &lt;code&gt;falsely&lt;/code&gt; predicted as &lt;code&gt;positive&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Again, for a food lover:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a Hotdog is predicted as Burger, it comes under False Positive&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Again, for an animal lover&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When a Cat is predicted as Dog, it comes under False Pos-itive&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Rest you can derive on your own 😉&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In conclusion I would like to say … add “ly predicted as” in the middle.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Aug 2017 00:00:00 +0530</pubDate>
+        <link>http://arpitbhayani.me/techie/confusion-matrix-made-simple.html</link>
+        <guid isPermaLink="true">http://arpitbhayani.me/techie/confusion-matrix-made-simple.html</guid>
+        
+        <category>confusion-matrix</category>
+        
+        <category>data-science</category>
+        
+        
+        <category>techie</category>
+        
+      </item>
     
       <item>
         <title>How Sleepsort helped me understand concurrency in golang</title>
@@ -709,35 +787,6 @@ to &lt;a href=&quot;https://github.com/arpitbbhayani/tripod/issues/new&quot;&gt;
         <category>mrcup</category>
         
         <category>story 9</category>
-        
-        
-        <category>mrcup</category>
-        
-      </item>
-    
-      <item>
-        <title>8 - I Am Tough Within</title>
-        <description>&lt;p&gt;After being pushed to the ground, Kipo was hurt, he was in pain. As he tried to stand on his feet, all he saw was a huge-guy who pushed him down. With the pain he was experiencing and the thought of what others might think of him, he broke into tears. He ran towards the bathroom and locked himself up in a toilet. He was experiencing a whirlpool of feelings; He was sad, angry, hurt and worried at the same time.&lt;/p&gt;
-
-&lt;p&gt;He thought of running away to home and skip the school with a hope that everyone forgets everything that happened by tomorrow and he would have a fresh start. But then all the consequences came to his mind and the scenarios were worse than what had happened to him. He understood that running away from the problem is not a solution to it. He became angrier and angrier; as he almost lost his cool he told himself “You may cry, but you are tough within!” which urged him to go, fight and beat that huge-potato guy.&lt;/p&gt;
-
-&lt;p&gt;He angrily opened the door and started rushing towards the classroom but after few quick steps, he recalled a teaching from his grandpa, “No matter the situation don’t let your emotions overpower”. So he kept his calm and returned back to the toilet seat and started thinking of some way that he could teach that huge-potato-porker a lesson. It was getting harder for Kipo to add more and more adjectives to the name. Several ideas strike his mind; some were silly, some were cruel and some were funny. They were funny enough to lighten Kipo’s mood and bring a smile to his face.&lt;/p&gt;
-
-&lt;p&gt;He calmed down and starting thinking ideas through. He narrowed down to one that was a perfect blend; it was funny, cruel and silly at the same time and it also served the purpose of teaching that huge-potato-porker-lard-ass a lesson. With a wicked smile on his face, he opened the door and stared moving towards the classroom.&lt;/p&gt;
-
-&lt;p&gt;What is the plan?
-If the plan backfires, will he get his head squished by huge-potato-porker-lard-ass?
-Where was Nick when Kipo locked himself up?&lt;/p&gt;
-
-&lt;p&gt;Stay Tuned&lt;/p&gt;
-</description>
-        <pubDate>Mon, 13 Mar 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/mrcup/8-i-am-tough-within.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/8-i-am-tough-within.html</guid>
-        
-        <category>mrcup</category>
-        
-        <category>story 8</category>
         
         
         <category>mrcup</category>
