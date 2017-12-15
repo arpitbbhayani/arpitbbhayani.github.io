@@ -1,6 +1,6 @@
 ---
 title: Disclaimer
-img:    /static/images/arpit.png
+img:    /static/images/profiles/arpit.png
 layout: default
 type: dummy
 ---

@@ -19,7 +19,7 @@ type: dummy
 </div>
 
 <div class="ui basic very padded segment">
-    <div class="ui four stackable cards doubling" id="search-results"></div>
+    <div class="ui cards" id="search-results"></div>
 </div>
 
 <script>
