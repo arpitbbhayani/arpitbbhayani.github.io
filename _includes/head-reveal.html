@@ -1,8 +1,17 @@
 <head>
   <link rel="stylesheet" href="/static/reveal.js/css/reveal.css">
   <link rel="stylesheet" href="/static/reveal.js/css/theme/{{page.theme}}.css">
+  <link rel="stylesheet" href="/static/reveal.js/lib/css/zenburn.css"/>
   <script src="/static/reveal.js/js/reveal.js"></script>
+  <script src="/static/reveal.js/lib/js/head.min.js"></script>
   <script>
-    Reveal.initialize();
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        dependencies: [
+            {src: '/static/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();}}
+        ]
+    });
   </script>
 </head>

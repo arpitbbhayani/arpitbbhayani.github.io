@@ -7,7 +7,7 @@ tags:
  - beginner
  - introduction
 categories: presentations
-theme: moon
+theme: solarized
 seo:
  tags:
   - graphql
@@ -18,8 +18,72 @@ seo:
 ---
 
 <div class="reveal">
-  <div class="slides">
-			<section>Slide 1</section>
-			<section>Slide 2</section>
+    <div class="slides">
+        <section>
+            <h2>Introduction to GraphQL</h2>
+            <p>
+                Arpit Bhayani<br/>
+                @often_weird<br/>
+                <a href="http://arpitbhayani.me">http://arpitbhayani.me</a>
+            </p>
+        </section>
+        <section>
+            <h3>
+                The Dream I Had
+            </h3>
+            <p class="fragment fade-in">
+                TO BUILD THE NEXT FACEBOOK
+            </p>
+        </section>
+        <section>
+            <h3>
+                Divide And Rule
+            </h3>
+            <span class="fragment fade-in">
+                <ol>
+                    <li>Backend</li>
+                    <li>Frontend</li>
+                    <li class="fragment fade-out">Infrastructure</li>
+                </ol>
+            </span>
+        </section>
+        <section>
+            <h3>
+                Choices I Made
+            </h3>
+            <div>
+                <ol>
+                    <li class="fragment fade-in">NodeJS</li>
+                    <li class="fragment fade-in">Vanilla Javascript</li>
+                    <li class="fragment fade-in">MongoDB</li>
+                </ol>
+            </div>
+            <div>
+                <p class="fragment fade-in">
+                    And Obviously! Everything is (REST) API driven.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>
+                The First API
+            </h3>
+            <pre class="javascript">
+                <code>
+route.post('/posts', (req, res) => {
+    const { post } = req.body;
+    const { user } = req;
+    doc = {
+        post: post,
+        user: user,
+        created_at: new Date(),
+    }
+    db.insertOne(doc, (aerr, result) => {
+        res.send("Post created successfully!");
+    });
+});
+                </code>
+            </pre>
+        </section>
 	</div>
 </div>
