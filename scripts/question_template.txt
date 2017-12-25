@@ -16,20 +16,20 @@
   <link rel="stylesheet" href="/static/css/semantic.min.css">
   <link rel="stylesheet" href="/static/css/ux.css">
   <link rel="stylesheet" href="/static/css/pygments.css">
-  <link rel="canonical" href="http://arpitbhayani.me/scripts/question_template.txt">
-  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="http://arpitbhayani.me/feed.xml">
+  <link rel="canonical" href="https://arpitbhayani.me/scripts/question_template.txt">
+  <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="https://arpitbhayani.me/feed.xml">
 
   <meta property="fb:app_id" content="1055615241238486" />
 
   <meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg"/>
   <meta property="og:title" content="$SITE_NAME$ solution for $QCODE$"/>
-  <meta property="og:url" content="http://arpitbhayani.me/scripts/question_template.txt"/>
+  <meta property="og:url" content="https://arpitbhayani.me/scripts/question_template.txt"/>
   <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Blogs, Open source projects, solution to programming questions." />
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://arpitbhayani.me/scripts/question_template.txt">
+  <meta name="twitter:url" content="https://arpitbhayani.me/scripts/question_template.txt">
   <meta name="twitter:title" content="$SITE_NAME$ solution for $QCODE$">
   <meta name="twitter:description" content="Blogs, Open source projects, solution to programming questions.">
   <meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/7e/ac/21/7eac217b7b1c55ab7fd56758e4e181be.jpg">
@@ -153,7 +153,7 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = "http://arpitbhayani.me/scripts/question_template.txt";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = "https://arpitbhayani.me/scripts/question_template.txt";  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = "/scripts/question_template.txt"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 

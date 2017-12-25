@@ -3,10 +3,10 @@
   <channel>
     <title>Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
     <description>Blogs, Open source projects, solution to programming questions.</description>
-    <link>http://arpitbhayani.me/</link>
-    <atom:link href="http://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Dec 2017 11:12:12 +0530</pubDate>
-    <lastBuildDate>Mon, 25 Dec 2017 11:12:12 +0530</lastBuildDate>
+    <link>https://arpitbhayani.me/</link>
+    <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 25 Dec 2017 11:15:22 +0530</pubDate>
+    <lastBuildDate>Mon, 25 Dec 2017 11:15:22 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -75,8 +75,8 @@ The data point is a False Positive if it is &lt;code&gt;falsely&lt;/code&gt; pre
 &lt;p&gt;In conclusion I would like to say … add “ly predicted as” in the middle.&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Aug 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/confusion-matrix-made-simple.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/confusion-matrix-made-simple.html</guid>
+        <link>https://arpitbhayani.me/techie/confusion-matrix-made-simple.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/techie/confusion-matrix-made-simple.html</guid>
         
         <category>confusion-matrix</category>
         
@@ -150,8 +150,8 @@ free to fork and play around with it.&lt;/p&gt;
 I would love to know them.&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Jul 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html</guid>
+        <link>https://arpitbhayani.me/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html</guid>
         
         <category>golang</category>
         
@@ -181,7 +181,7 @@ I would love to know them.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt; *  Author: Arpit Bhayani&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt; *  http://arpitbhayani.me&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  https://arpitbhayani.me&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;cmath&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&lt;/span&gt;
@@ -270,8 +270,8 @@ I would love to know them.&lt;/p&gt;
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 14 Jul 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/hackerrank/game-of-two-stacks.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/hackerrank/game-of-two-stacks.html</guid>
+        <link>https://arpitbhayani.me/hackerrank/game-of-two-stacks.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/hackerrank/game-of-two-stacks.html</guid>
         
         <category>competitive-programming</category>
         
@@ -420,8 +420,8 @@ I bet you didn’t know that a &lt;a href=&quot;https://docs.mongodb.com/manual/
 &lt;p&gt;Turns out, there is a severe problem with skip function. I have tried to jot it down in &lt;a href=&quot;/techie/mongodb-cursor-skip-is-slow.html&quot;&gt;this blog post&lt;/a&gt;. Because of which second approach has advantage over first. But that is not it; I wrote a simple &lt;a href=&quot;https://github.com/arpitbbhayani/mongo-pagination-benchmark&quot;&gt;python code&lt;/a&gt; to benchmark the two approaches for various combinations and it turns out &lt;code&gt;skip&lt;/code&gt; performs better in some case. The results are compiled into &lt;a href=&quot;/techie/benchmark-and-compare-pagination-approach-in-mongodb.html&quot;&gt;this blog post&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 06 Jun 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</guid>
+        <link>https://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</guid>
         
         <category>mongodb</category>
         
@@ -456,8 +456,8 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
 &lt;p&gt;In conclusion, skip is not as bad one might think. But you must understand your use case well so as to make an informed decision.&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Jun 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</guid>
+        <link>https://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</guid>
         
         <category>mongodb</category>
         
@@ -508,8 +508,8 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
 &lt;p&gt;You can find the Python code used for this benchmark &lt;a href=&quot;https://github.com/arpitbbhayani/mongo-pagination-benchmark&quot;&gt;here&lt;/a&gt;. If you have any suggestion or improvement, do let me know.&lt;/p&gt;
 </description>
         <pubDate>Fri, 02 Jun 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</guid>
+        <link>https://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</guid>
         
         <category>mongodb</category>
         
@@ -545,8 +545,8 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
 &lt;p&gt;PS: I am a Senior Backend Engineer.&lt;/p&gt;
 </description>
         <pubDate>Sat, 20 May 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/blog/why-freshers-are-awesome.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/blog/why-freshers-are-awesome.html</guid>
+        <link>https://arpitbhayani.me/blog/why-freshers-are-awesome.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/blog/why-freshers-are-awesome.html</guid>
         
         <category>organization</category>
         
@@ -607,8 +607,8 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
 &lt;p&gt;&lt;strong&gt;It is a dangerous world out there on the internet, stay safe!&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 May 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html</guid>
+        <link>https://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html</guid>
         
         <category>social-media</category>
         
@@ -740,8 +740,8 @@ need to have is working knowledge of Go.&lt;/p&gt;
 to &lt;a href=&quot;https://github.com/arpitbbhayani/tripod/issues/new&quot;&gt;create one&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 25 Apr 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html</guid>
+        <link>https://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/projects/tripod-fast-in-memory-prefix-search-in-go.html</guid>
         
         <category>trie</category>
         
@@ -781,8 +781,8 @@ to &lt;a href=&quot;https://github.com/arpitbbhayani/tripod/issues/new&quot;&gt;
 &lt;p&gt;Stay Tuned&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Mar 2017 00:00:00 +0530</pubDate>
-        <link>http://arpitbhayani.me/mrcup/9-revenge.html</link>
-        <guid isPermaLink="true">http://arpitbhayani.me/mrcup/9-revenge.html</guid>
+        <link>https://arpitbhayani.me/mrcup/9-revenge.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/mrcup/9-revenge.html</guid>
         
         <category>mrcup</category>
         
