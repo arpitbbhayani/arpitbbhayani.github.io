@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
+
+    <title>Linkie - Extract meta information about a link | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
+    <meta name="description" content="Extract meta information about a link">
+    <meta name="keywords" content="link, metadata, scrap, nodejs, javascript, " />
+
+    <link rel="stylesheet" href="/static/css/semantic.min.css">
+    <link rel="stylesheet" href="/static/css/pygments.css">
+    <link rel="canonical" href="https://arpitbhayani.me/projects/linkie-extract-meta-information-about-link-in-nodejs.html">
+    <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="https://arpitbhayani.me/feed.xml">
+
+    <meta property="fb:app_id" content="1055615241238486" />
+
+    <meta property="og:image" content="https://arpitbhayani.me/static/images/projects/linkie/linkie.jpg"/>
+    <meta property="og:title" content="Linkie - Extract meta information about a link"/>
+    <meta property="og:url" content="https://arpitbhayani.me/projects/linkie-extract-meta-information-about-link-in-nodejs.html"/>
+    <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Extract meta information about a link" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://arpitbhayani.me/projects/linkie-extract-meta-information-about-link-in-nodejs.html">
+    <meta name="twitter:title" content="Linkie - Extract meta information about a link">
+    <meta name="twitter:description" content="Extract meta information about a link">
+    <meta name="twitter:image" content="https://arpitbhayani.me/static/images/projects/linkie/linkie.jpg">
+
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+</head>
+
+    <body>
+        <div class="ui secondary basic menu center aligned" style="background-color: #FFF;">
+    <a class="item" href="/" >
+        <div class="ui small image">
+            <img src="/static/images/profiles/arpit-logo.png" />
+        </div>
+    </a>
+    <a class="item ui computer only grid" href="/techie.html"><b>TECH-BLOGS</b></a>
+    <a class="item ui computer only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
+    <a class="item ui mobile tablet only grid" href="/techie.html"><b>TECH-BLOGS</b></a>
+    <a class="item ui mobile tablet only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
+</div>
+
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+        <script src="//load.sumome.com/" data-sumo-site-id="2061ea85109a5c3656ef6e3cda82b2d437aedf57afdf13aae8546682a1303e9e" async="async"></script>
+
+        <div class="ui text container" style="padding-bottom: 50px;">
+            <div class="ui hidden divider"></div>
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+    <div class="ui header center aligned">
+        <h1 itemprop="name headline">Linkie - Extract meta information about a link</h1>
+    </div>
+    <div class="ui center aligned basic fluid segment">
+        <div>
+            <time datetime="2017-12-24T00:00:00+05:30" itemprop="datePublished">
+                <span class="lightGrey">
+                    December 24, 2017
+                </span>
+            </time>
+        </div>
+        <br/>
+        <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" >
+            <img class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit-icon.png" />
+            <span class="lightGrey" itemprop="name">Arpit Bhayani </span>
+        </div>
+        <div>
+            <br/>
+            <div class="ui horizontal list">
+                
+                    <a href='/tag/nodejs.html' class="ui item" data-content="All nodejs posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">nodejs</span></a>
+                
+                    <a href='/tag/metadata.html' class="ui item" data-content="All metadata posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">metadata</span></a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="ui center aligned basic segment">
+        <iframe src="https://ghbtns.com/github-btn.html?user=arpitbbhayani&size=large&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=arpitbbhayani&size=large&repo=linkie&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+    </div>
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://arpitbhayani.me/static/images/projects/linkie/linkie.jpg" />
+        <img itemprop="image" class="ui centered large image" src="https://arpitbhayani.me/static/images/projects/linkie/linkie.jpg" alt="Linkie - Extract meta information about a link" />
+    </div>
+    <div class="ui hidden divider"></div>
+    <div itemprop="articleBody">
+        <p><code>linkie</code> is a library that extracts meta information about a link.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install linkie --save</code></pre></figure>
+
+<h2 id="example">Example</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">const</span> <span class="nx">linkie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;linkie&#39;</span><span class="p">);</span>
+
+<span class="nx">linkie</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">};</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">metadata</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Output</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span> <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html&#39;</span><span class="p">,</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;arpitbhayani.me&#39;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;HTTP Requests - The Hard Way with Netcat&#39;</span><span class="p">,</span>
+  <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!&#39;</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;article&#39;</span><span class="p">,</span>
+  <span class="nx">keywords</span><span class="o">:</span>
+   <span class="p">[</span> <span class="s1">&#39;http-requests&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;netcat&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;calling rest api with netcat&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;calling rest api from microcontroller&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;http request messages&#39;</span> <span class="p">],</span>
+  <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;https://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg&#39;</span> <span class="p">}</span></code></pre></figure>
+
+<h2 id="api">API</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">[</span><span class="nx">options</span><span class="p">,]</span> <span class="nx">callback</span><span class="p">)</span></code></pre></figure>
+
+<p>Explanation:</p>
+
+<ul>
+  <li><code>url</code> -&gt; Full URL whose meta information is to be fetched</li>
+  <li><code>options</code> -&gt; Options for the fetching
+    <ul>
+      <li><code>verifyImage</code> -&gt; After successfully extracting image about the link, <code>linkie</code> can also validate if image really exists or not. By default this option is disabled and hence <code>linkie</code> will not verify the image. But if you want to verify the image just pass <code>{verifyImage: true}</code> and <code>linkie</code> will make another request and verufy if image is valid or not. If image does not exist then metadata will not contain field <code>image</code>.</li>
+    </ul>
+  </li>
+  <li><code>callback(err, metadata)</code></li>
+</ul>
+
+<h2 id="explain-me-the-output">Explain me the output</h2>
+
+<ul>
+  <li><code>url</code> -&gt; The URL that was fetched.</li>
+  <li><code>status</code> -&gt; HTTP Response status code</li>
+  <li><code>host</code> -&gt; Hostname from which response was served</li>
+  <li><code>title</code> -&gt; Title of the page</li>
+  <li><code>description</code> -&gt; Meta description about the link</li>
+  <li><code>type</code> -&gt; type of the page that link points to</li>
+  <li><code>keywords</code> -&gt; Meta keywords about the link</li>
+  <li><code>image</code> -&gt; meta image about the link</li>
+</ul>
+
+<h2 id="features">Features</h2>
+
+<h3 id="video">Video</h3>
+<p>If a youtube link is given then the metadata will contain field <code>extra</code> which
+will contain the video id in field <code>vid</code> that you can directly use to embed
+in Youtube Player.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span> <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://www.youtube.com/watch?v=0cMCo7lyQoY&#39;</span><span class="p">,</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;www.youtube.com&#39;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Film Theory: Was SpongeBob ADOPTED?! (SpongeBob SquarePants)&#39;</span><span class="p">,</span>
+  <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;SUBSCRIBE for More Film Theories! ► http://bit.ly/1dI8VBH You\&#39;ll Die Before this Spongebob Meme ► http://bit.ly/2C3IkhT Gravity Falls ISN’T OVER! ►► http://b...&#39;</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;video&#39;</span><span class="p">,</span>
+  <span class="nx">keywords</span><span class="o">:</span>
+   <span class="p">[</span> <span class="s1">&#39;spongebob&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob squarepants&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob episodes&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob full episodes&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob live&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob remix&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob songs&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;spongebob squarepants movie&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;...&#39;</span> <span class="p">],</span>
+  <span class="nx">site</span><span class="o">:</span> <span class="s1">&#39;youtube&#39;</span><span class="p">,</span>
+  <span class="nx">extra</span><span class="o">:</span> <span class="p">{</span> <span class="nx">vid</span><span class="o">:</span> <span class="s1">&#39;0cMCo7lyQoY&#39;</span> <span class="p">},</span>
+  <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;https://i.ytimg.com/vi/0cMCo7lyQoY/maxresdefault.jpg&#39;</span> <span class="p">}</span></code></pre></figure>
+
+<h3 id="meta-information-and-where-it-fetches-from">Meta information and where it fetches from</h3>
+
+<p>The meta information about the link contains several fields. There is a
+possibility that some information might not be present on the page, hence
+<code>linkie</code> tries its best to get information. There is fallback on all important
+fields. For each of the following fields the list represents the places it
+tries to fetch information from.</p>
+
+<h4 id="title">Title</h4>
+
+<ul>
+  <li>OG Title <code>meta[property='og:title']</code></li>
+  <li><code>&lt;title&gt;</code> tag</li>
+</ul>
+
+<h4 id="description">Description</h4>
+
+<ul>
+  <li>OG Description <code>meta[property='og:description']</code></li>
+  <li><code>&lt;meta[name='description']&gt;</code></li>
+  <li>All <code>&lt;p&gt;</code> tags, combined to minimum length of 128 characters.</li>
+</ul>
+
+<h4 id="image">Image</h4>
+
+<ul>
+  <li>OG Image <code>meta[property='og:image']</code></li>
+  <li>First image tag <code>&lt;img&gt;</code></li>
+</ul>
+
+<h4 id="keywords">Keywords</h4>
+
+<ul>
+  <li><code>meta[name='keywords']</code></li>
+</ul>
+
+<h4 id="type">Type</h4>
+
+<ul>
+  <li>OG Type <code>meta[property='og:type']</code></li>
+</ul>
+
+<h2 id="setup-a-development-environment">Setup a development environment</h2>
+
+<p>Make sure you have <code>node</code> and <code>npm</code> installed.</p>
+
+<p>Install all the required dependencies</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install</code></pre></figure>
+
+<h3 id="start-local-development-server">Start local development server</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm run dev</code></pre></figure>
+
+<p>This will start a local development server that listens on file change and
+rebuilds everytime that file is changed.</p>
+
+<h3 id="see-if-everythign-is-working">See if everythign is working</h3>
+
+<p>In the repository you will find a file named <code>basic.js</code>, execute the file
+and see the output.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>node tst/basic.js</code></pre></figure>
+
+<p>You should now see the output that looks something like this</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span> <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://arpitbhayani.me/techie/rest-the-hard-way-with-netcat.html&#39;</span><span class="p">,</span>
+  <span class="nx">status</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;arpitbhayani.me&#39;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;HTTP Requests - The Hard Way with Netcat&#39;</span><span class="p">,</span>
+  <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;All our lives we have been hitting REST APIs with libraries and utilities like curl and postman. Its time we do it the hard way with netcat, just for fun!&#39;</span><span class="p">,</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;article&#39;</span><span class="p">,</span>
+  <span class="nx">keywords</span><span class="o">:</span>
+   <span class="p">[</span> <span class="s1">&#39;http-requests&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;netcat&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;calling rest api with netcat&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;calling rest api from microcontroller&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;http request messages&#39;</span> <span class="p">],</span>
+  <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;https://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg&#39;</span> <span class="p">}</span></code></pre></figure>
+
+
+    </div>
+</div>
+
+<div class="ui hidden divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- arpitbhayani.me generic ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden divider"></div>
+
+
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://arpitbhayani.me/projects/linkie-extract-meta-information-about-link-in-nodejs.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/projects/linkie-extract-meta-information-about-link-in-nodejs.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer class="ui column centered grid">
+    <div class="row">
+        <div class="ui small icon borderless compact secondary menu">
+    <div class="item" data-content="Drop me an email" data-variation="tiny" data-position="bottom center">
+        <a href="mailto:arpit.b.bhayani@gmail.com">
+            <i class="mail outline large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item" data-content="Here's my resumé" data-variation="tiny" data-position="bottom center" >
+        <a href="/static/arpit_resume.pdf">
+            <i class="file text outline large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item" data-content="Github profile" data-variation="tiny" data-position="bottom center" >
+        <a href="https://github.com/arpitbbhayani">
+            <i class="github large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item" data-content="Befriend me on facebook." data-variation="tiny" data-position="bottom center">
+        <a href="https://facebook.com/oftenweird">
+            <i class="facebook f large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item" data-content="Sometimes I click photos as well." data-variation="tiny" data-position="bottom center">
+        <a href="https://instagram.com/often_weird">
+            <i class="instagram large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item" data-content="I put my rants and one liners here." data-variation="tiny" data-position="bottom center">
+        <a href="https://twitter.com/arpit_bhayani">
+            <i class="twitter large grey icon"></i>
+        </a>
+    </div>
+</div>
+
+    </div>
+  <div class="row">
+      <div class="column center aligned">
+          <a class="item" href="/disclaimer.html">Disclaimer</a><br/>
+      </div>
+  </div>
+</footer>
+
+    </body>
+    
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+    
+    <script src="/static/js/semantic.min.js"></script>
+    <script src="/static/js/scrollProgress.js"></script>
+    <script src="/static/js/index.js"></script>
+
+    
+</head>
+
+</html>
