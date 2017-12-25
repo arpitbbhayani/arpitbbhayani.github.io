@@ -2,6 +2,8 @@
 title: Tripod - Fast in-memory prefix search in Go
 github_user: arpitbbhayani
 repo: tripod
+name: Tripod
+oneline: Fast in-memory prefix search in Go
 img: http://arpitbhayani.me/static/images/projects/tripod/tripod.jpg
 icon: http://arpitbhayani.me/static/images/projects/tripod/tripod-icon.jpg
 layout: project_post
