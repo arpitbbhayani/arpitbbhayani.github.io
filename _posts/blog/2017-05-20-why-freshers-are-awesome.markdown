@@ -1,6 +1,6 @@
 ---
 title: Why Freshers Are Awesome
-img:    http://arpitbhayani.me/static/images/freshers-are-awesome/freshers-are-awesome.jpg
+img:    https://arpitbhayani.me/static/images/freshers-are-awesome/freshers-are-awesome.jpg
 layout: post
 comments: true
 tags:

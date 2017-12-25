@@ -1,6 +1,6 @@
 ---
 title: Fast and Efficient Pagination in MongoDB
-img: http://arpitbhayani.me/static/images/mongodb-pagination/pagination-in-mongod.jpg
+img: https://arpitbhayani.me/static/images/mongodb-pagination/pagination-in-mongod.jpg
 layout: post
 comments: true
 tags:

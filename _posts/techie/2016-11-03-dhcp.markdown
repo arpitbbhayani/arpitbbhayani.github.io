@@ -1,6 +1,6 @@
 ---
 title: DHCP - Dynamic Host Configuration Protocol
-img: http://arpitbhayani.me/static/images/dhcp/dhcp.jpg
+img: https://arpitbhayani.me/static/images/dhcp/dhcp.jpg
 layout: post
 comments: true
 tags:

@@ -1,6 +1,6 @@
 ---
 title: 7 - The New Friend
-img:    http://arpitbhayani.me/static/images/mrcup/7-the-new-friend.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/7-the-new-friend.jpg
 layout: mrcup_post
 comments: true
 tags:

@@ -1,6 +1,6 @@
 ---
 title: 3 - Panic Mode Is On
-img:    http://arpitbhayani.me/static/images/mrcup/3-panic-mode-is-on.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/3-panic-mode-is-on.jpg
 layout: mrcup_post
 comments: true
 tags:

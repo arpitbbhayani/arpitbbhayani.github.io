@@ -1,6 +1,6 @@
 ---
 title: HTTP Requests - The Hard Way with Netcat
-img: http://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg
+img: https://arpitbhayani.me/static/images/http-requests/http-request-hard-way-with-netcat.jpg
 layout: post
 comments: true
 tags:

@@ -1,6 +1,6 @@
 ---
 title: How atomic clock works | busting several myths about it
-img: http://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg
+img: https://arpitbhayani.me/static/images/atomic-clocks/atomic-clocks.jpg
 layout: post
 comments: true
 tags:

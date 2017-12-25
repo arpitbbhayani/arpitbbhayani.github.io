@@ -1,6 +1,6 @@
 ---
 title: 6 - I Am Ready
-img:    http://arpitbhayani.me/static/images/mrcup/6-i-am-ready.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/6-i-am-ready.jpg
 layout: mrcup_post
 comments: true
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Multiple MySQL versions running on one server
-img: http://arpitbhayani.me/static/images/multiple-mysql/multiple-mysql.jpg
+img: https://arpitbhayani.me/static/images/multiple-mysql/multiple-mysql.jpg
 layout: post
 comments: true
 tags:

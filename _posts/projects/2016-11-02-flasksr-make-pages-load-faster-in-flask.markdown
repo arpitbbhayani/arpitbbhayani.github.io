@@ -4,8 +4,8 @@ github_user: arpitbbhayani
 repo: flasksr
 name: FlaskSR
 oneline: Make pages load faster in Flask
-img: http://arpitbhayani.me/static/images/projects/flasksr/flasksr.jpg
-icon: http://arpitbhayani.me/static/images/projects/flasksr/flasksr-icon.jpg
+img: https://arpitbhayani.me/static/images/projects/flasksr/flasksr.jpg
+icon: https://arpitbhayani.me/static/images/projects/flasksr/flasksr-icon.jpg
 layout: project_post
 comments: true
 tags:

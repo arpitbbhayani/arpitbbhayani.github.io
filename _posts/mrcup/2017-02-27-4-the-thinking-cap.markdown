@@ -1,6 +1,6 @@
 ---
 title: 4 - The Thinking Cap
-img:    http://arpitbhayani.me/static/images/mrcup/4-the-thinking-cap.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/4-the-thinking-cap.jpg
 layout: mrcup_post
 comments: true
 tags:

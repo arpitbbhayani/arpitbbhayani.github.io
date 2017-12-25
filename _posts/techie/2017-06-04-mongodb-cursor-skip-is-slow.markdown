@@ -1,6 +1,6 @@
 ---
 title: Why MongoDB's cursor.skip() is slow?
-img: http://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg
+img: https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg
 layout: post
 comments: true
 tags:

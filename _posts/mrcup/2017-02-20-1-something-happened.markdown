@@ -1,6 +1,6 @@
 ---
 title: 1 - Something Happened
-img:   http://arpitbhayani.me/static/images/mrcup/1-something-happened.jpg
+img:   https://arpitbhayani.me/static/images/mrcup/1-something-happened.jpg
 layout: mrcup_post
 comments: true
 tags:

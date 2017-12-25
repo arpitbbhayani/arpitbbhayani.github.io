@@ -1,6 +1,6 @@
 ---
 title: How big is our Earth?
-img:    http://arpitbhayani.me/static/images/earth-circumference/earth.jpg
+img:    https://arpitbhayani.me/static/images/earth-circumference/earth.jpg
 layout: post
 comments: true
 tags:

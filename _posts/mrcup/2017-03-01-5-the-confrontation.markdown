@@ -1,6 +1,6 @@
 ---
 title: 5 - The Confrontation
-img:    http://arpitbhayani.me/static/images/mrcup/5-the-confrontation.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/5-the-confrontation.jpg
 layout: mrcup_post
 comments: true
 tags:
