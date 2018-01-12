@@ -6,34 +6,13 @@ layout: default
     <div class="ui header center aligned">
         <h1 itemprop="name headline">{{ page.title }}</h1>
     </div>
-    <div class="ui center aligned basic fluid segment">
-        <div>
-            <time datetime="{{page.date | date_to_xmlschema}}" itemprop="datePublished">
-                <span class="lightGrey">
-                    <i class="calendar icon"></i> {{page.date | date: '%B %d, %Y'}}
-                </span>
-            </time>
-        </div>
-    </div>
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="{{page.img}}" />
         <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
     </div>
-
     {% include ads_plugin.html %}
-
     <div itemprop="articleBody">
         {{ content }}
-    </div>
-    <div>
-        <div class="ui divider"></div>
-        <div class="">
-            Tags: <div class="ui horizontal list">
-                {% for tag in page.tags %}
-                    <a href='/tag/{{tag}}.html' class="ui item" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">{{tag}}</span></a>
-                {% endfor %}
-            </div>
-        </div>
     </div>
 </div>
 

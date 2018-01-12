@@ -4,60 +4,23 @@ layout: default
 
 <div class="ui stackable grid">
     <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            <div class="ui header center aligned">
-                <h1 class="article-title">{{ page.title }}</h1>
-            </div>
-            <div class="ui center aligned basic fluid segment">
-                <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit-icon.png" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> {{page.date | date: '%B %d, %Y'}}</span>
-                <div>
-                    <div class="ui center aligned basic fluid segment">
-                        <div class="ui horizontal list">
-                            {% for tag in page.tags %}
-                            <a style="font-weight: normal;" href='/tag/{{tag}}.html' class="ui item article-category" data-content="All {{tag}} posts" data-variation="tiny" data-position="bottom center">{{tag}}</a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="ui header center aligned">
+            <h1 class="article-title">{{ page.title }}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-          <img class="ui centered huge image stylish" src="{{page.img}}" alt="{{page.title}}">
-        </div>
+        <img class="ui centered huge image stylish" src="{{page.img}}" alt="{{page.title}}">
     </div>
     <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            <div class="article-content">
-                {{ content }}
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            <a class="ui large facebook button" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">
-                <i class="facebook icon"></i>
-                Share on Facebook
-            </a>
-            <a class="ui large twitter button" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}&amp;via={{ site.twitter_username }}&amp;related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter">
-                <i class="twitter icon"></i>
-                Share on Twitter
-            </a>
+        <div class="article-content">
+            {{ content }}
         </div>
     </div>
 </div>
-<div class="ui stackable grid">
+<div class="ui basic segment">
     <div class="row">
-        <div class="two wide column"></div>
-        <div class="twelve wide column">
-            {% if page.comments %}
-                {% include comment_plugin.html %}
-            {% endif %}
-        </div>
+        {% if page.comments %}
+            {% include comment_plugin.html %}
+        {% endif %}
     </div>
 </div>
