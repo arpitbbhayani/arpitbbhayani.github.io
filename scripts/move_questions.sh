@@ -1,5 +1,5 @@
-DIR=/home/arpit/workspace/arpitbhayani.me
-TEMP_DIR=/home/arpit/workspace/data
+DIR=~/workspace/arpitbhayani.me
+TEMP_DIR=/tmp/arpitbhayani.me/data
 
 if [ ! -d $TEMP_DIR ];
 then

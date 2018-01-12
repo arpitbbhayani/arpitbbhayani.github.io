@@ -37,17 +37,15 @@
 </head>
 
     <body>
-        <div class="ui secondary basic menu center aligned" style="background-color: #FFF;">
+        <div class="ui secondary basic fixed small menu center aligned">
     <a class="item" href="/" >
         <div class="ui small image">
             <img src="/static/images/profiles/arpit-logo.png" />
         </div>
     </a>
-    <a class="item ui computer only grid" href="/techie.html"><b>TECH-BLOGS</b></a>
-    <a class="item ui computer only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
-    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
-    <a class="item ui mobile tablet only grid" href="/techie.html"><b>TECH-BLOGS</b></a>
-    <a class="item ui mobile tablet only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class=" item" href="/techie.html"><b>BLOGS</b></a>
+    <a class=" item" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class="item" href="/static/arpit_resume.pdf"><b>RESUME</b></a>
 </div>
 
         <script>
@@ -71,7 +69,7 @@
 
         <script src="//load.sumome.com/" data-sumo-site-id="2061ea85109a5c3656ef6e3cda82b2d437aedf57afdf13aae8546682a1303e9e" async="async"></script>
 
-        <div class="ui text container" style="padding-bottom: 50px;">
+        <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui basic segment">
 
 
@@ -79,21 +77,12 @@
 <div class="item">
     <div class="content">
         <article>
-            <div class="ui basic segment left aligned">
+            <div class="ui basic clickable segment left aligned" onclick="window.location = '/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html';">
                 <a href="/techie/how-sleepsort-helped-me-understand-concurrency-in-golang.html">
-                    <h3>How Sleepsort helped me understand concurrency in golang</h3>
+                    <h4>How Sleepsort helped me understand concurrency in golang</h4>
                 </a>
                 <div class="ui divider"></div>
                 <div class="description">How Sleepsort helped me understand concurrency in golang.</div>
-                <div>
-                    <div class="ui horizontal list">
-                        
-                            <a href="/tag/golang.html" class="item" data-content="All golang posts" data-variation="tiny" data-position="bottom center">#golang</a>
-                        
-                            <a href="/tag/concurrency.html" class="item" data-content="All concurrency posts" data-variation="tiny" data-position="bottom center">#concurrency</a>
-                        
-                    </div>
-                </div>
             </div>
         </article>
     </div>
@@ -106,23 +95,12 @@
 <div class="item">
     <div class="content">
         <article>
-            <div class="ui basic segment left aligned">
+            <div class="ui basic clickable segment left aligned" onclick="window.location = '/projects/tripod-fast-in-memory-prefix-search-in-go.html';">
                 <a href="/projects/tripod-fast-in-memory-prefix-search-in-go.html">
-                    <h3>Tripod - Fast in-memory prefix search in Go</h3>
+                    <h4>Tripod - Fast in-memory prefix search in Go</h4>
                 </a>
                 <div class="ui divider"></div>
                 <div class="description">Tripod provides fast and optimal search-by-prefix utilities in Go. For now it uses an in-memory trie data structure to store all the string on which you want to do a prefix search. There two implem...</div>
-                <div>
-                    <div class="ui horizontal list">
-                        
-                            <a href="/tag/trie.html" class="item" data-content="All trie posts" data-variation="tiny" data-position="bottom center">#trie</a>
-                        
-                            <a href="/tag/golang.html" class="item" data-content="All golang posts" data-variation="tiny" data-position="bottom center">#golang</a>
-                        
-                            <a href="/tag/search.html" class="item" data-content="All search posts" data-variation="tiny" data-position="bottom center">#search</a>
-                        
-                    </div>
-                </div>
             </div>
         </article>
     </div>
@@ -136,32 +114,27 @@
         <footer class="ui column centered grid">
     <div class="row">
         <div class="ui small icon borderless compact secondary menu">
-    <div class="item" data-content="Drop me an email" data-variation="tiny" data-position="bottom center">
+    <div class="item">
         <a href="mailto:arpit.b.bhayani@gmail.com">
             <i class="mail outline large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="Here's my resumé" data-variation="tiny" data-position="bottom center" >
-        <a href="/static/arpit_resume.pdf">
-            <i class="file text outline large grey icon"></i>
-        </a>
-    </div>
-    <div class="ui item" data-content="Github profile" data-variation="tiny" data-position="bottom center" >
+    <div class="ui item">
         <a href="https://github.com/arpitbbhayani">
             <i class="github large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="Befriend me on facebook." data-variation="tiny" data-position="bottom center">
+    <div class="ui item">
         <a href="https://facebook.com/oftenweird">
             <i class="facebook f large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="Sometimes I click photos as well." data-variation="tiny" data-position="bottom center">
+    <div class="ui item">
         <a href="https://instagram.com/often_weird">
             <i class="instagram large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="I put my rants and one liners here." data-variation="tiny" data-position="bottom center">
+    <div class="ui item">
         <a href="https://twitter.com/arpit_bhayani">
             <i class="twitter large grey icon"></i>
         </a>
@@ -184,10 +157,7 @@
     
     
     <script src="/static/js/semantic.min.js"></script>
-    <script src="/static/js/scrollProgress.js"></script>
     <script src="/static/js/index.js"></script>
-
-    
 </head>
 
 </html>

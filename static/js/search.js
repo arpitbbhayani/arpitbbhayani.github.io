@@ -23,7 +23,7 @@ function displaySearchResults(results, store) {
         for (var i = 0; i < results.length; i++) {
             var post = window.store[results[i].ref];
             var template = '\
-            <div class="ui card">\
+            <div class="ui fluid card">\
                 <div class="image">\
                     <img src="<%this.img%>">\
                 </div>\
@@ -32,13 +32,16 @@ function displaySearchResults(results, store) {
                     <div class="meta">\
                         <span class="date"><%this.date%></span>\
                     </div>\
+                    <div class="meta">\
+                        <span class="date"><%this.tags%></span>\
+                    </div>\
                 </div>\
             </div>';
             appendString += TemplateEngine(template, post);
         }
         searchResults.innerHTML = appendString;
     } else {
-        searchResults.innerHTML = '<div class="ui huge center aligned basic label" style="font-weight: normal;">Oops! No results found</div>';
+        searchResults.innerHTML = '';
     }
 }
 
@@ -69,7 +72,6 @@ $(document).ready(function() {
 
     $('#search-box').keyup(function(e) {
         var searchTerm = $('#search-box').val();
-        console.log("Searching", searchTerm);
         if(searchTerm) {
             displaySearchResults(search_engine.search(searchTerm), window.store);
         }

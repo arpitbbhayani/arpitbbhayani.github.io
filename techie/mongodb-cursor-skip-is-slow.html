@@ -37,17 +37,15 @@
 </head>
 
     <body>
-        <div class="ui secondary basic menu center aligned" style="background-color: #FFF;">
+        <div class="ui secondary basic fixed small menu center aligned">
     <a class="item" href="/" >
         <div class="ui small image">
             <img src="/static/images/profiles/arpit-logo.png" />
         </div>
     </a>
-    <a class="item ui computer only grid" href="/techie.html"><b>TECH-BLOGS</b></a>
-    <a class="item ui computer only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
-    <a class="item ui computer only grid" href="/programming.html"><b>CODES</b></a>
-    <a class="item ui mobile tablet only grid" href="/techie.html"><b>TECH-BLOGS</b></a>
-    <a class="item ui mobile tablet only grid" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class=" item" href="/techie.html"><b>BLOGS</b></a>
+    <a class=" item" href="/curiosity.html"><b>CURIOSITY</b></a>
+    <a class="item" href="/static/arpit_resume.pdf"><b>RESUME</b></a>
 </div>
 
         <script>
@@ -71,26 +69,16 @@
 
         <script src="//load.sumome.com/" data-sumo-site-id="2061ea85109a5c3656ef6e3cda82b2d437aedf57afdf13aae8546682a1303e9e" async="async"></script>
 
-        <div class="ui text container" style="padding-bottom: 50px;">
+        <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
     <div class="ui header center aligned">
         <h1 itemprop="name headline">Why MongoDB's cursor.skip() is slow?</h1>
     </div>
-    <div class="ui center aligned basic fluid segment">
-        <div>
-            <time datetime="2017-06-04T00:00:00+05:30" itemprop="datePublished">
-                <span class="lightGrey">
-                    <i class="calendar icon"></i> June 04, 2017
-                </span>
-            </time>
-        </div>
-    </div>
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg" />
         <img itemprop="image" class="ui centered large image" src="https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg" alt="Why MongoDB's cursor.skip() is slow?" />
     </div>
-
     <div class="ui hidden divider"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- arpitbhayani.me generic ad -->
@@ -103,7 +91,6 @@
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <div class="ui hidden divider"></div>
-
 
     <div itemprop="articleBody">
         <p>MongoDB’s cursor object has a method called <code>skip</code>, which as per <a href="https://docs.mongodb.com/manual/reference/method/cursor.skip/#definition">documentation and definition</a>, controls where MongoDB begins returning results. Thus in combination with function <a href="https://docs.mongodb.com/manual/reference/method/cursor.limit/">limit</a>, one can easily have paginated results.</p>
@@ -127,18 +114,6 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
 
 <p>In conclusion, skip is not as bad one might think. But you must understand your use case well so as to make an informed decision.</p>
 
-    </div>
-    <div>
-        <div class="ui divider"></div>
-        <div class="">
-            Tags: <div class="ui horizontal list">
-                
-                    <a href='/tag/mongodb.html' class="ui item" data-content="All mongodb posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">mongodb</span></a>
-                
-                    <a href='/tag/scalability.html' class="ui item" data-content="All scalability posts" data-variation="tiny" data-position="bottom center">#<span itemprop="articleSection">scalability</span></a>
-                
-            </div>
-        </div>
     </div>
 </div>
 
@@ -184,32 +159,27 @@ s.setAttribute('data-timestamp', +new Date());
         <footer class="ui column centered grid">
     <div class="row">
         <div class="ui small icon borderless compact secondary menu">
-    <div class="item" data-content="Drop me an email" data-variation="tiny" data-position="bottom center">
+    <div class="item">
         <a href="mailto:arpit.b.bhayani@gmail.com">
             <i class="mail outline large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="Here's my resumé" data-variation="tiny" data-position="bottom center" >
-        <a href="/static/arpit_resume.pdf">
-            <i class="file text outline large grey icon"></i>
-        </a>
-    </div>
-    <div class="ui item" data-content="Github profile" data-variation="tiny" data-position="bottom center" >
+    <div class="ui item">
         <a href="https://github.com/arpitbbhayani">
             <i class="github large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="Befriend me on facebook." data-variation="tiny" data-position="bottom center">
+    <div class="ui item">
         <a href="https://facebook.com/oftenweird">
             <i class="facebook f large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="Sometimes I click photos as well." data-variation="tiny" data-position="bottom center">
+    <div class="ui item">
         <a href="https://instagram.com/often_weird">
             <i class="instagram large grey icon"></i>
         </a>
     </div>
-    <div class="ui item" data-content="I put my rants and one liners here." data-variation="tiny" data-position="bottom center">
+    <div class="ui item">
         <a href="https://twitter.com/arpit_bhayani">
             <i class="twitter large grey icon"></i>
         </a>
@@ -232,18 +202,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     
     <script src="/static/js/semantic.min.js"></script>
-    <script src="/static/js/scrollProgress.js"></script>
     <script src="/static/js/index.js"></script>
-
-    
-    <script>
-    scrollProgress.set({
-      color: '#000',
-      height: '3px',
-      bottom: false
-    });
-    </script>
-    
 </head>
 
 </html>
