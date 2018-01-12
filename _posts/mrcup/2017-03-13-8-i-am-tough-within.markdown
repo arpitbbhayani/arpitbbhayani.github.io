@@ -1,6 +1,6 @@
 ---
 title: 8 - I Am Tough Within
-img:    http://arpitbhayani.me/static/images/mrcup/8-i-am-tough-within.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/8-i-am-tough-within.jpg
 layout: mrcup_post
 comments: true
 tags:

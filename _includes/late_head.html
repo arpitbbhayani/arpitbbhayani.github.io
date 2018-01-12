@@ -1,25 +1,25 @@
 {% capture geekatwork_home %}{% post_url 1979-01-01-geekatwork %}{% endcapture %}
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  {% if page.mathjax %}
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    {% if page.mathjax %}
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  {% endif %}
-  {% if page.url == geekatwork_home %}
+    {% endif %}
+    {% if page.url == geekatwork_home %}
     <script src="/static/js/lunr.min.js"></script>
     <script src="/static/js/search.js"></script>
-  {% endif %}
-  <script src="/static/js/semantic.min.js"></script>
-  <script src="/static/js/scrollProgress.js"></script>
-  <script src="/static/js/index.js"></script>
+    {% endif %}
+    <script src="/static/js/semantic.min.js"></script>
+    <script src="/static/js/scrollProgress.js"></script>
+    <script src="/static/js/index.js"></script>
 
-  {% if page.layout == 'post' %}
-  <script>
-  scrollProgress.set({
+    {% if page.layout == 'post' %}
+    <script>
+    scrollProgress.set({
       color: '#000',
       height: '3px',
       bottom: false
-  });
-  </script>
-  {% endif %}
+    });
+    </script>
+    {% endif %}
 </head>

@@ -10,8 +10,8 @@ title: Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.
 email: arpit.b.bhayani@gmail.com
 description: Blogs, Open source projects, solution to programming questions.
 baseurl: ""
-url: "http://arpitbhayani.me"
-img: http://arpitbhayani.me/static/images/profiles/arpit.png
+url: "https://arpitbhayani.me"
+img: https://arpitbhayani.me/static/images/profiles/arpit.png
 keywords: blog, computer science, competitive programming, mr cup
 
 permalink: /:categories/:title.html

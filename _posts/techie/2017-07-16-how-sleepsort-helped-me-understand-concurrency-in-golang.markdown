@@ -1,6 +1,6 @@
 ---
 title: How Sleepsort helped me understand concurrency in golang
-img: http://arpitbhayani.me/static/images/sleep-sort/sleep-sort.jpg
+img: https://arpitbhayani.me/static/images/sleep-sort/sleep-sort.jpg
 layout: post
 comments: true
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Beware of - Which indian celebrity do you look like?
-img:    http://arpitbhayani.me/static/images/indian-celebrity/beware-which-indian-celebrity-do-you-look-like.jpg
+img:    https://arpitbhayani.me/static/images/indian-celebrity/beware-which-indian-celebrity-do-you-look-like.jpg
 layout: post
 comments: true
 tags:

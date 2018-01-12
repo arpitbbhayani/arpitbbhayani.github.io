@@ -1,37 +1,35 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon.png">
-  <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
-  <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="keywords" content="{% if page.seo.tags %}{{ page.seo.tags | join: ', ' }}, {%endif%}" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.seo.tags %}{{ page.seo.tags | join: ', ' }}, {%endif%}" />
 
-  <link rel="stylesheet" href="/static/css/semantic.min.css">
-  <link rel="stylesheet" href="/static/css/ux.css">
-  <link rel="stylesheet" href="/static/css/pygments.css">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="stylesheet" href="/static/css/semantic.min.css">
+    <link rel="stylesheet" href="/static/css/pygments.css">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
-  <meta property="fb:app_id" content="1055615241238486" />
+    <meta property="fb:app_id" content="1055615241238486" />
 
-  <meta property="og:image" content="{% if page.img %}{{page.img}}{% else %}{{site.img}}{% endif %}"/>
-  <meta property="og:title" content="{{page.title}}"/>
-  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
-  <meta property="og:site_name" content="{{site.title}}"/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:image" content="{% if page.img %}{{page.img}}{% else %}{{site.img}}{% endif %}"/>
+    <meta property="og:title" content="{{page.title}}"/>
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
+    <meta property="og:site_name" content="{{site.title}}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <meta name="twitter:title" content="{{page.title}}">
-  <meta name="twitter:description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.img %}{{page.img}}{% else %}{{site.img}}{% endif %}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <meta name="twitter:title" content="{{page.title}}">
+    <meta name="twitter:description" content="{% if page.seo.description %}{{ page.seo.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{% if page.img %}{{page.img}}{% else %}{{site.img}}{% endif %}">
 
-  <script src="/static/js/jquery-1.11.3.min.js"></script>
-
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
 </head>

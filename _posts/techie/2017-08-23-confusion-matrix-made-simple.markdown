@@ -1,6 +1,6 @@
 ---
 title: Confusion Matrix Made Simple
-img: http://arpitbhayani.me/static/images/confusion-matrix/confusion-matrix.jpg
+img: https://arpitbhayani.me/static/images/confusion-matrix/confusion-matrix.jpg
 layout: post
 comments: true
 tags:

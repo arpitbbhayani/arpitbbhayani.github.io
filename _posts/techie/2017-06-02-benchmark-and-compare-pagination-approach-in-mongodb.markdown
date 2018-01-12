@@ -1,6 +1,6 @@
 ---
 title: Benchmark and compare the two approaches to paginate in MongoDB
-img: http://arpitbhayani.me/static/images/mongodb-pagination/benchmark-and-compare.jpg
+img: https://arpitbhayani.me/static/images/mongodb-pagination/benchmark-and-compare.jpg
 layout: post
 comments: true
 tags:

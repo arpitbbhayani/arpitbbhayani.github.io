@@ -33,7 +33,7 @@ The correct, optimal and working solution for programming question [bon-appetit]
 {% highlight cpp %}
 /*
  *  Author: Arpit Bhayani
- *  http://arpitbhayani.me
+ *  https://arpitbhayani.me
  */
 #include <cmath>
 #include <cstdio>

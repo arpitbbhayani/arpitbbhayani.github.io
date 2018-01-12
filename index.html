@@ -1,37 +1,113 @@
 ---
-layout: default
+layout: fullpage
 ---
 
-<div class="ui left aligned basic segment">
-    <div class="header">
-        <h3>What was I upto?</h3>
+<div class="ui stackable grid basic segment">
+    <div class="row">
+        <div class="ui ten wide column">
+            <div class="ui header">
+                <b>Latest article</b>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui basic segment">
+                {% assign count = 0 %}
+                {% for post in site.posts %}
+                    {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
+                        <div class="ui items">
+                            <div class="ui item">
+                                <div class="ui middle aligned small image">
+                                    <img src="{{post.img}}" />
+                                </div>
+                                <div clas="content">
+                                    <div class="ui header">
+                                        <a href="{{post.url}}">
+                                            {{post.title}}
+                                        </a>
+                                    </div>
+                                    <p>
+                                        <i class="calendar icon"></i> {{post.date | date: '%B %d, %Y'}}
+                                    </p>
+                                    <div class="ui divider"></div>
+                                    <p>
+                                        {{post.excerpt}}
+                                    </p>
+                                    <p>
+                                        <a href="{{post.url}}">
+                                            Read More
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="ui divider"></div>
+                            </div>
+                        </div>
+                        {% assign count = count | plus: 1 %}
+                    {% endif %}
+                    {% if count > 0 %}
+                      {% break %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="ui six wide column">
+            <div class="ui header">
+                <b>Recent tech blogs</b>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui list">
+                {% assign count = 0 %}
+                {% for post in site.posts %}
+                    {% if post.type != 'dummy' and post.categories[0] == 'techie' %}
+                        <div class="ui item">
+                            <a href="{{post.url}}">
+                                {{post.title}}
+                            </a>
+                            <div class="ui divider"></div>
+                        </div>
+                        {% assign count = count | plus: 1 %}
+                    {% endif %}
+                    {% if count > 4 %}
+                      {% break %}
+                    {% endif %}
+                {% endfor %}
+                <p class="ui right aligned basic segment">
+                    <a href="{% post_url 1979-01-01-techie %}">All Tech Blogs</a>
+                </p>
+            </div>
+        </div>
     </div>
     <div class="ui divider"></div>
-    <div class="ui list">
-    {% assign count = 0 %}
-    {% for post in site.posts %}
-        {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
-            <a class="item" href="{{post.url}}">
-              <h5>{{post.title}}<span class="right floated computer only ui grid">{{post.date | date: '%B %d, %Y'}}</span></h5>
-            </a>
-            {% assign count = count | plus: 1 %}
-        {% endif %}
-        {% if count > 5 %}
-          {% break %}
-        {% endif %}
-    {% endfor %}
+    <div class="row">
+        <div class="ui sixteen wide column">
+            <div class="ui center aligned basic segment">
+                <div class="ui header">
+                    <b>Hobby Projects</b>
+                </div>
+                <div class="ui horizontal stackable list">
+                    {% for post in site.posts %}
+                        {% if post.type != 'dummy' and post.categories[0] == 'projects' %}
+                            <div class="ui item">
+                                <div class="ui center aligned basic segment">
+                                    <div class="ui image">
+                                        <a href="{{post.url}}">
+                                            <img src="{{post.icon}}" />
+                                        </a>
+                                    </div>
+                                    <div class="ui header">
+                                        <h4>
+                                            <a href="{{post.url}}">
+                                                {{post.name}}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <p>
+                                        {{post.oneline}}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- <div class="ui hidden divider"></div>
-    <div class="ui center aligned basic segment">
-        <div class="ui header">
-            <h3>If above titles interests you, read more</h3>
-        </div>
-        <div class="ui large buttons">
-            <a class="ui basic red button">Codes</a>
-            <a class="ui basic blue button">Blogs</a>
-            <a class="ui basic green button">Tech Blogs</a>
-            <a class="ui basic teal button">Curiosity</a>
-            <a class="ui basic orange button">Projects</a>
-        </div>
-    </div> -->
 </div>

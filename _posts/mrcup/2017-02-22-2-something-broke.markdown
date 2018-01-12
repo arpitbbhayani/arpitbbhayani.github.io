@@ -1,6 +1,6 @@
 ---
 title: 2 - Something Broke
-img:    http://arpitbhayani.me/static/images/mrcup/2-something-broke.jpg
+img:    https://arpitbhayani.me/static/images/mrcup/2-something-broke.jpg
 layout: mrcup_post
 comments: true
 tags:

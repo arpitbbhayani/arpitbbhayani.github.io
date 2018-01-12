@@ -17,7 +17,7 @@ seo:
 
 Monitor your production systems and application analytics using Grafana and Graphite. This article will help you setup these tools on Ubuntu 14.04 on a Nginx webserver with PostgreSQL as backend.
 
-**Before starting following this setup, please go through my previous post on [Deploy Graphite and Nginx on an Ubuntu 14.04 server](http://arpitbhayani.me/graphite.html)**
+**Before starting following this setup, please go through my previous post on [Deploy Graphite and Nginx on an Ubuntu 14.04 server](https://arpitbhayani.me/graphite.html)**
 
 ## What is what
 
