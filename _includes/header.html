@@ -1,12 +1,10 @@
-<div class="ui secondary basic menu center aligned" style="background-color: #FFF;">
+<div class="ui secondary basic fixed small menu center aligned">
     <a class="item" href="/" >
         <div class="ui small image">
             <img src="/static/images/profiles/arpit-logo.png" />
         </div>
     </a>
-    <a class="item ui computer only grid" href="{% post_url 1979-01-01-techie %}"><b>TECH-BLOGS</b></a>
-    <a class="item ui computer only grid" href="{% post_url 1979-01-01-curiosity %}"><b>CURIOSITY</b></a>
-    <a class="item ui computer only grid" href="{% post_url 1979-01-01-programming %}"><b>CODES</b></a>
-    <a class="item ui mobile tablet only grid" href="{% post_url 1979-01-01-techie %}"><b>TECH-BLOGS</b></a>
-    <a class="item ui mobile tablet only grid" href="{% post_url 1979-01-01-curiosity %}"><b>CURIOSITY</b></a>
+    <a class="{% if page.url == '/techie.html' %}active{% endif %} item" href="{% post_url 1979-01-01-techie %}"><b>BLOGS</b></a>
+    <a class="{% if page.url == '/curiosity.html' %}active{% endif %} item" href="{% post_url 1979-01-01-curiosity %}"><b>CURIOSITY</b></a>
+    <a class="item" href="/static/arpit_resume.pdf"><b>RESUME</b></a>
 </div>

@@ -2,43 +2,48 @@
 layout: fullpage
 ---
 
+<div class="ui text container">
+    <div class="ui items">
+        <div class="ui item">
+            <div class="ui medium circular image">
+                <img src="/static/images/profiles/arpit-image.jpg" />
+            </div>
+            <div class="middle aligned content">
+                <span class="ui header">Hi! I am Arpit</span>
+                <br/>
+                An avid programmer, passionate about building
+                products and utilities that affect millions of people and
+                loves to put computers to work.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui hidden divider"></div>
 <div class="ui stackable grid basic segment">
     <div class="row">
         <div class="ui ten wide column">
-            <div class="ui header">
-                <b>Latest article</b>
-            </div>
-            <div class="ui divider"></div>
-            <div class="ui basic segment">
+            <div class="">
                 {% assign count = 0 %}
                 {% for post in site.posts %}
                     {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
-                        <div class="ui items">
-                            <div class="ui item">
-                                <div class="ui middle aligned small image">
-                                    <img src="{{post.img}}" />
-                                </div>
-                                <div clas="content">
-                                    <div class="ui header">
-                                        <a href="{{post.url}}">
-                                            {{post.title}}
-                                        </a>
-                                    </div>
-                                    <p>
-                                        <i class="calendar icon"></i> {{post.date | date: '%B %d, %Y'}}
-                                    </p>
-                                    <div class="ui divider"></div>
-                                    <p>
-                                        {{post.excerpt}}
-                                    </p>
-                                    <p>
-                                        <a href="{{post.url}}">
-                                            Read More
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="ui divider"></div>
-                            </div>
+                        <div class="ui clickable segment" onclick="window.location = '{{post.url}}';">
+                            <h3 class="">
+                                <a href="{{post.url}}">
+                                    {{post.title}}
+                                </a>
+                            </h3>
+                            <p>
+                                <i class="calendar icon"></i> {{post.date | date: '%B %d, %Y'}}
+                            </p>
+                            <div class="ui divider"></div>
+                            <p>
+                                {{post.excerpt}}
+                            </p>
+                            <p>
+                                <a href="{{post.url}}">
+                                    Read More
+                                </a>
+                            </p>
                         </div>
                         {% assign count = count | plus: 1 %}
                     {% endif %}
@@ -49,10 +54,10 @@ layout: fullpage
             </div>
         </div>
         <div class="ui six wide column">
-            <div class="ui header">
-                <b>Recent tech blogs</b>
-            </div>
-            <div class="ui divider"></div>
+            <h4 class="ui tiny header">
+                Recent Blogs
+            </h4>
+            <div class="ui fitted divider"></div>
             <div class="ui list">
                 {% assign count = 0 %}
                 {% for post in site.posts %}
@@ -72,41 +77,6 @@ layout: fullpage
                 <p class="ui right aligned basic segment">
                     <a href="{% post_url 1979-01-01-techie %}">All Tech Blogs</a>
                 </p>
-            </div>
-        </div>
-    </div>
-    <div class="ui divider"></div>
-    <div class="row">
-        <div class="ui sixteen wide column">
-            <div class="ui center aligned basic segment">
-                <div class="ui header">
-                    <b>Hobby Projects</b>
-                </div>
-                <div class="ui horizontal stackable list">
-                    {% for post in site.posts %}
-                        {% if post.type != 'dummy' and post.categories[0] == 'projects' %}
-                            <div class="ui item">
-                                <div class="ui center aligned basic segment">
-                                    <div class="ui image">
-                                        <a href="{{post.url}}">
-                                            <img src="{{post.icon}}" />
-                                        </a>
-                                    </div>
-                                    <div class="ui header">
-                                        <h4>
-                                            <a href="{{post.url}}">
-                                                {{post.name}}
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <p>
-                                        {{post.oneline}}
-                                    </p>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
             </div>
         </div>
     </div>

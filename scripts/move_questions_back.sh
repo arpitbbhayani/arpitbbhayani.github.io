@@ -1,5 +1,5 @@
-DIR=/home/arpit/workspace/arpitbhayani.me
-TEMP_DIR=/home/arpit/workspace/data
+DIR=~/workspace/arpitbhayani.me
+TEMP_DIR=/tmp/arpitbhayani.me/data
 
 mv $TEMP_DIR/spoj $DIR/_posts/spoj
 mv $TEMP_DIR/hackerrank $DIR/_posts/hackerrank
@@ -10,4 +10,3 @@ if [ -d $TEMP_DIR ];
 then
     rmdir $TEMP_DIR
 fi
-

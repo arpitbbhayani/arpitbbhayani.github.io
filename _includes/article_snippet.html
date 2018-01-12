@@ -2,19 +2,12 @@
 <div class="item">
     <div class="content">
         <article>
-            <div class="ui basic segment left aligned">
+            <div class="ui basic clickable segment left aligned" onclick="window.location = '{{post.url}}';">
                 <a href="{{post.url}}">
-                    <h3>{{post.title}}</h3>
+                    <h4>{{post.title}}</h4>
                 </a>
                 <div class="ui divider"></div>
                 <div class="description">{{post.seo.description | truncate: 200 }}</div>
-                <div>
-                    <div class="ui horizontal list">
-                        {% for tag in post.tags %}
-                            <a href='/tag/{{tag}}.html' class="item" data-content="All {{tag}} posts" data-variation="tiny"  data-position="bottom center">#{{tag}}</a>
-                        {% endfor %}
-                    </div>
-                </div>
             </div>
         </article>
     </div>
