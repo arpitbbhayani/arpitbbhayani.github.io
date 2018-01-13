@@ -1,0 +1,20 @@
+{% assign post=include.post %}
+<div class="item">
+    <div class="content">
+        <article>
+            <div class="ui basic clickable segment left aligned" onclick="window.location = '{{post.url}}';">
+                <a href="{{post.url}}">
+                    <h4>{{post.title}}</h4>
+                </a>
+                <div class="ui divider"></div>
+                <div class="description">{{post.seo.description | truncate: 200 }}</div>
+                <div class="ui grey mini text">
+                    Given at:
+                    {% for place in post.given_at %}
+                        <span class="ui basic label">{{ place }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

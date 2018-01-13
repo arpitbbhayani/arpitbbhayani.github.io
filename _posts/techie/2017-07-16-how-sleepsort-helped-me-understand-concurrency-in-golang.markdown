@@ -13,7 +13,7 @@ seo:
   - concurrency
   - sleepsort
   - sleep sort
- description: How Sleepsort helped me understand concurrency in golang.
+ description: For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses Threads and modern languages like NodeJS and Python uses something called as event loops for its asynchronous IO which is there to make IO based things concurrent.
 ---
 
 For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses [Threads](https://docs.oracle.com/javase/tutorial/essential/concurrency/) and modern languages like NodeJS and Python uses something called as [event loops](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/) for its asynchronous IO which is there to make IO based things concurrent.

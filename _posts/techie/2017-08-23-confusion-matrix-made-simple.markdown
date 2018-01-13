@@ -61,7 +61,7 @@ Again, for a food lover:
 
 Again, for an animal lover
 
-> When a Cat is predicted as Dog, it comes under False Pos-itive
+> When a Cat is predicted as Dog, it comes under False Positive
 
 Rest you can derive on your own 😉
 

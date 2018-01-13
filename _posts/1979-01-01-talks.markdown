@@ -1,0 +1,19 @@
+---
+title:  Talks and Presentations
+layout: default
+comments: true
+tags:
+ - talks
+seo:
+ tags:
+  - talks
+ description: Talks
+type: dummy
+---
+
+<div class="ui basic nospace segment">
+    {% assign posts = site.categories['talks'] %}
+    {% for post in posts %}
+        {% include talk_snippet.html post=post %}
+    {% endfor %}
+</div>

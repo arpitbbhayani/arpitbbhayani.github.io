@@ -1,8 +1,8 @@
 ---
 layout:			default
-title:			All geekatwork articles
+title:			All talks articles
 category:		tag
-passed-tag:		geekatwork
+passed-tag:		talks
 type:           dummy
 ---
 

@@ -2,7 +2,7 @@ codechef
 solution
 solution to codechef questions
 competitive programming
-geekatwork
+talks
 hackerrank
 solution to hackerrank questions
 leetcode
