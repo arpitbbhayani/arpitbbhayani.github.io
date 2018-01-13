@@ -5,8 +5,8 @@
     <description>Blogs, Open source projects, solution to programming questions.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Jan 2018 00:42:19 +0530</pubDate>
-    <lastBuildDate>Sat, 13 Jan 2018 00:42:19 +0530</lastBuildDate>
+    <pubDate>Sat, 13 Jan 2018 11:15:29 +0530</pubDate>
+    <lastBuildDate>Sat, 13 Jan 2018 11:15:29 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -191,6 +191,29 @@ and see the output.&lt;/p&gt;
       </item>
     
       <item>
+        <title>Introduction to GraphQL</title>
+        <description>&lt;p&gt;As our applications grow larger, our REST architecture often becomes unmanageable. Custom endpoints and over/under fetching all become part of your life as a developer. Leave that behind and welcome GraphQL, a declarative and hierarchal way to fetch data, with just one endpoint to rule them all.&lt;/p&gt;
+
+&lt;div class=&quot;ui center aligned basic segment&quot;&gt;
+    &lt;a class=&quot;ui primary button&quot; target=&quot;_blank&quot; href=&quot;/presentations/introduction-to-graphql-presentation.html&quot;&gt;Link to presentation&lt;/a&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 14 Dec 2017 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/talks/introduction-to-graphql.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/talks/introduction-to-graphql.html</guid>
+        
+        <category>graphql</category>
+        
+        <category>beginner</category>
+        
+        <category>introduction</category>
+        
+        
+        <category>talks</category>
+        
+      </item>
+    
+      <item>
         <title>Introduction to GraphQL - Presentation</title>
         <description>&lt;div class=&quot;reveal&quot;&gt;
     &lt;div class=&quot;slides&quot;&gt;
@@ -251,27 +274,6 @@ and see the output.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Introduction to GraphQL</title>
-        <description>&lt;p&gt;As our applications grow larger, our REST architecture often becomes unmanageable. Custom endpoints and over/under fetching all become part of your life as a developer. Leave that behind and welcome GraphQL, a declarative and hierarchal way to fetch data, with just one endpoint to rule them all.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/presentations/introduction-to-graphql-presentation.html&quot;&gt;Link to presentation&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 14 Dec 2017 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/geekatwork/introduction-to-graphql.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/geekatwork/introduction-to-graphql.html</guid>
-        
-        <category>graphql</category>
-        
-        <category>beginner</category>
-        
-        <category>introduction</category>
-        
-        
-        <category>geekatwork</category>
-        
-      </item>
-    
-      <item>
         <title>Confusion Matrix Made Simple</title>
         <description>&lt;p&gt;When I started with Data Mining 101, the first thing I came across was known as “The Confusion Matrix”. It seemed interesting at first so I started diving deep. It looked very simple at first, but then when more terms were introduced, things become complicated rather confusing; and then I realized the reason it is called &lt;strong&gt;“The Confusion Matrix”&lt;/strong&gt;.&lt;/p&gt;
 
@@ -327,7 +329,7 @@ The data point is a False Positive if it is &lt;code&gt;falsely&lt;/code&gt; pre
 &lt;p&gt;Again, for an animal lover&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;When a Cat is predicted as Dog, it comes under False Pos-itive&lt;/p&gt;
+  &lt;p&gt;When a Cat is predicted as Dog, it comes under False Positive&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Rest you can derive on your own 😉&lt;/p&gt;
