@@ -6,13 +6,13 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.
+title: Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer.
 email: arpit.b.bhayani@gmail.com
-description: Blogs, Open source projects, solution to programming questions.
+description: An avid programmer, passionate about building products and utilities that affect millions of people and loves to put computers to work.
 baseurl: ""
 url: "https://arpitbhayani.me"
 img: https://arpitbhayani.me/static/images/profiles/arpit.png
-keywords: blog, computer science, competitive programming, mr cup
+keywords: blog, computer science, competitive programming
 
 permalink: /:categories/:title.html
 highlighter: pygments

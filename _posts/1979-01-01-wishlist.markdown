@@ -1,0 +1,46 @@
+---
+title:  My Wishlist
+layout: default
+---
+
+# WISHLIST FOR 2018
+
+I believe that the biggest motivation to do something is by committing it
+publicly and this wishlist is part of it. I will keep on adding things that
+I want to do and learn here
+
+## Learn
+---
+
+### GraphQL
+
+ - Created [Todo Dooby Doo](https://github.com/arpitbbhayani/todo-dooby-doo) on GraphQL (Still In Progress)
+
+### Docker
+
+## Do
+---
+### One Talk Every Quarter
+
+ - [Introduction to GraphQL]({% post_url 2017-12-14-introduction-to-graphql %}) at Amazon's Weekly Learning Series on 17th January, 2018.
+
+### One Tech Blog Every Month
+
+### Kipo Season 1
+
+Action Items:
+
+ - Finalize and complete the script for season 1
+ - Sketch and Write
+ - Publish on Blog
+
+### Lessons By Gandhi
+
+Action Items
+
+ - Complete reading the biography and not the learnings
+ - Write
+ - Update the blog to have Lessons By Gandhi
+ - Publish
+
+### Read Bhagvad Gita
