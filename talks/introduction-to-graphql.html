@@ -9,21 +9,21 @@
     <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
     <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
 
-    <title>Introduction to GraphQL | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak.</title>
+    <title>Introduction to GraphQL | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer.</title>
     <meta name="description" content="As our applications grow larger, our REST architecture often becomes unmanageable. Custom endpoints and over/under fetching all become part of your life as a...">
     <meta name="keywords" content="graphql, talk, facebook, beginner, " />
 
     <link rel="stylesheet" href="/static/css/semantic-2.min.css">
     <link rel="stylesheet" href="/static/css/pygments-2.css">
     <link rel="canonical" href="https://arpitbhayani.me/talks/introduction-to-graphql.html">
-    <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak." href="https://arpitbhayani.me/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer." href="https://arpitbhayani.me/feed.xml">
 
     <meta property="fb:app_id" content="1055615241238486" />
 
     <meta property="og:image" content="https://cdn-images-1.medium.com/max/1000/1*IvCDlfi3vQfgyKO1eFv4jA.png"/>
     <meta property="og:title" content="Introduction to GraphQL"/>
     <meta property="og:url" content="https://arpitbhayani.me/talks/introduction-to-graphql.html"/>
-    <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak."/>
+    <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer."/>
     <meta property="og:type" content="article"/>
     <meta property="og:description" content="As our applications grow larger, our REST architecture often becomes unmanageable. Custom endpoints and over/under fetching all become part of your life as a..." />
 
@@ -45,7 +45,8 @@
     </a>
     <a class=" item" href="/techie.html"><b>BLOGS</b></a>
     <a class=" item" href="/talks.html"><b>TALKS</b></a>
-    <a class="item" href="/static/arpit_resume.pdf"><b>RESUME</b></a>
+    <a class=" item" href="/wishlist.html"><b>WISHLIST</b></a>
+    <a class="item" target="_blank" href="/static/arpit_resume.pdf"><b>RESUME</b></a>
 </div>
 
         <script>
@@ -80,11 +81,244 @@
         <img itemprop="image" class="ui centered large image" src="https://cdn-images-1.medium.com/max/1000/1*IvCDlfi3vQfgyKO1eFv4jA.png" alt="Introduction to GraphQL" />
     </div>
     <div>
-        <p>As our applications grow larger, our REST architecture often becomes unmanageable. Custom endpoints and over/under fetching all become part of your life as a developer. Leave that behind and welcome GraphQL, a declarative and hierarchal way to fetch data, with just one endpoint to rule them all.</p>
-
-<div class="ui center aligned basic segment">
-    <a class="ui primary button" target="_blank" href="/presentations/introduction-to-graphql-presentation.html">Link to presentation</a>
+        <div class="ui center aligned basic very padded segment">
+    <a class="ui primary huge button" href="/presentations/introduction-to-graphql-presentation.html">
+        Link to presentation
+    </a>
 </div>
+
+<p>This is the detailed explanation and elaboration of the talk. Since all the
+information cannot be communicated through presentation, I have jot the things
+down here.</p>
+
+<h2 id="how-things-evolved">How Things Evolved</h2>
+
+<p>Grab on to your seats, we are going way back!</p>
+
+<p>Initially when computers were developed there was just one computer operator
+that dealt with the computer and performed the operation required.</p>
+
+<p><img of="" one="" user="" computer="" /></p>
+
+<p>Then with the advancements in technology networking was introduced in these
+gigantic machines which grave rise to the <strong>Intranet</strong> and now multiple users
+can access a single computer so long as they belong to the same intranet.</p>
+
+<p><img of="" multiple="" users="" one="" computer="" /></p>
+
+<p>We know humans are very greedy and hence we wanted MORE … hence we
+created the <strong>Internet</strong> though which many computers were linked to form a
+dense network of connected computers and many users were able to access them
+simultaneously.</p>
+
+<p><img of="" multiple="" users="" computers="" /></p>
+
+<p>Then came the most influential revolution … the revolution of Smartphones
+and wearables; because of which the connected devices which were only computers
+can now even be your mobile phone, your watch and even your pants.</p>
+
+<p><img of="" multiple="" users="" devices="" /></p>
+
+<h2 id="the-request-response-paradigm">The Request Response Paradigm</h2>
+
+<p>If you closely observe, during this complete course of evolution of computing,
+one thing did not change and stood as is, <em>The Request Response Paradigm</em>.</p>
+
+<p>In every single phase there is always someone rather some machines who has the
+information required by some seeker. So there is always a <strong>Client</strong> who
+asks for some random information from the <strong>Server</strong>.</p>
+
+<p>There were lots of protocols that were designed and developed to meet the needs.
+Some are</p>
+
+<ul>
+  <li>Native Sockets</li>
+  <li>Remote Procedure Calls</li>
+  <li>SOAP</li>
+  <li>REST</li>
+</ul>
+
+<h2 id="rest">REST</h2>
+
+<p>REST is most widely accepted of all protocols to be used to Request Response
+and communication between client and server. Be it from any device, computer,
+wearable and now even sensors to any machine residing in cloud, the unanimous
+way of having the communication is over REST.</p>
+
+<p>The primary reason of REST becoming huge was its</p>
+
+<ul>
+  <li>Simplicity</li>
+  <li>Ease of extension</li>
+  <li>Use of HTTP as a channel</li>
+</ul>
+
+<h2 id="but-there-are-problems-with-rest">But! There are problems with REST</h2>
+
+<p>“What! You did not just say that …” must be reaction of most of you but
+just wait for some time and let me explain.</p>
+
+<h3 id="endpoint-explosion">Endpoint Explosion</h3>
+
+<p>As your application grows, you keep on adding more and more endpoints that
+serves different purposes; and thus when a client wants to get some things
+done then it has to hit that exact endpoint with the exact HTTP verb to get the
+the job done.</p>
+
+<h3 id="rely-and-maintain-a-good-documentation">Rely and Maintain A Good Documentation</h3>
+
+<p>Once you have a lot of endpoints, then you have to have a really good document
+that describes each endpoint, what it does, what params it expects and etc.
+It is a well known fact that maintaining document is probably the hardest
+thing for a programmer.</p>
+
+<h3 id="multiple-requests">Multiple Requests</h3>
+
+<p>Often it happens that you have to make multiple requests to get to the
+information that is really required. Generally you make one request to get the
+<code>id</code> and other to fetch the actual information.</p>
+
+<h3 id="over-fetching">Over Fetching</h3>
+
+<p>Over-fetching is when you make a call to the server and receive response that
+has information that you require but it also contains information that you
+do not require. But why is this a problem, you may ask. This is a problem
+because when your user is on a slow network device then every bit of information
+matters and if the response from your API has information that will never be
+shown to user we are just wasting the bandwidth.</p>
+
+<h3 id="under-fetching">Under Fetching</h3>
+
+<p>Under-fetching is exact opposite to over-fetching. In Under-fetching you make
+a call to server and server returns a response that does not have the
+information you require. In most general case you either</p>
+
+<ul>
+  <li>create a new endpoint with required information</li>
+  <li>make second request to fetch additional information</li>
+</ul>
+
+<h3 id="special-endpoints-for-specific-purpose">Special Endpoints For Specific Purpose</h3>
+
+<p>You may also need to create special endpoints for special purpose. For example
+you already had an endpoint to fetch a todo</p>
+
+<pre><code>GET /todos
+</code></pre>
+
+<p>Above endpoint returns you all the todos (full detailed information) for
+the user. For some specific purpose you may only want <code>id</code>s of the todos
+instead and hence you will created a specific endpoint that returns only ids</p>
+
+<pre><code>GET /todosOnlyIds
+</code></pre>
+
+<p>or pass a query parameter and process it on server side</p>
+
+<pre><code>GET /todos?with=id
+</code></pre>
+
+<p>But as your application grows this becomes a huge problem because now you
+have tonnes of endpoints that are serving specific purposes and all of the
+above problems make things worse.</p>
+
+<h2 id="the-graphql">The GraphQL</h2>
+
+<p>As always, where there is a problem, there comes a superhero to save the day.
+This time that superhero or the super library that comes to the rescue is
+GraphQL. GraphQL stands for <strong>Graph Query Language</strong> and it does not deal
+with Graph Databases :)</p>
+
+<p>GraphQL is a query language for APIs and in simple terms</p>
+
+<blockquote>
+  <p>What SQL does with databases, GraphQL does with APIs.</p>
+</blockquote>
+
+<h2 id="brief-history-of-graphql">Brief History of GraphQL</h2>
+
+<p>Facebook started using GraphQL in 2012 and have open sourced it in 2015.
+Facebook originally developed this in support for their mobile application
+but then they realized the impact it created internally and thus decided
+to make it publicly available.</p>
+
+<p>GraphQL was developed as an alternative to REST and is nothing but a
+specification and thus any language can just adopt it and build a library
+that adheres to the specification and any client that can talk GraphQL will
+be able to make calls and get the job done.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Every GraphQL server will expose just one GraphQL endpoint which accepts
+a GraphQL Query that is specific to a GraphQL Schema. I know I have bombarded
+a lot of GraphQL jargon here but bear with me I will explain each one in
+detail here.</p>
+
+<h3 id="graphql-server">GraphQL Server</h3>
+
+<blockquote>
+  <p>GraphQL server is any web server in any language that adheres to GraphQL
+specifications.</p>
+</blockquote>
+
+<p>GraphQL server exposes just one endpoint which will be entry point for all
+queries that can be made to the server.</p>
+
+<h3 id="graphql-schema">GraphQL Schema</h3>
+
+<h3 id="graphql-query">GraphQL Query</h3>
+
+<h2 id="journey-of-todo-application">Journey of Todo Application</h2>
+
+<p>Let us take the easiest example and build a <strong>Todo Application</strong> over REST.
+The basic functionality of this application would be to</p>
+
+<ul>
+  <li>Create a todo</li>
+  <li>Get all todos</li>
+  <li>Get all incomplete todos</li>
+  <li>Get all completed todos</li>
+  <li>Get one single todo</li>
+  <li>Delete a created todo</li>
+  <li>Mark a todo as complete</li>
+  <li>Unmark a completed todo</li>
+</ul>
+
+<p>and each todo will have</p>
+
+<ul>
+  <li>id</li>
+  <li>task</li>
+  <li>date and time when it was created</li>
+</ul>
+
+<p>This seems easy and you would have <code>n</code> REST endpoints for <code>n</code> functionalities you
+want. Your endpoints will be something like this</p>
+
+<pre><code>POST     /todos
+GET      /todos
+GET      /todos/incomplete
+GET      /todos/complete
+GET      /todos/:todoId
+DELETE   /todos/:todoId
+POST     /todos/:todoId/complete
+POST     /todos/:todoId/incomplete
+</code></pre>
+
+<p>You have created the APIs in your favourite backend language, wrote unit tests
+and deployed it in production. Then you started writing different clients for
+this backend service because there has to be some interface through which user
+will interact with the system.</p>
+
+<p>You started with the simplest one and thus you created the website with great
+interface and everything worked fine until there was a requirement to have
+a Android and and iOS application for this. You quickly created the prototype
+application for both devices, integrated it with the backend and shipped it.</p>
+
+<p>Everything worked fine for some months, everyone was happy.</p>
+
+<p>Then one day requirement changed and now while creating the todo item, user
+can also attach tags to it.</p>
 
     </div>
 </div>
@@ -132,27 +366,27 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="row">
         <div class="ui small icon borderless compact secondary menu">
     <div class="item">
-        <a href="mailto:arpit.b.bhayani@gmail.com">
+        <a target="_blank" href="mailto:arpit.b.bhayani@gmail.com">
             <i class="mail outline large grey icon"></i>
         </a>
     </div>
     <div class="ui item">
-        <a href="https://github.com/arpitbbhayani">
+        <a target="_blank" href="https://github.com/arpitbbhayani">
             <i class="github large grey icon"></i>
         </a>
     </div>
     <div class="ui item">
-        <a href="https://facebook.com/oftenweird">
+        <a target="_blank" href="https://facebook.com/oftenweird">
             <i class="facebook f large grey icon"></i>
         </a>
     </div>
     <div class="ui item">
-        <a href="https://instagram.com/often_weird">
+        <a target="_blank" href="https://instagram.com/often_weird">
             <i class="instagram large grey icon"></i>
         </a>
     </div>
     <div class="ui item">
-        <a href="https://twitter.com/arpit_bhayani">
+        <a target="_blank" href="https://twitter.com/arpit_bhayani">
             <i class="twitter large grey icon"></i>
         </a>
     </div>
