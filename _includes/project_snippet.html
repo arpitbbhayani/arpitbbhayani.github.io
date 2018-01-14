@@ -1,23 +1,16 @@
 {% assign post=include.post %}
 <div class="item">
-    <div class="ui small image">
-        <div class="ui hidden divider"></div>
-        <img src="{{post.icon}}">
-    </div>
     <div class="content">
         <article>
-            <div class="ui basic segment left aligned">
+            <div class="ui basic clickable segment left aligned" onclick="window.location = '{{post.url}}';">
                 <a href="{{post.url}}">
-                    <h3>{{post.title}}</h3>
+                    <h4>{{post.title}}</h4>
                 </a>
                 <div class="ui divider"></div>
                 <div class="description">{{post.seo.description | truncate: 200 }}</div>
-                <div>
-                    <div class="ui horizontal list">
-                    {% for tag in post.tags %}
-                        <a href='/tag/{{tag}}.html' class="item" data-content="All {{tag}} posts" data-variation="tiny"  data-position="bottom center">#{{tag}}</a>
-                    {% endfor %}
-                    </div>
+                <div class="ui left aligned nospace basic segment">
+                    <iframe src="https://ghbtns.com/github-btn.html?user={{post.github_user}}&size=large&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user={{post.github_user}}&size=large&repo={{post.repo}}&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
                 </div>
             </div>
         </article>
