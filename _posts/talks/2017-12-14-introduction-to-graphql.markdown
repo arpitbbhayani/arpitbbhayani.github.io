@@ -476,7 +476,7 @@ endpoint and you are good to go.
 
 ### Call GraphQL Endpoint with any HTTP client
 
-Make a HTTP `POST` request to GraphQL endpoint with the valid GraphQL
+Make HTTP `POST` request to GraphQL endpoint with the valid GraphQL
 Query, as you provide in Graphiql, and content type set as `application/json`
 and you will get back the response as you get in Graphiql.
 
