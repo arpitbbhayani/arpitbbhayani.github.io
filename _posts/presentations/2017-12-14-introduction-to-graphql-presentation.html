@@ -160,6 +160,56 @@ seo:
         </section>
         <section>
             <h3>A Todo Application</h3>
+            <ul class="fragment fade-in">
+                <li>Create a todo</li>
+                <li>Create a Tag</li>
+                <li>Mark a todo as complete</li>
+                <li>Unmark a completed todo as incomplete</li>
+                <li>Get all todos by its completion status</li>
+                <li>Get one single todo</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Types</h3>
+            <pre>
+type Tag {
+    id: String
+    name: String
+    color: String
+    todos: [Todo]
+}
+
+type Todo {
+    id: String
+    todo: String
+    created_at: String
+    is_complete: Boolean
+    tags: [Tag]
+}</pre>
+        </section>
+        <section>
+            <h3>Query and Mutation</h3>
+            <pre>
+type Query {
+    todos(is_complete: Boolean!, limit: Int): [Todo]
+    todo(id: String): Todo
+    tags: [Tag]
+}
+
+type Mutation {
+    createTodo(todo: String!, tags: [String]): Todo
+    createTag(name: String!, color: String): Tag
+}</pre>
+        </section>
+        <section>
+            <h3>Server Side Code</h3>
+            <a href="https://github.com/arpitbbhayani/todo-dooby-doo">Todo Dooby Doo</a>
+        </section>
+        <section>
+            <h3>Graphiql</h3>
+            <p>
+                Interface to make queries to a GraphQL server
+            </p>
         </section>
         <section>
             <h1>Any Questions?</h1>
