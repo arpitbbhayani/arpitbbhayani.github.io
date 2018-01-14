@@ -4,9 +4,9 @@ layout: default
 
 <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <div class="ui header center aligned">
-        <h1 itemprop="name headline">{{ page.title }}</h1>
-    </div>
+    <h1 itemprop="name headline" class="ui header center aligned">
+        {{ page.title }}
+    </h1>
     <div class="ui center aligned basic fluid segment">
         <div>
             <time datetime="{{page.date | date_to_xmlschema}}" itemprop="datePublished">

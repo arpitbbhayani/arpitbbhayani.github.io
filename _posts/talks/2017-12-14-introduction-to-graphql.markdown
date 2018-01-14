@@ -195,17 +195,160 @@ detail here.
 > GraphQL server is any web server in any language that adheres to GraphQL
 specifications.
 
-GraphQL server exposes just one endpoint which will be entry point for all
+GraphQL server exposes just one endpoint which will be the entry point for all
 queries that can be made to the server.
 
 ### GraphQL Schema
 
+The GraphQL server adheres to a GraphQL Schema that defines how a client
+can query this server and get the response. GraphQL schema is a strongly typed
+schema that has
+
+ - Types
+ - Query
+ - Mutations
+ - [others](http://graphql.org/learn/schema)
+
+A schema for a Todo application looks something like this
+
+{% highlight js %}
+type Todo {
+    id: String
+    todo: String
+    created_at: String
+    is_complete: Boolean
+}
+
+type Query {
+    todos(is_complete: Boolean!, limit: Int): [Todo]
+    todo(id: String): Todo
+}
+
+type Mutation {
+    createTodo(todo: String!, tags: [String]): Todo
+}
+{% endhighlight %}
+
+In above schema there is one user defined type named `Todo` that has `id`,
+`todo`, `created_at` as Strings and `is_complete` as a boolean.
+
+There is root type named `Query` that contains all types of queries that can
+be made on the endpoint. Let us disect the types of queries that can be made to
+the endpoint
+
+ - fetch todos by their state and limit
+ - fetch a single todo by its `id`.
+
+As you can observe, while defining the queries we have also defined the return
+type to each and this enables us to make nested requests if we want to fetch
+extra information.
+
+There is another root type named `Mutation` that defines how you can mutate
+data, in simple terms insert/delete/modify. In above example we have just one
+mutation that defines the way we can create a todo.
+
+More details can be obtained [here](http://graphql.org/learn/queries/).
+
+### GraphQL Types
+
+Since GraphQL is strongly typed, you will have to create types for every single
+entity. Every type that you define will have fields and each field will have a
+scalar or another user defined type associated with it.
+
+#### GraphQL Scalar Datatypes
+
+ - `Int`: A signed 32‐bit integer.
+ - `Float`: A signed double-precision floating-point value.
+ - `String`: A UTF‐8 character sequence.
+ - `Boolean`: true or false.
+ - `ID`: The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable.
+
 ### GraphQL Query
 
+A GraphQL query is a string that is sent to a server to be interpreted
+and fulfilled, which then returns JSON back to the client. Every query also
+provides a shape to be returned, this way you always know what you are getting.
 
+GraphQL Query not only fetches data from the server but it also mutates and
+subscribes; hence it depends on the query passed.
 
+_There are some amazing features of GraphQL that I will not discuss here
+and will be part of some advanced tutorials._
 
-## Journey of Todo Application
+## GraphQL Execution
+
+Each field in a GraphQL query has to be backed by a [Resolver Function](http://graphql.org/learn/execution/#root-fields-resolvers) that will
+have the logic of performing the task and returning the value. The value
+returned can be either a scalar value or a GraphQL type. If a field produces a
+scalar value, then the execution completes. However if a field produces an
+object value then the query will contain another selection of fields which
+apply to that object. This continues until scalar values are reached. GraphQL
+queries always end at scalar values.
+
+To imagine this situation, just think of it like a Tree traversal where we keep
+on visiting the child nodes and return back when we find leaf node.
+
+### Resolver Function
+
+Every resolver function will receive 3 arguments
+
+ - `obj` The previous object, which for a field on the root Query type is often not used.
+ - `args` The arguments provided to the field in the GraphQL query.
+ - `context` A value which is provided to every resolver.
+
+{% highlight js %}
+const resolvers = {
+    Dog: {
+        speaks: function(obj, args, context) {
+            return "Bow Bow " + args.word;
+        }
+    }
+}
+{% endhighlight %}
+
+Whenever a query that asks for speaks field of Dog type then the above resolver
+function is called and it would return the text `"Bow Bow " + word`.
+
+This is great feature because, if some field is never asked it's resolver
+function is never called and thus it becomes super efficient as you would
+never resolve and fetch information for the field that is never asked.
+
+## Features of GraphQL
+
+### Shape
+
+The main attraction of GraphQL is the data shape i.e. you get what you asked
+for, nothing more and definitely nothing less. In the query you made you also
+specify the shape and you get the exact thing back in the response.
+
+### Strongly Typed
+
+Other prominent feature of GraphQL is its strong typed nature because of which
+everything becomes coupled and predictable.
+
+### Protocol, not storage
+
+GraphQL is not tied with any specific backend or database; it is much more than
+that. It works on application layer can perfectly work with your existing
+code.
+
+### Version Free
+
+One major highlight of the using GraphQL is that it is version free. This is
+a bit tricky to understand but bear with me. When new features are added to the
+product, additional fields are added to the response and since in GraphQL
+client ask for the field that it requires from the server, other fields will
+never be picked up and resolve and thus eliminating the need of versioning.
+
+In addition to this you can also deprecate the field that you no longer need
+and client need not be changed and whole functionality will continue to work.
+
+### Documentation is right there
+
+One can just look at the schema and understand what is what without any need
+of extra documentation what so ever.
+
+## A Todo Application
 
 Let us take the easiest example and build a __Todo Application__ over REST.
 The basic functionality of this application would be to
