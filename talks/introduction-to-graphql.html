@@ -98,26 +98,18 @@ down here.</p>
 <p>Initially when computers were developed there was just one computer operator
 that dealt with the computer and performed the operation required.</p>
 
-<p><img of="" one="" user="" computer="" /></p>
-
 <p>Then with the advancements in technology networking was introduced in these
 gigantic machines which grave rise to the <strong>Intranet</strong> and now multiple users
 can access a single computer so long as they belong to the same intranet.</p>
-
-<p><img of="" multiple="" users="" one="" computer="" /></p>
 
 <p>We know humans are very greedy and hence we wanted MORE … hence we
 created the <strong>Internet</strong> though which many computers were linked to form a
 dense network of connected computers and many users were able to access them
 simultaneously.</p>
 
-<p><img of="" multiple="" users="" computers="" /></p>
-
 <p>Then came the most influential revolution … the revolution of Smartphones
 and wearables; because of which the connected devices which were only computers
 can now even be your mobile phone, your watch and even your pants.</p>
-
-<p><img of="" multiple="" users="" devices="" /></p>
 
 <h2 id="the-request-response-paradigm">The Request Response Paradigm</h2>
 
@@ -420,18 +412,15 @@ of extra documentation what so ever.</p>
 
 <h2 id="a-todo-application">A Todo Application</h2>
 
-<p>Let us take the easiest example and build a <strong>Todo Application</strong> over REST.
-The basic functionality of this application would be to</p>
+<p>Let us create a todo application that would do the following</p>
 
 <ul>
   <li>Create a todo</li>
-  <li>Get all todos</li>
-  <li>Get all incomplete todos</li>
-  <li>Get all completed todos</li>
-  <li>Get one single todo</li>
-  <li>Delete a created todo</li>
+  <li>Create a Tag</li>
   <li>Mark a todo as complete</li>
-  <li>Unmark a completed todo</li>
+  <li>Unmark a completed todo as incomplete</li>
+  <li>Get all todos by its completion status</li>
+  <li>Get one single todo</li>
 </ul>
 
 <p>and each todo will have</p>
@@ -439,36 +428,134 @@ The basic functionality of this application would be to</p>
 <ul>
   <li>id</li>
   <li>task</li>
-  <li>date and time when it was created</li>
+  <li>creation time</li>
+  <li>tags</li>
 </ul>
 
-<p>This seems easy and you would have <code>n</code> REST endpoints for <code>n</code> functionalities you
-want. Your endpoints will be something like this</p>
+<p>and each tag will have</p>
 
-<pre><code>POST     /todos
-GET      /todos
-GET      /todos/incomplete
-GET      /todos/complete
-GET      /todos/:todoId
-DELETE   /todos/:todoId
-POST     /todos/:todoId/complete
-POST     /todos/:todoId/incomplete
-</code></pre>
+<ul>
+  <li>name</li>
+  <li>color (hex code)</li>
+</ul>
 
-<p>You have created the APIs in your favourite backend language, wrote unit tests
-and deployed it in production. Then you started writing different clients for
-this backend service because there has to be some interface through which user
-will interact with the system.</p>
+<p>Additionally each tag will also have a reverse mapping of posts that belongs to
+the tag.</p>
 
-<p>You started with the simplest one and thus you created the website with great
-interface and everything worked fine until there was a requirement to have
-a Android and and iOS application for this. You quickly created the prototype
-application for both devices, integrated it with the backend and shipped it.</p>
+<h3 id="types">Types</h3>
 
-<p>Everything worked fine for some months, everyone was happy.</p>
+<p>First let us define type <code>Todo</code> that will represent one Todo in the application.</p>
 
-<p>Then one day requirement changed and now while creating the todo item, user
-can also attach tags to it.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">type</span> <span class="nx">Todo</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">todo</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">created_at</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">is_complete</span><span class="o">:</span> <span class="nb">Boolean</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Other type we will define is <code>Tag</code> that represents a Tag.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">type</span> <span class="nx">Tag</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>But we also want that when someone queries for a tag, he/she may also fetch the
+todos that belongs to the tag and hence there will be a field named <code>todos</code> that
+will hold list of <code>Todo</code>.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">type</span> <span class="nx">Tag</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">todos</span><span class="o">:</span> <span class="p">[</span><span class="nx">Todo</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>NOTE: Since GraphQL only defines how your data looks at the application level
+we are totally free to persist information as we like in our databases.</p>
+
+<h3 id="mutations">Mutations</h3>
+
+<p>We will require following mutations</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+    <span class="nx">createTodo</span><span class="p">(</span><span class="nx">todo</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span> <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">])</span><span class="o">:</span> <span class="nx">Todo</span>
+    <span class="nx">createTag</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span><span class="o">:</span> <span class="nx">Tag</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="query">Query</h3>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">todos</span><span class="p">(</span><span class="nx">is_complete</span><span class="o">:</span> <span class="nb">Boolean</span><span class="o">!</span><span class="p">)</span><span class="o">:</span> <span class="p">[</span><span class="nx">Todo</span><span class="p">]</span>
+    <span class="nx">todo</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span><span class="o">:</span> <span class="nx">Todo</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="nx">Tag</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="the-final-graphql-schema">The Final GraphQL Schema</h3>
+
+<p>The final GraphQL schema will look something like this</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">type</span> <span class="nx">Tag</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">todos</span><span class="o">:</span> <span class="p">[</span><span class="nx">Todo</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Todo</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">todo</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">created_at</span><span class="o">:</span> <span class="nb">String</span>
+    <span class="nx">is_complete</span><span class="o">:</span> <span class="nb">Boolean</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="nx">Tag</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">todos</span><span class="p">(</span><span class="nx">is_complete</span><span class="o">:</span> <span class="nb">Boolean</span><span class="o">!</span><span class="p">,</span> <span class="nx">limit</span><span class="o">:</span> <span class="nx">Int</span><span class="p">)</span><span class="o">:</span> <span class="p">[</span><span class="nx">Todo</span><span class="p">]</span>
+    <span class="nx">todo</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span><span class="o">:</span> <span class="nx">Todo</span>
+    <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="nx">Tag</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">type</span> <span class="nx">Mutation</span> <span class="p">{</span>
+    <span class="nx">createTodo</span><span class="p">(</span><span class="nx">todo</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span> <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">])</span><span class="o">:</span> <span class="nx">Todo</span>
+    <span class="nx">createTag</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span> <span class="nb">String</span><span class="o">!</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="nb">String</span><span class="p">)</span><span class="o">:</span> <span class="nx">Tag</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="backend-code">Backend Code</h3>
+
+<p>For a GraphQL server to handle the mutations and the queries, you just need
+to write resolvers for each of them. Just find a suitable GraphQL library
+for your favourite language and start writing resolvers.</p>
+
+<p>I have used NodeJS and have written this application, you can find the complete
+code in <a href="https://github.com/arpitbbhayani/todo-dooby-doo">this repository</a>.</p>
+
+<h3 id="graphiql">Graphiql</h3>
+
+<p>There is an amazing utility called Graphiql that give a nice interface to make
+queries to a GraphQL server. Just set up in the server that serves GraphQL
+endpoint and you are good to go.</p>
+
+<h3 id="call-graphql-endpoint-with-any-http-client">Call GraphQL Endpoint with any HTTP client</h3>
+
+<p>Make HTTP <code>POST</code> request to GraphQL endpoint with the valid GraphQL
+Query, as you provide in Graphiql, and content type set as <code>application/json</code>
+and you will get back the response as you get in Graphiql.</p>
+
+<p>A sample curl request to understand things better</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>curl <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+    --data <span class="s1">&#39;{ &quot;query&quot;: &quot;{ todos { todo } }&quot; }&#39;</span> <span class="se">\</span>
+    https://localhost:8082/graphql</code></pre></figure>
+
+<h3 id="in-conclusion">In Conclusion</h3>
+
+<p>GraphQL is really an amazing utility that can make you life a lot easier. there
+are lots of amazing features in GraphQL which I have not discussed here. Stay
+tuned to this blog and you would surely see some tutorial coming up.</p>
 
     </div>
 </div>
