@@ -38,26 +38,18 @@ Grab on to your seats, we are going way back!
 Initially when computers were developed there was just one computer operator
 that dealt with the computer and performed the operation required.
 
-<IMG OF ONE USER ONE COMPUTER>
-
 Then with the advancements in technology networking was introduced in these
 gigantic machines which grave rise to the __Intranet__ and now multiple users
 can access a single computer so long as they belong to the same intranet.
-
-<IMG OF MULTIPLE USERS ONE COMPUTER>
 
 We know humans are very greedy and hence we wanted MORE ... hence we
 created the __Internet__ though which many computers were linked to form a
 dense network of connected computers and many users were able to access them
 simultaneously.
 
-<IMG OF MULTIPLE USERS MULTIPLE COMPUTERS>
-
 Then came the most influential revolution ... the revolution of Smartphones
 and wearables; because of which the connected devices which were only computers
 can now even be your mobile phone, your watch and even your pants.
-
-<IMG OF MULTIPLE USERS MULTIPLE DEVICES>
 
 ## The Request Response Paradigm
 
@@ -350,49 +342,156 @@ of extra documentation what so ever.
 
 ## A Todo Application
 
-Let us take the easiest example and build a __Todo Application__ over REST.
-The basic functionality of this application would be to
+Let us create a todo application that would do the following
 
  - Create a todo
- - Get all todos
- - Get all incomplete todos
- - Get all completed todos
- - Get one single todo
- - Delete a created todo
+ - Create a Tag
  - Mark a todo as complete
- - Unmark a completed todo
+ - Unmark a completed todo as incomplete
+ - Get all todos by its completion status
+ - Get one single todo
 
 and each todo will have
 
  - id
  - task
- - date and time when it was created
+ - creation time
+ - tags
 
-This seems easy and you would have `n` REST endpoints for `n` functionalities you
-want. Your endpoints will be something like this
+and each tag will have
 
-```
-POST     /todos
-GET      /todos
-GET      /todos/incomplete
-GET      /todos/complete
-GET      /todos/:todoId
-DELETE   /todos/:todoId
-POST     /todos/:todoId/complete
-POST     /todos/:todoId/incomplete
-```
+ - name
+ - color (hex code)
 
-You have created the APIs in your favourite backend language, wrote unit tests
-and deployed it in production. Then you started writing different clients for
-this backend service because there has to be some interface through which user
-will interact with the system.
+Additionally each tag will also have a reverse mapping of posts that belongs to
+the tag.
 
-You started with the simplest one and thus you created the website with great
-interface and everything worked fine until there was a requirement to have
-a Android and and iOS application for this. You quickly created the prototype
-application for both devices, integrated it with the backend and shipped it.
+### Types
 
-Everything worked fine for some months, everyone was happy.
+First let us define type `Todo` that will represent one Todo in the application.
 
-Then one day requirement changed and now while creating the todo item, user
-can also attach tags to it.
+{% highlight js %}
+type Todo {
+    id: String
+    todo: String
+    created_at: String
+    is_complete: Boolean
+}
+{% endhighlight %}
+
+Other type we will define is `Tag` that represents a Tag.
+
+{% highlight js %}
+type Tag {
+    id: String
+    name: String
+    color: String
+}
+{% endhighlight %}
+
+But we also want that when someone queries for a tag, he/she may also fetch the
+todos that belongs to the tag and hence there will be a field named `todos` that
+will hold list of `Todo`.
+
+{% highlight js %}
+type Tag {
+    id: String
+    name: String
+    color: String
+    todos: [Todo]
+}
+{% endhighlight %}
+
+NOTE: Since GraphQL only defines how your data looks at the application level
+we are totally free to persist information as we like in our databases.
+
+
+### Mutations
+
+We will require following mutations
+
+{% highlight js %}
+type Mutation {
+    createTodo(todo: String!, tags: [String]): Todo
+    createTag(name: String!, color: String): Tag
+}
+{% endhighlight %}
+
+### Query
+
+{% highlight js %}
+type Query {
+    todos(is_complete: Boolean!): [Todo]
+    todo(id: String): Todo
+    tags: [Tag]
+}
+{% endhighlight %}
+
+### The Final GraphQL Schema
+
+The final GraphQL schema will look something like this
+
+{% highlight js %}
+type Tag {
+    id: String
+    name: String
+    color: String
+    todos: [Todo]
+}
+
+type Todo {
+    id: String
+    todo: String
+    created_at: String
+    is_complete: Boolean
+    tags: [Tag]
+}
+
+type Query {
+    todos(is_complete: Boolean!, limit: Int): [Todo]
+    todo(id: String): Todo
+    tags: [Tag]
+}
+
+type Mutation {
+    createTodo(todo: String!, tags: [String]): Todo
+    createTag(name: String!, color: String): Tag
+}
+{% endhighlight %}
+
+### Backend Code
+
+For a GraphQL server to handle the mutations and the queries, you just need
+to write resolvers for each of them. Just find a suitable GraphQL library
+for your favourite language and start writing resolvers.
+
+I have used NodeJS and have written this application, you can find the complete
+code in [this repository](https://github.com/arpitbbhayani/todo-dooby-doo).
+
+### Graphiql
+
+There is an amazing utility called Graphiql that give a nice interface to make
+queries to a GraphQL server. Just set up in the server that serves GraphQL
+endpoint and you are good to go.
+
+### Call GraphQL Endpoint with any HTTP client
+
+Make a HTTP `POST` request to GraphQL endpoint with the valid GraphQL
+Query, as you provide in Graphiql, and content type set as `application/json`
+and you will get back the response as you get in Graphiql.
+
+A sample curl request to understand things better
+
+{% highlight bash %}
+curl \
+    -X POST \
+    -H "Content-Type: application/json" \
+    --data '{ "query": "{ todos { todo } }" }' \
+    https://localhost:8082/graphql
+{% endhighlight %}
+
+### In Conclusion
+
+GraphQL is really an amazing utility that can make you life a lot easier. there
+are lots of amazing features in GraphQL which I have not discussed here. Stay
+tuned to this blog and you would surely see some tutorial coming up.
