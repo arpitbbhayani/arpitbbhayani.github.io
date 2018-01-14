@@ -5,8 +5,8 @@
     <description>An avid programmer, passionate about building products and utilities that affect millions of people and loves to put computers to work.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Jan 2018 22:31:14 +0530</pubDate>
-    <lastBuildDate>Sat, 13 Jan 2018 22:31:14 +0530</lastBuildDate>
+    <pubDate>Sun, 14 Jan 2018 15:11:36 +0530</pubDate>
+    <lastBuildDate>Sun, 14 Jan 2018 15:11:36 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -372,14 +372,164 @@ detail here.&lt;/p&gt;
 specifications.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;GraphQL server exposes just one endpoint which will be entry point for all
+&lt;p&gt;GraphQL server exposes just one endpoint which will be the entry point for all
 queries that can be made to the server.&lt;/p&gt;
 
 &lt;h3 id=&quot;graphql-schema&quot;&gt;GraphQL Schema&lt;/h3&gt;
 
+&lt;p&gt;The GraphQL server adheres to a GraphQL Schema that defines how a client
+can query this server and get the response. GraphQL schema is a strongly typed
+schema that has&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Types&lt;/li&gt;
+  &lt;li&gt;Query&lt;/li&gt;
+  &lt;li&gt;Mutations&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://graphql.org/learn/schema&quot;&gt;others&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A schema for a Todo application looks something like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;created_at&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mutation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;createTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In above schema there is one user defined type named &lt;code&gt;Todo&lt;/code&gt; that has &lt;code&gt;id&lt;/code&gt;,
+&lt;code&gt;todo&lt;/code&gt;, &lt;code&gt;created_at&lt;/code&gt; as Strings and &lt;code&gt;is_complete&lt;/code&gt; as a boolean.&lt;/p&gt;
+
+&lt;p&gt;There is root type named &lt;code&gt;Query&lt;/code&gt; that contains all types of queries that can
+be made on the endpoint. Let us disect the types of queries that can be made to
+the endpoint&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;fetch todos by their state and limit&lt;/li&gt;
+  &lt;li&gt;fetch a single todo by its &lt;code&gt;id&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As you can observe, while defining the queries we have also defined the return
+type to each and this enables us to make nested requests if we want to fetch
+extra information.&lt;/p&gt;
+
+&lt;p&gt;There is another root type named &lt;code&gt;Mutation&lt;/code&gt; that defines how you can mutate
+data, in simple terms insert/delete/modify. In above example we have just one
+mutation that defines the way we can create a todo.&lt;/p&gt;
+
+&lt;p&gt;More details can be obtained &lt;a href=&quot;http://graphql.org/learn/queries/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;graphql-types&quot;&gt;GraphQL Types&lt;/h3&gt;
+
+&lt;p&gt;Since GraphQL is strongly typed, you will have to create types for every single
+entity. Every type that you define will have fields and each field will have a
+scalar or another user defined type associated with it.&lt;/p&gt;
+
+&lt;h4 id=&quot;graphql-scalar-datatypes&quot;&gt;GraphQL Scalar Datatypes&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Int&lt;/code&gt;: A signed 32‐bit integer.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Float&lt;/code&gt;: A signed double-precision floating-point value.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;String&lt;/code&gt;: A UTF‐8 character sequence.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Boolean&lt;/code&gt;: true or false.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ID&lt;/code&gt;: The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;graphql-query&quot;&gt;GraphQL Query&lt;/h3&gt;
 
-&lt;h2 id=&quot;journey-of-todo-application&quot;&gt;Journey of Todo Application&lt;/h2&gt;
+&lt;p&gt;A GraphQL query is a string that is sent to a server to be interpreted
+and fulfilled, which then returns JSON back to the client. Every query also
+provides a shape to be returned, this way you always know what you are getting.&lt;/p&gt;
+
+&lt;p&gt;GraphQL Query not only fetches data from the server but it also mutates and
+subscribes; hence it depends on the query passed.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;There are some amazing features of GraphQL that I will not discuss here
+and will be part of some advanced tutorials.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;graphql-execution&quot;&gt;GraphQL Execution&lt;/h2&gt;
+
+&lt;p&gt;Each field in a GraphQL query has to be backed by a &lt;a href=&quot;http://graphql.org/learn/execution/#root-fields-resolvers&quot;&gt;Resolver Function&lt;/a&gt; that will
+have the logic of performing the task and returning the value. The value
+returned can be either a scalar value or a GraphQL type. If a field produces a
+scalar value, then the execution completes. However if a field produces an
+object value then the query will contain another selection of fields which
+apply to that object. This continues until scalar values are reached. GraphQL
+queries always end at scalar values.&lt;/p&gt;
+
+&lt;p&gt;To imagine this situation, just think of it like a Tree traversal where we keep
+on visiting the child nodes and return back when we find leaf node.&lt;/p&gt;
+
+&lt;h3 id=&quot;resolver-function&quot;&gt;Resolver Function&lt;/h3&gt;
+
+&lt;p&gt;Every resolver function will receive 3 arguments&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;obj&lt;/code&gt; The previous object, which for a field on the root Query type is often not used.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;args&lt;/code&gt; The arguments provided to the field in the GraphQL query.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;context&lt;/code&gt; A value which is provided to every resolver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;resolvers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;Dog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;speaks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Bow Bow &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Whenever a query that asks for speaks field of Dog type then the above resolver
+function is called and it would return the text &lt;code&gt;&quot;Bow Bow &quot; + word&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is great feature because, if some field is never asked it’s resolver
+function is never called and thus it becomes super efficient as you would
+never resolve and fetch information for the field that is never asked.&lt;/p&gt;
+
+&lt;h2 id=&quot;features-of-graphql&quot;&gt;Features of GraphQL&lt;/h2&gt;
+
+&lt;h3 id=&quot;shape&quot;&gt;Shape&lt;/h3&gt;
+
+&lt;p&gt;The main attraction of GraphQL is the data shape i.e. you get what you asked
+for, nothing more and definitely nothing less. In the query you made you also
+specify the shape and you get the exact thing back in the response.&lt;/p&gt;
+
+&lt;h3 id=&quot;strongly-typed&quot;&gt;Strongly Typed&lt;/h3&gt;
+
+&lt;p&gt;Other prominent feature of GraphQL is its strong typed nature because of which
+everything becomes coupled and predictable.&lt;/p&gt;
+
+&lt;h3 id=&quot;protocol-not-storage&quot;&gt;Protocol, not storage&lt;/h3&gt;
+
+&lt;p&gt;GraphQL is not tied with any specific backend or database; it is much more than
+that. It works on application layer can perfectly work with your existing
+code.&lt;/p&gt;
+
+&lt;h3 id=&quot;version-free&quot;&gt;Version Free&lt;/h3&gt;
+
+&lt;p&gt;One major highlight of the using GraphQL is that it is version free. This is
+a bit tricky to understand but bear with me. When new features are added to the
+product, additional fields are added to the response and since in GraphQL
+client ask for the field that it requires from the server, other fields will
+never be picked up and resolve and thus eliminating the need of versioning.&lt;/p&gt;
+
+&lt;p&gt;In addition to this you can also deprecate the field that you no longer need
+and client need not be changed and whole functionality will continue to work.&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation-is-right-there&quot;&gt;Documentation is right there&lt;/h3&gt;
+
+&lt;p&gt;One can just look at the schema and understand what is what without any need
+of extra documentation what so ever.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-todo-application&quot;&gt;A Todo Application&lt;/h2&gt;
 
 &lt;p&gt;Let us take the easiest example and build a &lt;strong&gt;Todo Application&lt;/strong&gt; over REST.
 The basic functionality of this application would be to&lt;/p&gt;
@@ -525,6 +675,75 @@ can also attach tags to it.&lt;/p&gt;
             &lt;p&gt;
                 What SQL does with databases, GraphQL does with APIs.
             &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;Brief History of GraphQL&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Facebook built and started using it in 2012&lt;/li&gt;
+                &lt;li&gt;Open sourced it in 2015&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;GraphQL Concepts&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;GraphQL Server&lt;/li&gt;
+                &lt;li&gt;GraphQL Schema&lt;/li&gt;
+                &lt;li&gt;GraphQL Types&lt;/li&gt;
+                &lt;li&gt;GraphQL Query&lt;/li&gt;
+                &lt;li&gt;...&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;GraphQL Server&lt;/h3&gt;
+            &lt;p&gt;
+                GraphQL server is any web server in any language that adheres to GraphQL
+                specifications.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;GraphQL Schema&lt;/h3&gt;
+            &lt;p&gt;
+                GraphQL Schema defines how a client can query a GraphQL server
+                and get its response.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;GraphQL Types&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Scalar Types&lt;/li&gt;
+                &lt;li&gt;User Defined Types&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;GraphQL Query&lt;/h3&gt;
+            &lt;p&gt;
+                A GraphQL query is a string that is sent to a server to be interpreted
+                and fulfilled, which then returns JSON back to the client. Every query also
+                provides a shape to be returned, this way you always know what you are getting.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;Resolver Functions&lt;/h3&gt;
+            &lt;p&gt;
+                Every field in GraphQL Schema is backed by a resolver function
+                that would resolve the value for that field.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;Features of GraphQL&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Data Shape&lt;/li&gt;
+                &lt;li&gt;Strongly Typed&lt;/li&gt;
+                &lt;li&gt;Protocol Not Storage&lt;/li&gt;
+                &lt;li&gt;Version Free&lt;/li&gt;
+                &lt;li&gt;Document is right there&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;A Todo Application&lt;/h3&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h1&gt;Any Questions?&lt;/h1&gt;
         &lt;/section&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
