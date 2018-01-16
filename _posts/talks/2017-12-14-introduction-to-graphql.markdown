@@ -31,36 +31,17 @@ This is the detailed explanation and elaboration of the talk. Since all the
 information cannot be communicated through presentation, I have jot the things
 down here.
 
-## How Things Evolved
-
-Grab on to your seats, we are going way back!
-
-Initially when computers were developed there was just one computer operator
-that dealt with the computer and performed the operation required.
-
-Then with the advancements in technology networking was introduced in these
-gigantic machines which grave rise to the __Intranet__ and now multiple users
-can access a single computer so long as they belong to the same intranet.
-
-We know humans are very greedy and hence we wanted MORE ... hence we
-created the __Internet__ though which many computers were linked to form a
-dense network of connected computers and many users were able to access them
-simultaneously.
-
-Then came the most influential revolution ... the revolution of Smartphones
-and wearables; because of which the connected devices which were only computers
-can now even be your mobile phone, your watch and even your pants.
-
 ## The Request Response Paradigm
 
-If you closely observe, during this complete course of evolution of computing,
-one thing did not change and stood as is, _The Request Response Paradigm_.
+During the course of evolution of computing, one thing remained constant and
+stood as is, _The Request Response Paradigm_.
 
-In every single phase there is always someone rather some machines who has the
-information required by some seeker. So there is always a __Client__ who
-asks for some random information from the __Server__.
+In every single phase of evolution there is always someone rather some
+machines who has the information required by some seeker. So there is
+always a __Client__ who asks for some information from the __Server__.
 
 There were lots of protocols that were designed and developed to meet the needs.
+
 Some are
 
  - Native Sockets
