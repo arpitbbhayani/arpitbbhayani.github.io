@@ -5,8 +5,8 @@
     <description>An avid programmer, passionate about building products and utilities that affect millions of people and loves to put computers to work.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 Jan 2018 21:40:16 +0530</pubDate>
-    <lastBuildDate>Sun, 14 Jan 2018 21:40:16 +0530</lastBuildDate>
+    <pubDate>Tue, 16 Jan 2018 19:30:05 +0530</pubDate>
+    <lastBuildDate>Tue, 16 Jan 2018 19:30:05 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -202,37 +202,18 @@ and see the output.&lt;/p&gt;
 information cannot be communicated through presentation, I have jot the things
 down here.&lt;/p&gt;
 
-&lt;h2 id=&quot;how-things-evolved&quot;&gt;How Things Evolved&lt;/h2&gt;
-
-&lt;p&gt;Grab on to your seats, we are going way back!&lt;/p&gt;
-
-&lt;p&gt;Initially when computers were developed there was just one computer operator
-that dealt with the computer and performed the operation required.&lt;/p&gt;
-
-&lt;p&gt;Then with the advancements in technology networking was introduced in these
-gigantic machines which grave rise to the &lt;strong&gt;Intranet&lt;/strong&gt; and now multiple users
-can access a single computer so long as they belong to the same intranet.&lt;/p&gt;
-
-&lt;p&gt;We know humans are very greedy and hence we wanted MORE … hence we
-created the &lt;strong&gt;Internet&lt;/strong&gt; though which many computers were linked to form a
-dense network of connected computers and many users were able to access them
-simultaneously.&lt;/p&gt;
-
-&lt;p&gt;Then came the most influential revolution … the revolution of Smartphones
-and wearables; because of which the connected devices which were only computers
-can now even be your mobile phone, your watch and even your pants.&lt;/p&gt;
-
 &lt;h2 id=&quot;the-request-response-paradigm&quot;&gt;The Request Response Paradigm&lt;/h2&gt;
 
-&lt;p&gt;If you closely observe, during this complete course of evolution of computing,
-one thing did not change and stood as is, &lt;em&gt;The Request Response Paradigm&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;During the course of evolution of computing, one thing remained constant and
+stood as is, &lt;em&gt;The Request Response Paradigm&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;In every single phase there is always someone rather some machines who has the
-information required by some seeker. So there is always a &lt;strong&gt;Client&lt;/strong&gt; who
-asks for some random information from the &lt;strong&gt;Server&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In every single phase of evolution there is always someone rather some
+machines who has the information required by some seeker. So there is
+always a &lt;strong&gt;Client&lt;/strong&gt; who asks for some information from the &lt;strong&gt;Server&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;There were lots of protocols that were designed and developed to meet the needs.
-Some are&lt;/p&gt;
+&lt;p&gt;There were lots of protocols that were designed and developed to meet the needs.&lt;/p&gt;
+
+&lt;p&gt;Some are&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Native Sockets&lt;/li&gt;
@@ -697,28 +678,8 @@ tuned to this blog and you would surely see some tutorial coming up.&lt;/p&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;h3&gt;
-                How Things Evolved
-            &lt;/h3&gt;
-            &lt;div class=&quot;fragment fade-in&quot;&gt;
-                One User One Computer
-            &lt;/div&gt;
-            &lt;div class=&quot;fragment fade-in&quot;&gt;
-                Multiple Users One Computer
-            &lt;/div&gt;
-            &lt;div class=&quot;fragment fade-in&quot;&gt;
-                Multiple Users Multiple Computers
-            &lt;/div&gt;
-            &lt;div class=&quot;fragment fade-in&quot;&gt;
-                Multiple Users Multiple &lt;b&gt;DEVICES&lt;/b&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;
-                One Thing Remained Constant
-            &lt;/h3&gt;
-            &lt;p class=&quot;fragment fade-in&quot;&gt;
                 The Request Response Paradigm
-            &lt;/p&gt;
+            &lt;/h3&gt;
             &lt;div class=&quot;fragment fade-in&quot;&gt;
                 Some protocols and methods that help us achieve this
                 &lt;ul&gt;
@@ -733,25 +694,30 @@ tuned to this blog and you would surely see some tutorial coming up.&lt;/p&gt;
             &lt;h3&gt;REST&lt;/h3&gt;
             &lt;p&gt;
                 Sending request and getting response over HTTP. It can
-                optionally use HTTP verbs to actuate the implicit meaning.
+                optionally use HTTP verbs.
             &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;h3&gt;
+                REST became a hit because of its
+            &lt;/h3&gt;
             &lt;div&gt;
-                &lt;p&gt;The primary reason of REST becoming huge was its&lt;/p&gt;
                 &lt;ul&gt;
                     &lt;li&gt;Simplicity&lt;/li&gt;
                     &lt;li&gt;Ease of extension&lt;/li&gt;
                     &lt;li&gt;Use of HTTP as a channel&lt;/li&gt;
                 &lt;/ul&gt;
+            &lt;/div&gt;
         &lt;/section&gt;
         &lt;section&gt;
             &lt;h3&gt;Problems with REST&lt;/h3&gt;
             &lt;ul&gt;
-                &lt;li&gt;Endpoint Explosion&lt;/li&gt;
-                &lt;li&gt;Rely and Maintain A Good Documentation&lt;/li&gt;
-                &lt;li&gt;Multiple Requests&lt;/li&gt;
-                &lt;li&gt;Over Fetching&lt;/li&gt;
-                &lt;li&gt;Under Fetching&lt;/li&gt;
-                &lt;li&gt;Special Endpoints For Specific Purpose&lt;/li&gt;
+                &lt;li class=&quot;fragment fade-in&quot;&gt;Endpoint Explosion&lt;/li&gt;
+                &lt;li class=&quot;fragment fade-in&quot;&gt;Rely and Maintain A Good Documentation&lt;/li&gt;
+                &lt;li class=&quot;fragment fade-in&quot;&gt;Multiple Requests&lt;/li&gt;
+                &lt;li class=&quot;fragment fade-in&quot;&gt;Over Fetching&lt;/li&gt;
+                &lt;li class=&quot;fragment fade-in&quot;&gt;Under Fetching&lt;/li&gt;
+                &lt;li class=&quot;fragment fade-in&quot;&gt;Special Endpoints For Specific Purpose&lt;/li&gt;
             &lt;/ul&gt;
         &lt;/section&gt;
         &lt;section&gt;
@@ -805,8 +771,7 @@ tuned to this blog and you would surely see some tutorial coming up.&lt;/p&gt;
             &lt;h3&gt;GraphQL Query&lt;/h3&gt;
             &lt;p&gt;
                 A GraphQL query is a string that is sent to a server to be interpreted
-                and fulfilled, which then returns JSON back to the client. Every query also
-                provides a shape to be returned, this way you always know what you are getting.
+                and fulfilled, which then returns JSON back to the client.
             &lt;/p&gt;
         &lt;/section&gt;
         &lt;section&gt;
