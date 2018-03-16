@@ -6,10 +6,12 @@ layout: default
     <h1 itemprop="name headline" class="ui header center aligned">
         {{ page.title }}
     </h1>
+    {% if page.img %}
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <meta itemprop="url" content="{{page.img}}" />
         <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
     </div>
+    {% endif %}
     {% include ads_plugin.html %}
     <div itemprop="articleBody">
         {{ content }}
