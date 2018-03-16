@@ -9,29 +9,29 @@
     <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
     <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
 
-    <title>Beware of - Which indian celebrity do you look like? | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer.</title>
-    <meta name="description" content="When I tried Which indian celebrity do you look like? the things I saw shocked me! Looks like facebook login is dangerous if you are not careful and cautious.">
-    <meta name="keywords" content="social media, security, facebook, oauth, " />
+    <title>How to copy, move files to and from Vagrant machine using scp | Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer.</title>
+    <meta name="description" content="Let's see how we can copy, move files to and from Vagrant machine using scp">
+    <meta name="keywords" content="vagrant, scp, vagrant scp, copy, " />
 
     <link rel="stylesheet" href="/static/css/semantic-2.min.css">
     <link rel="stylesheet" href="/static/css/pygments-2.css">
-    <link rel="canonical" href="https://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html">
+    <link rel="canonical" href="https://arpitbhayani.me/techie/copy-move-files-to-and-from-vagrant-machine-using-scp.html">
     <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer." href="https://arpitbhayani.me/feed.xml">
 
     <meta property="fb:app_id" content="1055615241238486" />
 
-    <meta property="og:image" content="https://arpitbhayani.me/static/images/indian-celebrity/beware-which-indian-celebrity-do-you-look-like.jpg"/>
-    <meta property="og:title" content="Beware of - Which indian celebrity do you look like?"/>
-    <meta property="og:url" content="https://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html"/>
+    <meta property="og:image" content="https://arpitbhayani.me/static/images/profiles/arpit.png"/>
+    <meta property="og:title" content="How to copy, move files to and from Vagrant machine using scp"/>
+    <meta property="og:url" content="https://arpitbhayani.me/techie/copy-move-files-to-and-from-vagrant-machine-using-scp.html"/>
     <meta property="og:site_name" content="Arpit Bhayani | Python, NodeJS, Go and C++ are the languages I speak | Blog of a software engineer."/>
     <meta property="og:type" content="article"/>
-    <meta property="og:description" content="When I tried Which indian celebrity do you look like? the things I saw shocked me! Looks like facebook login is dangerous if you are not careful and cautious." />
+    <meta property="og:description" content="Let's see how we can copy, move files to and from Vagrant machine using scp" />
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html">
-    <meta name="twitter:title" content="Beware of - Which indian celebrity do you look like?">
-    <meta name="twitter:description" content="When I tried Which indian celebrity do you look like? the things I saw shocked me! Looks like facebook login is dangerous if you are not careful and cautious.">
-    <meta name="twitter:image" content="https://arpitbhayani.me/static/images/indian-celebrity/beware-which-indian-celebrity-do-you-look-like.jpg">
+    <meta name="twitter:url" content="https://arpitbhayani.me/techie/copy-move-files-to-and-from-vagrant-machine-using-scp.html">
+    <meta name="twitter:title" content="How to copy, move files to and from Vagrant machine using scp">
+    <meta name="twitter:description" content="Let's see how we can copy, move files to and from Vagrant machine using scp">
+    <meta name="twitter:image" content="https://arpitbhayani.me/static/images/profiles/arpit.png">
 
     <script src="/static/js/jquery-1.11.3.min.js"></script>
 </head>
@@ -75,13 +75,8 @@
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
     <h1 itemprop="name headline" class="ui header center aligned">
-        Beware of - Which indian celebrity do you look like?
+        How to copy, move files to and from Vagrant machine using scp
     </h1>
-    
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="https://arpitbhayani.me/static/images/indian-celebrity/beware-which-indian-celebrity-do-you-look-like.jpg" />
-        <img itemprop="image" class="ui centered large image" src="https://arpitbhayani.me/static/images/indian-celebrity/beware-which-indian-celebrity-do-you-look-like.jpg" alt="Beware of - Which indian celebrity do you look like?" />
-    </div>
     
     <div class="ui hidden divider"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -97,50 +92,17 @@
 <div class="ui hidden divider"></div>
 
     <div itemprop="articleBody">
-        <p>For last 3 odd days my <a href="https://facebook.com">Facebook</a> Wall is flooded with post that looks something like above where almost every single friend of mine has posted “Which celebrity he looked like”.</p>
+        <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
 
-<p>Initially I was not inclined to try this and for me all such things are mumbo jumbo. But then as this ritual was growing and was getting accepted at a huge pace, I thought, “Why Not?”; and I gave it a shot.</p>
+<p>For <code>scp</code> , you will need to run the usual scp command but you will need to pass in an extra argument <code>-P</code> which is the SSH the port to connect to on the remote host.</p>
 
-<p>When I clicked on the link I was redirected to the page full of advertisements; and then I clicked the link that asked me to “Login via Facebook”. It redirected me to an “OAuth Dialog” and asked me for some permission. The set of permissions it asked me were insane.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>scp -P <span class="m">2222</span> -r vagrant@127.0.0.1:/home/vagrant/site . &lt;path-in-host-machine&gt;</code></pre></figure>
 
-<p><img class="ui centered medium image" src="/static/images/indian-celebrity/oauth-dialog.jpg" /></p>
+<p>By default the virtual machine spun up by vagrant will use <code>2222</code> as SSH port but to find the port value you can run following command</p>
 
-<p>I wondered “Why an app like this needs to access my “Timeline post’?”. Hence instead of clicking “Continue” but I clicked “Edit this” and edited the set of information that Facebook should share with this app about me.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>vagrant ssh-config</code></pre></figure>
 
-<p><img class="ui centered medium image" src="/static/images/indian-celebrity/permissions-asked.jpg" /></p>
-
-<h2 id="why-did-i-do-this">Why did I do this?</h2>
-<p>The application that asks you to login via Facebook, can ask any kind of information from Facebook about you. But Facebook before giving away all information asked to that app, first consults you and asks for your permission, and gives you a chance to edit it. Most of the users do not bother to edit it; and because of which sites like <a href="http://catfly.in/">Cat Fly Quizzes</a> gets all of your information, with your consent.</p>
-
-<h2 id="what-might-happen-when-such-app-gets-my-information">What might happen when such app gets my information</h2>
-<p>Such app/websites may:</p>
-<ul>
-  <li>Sell this data to some fraudulent entity which engages in sending spams or scams.</li>
-  <li>Create fake profiles on different platforms and use it for illegal activities.</li>
-  <li>Misuse your photos and data to blackmail someone.</li>
-</ul>
-
-<p>There are tonnes of scarier scenarios but I am avoiding writing it. Just remember nothing on Internet you share is safe. Don’t trust something just because your friend trusts it.</p>
-
-<h2 id="can-i-revoke-the-permission-that-i-granted">Can I revoke the permission that I granted?</h2>
-<p>YES. A big YES!</p>
-
-<p>You can revoke the permission that you granted to an app by going to your “Settings” in your Facebook account. Here is a small video I made that would guide you to revoke the permission.</p>
-
-<div class="ui center aligned basic segment">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/6SjlXpUNrBM" frameborder="0" allowfullscreen=""></iframe>
-</div>
-
-<p>Revoking the permission will prevent such apps from getting your data again.</p>
-
-<h2 id="things-you-should-always-remember">Things you should always remember</h2>
-<ol>
-  <li>Whenever you login via Facebook or Google or any such site, please read the list of information that it will share with the app on your behalf.</li>
-  <li>If you dont want to share some or all of the information, you can change it from the OAuth dialog.</li>
-  <li>If you have already granted some app the permissions, you can anytime revoke them.</li>
-</ol>
-
-<p><strong>It is a dangerous world out there on the internet, stay safe!</strong></p>
+<p>Hope this helps :-)</p>
 
     </div>
 </div>
@@ -168,8 +130,8 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = "https://arpitbhayani.me/blog/beware-of-which-indian-celebrity-do-you-look-like.html";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "/blog/beware-of-which-indian-celebrity-do-you-look-like.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = "https://arpitbhayani.me/techie/copy-move-files-to-and-from-vagrant-machine-using-scp.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/techie/copy-move-files-to-and-from-vagrant-machine-using-scp.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
