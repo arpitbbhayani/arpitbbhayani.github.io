@@ -2,6 +2,8 @@ ROOT=~/workspace/arpitbhayani.me/
 TMP_FOLDER=/tmp/arpitbhayani.me/
 SITE_DIR=~/workspace/arpitbhayani.me/_site/
 
+rm -rf $SITE_DIR
+
 if [ -d $TMP_FOLDER ]; then
     rm -rf $TMP_FOLDER
 fi
