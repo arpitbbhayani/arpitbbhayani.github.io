@@ -19,6 +19,11 @@ layout: fullpage
     </div>
 </div>
 <div class="ui hidden divider"></div>
+
+<div class="ui header">
+    Tech Blogs
+</div>
+<div class="ui divider"></div>
 <div class="ui stackable grid basic segment">
     <div class="row">
         <div class="ui ten wide column">
@@ -26,7 +31,7 @@ layout: fullpage
                 {% assign count = 0 %}
                 {% for post in site.posts %}
                     {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
-                        <div class="ui clickable segment" onclick="window.location = '{{post.url}}';">
+                        <div class="ui segment" onclick="window.location = '{{post.url}}';">
                             <h3 class="">
                                 <a href="{{post.url}}">
                                     {{post.title}}

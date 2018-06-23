@@ -2,12 +2,10 @@
 <div class="item">
     <div class="content">
         <article>
-            <div class="ui basic clickable segment left aligned" onclick="window.location = '{{post.url}}';">
+            <div class="ui basic segment left aligned">
                 <a href="{{post.url}}">
                     <h4>{{post.title}}</h4>
                 </a>
-                <div class="ui divider"></div>
-                <div class="description">{{post.seo.description | truncate: 200 }}</div>
             </div>
         </article>
     </div>
