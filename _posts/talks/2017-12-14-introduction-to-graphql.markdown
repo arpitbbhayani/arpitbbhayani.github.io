@@ -21,7 +21,7 @@ seo:
 
 <div class="ui center aligned basic very padded segment">
     <a class="ui primary huge button"
-       href="{% post_url 2017-12-14-introduction-to-graphql-presentation %}">
+       href="{% post_url presentations/2017-12-14-introduction-to-graphql-presentation %}">
         Link to presentation
     </a>
 </div>

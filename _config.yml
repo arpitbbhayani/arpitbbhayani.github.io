@@ -21,7 +21,7 @@ twitter_username: arpit_bhayani
 # Build settings
 markdown: kramdown
 exclude: [semantic, node_modules, static/semantic/src/, static/semantic/tasks, static/node_modules]
-gems:
+plugins:
     - jekyll-sitemap
 blog_types:
     - blog

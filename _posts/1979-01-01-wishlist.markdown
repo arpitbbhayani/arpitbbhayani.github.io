@@ -22,11 +22,11 @@ I want to do and learn here
 ---
 ### One Talk Every Quarter
 
- - [Introduction to GraphQL]({% post_url 2017-12-14-introduction-to-graphql %}) at Amazon's Weekly Learning Series on 17th January, 2018.
+ - [Introduction to GraphQL]({% post_url talks/2017-12-14-introduction-to-graphql %}) at Amazon's Weekly Learning Series on 17th January, 2018.
 
 ### One Tech Blog Every Month
 
- - [How to copy, move files to and from Vagrant machine using scp]({% post_url 2018-03-16-copy-move-files-to-and-from-vagrant-machine-using-scp %})
+ - [How to copy, move files to and from Vagrant machine using scp]({% post_url techie/2018-03-16-copy-move-files-to-and-from-vagrant-machine-using-scp %})
 
 ### Kipo Season 1
 
