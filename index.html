@@ -86,3 +86,33 @@ layout: fullpage
         </div>
     </div>
 </div>
+
+
+<div class="ui header">
+        Mr. Cup
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui six column grid">
+        {% for post in site.categories['mrcup'] limit: 6 %}
+        <div class="ui column">
+            <div class="ui basic white center aligned segment emojify">
+                <div class="ui center aligned nospace borderless segment">
+                    <div class="ui small circular image">
+                        <a href="{{post.url}}">
+                            <img src="{{post.img}}" />
+                        </a>
+                    </div>
+                </div>
+                <div class="content">
+                    <a href="{{post.url}}">
+                        <p class="ui small text">{{post.title}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="ui right aligned basic segment">
+        <a href="{% post_url 1979-01-01-mrcup %}">All Mr. Cup Stories</a>
+    </p>
+</div>
