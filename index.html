@@ -31,7 +31,7 @@ layout: fullpage
                 {% assign count = 0 %}
                 {% for post in site.posts %}
                     {% if post.type != 'dummy' and site.blog_types contains post.categories[0] %}
-                        <div class="ui segment" onclick="window.location = '{{post.url}}';">
+                        <div class="ui segment">
                             <h3 class="">
                                 <a href="{{post.url}}">
                                     {{post.title}}
