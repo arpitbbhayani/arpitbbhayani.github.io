@@ -28,3 +28,4 @@ blog_types:
     - techie
     - curiosity
 plugins_dir: _plugins
+environment: production

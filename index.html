@@ -12,8 +12,8 @@ layout: fullpage
                 <span class="ui header">Hi! I am Arpit</span>
                 <br/>
                 An avid programmer, passionate about building
-                products, search engines and utilities. I love to
-                expand my horizons on Philosophy, Astronomy,
+                products and search engines. When I am not coding
+                I love to expand my horizons on Philosophy, Astronomy,
                 Physics and Spirituality.
             </div>
         </div>
@@ -22,7 +22,7 @@ layout: fullpage
 <div class="ui hidden divider"></div>
 
 <div class="ui header">
-    Tech Blogs
+    Tech Articles
 </div>
 <div class="ui divider"></div>
 <div class="ui stackable grid basic segment">
@@ -66,7 +66,7 @@ layout: fullpage
             <div class="ui fitted divider"></div>
             <div class="ui list">
                 {% assign count = 0 %}
-                {% for post in site.posts %}
+                {% for post in site.posts offset:1 %}
                     {% if post.type != 'dummy' and post.categories[0] == 'techie' %}
                         <div class="ui item">
                             <a href="{{post.url}}">
@@ -81,39 +81,9 @@ layout: fullpage
                     {% endif %}
                 {% endfor %}
                 <p class="ui right aligned basic segment">
-                    <a href="{% post_url 1979-01-01-techie %}">All Tech Blogs</a>
+                    <a href="{% post_url 1979-01-01-techie %}">All Tech Articles</a>
                 </p>
             </div>
         </div>
     </div>
-</div>
-
-
-<div class="ui header">
-        Mr. Cup
-    </div>
-    <div class="ui divider"></div>
-    <div class="ui six column doubling grid">
-        {% for post in site.categories['mrcup'] limit: 6 %}
-        <div class="ui column">
-            <div class="ui basic white center aligned segment emojify">
-                <div class="ui center aligned nospace borderless segment">
-                    <div class="ui small circular image">
-                        <a href="{{post.url}}">
-                            <img src="{{post.img}}" />
-                        </a>
-                    </div>
-                </div>
-                <div class="content">
-                    <a href="{{post.url}}">
-                        <p class="ui small text">{{post.title}}</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <p class="ui right aligned basic segment">
-        <a href="{% post_url 1979-01-01-mrcup %}">All Mr. Cup Stories</a>
-    </p>
 </div>

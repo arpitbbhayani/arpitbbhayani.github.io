@@ -3,9 +3,10 @@
     {% include head.html %}
     <body>
         {% include header.html %}
-        {% include google_analytics.html %}
-        {% include google_adsense.html %}
-        {% include sumo.html %}
+        {% if site.environment == "production" %}
+            {% include google_analytics.html %}
+            {% include google_adsense.html %}
+        {% endif %}
         <div style="margin-top: 80px; padding-bottom: 50px;">
             {{content}}
         </div>
