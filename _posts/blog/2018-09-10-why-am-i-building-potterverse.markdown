@@ -1,6 +1,6 @@
 ---
-title: Why am I creating Potterverse?
-img:    https://arpitbhayani.me/static/images/why-am-i-creating-potterverse/explore-potterverse.png
+title: Why am I building Potterverse?
+img:    https://arpitbhayani.me/static/images/why-am-i-building-potterverse/explore-potterverse.png
 layout: post
 comments: true
 tags:
