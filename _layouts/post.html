@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui header center aligned">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
         {{ page.title }}
     </h1>
     {% if page.img %}
@@ -13,9 +13,11 @@ layout: default
     </div>
     {% endif %}
     {% include ads_plugin.html %}
-    <div itemprop="articleBody">
-        {{ content }}
-    </div>
+    <article>
+        <div itemprop="articleBody">
+            {{ content }}
+        </div>
+    </article>
 </div>
 
 {% include ads_plugin.html %}

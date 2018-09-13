@@ -23,6 +23,7 @@ markdown: kramdown
 exclude: [semantic, node_modules, static/semantic/src/, static/semantic/tasks, static/node_modules]
 plugins:
     - jekyll-sitemap
+    - jemoji
 blog_types:
     - blog
     - techie
