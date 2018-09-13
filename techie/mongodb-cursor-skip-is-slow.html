@@ -78,7 +78,7 @@
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui header center aligned">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
         Why MongoDB's cursor.skip() is slow?
     </h1>
     
@@ -100,8 +100,9 @@
 </script>
 <div class="ui hidden divider"></div>
 
-    <div itemprop="articleBody">
-        <p>MongoDB’s cursor object has a method called <code>skip</code>, which as per <a href="https://docs.mongodb.com/manual/reference/method/cursor.skip/#definition">documentation and definition</a>, controls where MongoDB begins returning results. Thus in combination with function <a href="https://docs.mongodb.com/manual/reference/method/cursor.limit/">limit</a>, one can easily have paginated results.</p>
+    <article>
+        <div itemprop="articleBody">
+            <p>MongoDB’s cursor object has a method called <code>skip</code>, which as per <a href="https://docs.mongodb.com/manual/reference/method/cursor.skip/#definition">documentation and definition</a>, controls where MongoDB begins returning results. Thus in combination with function <a href="https://docs.mongodb.com/manual/reference/method/cursor.limit/">limit</a>, one can easily have paginated results.</p>
 
 <p>I have written a blog post on <a href="/techie/fast-and-efficient-pagination-in-mongodb.html">how you can have Fast and Efficient Pagination in MongoDB</a>.</p>
 
@@ -122,7 +123,8 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
 
 <p>In conclusion, skip is not as bad one might think. But you must understand your use case well so as to make an informed decision.</p>
 
-    </div>
+        </div>
+    </article>
 </div>
 
 <div class="ui hidden divider"></div>
@@ -162,7 +164,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 
 
         </div>

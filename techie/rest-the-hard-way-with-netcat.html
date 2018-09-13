@@ -78,7 +78,7 @@
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui header center aligned">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
         HTTP Requests - The Hard Way with Netcat
     </h1>
     
@@ -100,8 +100,9 @@
 </script>
 <div class="ui hidden divider"></div>
 
-    <div itemprop="articleBody">
-        <p>Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.</p>
+    <article>
+        <div itemprop="articleBody">
+            <p>Majority of the traffic over the internet is HTTP Traffic. There is a HTTP Client which wants some data from HTTP Server, so it creates a HTTP Request Message in the protocol understandable by the server and sends it. Server reads the message, understands it, acts accordingly and replies back with HTTP Response.</p>
 
 <p>This complete process is abstracted by the tools like <a href="https://curl.haxx.se/">curl</a>, requests libraries and utilities like <a href="https://www.getpostman.com/">Postman</a>. Instead of using these tools and utilities, we shall go by the hard way and see HTTP messages in action.</p>
 
@@ -246,7 +247,8 @@ Content-Length: <span class="m">30</span>
   <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP Methods</a></li>
 </ol>
 
-    </div>
+        </div>
+    </article>
 </div>
 
 <div class="ui hidden divider"></div>
@@ -286,7 +288,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 
 
         </div>

@@ -78,7 +78,7 @@
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui header center aligned">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
         How Sleepsort helped me understand concurrency in golang
     </h1>
     
@@ -100,8 +100,9 @@
 </script>
 <div class="ui hidden divider"></div>
 
-    <div itemprop="articleBody">
-        <p>For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">Threads</a> and modern languages like NodeJS and Python uses something called as <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/">event loops</a> for its asynchronous IO which is there to make IO based things concurrent.</p>
+    <article>
+        <div itemprop="articleBody">
+            <p>For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">Threads</a> and modern languages like NodeJS and Python uses something called as <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/">event loops</a> for its asynchronous IO which is there to make IO based things concurrent.</p>
 
 <p>Recently I started diving deep into concurrency in <a href="https://golang.org/">Golang</a> and I wanted to start with a good <code>"Hello World"</code> program for it. This time I thought of taking an unconventional way to write my first concurrent program. Going through various examples over the Internet I could not find anything that made it fun. I suddenly recalled <a href="http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/">Sleepsort</a> and it was the ideal way (fun + new = &lt;3) to learn concurrency.</p>
 
@@ -161,7 +162,8 @@ free to fork and play around with it.</p>
 <p>If you find any interesting way to learn concurrency or any new use case here, please post a comment below.
 I would love to know them.</p>
 
-    </div>
+        </div>
+    </article>
 </div>
 
 <div class="ui hidden divider"></div>
@@ -201,7 +203,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 
 
         </div>

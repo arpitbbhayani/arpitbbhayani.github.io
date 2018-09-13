@@ -78,7 +78,7 @@
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui header center aligned">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
         How to copy, move files to and from Vagrant machine using scp
     </h1>
     
@@ -95,8 +95,9 @@
 </script>
 <div class="ui hidden divider"></div>
 
-    <div itemprop="articleBody">
-        <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
+    <article>
+        <div itemprop="articleBody">
+            <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
 
 <p>For <code>scp</code> , you will need to run the usual scp command but you will need to pass in an extra argument <code>-P</code> which is the SSH the port to connect to on the remote host.</p>
 
@@ -108,7 +109,8 @@
 
 <p>Hope this helps :-)</p>
 
-    </div>
+        </div>
+    </article>
 </div>
 
 <div class="ui hidden divider"></div>
@@ -148,7 +150,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 
 
         </div>

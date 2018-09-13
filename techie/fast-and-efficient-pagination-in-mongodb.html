@@ -78,7 +78,7 @@
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui header center aligned">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
         Fast and Efficient Pagination in MongoDB
     </h1>
     
@@ -100,8 +100,9 @@
 </script>
 <div class="ui hidden divider"></div>
 
-    <div itemprop="articleBody">
-        <p><a href="https://www.mongodb.com/">MongoDB</a> is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are</p>
+    <article>
+        <div itemprop="articleBody">
+            <p><a href="https://www.mongodb.com/">MongoDB</a> is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are</p>
 
 <ul>
   <li>Batch processing</li>
@@ -236,7 +237,8 @@ I bet you didn’t know that a <a href="https://docs.mongodb.com/manual/referenc
 
 <p>Turns out, there is a severe problem with skip function. I have tried to jot it down in <a href="/techie/mongodb-cursor-skip-is-slow.html">this blog post</a>. Because of which second approach has advantage over first. But that is not it; I wrote a simple <a href="https://github.com/arpitbbhayani/mongo-pagination-benchmark">python code</a> to benchmark the two approaches for various combinations and it turns out <code>skip</code> performs better in some case. The results are compiled into <a href="/techie/benchmark-and-compare-pagination-approach-in-mongodb.html">this blog post</a>.</p>
 
-    </div>
+        </div>
+    </article>
 </div>
 
 <div class="ui hidden divider"></div>
@@ -276,7 +278,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 
 
         </div>

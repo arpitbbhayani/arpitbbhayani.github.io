@@ -5,9 +5,70 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Sep 2018 13:20:41 +0530</pubDate>
-    <lastBuildDate>Wed, 12 Sep 2018 13:20:41 +0530</lastBuildDate>
+    <pubDate>Thu, 13 Sep 2018 19:03:46 +0530</pubDate>
+    <lastBuildDate>Thu, 13 Sep 2018 19:03:46 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Why am I creating Potterverse?</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://potterverse.arpitbhayani.me&quot;&gt;Potterverse&lt;/a&gt; is meant to be a platform for
+Potterheads like me to discover something new, something interesting about the
+Wizarding world of Harry Potter. It will be powered by some sophisticated algorithms,
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_learning&quot;&gt;Machine Learning&lt;/a&gt; and
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Natural_language_processing&quot;&gt;Natural Language Processing&lt;/a&gt;,
+to bring out details, facts and theories that are buried deep within.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-and-when&quot;&gt;How and when?&lt;/h3&gt;
+&lt;p&gt;I have always been high on the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Harry_Potter&quot;&gt;Wizarding world of Harry Potter&lt;/a&gt;
+and have loved every bit of it. It has been my hobby, rather passion, to collect and
+note every single detail, questionnaire, theory, video that has been made on
+Potterverse in a document.&lt;/p&gt;
+
+&lt;p&gt;One lazy weekend I thought of dumping some of this content in a search engine and see
+if I could find something; and being a coder I scrapped and dumped the data
+in &lt;a href=&quot;https://www.elastic.co/&quot;&gt;Elasticsearch&lt;/a&gt; and Voila! I had my very own search engine
+that could search anything from my favourite Wizarding world. While I was writing
+the code for it, various ideas and features came to my mind and one thing led to
+another and at the end I had a rough list of 30 odd features that I could build
+specific to Potterverse … and thus &lt;a href=&quot;https://potterverse.arpitbhayani.me&quot;&gt;Potterverse&lt;/a&gt;
+was born.&lt;/p&gt;
+
+&lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
+
+&lt;p&gt;It was the year 2014 when I created &lt;a href=&quot;http://github.com/arpitbbhayani/wikise&quot;&gt;my first search engine&lt;/a&gt;
+on top of 43 GB of Wikipedia data, and since then I had an inclination towards
+information retrieval and data mining in particular. But in past few years due to some or the other reasons I was unable
+to pay enough attention to it.&lt;/p&gt;
+
+&lt;p&gt;In past few months, I again started playing around with lots of text data, started reading
+literature about Information Retrieval, Machine Learning, Data Mining and Natural Language Processing,
+and thought of applying all of my learnings in a platform that is dedicated for a specific domain - and
+I chose my favourite Wizarding world.&lt;/p&gt;
+
+&lt;p&gt;The dataset I chose is from &lt;a href=&quot;http://harrypotter.wikia.com/wiki/Main_Page&quot;&gt;Wikia&lt;/a&gt; which is, in all way,
+ideal for basic experimentation needs, as it is not too Big but at the same time not too small either.
+The dataset is almost complete, has enough variations to play with and the output can be very easily
+judged for relevance and usefulness.&lt;/p&gt;
+
+&lt;p&gt;In the future, apart from the dataset of Wikia, I would start using some Open datasets available, Videos
+on YouTube, some Websites like &lt;a href=&quot;https://www.pottermore.com&quot;&gt;Pottermore&lt;/a&gt;, Reddit Threads, etc and make them
+discoverable at one &lt;a href=&quot;https://potterverse.arpitbhayani.me&quot;&gt;place&lt;/a&gt; and make this platform - a one stop -
+for all potterheads to discover something pottery.&lt;/p&gt;
+
+&lt;p&gt;Last but not the least, I have learnt so much from the Harry Potter community and this platform
+is my way of giving back. I really hope Potterheads will find this platform useful.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Sep 2018 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/blog/why-am-i-creating-potterverse.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/blog/why-am-i-creating-potterverse.html</guid>
+        
+        <category>potterverse</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>How to copy, move files to and from Vagrant machine using scp</title>
@@ -1349,58 +1410,6 @@ If skip was so terrible, then MongoDB team and community must had taken that dec
         <pubDate>Sun, 04 Jun 2017 00:00:00 +0530</pubDate>
         <link>https://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</link>
         <guid isPermaLink="true">https://arpitbhayani.me/techie/mongodb-cursor-skip-is-slow.html</guid>
-        
-        <category>mongodb</category>
-        
-        <category>scalability</category>
-        
-        
-        <category>techie</category>
-        
-      </item>
-    
-      <item>
-        <title>Benchmark and compare the two approaches to paginate in MongoDB</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Batch processing&lt;/li&gt;
-  &lt;li&gt;Showing huge set of results on user interface&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are multiple approaches through which you can &lt;a href=&quot;/techie/fast-and-efficient-pagination-in-mongodb.html&quot;&gt;paginate your result set in MongoDB&lt;/a&gt;. This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go …&lt;/p&gt;
-
-&lt;p&gt;Benchmark has been done over a non-indexed collection. Each document of the collection looks something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d17263623919cd5165bd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Lisa Rogers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;marks&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;All records of a collection are fetched page-wise. Size of each page is fixed during fetch of the collection. Each page is fetched &lt;em&gt;3&lt;/em&gt; times and average of, time to fetch one “page”, 3 is recorded.&lt;/p&gt;
-
-&lt;p&gt;Following image shows the how two approach fares against each other.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;ui huge centered stylish image&quot; src=&quot;/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png&quot; alt=&quot;Benchmark results&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for &lt;code&gt;skip&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt; approach than other. The approach using &lt;code&gt;_id&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt; almost gives constant performance and is independent of size of the result set.&lt;/p&gt;
-
-&lt;p&gt;I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB’s database drivier will yield better information about this behavior. You could see some spikes in the response times, that are because of Disk Contention.&lt;/p&gt;
-
-&lt;p&gt;In short:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;For huge result set, paginating using &lt;code&gt;_id&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt; is far better than using &lt;code&gt;skip&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;For smaller result set, it does not matter, but prefer skip and limit.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;An interesting thing I observed is that after page size crosses 100, the gap between the two approach reduces to some extent. I am yet to perform detailed benchmark on that as such use-case (where page-size is more than 100) is pretty rare in practical applications.&lt;/p&gt;
-
-&lt;p&gt;You can find the Python code used for this benchmark &lt;a href=&quot;https://github.com/arpitbbhayani/mongo-pagination-benchmark&quot;&gt;here&lt;/a&gt;. If you have any suggestion or improvement, do let me know.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 02 Jun 2017 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/techie/benchmark-and-compare-pagination-approach-in-mongodb.html</guid>
         
         <category>mongodb</category>
         
