@@ -26,7 +26,7 @@ I want to do and learn here
 
 ### One Tech Blog Every Month
 
- - [How to copy, move files to and from Vagrant machine using scp]({% post_url techie/2018-03-16-copy-move-files-to-and-from-vagrant-machine-using-scp %})
+ - [How to copy, move files to and from Vagrant machine using scp]({% post_url blog/2018-03-16-copy-move-files-to-and-from-vagrant-machine-using-scp %})
 
 ### Kipo Season 1
 

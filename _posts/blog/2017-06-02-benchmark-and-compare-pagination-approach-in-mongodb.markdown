@@ -21,7 +21,7 @@ seo:
 - Batch processing
 - Showing huge set of results on user interface
 
-There are multiple approaches through which you can [paginate your result set in MongoDB]({% post_url techie/2017-06-06-fast-and-efficient-pagination-in-mongodb %}). This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go ...
+There are multiple approaches through which you can [paginate your result set in MongoDB]({% post_url blog/2017-06-06-fast-and-efficient-pagination-in-mongodb %}). This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go ...
 
 Benchmark has been done over a non-indexed collection. Each document of the collection looks something like this
 {% highlight js %}

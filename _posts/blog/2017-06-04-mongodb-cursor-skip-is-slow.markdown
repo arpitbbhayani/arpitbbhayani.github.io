@@ -16,7 +16,7 @@ seo:
 
 MongoDB’s cursor object has a method called `skip`, which as per [documentation and definition](https://docs.mongodb.com/manual/reference/method/cursor.skip/#definition), controls where MongoDB begins returning results. Thus in combination with function [limit](https://docs.mongodb.com/manual/reference/method/cursor.limit/), one can easily have paginated results.
 
-I have written a blog post on [how you can have Fast and Efficient Pagination in MongoDB]({% post_url techie/2017-06-06-fast-and-efficient-pagination-in-mongodb %}).
+I have written a blog post on [how you can have Fast and Efficient Pagination in MongoDB]({% post_url blog/2017-06-06-fast-and-efficient-pagination-in-mongodb %}).
 
 But while going through the documentation of skip, there is something interesting to notice. There is a small warning in [MongoDB documentation](https://docs.mongodb.com/manual/reference/method/cursor.skip/#behavior), that states
 
@@ -29,6 +29,6 @@ This also implies that if you use `skip`  then the “skipping speed” will not
 But what if the size of result set is small? is calling `skip` still a terrible idea?
 If skip was so terrible, then MongoDB team and community must had taken that decision long back. But they haven’t … why?
 
-Because it is very efficient and fast for smaller result set. I have taken this opportunity to [benchmark and compare]({% post_url techie/2017-06-02-benchmark-and-compare-pagination-approach-in-mongodb %}) the [two approach for pagination]({% post_url techie/2017-06-06-fast-and-efficient-pagination-in-mongodb %}) and there I found out skip and limit based pagination works well for smaller result sets.
+Because it is very efficient and fast for smaller result set. I have taken this opportunity to [benchmark and compare]({% post_url blog/2017-06-02-benchmark-and-compare-pagination-approach-in-mongodb %}) the [two approach for pagination]({% post_url blog/2017-06-06-fast-and-efficient-pagination-in-mongodb %}) and there I found out skip and limit based pagination works well for smaller result sets.
 
 In conclusion, skip is not as bad one might think. But you must understand your use case well so as to make an informed decision.
