@@ -1,0 +1,21 @@
+---
+title:  Vimarsh | Weekly discussions and deliberations
+img:    https://arpitbhayani.me/static/images/vimarsh.jpg
+layout: default
+seo:
+ description: Vimarsh is a series of Podcasts where two friends are discussing day to day issues, their possible solutions and sharing their respective opinions about life, universe and everything and hopes that their discussions ,might make this world a better place.
+---
+
+# Vimarsh
+
+Vimarsh is a series of Podcasts where two friends are discussing day to day issues, their possible solutions and sharing their respective opinions about life, universe and everything and hopes that their discussions ,might make this world a better place.
+
+### Episode 001: Mai toh raste se jaa raha tha | मै तो रस्ते से जा रहा था
+
+In this podcast, Arpit and Shashi are having a discussion on importance of following traffic rules.
+
+<div class="ui basic nospace segment">
+    <div style="width: 400px !important;">
+        <iframe src="https://anchor.fm/vimarsh/embed/episodes/001-Mai-toh-raste-se-jaa-raha-tha-e281bf" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
