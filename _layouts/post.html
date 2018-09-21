@@ -3,16 +3,16 @@ layout: default
 ---
 <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui huge header center aligned">
-        <b>{{ page.title }}</b>
-    </h1>
-    {% if page.img %}
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="{{page.img}}" />
-        <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
-    </div>
-    {% endif %}
     <article>
+        <h1 itemprop="name headline" class="ui huge header center aligned">
+            <b>{{ page.title }}</b>
+        </h1>
+        {% if page.img %}
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="{{page.img}}" />
+            <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
+        </div>
+        {% endif %}
         <div itemprop="articleBody">
             {{ content }}
         </div>
