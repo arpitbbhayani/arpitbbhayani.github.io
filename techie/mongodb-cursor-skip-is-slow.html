@@ -78,16 +78,16 @@
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
             <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <h1 itemprop="name headline" class="ui huge header center aligned">
-        <b>Why MongoDB's cursor.skip() is slow?</b>
-    </h1>
-    
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-        <meta itemprop="url" content="https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg" />
-        <img itemprop="image" class="ui centered large image" src="https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg" alt="Why MongoDB's cursor.skip() is slow?" />
-    </div>
-    
     <article>
+        <h1 itemprop="name headline" class="ui huge header center aligned">
+            <b>Why MongoDB's cursor.skip() is slow?</b>
+        </h1>
+        
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg" />
+            <img itemprop="image" class="ui centered large image" src="https://arpitbhayani.me/static/images/mongodb-pagination/cursor-skip-slow.jpg" alt="Why MongoDB's cursor.skip() is slow?" />
+        </div>
+        
         <div itemprop="articleBody">
             <p>MongoDB’s cursor object has a method called <code>skip</code>, which as per <a href="https://docs.mongodb.com/manual/reference/method/cursor.skip/#definition">documentation and definition</a>, controls where MongoDB begins returning results. Thus in combination with function <a href="https://docs.mongodb.com/manual/reference/method/cursor.limit/">limit</a>, one can easily have paginated results.</p>
 
