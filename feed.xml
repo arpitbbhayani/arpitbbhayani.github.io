@@ -5,9 +5,151 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Sep 2018 14:14:45 +0530</pubDate>
-    <lastBuildDate>Mon, 17 Sep 2018 14:14:45 +0530</lastBuildDate>
+    <pubDate>Fri, 21 Sep 2018 14:59:55 +0530</pubDate>
+    <lastBuildDate>Fri, 21 Sep 2018 14:59:55 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Building the Potterverse search engine</title>
+        <description>&lt;p&gt;After deciding on the &lt;a href=&quot;/blog/tech-stack-for-potterverse.html&quot;&gt;tech stack&lt;/a&gt;
+for &lt;a href=&quot;http://potterverse.arpitbhayani.me/&quot;&gt;Potterverse&lt;/a&gt;, it was time for me to
+start building something nice. The process started with creating the first design, downloading
+and processing the dataset, extracting the required information and dumping everything into
+elasticsearch.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-first-design&quot;&gt;The first design&lt;/h3&gt;
+&lt;p&gt;The very first product design I had in mind looked like this&lt;/p&gt;
+
+&lt;div class=&quot;ui hidden divider&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;ui image&quot;&gt;
+    &lt;img src=&quot;/static/images/potterverse/design-001.jpg&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui hidden divider&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;The left half of the page contains the search results for the given term
+and right half contains a small preview of the page that is selected/tapped. If the user
+taps on the title of the result, it opens the source page in a new tab. Each item in the result
+contains some information about the page, like &lt;code&gt;Title&lt;/code&gt;, &lt;code&gt;SmallExcerpt&lt;/code&gt;, &lt;code&gt;SourceLink&lt;/code&gt;, and
+&lt;code&gt;ShortPreview&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The short preview of the page will help the user get a snippet of information about the
+entity that is tapped. After reading the snippet, if the user want to read more from
+the page, there is a &lt;code&gt;Read More&lt;/code&gt; link which would open the source page in new tab.&lt;/p&gt;
+
+&lt;p&gt;The result page also shows the time taken for the search to perform and approximate number of
+relevant documents for the given search query.&lt;/p&gt;
+
+&lt;h3 id=&quot;downloading-and-processing-the-dataset&quot;&gt;Downloading and processing the dataset&lt;/h3&gt;
+&lt;p&gt;The very basic version of Potterverse is built on top of the
+&lt;a href=&quot;http://harrypotter.wikia.com/wiki/Help:Database_download&quot;&gt;Harry Potter Wikia Dataset&lt;/a&gt; from Wikia.
+The dataset is very similar to Wikipedia dataset and is also in &lt;a href=&quot;https://www.mediawiki.org/wiki/MediaWiki&quot;&gt;Mediawiki format&lt;/a&gt;
+which makes my life much simpler as I have already written a &lt;a href=&quot;https://en.wikipedia.org/wiki/Simple_API_for_XML&quot;&gt;SAX Parser&lt;/a&gt; for my &lt;a href=&quot;http://github.com/arpitbbhayani/wikise&quot;&gt;very first search engine&lt;/a&gt; built on top of Wikipedia data.&lt;/p&gt;
+
+&lt;p&gt;With slight modifications in the code, I converted the entire dataset in
+&lt;a href=&quot;http://www.json.org/&quot;&gt;JSON format&lt;/a&gt; which is loved by both Python and Elasticsearch. Along with extracting
+basic information like &lt;code&gt;DocumentID&lt;/code&gt;, &lt;code&gt;Title&lt;/code&gt;, &lt;code&gt;Body&lt;/code&gt; the parser also extracts &lt;code&gt;Infobox&lt;/code&gt;, &lt;code&gt;Categories&lt;/code&gt;,
+&lt;code&gt;InternalLinks&lt;/code&gt;, &lt;code&gt;ExternalLinks&lt;/code&gt; explicitly. The entire detail is JSONed and dumped in files, one
+file per document.&lt;/p&gt;
+
+&lt;p&gt;The dataset contains tonnes of documents that are not significant, like &lt;code&gt;Talk&lt;/code&gt; documents, &lt;code&gt;File&lt;/code&gt; documents,
+etc. which are filtered out before processing. After filtering we are left with around &lt;strong&gt;13350&lt;/strong&gt; documents,
+and this now becomes the very first corpus on top of which the first version of Potterverse
+search engine is built.&lt;/p&gt;
+
+&lt;h3 id=&quot;indexing-the-data-in-elasticsearch&quot;&gt;Indexing the data in Elasticsearch&lt;/h3&gt;
+&lt;p&gt;The list of information that si required to show on interface includes&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Title&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;SourceLink&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ShortExcerpt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ShortPreview&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since Elasticsearch should behold everything required on the interface, hence we need to compute,
+process and dump information beforehand. Let’s see what we have and what we don;t&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Title&lt;/code&gt; is present in dump file as is.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;SourceLink&lt;/code&gt; is base url of Wikia with &lt;code&gt;Title&lt;/code&gt; appended to it.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ShortExcerpt&lt;/code&gt; is first 256 characters from &lt;code&gt;Body&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ShortPreview&lt;/code&gt; is first 3000 characters from &lt;code&gt;Body&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So a sample document dumped in Elasticsearch index will look something like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;Title&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry Potter&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;Excerpt&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;SourceLink&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://harrypotter.wikia.com/wiki/Harry Potter&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here &lt;code&gt;Title&lt;/code&gt; is the title of the document picked as is from the dump file and &lt;code&gt;Excerpt&lt;/code&gt; is the
+first 3000 characters from &lt;code&gt;Body&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The mapping for the index is raw and default, with default analyzer, default tokenizers and
+default settings, in short no customizations.&lt;/p&gt;
+
+&lt;h3 id=&quot;querying-the-data&quot;&gt;Querying the data&lt;/h3&gt;
+&lt;p&gt;For the first version of search engine, the query to be fired on Elasticsearch is a very basic
+one with boost given to &lt;code&gt;Title&lt;/code&gt; match none given to &lt;code&gt;Excerpt&lt;/code&gt;. Fuzziness is set
+to &lt;code&gt;AUTO&lt;/code&gt; for both fields, which ensures that the search engine is also Typo Tolerant.&lt;/p&gt;
+
+&lt;p&gt;For the query &lt;code&gt;Harry Potter&lt;/code&gt; elasticsearch query that is fired looks like this&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;query&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;function_score&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;quot;query&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;quot;bool&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;quot;should&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;quot;match&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;quot;Title&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;nt&quot;&gt;&amp;quot;query&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry Potter&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                  &lt;span class=&quot;nt&quot;&gt;&amp;quot;boost&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;quot;match&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;quot;Excerpt&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;nt&quot;&gt;&amp;quot;query&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry Potter&amp;quot;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Above query when fired on Elasticsearch returns nice results; which are okay
+to be driving the first version of search engine. The default
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Tf%E2%80%93idf&quot;&gt;tf-idf&lt;/a&gt; scoring
+works well and results are quite relevant.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-conclusion&quot;&gt;In conclusion&lt;/h3&gt;
+&lt;p&gt;With very minimal efforts this is how I spun up a nice looking Harry Potter based search
+engine. It was not difficult and took very little time for entire setup. As and when
+some modifications will be made to Potterverse, a blog will be published detailing
+the changes, improvements and results that have been made and achieved.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned!&lt;/p&gt;
+
+&lt;p&gt;PS: In case you have any suggestions about &lt;a href=&quot;http://potterverse.arpitbhayani.me/&quot;&gt;Potterverse&lt;/a&gt;,
+feel free to tweet me &lt;a href=&quot;https://twitter.com/arpit_bhayani&quot;&gt;@arpit_bhayani&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Sep 2018 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html</guid>
+        
+        <category>potterverse</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>Tech Stack for Potterverse</title>
@@ -1333,156 +1475,6 @@ I would love to know them.&lt;/p&gt;
         
         
         <category>hackerrank</category>
-        
-      </item>
-    
-      <item>
-        <title>Fast and Efficient Pagination in MongoDB</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Batch processing&lt;/li&gt;
-  &lt;li&gt;Showing huge set of results on user interface&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Paginating on client and server side are both really very expensive and should not be considered. Hence pagination is generally handled at database level and databases are optimized for such needs too.&lt;/p&gt;
-
-&lt;p&gt;Below I shall explain you the 2 approaches through which you can easily paginate your MongoDB responses.
-Sample Document&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;_id&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d17263623919cd5165bd&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Lisa Rogers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;marks&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;approach-1-using-cursorskip-and-cursorlimit&quot;&gt;Approach 1: Using &lt;code&gt;cursor.skip&lt;/code&gt; and &lt;code&gt;cursor.limit&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;MongoDB cursor has two methods that makes paging easy; they are&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;cursor.skip()&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;cursor.limit()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;skip(n)&lt;/code&gt; will skip &lt;code&gt;n&lt;/code&gt; documents from the cursor while &lt;code&gt;limit(n)&lt;/code&gt; will cap the number of documents to be returned from the cursor. Thus combination of two naturally paginates the response.&lt;/p&gt;
-
-&lt;p&gt;In Mongo Shell your pagination code looks something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Page 1&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Page 2&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Page 3&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code&gt;.find()&lt;/code&gt; will return a cursor pointing to all documents of the collection and then for each page we skip some and consume some. Through continuous skip and limit we get pagination in MongoDB.&lt;/p&gt;
-
-&lt;p&gt;I am fond of Python and hence here is a small trivial function to implement pagination:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;skiplimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;returns a set of documents belonging to page number `page_num`&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;        where size of each page is `page_size`.&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# Calculate number of documents to skip&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;skips&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;# Skip and limit&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;students&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;skips&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;# Return documents&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;approach-2-using-_id-and-limit&quot;&gt;Approach 2: Using &lt;code&gt;_id&lt;/code&gt; and &lt;code&gt;limit&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;This approach will make effective use of default index on &lt;code&gt;_id&lt;/code&gt; and nature of &lt;code&gt;ObjectId&lt;/code&gt;.
-I bet you didn’t know that a &lt;a href=&quot;https://docs.mongodb.com/manual/reference/bson-types/#objectid&quot;&gt;Mongodb ObjectId&lt;/a&gt; is a 12 byte structure containing&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a 4-byte value representing the seconds since the Unix epoch,&lt;/li&gt;
-  &lt;li&gt;a 3-byte machine identifier,&lt;/li&gt;
-  &lt;li&gt;a 2-byte process id, and&lt;/li&gt;
-  &lt;li&gt;a 3-byte counter, starting with a random value.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Even I didn’t until I read the &lt;a href=&quot;https://docs.mongodb.com/manual/reference/bson-types/#objectid&quot;&gt;documentation&lt;/a&gt;. Apart from its structure there is one very interesting property of ObjectId; which is - &lt;em&gt;ObjectId has natural ordering&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;What does it mean? It simplifies that we can apply all the &lt;em&gt;less-than-s&lt;/em&gt; and all the &lt;em&gt;greater-than-s you&lt;/em&gt; want to it. If you don’t believe me, open Mongo shell and execute following set of commands&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52e&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;ObjectId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;5936d49863623919cd56f52a&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Using this property of ObjectId and also taking into consideration the fact that &lt;code&gt;_id&lt;/code&gt; is always indexed, we can devise following approach for pagination:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Fetch a page of documents from database&lt;/li&gt;
-  &lt;li&gt;Get the document id of the last document of the page&lt;/li&gt;
-  &lt;li&gt;Retrieve documents greater than that id&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In Mongo Shell your pagination code looks something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Page 1&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Page 2&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logic&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$gt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Page 3&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logic&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;students&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$gt&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Again, I am fond of Python and here is the Python implementation of this approach.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;idlimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;sd&quot;&gt;&amp;quot;&amp;quot;&amp;quot;Function returns `page_size` number of documents after last_id&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;        and the new last_id.&lt;/span&gt;
-&lt;span class=&quot;sd&quot;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;# When it is first page&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;students&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;students&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$gt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;# Get the data      &lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;# No documents left&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;# Since documents are naturally ordered with _id, last document will&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# have max id.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_id&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;# Return data and last_id&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_id&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;If you are using a field other than &lt;code&gt;_id&lt;/code&gt; for offset, make sure the field is indexed and properly ordered else the performance will suffer.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;closing-remarks&quot;&gt;Closing Remarks&lt;/h2&gt;
-
-&lt;p&gt;Both of the above approaches are valid and correct. But as we know, in field of Computer Science, whenever there are multiple options to achieve something, one always outperforms the other. Same is the situation here as well.&lt;/p&gt;
-
-&lt;p&gt;Turns out, there is a severe problem with skip function. I have tried to jot it down in &lt;a href=&quot;/techie/mongodb-cursor-skip-is-slow.html&quot;&gt;this blog post&lt;/a&gt;. Because of which second approach has advantage over first. But that is not it; I wrote a simple &lt;a href=&quot;https://github.com/arpitbbhayani/mongo-pagination-benchmark&quot;&gt;python code&lt;/a&gt; to benchmark the two approaches for various combinations and it turns out &lt;code&gt;skip&lt;/code&gt; performs better in some case. The results are compiled into &lt;a href=&quot;/techie/benchmark-and-compare-pagination-approach-in-mongodb.html&quot;&gt;this blog post&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 06 Jun 2017 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/techie/fast-and-efficient-pagination-in-mongodb.html</guid>
-        
-        <category>mongodb</category>
-        
-        <category>scalability</category>
-        
-        
-        <category>techie</category>
         
       </item>
     

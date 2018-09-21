@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
+
+    <title>Building the Potterverse search engine | Arpit Bhayani | Blog of a software engineer</title>
+    <meta name="description" content="After deciding on the tech stack for Potterverse, it was time for me to get started with building something nice.">
+    <meta name="keywords" content="harry potter, potterverse, voldemort, search engine, elasticsearch, vuejs, google app engine, python, jupyter, golang, " />
+
+    <link rel="stylesheet" href="/static/css/semantic-2.min.css">
+    <link rel="stylesheet" href="/static/css/pygments-2.css">
+    <link rel="canonical" href="https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html">
+    <link rel="alternate" type="application/rss+xml" title="Arpit Bhayani | Blog of a software engineer" href="https://arpitbhayani.me/feed.xml">
+
+    <meta property="fb:app_id" content="1055615241238486" />
+
+    <meta property="og:image" content="https://arpitbhayani.me/static/images/potterverse/potterverse-search-engine.jpg"/>
+    <meta property="og:title" content="Building the Potterverse search engine"/>
+    <meta property="og:url" content="https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html"/>
+    <meta property="og:site_name" content="Arpit Bhayani | Blog of a software engineer"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="After deciding on the tech stack for Potterverse, it was time for me to get started with building something nice." />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html">
+    <meta name="twitter:title" content="Building the Potterverse search engine">
+    <meta name="twitter:description" content="After deciding on the tech stack for Potterverse, it was time for me to get started with building something nice.">
+    <meta name="twitter:image" content="https://arpitbhayani.me/static/images/potterverse/potterverse-search-engine.jpg">
+
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+</head>
+
+    <body>
+        <div class="ui secondary basic fixed small menu center aligned">
+    <a class="item" href="/" >
+        <div class="ui small image">
+            <img src="/static/images/profiles/arpit-logo.png" />
+        </div>
+    </a>
+    <a class=" item" href="/blogs.html">BLOGS</a>
+    <a class=" item" href="/mrcup.html">MR CUP</a>
+    <a class=" item" href="/talks.html">TALKS</a>
+    <a class=" item" href="/projects.html">PROJECTS</a>
+    <a class=" item" href="/vimarsh.html">VIMARSH</a>
+    <a class="item" href="https://potterverse.arpitbhayani.me">
+        POTTERVERSE
+    </a>
+    <a class="item" target="_blank" href="/static/arpit-bhayani-resume.pdf">RESUME</a>
+</div>
+
+        
+            <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+        
+        <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
+            <div class="ui hidden divider"></div>
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+    <h1 itemprop="name headline" class="ui huge header center aligned">
+        <b>Building the Potterverse search engine</b>
+    </h1>
+    
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://arpitbhayani.me/static/images/potterverse/potterverse-search-engine.jpg" />
+        <img itemprop="image" class="ui centered huge image" src="https://arpitbhayani.me/static/images/potterverse/potterverse-search-engine.jpg" alt="Building the Potterverse search engine" />
+    </div>
+    
+    <article>
+        <div itemprop="articleBody">
+            <p>After deciding on the <a href="/blog/tech-stack-for-potterverse.html">tech stack</a>
+for <a href="http://potterverse.arpitbhayani.me/">Potterverse</a>, it was time for me to
+start building something nice. The process started with creating the first design, downloading
+and processing the dataset, extracting the required information and dumping everything into
+elasticsearch.</p>
+
+<h3 id="the-first-design">The first design</h3>
+<p>The very first product design I had in mind looked like this</p>
+
+<div class="ui hidden divider"></div>
+<div class="ui image">
+    <img src="/static/images/potterverse/design-001.jpg" />
+</div>
+<div class="ui hidden divider"></div>
+
+<p>The left half of the page contains the search results for the given term
+and right half contains a small preview of the page that is selected/tapped. If the user
+taps on the title of the result, it opens the source page in a new tab. Each item in the result
+contains some information about the page, like <code>Title</code>, <code>SmallExcerpt</code>, <code>SourceLink</code>, and
+<code>ShortPreview</code>.</p>
+
+<p>The short preview of the page will help the user get a snippet of information about the
+entity that is tapped. After reading the snippet, if the user want to read more from
+the page, there is a <code>Read More</code> link which would open the source page in new tab.</p>
+
+<p>The result page also shows the time taken for the search to perform and approximate number of
+relevant documents for the given search query.</p>
+
+<h3 id="downloading-and-processing-the-dataset">Downloading and processing the dataset</h3>
+<p>The very basic version of Potterverse is built on top of the
+<a href="http://harrypotter.wikia.com/wiki/Help:Database_download">Harry Potter Wikia Dataset</a> from Wikia.
+The dataset is very similar to Wikipedia dataset and is also in <a href="https://www.mediawiki.org/wiki/MediaWiki">Mediawiki format</a>
+which makes my life much simpler as I have already written a <a href="https://en.wikipedia.org/wiki/Simple_API_for_XML">SAX Parser</a> for my <a href="http://github.com/arpitbbhayani/wikise">very first search engine</a> built on top of Wikipedia data.</p>
+
+<p>With slight modifications in the code, I converted the entire dataset in
+<a href="http://www.json.org/">JSON format</a> which is loved by both Python and Elasticsearch. Along with extracting
+basic information like <code>DocumentID</code>, <code>Title</code>, <code>Body</code> the parser also extracts <code>Infobox</code>, <code>Categories</code>,
+<code>InternalLinks</code>, <code>ExternalLinks</code> explicitly. The entire detail is JSONed and dumped in files, one
+file per document.</p>
+
+<p>The dataset contains tonnes of documents that are not significant, like <code>Talk</code> documents, <code>File</code> documents,
+etc. which are filtered out before processing. After filtering we are left with around <strong>13350</strong> documents,
+and this now becomes the very first corpus on top of which the first version of Potterverse
+search engine is built.</p>
+
+<h3 id="indexing-the-data-in-elasticsearch">Indexing the data in Elasticsearch</h3>
+<p>The list of information that si required to show on interface includes</p>
+<ul>
+  <li><code>Title</code></li>
+  <li><code>SourceLink</code></li>
+  <li><code>ShortExcerpt</code></li>
+  <li><code>ShortPreview</code></li>
+</ul>
+
+<p>Since Elasticsearch should behold everything required on the interface, hence we need to compute,
+process and dump information beforehand. Let’s see what we have and what we don;t</p>
+
+<ul>
+  <li><code>Title</code> is present in dump file as is.</li>
+  <li><code>SourceLink</code> is base url of Wikia with <code>Title</code> appended to it.</li>
+  <li><code>ShortExcerpt</code> is first 256 characters from <code>Body</code></li>
+  <li><code>ShortPreview</code> is first 3000 characters from <code>Body</code></li>
+</ul>
+
+<p>So a sample document dumped in Elasticsearch index will look something like this</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;Title&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Excerpt&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SourceLink&quot;</span><span class="p">:</span> <span class="s2">&quot;http://harrypotter.wikia.com/wiki/Harry Potter&quot;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here <code>Title</code> is the title of the document picked as is from the dump file and <code>Excerpt</code> is the
+first 3000 characters from <code>Body</code>.</p>
+
+<p>The mapping for the index is raw and default, with default analyzer, default tokenizers and
+default settings, in short no customizations.</p>
+
+<h3 id="querying-the-data">Querying the data</h3>
+<p>For the first version of search engine, the query to be fired on Elasticsearch is a very basic
+one with boost given to <code>Title</code> match none given to <code>Excerpt</code>. Fuzziness is set
+to <code>AUTO</code> for both fields, which ensures that the search engine is also Typo Tolerant.</p>
+
+<p>For the query <code>Harry Potter</code> elasticsearch query that is fired looks like this</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;function_score&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;bool&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;should&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;match&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;Title&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;boost&quot;</span><span class="p">:</span> <span class="mi">100</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;match&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;Excerpt&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span>
+                <span class="p">}</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Above query when fired on Elasticsearch returns nice results; which are okay
+to be driving the first version of search engine. The default
+<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a> scoring
+works well and results are quite relevant.</p>
+
+<h3 id="in-conclusion">In conclusion</h3>
+<p>With very minimal efforts this is how I spun up a nice looking Harry Potter based search
+engine. It was not difficult and took very little time for entire setup. As and when
+some modifications will be made to Potterverse, a blog will be published detailing
+the changes, improvements and results that have been made and achieved.</p>
+
+<p>Stay tuned!</p>
+
+<p>PS: In case you have any suggestions about <a href="http://potterverse.arpitbhayani.me/">Potterverse</a>,
+feel free to tweet me <a href="https://twitter.com/arpit_bhayani">@arpit_bhayani</a></p>
+
+        </div>
+    </article>
+</div>
+
+<div class="ui hidden divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- arpitbhayani.me generic ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden divider"></div>
+
+
+
+    <div class="ui basic segment" style="background: #FFF">
+    <div id="disqus_thread"></div>
+</div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/blog/building-the-potterverse-search-engine.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer class="ui column centered grid">
+    <div class="row">
+        <div class="ui small icon borderless compact basic menu">
+    <div class="item">
+        <a target="_blank" href="mailto:arpit.b.bhayani@gmail.com">
+            <i class="mail outline large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://github.com/arpitbbhayani">
+            <i class="github large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://facebook.com/oftenweird">
+            <i class="facebook f large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://instagram.com/often_weird">
+            <i class="instagram large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://twitter.com/arpit_bhayani">
+            <i class="twitter large grey icon"></i>
+        </a>
+    </div>
+</div>
+
+    </div>
+  <div class="row">
+      <div class="column center aligned">
+          <a class="item" href="/disclaimer.html">Disclaimer</a><br/>
+      </div>
+  </div>
+</footer>
+
+    </body>
+    
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+    <script src="/static/js/semantic-2.min.js"></script>
+    <script src="/static/js/index.js"></script>
+</head>
+
+</html>
