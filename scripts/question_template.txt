@@ -76,9 +76,8 @@
 
         
         <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
-            <div class="ui hidden divider"></div>
+            <div class="ui hidden section divider"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- arpitbhayani.me generic ad -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9220578038638789"
@@ -87,7 +86,7 @@
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<div class="ui hidden divider"></div>
+<div class="ui hidden section divider"></div>
 
 <div class="ui hidden divider"></div>
 <div class="ui header center aligned">
@@ -105,9 +104,8 @@
         </div>
     </div>
 </div>
-<div class="ui hidden divider"></div>
+<div class="ui hidden section divider"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- arpitbhayani.me generic ad -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9220578038638789"
@@ -116,7 +114,7 @@
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<div class="ui hidden divider"></div>
+<div class="ui hidden section divider"></div>
 
 <div>
     Following is the solution for $SITE_NAME$ Question: [$QCODE$]($QURL$)
@@ -124,9 +122,8 @@
 <figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span></span><span class="err">$</span><span class="n">CODE</span><span class="err">$</span></code></pre></figure>
 
 </div>
-<div class="ui hidden divider"></div>
+<div class="ui hidden section divider"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- arpitbhayani.me generic ad -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-9220578038638789"
@@ -135,7 +132,7 @@
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<div class="ui hidden divider"></div>
+<div class="ui hidden section divider"></div>
 
 
     <div class="ui basic segment" style="background: #FFF">
