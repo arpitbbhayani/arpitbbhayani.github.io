@@ -87,20 +87,23 @@ So a sample document dumped in Elasticsearch index will look something like this
 {% highlight json %}
 {
     "Title": "Harry Potter",
+    "Body": "Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...",
     "Excerpt": "Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...",
     "SourceLink": "http://harrypotter.wikia.com/wiki/Harry Potter"
 }
 {% endhighlight %}
 
 Here `Title` is the title of the document picked as is from the dump file and `Excerpt` is the
-first 3000 characters from `Body`.
+first 3000 characters from `Body` and the `Body` itself. I persist `Excerpt` so that, while
+querying the elasticsearch I need not fetch the entire `Body` of the page, instead I can only
+select `Excerpt`; inturn saving a lot of network bandwidth.
 
 The mapping for the index is raw and default, with default analyzer, default tokenizers and
 default settings, in short no customizations.
 
 ### Querying the data
 For the first version of search engine, the query to be fired on Elasticsearch is a very basic
-one with boost given to `Title` match none given to `Excerpt`. Fuzziness is set
+one with boost given to `Title` match none given to `Body`. Fuzziness is set
 to `AUTO` for both fields, which ensures that the search engine is also Typo Tolerant.
 
 For the query `Harry Potter` elasticsearch query that is fired looks like this
@@ -122,7 +125,7 @@ For the query `Harry Potter` elasticsearch query that is fired looks like this
             },
             {
               "match": {
-                "Excerpt": {
+                "Body": {
                   "query": "Harry Potter"
                 }
               }
