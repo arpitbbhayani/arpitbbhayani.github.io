@@ -5,8 +5,8 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 Sep 2018 22:38:19 +0530</pubDate>
-    <lastBuildDate>Fri, 21 Sep 2018 22:38:19 +0530</lastBuildDate>
+    <pubDate>Sat, 22 Sep 2018 09:28:56 +0530</pubDate>
+    <lastBuildDate>Sat, 22 Sep 2018 09:28:56 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -79,19 +79,22 @@ process and dump information beforehand. Let’s see what we have and what we do
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;quot;Title&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry Potter&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;quot;Body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;quot;Excerpt&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;quot;SourceLink&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://harrypotter.wikia.com/wiki/Harry Potter&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Here &lt;code&gt;Title&lt;/code&gt; is the title of the document picked as is from the dump file and &lt;code&gt;Excerpt&lt;/code&gt; is the
-first 3000 characters from &lt;code&gt;Body&lt;/code&gt;.&lt;/p&gt;
+first 3000 characters from &lt;code&gt;Body&lt;/code&gt; and the &lt;code&gt;Body&lt;/code&gt; itself. I persist &lt;code&gt;Excerpt&lt;/code&gt; so that, while
+querying the elasticsearch I need not fetch the entire &lt;code&gt;Body&lt;/code&gt; of the page, instead I can only
+select &lt;code&gt;Excerpt&lt;/code&gt;; inturn saving a lot of network bandwidth.&lt;/p&gt;
 
 &lt;p&gt;The mapping for the index is raw and default, with default analyzer, default tokenizers and
 default settings, in short no customizations.&lt;/p&gt;
 
 &lt;h3 id=&quot;querying-the-data&quot;&gt;Querying the data&lt;/h3&gt;
 &lt;p&gt;For the first version of search engine, the query to be fired on Elasticsearch is a very basic
-one with boost given to &lt;code&gt;Title&lt;/code&gt; match none given to &lt;code&gt;Excerpt&lt;/code&gt;. Fuzziness is set
+one with boost given to &lt;code&gt;Title&lt;/code&gt; match none given to &lt;code&gt;Body&lt;/code&gt;. Fuzziness is set
 to &lt;code&gt;AUTO&lt;/code&gt; for both fields, which ensures that the search engine is also Typo Tolerant.&lt;/p&gt;
 
 &lt;p&gt;For the query &lt;code&gt;Harry Potter&lt;/code&gt; elasticsearch query that is fired looks like this&lt;/p&gt;
@@ -112,7 +115,7 @@ to &lt;code&gt;AUTO&lt;/code&gt; for both fields, which ensures that the search 
             &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
               &lt;span class=&quot;nt&quot;&gt;&amp;quot;match&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;quot;Excerpt&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;quot;Body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                   &lt;span class=&quot;nt&quot;&gt;&amp;quot;query&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Harry Potter&amp;quot;&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
               &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;

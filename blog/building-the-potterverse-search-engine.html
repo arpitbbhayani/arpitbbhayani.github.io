@@ -157,19 +157,22 @@ process and dump information beforehand. Let’s see what we have and what we do
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
     <span class="nt">&quot;Title&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Body&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...&quot;</span><span class="p">,</span>
     <span class="nt">&quot;Excerpt&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry James[57] Potter (b. 31 July, 1980[1]) was a half-blood[2] ... ...&quot;</span><span class="p">,</span>
     <span class="nt">&quot;SourceLink&quot;</span><span class="p">:</span> <span class="s2">&quot;http://harrypotter.wikia.com/wiki/Harry Potter&quot;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Here <code>Title</code> is the title of the document picked as is from the dump file and <code>Excerpt</code> is the
-first 3000 characters from <code>Body</code>.</p>
+first 3000 characters from <code>Body</code> and the <code>Body</code> itself. I persist <code>Excerpt</code> so that, while
+querying the elasticsearch I need not fetch the entire <code>Body</code> of the page, instead I can only
+select <code>Excerpt</code>; inturn saving a lot of network bandwidth.</p>
 
 <p>The mapping for the index is raw and default, with default analyzer, default tokenizers and
 default settings, in short no customizations.</p>
 
 <h3 id="querying-the-data">Querying the data</h3>
 <p>For the first version of search engine, the query to be fired on Elasticsearch is a very basic
-one with boost given to <code>Title</code> match none given to <code>Excerpt</code>. Fuzziness is set
+one with boost given to <code>Title</code> match none given to <code>Body</code>. Fuzziness is set
 to <code>AUTO</code> for both fields, which ensures that the search engine is also Typo Tolerant.</p>
 
 <p>For the query <code>Harry Potter</code> elasticsearch query that is fired looks like this</p>
@@ -190,7 +193,7 @@ to <code>AUTO</code> for both fields, which ensures that the search engine is al
             <span class="p">},</span>
             <span class="p">{</span>
               <span class="nt">&quot;match&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;Excerpt&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;Body&quot;</span><span class="p">:</span> <span class="p">{</span>
                   <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span>
                 <span class="p">}</span>
               <span class="p">}</span>
