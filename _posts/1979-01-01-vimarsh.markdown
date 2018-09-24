@@ -19,3 +19,13 @@ In this podcast, Arpit and Shashi are having a discussion on importance of follo
         <iframe src="https://anchor.fm/vimarsh/embed/episodes/001-Mai-toh-raste-se-jaa-raha-tha-e281bf" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
     </div>
 </div>
+
+### Episode 002: Papa kehete hai bada naam karega
+
+In this podcast, Arpit and Shashi are discussing one of your most delicate situation, where you put forth your wish to opt for an offbeat career, in front of your parents. The episode dives into various aspects of decision making process, the points that should be considered before taking this step, some repercussions of this bold move, making an informed decision and handling the entire situation gracefully.
+
+<div class="ui basic nospace segment">
+    <div style="width: 400px !important;">
+        <iframe src="https://anchor.fm/vimarsh/embed/episodes/002---Papa-kehte-hai-bada-naam-karega-e29gbe/a-a5foqr" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
