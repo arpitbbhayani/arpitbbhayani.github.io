@@ -1,38 +1,24 @@
 ---
-layout: fullpage
+layout: post
 ---
 <div class="ui hidden divider"></div>
 
-<div class="ui grid">
-    <div class="one wide column"></div>
-    <div class="ten wide column">
-        <div itemscope="" itemtype="http://schema.org/BlogPosting">
-            <article>
-                <h1 itemprop="name headline" class="ui huge header center aligned">
-                    <b>{{ page.title }}</b>
-                </h1>
-                {% if page.img %}
-                <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                    <meta itemprop="url" content="{{page.img}}" />
-                    <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
-                </div>
-                {% endif %}
-                <div itemprop="articleBody">
-                    {{ content }}
-                </div>
-            </article>
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+    <article>
+        <h1 itemprop="name headline" class="ui huge header center aligned">
+            <b>{{ page.title }}</b>
+        </h1>
+        {% if page.img %}
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="{{page.img}}" />
+            <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
         </div>
-    </div>
-    <div class="one wide column"></div>
-    <div class="four wide column">
-        <div class="ui basic nospace segment">
-            {% include ads_rect_001_plugin.html %}
+        {% endif %}
+        {% include ads_plugin.html %}
+        <div itemprop="articleBody">
+            {{ content }}
         </div>
-        <div class="ui hidden divider"></div>
-        <div class="ui basic nospace segment">
-            {% include ads_rect_001_plugin.html %}
-        </div>
-    </div>
+    </article>
 </div>
 
 {% include ads_plugin.html %}
