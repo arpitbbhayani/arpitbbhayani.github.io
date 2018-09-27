@@ -96,7 +96,7 @@ are the services of Google that I am using right now
  - Google App Engine (that serves primary REST endpoints)
  - 1 Google compute instance (that runs Elasticsearch)
 
-### Python and Jupyter is always there
+### Python and Jupyter are always there
 I have a private Git based repository that holds several Jupyter notebooks that
 contains all NLP and IR related code, Elasticsearch based utilities and some
 algorithms that are implemented and still in experimental phase.

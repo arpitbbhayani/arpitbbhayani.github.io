@@ -1,28 +1,31 @@
 ---
-layout: default
+layout: fullpage
 ---
-<div class="ui hidden divider"></div>
 
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
     <article>
-        <h1 itemprop="name headline" class="ui huge header center aligned">
-            <b>{{ page.title }}</b>
-        </h1>
-        {% if page.img %}
-        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="{{page.img}}" />
-            <img itemprop="image" class="ui centered large image" src="{{page.img}}" alt="{{page.title}}" />
+        <div class="ui basic segment" style="height:200px; background: #fff6c2;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 100px;">
+                {{ page.title }}
+            </h1>
         </div>
-        {% endif %}
-        {% include ads_plugin.html %}
-        <div itemprop="articleBody">
-            {{ content }}
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large  blue label">
+                {{ page.date | date: '%B %d, %Y' }}
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                {{ content }}
+            </div>
         </div>
     </article>
 </div>
 
-{% include ads_plugin.html %}
+<div class="ui text container">
+    {% include ads_plugin.html %}
 
-{% if page.comments %}
-    {% include comment_plugin.html %}
-{% endif %}
+    {% if page.comments %}
+        {% include comment_plugin.html %}
+    {% endif %}
+</div>

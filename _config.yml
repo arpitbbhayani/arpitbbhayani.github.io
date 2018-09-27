@@ -30,3 +30,5 @@ blog_types:
     - curiosity
 plugins_dir: _plugins
 environment: production
+emoji:
+    src: "/static/images"
