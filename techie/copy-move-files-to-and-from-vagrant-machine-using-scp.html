@@ -75,29 +75,22 @@
 </script>
 
         
-        <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
-            <div class="ui hidden divider"></div>
-
-<div itemscope="" itemtype="http://schema.org/BlogPosting">
+        <div style="margin-top: 60px; padding-bottom: 50px;">
+            <div itemscope="" itemtype="http://schema.org/BlogPosting">
     <article>
-        <h1 itemprop="name headline" class="ui huge header center aligned">
-            <b>How to copy, move files to and from Vagrant machine using scp</b>
-        </h1>
-        
-        <div class="ui hidden section divider"></div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9220578038638789"
-     data-ad-slot="2902722754"
-     data-ad-format="auto"></ins>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<div class="ui hidden section divider"></div>
-
-        <div itemprop="articleBody">
-            <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
+        <div class="ui basic segment" style="height:200px; background: #fff6c2;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 100px;">
+                How to copy, move files to and from Vagrant machine using scp
+            </h1>
+        </div>
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large  blue label">
+                March 16, 2018
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
 
 <p>For <code>scp</code> , you will need to run the usual scp command but you will need to pass in an extra argument <code>-P</code> which is the SSH the port to connect to on the remote host.</p>
 
@@ -109,11 +102,13 @@
 
 <p>Hope this helps :-)</p>
 
+            </div>
         </div>
     </article>
 </div>
 
-<div class="ui hidden section divider"></div>
+<div class="ui text container">
+    <div class="ui hidden section divider"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -126,8 +121,8 @@
 <div class="ui hidden section divider"></div>
 
 
-
-    <div class="ui basic segment" style="background: #FFF">
+    
+        <div class="ui basic segment" style="background: #FFF">
     <div id="disqus_thread"></div>
 </div>
 
@@ -150,12 +145,13 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-
-
+    
+</div>
         </div>
-        <footer class="ui column centered grid">
-    <div class="row">
-        <div class="ui small icon borderless compact basic menu">
+        <footer style="background: #d7ffc2;">
+    <div class="ui column centered grid">
+        <div class="row">
+            <div class="ui small icon borderless compact basic menu">
     <div class="item">
         <a target="_blank" href="mailto:arpit.b.bhayani@gmail.com">
             <i class="mail outline large grey icon"></i>
@@ -183,12 +179,19 @@ s.setAttribute('data-timestamp', +new Date());
     </div>
 </div>
 
+        </div>
+        <div class="row">
+            <div class="column center aligned">
+                <a class="item" href="/disclaimer.html">Disclaimer</a><br/>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Designed & Built by Arpit Bhayani<br/>
+                <a class="ui small grey text" href="https://github.com/arpitbbhayani/arpitbbhayani.github.io/">View Source</a>
+            </p>
+        </div>
     </div>
-  <div class="row">
-      <div class="column center aligned">
-          <a class="item" href="/disclaimer.html">Disclaimer</a><br/>
-      </div>
-  </div>
 </footer>
 
     </body>

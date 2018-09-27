@@ -5,8 +5,8 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 Sep 2018 19:56:05 +0530</pubDate>
-    <lastBuildDate>Wed, 26 Sep 2018 19:56:05 +0530</lastBuildDate>
+    <pubDate>Thu, 27 Sep 2018 14:52:24 +0530</pubDate>
+    <lastBuildDate>Thu, 27 Sep 2018 14:52:24 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -237,7 +237,7 @@ are the services of Google that I am using right now&lt;/p&gt;
   &lt;li&gt;1 Google compute instance (that runs Elasticsearch)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;python-and-jupyter-is-always-there&quot;&gt;Python and Jupyter is always there&lt;/h3&gt;
+&lt;h3 id=&quot;python-and-jupyter-are-always-there&quot;&gt;Python and Jupyter are always there&lt;/h3&gt;
 &lt;p&gt;I have a private Git based repository that holds several Jupyter notebooks that
 contains all NLP and IR related code, Elasticsearch based utilities and some
 algorithms that are implemented and still in experimental phase.&lt;/p&gt;
