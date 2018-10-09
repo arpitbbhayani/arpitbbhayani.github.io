@@ -134,38 +134,38 @@
 </div>
 <div class="ui bottom attached active tab" data-tab="solution">
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span></span><span class="n">package</span> <span class="n">main</span>
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="kn">package</span> <span class="nx">main</span>
 
-<span class="nf">import</span> <span class="p">(</span>
+<span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&quot;fmt&quot;</span>
 <span class="p">)</span>
 
-<span class="n">func</span> <span class="n">plusOne</span><span class="p">(</span><span class="n">A</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
-	<span class="nl">carry</span> <span class="p">:</span><span class="o">=</span> <span class="mi">1</span>
-	<span class="k">for</span> <span class="nl">i</span> <span class="p">:</span><span class="o">=</span> <span class="n">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span> <span class="p">{</span>
-		<span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">carry</span>
-		<span class="n">carry</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10</span>
-		<span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">10</span>
+<span class="kd">func</span> <span class="nx">plusOne</span><span class="p">(</span><span class="nx">A</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">carry</span> <span class="o">:=</span> <span class="mi">1</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
+		<span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">carry</span>
+		<span class="nx">carry</span> <span class="p">=</span> <span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10</span>
+		<span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">10</span>
 	<span class="p">}</span>
 
-	<span class="n">var</span> <span class="n">Ap1</span> <span class="p">[]</span><span class="kt">int</span>
-	<span class="k">if</span> <span class="n">carry</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-		<span class="n">Ap1</span> <span class="o">=</span> <span class="n">append</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="n">carry</span><span class="p">},</span> <span class="n">A</span><span class="p">...)</span>
+	<span class="kd">var</span> <span class="nx">Ap1</span> <span class="p">[]</span><span class="kt">int</span>
+	<span class="k">if</span> <span class="nx">carry</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="nx">Ap1</span> <span class="p">=</span> <span class="nb">append</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="nx">carry</span><span class="p">},</span> <span class="nx">A</span><span class="o">...</span><span class="p">)</span>
 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="n">Ap1</span> <span class="o">=</span> <span class="n">A</span>
+		<span class="nx">Ap1</span> <span class="p">=</span> <span class="nx">A</span>
 	<span class="p">}</span>
 
-	<span class="nl">firstNonZero</span> <span class="p">:</span><span class="o">=</span> <span class="mi">0</span>
-	<span class="k">for</span> <span class="n">firstNonZero</span> <span class="o">=</span> <span class="n">range</span> <span class="n">Ap1</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="n">Ap1</span><span class="p">[</span><span class="n">firstNonZero</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+	<span class="nx">firstNonZero</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">firstNonZero</span> <span class="p">=</span> <span class="k">range</span> <span class="nx">Ap1</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">Ap1</span><span class="p">[</span><span class="nx">firstNonZero</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
 			<span class="k">break</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
-	<span class="k">return</span> <span class="n">Ap1</span><span class="p">[</span><span class="nl">firstNonZero</span><span class="p">:]</span>
+	<span class="k">return</span> <span class="nx">Ap1</span><span class="p">[</span><span class="nx">firstNonZero</span><span class="p">:]</span>
 <span class="p">}</span>
 
-<span class="n">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">plusOne</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">}))</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">plusOne</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">}))</span>
 <span class="p">}</span></code></pre></figure>
 
 </div>
