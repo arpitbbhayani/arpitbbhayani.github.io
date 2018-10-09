@@ -30,7 +30,7 @@ The correct, optimal and working solution for programming question [add-one-to-n
     <iframe src="https://www.interviewbit.com/problems/add-one-to-number/" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
 </div>
 <div class="ui bottom attached active tab" data-tab="solution">
-{% highlight cpp %}
+{% highlight go %}
 package main
 
 import (

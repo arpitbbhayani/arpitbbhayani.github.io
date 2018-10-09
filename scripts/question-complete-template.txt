@@ -30,7 +30,7 @@ The correct, optimal and working solution for programming question [$REPLACE_QUE
     <iframe src="$REPLACE_QUESTION_URL" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
 </div>
 <div class="ui bottom attached active tab" data-tab="solution">
-{% highlight cpp %}
+{% highlight $REPLACE_LANGUAGE %}
 $REPLACE_SOURCE_CODE
 {% endhighlight %}
 </div>
