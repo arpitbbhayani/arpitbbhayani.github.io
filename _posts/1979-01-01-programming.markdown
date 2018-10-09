@@ -43,4 +43,13 @@ type: dummy
           View solutions to {{ site.categories.leetcode | size }} questions
       </a>
   </div>
+  <div class="column">
+      <a class="ui item medium image" href="{% post_url 1979-01-01-interviewbit %}" title="View solutions to {{ site.categories.interviewbit | size }} questions">
+          <image src="/static/images/interviewbit.jpg"/>
+      </a>
+      <br/>
+      <a class="ui item medium image" href="{% post_url 1979-01-01-interviewbit %}">
+          View solutions to {{ site.categories.interviewbit | size }} questions
+      </a>
+  </div>
 </div>
