@@ -5,8 +5,8 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Oct 2018 21:28:41 +0530</pubDate>
-    <lastBuildDate>Tue, 09 Oct 2018 21:28:41 +0530</lastBuildDate>
+    <pubDate>Tue, 09 Oct 2018 21:51:51 +0530</pubDate>
+    <lastBuildDate>Tue, 09 Oct 2018 21:51:51 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -69,6 +69,65 @@
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0530</pubDate>
         <link>https://arpitbhayani.me/interviewbit/min-steps-in-infinite-grid.html</link>
         <guid isPermaLink="true">https://arpitbhayani.me/interviewbit/min-steps-in-infinite-grid.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>interviewbit</category>
+        
+      </item>
+    
+      <item>
+        <title>INTERVIEWBIT max-sum-contiguous-subarray Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.interviewbit.com/problems/max-sum-contiguous-subarray/&quot;&gt;max-sum-contiguous-subarray&lt;/a&gt; on interviewbit&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.interviewbit.com/problems/max-sum-contiguous-subarray/&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxSubArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;currentMax&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;globalMax&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;currentMax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;globalMax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;globalMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;globalMax&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxSubArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 09 Oct 2018 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/interviewbit/max-sum-contiguous-subarray.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/interviewbit/max-sum-contiguous-subarray.html</guid>
         
         <category>competitive-programming</category>
         
@@ -1246,217 +1305,6 @@ tuned to this blog and you would surely see some tutorial coming up.&lt;/p&gt;
         
         
         <category>talks</category>
-        
-      </item>
-    
-      <item>
-        <title>Introduction to GraphQL - Presentation</title>
-        <description>&lt;div class=&quot;reveal&quot;&gt;
-    &lt;div class=&quot;slides&quot;&gt;
-        &lt;section&gt;
-            &lt;h2&gt;Introduction to GraphQL&lt;/h2&gt;
-            &lt;p&gt;
-                Arpit Bhayani&lt;br/&gt;
-                @often_weird&lt;br/&gt;
-                &lt;a href=&quot;http://arpitbhayani.me&quot;&gt;http://arpitbhayani.me&lt;/a&gt;
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;
-                The Request Response Paradigm
-            &lt;/h3&gt;
-            &lt;div class=&quot;fragment fade-in&quot;&gt;
-                Some protocols and methods that help us achieve this
-                &lt;ul&gt;
-                    &lt;li&gt;Native Sockets&lt;/li&gt;
-                    &lt;li&gt;Remote Procedure Calls&lt;/li&gt;
-                    &lt;li&gt;SOAP&lt;/li&gt;
-                    &lt;li&gt;REST&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;REST&lt;/h3&gt;
-            &lt;p&gt;
-                Sending request and getting response over HTTP. It can
-                optionally use HTTP verbs.
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;
-                REST became a hit because of its
-            &lt;/h3&gt;
-            &lt;div&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;Simplicity&lt;/li&gt;
-                    &lt;li&gt;Ease of extension&lt;/li&gt;
-                    &lt;li&gt;Use of HTTP as a channel&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Problems with REST&lt;/h3&gt;
-            &lt;ul&gt;
-                &lt;li class=&quot;fragment fade-in&quot;&gt;Endpoint Explosion&lt;/li&gt;
-                &lt;li class=&quot;fragment fade-in&quot;&gt;Rely and Maintain A Good Documentation&lt;/li&gt;
-                &lt;li class=&quot;fragment fade-in&quot;&gt;Multiple Requests&lt;/li&gt;
-                &lt;li class=&quot;fragment fade-in&quot;&gt;Over Fetching&lt;/li&gt;
-                &lt;li class=&quot;fragment fade-in&quot;&gt;Under Fetching&lt;/li&gt;
-                &lt;li class=&quot;fragment fade-in&quot;&gt;Special Endpoints For Specific Purpose&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h1&gt;Welcome GraphQL&lt;/h1&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;GraphQL&lt;/h3&gt;
-            &lt;p&gt;
-                What SQL does with databases, GraphQL does with APIs.
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Brief History of GraphQL&lt;/h3&gt;
-            &lt;ul&gt;
-                &lt;li&gt;Facebook built and started using it in 2012&lt;/li&gt;
-                &lt;li&gt;Open sourced it in 2015&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;GraphQL Concepts&lt;/h3&gt;
-            &lt;ul&gt;
-                &lt;li&gt;GraphQL Server&lt;/li&gt;
-                &lt;li&gt;GraphQL Schema&lt;/li&gt;
-                &lt;li&gt;GraphQL Types&lt;/li&gt;
-                &lt;li&gt;GraphQL Query&lt;/li&gt;
-                &lt;li&gt;...&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;GraphQL Server&lt;/h3&gt;
-            &lt;p&gt;
-                GraphQL server is any web server in any language that adheres to GraphQL
-                specifications.
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;GraphQL Schema&lt;/h3&gt;
-            &lt;p&gt;
-                GraphQL Schema defines how a client can query a GraphQL server
-                and get its response.
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;GraphQL Types&lt;/h3&gt;
-            &lt;ul&gt;
-                &lt;li&gt;Scalar Types&lt;/li&gt;
-                &lt;li&gt;User Defined Types&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;GraphQL Query&lt;/h3&gt;
-            &lt;p&gt;
-                A GraphQL query is a string that is sent to a server to be interpreted
-                and fulfilled, which then returns JSON back to the client.
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Resolver Functions&lt;/h3&gt;
-            &lt;p&gt;
-                Every field in GraphQL Schema is backed by a resolver function
-                that would resolve the value for that field.
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Features of GraphQL&lt;/h3&gt;
-            &lt;ul&gt;
-                &lt;li&gt;Data Shape&lt;/li&gt;
-                &lt;li&gt;Strongly Typed&lt;/li&gt;
-                &lt;li&gt;Protocol Not Storage&lt;/li&gt;
-                &lt;li&gt;Version Free&lt;/li&gt;
-                &lt;li&gt;Document is right there&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;A Todo Application&lt;/h3&gt;
-            &lt;ul class=&quot;fragment fade-in&quot;&gt;
-                &lt;li&gt;Create a todo&lt;/li&gt;
-                &lt;li&gt;Create a Tag&lt;/li&gt;
-                &lt;li&gt;Mark a todo as complete&lt;/li&gt;
-                &lt;li&gt;Unmark a completed todo as incomplete&lt;/li&gt;
-                &lt;li&gt;Get all todos by its completion status&lt;/li&gt;
-                &lt;li&gt;Get one single todo&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Types&lt;/h3&gt;
-            &lt;pre&gt;
-type Tag {
-    id: String
-    name: String
-    color: String
-    todos: [Todo]
-}
-
-type Todo {
-    id: String
-    todo: String
-    created_at: String
-    is_complete: Boolean
-    tags: [Tag]
-}&lt;/pre&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Query and Mutation&lt;/h3&gt;
-            &lt;pre&gt;
-type Query {
-    todos(is_complete: Boolean!, limit: Int): [Todo]
-    todo(id: String): Todo
-    tags: [Tag]
-}
-
-type Mutation {
-    createTodo(todo: String!, tags: [String]): Todo
-    createTag(name: String!, color: String): Tag
-}&lt;/pre&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Server Side Code&lt;/h3&gt;
-            &lt;a href=&quot;https://github.com/arpitbbhayani/todo-dooby-doo&quot;&gt;Todo Dooby Doo&lt;/a&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Graphiql&lt;/h3&gt;
-            &lt;p&gt;
-                Interface to make queries to a GraphQL server
-            &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h3&gt;Calling GraphQL Endpoint with any HTTP Client&lt;/h3&gt;
-            &lt;pre&gt;
-curl \
-    -X POST \
-    -H &quot;Content-Type: application/json&quot; \
-    --data '{ &quot;query&quot;: &quot;{ todos { todo } }&quot; }' \
-    https://localhost:8082/graphql
-            &lt;/pre&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-            &lt;h1&gt;Any Questions?&lt;/h1&gt;
-        &lt;/section&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 14 Dec 2017 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/presentations/introduction-to-graphql-presentation.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/presentations/introduction-to-graphql-presentation.html</guid>
-        
-        <category>graphql</category>
-        
-        <category>beginner</category>
-        
-        <category>introduction</category>
-        
-        
-        <category>presentations</category>
         
       </item>
     

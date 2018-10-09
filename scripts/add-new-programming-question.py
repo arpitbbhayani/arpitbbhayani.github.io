@@ -1,5 +1,5 @@
 ###
-### python scripts/add-new-programming-question.py hackerrank "find-point" "Find Point" "https://www.hackerrank.com/challenges/find-point" ~/hackerrank/find-point.cpp "cpp"
+### python scripts/add-new-programming-question.py hackerrank "find-point" "Find Point" "https://www.hackerrank.com/challenges/find-point" ~/hackerrank/find-point.cpp
 ###
 import os
 import sys
