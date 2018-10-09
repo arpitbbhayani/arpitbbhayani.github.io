@@ -11,7 +11,6 @@ SITENAME_CAPS = None
 QUESTION_CODE = None
 QUESTION_URL = None
 SOURCE_CODE = None
-LANGUAGE = None
 
 POSTS_DIR = '_posts'
 templates_filepath = 'scripts/question-complete-template.txt'
@@ -26,8 +25,7 @@ def process():
                        .replace('$REPLACE_QUESTION_DISPLAY_TEXT', QUESTION_DISPLAY_TEXT)\
                        .replace('$REPLACE_QUESTION_CODE', QUESTION_CODE)\
                        .replace('$REPLACE_QUESTION_URL', QUESTION_URL)\
-                       .replace('$REPLACE_SOURCE_CODE', SOURCE_CODE)\
-                       .replace('$REPLACE_LANGUAGE', LANGUAGE)
+                       .replace('$REPLACE_SOURCE_CODE', SOURCE_CODE)
 
     filename = '%s-%s.markdown' % (datetime.today().date(), QUESTION_CODE)
     with open(os.path.join(POSTS_DIR, SITENAME, filename), 'wb') as f:
@@ -36,8 +34,8 @@ def process():
 
 if __name__ == '__main__':
     argv = sys.argv
-    if len(argv) != 7:
-        print 'Refer: python scripts/add-new-programming-question.py hackerrank "find-point" "Find Point" "https://www.hackerrank.com/challenges/find-point" ~/hackerrank/find-point.cpp "cpp"'
+    if len(argv) != 6:
+        print 'Refer: python scripts/add-new-programming-question.py hackerrank "find-point" "Find Point" "https://www.hackerrank.com/challenges/find-point" ~/hackerrank/find-point.cpp'
         sys.exit(2)
     SITENAME = argv[1]
     SITENAME_CAPS = SITENAME.upper()
@@ -47,7 +45,5 @@ if __name__ == '__main__':
 
     with open(argv[5], 'rb') as f:
         SOURCE_CODE = f.read()
-
-    LANGUAGE = argv[6]
 
     process()
