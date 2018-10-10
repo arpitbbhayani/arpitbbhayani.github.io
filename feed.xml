@@ -5,9 +5,78 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Oct 2018 21:51:51 +0530</pubDate>
-    <lastBuildDate>Tue, 09 Oct 2018 21:51:51 +0530</lastBuildDate>
+    <pubDate>Wed, 10 Oct 2018 18:24:03 +0530</pubDate>
+    <lastBuildDate>Wed, 10 Oct 2018 18:24:03 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>INTERVIEWBIT maximum-absolute-difference Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.interviewbit.com/problems/maximum-absolute-difference/&quot;&gt;maximum-absolute-difference&lt;/a&gt; on interviewbit&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.interviewbit.com/problems/maximum-absolute-difference/&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&amp;quot;math&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;maxArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;maxVal1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;maxVal2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MinInt32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MinInt32&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;minVal1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;minVal2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MaxInt32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MaxInt32&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;maxVal1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;maxVal1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;minVal1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;minVal1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;maxVal2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;maxVal2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;minVal2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;minVal2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;maxVal1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;minVal1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;maxVal2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;minVal2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;maxArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 10 Oct 2018 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/interviewbit/maximum-absolute-difference.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/interviewbit/maximum-absolute-difference.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>interviewbit</category>
+        
+      </item>
     
       <item>
         <title>INTERVIEWBIT min-steps-in-infinite-grid Solution</title>
@@ -831,480 +900,6 @@ and see the output.&lt;/p&gt;
         
         
         <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>Introduction to GraphQL</title>
-        <description>&lt;div class=&quot;ui center aligned basic very padded segment&quot;&gt;
-    &lt;a class=&quot;ui primary huge button&quot; href=&quot;/presentations/introduction-to-graphql-presentation.html&quot;&gt;
-        Link to presentation
-    &lt;/a&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This is the detailed explanation and elaboration of the talk. Since all the
-information cannot be communicated through presentation, I have jot the things
-down here.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-request-response-paradigm&quot;&gt;The Request Response Paradigm&lt;/h2&gt;
-
-&lt;p&gt;During the course of evolution of computing, one thing remained constant and
-stood as is, &lt;em&gt;The Request Response Paradigm&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;In every single phase of evolution there is always someone rather some
-machines who has the information required by some seeker. So there is
-always a &lt;strong&gt;Client&lt;/strong&gt; who asks for some information from the &lt;strong&gt;Server&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;There were lots of protocols that were designed and developed to meet the needs.&lt;/p&gt;
-
-&lt;p&gt;Some are&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Native Sockets&lt;/li&gt;
-  &lt;li&gt;Remote Procedure Calls&lt;/li&gt;
-  &lt;li&gt;SOAP&lt;/li&gt;
-  &lt;li&gt;REST&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;rest&quot;&gt;REST&lt;/h2&gt;
-
-&lt;p&gt;REST is most widely accepted of all protocols to be used to Request Response
-and communication between client and server. Be it from any device, computer,
-wearable and now even sensors to any machine residing in cloud, the unanimous
-way of having the communication is over REST.&lt;/p&gt;
-
-&lt;p&gt;The primary reason of REST becoming huge was its&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Simplicity&lt;/li&gt;
-  &lt;li&gt;Ease of extension&lt;/li&gt;
-  &lt;li&gt;Use of HTTP as a channel&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;but-there-are-problems-with-rest&quot;&gt;But! There are problems with REST&lt;/h2&gt;
-
-&lt;p&gt;“What! You did not just say that …” must be reaction of most of you but
-just wait for some time and let me explain.&lt;/p&gt;
-
-&lt;h3 id=&quot;endpoint-explosion&quot;&gt;Endpoint Explosion&lt;/h3&gt;
-
-&lt;p&gt;As your application grows, you keep on adding more and more endpoints that
-serves different purposes; and thus when a client wants to get some things
-done then it has to hit that exact endpoint with the exact HTTP verb to get the
-the job done.&lt;/p&gt;
-
-&lt;h3 id=&quot;rely-and-maintain-a-good-documentation&quot;&gt;Rely and Maintain A Good Documentation&lt;/h3&gt;
-
-&lt;p&gt;Once you have a lot of endpoints, then you have to have a really good document
-that describes each endpoint, what it does, what params it expects and etc.
-It is a well known fact that maintaining document is probably the hardest
-thing for a programmer.&lt;/p&gt;
-
-&lt;h3 id=&quot;multiple-requests&quot;&gt;Multiple Requests&lt;/h3&gt;
-
-&lt;p&gt;Often it happens that you have to make multiple requests to get to the
-information that is really required. Generally you make one request to get the
-&lt;code&gt;id&lt;/code&gt; and other to fetch the actual information.&lt;/p&gt;
-
-&lt;h3 id=&quot;over-fetching&quot;&gt;Over Fetching&lt;/h3&gt;
-
-&lt;p&gt;Over-fetching is when you make a call to the server and receive response that
-has information that you require but it also contains information that you
-do not require. But why is this a problem, you may ask. This is a problem
-because when your user is on a slow network device then every bit of information
-matters and if the response from your API has information that will never be
-shown to user we are just wasting the bandwidth.&lt;/p&gt;
-
-&lt;h3 id=&quot;under-fetching&quot;&gt;Under Fetching&lt;/h3&gt;
-
-&lt;p&gt;Under-fetching is exact opposite to over-fetching. In Under-fetching you make
-a call to server and server returns a response that does not have the
-information you require. In most general case you either&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;create a new endpoint with required information&lt;/li&gt;
-  &lt;li&gt;make second request to fetch additional information&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;special-endpoints-for-specific-purpose&quot;&gt;Special Endpoints For Specific Purpose&lt;/h3&gt;
-
-&lt;p&gt;You may also need to create special endpoints for special purpose. For example
-you already had an endpoint to fetch a todo&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;GET /todos
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Above endpoint returns you all the todos (full detailed information) for
-the user. For some specific purpose you may only want &lt;code&gt;id&lt;/code&gt;s of the todos
-instead and hence you will created a specific endpoint that returns only ids&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;GET /todosOnlyIds
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or pass a query parameter and process it on server side&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;GET /todos?with=id
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But as your application grows this becomes a huge problem because now you
-have tonnes of endpoints that are serving specific purposes and all of the
-above problems make things worse.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-graphql&quot;&gt;The GraphQL&lt;/h2&gt;
-
-&lt;p&gt;As always, where there is a problem, there comes a superhero to save the day.
-This time that superhero or the super library that comes to the rescue is
-GraphQL. GraphQL stands for &lt;strong&gt;Graph Query Language&lt;/strong&gt; and it does not deal
-with Graph Databases :)&lt;/p&gt;
-
-&lt;p&gt;GraphQL is a query language for APIs and in simple terms&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;What SQL does with databases, GraphQL does with APIs.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;brief-history-of-graphql&quot;&gt;Brief History of GraphQL&lt;/h2&gt;
-
-&lt;p&gt;Facebook started using GraphQL in 2012 and have open sourced it in 2015.
-Facebook originally developed this in support for their mobile application
-but then they realized the impact it created internally and thus decided
-to make it publicly available.&lt;/p&gt;
-
-&lt;p&gt;GraphQL was developed as an alternative to REST and is nothing but a
-specification and thus any language can just adopt it and build a library
-that adheres to the specification and any client that can talk GraphQL will
-be able to make calls and get the job done.&lt;/p&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Every GraphQL server will expose just one GraphQL endpoint which accepts
-a GraphQL Query that is specific to a GraphQL Schema. I know I have bombarded
-a lot of GraphQL jargon here but bear with me I will explain each one in
-detail here.&lt;/p&gt;
-
-&lt;h3 id=&quot;graphql-server&quot;&gt;GraphQL Server&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;GraphQL server is any web server in any language that adheres to GraphQL
-specifications.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;GraphQL server exposes just one endpoint which will be the entry point for all
-queries that can be made to the server.&lt;/p&gt;
-
-&lt;h3 id=&quot;graphql-schema&quot;&gt;GraphQL Schema&lt;/h3&gt;
-
-&lt;p&gt;The GraphQL server adheres to a GraphQL Schema that defines how a client
-can query this server and get the response. GraphQL schema is a strongly typed
-schema that has&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Types&lt;/li&gt;
-  &lt;li&gt;Query&lt;/li&gt;
-  &lt;li&gt;Mutations&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://graphql.org/learn/schema&quot;&gt;others&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A schema for a Todo application looks something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;created_at&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mutation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;createTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;In above schema there is one user defined type named &lt;code&gt;Todo&lt;/code&gt; that has &lt;code&gt;id&lt;/code&gt;,
-&lt;code&gt;todo&lt;/code&gt;, &lt;code&gt;created_at&lt;/code&gt; as Strings and &lt;code&gt;is_complete&lt;/code&gt; as a boolean.&lt;/p&gt;
-
-&lt;p&gt;There is root type named &lt;code&gt;Query&lt;/code&gt; that contains all types of queries that can
-be made on the endpoint. Let us disect the types of queries that can be made to
-the endpoint&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;fetch todos by their state and limit&lt;/li&gt;
-  &lt;li&gt;fetch a single todo by its &lt;code&gt;id&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;As you can observe, while defining the queries we have also defined the return
-type to each and this enables us to make nested requests if we want to fetch
-extra information.&lt;/p&gt;
-
-&lt;p&gt;There is another root type named &lt;code&gt;Mutation&lt;/code&gt; that defines how you can mutate
-data, in simple terms insert/delete/modify. In above example we have just one
-mutation that defines the way we can create a todo.&lt;/p&gt;
-
-&lt;p&gt;More details can be obtained &lt;a href=&quot;http://graphql.org/learn/queries/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;graphql-types&quot;&gt;GraphQL Types&lt;/h3&gt;
-
-&lt;p&gt;Since GraphQL is strongly typed, you will have to create types for every single
-entity. Every type that you define will have fields and each field will have a
-scalar or another user defined type associated with it.&lt;/p&gt;
-
-&lt;h4 id=&quot;graphql-scalar-datatypes&quot;&gt;GraphQL Scalar Datatypes&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;Int&lt;/code&gt;: A signed 32‐bit integer.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Float&lt;/code&gt;: A signed double-precision floating-point value.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;String&lt;/code&gt;: A UTF‐8 character sequence.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Boolean&lt;/code&gt;: true or false.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;ID&lt;/code&gt;: The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;graphql-query&quot;&gt;GraphQL Query&lt;/h3&gt;
-
-&lt;p&gt;A GraphQL query is a string that is sent to a server to be interpreted
-and fulfilled, which then returns JSON back to the client. Every query also
-provides a shape to be returned, this way you always know what you are getting.&lt;/p&gt;
-
-&lt;p&gt;GraphQL Query not only fetches data from the server but it also mutates and
-subscribes; hence it depends on the query passed.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;There are some amazing features of GraphQL that I will not discuss here
-and will be part of some advanced tutorials.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;graphql-execution&quot;&gt;GraphQL Execution&lt;/h2&gt;
-
-&lt;p&gt;Each field in a GraphQL query has to be backed by a &lt;a href=&quot;http://graphql.org/learn/execution/#root-fields-resolvers&quot;&gt;Resolver Function&lt;/a&gt; that will
-have the logic of performing the task and returning the value. The value
-returned can be either a scalar value or a GraphQL type. If a field produces a
-scalar value, then the execution completes. However if a field produces an
-object value then the query will contain another selection of fields which
-apply to that object. This continues until scalar values are reached. GraphQL
-queries always end at scalar values.&lt;/p&gt;
-
-&lt;p&gt;To imagine this situation, just think of it like a Tree traversal where we keep
-on visiting the child nodes and return back when we find leaf node.&lt;/p&gt;
-
-&lt;h3 id=&quot;resolver-function&quot;&gt;Resolver Function&lt;/h3&gt;
-
-&lt;p&gt;Every resolver function will receive 3 arguments&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;obj&lt;/code&gt; The previous object, which for a field on the root Query type is often not used.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;args&lt;/code&gt; The arguments provided to the field in the GraphQL query.&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;context&lt;/code&gt; A value which is provided to every resolver.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;resolvers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;Dog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;speaks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Bow Bow &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Whenever a query that asks for speaks field of Dog type then the above resolver
-function is called and it would return the text &lt;code&gt;&quot;Bow Bow &quot; + word&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is great feature because, if some field is never asked it’s resolver
-function is never called and thus it becomes super efficient as you would
-never resolve and fetch information for the field that is never asked.&lt;/p&gt;
-
-&lt;h2 id=&quot;features-of-graphql&quot;&gt;Features of GraphQL&lt;/h2&gt;
-
-&lt;h3 id=&quot;shape&quot;&gt;Shape&lt;/h3&gt;
-
-&lt;p&gt;The main attraction of GraphQL is the data shape i.e. you get what you asked
-for, nothing more and definitely nothing less. In the query you made you also
-specify the shape and you get the exact thing back in the response.&lt;/p&gt;
-
-&lt;h3 id=&quot;strongly-typed&quot;&gt;Strongly Typed&lt;/h3&gt;
-
-&lt;p&gt;Other prominent feature of GraphQL is its strong typed nature because of which
-everything becomes coupled and predictable.&lt;/p&gt;
-
-&lt;h3 id=&quot;protocol-not-storage&quot;&gt;Protocol, not storage&lt;/h3&gt;
-
-&lt;p&gt;GraphQL is not tied with any specific backend or database; it is much more than
-that. It works on application layer can perfectly work with your existing
-code.&lt;/p&gt;
-
-&lt;h3 id=&quot;version-free&quot;&gt;Version Free&lt;/h3&gt;
-
-&lt;p&gt;One major highlight of the using GraphQL is that it is version free. This is
-a bit tricky to understand but bear with me. When new features are added to the
-product, additional fields are added to the response and since in GraphQL
-client ask for the field that it requires from the server, other fields will
-never be picked up and resolve and thus eliminating the need of versioning.&lt;/p&gt;
-
-&lt;p&gt;In addition to this you can also deprecate the field that you no longer need
-and client need not be changed and whole functionality will continue to work.&lt;/p&gt;
-
-&lt;h3 id=&quot;documentation-is-right-there&quot;&gt;Documentation is right there&lt;/h3&gt;
-
-&lt;p&gt;One can just look at the schema and understand what is what without any need
-of extra documentation what so ever.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-todo-application&quot;&gt;A Todo Application&lt;/h2&gt;
-
-&lt;p&gt;Let us create a todo application that would do the following&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create a todo&lt;/li&gt;
-  &lt;li&gt;Create a Tag&lt;/li&gt;
-  &lt;li&gt;Mark a todo as complete&lt;/li&gt;
-  &lt;li&gt;Unmark a completed todo as incomplete&lt;/li&gt;
-  &lt;li&gt;Get all todos by its completion status&lt;/li&gt;
-  &lt;li&gt;Get one single todo&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;and each todo will have&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;id&lt;/li&gt;
-  &lt;li&gt;task&lt;/li&gt;
-  &lt;li&gt;creation time&lt;/li&gt;
-  &lt;li&gt;tags&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;and each tag will have&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;name&lt;/li&gt;
-  &lt;li&gt;color (hex code)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Additionally each tag will also have a reverse mapping of posts that belongs to
-the tag.&lt;/p&gt;
-
-&lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
-
-&lt;p&gt;First let us define type &lt;code&gt;Todo&lt;/code&gt; that will represent one Todo in the application.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;created_at&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Other type we will define is &lt;code&gt;Tag&lt;/code&gt; that represents a Tag.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;But we also want that when someone queries for a tag, he/she may also fetch the
-todos that belongs to the tag and hence there will be a field named &lt;code&gt;todos&lt;/code&gt; that
-will hold list of &lt;code&gt;Todo&lt;/code&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;NOTE: Since GraphQL only defines how your data looks at the application level
-we are totally free to persist information as we like in our databases.&lt;/p&gt;
-
-&lt;h3 id=&quot;mutations&quot;&gt;Mutations&lt;/h3&gt;
-
-&lt;p&gt;We will require following mutations&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mutation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;createTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;createTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;query&quot;&gt;Query&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;the-final-graphql-schema&quot;&gt;The Final GraphQL Schema&lt;/h3&gt;
-
-&lt;p&gt;The final GraphQL schema will look something like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;created_at&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_complete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mutation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;createTodo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Todo&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;createTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Tag&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;backend-code&quot;&gt;Backend Code&lt;/h3&gt;
-
-&lt;p&gt;For a GraphQL server to handle the mutations and the queries, you just need
-to write resolvers for each of them. Just find a suitable GraphQL library
-for your favourite language and start writing resolvers.&lt;/p&gt;
-
-&lt;p&gt;I have used NodeJS and have written this application, you can find the complete
-code in &lt;a href=&quot;https://github.com/arpitbbhayani/todo-dooby-doo&quot;&gt;this repository&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;graphiql&quot;&gt;Graphiql&lt;/h3&gt;
-
-&lt;p&gt;There is an amazing utility called Graphiql that give a nice interface to make
-queries to a GraphQL server. Just set up in the server that serves GraphQL
-endpoint and you are good to go.&lt;/p&gt;
-
-&lt;h3 id=&quot;call-graphql-endpoint-with-any-http-client&quot;&gt;Call GraphQL Endpoint with any HTTP client&lt;/h3&gt;
-
-&lt;p&gt;Make HTTP &lt;code&gt;POST&lt;/code&gt; request to GraphQL endpoint with the valid GraphQL
-Query, as you provide in Graphiql, and content type set as &lt;code&gt;application/json&lt;/code&gt;
-and you will get back the response as you get in Graphiql.&lt;/p&gt;
-
-&lt;p&gt;A sample curl request to understand things better&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    -X POST &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    -H &lt;span class=&quot;s2&quot;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    --data &lt;span class=&quot;s1&quot;&gt;&amp;#39;{ &amp;quot;query&amp;quot;: &amp;quot;{ todos { todo } }&amp;quot; }&amp;#39;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    https://localhost:8082/graphql&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h3&gt;
-
-&lt;p&gt;GraphQL is really an amazing utility that can make you life a lot easier. there
-are lots of amazing features in GraphQL which I have not discussed here. Stay
-tuned to this blog and you would surely see some tutorial coming up.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 14 Dec 2017 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/talks/introduction-to-graphql.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/talks/introduction-to-graphql.html</guid>
-        
-        <category>graphql</category>
-        
-        <category>beginner</category>
-        
-        <category>introduction</category>
-        
-        
-        <category>talks</category>
         
       </item>
     
