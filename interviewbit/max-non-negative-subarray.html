@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
+
+    <title>INTERVIEWBIT max-non-negative-subarray Solution | Hi I'm Arpit 👋</title>
+    <meta name="description" content="Here is the solution for programming question Max Non Negative SubArray on interviewbit">
+    <meta name="keywords" content="solution, source code, programming, interviewbit, Max Non Negative SubArray Solution, " />
+
+    <link rel="stylesheet" href="/static/css/semantic-2.min.css">
+    <link rel="stylesheet" href="/static/css/pygments-2.css">
+    <link rel="canonical" href="https://arpitbhayani.me/interviewbit/max-non-negative-subarray.html">
+    <link rel="alternate" type="application/rss+xml" title="Hi I'm Arpit 👋" href="https://arpitbhayani.me/feed.xml">
+
+    <meta property="fb:app_id" content="1055615241238486" />
+
+    <meta property="og:image" content="https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true"/>
+    <meta property="og:title" content="INTERVIEWBIT max-non-negative-subarray Solution"/>
+    <meta property="og:url" content="https://arpitbhayani.me/interviewbit/max-non-negative-subarray.html"/>
+    <meta property="og:site_name" content="Hi I'm Arpit 👋"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Here is the solution for programming question Max Non Negative SubArray on interviewbit" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://arpitbhayani.me/interviewbit/max-non-negative-subarray.html">
+    <meta name="twitter:title" content="INTERVIEWBIT max-non-negative-subarray Solution">
+    <meta name="twitter:description" content="Here is the solution for programming question Max Non Negative SubArray on interviewbit">
+    <meta name="twitter:image" content="https://qph.ec.quoracdn.net/main-qimg-f939681b0b47e5540398244db5c8966f?convert_to_webp=true">
+
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+</head>
+
+    <body>
+        <div class="ui secondary basic fixed small menu center aligned">
+    <a class="item" href="/" >
+        <div class="ui small image">
+            <img src="/static/images/profiles/arpit-logo.png" />
+        </div>
+    </a>
+    <a class=" item" href="/blogs.html">BLOGS</a>
+    <a class=" item" href="/mrcup.html">MR CUP</a>
+    <a class=" item" href="/talks.html">TALKS</a>
+    <a class=" item" href="/projects.html">PROJECTS</a>
+    <a class=" item" href="/vimarsh.html">VIMARSH</a>
+    <a class="item" href="https://potterverse.arpitbhayani.me">
+        POTTERVERSE
+    </a>
+    <a class="item" target="_blank" href="/static/arpit-bhayani-resume.pdf">RESUME</a>
+</div>
+
+        
+            <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+        
+        <div class="ui text container" style="margin-top: 80px; padding-bottom: 50px;">
+            <div class="ui hidden section divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden section divider"></div>
+
+<div class="ui hidden divider"></div>
+<div class="ui header center aligned">
+    <h1 class="article-title">INTERVIEWBIT max-non-negative-subarray Solution</h1>
+</div>
+<div class="ui center aligned basic fluid segment">
+    <img style="margin-bottom: 10px;" class="ui center middle aligned mini spaced circular image" src="/static/images/profiles/arpit-icon.png" /><span class="article-author lightGrey">Arpit Bhayani </span> | <span class="article-publish-date lightGrey"> October 11, 2018</span>
+    <div>
+        <div class="ui center aligned basic fluid segment">
+            <div class="ui horizontal list">
+                
+                <a style="font-weight: normal;" href='/tag/competitive-programming.html' class="ui item article-category" data-content="All competitive-programming posts" data-variation="tiny" data-position="bottom center">competitive-programming</a>
+                
+                <a style="font-weight: normal;" href='/tag/programming.html' class="ui item article-category" data-content="All programming posts" data-variation="tiny" data-position="bottom center">programming</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui hidden section divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden section divider"></div>
+
+<div>
+    <p>The correct, optimal and working solution for programming question <a href="https://www.interviewbit.com/problems/max-non-negative-subarray/">max-non-negative-subarray</a> on interviewbit</p>
+
+<div class="ui secondary pointing large menu">
+  <a class="grey item" data-tab="problem-statement">
+    Problem Statement
+  </a>
+  <a class="active item grey" data-tab="solution">
+    Solution
+  </a>
+</div>
+<div class="ui bottom attached tab" data-tab="problem-statement">
+    <iframe src="https://www.interviewbit.com/problems/max-non-negative-subarray/" width="100%" height="600px" style="overflow: scroll; border: none;"></iframe>
+</div>
+<div class="ui bottom attached active tab" data-tab="solution">
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&quot;fmt&quot;</span>
+	<span class="s">&quot;math&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">max</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">x</span> <span class="p">&gt;</span> <span class="nx">y</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">x</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">maxset</span><span class="p">(</span><span class="nx">A</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">A</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
+			<span class="k">break</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="nx">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nx">A</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+	<span class="p">}</span>
+
+	<span class="nx">maxStart</span><span class="p">,</span> <span class="nx">maxEnd</span><span class="p">,</span> <span class="nx">maxSum</span> <span class="o">:=</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt32</span>
+	<span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">:=</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="mi">0</span>
+
+	<span class="k">for</span> <span class="nx">i</span> <span class="p">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">A</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
+			<span class="nx">end</span> <span class="p">=</span> <span class="nx">i</span>
+			<span class="nx">sum</span> <span class="o">+=</span> <span class="nx">A</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="p">&gt;</span> <span class="nx">maxSum</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">==</span> <span class="nx">maxSum</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">end</span><span class="o">-</span><span class="nx">start</span><span class="p">)</span> <span class="p">&gt;</span> <span class="p">(</span><span class="nx">maxEnd</span><span class="o">-</span><span class="nx">maxStart</span><span class="p">))</span> <span class="p">{</span>
+				<span class="nx">maxStart</span><span class="p">,</span> <span class="nx">maxEnd</span><span class="p">,</span> <span class="nx">maxSum</span> <span class="p">=</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">sum</span>
+			<span class="p">}</span>
+			<span class="nx">start</span><span class="p">,</span> <span class="nx">sum</span> <span class="p">=</span> <span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="p">&gt;</span> <span class="nx">maxSum</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">==</span> <span class="nx">maxSum</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">end</span><span class="o">-</span><span class="nx">start</span><span class="p">)</span> <span class="p">&gt;</span> <span class="p">(</span><span class="nx">maxEnd</span><span class="o">-</span><span class="nx">maxStart</span><span class="p">))</span> <span class="p">{</span>
+		<span class="nx">maxStart</span><span class="p">,</span> <span class="nx">maxEnd</span><span class="p">,</span> <span class="nx">maxSum</span> <span class="p">=</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">sum</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">A</span><span class="p">[</span><span class="nx">maxStart</span> <span class="p">:</span> <span class="nx">maxEnd</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">maxset</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">}))</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+</div>
+<div class="ui hidden section divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9220578038638789"
+     data-ad-slot="2902722754"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden section divider"></div>
+
+
+    <div class="ui basic segment" style="background: #FFF">
+    <div id="disqus_thread"></div>
+</div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://arpitbhayani.me/interviewbit/max-non-negative-subarray.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/interviewbit/max-non-negative-subarray.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+        </div>
+        <footer style="background: #fff099;">
+    <div class="ui column centered grid">
+        <div class="row">
+            <div class="column center aligned">
+                <a class="item" href="/disclaimer.html">Disclaimer</a><br/>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Designed & Built by Arpit Bhayani<br/>
+                <a class="ui small grey text" href="https://github.com/arpitbbhayani/arpitbbhayani.github.io/">View Source</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+    <script src="/static/js/semantic-2.min.js"></script>
+    <script src="/static/js/index.js"></script>
+</head>
+
+</html>
