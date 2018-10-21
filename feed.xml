@@ -5,9 +5,76 @@
     <description>An avid programmer, passionate about engineering and building products. Knows a bit of everything.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Oct 2018 21:10:27 +0530</pubDate>
-    <lastBuildDate>Fri, 12 Oct 2018 21:10:27 +0530</lastBuildDate>
+    <pubDate>Sun, 21 Oct 2018 15:25:52 +0530</pubDate>
+    <lastBuildDate>Sun, 21 Oct 2018 15:25:52 +0530</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>INTERVIEWBIT pascal-triangle Solution</title>
+        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.interviewbit.com/problems/pascal-triangle/&quot;&gt;pascal-triangle&lt;/a&gt; on interviewbit&lt;/p&gt;
+
+&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
+  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
+    Problem Statement
+  &lt;/a&gt;
+  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
+    Solution
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
+    &lt;iframe src=&quot;https://www.interviewbit.com/problems/pascal-triangle/&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[][]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([][]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;range&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;triangle&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 21 Oct 2018 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/interviewbit/pascal-triangle.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/interviewbit/pascal-triangle.html</guid>
+        
+        <category>competitive-programming</category>
+        
+        <category>programming</category>
+        
+        
+        <category>interviewbit</category>
+        
+      </item>
     
       <item>
         <title>INTERVIEWBIT spiral-order-matrix-ii Solution</title>
@@ -808,108 +875,6 @@ feel free to tweet me &lt;a href=&quot;https://twitter.com/arpit_bhayani&quot;&g
         <pubDate>Wed, 19 Sep 2018 00:00:00 +0530</pubDate>
         <link>https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html</link>
         <guid isPermaLink="true">https://arpitbhayani.me/blog/building-the-potterverse-search-engine.html</guid>
-        
-        <category>potterverse</category>
-        
-        
-        <category>blog</category>
-        
-      </item>
-    
-      <item>
-        <title>Tech Stack for Potterverse</title>
-        <description>&lt;p&gt;Once the idea of &lt;a href=&quot;http://potterverse.arpitbhayani.me/&quot;&gt;Potterverse&lt;/a&gt; was conceived
-and list of features was ready, the first hurdle I faced was of deciding on a nice
-Tech Stack for building it :grin:. For me deciding a tech stack is never easy, the
-engineering dominant side of mine always strives for something that is challenging
-and at the same time extremely suited for the use case.&lt;/p&gt;
-
-&lt;p&gt;But here the things were different, I was going for the “fastest” way
-to MVP approach and hence some decisions I took while deciding on tech stack were
-not something that I would have normally picked.&lt;/p&gt;
-
-&lt;h3 id=&quot;should-i-build-my-own-search-engine&quot;&gt;Should I build my own search engine?&lt;/h3&gt;
-&lt;p&gt;With a habit of going with the most difficult engineering problem solve, the first
-thought was interesting but was way out of my league :sweat_smile:
-I thought of creating my own search engine that is very very “fast” and “suitable”
-for my “use case”. I know this sounds totally ridiculous but this is how my brain is
-wired :smile:. I was definitely overestimating my abilities.&lt;/p&gt;
-
-&lt;p&gt;If I would have built my search engine, like I did &lt;a href=&quot;https://github.com/arpitbbhayani/wikise&quot;&gt;here&lt;/a&gt;,
-from scratch then instead of focusing on Information Retrieval and Data Mining part
-of the problem statement, my concerns would have shifted drastically and hence
-I somehow controlled my urge and decided to go with &lt;a href=&quot;https://www.elastic.co/&quot;&gt;Elasticsearch&lt;/a&gt;
-and first take my raw idea to MVP stage and release the first version it.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-frontend-framework&quot;&gt;The Frontend Framework&lt;/h3&gt;
-&lt;p&gt;Vanilla Javascript and basic server side is what I prefer while writing any web based
-application; but looking how the frontend world has changed in past few years, it was
-customary for me and a high time as well that I also go for a framework that utilizes
-highly optimal client side rendering.&lt;/p&gt;
-
-&lt;p&gt;Following were my requirements&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Framework should enable client side rendering&lt;/li&gt;
-  &lt;li&gt;Writing a &lt;code&gt;Hello, World&lt;/code&gt; should be simple and understandable&lt;/li&gt;
-  &lt;li&gt;Not so steep learning curve&lt;/li&gt;
-  &lt;li&gt;Support should be good so that I could reuse what others have already built&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; was the most popular choice but I always had a hard time
-with it and hence I went for the second best &lt;a href=&quot;https://vuejs.org/&quot;&gt;Vue.JS&lt;/a&gt;. Vue seemed
-ideal for my use case, it is easy to learn, simple, elegant and has lot of community
-support.&lt;/p&gt;
-
-&lt;h3 id=&quot;backend-for-rest-endpoints&quot;&gt;Backend for REST endpoints&lt;/h3&gt;
-&lt;p&gt;Golang, Python and NodeJS were the languages in contention and Golang is what I chose
-to be my primary backend for REST APIs. The reason I chose Golang are&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It is fast and efficient&lt;/li&gt;
-  &lt;li&gt;It is cheap to maintain when hosted&lt;/li&gt;
-  &lt;li&gt;It has very high developer productivity&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Python is undoubtedly my goto language but when it comes to performance, nothing
-can beat Golang. Apart from performance, I was inclined towards one more advantage
-of it, which is, it is really cheap to host Golang based code because of its
-low memory footprint and portable binaries.&lt;/p&gt;
-
-&lt;h3 id=&quot;hosting&quot;&gt;Hosting&lt;/h3&gt;
-&lt;p&gt;Running services and applications in a raw VM hosted in cloud is my thing. I have
-always preferred going for a basic EC2 instance for hosting my service. But this time
-I did not want to do all that and wanted something that would handle everything, ex:
-infrastructure, scaling, etc, for me.&lt;/p&gt;
-
-&lt;p&gt;Serverless was my first choice but again, the amount of restrictions that we need to
-cater while working with serverless is too much to bear at this stage. Other big
-requirement was that the service should be able to scale down to 0 instances because
-the traffic I expect will not be streamlined or continuous instead it will mostly be
-burst.&lt;/p&gt;
-
-&lt;p&gt;So for this use case I chose &lt;a href=&quot;https://cloud.google.com/appengine/&quot;&gt;Google App Engine&lt;/a&gt;
-which gives me all the flexibility in the world. I would recommend it for very small
-use cases like Potterverse but not for giant applications. Since Google App Engine
-is what I decided on, I had to use all services provided by Google Cloud. Following
-are the services of Google that I am using right now&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Google App Engine (that serves primary REST endpoints)&lt;/li&gt;
-  &lt;li&gt;1 Google compute instance (that runs Elasticsearch)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;python-and-jupyter-are-always-there&quot;&gt;Python and Jupyter are always there&lt;/h3&gt;
-&lt;p&gt;I have a private Git based repository that holds several Jupyter notebooks that
-contains all NLP and IR related code, Elasticsearch based utilities and some
-algorithms that are implemented and still in experimental phase.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;In conclusion, I have nothing to say :smile:&lt;/p&gt;
-</description>
-        <pubDate>Tue, 11 Sep 2018 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/blog/tech-stack-for-potterverse.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/blog/tech-stack-for-potterverse.html</guid>
         
         <category>potterverse</category>
         
