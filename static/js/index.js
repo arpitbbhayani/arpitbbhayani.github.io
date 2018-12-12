@@ -14,3 +14,11 @@ $(document).ready(function() {
       $('#menu_sidebar').sidebar('toggle');
     });
 });
+
+window.onblur = function () {
+  document.title = '😭 Please come back ...';
+}
+
+window.onfocus = function () {
+  document.title = "😁 You are back";
+}
