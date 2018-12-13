@@ -1,6 +1,7 @@
 ---
 title: Tech Stack for Potterverse
 img:    https://arpitbhayani.me/static/images/potterverse/tech-stack-potterverse.png
+gif: https://media.giphy.com/media/10aADbYxnJlc9q/giphy.gif
 layout: post
 comments: true
 tags:

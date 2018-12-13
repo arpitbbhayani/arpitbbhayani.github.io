@@ -1,6 +1,7 @@
 ---
 title: Why am I building Potterverse?
 img:    https://arpitbhayani.me/static/images/why-am-i-building-potterverse/explore-potterverse.png
+gif: https://media.giphy.com/media/s93TL62lMy7cI/giphy.gif
 layout: post
 comments: true
 tags:

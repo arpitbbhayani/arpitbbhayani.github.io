@@ -1,6 +1,7 @@
 ---
 title: Building the Potterverse search engine
 img:    https://arpitbhayani.me/static/images/potterverse/potterverse-search-engine.jpg
+gif: https://media.giphy.com/media/mz1kJeDVueKC4/giphy.gif
 layout: post
 comments: true
 tags:

@@ -1,6 +1,7 @@
 ---
 title: Making excerpts look good
 img:    https://arpitbhayani.me/static/images/potterverse/potterverse-excerpts.png
+gif: https://media.giphy.com/media/XL3lpViJcZb4u56lnk/giphy.gif
 layout: post
 comments: true
 tags:

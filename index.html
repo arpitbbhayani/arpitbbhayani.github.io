@@ -5,7 +5,7 @@ layout: fullpage
 <div style="min-height: 400px; background: #fff;">
     <div class="ui two column grid">
         <div class="ui column">
-            <div class="ui text container basic segment">
+            <div class="ui text container basic segment" style="width: 100%;">
                 <div style="font-weight: bold; font-size: 3em; padding-top: 50px; color: #111">
                     <b>Hello 👋</b>
                 </div>
@@ -28,6 +28,36 @@ layout: fullpage
     </div>
 </div>
 
+
+<div class="ui basic segment" style="padding-bottom: 50px;">
+    <div class="ui hidden section divider"></div>
+    <div class="ui huge text">✏️ Recent Articles</div>
+    <div class="ui hidden divider"></div>
+    <div class="ui padded basic segment">
+        <div class="ui four column doubling grid">
+            {% assign count = 0 %}
+            {% for post in site.posts offset:0 %}
+                {% if post.type != 'dummy' %}
+                    {% if post.categories[0] == "blog" or post.categories[0] == "techie" %}
+                        <div class="ui column">
+                            {% include article_snippet.html post=post %}
+                        </div>
+                        {% assign count = count | plus: 1 %}
+                    {% endif %}
+                {% endif %}
+                {% if count == 4 %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="ui center aligned basic segment">
+        <a class="ui large basic button" href="{% post_url 1979-01-01-blogs %}">
+            All Blogs
+        </a>
+    </div>
+</div>
+    
 
 <div style="min-height: 500px;">
     <div class="ui hidden section divider"></div>
@@ -155,42 +185,6 @@ layout: fullpage
             <div class="ui hidden divider"></div>
             <a class="ui large basic button" href="{% post_url 1979-01-01-projects %}">
                 More Projects
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<div style="padding-bottom: 50px;">
-    <div class="ui hidden divider"></div>
-    <div class="ui text container">
-        <div class="ui massive text">✏️ Recent Blogs</div>
-        <div class="ui divider"></div>
-        <div>
-            <div class="ui list">
-                {% assign count = 0 %}
-                {% for post in site.posts offset:0 %}
-                    {% if post.type != 'dummy' %}
-                        {% if post.categories[0] == "blog" or post.categories[0] == "techie" %}
-                            <div class="ui item">
-                                <a href="{{post.url}}">
-                                    {{post.title}}
-                                </a>
-                                <div class="ui hidden divider"></div>
-                            </div>
-                            {% assign count = count | plus: 1 %}
-                        {% endif %}
-                    {% endif %}
-                    {% if count > 4 %}
-                    {% break %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class="ui center aligned basic segment">
-            <div class="ui hidden divider"></div>
-            <a class="ui large basic button" href="{% post_url 1979-01-01-blogs %}">
-                All Blogs
             </a>
         </div>
     </div>
