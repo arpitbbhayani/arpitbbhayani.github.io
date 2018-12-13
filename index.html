@@ -40,7 +40,7 @@ layout: fullpage
                 {% if post.type != 'dummy' %}
                     {% if post.categories[0] == "blog" or post.categories[0] == "techie" %}
                         <div class="ui column">
-                            {% include article_snippet.html post=post %}
+                            {% include gif_article_snippet.html post=post %}
                         </div>
                         {% assign count = count | plus: 1 %}
                     {% endif %}
