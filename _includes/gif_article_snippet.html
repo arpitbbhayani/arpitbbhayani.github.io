@@ -5,11 +5,14 @@
     </a>
     <div class="content">
         <a href="{{ post.url }}">
-            <span class="ui black text small header">{{ post.title }}</span>
+            <span class="ui black text tiny header">{{ post.title }}</span>
         </a>
     </div>
     <div class="meta">
         <p class="ui small text">{{ post.seo.description | truncate: 85 }}</p>
-        <a class="ui tiny text" href="{{ post.url }}">Read More</a>
+        <a class="ui tiny text transition to right" href="{{ post.url }}">
+            Take me to this article
+            <i class="long arrow alternate right icon"></i>
+        </a>
     </div>
 </div>

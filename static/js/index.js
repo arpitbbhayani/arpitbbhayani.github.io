@@ -14,6 +14,10 @@ $(document).ready(function() {
       $('#menu_sidebar').sidebar('toggle');
     });
 
+    $('.transition.to.right').hover(function(){
+        $(this).transition('bounce');
+    }, function(){});
+
     window.onblur = function () {
       document.title = '😭 Please come back ...';
     }

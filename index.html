@@ -1,10 +1,10 @@
 ---
-layout: fullpage
+layout: default
 ---
 
 <div style="min-height: 400px; background: #fff;">
-    <div class="ui two column grid">
-        <div class="ui column">
+    <div class="ui stackable grid">
+        <div class="ui ten wide column">
             <div class="ui text container basic segment" style="width: 100%;">
                 <div style="font-weight: bold; font-size: 3em; padding-top: 50px; color: #111">
                     <b>Hello 👋</b>
@@ -19,7 +19,7 @@ layout: fullpage
                 </div>
             </div>
         </div>
-        <div class="ui column">
+        <div class="ui six wide column">
             <div class="ui text container">
                 <div class="ui hidden section divider"></div>
                 <img class="ui large image" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" />
@@ -29,11 +29,11 @@ layout: fullpage
 </div>
 
 
-<div class="ui basic segment" style="padding-bottom: 50px;">
+<div class="ui basic segment">
     <div class="ui hidden section divider"></div>
     <div class="ui huge text">✏️ Recent Articles</div>
     <div class="ui hidden divider"></div>
-    <div class="ui padded basic segment">
+    <div class="ui basic segment">
         <div class="ui four column doubling grid">
             {% assign count = 0 %}
             {% for post in site.posts offset:0 %}
@@ -52,7 +52,7 @@ layout: fullpage
         </div>
     </div>
     <div class="ui center aligned basic segment">
-        <a class="ui large basic button" href="{% post_url 1979-01-01-blogs %}">
+        <a class="ui large primary circular button" href="{% post_url 1979-01-01-blogs %}">
             All Blogs
         </a>
     </div>
@@ -61,9 +61,9 @@ layout: fullpage
 
 <div style="min-height: 500px;">
     <div class="ui hidden section divider"></div>
-    <div class="ui text container">
-        <div class="ui massive text">🖥️ Where I've Worked</div>
-        <div class="ui divider"></div>
+    <div class="ui huge text">🖥️ Where I've Worked</div>
+    <div class="ui hidden divider"></div>
+    <div class="ui basic segment">
         <div>
             <div class="ui grid">
                 <div class="ui four wide column">
@@ -123,7 +123,7 @@ layout: fullpage
         </div>
         <div class="ui center aligned basic segment">
             <div class="ui hidden divider"></div>
-            <a class="ui large basic button" target="_blank" href="/static/arpit-bhayani-resume.pdf">
+            <a class="ui large primary circular button" target="_blank" href="/static/arpit-bhayani-resume.pdf">
                 Resume
             </a>
         </div>
@@ -133,9 +133,9 @@ layout: fullpage
 
 <div style="padding-bottom: 50px; background: #fff;">
     <div class="ui hidden section divider"></div>
-    <div class="ui text container">
-        <div class="ui massive text">🛠 Some Things I've Built</div>
-        <div class="ui divider"></div>
+    <div class="ui huge text">🛠 Some Things I've Built</div>
+    <div class="ui hidden divider"></div>
+    <div class="ui basic segment">
         <div>
             <div class="ui very relaxed list">
                 <div class="ui item">
@@ -183,7 +183,7 @@ layout: fullpage
         </div>
         <div class="ui center aligned basic segment">
             <div class="ui hidden divider"></div>
-            <a class="ui large basic button" href="{% post_url 1979-01-01-projects %}">
+            <a class="ui large primary circular button" href="{% post_url 1979-01-01-projects %}">
                 More Projects
             </a>
         </div>
