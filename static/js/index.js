@@ -23,6 +23,6 @@ $(document).ready(function() {
     }
     
     window.onfocus = function () {
-      document.title = "😁 You are back";
+      document.title = "😁 You are back!";
     }    
 });

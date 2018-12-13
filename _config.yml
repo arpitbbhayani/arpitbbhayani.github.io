@@ -21,6 +21,7 @@ blog_types:
     - techie
     - curiosity
 plugins_dir: _plugins
+future: true
 environment: production
 emoji:
     src: "/static/images"

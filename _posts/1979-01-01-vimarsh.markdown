@@ -6,7 +6,10 @@ seo:
  description: Vimarsh is a series of Podcasts where two friends are discussing day to day issues, their possible solutions and sharing their respective opinions about life, universe and everything and hopes that their discussions ,might make this world a better place.
 ---
 
-# Vimarsh
+<div class="ui center aligned basic segment">
+    <h1>Vimarsh</h1>
+</div>
+<div class="ui hidden divider"></div>
 
 Vimarsh is a series of Podcasts where two friends are discussing day to day issues, their possible solutions and sharing their respective opinions about life, universe and everything and hopes that their discussions ,might make this world a better place.
 
