@@ -7,8 +7,8 @@ tags:
  - graphql
  - beginner
  - introduction
-given_at:
- - Amazon (for Weekly Learning Series)
+given_at: Amazon
+given_for: Weekly Learning Series
 categories: talks
 seo:
  tags:

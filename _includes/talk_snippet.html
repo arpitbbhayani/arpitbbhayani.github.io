@@ -8,11 +8,8 @@
                 </a>
                 <div class="ui divider"></div>
                 <div class="description">{{post.seo.description | truncate: 200 }}</div>
-                <div class="ui grey mini text">
-                    Given at:
-                    {% for place in post.given_at %}
-                        <span class="ui black label">{{ place }}</span>
-                    {% endfor %}
+                <div class="ui left aligned basic nospace segment">
+                    <span class="ui small grey text">The talk was given at {{ post.given_at }} for {{ post.given_for }}.</span>
                 </div>
             </div>
         </article>
