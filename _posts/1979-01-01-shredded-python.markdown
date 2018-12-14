@@ -24,6 +24,10 @@ seo:
 
 <div class="ui center aligned basic segment">
     <div class="ui hidden divider"></div>
+    <div class="ui large image">
+        <img src="https://media.giphy.com/media/9xaryfkdWqqiK6QHKf/giphy.gif" />
+    </div>
+    <div class="ui hidden divider"></div>
     <a class="ui huge primary button" href="/">
         Let's get started
     </a>
