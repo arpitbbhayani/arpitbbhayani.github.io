@@ -1,6 +1,6 @@
-ROOT=~/workspace/arpitbhayani.me/
+ROOT=~/myw/arpitbhayani.me/
 TMP_FOLDER=/tmp/arpitbhayani.me/
-SITE_DIR=~/workspace/arpitbhayani.me/_site/
+SITE_DIR=~/myw/arpitbhayani.me/_site/
 
 rm -rf $SITE_DIR
 

@@ -1,4 +1,4 @@
-DIR=~/workspace/arpitbhayani.me
+DIR=~/myw/arpitbhayani.me
 TEMP_DIR=/tmp/arpitbhayani.me/data
 
 mv $TEMP_DIR/spoj $DIR/_posts/spoj
