@@ -1,4 +1,4 @@
-DIR=/home/arpit/workspace/arpitbhayani.me
+DIR=~/myw/arpitbhayani.me
 
 cd $DIR/semantic
 $DIR/node_modules/.bin/gulp build

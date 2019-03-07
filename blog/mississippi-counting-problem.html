@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/image/png" href="/static/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/static/images/icons/favicon.png" />
+
+    <title>The Mississippi Counting Problem | Hi I'm Arpit 👋</title>
+    <meta name="description" content="How many 3 letter unique words can be created from the word 'mississippi'?">
+    <meta name="keywords" content="maths, permutations, counting problem, count unique words, " />
+
+    <link rel="stylesheet" href="/static/css/semantic-2.min.css">
+    <link rel="stylesheet" href="/static/css/pygments-2.css">
+    <link rel="canonical" href="https://arpitbhayani.me/blog/mississippi-counting-problem.html">
+    <link rel="alternate" type="application/rss+xml" title="Hi I'm Arpit 👋" href="https://arpitbhayani.me/feed.xml">
+
+    <meta property="fb:app_id" content="1055615241238486" />
+
+    <meta property="og:image" content="https://arpitbhayani.me/static/images/mississippi-counting-problem.png"/>
+    <meta property="og:title" content="The Mississippi Counting Problem"/>
+    <meta property="og:url" content="https://arpitbhayani.me/blog/mississippi-counting-problem.html"/>
+    <meta property="og:site_name" content="Hi I'm Arpit 👋"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="How many 3 letter unique words can be created from the word 'mississippi'?" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://arpitbhayani.me/blog/mississippi-counting-problem.html">
+    <meta name="twitter:title" content="The Mississippi Counting Problem">
+    <meta name="twitter:description" content="How many 3 letter unique words can be created from the word 'mississippi'?">
+    <meta name="twitter:image" content="https://arpitbhayani.me/static/images/mississippi-counting-problem.png">
+
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+</head>
+
+    <body>
+        <div class="ui secondary basic menu center aligned" style="border-top: 4px solid #0079ff; margin-bottom: 0px;">
+    <a class="item" href="/">
+        <div class="ui medium image">
+            <img src="/static/images/profiles/arpit-logo.png">
+        </div>
+    </a>
+    <a class=" item" href="/blogs.html">BLOGS</a>
+    <!-- <a class=" item" href="/shredded-python.html">SHREDDED PYTHON</a> -->
+    <a class=" item" href="/mrcup.html">MR CUP</a>
+    <a class=" item" href="/talks.html">TALKS</a>
+    <a class=" item" href="/projects.html">PROJECTS</a>
+    <a class=" item" href="/vimarsh.html">VIMARSH</a>
+    <a class="item" href="https://potterverse.arpitbhayani.me">
+        POTTERVERSE
+    </a>
+    <a class="item" target="_blank" href="/static/arpit-bhayani-resume.pdf">RESUME</a>
+</div>
+
+        
+            <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71339255-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9220578038638789",
+    enable_page_level_ads: true
+  });
+</script>
+
+        
+        <div class="ui text container" style="margin-top: 10px; padding-bottom: 50px;">
+            <div itemscope="" itemtype="http://schema.org/BlogPosting">
+    <article>
+        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
+                The Mississippi Counting Problem
+            </h1>
+        </div>
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large blue label">
+                March 07, 2019
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                <p>Today I encountered a very interesting problem on <a href="https://en.wikipedia.org/wiki/Enumeration">Enumerations</a>.
+The problem that seemed tricky at first but as I started to devise a solution it things became complicated.
+I knew the answer should be really simple and elegant.</p>
+
+<p>The problem statement goes like this</p>
+
+<blockquote>
+  <p>How many 3 letter unique words can be created from the word ‘mississippi’?</p>
+</blockquote>
+
+<p>After trying 3 different approaches and almost having applied the Brute Force, I found a way to
+solve the problem which kinda is elegant. Here is my version of the solution.</p>
+
+<div class="ui image">
+    <img src="/static/images/counting-problem-solution.jpeg">
+</div>
+
+<p>The first half of the image contains a way to find number of linear arrangements which has nothing to do with this problem.</p>
+
+<p>If you have some other way of solving this problem kindly let me know in the comments section down below.</p>
+
+<p>Here is a Python program that asserts the approach <img class="emoji" title=":smile:" alt=":smile:" src="/static/images/emoji/unicode/1f604.png" height="20" width="20"></p>
+
+<iframe height="600px" width="100%" src="https://repl.it/@arpitbbhayani/numbers-of-words-from-a-word?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="ui text container">
+    <div class="ui hidden section divider"></div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9220578038638789" data-ad-slot="2902722754" data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="ui hidden section divider"></div>
+
+
+    
+        <div class="ui basic segment" style="background: #FFF">
+    <div id="disqus_thread"></div>
+</div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://arpitbhayani.me/blog/mississippi-counting-problem.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/blog/mississippi-counting-problem.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//arpitbbhayani.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+    
+</div>
+        </div>
+        <footer style="background: #fff;">
+    <div class="ui column centered grid">
+        <div class="row">
+            <div class="column center aligned">
+                <div class="ui small icon borderless compact basic secondary menu">
+    <div class="item">
+        <a target="_blank" href="mailto:arpit.b.bhayani@gmail.com">
+            <i class="mail outline large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://github.com/arpitbbhayani">
+            <i class="github large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://facebook.com/oftenweird">
+            <i class="facebook f large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://instagram.com/often_weird">
+            <i class="instagram large grey icon"></i>
+        </a>
+    </div>
+    <div class="ui item">
+        <a target="_blank" href="https://twitter.com/arpit_bhayani">
+            <i class="twitter large grey icon"></i>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="ui small grey text">Thanks for visiting!</div>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+    <script src="/static/js/semantic-2.min.js"></script>
+    <script src="/static/js/index.js"></script>
+</head>
+
+</html>
