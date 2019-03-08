@@ -5,9 +5,56 @@
     <description>An avid programmer, passionate about engineering and building products. Kinda know it all.</description>
     <link>https://arpitbhayani.me/</link>
     <atom:link href="https://arpitbhayani.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Mar 2019 16:26:46 +0530</pubDate>
-    <lastBuildDate>Thu, 07 Mar 2019 16:26:46 +0530</lastBuildDate>
+    <pubDate>Fri, 08 Mar 2019 14:40:22 +0530</pubDate>
+    <lastBuildDate>Fri, 08 Mar 2019 14:40:22 +0530</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Calculate x % of y easily with this trick</title>
+        <description>&lt;p&gt;Say your friend comes up to you with this question “What is &lt;code&gt;63%&lt;/code&gt; of &lt;code&gt;25&lt;/code&gt;?”. If you do not have a pen
+and a paper handy then solving this question will not be straightforward. One approach, that most
+people take, is to find a small percent of the number, say &lt;code&gt;x%&lt;/code&gt; of &lt;code&gt;25&lt;/code&gt; such that &lt;code&gt;x&lt;/code&gt; can take you easily to &lt;code&gt;63&lt;/code&gt;.
+So here you may find &lt;code&gt;3%&lt;/code&gt; of &lt;code&gt;25&lt;/code&gt; and then multiply it by &lt;code&gt;21&lt;/code&gt; to get you to &lt;code&gt;63&lt;/code&gt;, which again is a pain.&lt;/p&gt;
+
+&lt;p&gt;So there must a simpler way to do this; and there is :boom:&lt;/p&gt;
+
+&lt;p&gt;What if I say,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hspace{0.2cm}x \% \hspace{0.2cm} of \hspace{0.2cm} y \hspace{0.2cm} = \hspace{0.2cm} y \% \hspace{0.2cm} of \hspace{0.2cm} x&lt;/script&gt;
+
+&lt;p&gt;The statement seems untrue at first but in fact it is very true. The proof is really very
+simple and requires a basic math to understand its elegance&lt;/p&gt;
+
+&lt;div class=&quot;ui image&quot;&gt;
+    &lt;img src=&quot;/static/images/calculate-percent-with-trick-proof.jpeg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One interpretation of above euality is that you can trade numbers as per your convenience and you can use the one
+that is simpler to fraction w.r.t &lt;code&gt;100&lt;/code&gt; you can use it as &lt;code&gt;y&lt;/code&gt;, making your life easy again.&lt;/p&gt;
+
+&lt;p&gt;Coming back to the question, since we have established&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hspace{0.2cm}x \% \hspace{0.2cm} of \hspace{0.2cm} y \hspace{0.2cm} = \hspace{0.2cm} y \% \hspace{0.2cm} of \hspace{0.2cm} x&lt;/script&gt;
+
+&lt;p&gt;and hence finding the answer is as easy as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x \hspace{0.2cm} = \hspace{0.2cm} 63 \% \hspace{0.2cm} of \hspace{0.2cm} 25 \\
+\hspace{0.4cm} = \hspace{0.2cm} 25 \% \hspace{0.2cm} of \hspace{0.2cm} 63 \\
+\hspace{0.4cm} = \hspace{0.2cm} 63 / 4 \\
+\hspace{0.4cm} = \hspace{0.2cm} 15.75&lt;/script&gt;
+
+&lt;p&gt;Hope you find this property pretty handy :smile: Cheers :raised_hand:&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 Mar 2019 00:00:00 +0530</pubDate>
+        <link>https://arpitbhayani.me/blog/calculate-x-percent-of-y-easy.html</link>
+        <guid isPermaLink="true">https://arpitbhayani.me/blog/calculate-x-percent-of-y-easy.html</guid>
+        
+        <category>maths</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>The Mississippi Counting Problem</title>
@@ -667,65 +714,6 @@ solve the problem which kinda is elegant. Here is my version of the solution.&lt
         <pubDate>Tue, 09 Oct 2018 00:00:00 +0530</pubDate>
         <link>https://arpitbhayani.me/interviewbit/min-steps-in-infinite-grid.html</link>
         <guid isPermaLink="true">https://arpitbhayani.me/interviewbit/min-steps-in-infinite-grid.html</guid>
-        
-        <category>competitive-programming</category>
-        
-        <category>programming</category>
-        
-        
-        <category>interviewbit</category>
-        
-      </item>
-    
-      <item>
-        <title>INTERVIEWBIT max-sum-contiguous-subarray Solution</title>
-        <description>&lt;p&gt;The correct, optimal and working solution for programming question &lt;a href=&quot;https://www.interviewbit.com/problems/max-sum-contiguous-subarray/&quot;&gt;max-sum-contiguous-subarray&lt;/a&gt; on interviewbit&lt;/p&gt;
-
-&lt;div class=&quot;ui secondary pointing large menu&quot;&gt;
-  &lt;a class=&quot;grey item&quot; data-tab=&quot;problem-statement&quot;&gt;
-    Problem Statement
-  &lt;/a&gt;
-  &lt;a class=&quot;active item grey&quot; data-tab=&quot;solution&quot;&gt;
-    Solution
-  &lt;/a&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ui bottom attached tab&quot; data-tab=&quot;problem-statement&quot;&gt;
-    &lt;iframe src=&quot;https://www.interviewbit.com/problems/max-sum-contiguous-subarray/&quot; width=&quot;100%&quot; height=&quot;600px&quot; style=&quot;overflow: scroll; border: none;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ui bottom attached active tab&quot; data-tab=&quot;solution&quot;&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-	&lt;span class=&quot;s&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxSubArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;currentMax&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;globalMax&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;currentMax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;globalMax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;globalMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;globalMax&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxSubArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 09 Oct 2018 00:00:00 +0530</pubDate>
-        <link>https://arpitbhayani.me/interviewbit/max-sum-contiguous-subarray.html</link>
-        <guid isPermaLink="true">https://arpitbhayani.me/interviewbit/max-sum-contiguous-subarray.html</guid>
         
         <category>competitive-programming</category>
         
