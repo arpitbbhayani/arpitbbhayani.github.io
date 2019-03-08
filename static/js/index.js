@@ -18,11 +18,11 @@ $(document).ready(function() {
         $(this).transition('bounce');
     }, function(){});
 
-    window.onblur = function () {
-      document.title = '😭 Please come back ...';
-    }
-    
-    window.onfocus = function () {
-      document.title = "😁 You are back!";
-    }    
+    // window.onblur = function () {
+    //   document.title = '😭 Please come back ...';
+    // }
+
+    // window.onfocus = function () {
+    //   document.title = "😁 You are back!";
+    // }
 });
