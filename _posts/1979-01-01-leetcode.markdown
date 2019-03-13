@@ -18,7 +18,7 @@ type: dummy
 ---
 
 <div class="ui basic center aligned segment">
-  <div class="ui medium image">
+  <div class="ui large image">
       <image src="/static/images/leetcode.jpg"/>
   </div>
   {% include question_set.html s='leetcode' cols=1 %}

@@ -18,7 +18,7 @@ type: dummy
 ---
 
 <div class="ui basic center aligned segment">
-  <div class="ui medium image">
+  <div class="ui large image">
       <image src="/static/images/hackerrank.png"/>
   </div>
   {% include question_set.html s='hackerrank' cols=2 %}
