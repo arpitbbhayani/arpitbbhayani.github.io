@@ -68,52 +68,6 @@
         
         <div class="ui text container" style="margin-top: 10px; padding-bottom: 50px;">
             <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <article>
-        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
-            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
-                DHCP - Dynamic Host Configuration Protocol
-            </h1>
-        </div>
-        <div class="ui text container">
-            <div class="ui hidden divider"></div>
-            <div class="ui large blue label">
-                November 03, 2016
-            </div>
-            <div class="ui hidden divider"></div>
-            <div itemprop="articleBody">
-                <p>An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP address and other information like subnet mask etc are assigned to your computer automatically.</p>
-
-<p>DHCP is used to control the network configuration of a host through a remote server. It is an excellent alternative to the time-consuming manual configuration of network settings on a host or a network device.</p>
-
-<h2 id="how-it-works">How it works?</h2>
-
-<p>DHCP works on a client-server model. Being a protocol, it has it’s own set of messages that are exchanged between client and server.</p>
-
-<p><img class="ui large centered image" src="/static/images/dhcp/dhcp.jpg" alt="DHCP" /></p>
-
-<h2 id="dhcp-steps">DHCP Steps</h2>
-<ol>
-  <li>When the client computer (or device) boots up or is connected to a network, a <code>DHCPDISCOVER</code> message is sent from the client to the server. As there is no network configuration information on the client so the message is sent with <code>0.0.0.0</code> as source address and <code>255.255.255.255</code> as destination address. The transport protocol used for this message is <strong>UDP</strong> and the port number used is <strong>67</strong>. The client enters the initializing stage during this step.</li>
-  <li>When the DHCP server receives the <code>DHCPDISCOVER</code> request message then it replies with a <code>DHCPOFFER</code> message. This message contains all the network configuration settings required by the client. This message is sent as a broadcast (<code>255.255.255.255</code>) message for the client to receive it. UDP protocol is used at the transport layer with destination port as <strong>68</strong>.</li>
-  <li>The client forms a <code>DHCPREQUEST</code> message in reply to <code>DHCPOFFER</code> message and sends it to the server indicating it wants to accept the network configuration sent in the <code>DHCPOFFER</code> message. The <code>DHCPREQUEST</code> message will still contain the source address as <code>0.0.0.0</code> as the client is still not allowed to use the IP address passed to it through <code>DHCPOFFER</code> message.</li>
-  <li>Once the server receives <code>DHCPREQUEST</code> from the client, it sends the <code>DHCPACK</code> message indicating that now the client is allowed to use the IP address assigned to it.</li>
-</ol>
-
-<h2 id="dhcp-lease">DHCP Lease</h2>
-<p>A DHCP lease is the amount of time that the DHCP server grants to the DHCP client permission to use a particular IP address. A typical server allows its administrator to set the lease time.</p>
-
-<h2 id="references">References:</h2>
-<ul>
-  <li><a href="http://www.thegeekstuff.com/2013/03/dhcp-basics/">DHCP Basics</a></li>
-  <li><a href="http://www.nextstep4it.com/dhcp-interview-questions-answers/">DHCP QnAs</a></li>
-</ul>
-
-            </div>
-        </div>
-    </article>
-</div>
-
-<div class="ui text container">
     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I42QE&placement=arpitbhayanime" id="_carbonads_js"></script>
 
 <style>
@@ -195,7 +149,53 @@
   color: #999 !important;
 }
 </style>
+    <div class="ui hidden divider"></div>
+    <article>
+        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
+                DHCP - Dynamic Host Configuration Protocol
+            </h1>
+        </div>
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large blue label">
+                November 03, 2016
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                <p>An IP address is the identity of a host or a computer device while connected to any network. When you connect your computer to a LAN or internet, the IP address and other information like subnet mask etc are assigned to your computer automatically.</p>
 
+<p>DHCP is used to control the network configuration of a host through a remote server. It is an excellent alternative to the time-consuming manual configuration of network settings on a host or a network device.</p>
+
+<h2 id="how-it-works">How it works?</h2>
+
+<p>DHCP works on a client-server model. Being a protocol, it has it’s own set of messages that are exchanged between client and server.</p>
+
+<p><img class="ui large centered image" src="/static/images/dhcp/dhcp.jpg" alt="DHCP" /></p>
+
+<h2 id="dhcp-steps">DHCP Steps</h2>
+<ol>
+  <li>When the client computer (or device) boots up or is connected to a network, a <code>DHCPDISCOVER</code> message is sent from the client to the server. As there is no network configuration information on the client so the message is sent with <code>0.0.0.0</code> as source address and <code>255.255.255.255</code> as destination address. The transport protocol used for this message is <strong>UDP</strong> and the port number used is <strong>67</strong>. The client enters the initializing stage during this step.</li>
+  <li>When the DHCP server receives the <code>DHCPDISCOVER</code> request message then it replies with a <code>DHCPOFFER</code> message. This message contains all the network configuration settings required by the client. This message is sent as a broadcast (<code>255.255.255.255</code>) message for the client to receive it. UDP protocol is used at the transport layer with destination port as <strong>68</strong>.</li>
+  <li>The client forms a <code>DHCPREQUEST</code> message in reply to <code>DHCPOFFER</code> message and sends it to the server indicating it wants to accept the network configuration sent in the <code>DHCPOFFER</code> message. The <code>DHCPREQUEST</code> message will still contain the source address as <code>0.0.0.0</code> as the client is still not allowed to use the IP address passed to it through <code>DHCPOFFER</code> message.</li>
+  <li>Once the server receives <code>DHCPREQUEST</code> from the client, it sends the <code>DHCPACK</code> message indicating that now the client is allowed to use the IP address assigned to it.</li>
+</ol>
+
+<h2 id="dhcp-lease">DHCP Lease</h2>
+<p>A DHCP lease is the amount of time that the DHCP server grants to the DHCP client permission to use a particular IP address. A typical server allows its administrator to set the lease time.</p>
+
+<h2 id="references">References:</h2>
+<ul>
+  <li><a href="http://www.thegeekstuff.com/2013/03/dhcp-basics/">DHCP Basics</a></li>
+  <li><a href="http://www.nextstep4it.com/dhcp-interview-questions-answers/">DHCP QnAs</a></li>
+</ul>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="ui text container">
     
         <div class="ui basic segment" style="background: #FFF">
     <div id="disqus_thread"></div>

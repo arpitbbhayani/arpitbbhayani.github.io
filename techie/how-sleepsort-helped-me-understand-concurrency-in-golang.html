@@ -68,85 +68,6 @@
         
         <div class="ui text container" style="margin-top: 10px; padding-bottom: 50px;">
             <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <article>
-        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
-            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
-                How Sleepsort helped me understand concurrency in golang
-            </h1>
-        </div>
-        <div class="ui text container">
-            <div class="ui hidden divider"></div>
-            <div class="ui large blue label">
-                July 16, 2017
-            </div>
-            <div class="ui hidden divider"></div>
-            <div itemprop="articleBody">
-                <p>For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">Threads</a> and modern languages like NodeJS and Python uses something called as <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/">event loops</a> for its asynchronous IO which is there to make IO based things concurrent.</p>
-
-<p>Recently I started diving deep into concurrency in <a href="https://golang.org/">Golang</a> and I wanted to start with a good <code>"Hello World"</code> program for it. This time I thought of taking an unconventional way to write my first concurrent program. Going through various examples over the Internet I could not find anything that made it fun. I suddenly recalled <a href="http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/">Sleepsort</a> and it was the ideal way (fun + new = &lt;3) to learn concurrency.</p>
-
-<h3 id="the-concept">The Concept</h3>
-<p>For people who do not know what Sleep Sort is, the basic goes something like this:
-spin <code>n</code> threads/co-routine (or whatever concurrent element the language has) for <code>n</code> numbers (to sort) and for each number <code>x</code> wait for time proportional to <code>x</code> (lets say <code>x</code> seconds) and then print/collect the number.</p>
-
-<h3 id="implementation-in-go">Implementation in Go</h3>
-<p>This is a very basic Implementation of Sleep Sort in Golang using Go Routines and <a href="https://golang.org/pkg/sync/#WaitGroup">WaitGroup</a>.</p>
-
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="c1">// prints a number of sleeping for n seconds</span>
-<span class="kd">func</span> <span class="nx">sleepAndPrint</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">wg</span> <span class="o">*</span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span>
-
-	<span class="c1">// Sleeping for time proportional to value</span>
-	<span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
-
-	<span class="c1">// Printing the value</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// Sorts given integer slice using sleep sort</span>
-<span class="kd">func</span> <span class="nx">Sort</span><span class="p">(</span><span class="nx">numbers</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
-
-	<span class="c1">// Creating wait group that waits of len(numbers) of go routines to finish</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">numbers</span><span class="p">))</span>
-
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">numbers</span> <span class="p">{</span>
-		<span class="c1">// Spinning a Go routine</span>
-		<span class="k">go</span> <span class="nx">sleepAndPrint</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">wg</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="c1">// Waiting for all go routines to finish</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>I have published the code in a <a href="https://github.com/arpitbbhayani/go-sleep-sort">Github Repository</a>. Feel
-free to fork and play around with it.</p>
-
-<h3 id="what-else-can-you-do-with-it">What else can you do with it</h3>
-<p>I encourage you to try it out, and trust me it is really fun to learn concurrency through this; Apart from running the basic sleep sort you should also try to do/learn with it. For example,</p>
-
-<p>Concurrency essentials</p>
-<ul>
-  <li>Go Channels for inter go-routine communication</li>
-  <li>Mutex for synchronization making things routine-safe</li>
-</ul>
-
-<p>You can also try to</p>
-<ul>
-  <li>collect the elements in a slice, in place of printing</li>
-  <li>make Sleep Sort handle negative numbers too</li>
-  <li>sort the numbers in descending order</li>
-</ul>
-
-<p>If you find any interesting way to learn concurrency or any new use case here, please post a comment below.
-I would love to know them.</p>
-
-            </div>
-        </div>
-    </article>
-</div>
-
-<div class="ui text container">
     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I42QE&placement=arpitbhayanime" id="_carbonads_js"></script>
 
 <style>
@@ -228,7 +149,86 @@ I would love to know them.</p>
   color: #999 !important;
 }
 </style>
+    <div class="ui hidden divider"></div>
+    <article>
+        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
+                How Sleepsort helped me understand concurrency in golang
+            </h1>
+        </div>
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large blue label">
+                July 16, 2017
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                <p>For me learning concurrency have always been tricky; Every language has a different way to handle/emulate concurrency, for example, old languages like Java uses <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">Threads</a> and modern languages like NodeJS and Python uses something called as <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/">event loops</a> for its asynchronous IO which is there to make IO based things concurrent.</p>
 
+<p>Recently I started diving deep into concurrency in <a href="https://golang.org/">Golang</a> and I wanted to start with a good <code>"Hello World"</code> program for it. This time I thought of taking an unconventional way to write my first concurrent program. Going through various examples over the Internet I could not find anything that made it fun. I suddenly recalled <a href="http://www.geeksforgeeks.org/sleep-sort-king-laziness-sorting-sleeping/">Sleepsort</a> and it was the ideal way (fun + new = &lt;3) to learn concurrency.</p>
+
+<h3 id="the-concept">The Concept</h3>
+<p>For people who do not know what Sleep Sort is, the basic goes something like this:
+spin <code>n</code> threads/co-routine (or whatever concurrent element the language has) for <code>n</code> numbers (to sort) and for each number <code>x</code> wait for time proportional to <code>x</code> (lets say <code>x</code> seconds) and then print/collect the number.</p>
+
+<h3 id="implementation-in-go">Implementation in Go</h3>
+<p>This is a very basic Implementation of Sleep Sort in Golang using Go Routines and <a href="https://golang.org/pkg/sync/#WaitGroup">WaitGroup</a>.</p>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="c1">// prints a number of sleeping for n seconds</span>
+<span class="kd">func</span> <span class="nx">sleepAndPrint</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">wg</span> <span class="o">*</span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span>
+
+	<span class="c1">// Sleeping for time proportional to value</span>
+	<span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+
+	<span class="c1">// Printing the value</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Sorts given integer slice using sleep sort</span>
+<span class="kd">func</span> <span class="nx">Sort</span><span class="p">(</span><span class="nx">numbers</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+
+	<span class="c1">// Creating wait group that waits of len(numbers) of go routines to finish</span>
+	<span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">numbers</span><span class="p">))</span>
+
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">numbers</span> <span class="p">{</span>
+		<span class="c1">// Spinning a Go routine</span>
+		<span class="k">go</span> <span class="nx">sleepAndPrint</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">wg</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Waiting for all go routines to finish</span>
+	<span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>I have published the code in a <a href="https://github.com/arpitbbhayani/go-sleep-sort">Github Repository</a>. Feel
+free to fork and play around with it.</p>
+
+<h3 id="what-else-can-you-do-with-it">What else can you do with it</h3>
+<p>I encourage you to try it out, and trust me it is really fun to learn concurrency through this; Apart from running the basic sleep sort you should also try to do/learn with it. For example,</p>
+
+<p>Concurrency essentials</p>
+<ul>
+  <li>Go Channels for inter go-routine communication</li>
+  <li>Mutex for synchronization making things routine-safe</li>
+</ul>
+
+<p>You can also try to</p>
+<ul>
+  <li>collect the elements in a slice, in place of printing</li>
+  <li>make Sleep Sort handle negative numbers too</li>
+  <li>sort the numbers in descending order</li>
+</ul>
+
+<p>If you find any interesting way to learn concurrency or any new use case here, please post a comment below.
+I would love to know them.</p>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="ui text container">
     
         <div class="ui basic segment" style="background: #FFF">
     <div id="disqus_thread"></div>

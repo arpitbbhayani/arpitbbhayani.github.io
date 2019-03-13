@@ -68,37 +68,6 @@
         
         <div class="ui text container" style="margin-top: 10px; padding-bottom: 50px;">
             <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <article>
-        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
-            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
-                How to copy, move files to and from Vagrant machine using scp
-            </h1>
-        </div>
-        <div class="ui text container">
-            <div class="ui hidden divider"></div>
-            <div class="ui large blue label">
-                March 16, 2018
-            </div>
-            <div class="ui hidden divider"></div>
-            <div itemprop="articleBody">
-                <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
-
-<p>For <code>scp</code> , you will need to run the usual scp command but you will need to pass in an extra argument <code>-P</code> which is the SSH the port to connect to on the remote host.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>scp -P <span class="m">2222</span> -r vagrant@127.0.0.1:/home/vagrant/site . &lt;path-in-host-machine&gt;</code></pre></figure>
-
-<p>By default the virtual machine spun up by vagrant will use <code>2222</code> as SSH port but to find the port value you can run following command</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>vagrant ssh-config</code></pre></figure>
-
-<p>Hope this helps :-)</p>
-
-            </div>
-        </div>
-    </article>
-</div>
-
-<div class="ui text container">
     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I42QE&placement=arpitbhayanime" id="_carbonads_js"></script>
 
 <style>
@@ -180,7 +149,38 @@
   color: #999 !important;
 }
 </style>
+    <div class="ui hidden divider"></div>
+    <article>
+        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
+                How to copy, move files to and from Vagrant machine using scp
+            </h1>
+        </div>
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large blue label">
+                March 16, 2018
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                <p>Sometime back when I required to move some files to and from my virtual machine managed by Vagrant, I found that normal SSH/SCP did not work. After searching the internet for sometime I found few solutions, non of which worked like a charm. After trying few things here and there I found a foolproof way to scp files in and out of vagrant machine.</p>
 
+<p>For <code>scp</code> , you will need to run the usual scp command but you will need to pass in an extra argument <code>-P</code> which is the SSH the port to connect to on the remote host.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>scp -P <span class="m">2222</span> -r vagrant@127.0.0.1:/home/vagrant/site . &lt;path-in-host-machine&gt;</code></pre></figure>
+
+<p>By default the virtual machine spun up by vagrant will use <code>2222</code> as SSH port but to find the port value you can run following command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>vagrant ssh-config</code></pre></figure>
+
+<p>Hope this helps :-)</p>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="ui text container">
     
         <div class="ui basic segment" style="background: #FFF">
     <div id="disqus_thread"></div>

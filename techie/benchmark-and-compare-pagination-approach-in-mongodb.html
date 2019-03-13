@@ -68,62 +68,6 @@
         
         <div class="ui text container" style="margin-top: 10px; padding-bottom: 50px;">
             <div itemscope="" itemtype="http://schema.org/BlogPosting">
-    <article>
-        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
-            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
-                Benchmark and compare the two approaches to paginate in MongoDB
-            </h1>
-        </div>
-        <div class="ui text container">
-            <div class="ui hidden divider"></div>
-            <div class="ui large blue label">
-                June 02, 2017
-            </div>
-            <div class="ui hidden divider"></div>
-            <div itemprop="articleBody">
-                <p><a href="https://www.mongodb.com/">MongoDB</a> is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are</p>
-
-<ul>
-  <li>Batch processing</li>
-  <li>Showing huge set of results on user interface</li>
-</ul>
-
-<p>There are multiple approaches through which you can <a href="/techie/fast-and-efficient-pagination-in-mongodb.html">paginate your result set in MongoDB</a>. This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go …</p>
-
-<p>Benchmark has been done over a non-indexed collection. Each document of the collection looks something like this</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="p">{</span>
-        <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d17263623919cd5165bd&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Lisa Rogers&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;marks&quot;</span> <span class="o">:</span> <span class="mi">34</span>
-    <span class="p">}</span></code></pre></figure>
-
-<p>All records of a collection are fetched page-wise. Size of each page is fixed during fetch of the collection. Each page is fetched <em>3</em> times and average of, time to fetch one “page”, 3 is recorded.</p>
-
-<p>Following image shows the how two approach fares against each other.</p>
-
-<p><img class="ui huge centered stylish image" src="/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png" alt="Benchmark results" /></p>
-
-<p>A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for <code>skip</code> and <code>limit</code> approach than other. The approach using <code>_id</code> and <code>limit</code> almost gives constant performance and is independent of size of the result set.</p>
-
-<p>I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB’s database drivier will yield better information about this behavior. You could see some spikes in the response times, that are because of Disk Contention.</p>
-
-<p>In short:</p>
-<ul>
-  <li>For huge result set, paginating using <code>_id</code> and <code>limit</code> is far better than using <code>skip</code> and <code>limit</code>.</li>
-  <li>For smaller result set, it does not matter, but prefer skip and limit.</li>
-</ul>
-
-<p>An interesting thing I observed is that after page size crosses 100, the gap between the two approach reduces to some extent. I am yet to perform detailed benchmark on that as such use-case (where page-size is more than 100) is pretty rare in practical applications.</p>
-
-<p>You can find the Python code used for this benchmark <a href="https://github.com/arpitbbhayani/mongo-pagination-benchmark">here</a>. If you have any suggestion or improvement, do let me know.</p>
-
-            </div>
-        </div>
-    </article>
-</div>
-
-<div class="ui text container">
     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I42QE&placement=arpitbhayanime" id="_carbonads_js"></script>
 
 <style>
@@ -205,7 +149,63 @@
   color: #999 !important;
 }
 </style>
+    <div class="ui hidden divider"></div>
+    <article>
+        <div class="ui basic segment" style="min-height:200px; background: #fff099;">
+            <h1 itemprop="name headline" class="ui huge header center aligned" style="margin-top: 60px;">
+                Benchmark and compare the two approaches to paginate in MongoDB
+            </h1>
+        </div>
+        <div class="ui text container">
+            <div class="ui hidden divider"></div>
+            <div class="ui large blue label">
+                June 02, 2017
+            </div>
+            <div class="ui hidden divider"></div>
+            <div itemprop="articleBody">
+                <p><a href="https://www.mongodb.com/">MongoDB</a> is a document based data store and hence pagination is one of the most common use case of it. So when do you paginate the response? The answer is pretty neat; you paginate whenever you want to process result in chunks. Some common scenarios are</p>
 
+<ul>
+  <li>Batch processing</li>
+  <li>Showing huge set of results on user interface</li>
+</ul>
+
+<p>There are multiple approaches through which you can <a href="/techie/fast-and-efficient-pagination-in-mongodb.html">paginate your result set in MongoDB</a>. This blog post is dedicated for results of benchmark of two approaches and its analysis, so here we go …</p>
+
+<p>Benchmark has been done over a non-indexed collection. Each document of the collection looks something like this</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span>    <span class="p">{</span>
+        <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="nx">ObjectId</span><span class="p">(</span><span class="s2">&quot;5936d17263623919cd5165bd&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Lisa Rogers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;marks&quot;</span> <span class="o">:</span> <span class="mi">34</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>All records of a collection are fetched page-wise. Size of each page is fixed during fetch of the collection. Each page is fetched <em>3</em> times and average of, time to fetch one “page”, 3 is recorded.</p>
+
+<p>Following image shows the how two approach fares against each other.</p>
+
+<p><img class="ui huge centered stylish image" src="/static/images/mongodb-pagination/mongo-pagination-benchmark-results.png" alt="Benchmark results" /></p>
+
+<p>A key observation to note is that, till 500-600 count, both the approaches are comparable, but once it crosses that threshold, there is sudden rise in response time for <code>skip</code> and <code>limit</code> approach than other. The approach using <code>_id</code> and <code>limit</code> almost gives constant performance and is independent of size of the result set.</p>
+
+<p>I tried running this test on different machines with different disks but results were similar. I think diving deep in MongoDB’s database drivier will yield better information about this behavior. You could see some spikes in the response times, that are because of Disk Contention.</p>
+
+<p>In short:</p>
+<ul>
+  <li>For huge result set, paginating using <code>_id</code> and <code>limit</code> is far better than using <code>skip</code> and <code>limit</code>.</li>
+  <li>For smaller result set, it does not matter, but prefer skip and limit.</li>
+</ul>
+
+<p>An interesting thing I observed is that after page size crosses 100, the gap between the two approach reduces to some extent. I am yet to perform detailed benchmark on that as such use-case (where page-size is more than 100) is pretty rare in practical applications.</p>
+
+<p>You can find the Python code used for this benchmark <a href="https://github.com/arpitbbhayani/mongo-pagination-benchmark">here</a>. If you have any suggestion or improvement, do let me know.</p>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="ui text container">
     
         <div class="ui basic segment" style="background: #FFF">
     <div id="disqus_thread"></div>
