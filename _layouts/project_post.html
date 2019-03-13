@@ -2,6 +2,7 @@
 layout: default
 ---
 
+{% include carbon_ads.html %}
 <div class="ui hidden divider"></div>
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
     <h1 itemprop="name headline" class="ui header center aligned">
@@ -20,8 +21,6 @@ layout: default
         {{ content }}
     </div>
 </div>
-
-{% include carbon_ads.html %}
 
 {% if page.comments %}
     {% include comment_plugin.html %}
