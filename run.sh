@@ -9,11 +9,11 @@ then
     mv _posts/leetcode $direc
     mv _posts/hackerrank $direc
 
-    mv _posts/1979-01-01-programming.markdown $direc
-    mv _posts/1979-01-01-hackerrank.markdown $direc
-    mv _posts/1979-01-01-codechef.markdown $direc
-    mv _posts/1979-01-01-leetcode.markdown $direc
-    mv _posts/1979-01-01-spoj.markdown $direc
+    mv _posts/2019-04-13-programming.markdown $direc
+    mv _posts/2019-04-13-hackerrank.markdown $direc
+    mv _posts/2019-04-13-codechef.markdown $direc
+    mv _posts/2019-04-13-leetcode.markdown $direc
+    mv _posts/2019-04-13-spoj.markdown $direc
 
 elif [ $act == 'mvv' ];
 then

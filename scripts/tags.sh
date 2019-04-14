@@ -17,5 +17,5 @@ TAG_DIR="../_posts/tags"
 for tag in `cat tags.txt`
 do
 	tag=`echo $tag | tr " " -`
-	sed "s/;TAG;/$tag/g" $TAG_TEMPLATE > $TAG_DIR/1979-01-01-$tag.markdown
+	sed "s/;TAG;/$tag/g" $TAG_TEMPLATE > $TAG_DIR/2019-04-13-$tag.markdown
 done

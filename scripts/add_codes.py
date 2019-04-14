@@ -4,7 +4,7 @@ from optparse import OptionParser
 
 
 def process(file_path, id, name, qcode):
-    with open(file_path, 'rb') as source_code_file, open('../_posts/' + id + '/1979-01-01-' + qcode + '.markdown', 'wb') as out_file, open('question_template.txt', 'rb') as template_file:
+    with open(file_path, 'rb') as source_code_file, open('../_posts/' + id + '/2019-04-13-' + qcode + '.markdown', 'wb') as out_file, open('question_template.txt', 'rb') as template_file:
         content = template_file.read()
         content = content.replace('$SITE_ID$', id)
         content = content.replace('$SITE_NAME$', name)
