@@ -10,7 +10,7 @@ seo:
 <div class="ui text container">
     <a class="twitter-timeline" href="https://twitter.com/arpit_bhayani/timelines/1117517224632172544?ref_src=twsrc%5Etfw">
         <div class="ui black text">
-            <h2>Today I Learned</h2>
+            <h2>Today I Learned 💡 </h2>
             <h4>Everyday I hunt for something that makes me go Ohh, I didn't know that. This is the list that contains them all!</h4>
         </div>
     </a>
