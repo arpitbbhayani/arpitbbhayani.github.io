@@ -2,7 +2,6 @@
 layout: default
 ---
 
-{% include carbon_ads.html %}
 <div class="ui hidden divider"></div>
 <div>
     <h1 itemprop="name headline" class="ui huge header center aligned">
@@ -15,6 +14,14 @@ layout: default
     <div>
         {{ content }}
     </div>
+</div>
+
+<div>
+    <div class="ui hidden section divider"></div>
+    {% include carbon_ads.html %}
+    <div class="ui hidden section divider"></div>
+    {% include google_ads.html %}
+    <div class="ui hidden section divider"></div>
 </div>
 
 {% if page.comments %}
