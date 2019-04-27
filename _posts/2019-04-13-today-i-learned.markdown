@@ -23,3 +23,8 @@ seo:
         <div class="ui hidden section divider"></div>
     </div>
 </div>
+
+
+<div class="ui three column stackable grid">
+    <!-- NEW TWEET GOES HERE -->
+</div>
