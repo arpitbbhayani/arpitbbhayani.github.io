@@ -26,5 +26,7 @@ seo:
 
 
 <div class="ui three column stackable grid">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Test?src=hash&amp;ref_src=twsrc%5Etfw">#Test</a> - testing automation</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1122177374764670983?ref_src=twsrc%5Etfw">April 27, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <!-- NEW TWEET GOES HERE -->
 </div>
