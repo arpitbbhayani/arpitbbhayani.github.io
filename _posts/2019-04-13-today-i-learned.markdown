@@ -26,5 +26,6 @@ seo:
 
 
 <div class="ui three column stackable grid">
-    <!-- NEW TWEET GOES HERE -->
+    <block>arpit</block>
+<!-- NEW TWEET GOES HERE -->
 </div>
