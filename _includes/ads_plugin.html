@@ -1,3 +1,4 @@
+{% if site.environment == "production" %}
 <div class="ui two column grid" style="width: 100%; position: fixed; bottom: 0; left: 0; background: white; z-index: 10;">
   <div class="ui column">
       {% include carbon_ads.html %}
@@ -6,3 +7,4 @@
       {% include google_ads.html %}
   </div>
 </div>
+{% endif %}

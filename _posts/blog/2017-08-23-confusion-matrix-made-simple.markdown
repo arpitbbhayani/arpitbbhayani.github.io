@@ -46,7 +46,7 @@ For a food lover:
 
 For an animal lover:
 
-> When a Dog is predicted as God and not Cat it comes under True Positive.
+> When a Dog is predicted as Dog and not Cat it comes under True Positive.
 
  - Dog - Positive Class
  - Cat - Negative Class
