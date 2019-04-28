@@ -2,6 +2,10 @@ ROOT=~/myw/arpitbhayani.me/
 TMP_FOLDER=/tmp/arpitbhayani.me/
 SITE_DIR=~/myw/arpitbhayani.me/_site/
 
+git checkout master
+git pull origin master
+git checkout source
+
 rm -rf $SITE_DIR
 
 if [ -d $TMP_FOLDER ]; then
