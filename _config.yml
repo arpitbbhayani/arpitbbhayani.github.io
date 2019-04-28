@@ -16,6 +16,7 @@ exclude: [semantic, node_modules, static/semantic/src/, static/semantic/tasks, s
 plugins:
     - jekyll-sitemap
     - jemoji
+    - jekyll-last-modified-at
 blog_types:
     - blog
     - techie
