@@ -1,10 +1,15 @@
 {% if site.environment == "production" %}
-<div class="ui two column grid" style="width: 100%; position: fixed; bottom: 0; left: 0; background: white; z-index: 10;">
-  <div class="ui column">
-      {% include carbon_ads.html %}
-  </div>
-  <div class="ui column">
-      {% include google_ads.html %}
+<div id="ads">
+  <button class="ui tiny basic button" style="position: fixed; bottom: 120px; right: 0; z-index: 10;" onclick="document.getElementById('ads').style.display = 'none';">
+    Close Ads
+  </button>
+  <div class="ui two column grid" style="width: 100%; position: fixed; bottom: 0; left: 0; background: white; z-index: 10;">
+      <div class="ui column">
+          {% include carbon_ads.html %}
+      </div>
+      <div class="ui column">
+          {% include google_ads.html %}
+      </div>
   </div>
 </div>
 {% endif %}
