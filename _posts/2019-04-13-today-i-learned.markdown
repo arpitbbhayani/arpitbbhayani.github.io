@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a><br><br>Roughly 15000 years ago, humans were hunters 🗡️ and gatherers 🍎 and they mostly fished 🐟 and because of this the most populated places in early history were near the shores 🌊<br><br>Fishing was also preferred because it was unlikely to attack and kill 💀</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1124516516630757377?ref_src=twsrc%5Etfw">May 4, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a><br><br>The word robot 🤖 comes from the Czech word robota which means &quot;forced labor&quot;.</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1124154142753198085?ref_src=twsrc%5Etfw">May 3, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
