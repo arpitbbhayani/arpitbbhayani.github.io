@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="ro" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a><br><br>The theorem we now know as Pythagorean theorem 📐 was described first by a mathematician/priest named Baudhāyana in Baudhāyana Śulbasûtra - a group of Sanskrit texts ✏️ back in 8th century BCE.</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1125603681829904389?ref_src=twsrc%5Etfw">May 7, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a><br><br>We always see the same face of the Moon 🌙<br><br>This happens due to a special case of Tidal Locking, synchronous rotation - a situation when object&#39;s orbital period matches its rotational period.<br><br>Moon takes 28 days to orbit Earth 🌎 and rotate around its axis.</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1125241316168880128?ref_src=twsrc%5Etfw">May 6, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
