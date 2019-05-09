@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a><br><br>There exists Half QWERTY keyboards designed for mobile phones 📱 where 2 characters (ex: Q and W) share the same key.<br><br>Nokia 🤝 was one of the most popular brand to have adopted this keyboard layout, for its E55 model.</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1126328447800889344?ref_src=twsrc%5Etfw">May 9, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a><br><br>The Doppler Effect is the change in frequency/wavelength 🔊 of a wave in relation to observer, moving relative to wave source.<br><br>This phenomenon is so prolific that it finds its application in radars, sonography, and even in finding exoplanets 🌍</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1125966089035366400?ref_src=twsrc%5Etfw">May 8, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
