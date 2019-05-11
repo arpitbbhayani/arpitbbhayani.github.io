@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a><br><br>The life of Foragers, 15000 years ago, was not nasty as we think, rather they spent less time working, and more on Art 🖼️ Music 🎶 and Storytelling 🧓<br><br>This was found by studying fossil remains; their bones and teeth were healthier than agriculturists 🍎</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1127053252992872448?ref_src=twsrc%5Etfw">May 11, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="und" dir="ltr"><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a><br><br>Where did the word &quot;rice&quot; come from?<br><br>rice =&gt; French ris =&gt; Italian riso =&gt; Latin oriza =&gt; Greek oryza =&gt; Pashto vriže =&gt; Sanskrit vrihi-s व्रीहि 🇮🇳</p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1126690861826187268?ref_src=twsrc%5Etfw">May 10, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
