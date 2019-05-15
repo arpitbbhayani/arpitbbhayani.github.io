@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">How Ozone absorbs UV rays? ☀️<br><br>UV rays hits Oxygen and splits it into 2 Oxygen atoms. Oxygen atom then combines with Oxygen molecule to form Ozone. When UV hits this Ozone it splits it into 1 atom and 1 Oxygen molecule. This continuous cycle thus absorbs ☠️ UV<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1128502783399821313?ref_src=twsrc%5Etfw">May 15, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why is Area of triangle 📐 is (b*h)/2?<br><br>Take 2 right angled triangles and form a rectangle with it. Area of this rectangle is (b*h). The area of triangle is half of it, equaling (b*h)/2.<br><br>For other triangles, slice them into right angled ones and add.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1128140388932489216?ref_src=twsrc%5Etfw">May 14, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
