@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The trigonometric function, sine, has a really interesting etymology.<br><br>It started from India, through Sanskrit word for Chord, Jya, then transliterated tin Arabic as Jiba, Jb and Jaib, which means Breast, then translated into Latin as Sinus, and then to sine.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1129227576990420994?ref_src=twsrc%5Etfw">May 17, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">You see objects 🚗 when the light 🔦 reflected from it reaches your eye. But you understand this light  (encoded in electric signals) when it reaches your brain 🧠<br><br>This process of understanding light signals takes about 0.15-0.2 seconds ⏲️<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1128865163296346117?ref_src=twsrc%5Etfw">May 16, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
