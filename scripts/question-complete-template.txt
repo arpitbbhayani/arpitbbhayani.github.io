@@ -13,8 +13,8 @@
     <meta name="description" content="Here is the solution for programming question $REPLACE_QUESTION_DISPLAY_TEXT on $REPLACE_SITENAME">
     <meta name="keywords" content="solution, source code, programming, $REPLACE_SITENAME, $REPLACE_QUESTION_DISPLAY_TEXT Solution, " />
 
-    <link rel="stylesheet" href="/static/css/semantic-2.min.css">
-    <link rel="stylesheet" href="/static/css/pygments-2.css">
+    <link rel="stylesheet" href="/static/css/semantic-3.min.css">
+    <link rel="stylesheet" href="/static/css/pygments-3.css">
     <link rel="canonical" href="https://arpitbhayani.me/scripts/question-complete-template.txt">
     <link rel="alternate" type="application/rss+xml" title="Hi I'm Arpit 👋" href="https://arpitbhayani.me/feed.xml">
 
