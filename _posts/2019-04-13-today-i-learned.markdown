@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Whiskey 🍸 is the short form of Whiskeybae.<br><br>Whiskeybae comes from the Old English word usquebae, derived from two Gaelic (a Celtic language) words - uisce (water) and bethu (life), literally translating Whiskey to &quot;water of life&quot;<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1134300990331609088?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">St Lucia is the only country in the world named after a historical woman - Saint Lucy of Syracuse 👩<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1133938608430374914?ref_src=twsrc%5Etfw">May 30, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
