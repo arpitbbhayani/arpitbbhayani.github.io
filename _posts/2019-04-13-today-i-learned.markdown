@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Perfect number is a positive integers that is equal to sum of all its proper divisors.<br><br>Ex: 6 = 1 + 2 + 3<br><br>These are so rare that, as of Dec 2018, we only know 51 perfect numbers; all of them are even and largest one has about 50 million (49,724,095) digits.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1138287267297079297?ref_src=twsrc%5Etfw">June 11, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Cosmological Redshift is observed when wavelength of light 🕯️ is stretched due to expansion of space through which it is traveling; this makes the light from distant galaxies 📺 redder and proves the expansion of our universe.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1137924897014013952?ref_src=twsrc%5Etfw">June 10, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
