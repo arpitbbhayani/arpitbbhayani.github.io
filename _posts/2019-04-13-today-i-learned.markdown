@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">In ancient Egypt, the soil around Nile 🌊 was so fertile and rich that people would just toss seeds on the ground and let their cattle 🐄 walk on them.<br><br>Due to weight of the cattle, the seed was pressed into the ground and then after few days plants 🌽 sprouted.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1139736797305548800?ref_src=twsrc%5Etfw">June 15, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The word Hazard comes from an arabic word al-zahr (the dice) 🎲<br><br>French picked the word as hasart meaning the Game of Dice. As the games were mostly gambling, the sentiment of risk got associated with the word, which was then eventually adopted as Hazard.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1139374427215282176?ref_src=twsrc%5Etfw">June 14, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
