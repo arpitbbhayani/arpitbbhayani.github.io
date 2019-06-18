@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">6174 is known as Kaprekar Constant.<br><br>If you repeatedly subtract the highest and lowest numbers constructed from a set of four digits, not all identical, you will land at 6174 in at most 8 iterations.<br><br>4321 - 1234 = 3087;<br>8730 − 0378 = 8352;<br>8532 − 2358 = 6174<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1140823969983008768?ref_src=twsrc%5Etfw">June 18, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">There are galaxies receding away 💫 from us at more than a speed of light because of expansion of Space 🍩 in between.<br><br>Thus there will be galaxies light from whose would never reach us no matter how far we went, making them non existent to us.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1140461612643561472?ref_src=twsrc%5Etfw">June 17, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
