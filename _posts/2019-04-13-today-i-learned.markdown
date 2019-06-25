@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The world of numbers define friendship in terms of Amicable Numbers, which are pairs of integers, such that each number equals to the sum of the divisors of the other, eg. 220 and 284, making two numbers alike.<br><br>Sum of divisors of 220 is 284 and 284 is 220.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1143360677203103744?ref_src=twsrc%5Etfw">June 25, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Panspermia is a hypothesis that supports that the life on Earth 🌍 could have come from the outer space as an intended or unintended contamination by microorganisms 🦠 carried on asteroid, comet ☄️ or even space ship 🛸 more like inter galactic pollination.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1142998329720221696?ref_src=twsrc%5Etfw">June 24, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
