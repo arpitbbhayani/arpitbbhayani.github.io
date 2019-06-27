@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Japanese, the word for &quot;wrist&quot; is &quot;手首&quot; (tekubi) which is literally &quot;hand neck&quot; and for ankle is &quot;足首&quot;（ashikubi) which translates to &quot;foot neck&quot;.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1144085487482806272?ref_src=twsrc%5Etfw">June 27, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sun&#39;s ☀️ magnetic field flips its polarity, completely, approximately every 11 years - this phenomenon is called Solar Cycle.<br><br>Hence unlike Earth, Sun&#39;s magnetic north 🧲 is not always in its northern hemisphere.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1143723095745859584?ref_src=twsrc%5Etfw">June 26, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
