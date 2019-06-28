@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The word Idea 💡 comes from Greek word &quot;Idein&quot; which means &quot;to see&quot;, later started to be used for the word &quot;pattern&quot; and then was adopted in Latin as Idea, as we know it.<br><br>If we think about it, the &quot;idea&quot; is actually foreseeing a pattern 🤔<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1144447850220310529?ref_src=twsrc%5Etfw">June 28, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Japanese, the word for &quot;wrist&quot; is &quot;手首&quot; (tekubi) which is literally &quot;hand neck&quot; and for ankle is &quot;足首&quot;（ashikubi) which translates to &quot;foot neck&quot;.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1144085487482806272?ref_src=twsrc%5Etfw">June 27, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
