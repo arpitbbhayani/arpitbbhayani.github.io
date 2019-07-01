@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Kepler-16b is a planet that orbits not one, but two stars ☀️ and because of this you will always cast two shadows on that planet.<br><br>In a poetic way it is said that Kepler-16b is a place &quot;Where your shadow always has company&quot;.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1145535024697171969?ref_src=twsrc%5Etfw">July 1, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">In ancient Roman tradition, women 👧 were supposed to have given up their hair to be used as elastic rope in catapults and it made weapons highly effective and efficient.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1144810231496695808?ref_src=twsrc%5Etfw">June 29, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
