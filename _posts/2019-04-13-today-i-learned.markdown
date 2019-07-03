@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Batteries 🔋 are very similar to water tank - more filled they are, more flow you would see<br><br>1.5V battery may be 1.6V when full and 1.2V when almost empty; knowing the output voltage, device looks up how much is energy usually left and then shows it.<br><br>- <a href="https://twitter.com/rahul3103?ref_src=twsrc%5Etfw">@rahul3103</a><a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1146259798503100416?ref_src=twsrc%5Etfw">July 3, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Narcissistic number, in love with self, is a number that is the sum of its own digits each raised to the power of the number of digits.<br><br>153 = 1^3 + 5^3 + 3^3;<br>8208 = 8^4 + 2^4 + 0^4 + 8^4;<br><br>There are only 88 such numbers and the largest one is 39 digit long<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1145897426554953731?ref_src=twsrc%5Etfw">July 2, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
