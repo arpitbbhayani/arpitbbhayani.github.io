@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The magnetic field 🧲 of Earth is generated as a combination of Earth&#39;s rotation about its axis and the electric currents created due to the motion of molten iron 🔥 in the the outer core.<br><br>Earth thus becomes a Dynamo creating magnetic field around the planet.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1148796498601226240?ref_src=twsrc%5Etfw">July 10, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">3435 is the only finite number in base 10, which is the sum of its digits raised to the power of itself.<br><br>3435 = 3^3 + 4^4 + 3^3 + 5^5<br><br>This number is called as Munchausen number, based on a fictional German nobleman who was super narcissistic.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1148434141144322049?ref_src=twsrc%5Etfw">July 9, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
