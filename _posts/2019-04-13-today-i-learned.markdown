@@ -12,6 +12,9 @@ seo:
 
 <div class="ui three column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Early Egyptian pyramids were built to please Pharaoh, monarchs 💺<br><br>Pharaoh were intermediary between the gods and the people and it was believed that they became Gods upon their death and hence people spend their entire lives pleasing them.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1149883658955870208?ref_src=twsrc%5Etfw">July 13, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Goodbye 👋 is a contraction of &quot;God be with ye&quot;<br><br>The phrase &quot;God be with ye&quot; got shorter and shorter, and eventually it became Godby; which then became Goodbye. The change of God to Good was due to confusion with expressions like Good Morning, Good Evening, etc.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1149521278547554306?ref_src=twsrc%5Etfw">July 12, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
