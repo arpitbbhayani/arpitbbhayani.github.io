@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The minimum number of initial clues (numbers) required to solve a Sudoku 🔢 uniquely is 17.<br><br>This was proved in 2013 by Gary McGuire and the proof, in a way, examined all 16-clue grids and verified that none of them has a unique solution.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a> <a href="https://t.co/EaUHz5hCG4">pic.twitter.com/EaUHz5hCG4</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1150970839728304131?ref_src=twsrc%5Etfw">July 16, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Black holes ⚫️ evaporate, loses mass and energy, due to Hawking Radiation ⚡️<br><br>The process is a staggeringly slow one. It would take about 10^67 years for a black hole the mass of the Sun to evaporate completely.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a> <a href="https://t.co/ZPm0lwowL1">pic.twitter.com/ZPm0lwowL1</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1150608464152080384?ref_src=twsrc%5Etfw">July 15, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
