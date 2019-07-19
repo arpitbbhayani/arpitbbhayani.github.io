@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Neighbor comes from amalgamation of two words of Old English<br><br> - nēah which means near, and<br> - gebūr which means inhabitant, farmer<br><br>Hence: Neighbor is a farmer/inhabitant that lives nearby.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a> <a href="https://t.co/mskWKwA1R7">pic.twitter.com/mskWKwA1R7</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1152058004948291585?ref_src=twsrc%5Etfw">July 19, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The first published book 📕 ever to contain photographs was called British Algae, and as the name suggests it contained a lot of Photographs of Algae.<br><br>The book as published in 1843 and the author was Anna Atkins, an English botanist 🌿 and photographer 📷<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a> <a href="https://t.co/aIe7MeGWrd">pic.twitter.com/aIe7MeGWrd</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1151695641158045696?ref_src=twsrc%5Etfw">July 18, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
