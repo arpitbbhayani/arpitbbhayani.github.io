@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">24 elements of our periodic table have been brewed in Nuclear reactors ☢️ some of which do not even occur naturally.<br><br>Half of synthetic elements are used in creating explosives and almost all Actinides, the last row of our periodic table, are synthetic.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a> <a href="https://t.co/yXQ0CIkACz">pic.twitter.com/yXQ0CIkACz</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1153869938966310914?ref_src=twsrc%5Etfw">July 24, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Length of A size papers (A4/A3/A5) is square root 2 times the breadth 📰<br><br>With this ratio the paper could be folded in half and doubled without losing its proportions as the original and Square root of 2 is the only ratio for which this holds true.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a> <a href="https://t.co/KGYg5NXuKo">pic.twitter.com/KGYg5NXuKo</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1153507564673523718?ref_src=twsrc%5Etfw">July 23, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
