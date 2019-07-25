@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Bears 🐻 do not urinate while they hibernate.<br><br>Their bodies breaks down urine to build protein and use it as food to maintain muscle 💪 and organ tissues during the long sleep.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a> <a href="https://t.co/5V3bE88YXv">pic.twitter.com/5V3bE88YXv</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1154232340115349506?ref_src=twsrc%5Etfw">July 25, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">24 elements of our periodic table have been brewed in Nuclear reactors ☢️ some of which do not even occur naturally.<br><br>Half of synthetic elements are used in creating explosives and almost all Actinides, the last row of our periodic table, are synthetic.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a> <a href="https://t.co/yXQ0CIkACz">pic.twitter.com/yXQ0CIkACz</a></p>&mdash; Arpit Bhayani (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1153869938966310914?ref_src=twsrc%5Etfw">July 24, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
