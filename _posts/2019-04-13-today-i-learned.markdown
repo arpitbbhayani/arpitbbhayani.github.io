@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">In Chess, the fewest possible number of moves to checkmate the opponent, from the start of the game, is 2.<br><br>The move is called the Fool&#39;s mate and only Black could win with this move.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Misc?src=hash&amp;ref_src=twsrc%5Etfw">#Misc</a> <a href="https://t.co/53QprPR3cM">pic.twitter.com/53QprPR3cM</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1156769028620390400?ref_src=twsrc%5Etfw">August 1, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Even though smaller animals/insects 🐝 require less amount of energy, the larger animals 🐳 are far more efficient in using it.<br><br>According to Kleiber&#39;s law, the rate of energy expenditure (metabolic rate) is proportional mass of the animal, m^(3/4)<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a> <a href="https://t.co/piZkl0zonr">pic.twitter.com/piZkl0zonr</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1156406674678267906?ref_src=twsrc%5Etfw">July 31, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
