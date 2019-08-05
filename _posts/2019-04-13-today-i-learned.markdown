@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">For us the Sun and the Moon seems to have same size because the sun is roughly 400 times larger than the moon but is roughly 400 times farther away.<br><br>That’s why we on Earth can sometimes witness a total eclipse of the sun.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Astronomy?src=hash&amp;ref_src=twsrc%5Etfw">#Astronomy</a> <a href="https://t.co/zuGTjw1vms">pic.twitter.com/zuGTjw1vms</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1158218583178133506?ref_src=twsrc%5Etfw">August 5, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Kingdoms conquered by Persians were allowed to keep their kings and elites as long as they pledged allegiance to the Persian king and paid taxes.<br><br>Persians in return provided better roads and infrastructure. One could say they ruled with a light touch.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a> <a href="https://t.co/PQiYC8rFVK">pic.twitter.com/PQiYC8rFVK</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1157493812270419968?ref_src=twsrc%5Etfw">August 3, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
