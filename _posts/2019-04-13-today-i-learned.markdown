@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">An invisibility cloak, similar to Harry Potters&#39;, could be build using Metamaterials.<br><br>Metamaterials have a negative index of refraction and hence render an object invisible by directing the propagation of light around the object.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a> <a href="https://t.co/whE1tpRIi8">pic.twitter.com/whE1tpRIi8</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1158943388466655237?ref_src=twsrc%5Etfw">August 7, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">1 Googol = 10^100<br>1 Googolplex = 10^googol<br><br>Googolplex is such a gigantic number that if we were to write 1 digit of it on a particle and second digit on another, for all particles of our entire universe, we would still be unable to complete the number.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a> <a href="https://t.co/o7R3y0TTB6">pic.twitter.com/o7R3y0TTB6</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1158581001616023552?ref_src=twsrc%5Etfw">August 6, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
