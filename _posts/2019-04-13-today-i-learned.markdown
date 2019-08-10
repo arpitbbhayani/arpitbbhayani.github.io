@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ancient Greece nurtured intellectuals and witnessed the rise of path-breaking poets, mathematicians, architects, writers and philosophers.<br><br>It also introduced the idea of Democracy and gave us the vocabulary for talking about Politics.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a> <a href="https://t.co/1pYEgPgBuU">pic.twitter.com/1pYEgPgBuU</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1160030552176635905?ref_src=twsrc%5Etfw">August 10, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The word Mosquito has been borrowed from Old Spanish word Mosca inspired from the Sanskrit word मशक meaning Fly (मक्खी)<br><br>Poor Mosquitos - We have been calling them Fly all of our lives.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a> <a href="https://t.co/DM3cEtVP1O">pic.twitter.com/DM3cEtVP1O</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1159668160867524616?ref_src=twsrc%5Etfw">August 9, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
