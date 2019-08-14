@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Mass of an atom is always less than the sum total of the masses of its sub-atomic particles.<br><br>The difference in mass is radiated off as energy helping bind the nucleus together and is governed by the famous E = mc^2<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Science?src=hash&amp;ref_src=twsrc%5Etfw">#Science</a> <a href="https://t.co/QJ3A62Cdxn">pic.twitter.com/QJ3A62Cdxn</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1161480078120894464?ref_src=twsrc%5Etfw">August 14, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ramanujan was once ill and his colleague G H Hardy visited him and said that taxi he came by had a dull number 1729 to which Rama instantly replied<br><br>&quot;It is the smallest number expressible as the sum of two cubes in two different ways&quot;<br><br>FYI: (1, 12) and (9, 10)<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Mathematics?src=hash&amp;ref_src=twsrc%5Etfw">#Mathematics</a> <a href="https://t.co/3842psUgPa">pic.twitter.com/3842psUgPa</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1161117721444200449?ref_src=twsrc%5Etfw">August 13, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
