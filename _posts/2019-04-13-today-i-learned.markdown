@@ -25,6 +25,9 @@ seo:
 
 <div class="ui two column stackable grid">
 <!-- NEW TWEET GOES HERE -->
+<div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Prior 480 BC, Greeks were divided and identified by their city-states ex Spartans and Athenians<br><br>When a Persian King named Xerxes led an invasion on Athens, other city-states chipped in with the help. Post the victory, Greeks started to see themselves as Greeks.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/History?src=hash&amp;ref_src=twsrc%5Etfw">#History</a> <a href="https://t.co/8Kfy5lQmiQ">pic.twitter.com/8Kfy5lQmiQ</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1162567244997701632?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div class="ui column"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Word Veterinarian was taken from a Latin word &quot;veterinarius&quot; which means &quot;one who works with animals&quot;.<br><br>Over time, the definition got widened to &quot;animal doctor&quot; in general. The animal doctor prior to Veterinarian was, bizarrely, called a dog-leech.<a href="https://twitter.com/hashtag/TIL?src=hash&amp;ref_src=twsrc%5Etfw">#TIL</a> <a href="https://twitter.com/hashtag/Etymology?src=hash&amp;ref_src=twsrc%5Etfw">#Etymology</a> <a href="https://t.co/41nPPqwh6w">pic.twitter.com/41nPPqwh6w</a></p>&mdash; Arpit Bhayani - अर्पित भायाणी (@arpit_bhayani) <a href="https://twitter.com/arpit_bhayani/status/1162204860923559937?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
